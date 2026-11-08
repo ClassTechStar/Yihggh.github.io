@@ -2305,6 +2305,97 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
   <li><strong>算子扩展与开放标准（TOSA / QNN）</strong>：新模型刚发布，里面往往有 NPU 没见过的新算子——过去从模型发布到 NPU 适配要等几个月。开放标准改变了节奏：Arm 的 TOSA 统一算子描述，高通 QNN 让开发者直接把模型接到 Hexagon 上，框架更新与 NPU 驱动更新开始同频迭代。</li>
 </ul>
 <p class="mb-2">判断方法和前面一样：这些能力最终都要落到"你真的会用的那个功能"上——本地文档摘要、实时通话翻译、照片语义搜索。发布会听完，回去打开手机试试那几个功能，比记参数有用。</p>
+<!-- v19-alu-section -->
+<h5 class="font-semibold mt-3 mb-1">ALU：三类处理器里真正"算数"的那个部件</h5>
+<p class="mb-2">前面把 CPU、GPU、NPU 各自干什么讲了一遍，但有个问题一直绕着没说：它们内部真正把数字算出来的，到底是什么？答案是个听起来有点老派的名字——<strong>ALU（Arithmetic Logic Unit，算术逻辑单元）</strong>。它是所有处理器里最基础的"算数部件"，可三类处理器把它用出了三种完全不同的样子。更常见的一个误会是把 NPU 说成"有很多 ALU"——这一节主要就是把这件事掰清楚。</p>
+
+<p class="mb-2"><strong>一、ALU 管什么，不管什么</strong></p>
+<p class="mb-2">先给 ALU 划个范围。它是一块组合逻辑电路，接两个操作数，按控制信号做一次运算，吐出结果。传统意义上它管四件事：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>整数算术</strong>：加、减，以及乘法（有的设计里乘法单独做一块）；除法常要迭代多轮或交给专门电路。</li>
+  <li><strong>位逻辑</strong>：与、或、非、异或。权限位判断、开关掩码、颜色通道拆分，靠的都是它。</li>
+  <li><strong>移位</strong>：左移右移、算术移位、循环移位。乘除 2 的幂、打包解包数据都用得上。</li>
+  <li><strong>比较</strong>：判断相等或谁大谁小，结果不写回普通寄存器，而是写进<strong>标志位</strong>（是否为零、有没有进位、溢出没溢出、结果正负）。</li>
+</ul>
+<p class="mb-2">它<strong>不</strong>管三件事：不存数据、不决定做什么、不记住上一次算的结果。一条指令真正跑起来是这样一条链：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>控制单元（CU）</strong>负责取指和译码，看懂"这是一条加法"，然后发出控制信号，告诉 ALU 这次选哪一种运算。</li>
+  <li><strong>寄存器堆</strong>把两个操作数递过来（有时其中一个是指令里直接带的立即数）。寄存器是离 ALU 最近、最快的一层存储。</li>
+  <li><strong>ALU</strong>只负责算这一下，结果沿写回总线送回目的寄存器，标志位送回状态寄存器。</li>
+  <li>要不要跳转、下一步执行哪条，是控制单元看着标志位决定的，<strong>不是 ALU 决定的</strong>。</li>
+</ul>
+<p class="mb-2">打个后厨的比方：控制单元是看单子点菜的人，寄存器是备料台，ALU 是灶上那口锅——只管把递来的两份料按吩咐炒一下，炒完盛回盘子，既不存菜，也不接单。</p>
+
+<p class="mb-2"><strong>二、先把几个容易混的名字分开</strong></p>
+<p class="mb-2">现代芯片里这些单元物理上常常挨在一起、共用数据通路，所以发布会和参数表很容易把它们混着叫。但职责真的不一样：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>FPU（浮点单元）</strong>：管浮点数。它要对齐指数、规格化尾数、处理舍入和 NaN/Inf 这类异常，电路比整数 ALU 复杂得多，是一条独立的浮点流水线。严格说它不是 ALU——虽然它内部也有加法器和乘法器。</li>
+  <li><strong>向量单元 / SIMD</strong>：一条指令同时对一组数据做同样的运算（手机上最常见的是 NEON，新一代还有 SVE 一类可伸缩向量扩展）。每个 lane（通道）里才是一个小小的 ALU 或 FPU。并行来自 lane 的数量，不是来自指令变强了。</li>
+  <li><strong>矩阵单元 / 张量核</strong>：专门为矩阵乘设计的块，一次处理一小片矩阵而不是一对数字。CPU 和 GPU 里也有这类单元，但它是另一层东西。</li>
+  <li><strong>MAC 阵列</strong>：MAC 是"乘加融合"（a×b+c 一步做完，中间结果不写回）。把成千上万个 MAC 排成二维阵列、让权重和激活在里面流动，就是 NPU 的主力算力来源。<strong>它和 ALU 不是同一种东西</strong>：ALU 每做一次都要由指令告诉它"这次算什么"，MAC 阵列则是把一种固定运算铺成一张网，靠数据流喂进去。</li>
+</ul>
+<div class="tip-box rounded-lg p-4 mb-3"><p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>一句话记牢</p><p class="mt-1">ALU 是"按指令算一次"的通用部件；FPU 专管浮点，向量单元把很多个 ALU 排成一排听同一条指令，MAC 阵列则干脆把运算固定成乘加、铺成一整片。以后听到"某芯片有几千个 ALU"，先问一句：说的是真 ALU，还是把向量 lane 和 MAC 也算进去了？</p></div>
+
+<p class="mb-2"><strong>三、CPU 里的 ALU：少，但每一个都很快</strong></p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>主要运算</strong>：整数加减、位逻辑、移位、比较，外加大量地址与索引计算。浮点交给 FPU 和向量单元，分支判断交给分支单元，读写内存交给加载/存储单元——这些都不算 ALU，但和它一起挂在核心的执行端口上。</li>
+  <li><strong>数据精度</strong>：以 64 位整数为主，也有 32 位；标量运算是常态，向量指令另说。</li>
+  <li><strong>组织方式</strong>：一个核心里通常只有几个整数 ALU（常见两到四个），配乱序发射、寄存器重命名、深流水和分支预测。整条流水线的设计目标只有一个——把<strong>单条指令的延迟</strong>压到最短，让分支密集、前后依赖强的代码也能一路跑下去。</li>
+  <li><strong>并行规模</strong>：每核个位数 ALU，整芯片也就几十个。CPU 的并行靠的是指令级并行（同时发射多条指令）和多核，而不是堆 ALU 数量。</li>
+  <li><strong>典型任务</strong>：应用逻辑、系统调度、界面事件、文件与权限判断、整数循环、数据库查询条件。这些都是"步骤多、分支多、每一步都等上一步结果"的活。</li>
+</ul>
+<p class="mb-2">设计目标可以浓缩成四个字：<strong>低延迟、通用</strong>。宁愿把一个 ALU 做得很复杂、频率拉得很高，也不要几千个慢吞吞的。</p>
+
+<p class="mb-2"><strong>四、GPU 里的 ALU：复制成成千上万个 lane</strong></p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>主要运算</strong>：整数和浮点都有，主力是浮点的加、乘与乘加融合（FMA），还有插值、纹理采样和一批特殊函数；整数部分多用来算索引、地址和循环计数。</li>
+  <li><strong>数据精度</strong>：FP32 是基本盘，移动端大量用 FP16 省电省带宽，整数一般是 32 位。同一个芯片上几种精度混着跑很正常。</li>
+  <li><strong>组织方式</strong>：一堆结构相同的 lane 编成组（不同厂商叫 warp 或 wavefront），走 SIMT 路线——一条指令同时喂给组里几十个 lane，每个 lane 有自己的算术单元。遇到分支分歧时，走不同分支的 lane 暂时被屏蔽，两组先后走完，这也是为什么 GPU 怕"每个像素各走各的判断"。</li>
+  <li><strong>并行规模</strong>：成百上千个 lane，整芯片数千量级的算术单元。单 lane 慢一点根本不重要，只要同一时刻有足够多的像素或顶点在跑。</li>
+  <li><strong>典型任务</strong>：顶点变换、像素着色、光照与阴影、界面动画合成、照片滤镜，以及一部分通用计算和 AI 推理。</li>
+</ul>
+<p class="mb-2">设计目标是<strong>高吞吐</strong>：用海量并行线程把访存等待藏起来。和 CPU 放一起看特别清楚——CPU 是"少而强、求快"，GPU 是"多而简、求多"。</p>
+
+<p class="mb-2"><strong>五、NPU 里的 ALU：主力其实不是它</strong></p>
+<p class="mb-2">这一段最容易被写错，咱们说细一点。NPU 里<strong>确实有 ALU</strong>，但只占很小一块面积，干的是辅助活；真正撑起算力的是 MAC 阵列。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>ALU 在 NPU 里做什么</strong>：地址和步长计算、循环计数、量化与反量化的定点换算（把 INT8 按 scale 和 zero-point 还原回浮点范围）、ReLU 之类的比较与取最大值、查表、算子调度。全是标量、控制面的杂活。</li>
+  <li><strong>主力运算</strong>：卷积、全连接、注意力里那些矩阵乘，落到硬件上就是成千上万次乘加（MAC）。这不是"把 ALU 造大一点"，而是把一种运算铺成阵列，让数据在阵列里流动、权重尽量留在片上 SRAM 不来回搬——省下的搬运动量，正是 NPU 能效比高的关键。</li>
+  <li><strong>数据精度</strong>：低精度、量化是常态，INT8 在端侧推理里是主力，更激进的场景会用 INT4 或 FP8，部分层用 FP16。用精度换能效，这和 CPU/GPU 追求 FP32 准确度的取向完全不同。</li>
+  <li><strong>组织方式</strong>：MAC 阵列 + 片上权重缓存 + DMA 数据流调度，执行过程高度确定、几乎没有分支。少量标量 ALU 在旁边负责"把数据摆好、把结果收拾好"。</li>
+  <li><strong>并行规模</strong>：MAC 单元成千上万，但要注意它们都在算<strong>同一个矩阵乘的不同输出位置</strong>，不是各自独立执行不同指令——这和 GPU 里"上千个 lane 可以各自跑不同线程"是两种并行。</li>
+  <li><strong>典型任务</strong>：端侧大模型推理、夜景降噪、人像分割、语音识别、实时翻译、相册语义检索。</li>
+</ul>
+<p class="mb-2">设计目标是<strong>每瓦吞吐</strong>（发布会上那个 TOPS/W）。它愿意牺牲通用性、牺牲精度，甚至牺牲"能跑任意程序"这件事，换来同样的电池能多跑几十倍矩阵运算。</p>
+<div class="tip-box rounded-lg p-4 mb-3"><p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>别把 NPU 说成"一堆 ALU"</p><p class="mt-1">ALU 是"一条指令来，做一次通用运算"；MAC 阵列是"一份数据流进来，整片阵列同时把乘加做完"。NPU 有 ALU，但那是配角。把两者画等号，就会误以为 NPU 只是"ALU 更多的 CPU"，也就解释不了为什么它跑矩阵快、跑个带一大堆分支的普通程序反而慢。</p></div>
+
+<p class="mb-2"><strong>六、一张表看清差别</strong></p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+<thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">对比项</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">CPU</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">GPU</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">NPU</th></tr></thead>
+<tbody>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">主力运算单元</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">整数 ALU（配 FPU / 向量单元）</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">大量 lane，每 lane 含浮点与整数算术单元</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">MAC 阵列；ALU 只做标量辅助</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ALU 主要运算</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">整数加减、位逻辑、移位、比较、地址计算</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">整数索引与循环；浮点主力是加乘与 FMA</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">地址步长、量化换算、比较取最大值、调度</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">常用精度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">64 / 32 位整数；浮点另走 FPU</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">FP32、FP16、INT32</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">INT8 为主，INT4 / FP8 / FP16 视层而定</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">组织方式</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">每核几个 ALU，乱序发射、深流水、分支预测</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">lane 编组，一条指令带一组（SIMT）</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">二维 MAC 阵列 + 片上权重驻留 + 数据流</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">并行规模</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">每核个位数，整芯片几十个</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">成百上千 lane，整芯片数千量级</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">成千上万 MAC，但同算一个矩阵乘</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">设计目标</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">低延迟、什么都能干</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">高吞吐、同构数据并行</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">每瓦吞吐、专用高效</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">典型任务</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">应用逻辑、权限判断、调度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">像素着色、光照、滤镜</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">卷积、矩阵乘、端侧推理</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="mb-2"><strong>七、把几个场景连起来走一遍</strong></p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>整数与逻辑运算</strong>：解锁时判断某个权限位开没开、相册按日期排序、算剩余存储够不够放一段视频——全是 AND、比较、加减，CPU 里那几个 ALU 最擅长，且这类活前后依赖强，堆再多 lane 也帮不上忙。</li>
+  <li><strong>浮点运算</strong>：游戏里一帧的光照、界面滑动时的动画合成、给照片套个滤镜——几百万个像素做几乎一样的浮点运算，正好交给 GPU 的 FP32 / FP16 lane 一起算。</li>
+  <li><strong>AI 推理</strong>：拍一张夜景，ISP 先把原始数据整理好，NPU 用 INT8 的 MAC 阵列跑完降噪模型，旁边的标量 ALU 负责把量化结果还原、做 ReLU 和取最大值，最后结果交回 CPU 写进文件。这里真正吃算力的是 MAC 阵列，ALU 是把边角收拾干净的人。</li>
+  <li><strong>三者接力</strong>：同一次拍照里，CPU 发号施令、ISP 预处理、NPU 推理、GPU 合成预览、CPU 收尾写盘。手机里没有谁替代谁，只有各干各的那一段。</li>
+</ul>
+
+<p class="mb-2"><strong>本节小结</strong></p>
+<p class="mb-2">ALU 是"按指令算一次"的基本部件：CPU 把它做得少而快、专攻低延迟和通用；GPU 把它复制成成千上万个 lane、用同构并行换吞吐；NPU 干脆把主力换成 MAC 阵列，只留少量 ALU 做标量辅助，用低精度换能效。所以"NPU 就是 ALU 更多的处理器"这个说法是不准确的——三者差的不是数量，是<strong>为哪种计算而设计</strong>。</p>
+<p class="mb-2">给你一个能带走的判断法：看到分支、逻辑、整数和"一步一步等结果"，想 CPU 的 ALU；看到像素、浮点、大量同构数据，想 GPU 的 lane；看到矩阵乘、量化、TOPS/W，想 NPU 的 MAC 阵列。发布会上的算力数字会年年翻，但这三种"算"的方式不会变——知道哪种活交给哪个部件，比记住某个数字有用得多。</p>
 <h5 class="font-semibold mt-3 mb-1">ISP：影像信号处理器</h5>
 <p class="mb-2">ISP处理摄像头传来的原始数据，把光线信号变成好看的照片。</p>
 <p class="mb-2"><strong>性能怎么看？</strong>看型号！苹果A18 Pro、高通骁龙8 Elite、联发科天玑9400、华为麒麟9020都是旗舰级别。中端看骁龙8s Gen3/7+ Gen3、天玑8400。别只看核心数，架构和制程（纳米数）更重要。3nm制程是目前最先进的，能效比远优于5nm和4nm。2026 年在售的顶级档则是骁龙8 Elite Gen 5 和天玑 9500——这份名单半年就刷新一次，买的时候认准"当年最新一代"就行。</p>
@@ -2422,7 +2513,153 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
   <li><strong>气压计</strong>：测海拔高度，爬楼梯都能检测到。</li>
   <li><strong>霍尔传感器</strong>：检测磁吸壳的开合。</li>
 </ul>
-<h4 class="text-lg font-semibold mt-4 mb-2">二、操作系统：安卓 VS iOS VS 鸿蒙</h4>
+<!-- v19-soc-mechanism-chapter -->
+<h4 class="text-lg font-semibold mt-4 mb-2">二、SoC 是怎么把一件活干完的：调度、运算与数据通路</h4>
+<p class="mb-2">上一节把 SoC 里的部件认了个遍：CPU、GPU、NPU、ISP，还有刚讲过的 ALU。但认全零件不等于懂机器——真正让手机"跟手"的，是这些部件<strong>怎么被安排着一起干活</strong>。你点一下快门，到屏幕亮起一张夜景照片，中间要过五道手、排好几次队、等若干次信号。这一节就顺着这条线走一遍：谁负责决定做什么，谁负责决定什么时候做，数据又从哪里来、到哪里去。</p>
+<p class="mb-2">先把话说在前面：下面讲的都是<strong>通用架构规律</strong>——分几层调度、有哪几种并行、地址怎么转换，各家芯片大同小异。至于一个核心几级流水、能同时发射几条指令、缓存多大、一组线程有多少个 lane，那是<strong>具体芯片实现</strong>，每一代都在变，别把书里的说法当成某颗芯片的规格表，真要查就翻厂商文档。</p>
+
+<h5 class="font-semibold mt-3 mb-1">1. 先看全景：一次任务要过几道手</h5>
+<p class="mb-2">手机里几乎没有任何一件事是"应用直接指挥硬件"完成的。哪怕是给一张照片加个滤镜，也要经过这样一串角色：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>应用</strong>说清"我要什么"——拍一张照、跑一帧游戏、识别一句话。它只提需求，不关心谁来做。</li>
+  <li><strong>运行时与编译器</strong>把需求翻译成机器能执行的形式：一段指令、一张计算图、一串命令。顺便做优化，把能合并的合并、能提前算的提前算。</li>
+  <li><strong>驱动</strong>把这些命令写进硬件的队列，登记好依赖关系，然后敲一下"门铃"告诉硬件：有新活了。</li>
+  <li><strong>硬件调度器</strong>从队列里挑出此刻能跑的活，分给具体执行单元。它是最后一层，也是唯一真正在每个时钟周期做决定的角色。</li>
+  <li><strong>完成通知</strong>沿原路返回：硬件发中断，驱动确认，运行时唤醒等待的线程，应用拿到结果。</li>
+</ul>
+<p class="mb-2">这条链上有个很要紧的分界：<strong>"做什么"由软件层决定，"什么时候、由哪个部件做"由硬件层决定</strong>。软件层看得到整张任务图，所以能安排顺序、合并重复、避免冲突；硬件层只看得到眼前几条指令和几个空着的执行单元，所以能在一个周期内做出软件来不及做的细粒度决定。两头各管一段，缺一头都不行。</p>
+
+<h5 class="font-semibold mt-3 mb-1">2. 五层调度者：谁决定什么</h5>
+<p class="mb-2">把这五层摊开看，职责边界其实很清楚：</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+<thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">层</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">决定什么</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">不决定什么</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">大致时间尺度</th></tr></thead>
+<tbody>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">操作系统调度器</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">哪个进程/线程上哪个核心、优先级、时间片、唤醒与睡眠；手机上还要按负载挑大核还是小核</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">不管单条指令，也看不懂 GPU/NPU 内部的队列</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">毫秒到微秒</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">运行时</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把 API 调用组织成命令缓冲或计算图；模型推理时做算子融合、切子图、挑后端（CPU/GPU/NPU）</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">不生成最终机器指令，也不碰硬件寄存器</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">每次提交前后</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">编译器</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">指令选择、寄存器分配、循环展开、向量化；NPU 侧还要切块（tiling）适配片上存储、排好权重与数据搬运顺序</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">不知道运行时会出现什么突发任务，也不控制硬件当前是否空闲</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">安装时 / 首次运行时 / 提前离线完成</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">驱动</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把命令写进环形队列、建立同步对象、映射内存与 DMA、写门铃寄存器提交、处理完成中断</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">不做算法优化，也不决定执行单元怎么分派</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">提交与回收那一瞬</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">硬件调度器</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">此刻哪条指令发射、哪组线程上执行单元、哪个数据块进阵列；处理结构冒险与依赖就绪</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">看不到整张任务图，不知道应用的意图，也不做长期规划</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">每个时钟周期</td></tr>
+</tbody>
+</table>
+</div>
+<p class="mb-2">有两处边界在不同平台上会移动，值得留意。一是<strong>编译器和运行时</strong>：有的栈把图优化放在应用安装时一次做完，有的放在首次运行时，还有的干脆把一部分编译塞进驱动里，提交前才生成内核。二是<strong>操作系统和设备</strong>：CPU 线程归操作系统管，GPU/NPU 的任务队列归驱动和硬件管，操作系统通常只看到"这个进程在等一个 fence"。所以别死记"某一层一定做某件事"，记住的是这条<strong>从粗到细、从意图到周期</strong>的分工链。</p>
+<p class="mb-2">手机上的操作系统调度还多一件事：<strong>能耗感知</strong>。同样一段代码放超大核上跑得快但费电，放能效核上慢一点却省得多。系统要盯着当前负载、温度和剩余电量，把前台交互这类急活给大核，把后台同步、相册整理这类不急的活慢慢挪到小核。这是手机和台式机很不一样的地方——不是"越快越好"，是"够快的前提下别把电烧光"。</p>
+
+<h5 class="font-semibold mt-3 mb-1">3. 一次异步任务的完整旅程</h5>
+<p class="mb-2">用"拍一张夜景照片"当例子，把整条链走一遍。你会发现所谓异步，不是"扔到后台随便跑"，而是一条<strong>有依赖图、有排队、有完成信号</strong>的流水线。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>① 应用提交</strong>：相机 App 发起一次拍摄请求，画面预览、降噪推理、最终编码可能一次登记好几项工作。调用立刻返回，拿到的是句柄或 future，而不是结果——这就是"异步"的起点。</li>
+  <li><strong>② 编译与图组织</strong>：运行时把降噪模型从文件里加载出来，编译器（或驱动里的编译步骤）把模型切成硬件能吃的块，安排好权重什么时候搬进片上存储，把能合并的层合成一个算子。这一步产出的是<strong>命令序列或计算图</strong>，不是结果。</li>
+  <li><strong>③ 命令排队</strong>：驱动把命令写进硬件的环形提交队列，同时把输入缓冲、输出缓冲映射好，让硬件能直接通过 DMA 读写，不必让 CPU 一字节一字节搬。写完之后敲一下门铃寄存器，硬件才知道队列里有活。</li>
+  <li><strong>④ 依赖与同步</strong>：这是最容易出错、也最容易被忽略的一步。ISP 必须先把原始帧处理好，NPU 才能开始推理；GPU 要等 NPU 出结果才能合成预览；写文件又要等编码完成。这些先后关系靠三层东西保证：<strong>信号量</strong>（队列之间"你做完我才开始"）、<strong>fence</strong>（让 CPU 能查询"硬件做到哪了"）、<strong>屏障</strong>（保证前一阶段写的数据对后一阶段真的可见，而不只是"指令发过了"）。硬件内部还有计分板一类的机制，盯着某条指令要用的寄存器准备好没有，没好就先按住不发。</li>
+  <li><strong>⑤ 硬件执行</strong>：硬件调度器从队列里取命令，把工作拆给执行单元——CPU 核上的指令、GPU 的一组组线程、NPU 阵列里的一块块矩阵，各跑各的。这一层的细节下一节展开。</li>
+  <li><strong>⑥ 完成通知</strong>：结果写回内存，硬件触发中断；驱动的中断处理先做最要紧的确认，剩下的收尾放到底半部或工作队列里；对应的 fence 被标记完成，运行时唤醒等在它上面的线程，App 的回调拿到照片，缩略图才跳出来。</li>
+</ul>
+<p class="mb-2">这条链解释了几个日常现象：为什么点了快门要等一下才出图（在排队和推理），为什么拍照时偶尔会发热掉帧（ISP、NPU、GPU、CPU 同时抢内存带宽），以及为什么系统升级后"同样的硬件拍照变快了"（编译器和驱动把图和队列排得更好，硬件一个晶体管没换）。</p>
+<div class="tip-box rounded-lg p-4 mb-3"><p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>一句话记牢</p><p class="mt-1">应用交的是"意图"，驱动交的是"命令"，硬件要的是"此刻能跑的活"。中间那些信号量、fence 和屏障，就是把"意图"安全地变成"结果"的红绿灯。异步快，是因为排队和等信号不占着 CPU 死等，不是因为可以不管顺序。</p></div>
+
+<h5 class="font-semibold mt-3 mb-1">4. 硬件内部怎么把活塞满</h5>
+<p class="mb-2">命令到了硬件手里，接下来是一场"别让执行单元闲着"的持久战。芯片里有好几种并行，名字容易混，但它们挖的是不同层面的空档。</p>
+<p class="mb-2"><strong>流水线调度</strong>是最基础的一层。一条指令要走取指、译码、发射、执行、写回几步，把这几步拆开重叠起来，就像工厂流水线：第一条还在执行，第二条已经译码，第三条正在取指。麻烦在于三种"冒险"：两个步骤抢同一个部件（结构冒险）、后一条要等前一条的结果（数据冒险）、遇到分支还不知道下一条取哪里（控制冒险）。对应的办法是<strong>前递</strong>（把刚算出来的结果直接旁路给下一条，不等写回）、<strong>分支预测</strong>和必要时<strong>停顿或冲刷</strong>。预测错了要推倒重来，代价不小，这也是为什么 CPU 特别怕分支密集的代码。</p>
+<p class="mb-2"><strong>指令级并行（ILP）与多发射</strong>：一个周期只发一条指令太浪费，于是宽发射的核心一次取多条、译多条、发多条。能同时发几条就是发射宽度，是具体芯片实现，各代不同。但发得出去不等于能一起跑——得看这几条指令彼此有没有依赖、有没有空着的功能单元、寄存器堆能不能同时供上那么多操作数。</p>
+<p class="mb-2"><strong>乱序执行</strong>是挖 ILP 的主力手段。编译器给出的指令顺序是"按程序逻辑排的"，硬件可以在不改变最终结果的前提下，把后面那条不依赖前面结果的指令提前做。为了让这件事安全，硬件做了两件配套：<strong>寄存器重命名</strong>，把指令里写的那些架构寄存器映射到更多物理寄存器上，消掉本来只是"名字撞车"造成的假依赖；<strong>重排序缓冲</strong>，让指令可以乱序执行、但必须<strong>按序退休</strong>，这样一旦发生异常，机器状态仍然停在正确的那条指令上。所以准确说法是"乱序执行、按序提交"，不是"随便乱跑"。</p>
+<p class="mb-2"><strong>线程或任务并行</strong>换了一个层面：不再盯着单条指令，而是让多个线程、多个任务同时在跑。CPU 靠多核和同步多线程；GPU 把大量线程编成组，一组暂时等内存时立刻切到另一组，切换开销极小（上下文本来就常驻在寄存器堆里），用"线程多"来把访存延迟藏掉；手机后台同步、音频解码、界面渲染各占一条线，也是这一层。</p>
+<p class="mb-2"><strong>数据并行</strong>再换一层：同一条指令同时对一批数据做同样的运算。CPU 的向量扩展、GPU 的一组 lane、NPU 阵列里同时算的许多输出点，都属于这一类。它和线程并行的区别在于：线程并行是"很多条不同的执行流"，数据并行是"一条执行流带着一大片数据"。</p>
+<p class="mb-2">把这三者和上一节的 ALU 连起来看就通了：流水线是让<strong>同一个部件</strong>别空转，多发射与乱序是让<strong>一个核心里的几个部件</strong>同时忙，线程与数据并行是让<strong>整片芯片</strong>同时忙。层级越往上，需要的调度越"粗"、越依赖软件事先把活切好。</p>
+
+<h5 class="font-semibold mt-3 mb-1">5. CPU / GPU / NPU 的调度器：粒度、目标与限制</h5>
+<p class="mb-2">三类处理器都有"调度器"，但调的东西完全不是一回事。用一张表收住：</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+<thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">对比项</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">CPU</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">GPU</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">NPU</th></tr></thead>
+<tbody>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">调度粒度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">软件层是线程/进程；硬件层细到单条指令与微操作</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">一次绘制或计算提交，硬件层是成组的线程（一组几十个 lane 一起走）</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">整张推理图、算子，或按片上存储切出的数据块</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">主要目标</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">低延迟、响应快、公平、兼顾能耗</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">喂满执行单元、用大量线程隐藏访存等待、拉高吞吐</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">让数据流不断、权重尽量留在片上、每瓦吞吐最高</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">谁定顺序</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">操作系统定线程归属，硬件动态乱序决定指令先后</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">驱动与运行时定提交顺序，硬件在就绪的线程组之间切换</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">编译器和运行时基本把顺序排死，硬件按图执行</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">动态程度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">最高：每周期都可能改主意，能应付事先猜不到走向的分支</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">中：组之间切换很灵活，组内却要步调一致</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">最低：几乎是静态数据流，换来的是极高能效</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">主要限制</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">单线程里的依赖链、分支预测失误、上下文切换开销</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">一组里出现分支分歧要分组串行；寄存器占用多了能同时驻留的组就少</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">图要能静态切开，输入形状一变可能得重编译；不擅长任意控制流</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">典型任务</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">界面事件、应用逻辑、调度与权限判断</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">像素着色、特效、动画合成</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">降噪、分割、识别、端侧生成式推理</td></tr>
+</tbody>
+</table>
+</div>
+<p class="mb-2">一句话概括差别：<strong>CPU 的调度器在"猜"，GPU 的在"换"，NPU 的在"照着做"</strong>。CPU 面对的是走向事先猜不准的程序，得靠分支预测和乱序去赌下一步；GPU 面对的是大量同构线程，一组卡住就换另一组，不需要猜；NPU 的活早在编译器里就切好排好了，硬件按图流水即可，省下的动态决策电路全变成了能效。</p>
+<p class="mb-2">这也解释了三者为什么不能互相替代。让 NPU 去跑一个满是分支的应用逻辑，它连"下一步该走哪"都没法灵活决定；让 CPU 去跑矩阵乘，它那些精密的乱序电路全用不上，还每个数据都要过一遍指令。分工不是谁比谁强，是各自把调度成本花在了最值的地方。</p>
+
+<h5 class="font-semibold mt-3 mb-1">6. 算数的地基：加法器、乘法器与算术运算单元</h5>
+<p class="mb-2">上一节讲了 ALU 是"按指令算一次"的部件，这一节往里再看一层：那个"算一次"，物理上到底是什么在算。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>加法器</strong>是地基中的地基。一个全加器把三个一位输入（两个加数位加一个进位）变成"本位和"与"进位输出"；把它们串起来就能算多位加法，但最朴素的行波进位要等进位一级一级传过去，位数越多越慢，于是有了超前进位、进位选择这类提前算进位的做法。加法器不只是做加法：<strong>减法</strong>用补码变成加法，<strong>比较</strong>是做一次减法再看标志位，<strong>地址计算</strong>、循环计数、跳转到哪一行，底层都是它。</li>
+  <li><strong>乘法器</strong>贵得多。本质上是一堆"部分积"移位后相加，工程上用 Booth 编码减少部分积数量、用压缩树把多层加法并成少数几层，再做一次最终加法。它占的面积和耗的时间都远大于加法器，所以早期处理器常常把整数乘法单独做一块，甚至用多周期迭代完成。上一节说的 FPU 里也有乘法器，只不过它算的是浮点尾数，前后还要处理指数与规格化。</li>
+  <li><strong>算术运算单元</strong>是把这些零件装到一个框里：加法器、乘法器、逻辑门阵列、桶形移位器、前导零计数，再加上一组多路选择器——控制信号说"这次做加法"，就把加法器的结果选出去；说"这次做异或"，就选逻辑门的结果。这个带选择器的组合体，就是整数执行单元／ALU 的实体形态。它自己不会挑活，挑活的是控制单元发来的那几位控制信号。</li>
+</ul>
+<p class="mb-2">把这个和 NPU 的 MAC 阵列接上，会看到一个很实在的差别：<strong>MAC 就是把乘法器和加法器焊在一起，中间结果直接进累加器，不写回寄存器、下一轮也不用再读回来</strong>。一次乘加省掉一写一读，成千上万次乘加省下的搬运动量，正是 NPU 能效比 CPU、GPU 高的一大微观原因。所以 MAC 不是"更快的 ALU"，是"把某一条固定路径做到极致"。</p>
+
+<h5 class="font-semibold mt-3 mb-1">7. 指令集、微架构与寄存器：三层契约</h5>
+<p class="mb-2">这三个词经常一起出现，但说的不是一回事，分清了能少踩很多坑。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>指令集（ISA）</strong>是软件和硬件之间签的合同：有哪些指令、指令长什么样、程序员能看到哪些寄存器、内存怎么寻址、异常怎么处理。编译器只按这份合同生成机器码，不必关心芯片内部长什么样。手机上常见的合同是 Arm 的 AArch64 一类。</li>
+  <li><strong>微架构</strong>是这份合同的一种具体实现：流水线分几级、一个周期能发几条、重排序缓冲多大、分支预测器怎么设计、缓存几层各多大、有几个整数 ALU。同一份 ISA 可以做出完全不同的微架构——这正是手机大小核的依据：大核和小核跑的是<strong>同一套指令</strong>，但内部一个宽而深、一个窄而省，同一段机器码放上去跑，速度和耗电都不同。</li>
+  <li><strong>寄存器</strong>要分两层看。ISA 里规定的是<strong>架构寄存器</strong>，数量固定，编译器眼里的世界就这么大；微架构里实际用的是<strong>物理寄存器</strong>，通常多得多，专门用来给寄存器重命名提供"备用名字"，好把假依赖拆开。寄存器堆能同时读写几个端口，直接卡住了多发射的上限——发得出去，也得供得上操作数。</li>
+</ul>
+<p class="mb-2">拿做菜再比一次：ISA 是菜谱上写的"切块、下锅、调味"这些标准动作；微架构是这家厨房有几个灶、几个厨师、备料台多大；寄存器就是灶台边那几个备料格，格子的数量和同时能伸进去几只手，决定了能并行备几道料。三者对上了，才知道为什么"同一份程序在不同手机上跑得不一样快"——合同没变，厨房变了。</p>
+
+<h5 class="font-semibold mt-3 mb-1">8. 数据从哪来：TLB、缓存、内存控制器、带宽与总线</h5>
+<p class="mb-2">前面几节都在讲"算"，可现实里芯片大部分时间是在<strong>等数据</strong>。一次访问要从应用看到的虚拟地址，一路走到内存颗粒，沿途每一站都可能成为瓶颈。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>TLB</strong>是地址转换的缓存。应用用的是虚拟地址，硬件要的是物理地址，这层映射记在页表里；每次都去查页表太慢，于是把最近用过的映射存在 TLB 里。命中就直接拿到物理页，未命中要做一次页表遍历，代价可能是几十上百个周期。用大页、让数据访问更集中，都是为了少踩这种未命中。</li>
+  <li><strong>缓存层次</strong>是延迟与容量的折中：一级最小最快、通常每个核心私有；二级大一点、可能一簇核心共用；三级或系统级缓存全芯片共享，ISP、GPU、NPU 也能借它中转。越靠上越贵，放不下太多；越靠下越慢，但能装得多。命中率上不去，ALU 再快也只能空转。多部件共享数据时还要维护<strong>缓存一致性</strong>，保证 CPU 写进去的值，GPU 或 NPU 随后读到的是新的，不是缓存里的旧副本——这正是第 3 节那些屏障要解决的问题之一。</li>
+  <li><strong>内存控制器</strong>是最后一道关卡：把读写请求排到 DRAM 的各个 bank/rank 上，合并相邻访问、安排刷新、决定谁先谁后。手机上它还得讲<strong>服务质量</strong>——屏幕扫描和预览帧不能等，后台下载可以让一让。同样一块内存，控制器调度得好不好，实际体验差得出来。</li>
+  <li><strong>带宽与延迟是两件事</strong>。带宽是每秒能搬多少数据，延迟是发起一次访问要等多久。大数据块连续读写吃带宽，零散的小访问吃延迟。CPU 靠缓存把延迟压下去，GPU 和 NPU 靠海量并行把等待"藏"在别的线程或数据块后面——这也是为什么它们不怕延迟高，却特别怕带宽不够。</li>
+  <li><strong>频率</strong>决定一秒有多少个时钟周期，同一段微架构下频率越高性能越高，但动态功耗大致随频率和电压平方一起涨，手机的散热和电池很快就会把它按住，于是系统不断在升降频（DVFS）。发布会上那个峰值频率，往往只能维持很短一会儿；真正影响长时间游戏或录像的，是散热压住之后的<strong>持续频率</strong>。</li>
+  <li><strong>总线互联</strong>是把这些部件连起来的片上网络：CPU、GPU、NPU、ISP、显示、内存控制器都挂在上面，共享有限的通路。多路同时访问就会争用，需要仲裁和优先级。上一节讲 NPU 时提到"ISP 处理结果直送 NPU 的图像分支"，这类专用直通路径的意义就在这儿——绕开公共总线，少一次排队、少一次往返内存。</li>
+</ul>
+<p class="mb-2">把这一节塞回拍照那个例子：ISP 写帧、NPU 读权重和特征、GPU 合成预览、CPU 编码写文件，四路同时抢内存带宽和总线。这时候瓶颈往往不在"谁的算力不够"，而在<strong>数据搬不动</strong>。所以看手机性能，只盯着算力数字很容易看偏——得连着存储与互连一起看。</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+<thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">环节</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">主要影响</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">手机里的典型表现</th></tr></thead>
+<tbody>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">TLB</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">地址转换命中率，未命中代价高</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">大图、大模型频繁换页时明显变慢</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">缓存层次</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">访问延迟与命中率、多部件一致性</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">反复读写同一批特征图时差别很大</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">内存控制器</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">请求排序、优先级、刷新开销</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">录像时预览不能卡，后台同步要让路</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">带宽</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">每秒搬运总量</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">多路并发抢通路时整体掉速</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">频率 / 电压</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">周期数，同时受功耗与散热约束</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">峰值跑分好看，长时间游戏会降频</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">总线互联</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">部件间通路、仲裁与专用直连</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ISP→NPU 直连省掉一次内存往返</td></tr>
+</tbody>
+</table>
+</div>
+
+<h5 class="font-semibold mt-3 mb-1">9. VPU、DSP 与 ECC：三位专职配角</h5>
+<p class="mb-2">SoC 里还有几个不常上发布会、却天天在干活的部件。它们不是同一类东西，别混着记。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>VPU（视频处理单元）</strong>是专做视频编解码的固定功能硬件：运动估计、变换、熵编码、环路滤波这些步骤直接做成电路。录 4K 视频、视频通话、投屏、边下边播，靠的都是它。用 GPU 的通用算力也能算，但固定功能电路干同一件活省电得多——手机能连续录很久而不烫，很大程度是 VPU 的功劳。</li>
+  <li><strong>DSP（数字信号处理器）</strong>是颗小而省、乘加很快、时序确定的处理器，专门伺候连续不断的信号流：通话降噪与回声消除、语音唤醒词常驻监听、陀螺仪与马达数据滤波、部分基带处理。它的价值在于<strong>不用把大 CPU 叫醒</strong>——抬手亮屏、"嘿 Siri"这类永远在线的小活，交给 DSP 常驻跑，功耗可以压得极低。</li>
+  <li><strong>ECC（纠错码）</strong>不是加速器，是<strong>可靠性部件</strong>。内存、缓存、片上存储里的位可能因干扰或低电压翻转，ECC 加一点冗余位来发现并纠正单比特错、发现双比特错。手机在内存和关键片上存储里用它来扛低电压运行、提升稳定性；车规和服务器场景要求更严。把它和 VPU、DSP 并列，容易误以为它也在"算"，其实它只保证算出来的数没被悄悄改掉。</li>
+</ul>
+
+<h5 class="font-semibold mt-3 mb-1">10. IPC：怎么算，以及为什么不能只看它和频率</h5>
+<p class="mb-2">IPC 是 Instructions Per Cycle，<strong>平均每个时钟周期完成多少条指令</strong>。它不是一个出厂标好的参数，而是跑某段程序时测出来的比值：用处理器里的硬件性能计数器读出"退休的指令数"和"实际活跃周期数"，两者相除就得到 IPC。注意分子是<strong>退休</strong>的指令——乱序执行里那些预测错、被冲刷掉的指令不算数。</p>
+<p class="mb-2">一段程序花的时间，粗略可以写成：<strong>耗时 ≈ 指令总数 ÷（IPC × 频率）</strong>。这行式子把三件事都摆出来了，也顺便说明只盯其中一个为什么容易看偏。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>频率相同，IPC 可以差好几倍</strong>：微架构的发射宽度、乱序窗口、缓存和分支预测都在影响每周期能真正做完多少条。所以"3GHz 一定比 2.5GHz 快"这种说法，跨代、跨大小核就不成立。</li>
+  <li><strong>IPC 高，也不代表更快</strong>：编译器换一版、指令选得不同，指令总数可能变少，IPC 反而"变低"但程序更短；反过来，一段被访存停顿拖住的代码，周期数变大，IPC 会掉，可它未必是芯片不行，可能是数据没喂上。</li>
+  <li><strong>指令数本身就不对等</strong>：一条向量指令能同时处理一批数据，一条 NPU 层面的"命令"背后可能是整个矩阵块。这类活 IPC 可能低得可怜，实际吞吐却高得离谱。拿标量 IPC 去比较 GPU 或 NPU，基本没有意义。</li>
+  <li><strong>并行度不在公式里</strong>：IPC 描述的是单条执行流每个周期做多少。GPU 靠成百上千组线程、NPU 靠阵列里同时算的许多输出点把吞吐堆上去，它们的强项根本不在这一列指标上。</li>
+  <li><strong>手机还要看持续表现和能耗</strong>：峰值频率会被散热按住，长时间负载下真正稳定的是持续频率；同样的活，用专用部件（VPU、NPU、DSP）做完花的能量，可能比让通用核心硬扛少一个量级。</li>
+</ul>
+<p class="mb-2">所以更靠谱的看法是：先看<strong>单位时间完成了多少真实工作</strong>（每秒出几帧、一次推理多少毫秒、导出一段视频多久），再看<strong>单位能耗完成多少</strong>（同样的活掉多少电、烫不烫），最后才用 IPC 和频率去解释"为什么会这样"。它们是诊断工具，不是成绩单。</p>
+
+<h5 class="font-semibold mt-3 mb-1">11. 把一部手机的一天串起来</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>抬手亮屏</strong>：DSP 常驻听着传感器数据，判断出抬手动作，才把应用处理器叫醒；CPU 的能效核先接住，操作系统调度器决定要不要动用大核。</li>
+  <li><strong>刷信息流</strong>：CPU 处理列表逻辑与网络回调，GPU 把一屏卡片和动画画出来，VPU 顺手解着信息流里的视频，内存控制器在几路请求之间排优先级。</li>
+  <li><strong>拍一张夜景</strong>：ISP 整理原始帧 → 编译器事先切好的计算图进 NPU，MAC 阵列跑降噪，标量 ALU 做量化与取最大值 → GPU 合成预览 → VPU 如果要录像同时开工 → CPU 收尾写文件。整条链靠信号量和 fence 串起来，四路一起抢带宽。</li>
+  <li><strong>玩一局游戏</strong>：CPU 跑逻辑与物理、GPU 成批算像素、DSP 处理语音、总线和内存带宽被同时占用；跑上十几分钟，散热开始压频率，这时候决定帧率的往往不是峰值算力，而是持续频率与带宽。</li>
+</ul>
+<p class="mb-2"><strong>本章小结</strong></p>
+<p class="mb-2">把这一节收成三句话。第一，<strong>调度是分层的</strong>：操作系统管线程、运行时与编译器管图和指令、驱动管队列与同步、硬件调度器管每个周期发射什么，越往下越细、越往上越看得全。第二，<strong>并行是分层的</strong>：流水线让一个部件不空转，多发射与乱序让一个核心里的部件同时忙，线程与数据并行让整片芯片都忙起来；CPU 在猜、GPU 在换、NPU 照着编译好的图做。第三，<strong>算得快慢取决于数据喂不喂得上</strong>：TLB、缓存、内存控制器、带宽、频率和总线互联共同决定了执行单元有没有活干，也决定了峰值数字能不能持续。</p>
+<p class="mb-2">给你一个能带走的判断法：看到"卡"，先问是<strong>算不过来</strong>、<strong>等数据</strong>，还是<strong>在排队等依赖</strong>；看到"快"，先问是硬件更强，还是编译器和驱动把活排得更好。频率和 IPC 只是线索，真正该看的是单位时间做完了多少事、为这些事付了多少电。至于具体几级流水、几发射、缓存多大——那是每颗芯片自己的实现，别当成通用规律记。</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">三、操作系统：安卓 VS iOS VS 鸿蒙</h4>
 <p class="mb-2">硬件是身体，操作系统是灵魂。三大系统各有特色：</p>
 <ul class="list-disc pl-6 mb-3 space-y-1">
   <li><strong>安卓</strong>：像开源社区，手机厂商可以深度定制，选择多。你可以换主题、装第三方应用商店、折腾各种玩法。但也因为开放，碎片化严重，不同品牌体验差异大。</li>
@@ -2430,7 +2667,7 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
   <li><strong>鸿蒙</strong>：华为的新物种，主打分布式能力，可以让不同设备无缝协同。后面我们会专门讲。</li>
 </ul>
 <p class="mb-2">三者生态都极其丰富，选你喜欢的生活方式就好。没有绝对的好坏，只有适不适合。</p>
-<h4 class="text-lg font-semibold mt-4 mb-2">三、手机接口全解析</h4>
+<h4 class="text-lg font-semibold mt-4 mb-2">四、手机接口全解析</h4>
 <p class="mb-2">手机接口是连接外部世界的桥梁，不同接口差异很大：</p>
 <h5 class="font-semibold mt-3 mb-1">Micro USB</h5>
 <ul class="list-disc pl-6 mb-3 space-y-1">
@@ -2460,7 +2697,7 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
   <li><strong>现状</strong>：大部分旗舰手机已取消3.5mm接口，需要Type-C转接线或使用蓝牙耳机。部分中端机和游戏手机仍保留。</li>
 </ul>
 <p class="mb-2">最后补一句：接口只是硬件的一半，<strong>协议才是另一半</strong>。买手机、配配件之前核对四件事——充电协议是否通用（第三方充电器能不能跑满标称功率）、是否支持 eSIM、蓝牙版本与音频编码、有没有 NFC。这几项直接决定你的充电器、耳机和出行体验，比接口形状本身重要得多。</p>
-<h4 class="text-lg font-semibold mt-4 mb-2">四、手机产品体系与命名规则</h4>
+<h4 class="text-lg font-semibold mt-4 mb-2">五、手机产品体系与命名规则</h4>
 <p class="mb-2">面对各品牌眼花缭乱的产品线，搞清楚命名规则能帮你快速定位适合自己的机型。</p>
 <h5 class="font-semibold mt-3 mb-1">主流品牌产品系列：</h5>
 <ul class="list-disc pl-6 mb-3 space-y-1">
@@ -2495,7 +2732,7 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
 </table>
 </div>
 <p class="mb-2">具体型号与跑分半年就换一代，这张表本身也会过期。买之前看两个以上独立实测，比看参数表可靠。</p>
-<h4 class="text-lg font-semibold mt-4 mb-2">五、基带与天线：手机通信的幕后功臣</h4>
+<h4 class="text-lg font-semibold mt-4 mb-2">六、基带与天线：手机通信的幕后功臣</h4>
 <p class="mb-2">手机能打电话、上网，靠的是基带芯片和天线这对搭档。</p>
 <h5 class="font-semibold mt-3 mb-1">基带芯片：</h5>
 <p class="mb-2">基带是手机中负责无线通信的处理器，它将数字信号调制成无线电波发出去，也将接收到的无线电波解调成数字信号。基带性能直接影响通话质量、上网速度和信号稳定性。高通是最大的手机基带供应商，联发科、三星也有自研基带。苹果从iPhone 16e开始搭载自研的C1基带芯片，标志着苹果正式进入自研基带时代，C1基带采用4nm制程，功耗表现优异；iPhone 16/16 Plus/16 Pro/16 Pro Max仍使用高通基带（骁龙X75 5G），预计后续机型将逐步过渡到自研基带。更早的iPhone XS/11系列使用Intel基带时信号表现不佳，是不少用户的痛点。</p>
@@ -2520,7 +2757,90 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
   <li><strong>5G NR Band（N系列）</strong>：如n1、n3、n28、n41、n78、n79等。n78（3.5GHz）是中国5G主力频段，n41（2.5GHz）移动使用较多。</li>
   <li><strong>购买建议</strong>：如果需要出国使用，购买前确认手机是否支持目标国家的频段。国行手机通常对中国频段支持最全，但可能缺少部分海外频段。</li>
 </ul>
-<h4 class="text-lg font-semibold mt-4 mb-2">六、你的手机，到底在扮演多少角色？</h4>
+<!-- v19-baseband-rf-section -->
+<h5 class="font-semibold mt-3 mb-1">蜂窝基带（BP）到底管什么：</h5>
+<p class="mb-2">前面说"基带把数字信号调制成无线电波"，这句为了方便理解做了简化。真拆开看，<strong>BP（Baseband Processor，基带处理器）只管数字这一半</strong>：它产出的是一串比特或基带样值，并不直接把电波送出去。把比特变成电磁波，是后面射频前端的活。</p>
+<p class="mb-2">BP 的活分两类。一类是<strong>把数据搬过无线信道</strong>：发送时做信道编码、加校验、调制、成帧，让数据扛得住干扰和衰落；接收时反过来做同步、信道估计、均衡、解调、解码，出错的还要靠重传合并补回来。另一类是<strong>守着空口的规矩</strong>：小区搜索与注册、切换、功率控制、重传、加密与鉴权，全都对时间极敏感——晚几毫秒，基站那边这一帧就过去了。</p>
+<p class="mb-2">所以它内部大致是这么一套零件：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>实时处理器子系统</strong>：一颗或多颗 DSP 加控制核心，跑自己的实时操作系统。它不跑安卓、也不跑你的 App，只伺候空口那些按时辰办事的任务。</li>
+  <li><strong>调制解调硬件</strong>：OFDM 的调制与解调、快速傅里叶变换、信道估计与均衡、多路天线的信号分离。这些运算规律固定、量大，做成专用电路比让通用 CPU 算省得多。</li>
+  <li><strong>信道编解码与重传</strong>：不同代际用的编码方案不一样，但思路一致——加冗余、检错、错了请求重传并和旧数据合并。信号越差，这部分越忙。</li>
+  <li><strong>协议栈加速与定时</strong>：把数据切段、排序、加解密、压包头、守住收发时刻，都要按协议精确到时隙。</li>
+  <li><strong>三类接口</strong>：往上是与<strong>应用处理器（AP）</strong>的高速链路（片内总线或高速串行接口），往旁边是与<strong>射频前端</strong>的数字接口，还有一路连到 <strong>USIM 卡</strong>做鉴权。</li>
+  <li><strong>功耗状态管理</strong>：没有数据时让接收机按节奏短暂醒来听一下寻呼，其余时间睡过去——手机待机能撑一整天，很靠这套机制。</li>
+</ul>
+<p class="mb-2">和 AP 的分工值得单独说一句：应用处理器跑操作系统、界面和网络上层协议，基带跑确定性最强的空口部分，两边各跑各的系统。<strong>AP 睡着的时候 BP 还醒着</strong>，继续守着寻呼、注册和小区切换——这就是为什么关屏一整夜，早上仍能立刻收到消息。参数表上写的"基带型号"，指的就是这颗；它既不是 SoC 里的 CPU/GPU/NPU，也不是射频前端。</p>
+
+<h5 class="font-semibold mt-3 mb-1">从数字到电波：基带、射频前端与天线怎么接力：</h5>
+<p class="mb-2">把一次"发出去"和一次"收进来"连起来看，整条链就清楚了。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>发送</strong>：BP 编好码、调好制 → 数模转换或数字射频接口 → 收发机把信号搬到射频频率 → 功率放大器（PA）把功率提到能传出去 → 滤波器与双工器挑干净该发的频段 → 天线调谐匹配 → 天线辐射出去。</li>
+  <li><strong>接收</strong>：天线感应到微弱信号 → 滤波 → 低噪声放大器（LNA）先放大而不引入太多噪声 → 下变频搬回低频 → 模数转换 → 回到 BP 做同步、均衡与解调。</li>
+  <li><strong>闭环控制</strong>：BP 不只递数据，还一刻不停地调 PA 的发射功率、接收增益、滤波器与天线调谐。信号好就把功率收小省电，信号差就往上抬——这几条控制线是整条链路的"神经"。</li>
+</ul>
+<p class="mb-2">为什么非要分成数字和射频两段？两个很实在的理由：空口的时序细到毫秒以下，交给通用操作系统调度根本来不及，得有独立的实时处理器；而射频是模拟电路，工艺、供电和抗干扰的要求跟数字逻辑完全不同，往往单独做、也常常单独封装。<strong>基带管"算什么"，射频前端管"怎么把这段信号送上天"</strong>，中间靠那组控制信号把它们缝成一条闭环。</p>
+<p class="mb-2">手机上的几个日常现象，顺着这条链就讲得通：在电梯或地下车库，PA 得把功率拉满，于是发热、掉电都变快；手握姿势挡住某根天线，调谐与多天线选路要重新调整；金属边框必须留出天线带，否则等于给信号盖了层盖子。所以"信号差更费电"不是错觉，是发射链路在替你使劲。</p>
+
+<h5 class="font-semibold mt-3 mb-1">集成基带与外挂基带：</h5>
+<p class="mb-2">基带和 AP 是做在同一颗芯片里，还是各做各的，是整机设计里一个很实际的取舍。两种方案长期并存，谈不上谁更先进。</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+<thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">对比项</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">集成基带（与 AP 同一颗 SoC / 同封装）</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">外挂基带（独立芯片）</th></tr></thead>
+<tbody>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">结构</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">共用片内互连、内存与电源管理，AP 与 BP 之间走片内通路</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">两颗芯片通过高速接口相连，各自带自己的内存与供电</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">功耗与面积</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">省掉片间往返，功耗与占板面积都更省</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">多一次数据搬运，多一颗芯片的位置、供电与散热</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">协同与调度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">电源状态、唤醒、数据通路容易一起管，延迟小</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">要额外维护两端的状态同步与接口协议</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">工艺取舍</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">得迁就同一套工艺，模拟/射频部分未必用得上最合适的制程</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">数字与射频可以各自选更合适的工艺单独迭代</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">版本与迭代</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">换通信能力往往要换整颗 SoC，按地区做频段版本不灵活</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">AP 与基带可自由组合，便于按市场做不同版本、单独升级</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">适用场景</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">走量的主流机型，优先轻薄、续航与成本</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">要覆盖多地区多频段、自研基带过渡期、或对射频布局要求高的机型</td></tr>
+</tbody>
+</table>
+</div>
+<p class="mb-2">一句话收住：<strong>集成赢在省，外挂赢在活</strong>。省的是电、面积和成本，活的是组合、版本与迭代。看到某款机器用哪种方案，别急着下"先进/落后"的结论，先看它要覆盖哪些市场、机身留了多少空间、这一代是不是正处在切换期。</p>
+
+<h5 class="font-semibold mt-3 mb-1">SA 与 NSA：两种 5G 组网：</h5>
+<p class="mb-2">先厘清一件事：SA 和 NSA 说的是<strong>运营商那张网怎么搭</strong>，不是手机的频段，也不是"支不支持 5G"的开关。手机要能用，得在基带的协议栈里支持对应模式；但决定你连到哪种网的，是基站和核心网。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>NSA（非独立组网）</strong>：5G 基站负责接入，但控制面仍锚在<strong>4G 核心网</strong>上，还要 4G 基站当锚点。手机同时连着 4G 和 5G（双连接），注册、切换这类信令走 4G，用户数据可以走 5G 那条快路。好处是能借现成的 4G 网快速铺开、早期覆盖好；代价是高级能力受 4G 核心网限制，两路射频同时工作也更容易费电。</li>
+  <li><strong>SA（独立组网）</strong>：5G 基站配 <strong>5G 核心网</strong>，控制面和用户面都走 5G，不再依赖 4G。低时延、网络切片、边缘计算、海量连接这些"完整 5G 能力"要靠它才发挥得出来；代价是核心网得新建，覆盖要一点点铺，早期不如 4G 兜底稳。</li>
+</ul>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+<thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">对比项</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">NSA</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">SA</th></tr></thead>
+<tbody>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">核心网</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">沿用 4G 核心网</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">新建 5G 核心网</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">是否依赖 4G</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">要，4G 当锚点</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">不需要</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">手机连接方式</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">4G 与 5G 双连接</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">只连 5G 一套</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">时延与高级能力</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">受 4G 核心网限制</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">支持低时延、切片、边缘计算</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">建网与覆盖</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">快、早期覆盖好</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">投入大、覆盖逐步铺开</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">对手机的影响</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">要支持双连接，两路射频同时工作更耗电</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">要支持 5G 核心网流程；覆盖不足时回落到其它网络</td></tr>
+</tbody>
+</table>
+</div>
+<p class="mb-2">两个常见混淆值得点破：<strong>SA/NSA 不等于 Sub-6 与毫米波</strong>——后者说的是频段，前者说的是网络架构，两件事可以任意组合；也<strong>不等于"手机支不支持 5G"</strong>，同一部手机两种模式都能支持，实际连上哪种取决于当地网络。上一小节讲的 4G、5G、5G-A 是代际，这一小节讲的是每一代里网络怎么搭，别叠在一起记。</p>
+
+<h5 class="font-semibold mt-3 mb-1">Wi-Fi 与蓝牙基带：</h5>
+<p class="mb-2">同一部手机里还跑着另外两套"基带"，它们和蜂窝基带是完全不同的系统：用的是非授权频谱，不需要 SIM 卡，也不连运营商核心网，覆盖从几米到几十米，发射功率低得多，而且更多由应用处理器上的操作系统直接管。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Wi-Fi</strong>：物理层同样用 OFDM，和蜂窝技术有亲缘，但接入方式根本不同——没有基站统一排时隙，大家靠<strong>竞争信道</strong>（先听有没有人在发，空了再发，撞了就退避重来）。多天线、波束成形、信道选择与漫游、加密都在协议栈里。它追求的是短距离内的高吞吐，代价是设备一多、距离一远，竞争和干扰就会把速度拉下来。</li>
+  <li><strong>蓝牙</strong>：靠<strong>跳频</strong>在拥挤的 2.4GHz 里躲干扰，设备组成一个小小的微微网，双方约好"连接事件"，其余时间睡过去。经典蓝牙偏向持续音频，BLE（低功耗蓝牙）把"睡很久、醒很短"做到极致，一颗纽扣电池能撑几年——耳机、手表、手柄、防丢标签、靠近解锁，都是它。</li>
+  <li><strong>工程上的现实</strong>：Wi-Fi、蓝牙（有时还有 FM 与定位接收）常合在一颗<strong>连接芯片</strong>里，与蜂窝基带并行工作、各跑各的协议栈。但 2.4GHz 与部分蜂窝频段挨得近，同时收发会互相干扰，需要<strong>共存仲裁</strong>在时间和频率上错开——开热点时蓝牙耳机偶有卡顿，多半就是这套协调在打架。</li>
+</ul>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+<thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">对比项</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">蜂窝基带</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Wi-Fi / 蓝牙基带</th></tr></thead>
+<tbody>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">频谱</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">授权频段，运营商规划</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">非授权频段，大家共用</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">谁调度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">基站集中分配时隙与资源</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">竞争接入 / 双方约定连接事件</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">身份与鉴权</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">USIM 与运营商核心网</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">本地配对与密码，不经运营商</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">覆盖与功率</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">公里级，发射功率高、随信号强弱大幅调整</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">十米级，功率低，BLE 尤其省</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">典型任务</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">通话、移动数据、短信、漫游</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">上网、投屏、耳机、手表、周边配件</td></tr>
+</tbody>
+</table>
+</div>
+<p class="mb-2">把这一节收成一句判断法：以后看到"信号不好"，别只盯着那几格——先问是<strong>哪张网</strong>（SA 还是 NSA、覆盖够不够），再问<strong>哪个频段</strong>，最后才看<strong>基带与射频前端这一条链</strong>有没有被握姿、金属边框或弱场拖住。频段、组网、基带、射频前端是四件不同的事，分开想，问题就好定位了。</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">七、你的手机，到底在扮演多少角色？</h4>
 <p class="mb-2">它早已不只是电话：</p>
 <ol class="list-decimal pl-6 mb-3 space-y-1">
   <li><strong>通讯工具</strong>：电话、短信、微信、邮件……</li>
