@@ -1,13 +1,14 @@
  <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="no-js">
 <head>
+    <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="你缺失的那门手机课 · 从入门到精通，全面掌控你的数字生活">
     <meta name="keywords" content="手机教程,数码必修课,智能手机,安卓,iOS,鸿蒙,手机技巧,数字生活,AI大模型,AI编程,大模型API,Prompt工程,安卓开发,iOS开发,Swift,Kotlin,SwiftUI,Jetpack Compose,计算摄影,信息安全,密码管理,自动化,手机选购">
     <meta name="author" content="数字生活向导">
-    <meta name="theme-color" content="#4f46e5" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#1e1b4b" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)">
     <meta name="robots" content="index, follow">
     <meta name="format-detection" content="telephone=no">
     <meta property="og:type" content="book">
@@ -34,7 +35,7 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#4f46e5',
+                        primary: 'var(--accent-book)',
                         secondary: '#6B7280',
                         light: '#F3F4F6',
                         dark: '#1F2937',
@@ -48,6 +49,69 @@
         }
     </script>
     <style type="text/tailwindcss">
+    /* Hallmark · 色彩令牌（高频字面量收编，原值不动仅收编） */
+    :root {
+        --accent-book: #4F46E5;
+        --accent-soft: #818CF8;
+        --accent-deep: #1E1B4B;
+        --accent-wash: #EEF2FF;
+        --ink: #0B0E13;
+        --ink-2: var(--ink-2);
+        --ink-3: var(--surface-dark-2);
+        --ink-inverse: #F2F6FC;
+        --muted: #9CA3AF;
+        --muted-2: #6B7280;
+        --muted-3: #4B5563;
+        --line: #E5E7EB;
+        --line-2: #D1D5DB;
+        --surface: #FDFDFE;
+        --surface-2: #F3F4F6;
+        --surface-3: #EEF2F5;
+        --surface-4: #F5F6F8;
+        --surface-dark: #1F2937;
+        --surface-dark-2: var(--surface-dark-2);
+        --surface-dark-3: #1E2A36;
+        --surface-dark-4: #1A2230;
+        --surface-dark-5: var(--surface-dark-5);
+        --ok: #27AE60;
+        --gold: #D4A017;
+        --sky: #0EA5E9;
+        --wash-warm: #FDF8EF;
+        --sky-deep: #075985;
+        --wash-dark: #3D2E0F;
+        --surface-5: #F0F4F8;
+        --surface-6: #FAFAFA;
+        --line-3: #E0E0E0;
+        --surface-7: #F9FAFB;
+        --sky-wash: #E0F2FE;
+        --gold-2: #FBBF24;
+        --surface-dark-6: #1E293B;
+    }
+/* Hallmark · built: the project (v1.8/v1.9 中文书页) · redesign: polish · critique: P4 H4 E4 S4 R4 V3 · weakest: V，同模板 21 页共用本样式；已去两端对齐/渐变卡/transition-colors，保留本书蓝色系与 95ch 版心 */
+:root {
+    /* Hallmark 令牌：微着色的纸与墨（纯 var(--ink-inverse)/var(--ink) 不再出现），主色沿用本书蓝 */
+    --paper: #FDFDFE;
+    --ink: #0B0E13;
+    --ink-inverse: #F2F6FC;
+}
+
+/* Hallmark · 质量门兜底：焦点可见、动态降级、横向溢出裁切 */
+:focus-visible {
+    outline: 2px solid #165DFF;
+    outline-offset: 2px;
+}
+html, body {
+    overflow-x: clip;
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
         @layer utilities {
             .scrollbar-hide {
                 -ms-overflow-style: none;
@@ -60,7 +124,7 @@
                 text-wrap: balance;
             }
             .focus-ring:focus-visible {
-                outline: 2px solid #4f46e5;
+                outline: 2px solid var(--accent-book);
                 outline-offset: 2px;
             }
         }
@@ -77,28 +141,28 @@
             transition: background-color 0.3s, color 0.3s;
         }
         .dark body {
-            background-color: #111827;
+            background-color: var(--surface-dark-2);
         }
         .toc-item.active {
-            color: #4f46e5;
+            color: var(--accent-book);
             font-weight: 600;
-            background-color: #eef2ff;
-            border-left: 3px solid #4f46e5;
+            background-color: var(--accent-wash);
+            border-left: 3px solid var(--accent-book);
         }
         .dark .toc-item.active {
-            background-color: #1e1b4b;
-            border-left-color: #818cf8;
+            background-color: var(--accent-deep);
+            border-left-color: var(--accent-soft);
         }
         /* 侧边栏链接基础样式 */
         #sidebar a {
             display: block;
-            transition: all 0.2s ease;
+            transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
             position: relative;
             text-decoration: none;
         }
         #sidebar a:hover {
-            color: #4f46e5 !important;
-            background-color: #eef2ff;
+            color: var(--accent-book) !important;
+            background-color: var(--accent-wash);
             transform: translateX(2px);
         }
         .dark #sidebar a:hover {
@@ -125,15 +189,15 @@
             flex-shrink: 0;
             cursor: pointer;
             transition: background-color 0.15s, transform 0.3s ease;
-            color: #9ca3af;
+            color: var(--muted);
         }
         .toc-toggle-btn:hover {
-            background-color: #e5e7eb;
-            color: #374151;
+            background-color: var(--line);
+            color: var(--ink-2);
         }
         .dark .toc-toggle-btn:hover {
-            background-color: #374151;
-            color: #e5e7eb;
+            background-color: var(--ink-2);
+            color: var(--line);
         }
         /* 子项过渡动画 */
         .toc-child li {
@@ -152,27 +216,27 @@
             top: 0;
             bottom: 0;
             width: 3px;
-            background: #4f46e5;
+            background: var(--accent-book);
             border-radius: 0;
-            transition: top 0.3s ease, height 0.3s ease;
+            transition: transform 0.3s ease, opacity 0.3s ease;
             z-index: 1;
         }
         /* 侧边栏顶部区域增强 */
         #sidebar > nav > div:first-child {
-            background: #f5f6f8;
+            background: var(--surface-4);
             border-radius: 0;
             padding: 0.875rem 1rem !important;
         }
         .dark #sidebar > nav > div:first-child {
-            background: #1a2230;
+            background: var(--surface-dark-4);
         }
         /* 侧边栏整体增强 */
         #sidebar {
             box-shadow: none;
-            border-right: 1px solid #e5e7eb;
+            border-right: 1px solid var(--line);
         }
         .dark #sidebar {
-            border-right-color: #374151;
+            border-right-color: var(--ink-2);
         }
         @media (max-width: 1023px) {
             #sidebar {
@@ -192,11 +256,11 @@
         .toc-item:hover span[class*="font-mono"],
         .toc-item.active span[class*="font-mono"] {
             opacity: 1;
-            color: #4f46e5;
+            color: var(--accent-book);
         }
         .dark .toc-item:hover span[class*="font-mono"],
         .dark .toc-item.active span[class*="font-mono"] {
-            color: #818cf8;
+            color: var(--accent-soft);
         }
         /* 导航目标章节高亮闪烁 */
         .scroll-target-flash {
@@ -221,10 +285,9 @@
         .toc-child.open {
             max-height: 3000px;
         }
-        .content-section {
-            content-visibility: auto;
-            contain-intrinsic-size: 0 800px;
-        }
+        /* 整章不做 content-visibility:auto：超长章节离屏按 800px 占位，
+           会让锚点跳转、scrollIntoView 与入场观察器全部失准。
+           表格/代码块的局部懒渲染见下方 P2-2 规则，不受影响。 */
         .content-section p {
             margin-bottom: 1rem;
             text-align: left;
@@ -245,7 +308,7 @@
             margin-bottom: 0.5rem;
         }
         .theme-toggle {
-            transition: all 0.3s ease;
+            transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
         }
         .theme-toggle:hover {
             transform: rotate(180deg);
@@ -258,18 +321,18 @@
             max-width: 82ch;
         }
         .info-box {
-            border-color: #4f46e5;
-            background: #eef2f5;
+            border-color: var(--accent-book);
+            background: var(--surface-3);
         }
         .dark .info-box {
-            background: #1e2a36;
+            background: var(--surface-dark-3);
         }
         .warning-box {
-            border-color: #d4a017;
-            background: #fdf8ef;
+            border-color: var(--gold);
+            background: var(--wash-warm);
         }
         .dark .warning-box {
-            background: #3d2e0f;
+            background: var(--wash-dark);
         }
         .danger-box {
             border-color: #c0392b;
@@ -279,7 +342,7 @@
             background: #3d1a1a;
         }
         .success-box {
-            border-color: #27ae60;
+            border-color: var(--ok);
             background: #eef9f2;
         }
         .dark .success-box {
@@ -293,54 +356,54 @@
         th, td {
             padding: 0.75rem 1rem;
             text-align: left;
-            border: 1px solid #e5e7eb;
+            border: 1px solid var(--line);
         }
         .dark th, .dark td {
-            border-color: #374151;
+            border-color: var(--ink-2);
         }
         th {
-            background-color: #f3f4f6;
+            background-color: var(--surface-2);
             font-weight: 600;
         }
         .dark th {
-            background-color: #1f2937;
+            background-color: var(--surface-dark);
         }
         .practice-box {
-            background: #f0f4f8;
+            background: var(--surface-5);
             border: 1px solid #d0d8e0;
         }
         .dark .practice-box {
-            background: #1e2a36;
-            border-color: #354152;
+            background: var(--surface-dark-3);
+            border-color: var(--surface-dark-5);
         }
         .chapter-intro {
             font-size: 1.05em;
-            color: #4b5563;
+            color: var(--muted-3);
             padding: 1rem 1.25rem;
             border-radius: 0.25rem;
-            background: #f5f6f8;
-            border-left: 3px solid #4f46e5;
+            background: var(--surface-4);
+            border-left: 3px solid var(--accent-book);
         }
         .dark .chapter-intro {
-            color: #9ca3af;
-            background: #1a2230;
+            color: var(--muted);
+            background: var(--surface-dark-4);
         }
         .key-point {
-            background: #eef2f5;
+            background: var(--surface-3);
             padding: 0.5rem 0;
             font-weight: 500;
         }
         .dark .key-point {
-            background: #1e2a36;
+            background: var(--surface-dark-3);
         }
         #reading-progress {
             position: fixed;
             top: 64px;
             left: 0;
             height: 3px;
-            background: #4f46e5;
+            background: var(--accent-book);
             z-index: 51;
-            transition: width 0.1s linear;
+            transition: transform 0.1s linear;
         }
         .search-overlay {
             position: fixed;
@@ -369,17 +432,17 @@
             box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
         }
         .dark .search-panel {
-            background: #1f2937;
+            background: var(--surface-dark);
         }
         .search-input-wrapper {
             display: flex;
             align-items: center;
             padding: 1rem 1.25rem;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid var(--line);
             gap: 0.75rem;
         }
         .dark .search-input-wrapper {
-            border-color: #374151;
+            border-color: var(--ink-2);
         }
         .search-input-wrapper input {
             flex: 1;
@@ -401,10 +464,10 @@
             transition: background 0.15s;
         }
         .search-result-item:hover {
-            background: #f3f4f6;
+            background: var(--surface-2);
         }
         .dark .search-result-item:hover {
-            background: #374151;
+            background: var(--ink-2);
         }
         .search-result-item .result-title {
             font-weight: 600;
@@ -412,7 +475,7 @@
         }
         .search-result-item .result-excerpt {
             font-size: 0.85rem;
-            color: #6b7280;
+            color: var(--muted-2);
             margin-top: 0.25rem;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -420,7 +483,7 @@
             overflow: hidden;
         }
         .dark .search-result-item .result-excerpt {
-            color: #9ca3af;
+            color: var(--muted);
         }
         .search-result-item mark {
             background: #fef08a;
@@ -444,10 +507,10 @@
             user-select: none;
         }
         .font-size-btn:hover {
-            background: #f3f4f6;
+            background: var(--surface-2);
         }
         .dark .font-size-btn:hover {
-            background: #374151;
+            background: var(--ink-2);
         }
         .chapter-nav {
             display: flex;
@@ -455,10 +518,10 @@
             align-items: center;
             padding: 1.5rem 0;
             margin-top: 2rem;
-            border-top: 1px solid #e5e7eb;
+            border-top: 1px solid var(--line);
         }
         .dark .chapter-nav {
-            border-color: #374151;
+            border-color: var(--ink-2);
         }
         .chapter-nav a {
             display: flex;
@@ -467,16 +530,16 @@
             padding: 0.5rem 1rem;
             border-radius: 0.25rem;
             font-size: 0.9rem;
-            color: #4f46e5;
+            color: var(--accent-book);
             transition: background 0.15s;
             text-decoration: none;
             max-width: 45%;
         }
         .chapter-nav a:hover {
-            background: #eef2f5;
+            background: var(--surface-3);
         }
         .dark .chapter-nav a:hover {
-            background: #1e2a36;
+            background: var(--surface-dark-3);
         }
         .chapter-nav a.next {
             margin-left: auto;
@@ -508,31 +571,31 @@
             }
             body {
                 font-size: 12pt !important;
-                color: #000 !important;
-                background: #fff !important;
+                color: var(--ink) !important;
+                background: var(--ink-inverse) !important;
             }
             a {
-                color: #000 !important;
+                color: var(--ink) !important;
                 text-decoration: underline;
             }
         }
 
         /* ===== 增强样式：导读卡片、章节摘要、学习路径 ===== */
         .reading-guide-card {
-            background: #fafafa;
-            border: 1px solid #e0e0e0;
+            background: var(--surface-6);
+            border: 1px solid var(--line-3);
             border-radius: 0.25rem;
             padding: 1.25rem 1.5rem;
             margin-bottom: 1.5rem;
         }
         .dark .reading-guide-card {
-            background: #1a2230;
-            border-color: #354152;
+            background: var(--surface-dark-4);
+            border-color: var(--surface-dark-5);
         }
         .hero-banner {
-            background: #4f46e5;
+            background: var(--accent-book);
             border-radius: 0.25rem;
-            color: #fff;
+            color: var(--ink-inverse);
             padding: 2rem 1.5rem;
         }
         .stat-pill {
@@ -551,25 +614,25 @@
             margin: 1.5rem 0;
         }
         .path-step {
-            background: #fafafa;
-            border: 1px solid #e0e0e0;
+            background: var(--surface-6);
+            border: 1px solid var(--line-3);
             border-radius: 0.25rem;
             padding: 1rem;
             position: relative;
         }
         .path-step:hover {
-            border-color: #4f46e5;
+            border-color: var(--accent-book);
         }
         .dark .path-step {
-            background: #1a2230;
-            border-color: #354152;
+            background: var(--surface-dark-4);
+            border-color: var(--surface-dark-5);
         }
         .path-step .step-num {
             position: absolute;
             top: -0.7rem;
             left: 1rem;
-            background: #4f46e5;
-            color: #fff;
+            background: var(--accent-book);
+            color: var(--ink-inverse);
             width: 1.6rem;
             height: 1.6rem;
             border-radius: 50%;
@@ -580,14 +643,14 @@
             font-weight: 700;
         }
         .chapter-summary {
-            background: #fdf8ef;
-            border-left: 4px solid #d4a017;
+            background: var(--wash-warm);
+            border-left: 4px solid var(--gold);
             border-radius: 0.25rem;
             padding: 1rem 1.25rem;
             margin-top: 1.5rem;
         }
         .dark .chapter-summary {
-            background: #3d2e0f;
+            background: var(--wash-dark);
         }
         .breadcrumb {
             display: flex;
@@ -595,11 +658,11 @@
             align-items: center;
             gap: 0.4rem;
             font-size: 0.85rem;
-            color: #6b7280;
+            color: var(--muted-2);
             padding: 0.6rem 0;
         }
-        .dark .breadcrumb { color: #9ca3af; }
-        .breadcrumb a:hover { color: #4f46e5; text-decoration: underline; }
+        .dark .breadcrumb { color: var(--muted); }
+        .breadcrumb a:hover { color: var(--accent-book); text-decoration: underline; }
         .breadcrumb .sep { color: #cbd5e1; }
         .quick-tools {
             position: fixed;
@@ -613,32 +676,32 @@
         .quick-tool-btn {
             width: 2.6rem;
             height: 2.6rem;
-            background: #fff;
-            color: #374151;
+            background: var(--ink-inverse);
+            color: var(--ink-2);
             border-radius: 999px;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-            transition: all 0.2s;
+            transition: color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s, opacity 0.2s;
             cursor: pointer;
         }
         .dark .quick-tool-btn {
-            background: #1f2937;
-            color: #e5e7eb;
+            background: var(--surface-dark);
+            color: var(--line);
         }
         .quick-tool-btn:hover {
             transform: translateY(-1px);
-            color: #4f46e5;
+            color: var(--accent-book);
         }
         .reading-time {
             display: inline-flex;
             align-items: center;
             gap: 0.3rem;
             font-size: 0.8rem;
-            color: #6b7280;
+            color: var(--muted-2);
         }
-        .dark .reading-time { color: #9ca3af; }
+        .dark .reading-time { color: var(--muted); }
         .difficulty-tag {
             display: inline-flex;
             align-items: center;
@@ -658,15 +721,15 @@
         .toc-section-label {
             font-size: 0.7rem;
             font-weight: 700;
-            color: #9ca3af;
-            letter-spacing: 0.08em;
+            color: var(--muted);
+            
             text-transform: uppercase;
             padding: 0.5rem 0.75rem 0.25rem;
         }
-        .dark .toc-section-label { color: #6b7280; }
+        .dark .toc-section-label { color: var(--muted-2); }
         .toc-progress-bar {
             height: 2px;
-            background: #4f46e5;
+            background: var(--accent-book);
             margin: 0.3rem 0;
             transform-origin: left;
             transition: transform 0.3s;
@@ -675,8 +738,8 @@
             position: absolute;
             left: -9999px;
             top: 0;
-            background: #4f46e5;
-            color: #fff;
+            background: var(--accent-book);
+            color: var(--ink-inverse);
             padding: 0.5rem 1rem;
             z-index: 100;
         }
@@ -685,45 +748,45 @@
             display: flex;
             gap: 1rem;
             padding: 0.6rem 0;
-            border-bottom: 1px dashed #e5e7eb;
+            border-bottom: 1px dashed var(--line);
         }
-        .dark .glossary-item { border-color: #374151; }
+        .dark .glossary-item { border-color: var(--ink-2); }
         .glossary-item:last-child { border-bottom: 0; }
         .glossary-term {
             flex-shrink: 0;
             font-weight: 700;
-            color: #4f46e5;
+            color: var(--accent-book);
             min-width: 90px;
         }
         .comparison-table th { font-weight: 700; }
-        .comparison-table tr:nth-child(even) td { background: #f9fafb; }
-        .dark .comparison-table tr:nth-child(even) td { background: #111827; }
+        .comparison-table tr:nth-child(even) td { background: var(--surface-7); }
+        .dark .comparison-table tr:nth-child(even) td { background: var(--surface-dark-2); }
         .highlight-quote {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border-left: 4px solid #0ea5e9;
+            background: linear-gradient(135deg, #f0f9ff 0%, var(--sky-wash) 100%);
+            border-left: 4px solid var(--sky);
             padding: 1rem 1.25rem;
             border-radius: 0 0.5rem 0.5rem 0;
             margin: 1rem 0;
             font-style: italic;
-            color: #075985;
+            color: var(--sky-deep);
         }
         .dark .highlight-quote {
-            background: linear-gradient(135deg, #0c4a6e 0%, #075985 100%);
+            background: linear-gradient(135deg, #0c4a6e 0%, var(--sky-deep) 100%);
             color: #bae6fd;
         }
         .kbd {
             display: inline-block;
             padding: 0.1rem 0.45rem;
-            background: #f3f4f6;
-            color: #374151;
-            border: 1px solid #d1d5db;
+            background: var(--surface-2);
+            color: var(--ink-2);
+            border: 1px solid var(--line-2);
             border-bottom-width: 2px;
             border-radius: 0.3rem;
             font-family: ui-monospace, monospace;
             font-size: 0.78rem;
             font-weight: 600;
         }
-        .dark .kbd { background: #374151; color: #e5e7eb; border-color: #4b5563; }
+        .dark .kbd { background: var(--ink-2); color: var(--line); border-color: var(--muted-3); }
         @media (max-width: 768px) {
             body {
                 font-size: 15px;
@@ -733,7 +796,7 @@
                 max-height: 75vh;
             }
             .hero-banner { padding: 1.5rem 1rem; }
-            .hero-banner h1 { font-size: 1.5rem !important; }
+            .hero-banner h1 { text-wrap: balance; font-size: 1.5rem !important; }
             .learning-path { grid-template-columns: 1fr; }
             .quick-tools { right: 0.5rem; bottom: 4.5rem; }
             .quick-tool-btn { width: 2.3rem; height: 2.3rem; }
@@ -749,14 +812,14 @@
 
         /* 渐变阅读进度条 */
         #reading-progress {
-            background: linear-gradient(90deg, #4f46e5, #7c3aed, #4f46e5) !important;
+            background: linear-gradient(90deg, var(--accent-book), #7c3aed, var(--accent-book)) !important;
             background-size: 200% 100% !important;
             animation: progressShimmer 3s ease infinite;
             height: 3px;
             box-shadow: 0 0 8px rgba(79,70,229,0.3);
         }
         .dark #reading-progress {
-            background: linear-gradient(90deg, #818cf8, #a78bfa, #818cf8) !important;
+            background: linear-gradient(90deg, var(--accent-soft), #a78bfa, var(--accent-soft)) !important;
             background-size: 200% 100% !important;
         }
         @keyframes progressShimmer {
@@ -765,7 +828,13 @@
         }
 
         /* 滚动入场动画 */
+        /* 默认可见：观察器失效、脚本未运行、打印时都不会白屏 */
         .content-section {
+            opacity: 1;
+            transform: none;
+        }
+        /* 只有脚本确认可用后，才对尚未进入视口的区块启用入场动画 */
+        html.anim-ready.js .content-section:not(.visible):not(.immediately-visible) {
             opacity: 0;
             transform: translateY(24px);
             transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
@@ -785,7 +854,7 @@
 
         /* Hero横幅增强 */
         .hero-banner {
-            background: linear-gradient(135deg, #4f46e5 0%, #6d28d9 40%, #4f46e5 100%);
+            background: linear-gradient(135deg, var(--accent-book) 0%, #6d28d9 40%, var(--accent-book) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -842,20 +911,20 @@
             width: 3rem;
             height: 3rem;
             border-radius: 50%;
-            background: #4f46e5;
-            color: #fff;
+            background: var(--accent-book);
+            color: var(--ink-inverse);
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 14px rgba(79,70,229,0.3);
             cursor: pointer;
             z-index: 40;
-            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+            transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1), transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1);
             border: none;
             font-size: 1rem;
         }
         .dark #back-to-top {
-            background: #374151;
+            background: var(--ink-2);
             box-shadow: 0 4px 14px rgba(0,0,0,0.4);
         }
         #back-to-top:hover {
@@ -892,31 +961,31 @@
             border-radius: 0.25rem;
             font-size: 0.75rem;
             cursor: pointer;
-            transition: all 0.2s;
-            border: 1px solid #e5e7eb;
+            transition: color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s, opacity 0.2s;
+            border: 1px solid var(--line);
             background: transparent;
-            color: #6b7280;
+            color: var(--muted-2);
         }
         .dark .bookmark-btn {
-            border-color: #374151;
-            color: #9ca3af;
+            border-color: var(--ink-2);
+            color: var(--muted);
         }
         .bookmark-btn:hover {
-            border-color: #4f46e5;
-            color: #4f46e5;
+            border-color: var(--accent-book);
+            color: var(--accent-book);
         }
         .dark .bookmark-btn:hover {
-            border-color: #818cf8;
-            color: #818cf8;
+            border-color: var(--accent-soft);
+            color: var(--accent-soft);
         }
         .bookmark-btn.active {
-            background: #4f46e5;
-            color: #fff;
-            border-color: #4f46e5;
+            background: var(--accent-book);
+            color: var(--ink-inverse);
+            border-color: var(--accent-book);
         }
         .dark .bookmark-btn.active {
-            background: #818cf8;
-            border-color: #818cf8;
+            background: var(--accent-soft);
+            border-color: var(--accent-soft);
         }
 
         /* 章节完成勾选 */
@@ -928,24 +997,24 @@
             border-radius: 0.25rem;
             font-size: 0.75rem;
             cursor: pointer;
-            transition: all 0.2s;
-            border: 1px solid #e5e7eb;
+            transition: color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s, opacity 0.2s;
+            border: 1px solid var(--line);
             background: transparent;
-            color: #6b7280;
+            color: var(--muted-2);
             user-select: none;
         }
         .dark .chapter-check {
-            border-color: #374151;
-            color: #9ca3af;
+            border-color: var(--ink-2);
+            color: var(--muted);
         }
         .chapter-check:hover {
-            border-color: #27ae60;
-            color: #27ae60;
+            border-color: var(--ok);
+            color: var(--ok);
         }
         .chapter-check.checked {
-            background: #27ae60;
-            color: #fff;
-            border-color: #27ae60;
+            background: var(--ok);
+            color: var(--ink-inverse);
+            border-color: var(--ok);
         }
         .chapter-check .check-icon {
             width: 14px;
@@ -955,15 +1024,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.2s;
+            transition: color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s, opacity 0.2s;
         }
         .chapter-check.checked .check-icon {
-            border-color: #fff;
-            background: #fff;
+            border-color: var(--ink-inverse);
+            background: var(--ink-inverse);
         }
         .chapter-check.checked .check-icon::after {
             content: '✓';
-            color: #27ae60;
+            color: var(--ok);
             font-size: 10px;
             font-weight: 700;
             line-height: 1;
@@ -971,10 +1040,10 @@
 
         /* 搜索结果键盘选中 */
         .search-result-item.selected {
-            background: #eef2f5;
+            background: var(--surface-3);
         }
         .dark .search-result-item.selected {
-            background: #374151;
+            background: var(--ink-2);
         }
 
         /* 仪表盘卡片 */
@@ -1002,15 +1071,15 @@
         }
         .chapter-rating .star {
             font-size: 0.85rem;
-            color: #d1d5db;
+            color: var(--line-2);
             cursor: pointer;
             transition: color 0.15s, transform 0.15s;
             user-select: none;
         }
         .chapter-rating .star:hover { transform: scale(1.2); }
-        .chapter-rating .star.active { color: #fbbf24; }
-        .dark .chapter-rating .star { color: #4b5563; }
-        .dark .chapter-rating .star.active { color: #fbbf24; }
+        .chapter-rating .star.active { color: var(--gold-2); }
+        .dark .chapter-rating .star { color: var(--muted-3); }
+        .dark .chapter-rating .star.active { color: var(--gold-2); }
 
         .dashboard-card:hover {
             transform: translateY(-3px);
@@ -1019,8 +1088,8 @@
         .dark .dashboard-card:hover {
             box-shadow: 0 12px 28px rgba(0,0,0,0.3);
         }
-        .check-item:hover span { color: #4f46e5; }
-        .dark .check-item:hover span { color: #818cf8; }
+        .check-item:hover span { color: var(--accent-book); }
+        .dark .check-item:hover span { color: var(--accent-soft); }
         .check-item input:checked + span {
             text-decoration: line-through;
             opacity: 0.5;
@@ -1033,14 +1102,14 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 50;
-            background: #fff;
+            background: var(--ink-inverse);
             box-shadow: 0 4px 24px rgba(79,70,229,0.18);
             border-radius: 2rem;
             padding: 0.5rem 1rem;
             display: flex;
             align-items: center;
             gap: 0.6rem;
-            transition: all 0.35s cubic-bezier(0.22,1,0.36,1);
+            transition: color 0.35s cubic-bezier(0.22,1,0.36,1), background-color 0.35s cubic-bezier(0.22,1,0.36,1), border-color 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s cubic-bezier(0.22,1,0.36,1), transform 0.35s cubic-bezier(0.22,1,0.36,1), opacity 0.35s cubic-bezier(0.22,1,0.36,1);
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
@@ -1051,7 +1120,7 @@
             pointer-events: auto;
         }
         .dark .tts-controls {
-            background: #1f2937;
+            background: var(--surface-dark);
             box-shadow: 0 4px 24px rgba(0,0,0,0.4);
         }
         .tts-btn {
@@ -1063,22 +1132,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.2s;
+            transition: color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s, opacity 0.2s;
             font-size: 1rem;
-            background: #f3f4f6;
-            color: #374151;
+            background: var(--surface-2);
+            color: var(--ink-2);
         }
-        .dark .tts-btn { background: #374151; color: #e5e7eb; }
-        .tts-btn:hover { background: #4f46e5; color: #fff; }
-        .dark .tts-btn:hover { background: #818cf8; }
+        .dark .tts-btn { background: var(--ink-2); color: var(--line); }
+        .tts-btn:hover { background: var(--accent-book); color: var(--ink-inverse); }
+        .dark .tts-btn:hover { background: var(--accent-soft); }
         .tts-btn.play-btn {
-            background: #4f46e5;
-            color: #fff;
+            background: var(--accent-book);
+            color: var(--ink-inverse);
             width: 3rem;
             height: 3rem;
             font-size: 1.2rem;
         }
-        .dark .tts-btn.play-btn { background: #818cf8; }
+        .dark .tts-btn.play-btn { background: var(--accent-soft); }
         .tts-btn.play-btn:hover { background: #1a252f; }
         .tts-btn.play-btn.playing { background: #e74c3c; animation: ttsPulse 1.5s ease-in-out infinite; }
         @keyframes ttsPulse {
@@ -1088,25 +1157,25 @@
         .tts-speed-badge {
             font-size: 0.7rem;
             font-weight: 700;
-            color: #6b7280;
+            color: var(--muted-2);
             min-width: 2rem;
             text-align: center;
         }
-        .dark .tts-speed-badge { color: #9ca3af; }
+        .dark .tts-speed-badge { color: var(--muted); }
         .tts-controls .tts-chapter-label {
             font-size: 0.75rem;
-            color: #6b7280;
+            color: var(--muted-2);
             max-width: 12rem;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-        .dark .tts-controls .tts-chapter-label { color: #9ca3af; }
+        .dark .tts-controls .tts-chapter-label { color: var(--muted); }
         .quick-tool-btn.tts-active {
-            color: #4f46e5;
-            box-shadow: 0 0 0 2px #4f46e5;
+            color: var(--accent-book);
+            box-shadow: 0 0 0 2px var(--accent-book);
         }
-        .dark .quick-tool-btn.tts-active { color: #818cf8; box-shadow: 0 0 0 2px #818cf8; }
+        .dark .quick-tool-btn.tts-active { color: var(--accent-soft); box-shadow: 0 0 0 2px var(--accent-soft); }
         @media (max-width: 768px) {
             .tts-controls {
                 bottom: 5rem;
@@ -1127,26 +1196,26 @@
             border-radius: 0.25rem;
             font-size: 0.7rem;
             cursor: pointer;
-            transition: all 0.2s;
-            border: 1px solid #e5e7eb;
-            background: #f9fafb;
-            color: #6b7280;
+            transition: color 0.2s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s, opacity 0.2s;
+            border: 1px solid var(--line);
+            background: var(--surface-7);
+            color: var(--muted-2);
             vertical-align: middle;
         }
         .dark .copy-btn {
-            border-color: #374151;
-            background: #1f2937;
-            color: #9ca3af;
+            border-color: var(--ink-2);
+            background: var(--surface-dark);
+            color: var(--muted);
         }
         .copy-btn:hover {
-            background: #4f46e5;
-            color: #fff;
-            border-color: #4f46e5;
+            background: var(--accent-book);
+            color: var(--ink-inverse);
+            border-color: var(--accent-book);
         }
         .copy-btn.copied {
-            background: #27ae60;
-            color: #fff;
-            border-color: #27ae60;
+            background: var(--ok);
+            color: var(--ink-inverse);
+            border-color: var(--ok);
         }
 
         /* 可折叠内容块 */
@@ -1160,27 +1229,28 @@
             transition: color 0.2s;
         }
         .collapsible-header:hover {
-            color: #4f46e5;
+            color: var(--accent-book);
         }
         .dark .collapsible-header:hover {
-            color: #818cf8;
+            color: var(--accent-soft);
         }
         .collapsible-header .collapse-icon {
             transition: transform 0.3s ease;
             font-size: 0.75rem;
-            color: #9ca3af;
+            color: var(--muted);
         }
         .collapsible-header.collapsed .collapse-icon {
             transform: rotate(-90deg);
         }
         .collapsible-body {
-            max-height: 5000px;
-            overflow: hidden;
-            transition: max-height 0.4s ease, opacity 0.3s ease;
+            max-height: none;
+            overflow: visible;
+            transition: opacity 0.3s ease;
             opacity: 1;
         }
         .collapsible-body.collapsed {
             max-height: 0;
+            overflow: hidden;
             opacity: 0;
         }
 
@@ -1190,8 +1260,8 @@
             bottom: 2rem;
             left: 50%;
             transform: translateX(-50%) translateY(100px);
-            background: #4f46e5;
-            color: #fff;
+            background: var(--accent-book);
+            color: var(--ink-inverse);
             padding: 0.75rem 1.5rem;
             border-radius: 999px;
             font-size: 0.875rem;
@@ -1204,7 +1274,7 @@
             white-space: nowrap;
         }
         .dark .restore-position-toast {
-            background: #374151;
+            background: var(--ink-2);
         }
         .restore-position-toast.show {
             transform: translateX(-50%) translateY(0);
@@ -1218,13 +1288,13 @@
             transition: background 0.2s;
         }
         .restore-position-toast .btn-restore {
-            background: #fff;
-            color: #4f46e5;
+            background: var(--ink-inverse);
+            color: var(--accent-book);
             font-weight: 600;
         }
         .restore-position-toast .btn-dismiss {
             background: rgba(255,255,255,0.15);
-            color: #fff;
+            color: var(--ink-inverse);
         }
 
         /* 章节分隔线增强 */
@@ -1239,10 +1309,10 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, #d1d5db 20%, #d1d5db 80%, transparent);
+            background: linear-gradient(90deg, transparent, var(--line-2) 20%, var(--line-2) 80%, transparent);
         }
         .dark .content-section::before {
-            background: linear-gradient(90deg, transparent, #374151 20%, #374151 80%, transparent);
+            background: linear-gradient(90deg, transparent, var(--ink-2) 20%, var(--ink-2) 80%, transparent);
         }
         .content-section:first-of-type::before {
             display: none;
@@ -1262,7 +1332,7 @@
             transition: background-color 0.15s ease;
         }
         table tbody tr:hover {
-            background-color: #f0f4f8;
+            background-color: var(--surface-5);
         }
         .dark table tbody tr:hover {
             background-color: rgba(255,255,255,0.04);
@@ -1270,33 +1340,33 @@
 
         /* 章节导航按钮增强 */
         .chapter-nav a {
-            transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+            transition: color 0.25s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .chapter-nav a:hover {
             transform: translateX(4px);
-            background: #eef2f5;
+            background: var(--surface-3);
         }
         .chapter-nav a.next:hover {
             transform: translateX(-4px);
         }
         .dark .chapter-nav a:hover {
-            background: #1e2a36;
+            background: var(--surface-dark-3);
         }
 
         /* 侧边栏书签标记 */
         .toc-item.bookmarked::after {
             content: '★';
-            color: #d4a017;
+            color: var(--gold);
             font-size: 0.65rem;
             margin-left: 0.3rem;
         }
         .toc-item.completed-toc {
-            color: #27ae60 !important;
+            color: var(--ok) !important;
         }
 
         /* 快捷工具增强 */
         .quick-tool-btn {
-            transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+            transition: color 0.25s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .quick-tool-btn:hover {
             transform: translateY(-2px) scale(1.08);
@@ -1344,15 +1414,15 @@
     </style>
 <style>
         /* ===== v1.8 新增：AI编程实战篇 配套样式 ===== */
-        .code-block { margin: 1rem 0; border-radius: 0.5rem; overflow: hidden; border: 1px solid #374151; }
-        .code-head { background: #374151; color: #e5e7eb; font-size: 0.75rem; padding: 0.4rem 0.9rem; display: flex; justify-content: space-between; align-items: center; font-family: ui-monospace, SFMono-Regular, Consolas, 'Courier New', monospace; }
-        .code-head .dots { letter-spacing: 3px; color: #9ca3af; }
-        .code-block pre { background: #1f2937; color: #e5e7eb; padding: 0.8rem 1rem; margin: 0; font-family: ui-monospace, SFMono-Regular, Consolas, 'Courier New', monospace; font-size: 0.8rem; line-height: 1.6; white-space: pre-wrap; word-break: break-all; overflow-x: auto; }
-        .dark .code-block { border-color: #4b5563; }
-        code.inline { background: #eef2f5; color: #4f46e5; padding: 0.1rem 0.4rem; border-radius: 0.3rem; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.9em; }
-        .dark code.inline { background: #1e2a36; color: #818cf8; }
-        .quote-line { border-left: 4px solid #4f46e5; background: #eef2ff; color: #1e1b4b; padding: 0.7rem 1rem; border-radius: 0 0.375rem 0.375rem 0; margin: 0.9rem 0; }
-        .dark .quote-line { background: #1e1b4b; color: #c7d2fe; }
+        .code-block { margin: 1rem 0; border-radius: 0.5rem; overflow: hidden; border: 1px solid var(--ink-2); }
+        .code-head { background: var(--ink-2); color: var(--line); font-size: 0.75rem; padding: 0.4rem 0.9rem; display: flex; justify-content: space-between; align-items: center; font-family: ui-monospace, SFMono-Regular, Consolas, 'Courier New', monospace; }
+        .code-head .dots { letter-spacing: 3px; color: var(--muted); }
+        .code-block pre { background: var(--surface-dark); color: var(--line); padding: 0.8rem 1rem; margin: 0; font-family: ui-monospace, SFMono-Regular, Consolas, 'Courier New', monospace; font-size: 0.8rem; line-height: 1.6; white-space: pre-wrap; word-break: break-all; overflow-x: auto; }
+        .dark .code-block { border-color: var(--muted-3); }
+        code.inline { background: var(--surface-3); color: var(--accent-book); padding: 0.1rem 0.4rem; border-radius: 0.3rem; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.9em; }
+        .dark code.inline { background: var(--surface-dark-3); color: var(--accent-soft); }
+        .quote-line { border-left: 4px solid var(--accent-book); background: var(--accent-wash); color: var(--accent-deep); padding: 0.7rem 1rem; border-radius: 0 0.375rem 0.375rem 0; margin: 0.9rem 0; }
+        .dark .quote-line { background: var(--accent-deep); color: #c7d2fe; }
         @media print { .code-block, .quote-line, .figure { break-inside: avoid; page-break-inside: avoid; } }
     </style>
 <style id="reader-bundle-style">
@@ -1365,7 +1435,7 @@ html:not(.safe) .content-section pre { content-visibility: auto; contain-intrins
 /* P2-1 公告横幅 */
 #announce-bar { display:none; position:sticky; top:0; z-index:80; padding:8px 16px;
   font-size:14px; text-align:center; }
-#announce-bar[data-level="info"] { background:#e0f2fe; color:#075985; }
+#announce-bar[data-level="info"] { background:var(--sky-wash); color:var(--sky-deep); }
 #announce-bar[data-level="warn"] { background:#fef3c7; color:#92400e; }
 #announce-bar[data-level="crit"] { background:#fee2e2; color:#991b1b; }
 #announce-bar button { position:absolute; right:10px; top:6px; border:0; background:none;
@@ -1408,7 +1478,7 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
 @media print {
   html.lg-ready #navbar, html.lg-ready #sidebar, html.lg-ready .quick-tool-btn,
   html.lg-ready .search-panel {
-    background: #fff !important; backdrop-filter: none !important;
+    background: var(--ink-inverse) !important; backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important; box-shadow: none !important;
   }
 }
@@ -1553,11 +1623,12 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
     </script>
     
 
+<!-- v19-first-chapter-visibility-fix -->
 </head>
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200">
     <a class="skip-link focus-ring" href="#content">跳到主要内容</a>
     <div id="reading-progress" style="width:0%" aria-hidden="true"></div>
-    <header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-all duration-300" role="banner">
+    <header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner">
         <div class="container mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3 min-w-0">
                 <button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="打开目录菜单" aria-expanded="false" aria-controls="sidebar">
@@ -1601,7 +1672,7 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
             <nav class="p-4">
                 <div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700">
                     <h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">
-                        <i class="fas fa-list-ul text-primary" aria-hidden="true"></i>学习目录
+                        <span aria-hidden="true" class="fas fa-list-ul text-primary" aria-hidden="true"></span>学习目录
                     </h2>
                     <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
                         <span id="reading-progress-text">0 / 38 章</span>
@@ -1971,7 +2042,7 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
             <!-- 怎么用这本书 -->
             <section class="reading-guide-card" aria-labelledby="how-to-use-title">
                 <h2 id="how-to-use-title" class="text-lg font-bold text-dark dark:text-gray-200 mb-3 flex items-center gap-2">
-                    <i class="fas fa-compass text-primary" aria-hidden="true"></i>怎么用这本书？
+                    <span aria-hidden="true" class="fas fa-compass text-primary" aria-hidden="true"></span>怎么用这本书？
                 </h2>
                 <div class="grid md:grid-cols-2 gap-3 text-sm">
                     <div>
@@ -2061,7 +2132,7 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
             <!-- 章节地图速查表 -->
             <section class="reading-guide-card" aria-labelledby="chapter-map-title">
                 <h2 id="chapter-map-title" class="text-lg font-bold text-dark dark:text-gray-200 mb-3 flex items-center gap-2">
-                    <i class="fas fa-map text-primary" aria-hidden="true"></i>章节地图速查
+                    <span aria-hidden="true" class="fas fa-map text-primary" aria-hidden="true"></span>章节地图速查
                 </h2>
                 <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">按学习目标快速定位章节。</p>
                 <div class="grid md:grid-cols-2 gap-2 text-sm">
@@ -2095,19 +2166,19 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
             <!-- 交互式自检清单 + 阅读仪表盘 -->
             <section class="mb-8" aria-labelledby="dashboard-title">
                 <h2 id="dashboard-title" class="text-xl font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">
-                    <i class="fas fa-gauge-high text-primary" aria-hidden="true"></i>学习仪表盘
+                    <span aria-hidden="true" class="fas fa-gauge-high text-primary" aria-hidden="true"></span>学习仪表盘
                 </h2>
                 <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">追踪你的阅读进度，检查手机健康状态。</p>
                 <div class="grid md:grid-cols-2 gap-4">
 
                     <!-- 阅读进度卡片 -->
-                    <div class="dashboard-card rounded-xl p-5 border border-gray-200 dark:border-gray-700 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-900">
-                        <h3 class="font-bold text-base mb-3 flex items-center gap-2"><i class="fas fa-chart-pie text-primary" aria-hidden="true"></i>阅读进度</h3>
+                    <div class="dashboard-card rounded-xl p-5 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 border border-indigo-100 dark:border-gray-700">
+                        <h3 class="font-bold text-base mb-3 flex items-center gap-2"><span aria-hidden="true" class="fas fa-chart-pie text-primary" aria-hidden="true"></span>阅读进度</h3>
                         <div class="flex items-center gap-4">
                             <div class="relative w-20 h-20 flex-shrink-0">
-                                <svg viewBox="0 0 80 80" class="w-full h-full -rotate-90">
-                                    <circle cx="40" cy="40" r="34" fill="none" stroke="#e5e7eb" stroke-width="8" class="dark:stroke-gray-700"/>
-                                    <circle id="progress-ring-fg" cx="40" cy="40" r="34" fill="none" stroke="#4f46e5" stroke-width="8" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="213.6" style="transition: stroke-dashoffset 0.5s ease;"/>
+                                <svg viewBox="0 0 80 80" class="w-full h-full -rotate-90" aria-hidden="true">
+                                    <circle cx="40" cy="40" r="34" fill="none" stroke="var(--line)" stroke-width="8" class="dark:stroke-gray-700"/>
+                                    <circle id="progress-ring-fg" cx="40" cy="40" r="34" fill="none" stroke="var(--accent-book)" stroke-width="8" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="213.6" style="transition: stroke-dashoffset 0.5s ease;"/>
                                 </svg>
                                 <span id="progress-percent" class="absolute inset-0 flex items-center justify-center text-sm font-bold text-primary">0%</span>
                             </div>
@@ -2121,7 +2192,7 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
 
                     <!-- 手机健康自检卡片 -->
                     <div class="dashboard-card rounded-xl p-5 border border-gray-200 dark:border-gray-700 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-gray-800 dark:to-gray-900">
-                        <h3 class="font-bold text-base mb-3 flex items-center gap-2"><i class="fas fa-heart-pulse text-emerald-600" aria-hidden="true"></i>手机健康自检</h3>
+                        <h3 class="font-bold text-base mb-3 flex items-center gap-2"><span aria-hidden="true" class="fas fa-heart-pulse text-emerald-600" aria-hidden="true"></span>手机健康自检</h3>
                         <p class="text-xs text-gray-500 dark:text-gray-400 mb-2">勾选你已经做到的项目，看看你的手机"健康分"：</p>
                         <div id="checklist-items" class="space-y-1.5 text-sm">
                             <label class="flex items-center gap-2 cursor-pointer check-item"><input type="checkbox" class="rounded text-emerald-600 check-input"><span>锁屏密码已设置（非1234/0000）</span></label>
@@ -2138,7 +2209,7 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
                             <span id="health-score" class="text-lg font-bold text-emerald-600">0 / 8</span>
                         </div>
                         <div class="mt-1 h-2 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
-                            <div id="health-bar" class="h-full bg-gradient-to-r from-emerald-400 to-teal-500 transition-all duration-500" style="width: 0%"></div>
+                            <div id="health-bar" class="h-full bg-gradient-to-r from-emerald-400 to-teal-500 transition-colors duration-500" style="width: 0%"></div>
                         </div>
                         <p id="health-msg" class="mt-2 text-xs text-gray-500 dark:text-gray-400">完成自检，了解你的手机安全状况</p>
                     </div>
@@ -2304,6 +2375,97 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
   <li><strong>算子扩展与开放标准（TOSA / QNN）</strong>：新模型刚发布，里面往往有 NPU 没见过的新算子——过去从模型发布到 NPU 适配要等几个月。开放标准改变了节奏：Arm 的 TOSA 统一算子描述，高通 QNN 让开发者直接把模型接到 Hexagon 上，框架更新与 NPU 驱动更新开始同频迭代。</li>
 </ul>
 <p class="mb-2">判断方法和前面一样：这些能力最终都要落到"你真的会用的那个功能"上——本地文档摘要、实时通话翻译、照片语义搜索。发布会听完，回去打开手机试试那几个功能，比记参数有用。</p>
+<!-- v19-alu-section -->
+<h5 class="font-semibold mt-3 mb-1">ALU：三类处理器里真正"算数"的那个部件</h5>
+<p class="mb-2">前面把 CPU、GPU、NPU 各自干什么讲了一遍，但有个问题一直绕着没说：它们内部真正把数字算出来的，到底是什么？答案是个听起来有点老派的名字——<strong>ALU（Arithmetic Logic Unit，算术逻辑单元）</strong>。它是所有处理器里最基础的"算数部件"，可三类处理器把它用出了三种完全不同的样子。更常见的一个误会是把 NPU 说成"有很多 ALU"——这一节主要就是把这件事掰清楚。</p>
+
+<p class="mb-2"><strong>一、ALU 管什么，不管什么</strong></p>
+<p class="mb-2">先给 ALU 划个范围。它是一块组合逻辑电路，接两个操作数，按控制信号做一次运算，吐出结果。传统意义上它管四件事：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>整数算术</strong>：加、减，以及乘法（有的设计里乘法单独做一块）；除法常要迭代多轮或交给专门电路。</li>
+  <li><strong>位逻辑</strong>：与、或、非、异或。权限位判断、开关掩码、颜色通道拆分，靠的都是它。</li>
+  <li><strong>移位</strong>：左移右移、算术移位、循环移位。乘除 2 的幂、打包解包数据都用得上。</li>
+  <li><strong>比较</strong>：判断相等或谁大谁小，结果不写回普通寄存器，而是写进<strong>标志位</strong>（是否为零、有没有进位、溢出没溢出、结果正负）。</li>
+</ul>
+<p class="mb-2">它<strong>不</strong>管三件事：不存数据、不决定做什么、不记住上一次算的结果。一条指令真正跑起来是这样一条链：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>控制单元（CU）</strong>负责取指和译码，看懂"这是一条加法"，然后发出控制信号，告诉 ALU 这次选哪一种运算。</li>
+  <li><strong>寄存器堆</strong>把两个操作数递过来（有时其中一个是指令里直接带的立即数）。寄存器是离 ALU 最近、最快的一层存储。</li>
+  <li><strong>ALU</strong>只负责算这一下，结果沿写回总线送回目的寄存器，标志位送回状态寄存器。</li>
+  <li>要不要跳转、下一步执行哪条，是控制单元看着标志位决定的，<strong>不是 ALU 决定的</strong>。</li>
+</ul>
+<p class="mb-2">打个后厨的比方：控制单元是看单子点菜的人，寄存器是备料台，ALU 是灶上那口锅——只管把递来的两份料按吩咐炒一下，炒完盛回盘子，既不存菜，也不接单。</p>
+
+<p class="mb-2"><strong>二、先把几个容易混的名字分开</strong></p>
+<p class="mb-2">现代芯片里这些单元物理上常常挨在一起、共用数据通路，所以发布会和参数表很容易把它们混着叫。但职责真的不一样：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>FPU（浮点单元）</strong>：管浮点数。它要对齐指数、规格化尾数、处理舍入和 NaN/Inf 这类异常，电路比整数 ALU 复杂得多，是一条独立的浮点流水线。严格说它不是 ALU——虽然它内部也有加法器和乘法器。</li>
+  <li><strong>向量单元 / SIMD</strong>：一条指令同时对一组数据做同样的运算（手机上最常见的是 NEON，新一代还有 SVE 一类可伸缩向量扩展）。每个 lane（通道）里才是一个小小的 ALU 或 FPU。并行来自 lane 的数量，不是来自指令变强了。</li>
+  <li><strong>矩阵单元 / 张量核</strong>：专门为矩阵乘设计的块，一次处理一小片矩阵而不是一对数字。CPU 和 GPU 里也有这类单元，但它是另一层东西。</li>
+  <li><strong>MAC 阵列</strong>：MAC 是"乘加融合"（a×b+c 一步做完，中间结果不写回）。把成千上万个 MAC 排成二维阵列、让权重和激活在里面流动，就是 NPU 的主力算力来源。<strong>它和 ALU 不是同一种东西</strong>：ALU 每做一次都要由指令告诉它"这次算什么"，MAC 阵列则是把一种固定运算铺成一张网，靠数据流喂进去。</li>
+</ul>
+<div class="tip-box rounded-lg p-4 mb-3"><p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>一句话记牢</p><p class="mt-1">ALU 是"按指令算一次"的通用部件；FPU 专管浮点，向量单元把很多个 ALU 排成一排听同一条指令，MAC 阵列则干脆把运算固定成乘加、铺成一整片。以后听到"某芯片有几千个 ALU"，先问一句：说的是真 ALU，还是把向量 lane 和 MAC 也算进去了？</p></div>
+
+<p class="mb-2"><strong>三、CPU 里的 ALU：少，但每一个都很快</strong></p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>主要运算</strong>：整数加减、位逻辑、移位、比较，外加大量地址与索引计算。浮点交给 FPU 和向量单元，分支判断交给分支单元，读写内存交给加载/存储单元——这些都不算 ALU，但和它一起挂在核心的执行端口上。</li>
+  <li><strong>数据精度</strong>：以 64 位整数为主，也有 32 位；标量运算是常态，向量指令另说。</li>
+  <li><strong>组织方式</strong>：一个核心里通常只有几个整数 ALU（常见两到四个），配乱序发射、寄存器重命名、深流水和分支预测。整条流水线的设计目标只有一个——把<strong>单条指令的延迟</strong>压到最短，让分支密集、前后依赖强的代码也能一路跑下去。</li>
+  <li><strong>并行规模</strong>：每核个位数 ALU，整芯片也就几十个。CPU 的并行靠的是指令级并行（同时发射多条指令）和多核，而不是堆 ALU 数量。</li>
+  <li><strong>典型任务</strong>：应用逻辑、系统调度、界面事件、文件与权限判断、整数循环、数据库查询条件。这些都是"步骤多、分支多、每一步都等上一步结果"的活。</li>
+</ul>
+<p class="mb-2">设计目标可以浓缩成四个字：<strong>低延迟、通用</strong>。宁愿把一个 ALU 做得很复杂、频率拉得很高，也不要几千个慢吞吞的。</p>
+
+<p class="mb-2"><strong>四、GPU 里的 ALU：复制成成千上万个 lane</strong></p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>主要运算</strong>：整数和浮点都有，主力是浮点的加、乘与乘加融合（FMA），还有插值、纹理采样和一批特殊函数；整数部分多用来算索引、地址和循环计数。</li>
+  <li><strong>数据精度</strong>：FP32 是基本盘，移动端大量用 FP16 省电省带宽，整数一般是 32 位。同一个芯片上几种精度混着跑很正常。</li>
+  <li><strong>组织方式</strong>：一堆结构相同的 lane 编成组（不同厂商叫 warp 或 wavefront），走 SIMT 路线——一条指令同时喂给组里几十个 lane，每个 lane 有自己的算术单元。遇到分支分歧时，走不同分支的 lane 暂时被屏蔽，两组先后走完，这也是为什么 GPU 怕"每个像素各走各的判断"。</li>
+  <li><strong>并行规模</strong>：成百上千个 lane，整芯片数千量级的算术单元。单 lane 慢一点根本不重要，只要同一时刻有足够多的像素或顶点在跑。</li>
+  <li><strong>典型任务</strong>：顶点变换、像素着色、光照与阴影、界面动画合成、照片滤镜，以及一部分通用计算和 AI 推理。</li>
+</ul>
+<p class="mb-2">设计目标是<strong>高吞吐</strong>：用海量并行线程把访存等待藏起来。和 CPU 放一起看特别清楚——CPU 是"少而强、求快"，GPU 是"多而简、求多"。</p>
+
+<p class="mb-2"><strong>五、NPU 里的 ALU：主力其实不是它</strong></p>
+<p class="mb-2">这一段最容易被写错，咱们说细一点。NPU 里<strong>确实有 ALU</strong>，但只占很小一块面积，干的是辅助活；真正撑起算力的是 MAC 阵列。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>ALU 在 NPU 里做什么</strong>：地址和步长计算、循环计数、量化与反量化的定点换算（把 INT8 按 scale 和 zero-point 还原回浮点范围）、ReLU 之类的比较与取最大值、查表、算子调度。全是标量、控制面的杂活。</li>
+  <li><strong>主力运算</strong>：卷积、全连接、注意力里那些矩阵乘，落到硬件上就是成千上万次乘加（MAC）。这不是"把 ALU 造大一点"，而是把一种运算铺成阵列，让数据在阵列里流动、权重尽量留在片上 SRAM 不来回搬——省下的搬运动量，正是 NPU 能效比高的关键。</li>
+  <li><strong>数据精度</strong>：低精度、量化是常态，INT8 在端侧推理里是主力，更激进的场景会用 INT4 或 FP8，部分层用 FP16。用精度换能效，这和 CPU/GPU 追求 FP32 准确度的取向完全不同。</li>
+  <li><strong>组织方式</strong>：MAC 阵列 + 片上权重缓存 + DMA 数据流调度，执行过程高度确定、几乎没有分支。少量标量 ALU 在旁边负责"把数据摆好、把结果收拾好"。</li>
+  <li><strong>并行规模</strong>：MAC 单元成千上万，但要注意它们都在算<strong>同一个矩阵乘的不同输出位置</strong>，不是各自独立执行不同指令——这和 GPU 里"上千个 lane 可以各自跑不同线程"是两种并行。</li>
+  <li><strong>典型任务</strong>：端侧大模型推理、夜景降噪、人像分割、语音识别、实时翻译、相册语义检索。</li>
+</ul>
+<p class="mb-2">设计目标是<strong>每瓦吞吐</strong>（发布会上那个 TOPS/W）。它愿意牺牲通用性、牺牲精度，甚至牺牲"能跑任意程序"这件事，换来同样的电池能多跑几十倍矩阵运算。</p>
+<div class="tip-box rounded-lg p-4 mb-3"><p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>别把 NPU 说成"一堆 ALU"</p><p class="mt-1">ALU 是"一条指令来，做一次通用运算"；MAC 阵列是"一份数据流进来，整片阵列同时把乘加做完"。NPU 有 ALU，但那是配角。把两者画等号，就会误以为 NPU 只是"ALU 更多的 CPU"，也就解释不了为什么它跑矩阵快、跑个带一大堆分支的普通程序反而慢。</p></div>
+
+<p class="mb-2"><strong>六、一张表看清差别</strong></p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+<thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">对比项</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">CPU</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">GPU</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">NPU</th></tr></thead>
+<tbody>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">主力运算单元</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">整数 ALU（配 FPU / 向量单元）</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">大量 lane，每 lane 含浮点与整数算术单元</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">MAC 阵列；ALU 只做标量辅助</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ALU 主要运算</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">整数加减、位逻辑、移位、比较、地址计算</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">整数索引与循环；浮点主力是加乘与 FMA</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">地址步长、量化换算、比较取最大值、调度</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">常用精度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">64 / 32 位整数；浮点另走 FPU</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">FP32、FP16、INT32</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">INT8 为主，INT4 / FP8 / FP16 视层而定</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">组织方式</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">每核几个 ALU，乱序发射、深流水、分支预测</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">lane 编组，一条指令带一组（SIMT）</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">二维 MAC 阵列 + 片上权重驻留 + 数据流</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">并行规模</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">每核个位数，整芯片几十个</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">成百上千 lane，整芯片数千量级</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">成千上万 MAC，但同算一个矩阵乘</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">设计目标</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">低延迟、什么都能干</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">高吞吐、同构数据并行</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">每瓦吞吐、专用高效</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">典型任务</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">应用逻辑、权限判断、调度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">像素着色、光照、滤镜</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">卷积、矩阵乘、端侧推理</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="mb-2"><strong>七、把几个场景连起来走一遍</strong></p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>整数与逻辑运算</strong>：解锁时判断某个权限位开没开、相册按日期排序、算剩余存储够不够放一段视频——全是 AND、比较、加减，CPU 里那几个 ALU 最擅长，且这类活前后依赖强，堆再多 lane 也帮不上忙。</li>
+  <li><strong>浮点运算</strong>：游戏里一帧的光照、界面滑动时的动画合成、给照片套个滤镜——几百万个像素做几乎一样的浮点运算，正好交给 GPU 的 FP32 / FP16 lane 一起算。</li>
+  <li><strong>AI 推理</strong>：拍一张夜景，ISP 先把原始数据整理好，NPU 用 INT8 的 MAC 阵列跑完降噪模型，旁边的标量 ALU 负责把量化结果还原、做 ReLU 和取最大值，最后结果交回 CPU 写进文件。这里真正吃算力的是 MAC 阵列，ALU 是把边角收拾干净的人。</li>
+  <li><strong>三者接力</strong>：同一次拍照里，CPU 发号施令、ISP 预处理、NPU 推理、GPU 合成预览、CPU 收尾写盘。手机里没有谁替代谁，只有各干各的那一段。</li>
+</ul>
+
+<p class="mb-2"><strong>本节小结</strong></p>
+<p class="mb-2">ALU 是"按指令算一次"的基本部件：CPU 把它做得少而快、专攻低延迟和通用；GPU 把它复制成成千上万个 lane、用同构并行换吞吐；NPU 干脆把主力换成 MAC 阵列，只留少量 ALU 做标量辅助，用低精度换能效。所以"NPU 就是 ALU 更多的处理器"这个说法是不准确的——三者差的不是数量，是<strong>为哪种计算而设计</strong>。</p>
+<p class="mb-2">给你一个能带走的判断法：看到分支、逻辑、整数和"一步一步等结果"，想 CPU 的 ALU；看到像素、浮点、大量同构数据，想 GPU 的 lane；看到矩阵乘、量化、TOPS/W，想 NPU 的 MAC 阵列。发布会上的算力数字会年年翻，但这三种"算"的方式不会变——知道哪种活交给哪个部件，比记住某个数字有用得多。</p>
 <h5 class="font-semibold mt-3 mb-1">ISP：影像信号处理器</h5>
 <p class="mb-2">ISP处理摄像头传来的原始数据，把光线信号变成好看的照片。</p>
 <p class="mb-2"><strong>性能怎么看？</strong>看型号！苹果A18 Pro、高通骁龙8 Elite、联发科天玑9400、华为麒麟9020都是旗舰级别。中端看骁龙8s Gen3/7+ Gen3、天玑8400。别只看核心数，架构和制程（纳米数）更重要。3nm制程是目前最先进的，能效比远优于5nm和4nm。2026 年在售的顶级档则是骁龙8 Elite Gen 5 和天玑 9500——这份名单半年就刷新一次，买的时候认准"当年最新一代"就行。</p>
@@ -2368,6 +2530,77 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
   <li><strong>微距</strong>：拍极近距离的小东西。</li>
 </ul>
 <p class="mb-2"><strong>像素数不是全部！</strong>传感器尺寸（底大一级压死人）、光圈大小（f/1.8比f/2.4大）、防抖（OIS光学防抖很重要）都影响画质。计算摄影（AI算法）现在越来越重要，能把多张照片合成一张好照片。</p>
+<!-- v19-cmos-section -->
+<h5 class="font-semibold mt-3 mb-1">CMOS 传感器：光是怎么变成数字的</h5>
+<p class="mb-2">刚才说"像素数不是全部"，那到底什么在决定画质？咱们先把镜头后面的那块硅片讲清楚。<strong>CMOS 图像传感器</strong>就是手机的眼睛，它的活是把照进来的光，老老实实变成一串数字——注意，只是数字，还不是你看到的照片。</p>
+<p class="mb-2">一个像素里发生的事其实很朴素：<strong>光电效应</strong>。光子打进硅里的光电二极管，激发出电子；曝光这段时间里，电子一点点攒在一个叫"势阱"的小坑里，光越强攒得越多。曝光结束，电荷被转成电压，经像素里的放大器读出，再由模数转换器变成数字。于是每个像素交出一个数：这一格有多亮。</p>
+<p class="mb-2">但这中间还有两道容易被忽略的机关：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>微透镜</strong>：盖在每个像素顶上的微型透镜，把斜着射进来的光拢到感光区里。没有它，边缘像素的光会大量打在电路上白白浪费。</li>
+  <li><strong>彩色滤光片阵列</strong>：像素本身分不清颜色，只数光子。所以每个像素上面盖一片红、绿或蓝的滤色片，最常见的排法是 Bayer 阵列（绿多、红蓝少，因为人眼对绿更敏感）。<strong>也就是说，传感器原始输出是一堆各自只有一种颜色的亮度值</strong>，得靠后面的 ISP 做去马赛克插值，才拼出全彩画面。</li>
+</ul>
+<p class="mb-2">把这条链连起来看：光 → 微透镜 → 滤色片 → 光电二极管攒电荷 → 读出与模数转换 → 一串单色数字 → <strong>ISP 做去马赛克、白平衡、降噪、色调映射、多帧合成</strong> → 才是一张能看的照片。前面那一半是 CMOS 的本分，后面那一半是 ISP 与算法的本事。这也是为什么参数表一样的两台手机，拍出来可能完全不像——从滤色片、读出噪声到 ISP 调校，每一步都可能不一样。</p>
+<p class="mb-2">顺带说一句历史：早年相机常用 CCD，电荷要一行行搬到芯片边缘统一读出，画质不错但费电、集成度低；CMOS 能在每个像素旁边就放下放大和读出电路，功耗低、能随机读取、还能把其它电路一起做进芯片，于是手机这个又小又怕热的地方，最后全成了 CMOS 的天下。</p>
+
+<h5 class="font-semibold mt-3 mb-1">从像素到芯片：结构与技术演进</h5>
+<p class="mb-2">把一个像素放大了看，它不只是个感光点，里面还有几颗晶体管负责复位、放大、选择和读出（常见的叫四晶体管像素）。像素阵列下面是行选、列读出与模数转换器组成的读出电路。过去几十年手机传感器的演进，基本就是<strong>想尽办法让光多进一点、让电少绕一点、让数读得快一点</strong>。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>前照式（FSI）</strong>：金属布线走在感光区上方，光得先穿过线路层才能到达光电二极管。线路挡光、斜射光还容易被遮，开口率上不去。</li>
+  <li><strong>背照式（BSI）</strong>：把晶圆翻过来从背面进光，布线挪到感光区下面。挡路的东西没了，进光效率和边缘画质都明显改善，弱光表现跟着上来。今天手机传感器基本都是背照起步。</li>
+  <li><strong>堆栈式（Stacked）</strong>：再往前一步，把"感光那一层"和"逻辑电路那一层"分开做、再键合叠在一起。像素层可以专心留给光，逻辑层腾出面积放更多更快的模数转换器、缓存甚至一部分预处理电路。它换来的主要是<strong>速度</strong>——更高的连拍与视频帧率、更短的多帧合成窗口。</li>
+  <li><strong>再往细处走</strong>：列级或像素级模数转换缩短读出路径；双转换增益（DCG）按明暗切换放大方式，兼顾暗处噪声与亮处不过曝；横向溢出积分电容（LOFIC）一类做法给像素多准备一个"接溢出电荷的大容器"，把高光撑住；把一个像素拆成两个光电二极管做相位检测（QPD 一类），让对焦直接在传感器上完成。名字很多，方向就三个：多收光、别溢出、读得快、对得准。</li>
+</ul>
+<div class="tip-box rounded-lg p-4 mb-3"><p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>一句话记牢</p><p class="mt-1">背照式解决的是"光进得来吗"，堆栈式解决的是"数读得出来吗"。前者主要帮画质，后者主要帮速度。把堆栈式当成"画质升级"是常见的误读，后面讲误区时还会再说一次。</p></div>
+
+<h5 class="font-semibold mt-3 mb-1">六个关键参数，各自管什么</h5>
+<p class="mb-2">参数表上那一串数字，其实各自回答一个不同的问题。分开看，就不容易被某一项牵着走。</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+<thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">参数</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">物理上在说什么</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">主要影响</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">容易被忽略的代价</th></tr></thead>
+<tbody>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">传感器尺寸</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">整块硅片能接收多少光</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">信噪比、动态范围潜力、浅景深</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">模组更厚、镜头更难做、边缘像差与暗角难控、成本高</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">像素尺寸</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">单个像素的面积，决定能攒多少电子（满阱容量）</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">单像素信噪比、暗部干净程度、单帧动态范围</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">同一块底上像素越大，分辨率就越低</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">分辨率</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">一共分了多少格来记录画面</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">光线充足时的细节上限、裁切余地</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">受镜头解析力、对焦、衍射、处理与存储限制；弱光下反要靠合并</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">动态范围</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">最亮不溢出与最暗不被噪声淹没之间的跨度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">大光比场景里高光与暗部能否同时留住</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">手机里看到的 HDR 多是<strong>多帧合成</strong>，不等于传感器单帧能力</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">感光能力</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">量子效率、开口率、微透镜与滤色片透过率共同决定</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">暗光下能攒到多少有用信号</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><strong>ISO 是增益不是感光度</strong>，调高它不增加光子，只把信号连噪声一起放大</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">读出速度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">整幅画面从传感器搬出来要多久</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">连拍、视频帧率、卷帘畸变、多帧合成的时间窗口</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">手机大多逐行读出的卷帘快门；真正的全局快门成本高，手机上少见</td></tr>
+</tbody>
+</table>
+</div>
+<p class="mb-2">有个坑值得单独点出来：行业里说的"1/1.3 英寸""1 英寸"是<strong>沿用了早期摄像管的标称规格，并不等于实际对角线是 25.4 毫米</strong>。它更像一个型号名，用来横向比较同一套标称体系里的大小是可以的，别拿尺子去换算。</p>
+<p class="mb-2">这几项之间还互相牵着。同一块底上，像素做小了分辨率上去，但每个像素能攒的电子变少、暗部更容易起噪；想同时要细节和弱光，就得靠像素合并与多帧算法在两种模式之间来回切。<strong>底多大、像素多大、合并怎么取舍</strong>这笔账，第十一章附「传感器尺寸与像素大小的权衡」会专门算，这里先把物理含义立住。</p>
+
+<h5 class="font-semibold mt-3 mb-1">大底、高像素、像素合并、堆栈式：能解决什么，解决不了什么</h5>
+<p class="mb-2">发布会上四个词出现得最勤，但它们不是四个"升级"，而是四种不同的取舍。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>大尺寸传感器</strong>：解决的是"单位时间里收到的光子总数"。光多了，信噪比和单帧动态范围的上限就高，暗部更干净，也更容易拍出自然的背景虚化。解决不了的是镜头能不能把这束光好好送到整块底上——底一大，边缘像差、暗角、边角解析力、模组厚度和最近对焦距离都跟着变难。<strong>底是上限，不是结果</strong>，它得配上够好的镜头与调校才兑现。</li>
+  <li><strong>高像素</strong>：在光线充足、镜头解析力跟得上、手也稳的时候，它给的是细节与裁切空间——拍文档、拍远处建筑、二次构图确实有用。但它抬高不了暗光表现：单像素变小后，弱光主要靠合并与算法兜底；文件更大、处理更耗电、对焦与防抖的容错更小；而且在手机屏幕上或发到社交平台，多出来的细节常常根本看不到。</li>
+  <li><strong>像素合并</strong>：把相邻的几个小像素合成一个大像素输出，等于在弱光下临时换回"大像素"模式，暗部更干净、帧率与文件也更友好，所以默认拍照多半走这条路。代价是输出分辨率下来了，彩色滤光片的重排让去马赛克更绕，容易出现伪色、细节被抹平；想拿回全分辨率，得手动切高像素模式，而且最好有足够的光。它更像<strong>同一块传感器上的两套用法</strong>，不是凭空多出来的画质。</li>
+  <li><strong>堆栈式设计</strong>：主要解决"读得快"。逻辑层腾出面积放高速模数转换与缓存，连拍、高帧率视频、快速多帧合成、更轻的果冻效应都受益；片上缓存还能让多帧合成少等一会儿，逆光抓拍更不容易糊。它<strong>不直接提升单帧的收光与动态范围</strong>，成本、发热与堆叠工艺的难度却是实打实的。把它当"画质更好"看，容易买错重点。</li>
+</ul>
+
+<h5 class="font-semibold mt-3 mb-1">几个流传很广的误解</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>"像素越高越清晰"</strong>：清晰度还得看镜头解析力、对焦精度、防抖、ISP 的锐化与降噪，以及你最终在多大的屏幕上看。像素只是给了一个上限。</li>
+  <li><strong>"底大一级压死人"</strong>：这句话在暗光与动态范围上大致成立，但被用得太绝对。镜头素质、光圈、对焦、防抖、算法调校、甚至软件版本，都能让两块标称相近的底拍出不同结果。</li>
+  <li><strong>"ISO 越高越能感光"</strong>：ISO 是读出之后加的增益。光子数量由传感器面积、量子效率、光圈和快门决定，调高 ISO 只是把已有信号连同噪声一起放大，画面会变亮但不会变干净。</li>
+  <li><strong>"1 英寸就是 25.4 毫米"</strong>：前面说过，那是历史标称，不是实际对角线尺寸。</li>
+  <li><strong>"参数一样，画质就一样"</strong>：滤色片光谱、微透镜设计、读出噪声、满阱容量、ISP 与算法、镜头、固件调校全都不写在参数表里。</li>
+  <li><strong>"大底就一定虚化好"</strong>：虚化还取决于实际焦距、光圈、对焦距离和主体与背景的距离。手机更多时候是靠算法算出来的景深，跟传感器尺寸不是一回事。</li>
+  <li><strong>"动态范围高，逆光就稳了"</strong>：传感器只是给出可用的明暗跨度，最终能不能同时保住天空和人脸，还要看测光、多帧合成对不对、有没有鬼影、色调映射压得自不自然。</li>
+</ul>
+
+<h5 class="font-semibold mt-3 mb-1">把参数放回场景里看</h5>
+<p class="mb-2">参数脱离场景就没意义，换成几个你真会碰到的画面，一下就具体了。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>暗光餐厅、夜里的街边</strong>：最先不够的是光子，于是传感器尺寸、像素尺寸、光圈和量子效率排在前头；此时切高像素模式往往更糟，默认的多帧降噪与像素合并才是正解。快门一长，防抖与持机稳定性又变成新的短板。</li>
+  <li><strong>窗边人像、逆光的天空</strong>：拼的是动态范围，但真正救场的是 HDR 合成。合成要连拍好几帧，读出速度不够、手一抖、人一动，就容易出现鬼影或边缘发亮的假轮廓——这也是堆栈式与快速读出在这一幕里的价值。</li>
+  <li><strong>追着跑的孩子、宠物、扫街挥手</strong>：逐行读出的卷帘快门会让快速横移的直线变斜、让挥动的手臂变形，这叫果冻效应。此时读出速度比"多几百万像素"重要得多；快门、对焦追焦和连拍能力一起决定能不能抓到。</li>
+  <li><strong>演唱会、月亮、远处舞台</strong>：长焦端的传感器通常比主摄小，光线又差，先天就吃亏。高像素裁切能补一点构图，但补不来光子；这时候别指望参数表，先看那颗长焦的底和光圈。</li>
+  <li><strong>拍文档、白天的建筑与风景</strong>：光足够、可以稳稳端住，高像素与镜头解析力才真正派得上用场，放大看细节、后期裁切都有意义。</li>
+  <li><strong>边走边录视频</strong>：读出速度决定果冻效应，防抖决定画面稳不稳，而电子防抖还要裁掉一圈视野。这一幕里"传感器强"和"视频好用"之间，隔着好几道工程取舍。</li>
+</ul>
+<p class="mb-2"><strong>收在一句话上</strong>：CMOS 只是<strong>采集端</strong>。最终成片是「传感器 × 镜头 × 对焦与防抖 × ISP 与算法 × 显示与压缩」一起算出来的结果，参数给的是上限与倾向，不是照片本身。以后看发布会，别急着比谁的数字大——先问这个场景里最缺的是光、是明暗跨度、是速度，还是细节，再回头找对应的那一项。这么看，参数表才不会骗人。</p>
 <h5 class="font-semibold mt-3 mb-1">潜望式长焦镜头</h5>
 <p class="mb-2">传统长焦镜头需要较长的光学路径，会让手机变得很厚。潜望式长焦通过一个90度的棱镜将光线折射，让光路在手机内部横向展开，从而在保持手机轻薄的同时实现5倍甚至10倍光学变焦。</p>
 <ul class="list-disc pl-6 mb-3 space-y-1">
@@ -2421,7 +2654,153 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
   <li><strong>气压计</strong>：测海拔高度，爬楼梯都能检测到。</li>
   <li><strong>霍尔传感器</strong>：检测磁吸壳的开合。</li>
 </ul>
-<h4 class="text-lg font-semibold mt-4 mb-2">二、操作系统：安卓 VS iOS VS 鸿蒙</h4>
+<!-- v19-soc-mechanism-chapter -->
+<h4 class="text-lg font-semibold mt-4 mb-2">二、SoC 是怎么把一件活干完的：调度、运算与数据通路</h4>
+<p class="mb-2">上一节把 SoC 里的部件认了个遍：CPU、GPU、NPU、ISP，还有刚讲过的 ALU。但认全零件不等于懂机器——真正让手机"跟手"的，是这些部件<strong>怎么被安排着一起干活</strong>。你点一下快门，到屏幕亮起一张夜景照片，中间要过五道手、排好几次队、等若干次信号。这一节就顺着这条线走一遍：谁负责决定做什么，谁负责决定什么时候做，数据又从哪里来、到哪里去。</p>
+<p class="mb-2">先把话说在前面：下面讲的都是<strong>通用架构规律</strong>——分几层调度、有哪几种并行、地址怎么转换，各家芯片大同小异。至于一个核心几级流水、能同时发射几条指令、缓存多大、一组线程有多少个 lane，那是<strong>具体芯片实现</strong>，每一代都在变，别把书里的说法当成某颗芯片的规格表，真要查就翻厂商文档。</p>
+
+<h5 class="font-semibold mt-3 mb-1">1. 先看全景：一次任务要过几道手</h5>
+<p class="mb-2">手机里几乎没有任何一件事是"应用直接指挥硬件"完成的。哪怕是给一张照片加个滤镜，也要经过这样一串角色：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>应用</strong>说清"我要什么"——拍一张照、跑一帧游戏、识别一句话。它只提需求，不关心谁来做。</li>
+  <li><strong>运行时与编译器</strong>把需求翻译成机器能执行的形式：一段指令、一张计算图、一串命令。顺便做优化，把能合并的合并、能提前算的提前算。</li>
+  <li><strong>驱动</strong>把这些命令写进硬件的队列，登记好依赖关系，然后敲一下"门铃"告诉硬件：有新活了。</li>
+  <li><strong>硬件调度器</strong>从队列里挑出此刻能跑的活，分给具体执行单元。它是最后一层，也是唯一真正在每个时钟周期做决定的角色。</li>
+  <li><strong>完成通知</strong>沿原路返回：硬件发中断，驱动确认，运行时唤醒等待的线程，应用拿到结果。</li>
+</ul>
+<p class="mb-2">这条链上有个很要紧的分界：<strong>"做什么"由软件层决定，"什么时候、由哪个部件做"由硬件层决定</strong>。软件层看得到整张任务图，所以能安排顺序、合并重复、避免冲突；硬件层只看得到眼前几条指令和几个空着的执行单元，所以能在一个周期内做出软件来不及做的细粒度决定。两头各管一段，缺一头都不行。</p>
+
+<h5 class="font-semibold mt-3 mb-1">2. 五层调度者：谁决定什么</h5>
+<p class="mb-2">把这五层摊开看，职责边界其实很清楚：</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+<thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">层</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">决定什么</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">不决定什么</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">大致时间尺度</th></tr></thead>
+<tbody>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">操作系统调度器</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">哪个进程/线程上哪个核心、优先级、时间片、唤醒与睡眠；手机上还要按负载挑大核还是小核</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">不管单条指令，也看不懂 GPU/NPU 内部的队列</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">毫秒到微秒</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">运行时</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把 API 调用组织成命令缓冲或计算图；模型推理时做算子融合、切子图、挑后端（CPU/GPU/NPU）</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">不生成最终机器指令，也不碰硬件寄存器</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">每次提交前后</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">编译器</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">指令选择、寄存器分配、循环展开、向量化；NPU 侧还要切块（tiling）适配片上存储、排好权重与数据搬运顺序</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">不知道运行时会出现什么突发任务，也不控制硬件当前是否空闲</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">安装时 / 首次运行时 / 提前离线完成</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">驱动</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把命令写进环形队列、建立同步对象、映射内存与 DMA、写门铃寄存器提交、处理完成中断</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">不做算法优化，也不决定执行单元怎么分派</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">提交与回收那一瞬</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">硬件调度器</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">此刻哪条指令发射、哪组线程上执行单元、哪个数据块进阵列；处理结构冒险与依赖就绪</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">看不到整张任务图，不知道应用的意图，也不做长期规划</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">每个时钟周期</td></tr>
+</tbody>
+</table>
+</div>
+<p class="mb-2">有两处边界在不同平台上会移动，值得留意。一是<strong>编译器和运行时</strong>：有的栈把图优化放在应用安装时一次做完，有的放在首次运行时，还有的干脆把一部分编译塞进驱动里，提交前才生成内核。二是<strong>操作系统和设备</strong>：CPU 线程归操作系统管，GPU/NPU 的任务队列归驱动和硬件管，操作系统通常只看到"这个进程在等一个 fence"。所以别死记"某一层一定做某件事"，记住的是这条<strong>从粗到细、从意图到周期</strong>的分工链。</p>
+<p class="mb-2">手机上的操作系统调度还多一件事：<strong>能耗感知</strong>。同样一段代码放超大核上跑得快但费电，放能效核上慢一点却省得多。系统要盯着当前负载、温度和剩余电量，把前台交互这类急活给大核，把后台同步、相册整理这类不急的活慢慢挪到小核。这是手机和台式机很不一样的地方——不是"越快越好"，是"够快的前提下别把电烧光"。</p>
+
+<h5 class="font-semibold mt-3 mb-1">3. 一次异步任务的完整旅程</h5>
+<p class="mb-2">用"拍一张夜景照片"当例子，把整条链走一遍。你会发现所谓异步，不是"扔到后台随便跑"，而是一条<strong>有依赖图、有排队、有完成信号</strong>的流水线。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>① 应用提交</strong>：相机 App 发起一次拍摄请求，画面预览、降噪推理、最终编码可能一次登记好几项工作。调用立刻返回，拿到的是句柄或 future，而不是结果——这就是"异步"的起点。</li>
+  <li><strong>② 编译与图组织</strong>：运行时把降噪模型从文件里加载出来，编译器（或驱动里的编译步骤）把模型切成硬件能吃的块，安排好权重什么时候搬进片上存储，把能合并的层合成一个算子。这一步产出的是<strong>命令序列或计算图</strong>，不是结果。</li>
+  <li><strong>③ 命令排队</strong>：驱动把命令写进硬件的环形提交队列，同时把输入缓冲、输出缓冲映射好，让硬件能直接通过 DMA 读写，不必让 CPU 一字节一字节搬。写完之后敲一下门铃寄存器，硬件才知道队列里有活。</li>
+  <li><strong>④ 依赖与同步</strong>：这是最容易出错、也最容易被忽略的一步。ISP 必须先把原始帧处理好，NPU 才能开始推理；GPU 要等 NPU 出结果才能合成预览；写文件又要等编码完成。这些先后关系靠三层东西保证：<strong>信号量</strong>（队列之间"你做完我才开始"）、<strong>fence</strong>（让 CPU 能查询"硬件做到哪了"）、<strong>屏障</strong>（保证前一阶段写的数据对后一阶段真的可见，而不只是"指令发过了"）。硬件内部还有计分板一类的机制，盯着某条指令要用的寄存器准备好没有，没好就先按住不发。</li>
+  <li><strong>⑤ 硬件执行</strong>：硬件调度器从队列里取命令，把工作拆给执行单元——CPU 核上的指令、GPU 的一组组线程、NPU 阵列里的一块块矩阵，各跑各的。这一层的细节下一节展开。</li>
+  <li><strong>⑥ 完成通知</strong>：结果写回内存，硬件触发中断；驱动的中断处理先做最要紧的确认，剩下的收尾放到底半部或工作队列里；对应的 fence 被标记完成，运行时唤醒等在它上面的线程，App 的回调拿到照片，缩略图才跳出来。</li>
+</ul>
+<p class="mb-2">这条链解释了几个日常现象：为什么点了快门要等一下才出图（在排队和推理），为什么拍照时偶尔会发热掉帧（ISP、NPU、GPU、CPU 同时抢内存带宽），以及为什么系统升级后"同样的硬件拍照变快了"（编译器和驱动把图和队列排得更好，硬件一个晶体管没换）。</p>
+<div class="tip-box rounded-lg p-4 mb-3"><p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>一句话记牢</p><p class="mt-1">应用交的是"意图"，驱动交的是"命令"，硬件要的是"此刻能跑的活"。中间那些信号量、fence 和屏障，就是把"意图"安全地变成"结果"的红绿灯。异步快，是因为排队和等信号不占着 CPU 死等，不是因为可以不管顺序。</p></div>
+
+<h5 class="font-semibold mt-3 mb-1">4. 硬件内部怎么把活塞满</h5>
+<p class="mb-2">命令到了硬件手里，接下来是一场"别让执行单元闲着"的持久战。芯片里有好几种并行，名字容易混，但它们挖的是不同层面的空档。</p>
+<p class="mb-2"><strong>流水线调度</strong>是最基础的一层。一条指令要走取指、译码、发射、执行、写回几步，把这几步拆开重叠起来，就像工厂流水线：第一条还在执行，第二条已经译码，第三条正在取指。麻烦在于三种"冒险"：两个步骤抢同一个部件（结构冒险）、后一条要等前一条的结果（数据冒险）、遇到分支还不知道下一条取哪里（控制冒险）。对应的办法是<strong>前递</strong>（把刚算出来的结果直接旁路给下一条，不等写回）、<strong>分支预测</strong>和必要时<strong>停顿或冲刷</strong>。预测错了要推倒重来，代价不小，这也是为什么 CPU 特别怕分支密集的代码。</p>
+<p class="mb-2"><strong>指令级并行（ILP）与多发射</strong>：一个周期只发一条指令太浪费，于是宽发射的核心一次取多条、译多条、发多条。能同时发几条就是发射宽度，是具体芯片实现，各代不同。但发得出去不等于能一起跑——得看这几条指令彼此有没有依赖、有没有空着的功能单元、寄存器堆能不能同时供上那么多操作数。</p>
+<p class="mb-2"><strong>乱序执行</strong>是挖 ILP 的主力手段。编译器给出的指令顺序是"按程序逻辑排的"，硬件可以在不改变最终结果的前提下，把后面那条不依赖前面结果的指令提前做。为了让这件事安全，硬件做了两件配套：<strong>寄存器重命名</strong>，把指令里写的那些架构寄存器映射到更多物理寄存器上，消掉本来只是"名字撞车"造成的假依赖；<strong>重排序缓冲</strong>，让指令可以乱序执行、但必须<strong>按序退休</strong>，这样一旦发生异常，机器状态仍然停在正确的那条指令上。所以准确说法是"乱序执行、按序提交"，不是"随便乱跑"。</p>
+<p class="mb-2"><strong>线程或任务并行</strong>换了一个层面：不再盯着单条指令，而是让多个线程、多个任务同时在跑。CPU 靠多核和同步多线程；GPU 把大量线程编成组，一组暂时等内存时立刻切到另一组，切换开销极小（上下文本来就常驻在寄存器堆里），用"线程多"来把访存延迟藏掉；手机后台同步、音频解码、界面渲染各占一条线，也是这一层。</p>
+<p class="mb-2"><strong>数据并行</strong>再换一层：同一条指令同时对一批数据做同样的运算。CPU 的向量扩展、GPU 的一组 lane、NPU 阵列里同时算的许多输出点，都属于这一类。它和线程并行的区别在于：线程并行是"很多条不同的执行流"，数据并行是"一条执行流带着一大片数据"。</p>
+<p class="mb-2">把这三者和上一节的 ALU 连起来看就通了：流水线是让<strong>同一个部件</strong>别空转，多发射与乱序是让<strong>一个核心里的几个部件</strong>同时忙，线程与数据并行是让<strong>整片芯片</strong>同时忙。层级越往上，需要的调度越"粗"、越依赖软件事先把活切好。</p>
+
+<h5 class="font-semibold mt-3 mb-1">5. CPU / GPU / NPU 的调度器：粒度、目标与限制</h5>
+<p class="mb-2">三类处理器都有"调度器"，但调的东西完全不是一回事。用一张表收住：</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+<thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">对比项</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">CPU</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">GPU</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">NPU</th></tr></thead>
+<tbody>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">调度粒度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">软件层是线程/进程；硬件层细到单条指令与微操作</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">一次绘制或计算提交，硬件层是成组的线程（一组几十个 lane 一起走）</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">整张推理图、算子，或按片上存储切出的数据块</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">主要目标</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">低延迟、响应快、公平、兼顾能耗</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">喂满执行单元、用大量线程隐藏访存等待、拉高吞吐</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">让数据流不断、权重尽量留在片上、每瓦吞吐最高</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">谁定顺序</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">操作系统定线程归属，硬件动态乱序决定指令先后</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">驱动与运行时定提交顺序，硬件在就绪的线程组之间切换</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">编译器和运行时基本把顺序排死，硬件按图执行</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">动态程度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">最高：每周期都可能改主意，能应付事先猜不到走向的分支</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">中：组之间切换很灵活，组内却要步调一致</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">最低：几乎是静态数据流，换来的是极高能效</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">主要限制</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">单线程里的依赖链、分支预测失误、上下文切换开销</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">一组里出现分支分歧要分组串行；寄存器占用多了能同时驻留的组就少</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">图要能静态切开，输入形状一变可能得重编译；不擅长任意控制流</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">典型任务</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">界面事件、应用逻辑、调度与权限判断</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">像素着色、特效、动画合成</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">降噪、分割、识别、端侧生成式推理</td></tr>
+</tbody>
+</table>
+</div>
+<p class="mb-2">一句话概括差别：<strong>CPU 的调度器在"猜"，GPU 的在"换"，NPU 的在"照着做"</strong>。CPU 面对的是走向事先猜不准的程序，得靠分支预测和乱序去赌下一步；GPU 面对的是大量同构线程，一组卡住就换另一组，不需要猜；NPU 的活早在编译器里就切好排好了，硬件按图流水即可，省下的动态决策电路全变成了能效。</p>
+<p class="mb-2">这也解释了三者为什么不能互相替代。让 NPU 去跑一个满是分支的应用逻辑，它连"下一步该走哪"都没法灵活决定；让 CPU 去跑矩阵乘，它那些精密的乱序电路全用不上，还每个数据都要过一遍指令。分工不是谁比谁强，是各自把调度成本花在了最值的地方。</p>
+
+<h5 class="font-semibold mt-3 mb-1">6. 算数的地基：加法器、乘法器与算术运算单元</h5>
+<p class="mb-2">上一节讲了 ALU 是"按指令算一次"的部件，这一节往里再看一层：那个"算一次"，物理上到底是什么在算。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>加法器</strong>是地基中的地基。一个全加器把三个一位输入（两个加数位加一个进位）变成"本位和"与"进位输出"；把它们串起来就能算多位加法，但最朴素的行波进位要等进位一级一级传过去，位数越多越慢，于是有了超前进位、进位选择这类提前算进位的做法。加法器不只是做加法：<strong>减法</strong>用补码变成加法，<strong>比较</strong>是做一次减法再看标志位，<strong>地址计算</strong>、循环计数、跳转到哪一行，底层都是它。</li>
+  <li><strong>乘法器</strong>贵得多。本质上是一堆"部分积"移位后相加，工程上用 Booth 编码减少部分积数量、用压缩树把多层加法并成少数几层，再做一次最终加法。它占的面积和耗的时间都远大于加法器，所以早期处理器常常把整数乘法单独做一块，甚至用多周期迭代完成。上一节说的 FPU 里也有乘法器，只不过它算的是浮点尾数，前后还要处理指数与规格化。</li>
+  <li><strong>算术运算单元</strong>是把这些零件装到一个框里：加法器、乘法器、逻辑门阵列、桶形移位器、前导零计数，再加上一组多路选择器——控制信号说"这次做加法"，就把加法器的结果选出去；说"这次做异或"，就选逻辑门的结果。这个带选择器的组合体，就是整数执行单元／ALU 的实体形态。它自己不会挑活，挑活的是控制单元发来的那几位控制信号。</li>
+</ul>
+<p class="mb-2">把这个和 NPU 的 MAC 阵列接上，会看到一个很实在的差别：<strong>MAC 就是把乘法器和加法器焊在一起，中间结果直接进累加器，不写回寄存器、下一轮也不用再读回来</strong>。一次乘加省掉一写一读，成千上万次乘加省下的搬运动量，正是 NPU 能效比 CPU、GPU 高的一大微观原因。所以 MAC 不是"更快的 ALU"，是"把某一条固定路径做到极致"。</p>
+
+<h5 class="font-semibold mt-3 mb-1">7. 指令集、微架构与寄存器：三层契约</h5>
+<p class="mb-2">这三个词经常一起出现，但说的不是一回事，分清了能少踩很多坑。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>指令集（ISA）</strong>是软件和硬件之间签的合同：有哪些指令、指令长什么样、程序员能看到哪些寄存器、内存怎么寻址、异常怎么处理。编译器只按这份合同生成机器码，不必关心芯片内部长什么样。手机上常见的合同是 Arm 的 AArch64 一类。</li>
+  <li><strong>微架构</strong>是这份合同的一种具体实现：流水线分几级、一个周期能发几条、重排序缓冲多大、分支预测器怎么设计、缓存几层各多大、有几个整数 ALU。同一份 ISA 可以做出完全不同的微架构——这正是手机大小核的依据：大核和小核跑的是<strong>同一套指令</strong>，但内部一个宽而深、一个窄而省，同一段机器码放上去跑，速度和耗电都不同。</li>
+  <li><strong>寄存器</strong>要分两层看。ISA 里规定的是<strong>架构寄存器</strong>，数量固定，编译器眼里的世界就这么大；微架构里实际用的是<strong>物理寄存器</strong>，通常多得多，专门用来给寄存器重命名提供"备用名字"，好把假依赖拆开。寄存器堆能同时读写几个端口，直接卡住了多发射的上限——发得出去，也得供得上操作数。</li>
+</ul>
+<p class="mb-2">拿做菜再比一次：ISA 是菜谱上写的"切块、下锅、调味"这些标准动作；微架构是这家厨房有几个灶、几个厨师、备料台多大；寄存器就是灶台边那几个备料格，格子的数量和同时能伸进去几只手，决定了能并行备几道料。三者对上了，才知道为什么"同一份程序在不同手机上跑得不一样快"——合同没变，厨房变了。</p>
+
+<h5 class="font-semibold mt-3 mb-1">8. 数据从哪来：TLB、缓存、内存控制器、带宽与总线</h5>
+<p class="mb-2">前面几节都在讲"算"，可现实里芯片大部分时间是在<strong>等数据</strong>。一次访问要从应用看到的虚拟地址，一路走到内存颗粒，沿途每一站都可能成为瓶颈。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>TLB</strong>是地址转换的缓存。应用用的是虚拟地址，硬件要的是物理地址，这层映射记在页表里；每次都去查页表太慢，于是把最近用过的映射存在 TLB 里。命中就直接拿到物理页，未命中要做一次页表遍历，代价可能是几十上百个周期。用大页、让数据访问更集中，都是为了少踩这种未命中。</li>
+  <li><strong>缓存层次</strong>是延迟与容量的折中：一级最小最快、通常每个核心私有；二级大一点、可能一簇核心共用；三级或系统级缓存全芯片共享，ISP、GPU、NPU 也能借它中转。越靠上越贵，放不下太多；越靠下越慢，但能装得多。命中率上不去，ALU 再快也只能空转。多部件共享数据时还要维护<strong>缓存一致性</strong>，保证 CPU 写进去的值，GPU 或 NPU 随后读到的是新的，不是缓存里的旧副本——这正是第 3 节那些屏障要解决的问题之一。</li>
+  <li><strong>内存控制器</strong>是最后一道关卡：把读写请求排到 DRAM 的各个 bank/rank 上，合并相邻访问、安排刷新、决定谁先谁后。手机上它还得讲<strong>服务质量</strong>——屏幕扫描和预览帧不能等，后台下载可以让一让。同样一块内存，控制器调度得好不好，实际体验差得出来。</li>
+  <li><strong>带宽与延迟是两件事</strong>。带宽是每秒能搬多少数据，延迟是发起一次访问要等多久。大数据块连续读写吃带宽，零散的小访问吃延迟。CPU 靠缓存把延迟压下去，GPU 和 NPU 靠海量并行把等待"藏"在别的线程或数据块后面——这也是为什么它们不怕延迟高，却特别怕带宽不够。</li>
+  <li><strong>频率</strong>决定一秒有多少个时钟周期，同一段微架构下频率越高性能越高，但动态功耗大致随频率和电压平方一起涨，手机的散热和电池很快就会把它按住，于是系统不断在升降频（DVFS）。发布会上那个峰值频率，往往只能维持很短一会儿；真正影响长时间游戏或录像的，是散热压住之后的<strong>持续频率</strong>。</li>
+  <li><strong>总线互联</strong>是把这些部件连起来的片上网络：CPU、GPU、NPU、ISP、显示、内存控制器都挂在上面，共享有限的通路。多路同时访问就会争用，需要仲裁和优先级。上一节讲 NPU 时提到"ISP 处理结果直送 NPU 的图像分支"，这类专用直通路径的意义就在这儿——绕开公共总线，少一次排队、少一次往返内存。</li>
+</ul>
+<p class="mb-2">把这一节塞回拍照那个例子：ISP 写帧、NPU 读权重和特征、GPU 合成预览、CPU 编码写文件，四路同时抢内存带宽和总线。这时候瓶颈往往不在"谁的算力不够"，而在<strong>数据搬不动</strong>。所以看手机性能，只盯着算力数字很容易看偏——得连着存储与互连一起看。</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+<thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">环节</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">主要影响</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">手机里的典型表现</th></tr></thead>
+<tbody>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">TLB</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">地址转换命中率，未命中代价高</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">大图、大模型频繁换页时明显变慢</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">缓存层次</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">访问延迟与命中率、多部件一致性</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">反复读写同一批特征图时差别很大</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">内存控制器</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">请求排序、优先级、刷新开销</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">录像时预览不能卡，后台同步要让路</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">带宽</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">每秒搬运总量</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">多路并发抢通路时整体掉速</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">频率 / 电压</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">周期数，同时受功耗与散热约束</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">峰值跑分好看，长时间游戏会降频</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">总线互联</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">部件间通路、仲裁与专用直连</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ISP→NPU 直连省掉一次内存往返</td></tr>
+</tbody>
+</table>
+</div>
+
+<h5 class="font-semibold mt-3 mb-1">9. VPU、DSP 与 ECC：三位专职配角</h5>
+<p class="mb-2">SoC 里还有几个不常上发布会、却天天在干活的部件。它们不是同一类东西，别混着记。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>VPU（视频处理单元）</strong>是专做视频编解码的固定功能硬件：运动估计、变换、熵编码、环路滤波这些步骤直接做成电路。录 4K 视频、视频通话、投屏、边下边播，靠的都是它。用 GPU 的通用算力也能算，但固定功能电路干同一件活省电得多——手机能连续录很久而不烫，很大程度是 VPU 的功劳。</li>
+  <li><strong>DSP（数字信号处理器）</strong>是颗小而省、乘加很快、时序确定的处理器，专门伺候连续不断的信号流：通话降噪与回声消除、语音唤醒词常驻监听、陀螺仪与马达数据滤波、部分基带处理。它的价值在于<strong>不用把大 CPU 叫醒</strong>——抬手亮屏、"嘿 Siri"这类永远在线的小活，交给 DSP 常驻跑，功耗可以压得极低。</li>
+  <li><strong>ECC（纠错码）</strong>不是加速器，是<strong>可靠性部件</strong>。内存、缓存、片上存储里的位可能因干扰或低电压翻转，ECC 加一点冗余位来发现并纠正单比特错、发现双比特错。手机在内存和关键片上存储里用它来扛低电压运行、提升稳定性；车规和服务器场景要求更严。把它和 VPU、DSP 并列，容易误以为它也在"算"，其实它只保证算出来的数没被悄悄改掉。</li>
+</ul>
+
+<h5 class="font-semibold mt-3 mb-1">10. IPC：怎么算，以及为什么不能只看它和频率</h5>
+<p class="mb-2">IPC 是 Instructions Per Cycle，<strong>平均每个时钟周期完成多少条指令</strong>。它不是一个出厂标好的参数，而是跑某段程序时测出来的比值：用处理器里的硬件性能计数器读出"退休的指令数"和"实际活跃周期数"，两者相除就得到 IPC。注意分子是<strong>退休</strong>的指令——乱序执行里那些预测错、被冲刷掉的指令不算数。</p>
+<p class="mb-2">一段程序花的时间，粗略可以写成：<strong>耗时 ≈ 指令总数 ÷（IPC × 频率）</strong>。这行式子把三件事都摆出来了，也顺便说明只盯其中一个为什么容易看偏。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>频率相同，IPC 可以差好几倍</strong>：微架构的发射宽度、乱序窗口、缓存和分支预测都在影响每周期能真正做完多少条。所以"3GHz 一定比 2.5GHz 快"这种说法，跨代、跨大小核就不成立。</li>
+  <li><strong>IPC 高，也不代表更快</strong>：编译器换一版、指令选得不同，指令总数可能变少，IPC 反而"变低"但程序更短；反过来，一段被访存停顿拖住的代码，周期数变大，IPC 会掉，可它未必是芯片不行，可能是数据没喂上。</li>
+  <li><strong>指令数本身就不对等</strong>：一条向量指令能同时处理一批数据，一条 NPU 层面的"命令"背后可能是整个矩阵块。这类活 IPC 可能低得可怜，实际吞吐却高得离谱。拿标量 IPC 去比较 GPU 或 NPU，基本没有意义。</li>
+  <li><strong>并行度不在公式里</strong>：IPC 描述的是单条执行流每个周期做多少。GPU 靠成百上千组线程、NPU 靠阵列里同时算的许多输出点把吞吐堆上去，它们的强项根本不在这一列指标上。</li>
+  <li><strong>手机还要看持续表现和能耗</strong>：峰值频率会被散热按住，长时间负载下真正稳定的是持续频率；同样的活，用专用部件（VPU、NPU、DSP）做完花的能量，可能比让通用核心硬扛少一个量级。</li>
+</ul>
+<p class="mb-2">所以更靠谱的看法是：先看<strong>单位时间完成了多少真实工作</strong>（每秒出几帧、一次推理多少毫秒、导出一段视频多久），再看<strong>单位能耗完成多少</strong>（同样的活掉多少电、烫不烫），最后才用 IPC 和频率去解释"为什么会这样"。它们是诊断工具，不是成绩单。</p>
+
+<h5 class="font-semibold mt-3 mb-1">11. 把一部手机的一天串起来</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>抬手亮屏</strong>：DSP 常驻听着传感器数据，判断出抬手动作，才把应用处理器叫醒；CPU 的能效核先接住，操作系统调度器决定要不要动用大核。</li>
+  <li><strong>刷信息流</strong>：CPU 处理列表逻辑与网络回调，GPU 把一屏卡片和动画画出来，VPU 顺手解着信息流里的视频，内存控制器在几路请求之间排优先级。</li>
+  <li><strong>拍一张夜景</strong>：ISP 整理原始帧 → 编译器事先切好的计算图进 NPU，MAC 阵列跑降噪，标量 ALU 做量化与取最大值 → GPU 合成预览 → VPU 如果要录像同时开工 → CPU 收尾写文件。整条链靠信号量和 fence 串起来，四路一起抢带宽。</li>
+  <li><strong>玩一局游戏</strong>：CPU 跑逻辑与物理、GPU 成批算像素、DSP 处理语音、总线和内存带宽被同时占用；跑上十几分钟，散热开始压频率，这时候决定帧率的往往不是峰值算力，而是持续频率与带宽。</li>
+</ul>
+<p class="mb-2"><strong>本章小结</strong></p>
+<p class="mb-2">把这一节收成三句话。第一，<strong>调度是分层的</strong>：操作系统管线程、运行时与编译器管图和指令、驱动管队列与同步、硬件调度器管每个周期发射什么，越往下越细、越往上越看得全。第二，<strong>并行是分层的</strong>：流水线让一个部件不空转，多发射与乱序让一个核心里的部件同时忙，线程与数据并行让整片芯片都忙起来；CPU 在猜、GPU 在换、NPU 照着编译好的图做。第三，<strong>算得快慢取决于数据喂不喂得上</strong>：TLB、缓存、内存控制器、带宽、频率和总线互联共同决定了执行单元有没有活干，也决定了峰值数字能不能持续。</p>
+<p class="mb-2">给你一个能带走的判断法：看到"卡"，先问是<strong>算不过来</strong>、<strong>等数据</strong>，还是<strong>在排队等依赖</strong>；看到"快"，先问是硬件更强，还是编译器和驱动把活排得更好。频率和 IPC 只是线索，真正该看的是单位时间做完了多少事、为这些事付了多少电。至于具体几级流水、几发射、缓存多大——那是每颗芯片自己的实现，别当成通用规律记。</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">三、操作系统：安卓 VS iOS VS 鸿蒙</h4>
 <p class="mb-2">硬件是身体，操作系统是灵魂。三大系统各有特色：</p>
 <ul class="list-disc pl-6 mb-3 space-y-1">
   <li><strong>安卓</strong>：像开源社区，手机厂商可以深度定制，选择多。你可以换主题、装第三方应用商店、折腾各种玩法。但也因为开放，碎片化严重，不同品牌体验差异大。</li>
@@ -2429,7 +2808,7 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
   <li><strong>鸿蒙</strong>：华为的新物种，主打分布式能力，可以让不同设备无缝协同。后面我们会专门讲。</li>
 </ul>
 <p class="mb-2">三者生态都极其丰富，选你喜欢的生活方式就好。没有绝对的好坏，只有适不适合。</p>
-<h4 class="text-lg font-semibold mt-4 mb-2">三、手机接口全解析</h4>
+<h4 class="text-lg font-semibold mt-4 mb-2">四、手机接口全解析</h4>
 <p class="mb-2">手机接口是连接外部世界的桥梁，不同接口差异很大：</p>
 <h5 class="font-semibold mt-3 mb-1">Micro USB</h5>
 <ul class="list-disc pl-6 mb-3 space-y-1">
@@ -2459,7 +2838,7 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
   <li><strong>现状</strong>：大部分旗舰手机已取消3.5mm接口，需要Type-C转接线或使用蓝牙耳机。部分中端机和游戏手机仍保留。</li>
 </ul>
 <p class="mb-2">最后补一句：接口只是硬件的一半，<strong>协议才是另一半</strong>。买手机、配配件之前核对四件事——充电协议是否通用（第三方充电器能不能跑满标称功率）、是否支持 eSIM、蓝牙版本与音频编码、有没有 NFC。这几项直接决定你的充电器、耳机和出行体验，比接口形状本身重要得多。</p>
-<h4 class="text-lg font-semibold mt-4 mb-2">四、手机产品体系与命名规则</h4>
+<h4 class="text-lg font-semibold mt-4 mb-2">五、手机产品体系与命名规则</h4>
 <p class="mb-2">面对各品牌眼花缭乱的产品线，搞清楚命名规则能帮你快速定位适合自己的机型。</p>
 <h5 class="font-semibold mt-3 mb-1">主流品牌产品系列：</h5>
 <ul class="list-disc pl-6 mb-3 space-y-1">
@@ -2494,7 +2873,7 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
 </table>
 </div>
 <p class="mb-2">具体型号与跑分半年就换一代，这张表本身也会过期。买之前看两个以上独立实测，比看参数表可靠。</p>
-<h4 class="text-lg font-semibold mt-4 mb-2">五、基带与天线：手机通信的幕后功臣</h4>
+<h4 class="text-lg font-semibold mt-4 mb-2">六、基带与天线：手机通信的幕后功臣</h4>
 <p class="mb-2">手机能打电话、上网，靠的是基带芯片和天线这对搭档。</p>
 <h5 class="font-semibold mt-3 mb-1">基带芯片：</h5>
 <p class="mb-2">基带是手机中负责无线通信的处理器，它将数字信号调制成无线电波发出去，也将接收到的无线电波解调成数字信号。基带性能直接影响通话质量、上网速度和信号稳定性。高通是最大的手机基带供应商，联发科、三星也有自研基带。苹果从iPhone 16e开始搭载自研的C1基带芯片，标志着苹果正式进入自研基带时代，C1基带采用4nm制程，功耗表现优异；iPhone 16/16 Plus/16 Pro/16 Pro Max仍使用高通基带（骁龙X75 5G），预计后续机型将逐步过渡到自研基带。更早的iPhone XS/11系列使用Intel基带时信号表现不佳，是不少用户的痛点。</p>
@@ -2519,7 +2898,90 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
   <li><strong>5G NR Band（N系列）</strong>：如n1、n3、n28、n41、n78、n79等。n78（3.5GHz）是中国5G主力频段，n41（2.5GHz）移动使用较多。</li>
   <li><strong>购买建议</strong>：如果需要出国使用，购买前确认手机是否支持目标国家的频段。国行手机通常对中国频段支持最全，但可能缺少部分海外频段。</li>
 </ul>
-<h4 class="text-lg font-semibold mt-4 mb-2">六、你的手机，到底在扮演多少角色？</h4>
+<!-- v19-baseband-rf-section -->
+<h5 class="font-semibold mt-3 mb-1">蜂窝基带（BP）到底管什么：</h5>
+<p class="mb-2">前面说"基带把数字信号调制成无线电波"，这句为了方便理解做了简化。真拆开看，<strong>BP（Baseband Processor，基带处理器）只管数字这一半</strong>：它产出的是一串比特或基带样值，并不直接把电波送出去。把比特变成电磁波，是后面射频前端的活。</p>
+<p class="mb-2">BP 的活分两类。一类是<strong>把数据搬过无线信道</strong>：发送时做信道编码、加校验、调制、成帧，让数据扛得住干扰和衰落；接收时反过来做同步、信道估计、均衡、解调、解码，出错的还要靠重传合并补回来。另一类是<strong>守着空口的规矩</strong>：小区搜索与注册、切换、功率控制、重传、加密与鉴权，全都对时间极敏感——晚几毫秒，基站那边这一帧就过去了。</p>
+<p class="mb-2">所以它内部大致是这么一套零件：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>实时处理器子系统</strong>：一颗或多颗 DSP 加控制核心，跑自己的实时操作系统。它不跑安卓、也不跑你的 App，只伺候空口那些按时辰办事的任务。</li>
+  <li><strong>调制解调硬件</strong>：OFDM 的调制与解调、快速傅里叶变换、信道估计与均衡、多路天线的信号分离。这些运算规律固定、量大，做成专用电路比让通用 CPU 算省得多。</li>
+  <li><strong>信道编解码与重传</strong>：不同代际用的编码方案不一样，但思路一致——加冗余、检错、错了请求重传并和旧数据合并。信号越差，这部分越忙。</li>
+  <li><strong>协议栈加速与定时</strong>：把数据切段、排序、加解密、压包头、守住收发时刻，都要按协议精确到时隙。</li>
+  <li><strong>三类接口</strong>：往上是与<strong>应用处理器（AP）</strong>的高速链路（片内总线或高速串行接口），往旁边是与<strong>射频前端</strong>的数字接口，还有一路连到 <strong>USIM 卡</strong>做鉴权。</li>
+  <li><strong>功耗状态管理</strong>：没有数据时让接收机按节奏短暂醒来听一下寻呼，其余时间睡过去——手机待机能撑一整天，很靠这套机制。</li>
+</ul>
+<p class="mb-2">和 AP 的分工值得单独说一句：应用处理器跑操作系统、界面和网络上层协议，基带跑确定性最强的空口部分，两边各跑各的系统。<strong>AP 睡着的时候 BP 还醒着</strong>，继续守着寻呼、注册和小区切换——这就是为什么关屏一整夜，早上仍能立刻收到消息。参数表上写的"基带型号"，指的就是这颗；它既不是 SoC 里的 CPU/GPU/NPU，也不是射频前端。</p>
+
+<h5 class="font-semibold mt-3 mb-1">从数字到电波：基带、射频前端与天线怎么接力：</h5>
+<p class="mb-2">把一次"发出去"和一次"收进来"连起来看，整条链就清楚了。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>发送</strong>：BP 编好码、调好制 → 数模转换或数字射频接口 → 收发机把信号搬到射频频率 → 功率放大器（PA）把功率提到能传出去 → 滤波器与双工器挑干净该发的频段 → 天线调谐匹配 → 天线辐射出去。</li>
+  <li><strong>接收</strong>：天线感应到微弱信号 → 滤波 → 低噪声放大器（LNA）先放大而不引入太多噪声 → 下变频搬回低频 → 模数转换 → 回到 BP 做同步、均衡与解调。</li>
+  <li><strong>闭环控制</strong>：BP 不只递数据，还一刻不停地调 PA 的发射功率、接收增益、滤波器与天线调谐。信号好就把功率收小省电，信号差就往上抬——这几条控制线是整条链路的"神经"。</li>
+</ul>
+<p class="mb-2">为什么非要分成数字和射频两段？两个很实在的理由：空口的时序细到毫秒以下，交给通用操作系统调度根本来不及，得有独立的实时处理器；而射频是模拟电路，工艺、供电和抗干扰的要求跟数字逻辑完全不同，往往单独做、也常常单独封装。<strong>基带管"算什么"，射频前端管"怎么把这段信号送上天"</strong>，中间靠那组控制信号把它们缝成一条闭环。</p>
+<p class="mb-2">手机上的几个日常现象，顺着这条链就讲得通：在电梯或地下车库，PA 得把功率拉满，于是发热、掉电都变快；手握姿势挡住某根天线，调谐与多天线选路要重新调整；金属边框必须留出天线带，否则等于给信号盖了层盖子。所以"信号差更费电"不是错觉，是发射链路在替你使劲。</p>
+
+<h5 class="font-semibold mt-3 mb-1">集成基带与外挂基带：</h5>
+<p class="mb-2">基带和 AP 是做在同一颗芯片里，还是各做各的，是整机设计里一个很实际的取舍。两种方案长期并存，谈不上谁更先进。</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+<thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">对比项</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">集成基带（与 AP 同一颗 SoC / 同封装）</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">外挂基带（独立芯片）</th></tr></thead>
+<tbody>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">结构</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">共用片内互连、内存与电源管理，AP 与 BP 之间走片内通路</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">两颗芯片通过高速接口相连，各自带自己的内存与供电</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">功耗与面积</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">省掉片间往返，功耗与占板面积都更省</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">多一次数据搬运，多一颗芯片的位置、供电与散热</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">协同与调度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">电源状态、唤醒、数据通路容易一起管，延迟小</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">要额外维护两端的状态同步与接口协议</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">工艺取舍</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">得迁就同一套工艺，模拟/射频部分未必用得上最合适的制程</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">数字与射频可以各自选更合适的工艺单独迭代</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">版本与迭代</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">换通信能力往往要换整颗 SoC，按地区做频段版本不灵活</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">AP 与基带可自由组合，便于按市场做不同版本、单独升级</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">适用场景</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">走量的主流机型，优先轻薄、续航与成本</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">要覆盖多地区多频段、自研基带过渡期、或对射频布局要求高的机型</td></tr>
+</tbody>
+</table>
+</div>
+<p class="mb-2">一句话收住：<strong>集成赢在省，外挂赢在活</strong>。省的是电、面积和成本，活的是组合、版本与迭代。看到某款机器用哪种方案，别急着下"先进/落后"的结论，先看它要覆盖哪些市场、机身留了多少空间、这一代是不是正处在切换期。</p>
+
+<h5 class="font-semibold mt-3 mb-1">SA 与 NSA：两种 5G 组网：</h5>
+<p class="mb-2">先厘清一件事：SA 和 NSA 说的是<strong>运营商那张网怎么搭</strong>，不是手机的频段，也不是"支不支持 5G"的开关。手机要能用，得在基带的协议栈里支持对应模式；但决定你连到哪种网的，是基站和核心网。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>NSA（非独立组网）</strong>：5G 基站负责接入，但控制面仍锚在<strong>4G 核心网</strong>上，还要 4G 基站当锚点。手机同时连着 4G 和 5G（双连接），注册、切换这类信令走 4G，用户数据可以走 5G 那条快路。好处是能借现成的 4G 网快速铺开、早期覆盖好；代价是高级能力受 4G 核心网限制，两路射频同时工作也更容易费电。</li>
+  <li><strong>SA（独立组网）</strong>：5G 基站配 <strong>5G 核心网</strong>，控制面和用户面都走 5G，不再依赖 4G。低时延、网络切片、边缘计算、海量连接这些"完整 5G 能力"要靠它才发挥得出来；代价是核心网得新建，覆盖要一点点铺，早期不如 4G 兜底稳。</li>
+</ul>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+<thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">对比项</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">NSA</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">SA</th></tr></thead>
+<tbody>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">核心网</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">沿用 4G 核心网</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">新建 5G 核心网</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">是否依赖 4G</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">要，4G 当锚点</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">不需要</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">手机连接方式</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">4G 与 5G 双连接</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">只连 5G 一套</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">时延与高级能力</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">受 4G 核心网限制</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">支持低时延、切片、边缘计算</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">建网与覆盖</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">快、早期覆盖好</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">投入大、覆盖逐步铺开</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">对手机的影响</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">要支持双连接，两路射频同时工作更耗电</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">要支持 5G 核心网流程；覆盖不足时回落到其它网络</td></tr>
+</tbody>
+</table>
+</div>
+<p class="mb-2">两个常见混淆值得点破：<strong>SA/NSA 不等于 Sub-6 与毫米波</strong>——后者说的是频段，前者说的是网络架构，两件事可以任意组合；也<strong>不等于"手机支不支持 5G"</strong>，同一部手机两种模式都能支持，实际连上哪种取决于当地网络。上一小节讲的 4G、5G、5G-A 是代际，这一小节讲的是每一代里网络怎么搭，别叠在一起记。</p>
+
+<h5 class="font-semibold mt-3 mb-1">Wi-Fi 与蓝牙基带：</h5>
+<p class="mb-2">同一部手机里还跑着另外两套"基带"，它们和蜂窝基带是完全不同的系统：用的是非授权频谱，不需要 SIM 卡，也不连运营商核心网，覆盖从几米到几十米，发射功率低得多，而且更多由应用处理器上的操作系统直接管。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Wi-Fi</strong>：物理层同样用 OFDM，和蜂窝技术有亲缘，但接入方式根本不同——没有基站统一排时隙，大家靠<strong>竞争信道</strong>（先听有没有人在发，空了再发，撞了就退避重来）。多天线、波束成形、信道选择与漫游、加密都在协议栈里。它追求的是短距离内的高吞吐，代价是设备一多、距离一远，竞争和干扰就会把速度拉下来。</li>
+  <li><strong>蓝牙</strong>：靠<strong>跳频</strong>在拥挤的 2.4GHz 里躲干扰，设备组成一个小小的微微网，双方约好"连接事件"，其余时间睡过去。经典蓝牙偏向持续音频，BLE（低功耗蓝牙）把"睡很久、醒很短"做到极致，一颗纽扣电池能撑几年——耳机、手表、手柄、防丢标签、靠近解锁，都是它。</li>
+  <li><strong>工程上的现实</strong>：Wi-Fi、蓝牙（有时还有 FM 与定位接收）常合在一颗<strong>连接芯片</strong>里，与蜂窝基带并行工作、各跑各的协议栈。但 2.4GHz 与部分蜂窝频段挨得近，同时收发会互相干扰，需要<strong>共存仲裁</strong>在时间和频率上错开——开热点时蓝牙耳机偶有卡顿，多半就是这套协调在打架。</li>
+</ul>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+<thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">对比项</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">蜂窝基带</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Wi-Fi / 蓝牙基带</th></tr></thead>
+<tbody>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">频谱</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">授权频段，运营商规划</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">非授权频段，大家共用</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">谁调度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">基站集中分配时隙与资源</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">竞争接入 / 双方约定连接事件</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">身份与鉴权</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">USIM 与运营商核心网</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">本地配对与密码，不经运营商</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">覆盖与功率</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">公里级，发射功率高、随信号强弱大幅调整</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">十米级，功率低，BLE 尤其省</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">典型任务</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">通话、移动数据、短信、漫游</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">上网、投屏、耳机、手表、周边配件</td></tr>
+</tbody>
+</table>
+</div>
+<p class="mb-2">把这一节收成一句判断法：以后看到"信号不好"，别只盯着那几格——先问是<strong>哪张网</strong>（SA 还是 NSA、覆盖够不够），再问<strong>哪个频段</strong>，最后才看<strong>基带与射频前端这一条链</strong>有没有被握姿、金属边框或弱场拖住。频段、组网、基带、射频前端是四件不同的事，分开想，问题就好定位了。</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">七、你的手机，到底在扮演多少角色？</h4>
 <p class="mb-2">它早已不只是电话：</p>
 <ol class="list-decimal pl-6 mb-3 space-y-1">
   <li><strong>通讯工具</strong>：电话、短信、微信、邮件……</li>
@@ -5399,7 +5861,100 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
   <li>如果充电器或手机异常发热、有异味，立即停止使用。</li>
 </ul>
 </div>
-<h4 class="text-lg font-semibold mt-4 mb-2">四、电池新技术：硅碳负极电池</h4>
+<!-- v19-gan-adapter-section -->
+<h4 class="text-lg font-semibold mt-4 mb-2">四、氮化镓（GaN）适配器：充电头这边到底变了什么</h4>
+<p class="mb-2">前面在讲充电习惯时提过一句：GaN 充电头是出差党的好搭档，同样的功率能做得很小。上一节又把快充协议捋了一遍，知道了「先看协议，再谈瓦数」。那这块越做越小的充电头，里面究竟换了什么？为什么换了材料就能变小、少发热？它又凭什么被反复和「快充」「续航」绑在一起说？这一节把充电头这头讲清楚。</p>
+<p class="mb-2"><strong>先把位置摆正</strong>：从墙上插座到电池，中间至少隔着四段——适配器把市电变成低压直流，数据线把它送进手机，手机里的充电管理电路按协议要来的电压电流调整成电池能接受的形状，最后才是电芯把电能存进去。<strong>氮化镓只作用于第一段</strong>。它让这一段的转换更省、体积更小，但既不增加电池容量，也不减少手机耗电，更不会让屏幕、基带、SoC 少用一点电。后面会反复回到这条边界上。</p>
+
+<h5 class="font-semibold mt-3 mb-1">1. 从硅到氮化镓：宽禁带带来的三件事</h5>
+<p class="mb-2">充电器里最忙的元件是一颗<strong>开关管</strong>：它每秒几十万次地导通、关断，把直流「切」成高频脉冲，交给变压器降压。过去这颗管子基本都是硅 MOSFET，现在不少产品换成了 <strong>GaN HEMT</strong>（氮化镓高电子迁移率晶体管）。换的不是名字，是材料本身的几个物理属性：</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+<thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">对比项</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">硅 MOSFET</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">GaN HEMT</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">对充电头的意义</th></tr></thead>
+<tbody>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">禁带宽度与耐压</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">禁带较窄，要做到同样耐压，器件得做厚、做大</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">宽禁带，击穿电场高约一个数量级</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">同样耐压下器件面积更小、导通电阻更低，导通时的发热更少</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">开关速度与寄生参数</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">栅极电荷、寄生电容较大，还有体二极管带来的反向恢复损耗</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">沟道里是二维电子气，寄生电容小，基本没有体二极管的反向恢复问题</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">每次开关浪费的能量少，才能把频率往上推而不至于烫手</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">高温工作能力</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">结温上限较低，温度一高就得降额</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">可以在更高结温下工作，但<strong>导热能力并不比硅强</strong></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">耐热不等于散热，热量照样要靠封装、灌封材料和外壳导出去</td></tr>
+</tbody>
+</table>
+</div>
+<p class="mb-2">这里有个流传很广的误会得先拆掉：<strong>GaN 并不是「导热特别好」</strong>。论热导率，它比碳化硅低，跟硅相比也没有明显优势。它真正的好处是<strong>自己产生的热更少</strong>，并且能扛住更高的结温。所以 GaN 充电头摸起来不那么烫，是损耗降低加上散热设计共同的结果，不是材料把热量凭空变没了。</p>
+<p class="mb-2">还有一处要说准：所谓「GaN 充电器」，通常只是<strong>功率开关管</strong>换成了 GaN 器件，而且多是在硅衬底上长一层氮化镓外延（GaN-on-Si），好控制成本。协议芯片、控制 IC、整流管、变压器、电容、外壳，该有的照样有，大多还是常规器件。把它理解成「整个充电头都是氮化镓做的」，就跑偏了。</p>
+
+<h5 class="font-semibold mt-3 mb-1">2. 适配器怎么把 220V 变成手机能吃的电</h5>
+<p class="mb-2">充电头学名叫<strong>开关电源适配器</strong>，走的还是那条老路，只是把每一步做得又小又快：</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>整流滤波</strong>：插座里的交流电先被整流成高压直流，再由电容抹平波动。</li>
+  <li><strong>高频斩波</strong>：开关管以很高频率把高压直流切成一串脉冲。频率越高，每个脉冲要传递的能量越少，变压器和滤波元件就能做越小。</li>
+  <li><strong>变压器降压与隔离</strong>：高频变压器把电压降下来，同时把市电一侧和手机一侧在电气上隔开，这是安全的底线，也是安规里绝缘、爬电距离这些要求的由来。</li>
+  <li><strong>次级整流与滤波</strong>：降压后的高频交流再被整成平滑直流，现在多用同步整流来降低这一段的损耗。</li>
+  <li><strong>协议协商与输出</strong>：协议芯片跟手机「对上话」，按商量好的电压电流档位输出；手机要多少、什么时候要，都是手机这边说了算。</li>
+</ol>
+<p class="mb-2">关键就在第二步。变压器每个周期能搬多少能量，跟频率直接相关：<strong>频率提上去，磁芯和绕组就可以缩小，滤波电容也能跟着减小</strong>。这就是「高频化 → 小型化」的基本逻辑。可频率不是想提就能提——开关管每导通关断一次都要交一笔「开关损耗」，频率越高，这笔账翻得越快。硅管在高频下光是栅极充放电和反向恢复就够它热得降额，等于省下来的体积又被散热片吃了回去。</p>
+<p class="mb-2">GaN 的意义正在这里：<strong>它把高频化的代价压低了</strong>。开关损耗小了，频率才能往上走；频率上去了，磁性元件和电容才敢做小；元件小了，整块板子才塞得进那个小方块。再叠上有源钳位或准谐振这类拓扑、同步整流、平面变压器、灌封导热，才凑成今天这个「巴掌大、能带笔记本」的多口充电头。少算任何一环，都解释不通。</p>
+<div class="tip-box rounded-lg p-4 mb-3"><p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>一句话记牢</p><p class="mt-1">GaN 不是「让充电变快的魔法材料」，它是<strong>让开关电源敢跑更高频率</strong>的那块拼图。频率高 → 变压器电容小 → 体积小；损耗低 → 少发热 → 小体积里才装得下更大功率。两件事是同一条因果链。</p></div>
+
+<h5 class="font-semibold mt-3 mb-1">3. 体积小、发热低、功率密度高：分别省在哪</h5>
+<p class="mb-2">广告里常把这三个词并列，其实它们说的是三个不同层面的结果：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>体积小</strong>：主要来自高频化后磁性元件与电容的缩小。同样输出功率，元件越小、板子越紧凑；反过来同样体积，也能塞进更高功率。</li>
+  <li><strong>发热低</strong>：来自损耗降低。损耗大致分两块，导通时电阻上的损耗跟电流平方成正比，开关瞬间的损耗跟频率成正比；GaN 两头都占便宜，再加上同步整流，浪费成热的电就少了。</li>
+  <li><strong>功率密度高</strong>：这是前两项合起来的比值，意思是单位体积能输出多少功率。它衡量的是<strong>充电头做得有多紧凑</strong>，跟「手机能充多快」不是一回事。</li>
+  <li><strong>充电效率高</strong>：指插座取进来的电有多少真正送到了输出端。要留意宣传里的效率通常是某个中等负载下的峰值，轻载、满载、多口同时插、温度升上去以后都会变；它是个区间，不是一个全程恒定的数字。</li>
+</ul>
+<p class="mb-2">顺带说个反向的代价：开关波形越陡，高频噪声和电磁干扰越难收拾。频率提上去以后，布线、屏蔽、共模滤波、变压器绕法都得跟着讲究，否则可能干扰触控、无线通信，或者干脆过不了电磁兼容测试。所以<strong>高频不是免费的午餐</strong>，GaN 只是把这道门槛挪近了，跨不跨得过去仍看整体设计。这也解释了为什么同样是「GaN」，不同产品做出来体积、温升和稳定性可以差很多。</p>
+
+<h5 class="font-semibold mt-3 mb-1">4. 标称功率、协议兼容与实际速度：三方对齐才叫快</h5>
+<p class="mb-2">上一节讲过握手，这里把功率这条链接完。<strong>充电头标注的瓦数是它能提供的上限，不是插上就一定输出的数值</strong>。实际功率大致由四个环节里最短的那块板决定：</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+<thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">环节</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">它决定什么</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">常见的卡点</th></tr></thead>
+<tbody>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">适配器</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">能提供哪些电压电流档位、单口最大功率、多口怎么分配</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">只支持 PD 固定档，手机要 PPS 细调电压就对不上；插第二个设备时功率被重新分配</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">数据线</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">能否扛住对应电流、能否让协议通信正常进行</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">线阻过大、线材不带能力标识、Type-C 高功率线缺少电子标记芯片</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">手机与协议</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">认不认这个协议、请求哪一档、握手失败后回落到哪一档</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">私有协议和通用协议不互通，大功率头也可能只跑常规档</td></tr>
+<tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">电池与充电管理</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">此刻电芯实际能接受多大电流</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">电量、温度、电池状态、系统负载都会让手机主动降功率</td></tr>
+</tbody>
+</table>
+</div>
+<p class="mb-2">最后一行最容易被忽略。手机里的充电管理电路（电荷泵或降压电路）才是真正给电芯「喂电」的角色，它会按电池的电量与温度画一条曲线：<strong>电量低时可以放开大电流，中段开始逐步收敛，接近满电时明显放慢</strong>。所以宣传里「十几分钟充到一半」不能简单乘二推算充满时间，后半程本来就该慢。这也解释了两个常见困惑：为什么同一个 100W 的头给不同手机速度差很多，以及为什么手机发热时充电会突然变慢——不是充电头不够猛，是手机自己把闸门关小了。</p>
+<p class="mb-2">多口充电头还多一层变数：每插拔一次设备，功率分配可能重新算一遍，某些口会短暂断连再握手。所以「一个头给三台设备同时满速」通常做不到，看铭牌上每口的分配规则比看总瓦数有用。</p>
+
+<h5 class="font-semibold mt-3 mb-1">5. 效率、温控和习惯：哪些真的影响电池健康</h5>
+<p class="mb-2">把「更护电池」这四个字拆开看，会发现 GaN 能帮上的忙相当有限。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>转换效率影响的是墙那一端</strong>：效率高，浪费在充电头里的电少，插头不那么烫，长时间挂着也少一点无谓耗电。<strong>这部分损耗本来就没进过电池</strong>，所以省下来的是插座的电，不是电池的循环寿命。</li>
+  <li><strong>手机端的发热主要来自手机内部</strong>：充电管理电路、电池内阻，再加上边充边玩时屏幕和 SoC 一起发热。这些热跟充电头用什么材料没有直接关系，倒是跟充电功率、机身散热和当时在跑什么应用关系很大。</li>
+  <li><strong>高温叠加高电量，才是电芯老化最不喜欢的组合</strong>：大电流充电本身会升温，如果又长期停在满电、还捂在厚壳或被子里，老化会明显加快。前面那节讲「80% 限制」「优化电池充电」，针对的正是这个组合。</li>
+  <li><strong>温控策略是双向的</strong>：手机靠温度传感器盯着电芯与机身，热了就降充电功率、暂缓后台任务、必要时暂停充电；适配器自己也有过温降额。所以「充到一半变慢」往往是保护在起作用，别急着换线换头。</li>
+</ul>
+<p class="mb-2">顺着这条线，习惯上的取舍就很清楚了：尽量别让手机在阳光直晒、厚壳闷着、边跑高负载应用的同时还在快充；有固定充电条件的人，开「优化充电」或 80% 上限比纠结充电头材质更有用；需要满电出门再充满，别长期插着停在 100%；线材和充电头用协议匹配、标识齐全的合规产品。至于「浅充浅放」「偶尔做一次电量校准」这类做法，按厂商给的系统说明来就行，不必自己发明仪式。</p>
+<div class="warning-box rounded-lg p-4 mt-3"><p class="font-semibold"><i class="fas fa-exclamation-triangle mr-2"></i>别把两笔账算混</p><p class="mt-1">充电头省下的电，是<strong>从插座到手机</strong>这一段；续航长短，是<strong>电池容量减去手机耗电</strong>这一笔。前者再漂亮，也不会让电池多装进一毫安时。想让手机撑得久，还是得回到后面那节讲屏幕、信号、后台和电池本身的内容上去。</p></div>
+
+<h5 class="font-semibold mt-3 mb-1">6. 过压、过流、过热：保护是怎么兜底的</h5>
+<p class="mb-2">充电头小了、功率高了，安全这层反而更要讲清楚。合格的适配器里，保护是好几路并行的，动作通常是<strong>降功率、关断输出、冷却后重试</strong>，不会硬扛着继续供：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>过压保护（OVP）</strong>：输出电压一旦超出约定档位就关断，防止异常电压顺着线伤到手机。协议协商失败、反馈回路出问题时靠它兜底。</li>
+  <li><strong>过流与过功率保护（OCP / OPP）</strong>：电流或总功率超过设计值就限流或关断，多口设备、线材异常、端口短路时最常见。</li>
+  <li><strong>短路保护（SCP）</strong>：输出端短接时立刻切断，故障排除后才恢复。</li>
+  <li><strong>过温保护（OTP）</strong>：内部测温点超过阈值先降额，继续升温就停输出。这也提醒我们别把充电头捂在枕头、被褥或密闭插排盒里。</li>
+  <li><strong>输入侧与绝缘</strong>：浪涌、欠压、雷击尖峰靠输入侧器件吸收；市电与低压输出之间靠变压器、绝缘胶带、板上的安全间距隔开，这是安规认证重点查的地方。</li>
+  <li><strong>手机与线材这一端</strong>：手机还有输入过压过流保护、电芯过充过放与温度监控；Type-C 高功率线材靠电子标记芯片声明自己的能力，避免「小线扛大电流」。</li>
+</ul>
+<p class="mb-2">高频开关还带来一件事：电压电流变化更陡，电磁干扰更难压住。合格产品要靠滤波、屏蔽和布线把噪声关在壳子里，再送去按销售地的强制认证做安规与电磁兼容测试。<strong>所以买充电头看认证标志，不是看包装上印了几个 GaN 字样</strong>——认证对应的是整机的设计、用料与测试，材料只是其中一环。</p>
+
+<h5 class="font-semibold mt-3 mb-1">7. 选购和使用：一份不踩坑的清单</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>先查协议，再看瓦数</strong>：把你手上的手机、平板、笔记本列一遍，确认充电头明确支持它们要的协议（USB PD、PPS，或某家的私有协议）。协议对不上，瓦数再高也只会回落到常规档。</li>
+  <li><strong>看单口输出和多口分配规则</strong>：铭牌上的总功率不等于每个口都能给满。只给一台手机充，和同时带三台设备，是两种完全不同的需求。</li>
+  <li><strong>功率留余量，不必追数字</strong>：手机实际吃多少由手机决定，买远超出需求的大功率头，换来的往往只是体积和价格，不是更快的充电。真需要 GaN 的体积优势，通常是「一个头带走、还要带笔记本」的场景。</li>
+  <li><strong>线材一起配齐</strong>：看电流规格、接口、长度，高功率 Type-C 线认准带电子标记芯片的产品。线是协议握手和供电链路的一部分，别在这省。</li>
+  <li><strong>认认证、认标识、认质保</strong>：看销售地要求的强制认证标志（国内看 CCC），以及型号、输入输出参数、执行标准、厂名是否齐全。参数印得含糊、只有宣传语没有铭牌的，直接跳过。</li>
+  <li><strong>用的时候给它留散热空间</strong>：插在通风处，别压在被子下，别和一堆大功率电器挤在劣质插排上；长期不用可以拔下来，既省一点待机电，也少一层风险。</li>
+  <li><strong>异常就停</strong>：出现明显烫手、异味、异响、火花，或者手机反复断连重连，立刻停用并换掉，别想着「再试试」。</li>
+</ul>
+<p class="mb-2">说到底，GaN 是一次<strong>电源侧</strong>的工程进步：同样功率做得更小、更凉、更方便携带，多口场景尤其明显。它值得买，但理由应该是「方便、省地方、一个头够用」，不是「充得更快」「更护电池」「续航更久」。下一节讲硅碳负极，那才是真正动到电池容量的一步；再往后那节讲省电技巧，才是真正决定你一天要不要找插座的地方。</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">五、电池新技术：硅碳负极电池</h4>
 <p class="mb-2">如果你留意2024-2026年的旗舰手机发布会，"硅碳负极"这个词几乎成了高端电池的代名词。这是锂电池负极材料的一次重要升级，原理其实不复杂：</p>
 <ul class="list-disc pl-6 mb-3 space-y-1">
   <li><strong>传统石墨负极</strong>：手机电池一直用的是石墨做负极，技术成熟、稳定，但能量密度已接近理论上限（约372mAh/g）。</li>
@@ -5416,7 +5971,7 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
 </ul>
 </div>
 <p class="mb-2"><strong>对用户的实际影响</strong>：硅碳负极带来的最大好处是"同体积电池容量更大"——手机可以做得更薄，同时续航不缩水；或者机身不变厚，但电池从4500mAh涨到5500mAh。换句话说，你不用为续航付"厚重"的代价了。需要注意的是，硅碳负极电池在低温和满充管理上仍需配合快充芯片做优化，这也是厂商建议长期保持80%充电的原因之一。</p>
-<h4 class="text-lg font-semibold mt-4 mb-2">五、这才是真正的省电技巧</h4>
+<h4 class="text-lg font-semibold mt-4 mb-2">六、这才是真正的省电技巧</h4>
 <ul class="list-disc pl-6 mb-3 space-y-1">
   <li><strong>屏幕（耗电王）</strong>：调低亮度、缩短自动锁屏时间。OLED屏手机开深色模式能省不少电。</li>
   <li><strong>信号差</strong>：在电梯、地下室，手机会拼命搜信号，耗电极快。</li>
@@ -6022,18 +6577,18 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
 <p class="mb-2">Termux是一款专为Android设备设计的开源终端模拟器和Linux环境应用程序，它无需root权限即可在手机上提供完整的Linux shell体验。作为一个轻量级应用（安装包仅30MB左右），Termux通过APT包管理系统支持丰富的软件生态，允许用户在移动设备上运行Python、Node.js、Git、SSH等工具，甚至搭建服务器或进行渗透测试。</p>
 <p class="mb-2">Termux的核心优势在于轻量化和高度可扩展性，适合开发、学习及系统管理等多种场景。它将标准的软件包与精确的终端仿真结合在一个开源解决方案中。</p>
 <h4 class="text-lg font-semibold mt-4 mb-2">二、核心功能与特性</h4>
-<h5 class="font-semibold mt-3 mb-1">🖥️ 完整的Linux环境</h5>
+<h5 class="font-semibold mt-3 mb-1">完整的Linux环境</h5>
 <p class="mb-2">Termux<strong>仅内置Bash</strong>这一种Shell。如果想使用Zsh或fish等其他Shell，需要通过包管理器手动安装，例如：<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">pkg install zsh</code>或<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">pkg install fish</code>。同时Termux支持Vim、Nano、Emacs等编辑器，提供接近原生的命令行体验。用户可以通过"pkg install"安装2000+软件包，包括GCC、OpenSSH、SQLMap等开发和安全工具。</p>
-<h5 class="font-semibold mt-3 mb-1">📦 强大的包管理</h5>
+<h5 class="font-semibold mt-3 mb-1">强大的包管理</h5>
 <p class="mb-2">使用APT包管理器（类似Debian和Ubuntu），可安装数千种Linux软件包，涵盖开发工具、网络工具等。支持Python、Ruby、Node.js、Go、Rust、Swift等多种编程语言环境。</p>
 <p class="mb-2">装完先<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">pkg update &amp;&amp; pkg upgrade</code>更新软件源与基础包，再往里装工具。之后遇到「command not found」别慌——多半不是系统不支持，是没装对应的包，<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">pkg install</code>一下就好。</p>
-<h5 class="font-semibold mt-3 mb-1">🔒 安全与网络功能</h5>
+<h5 class="font-semibold mt-3 mb-1">安全与网络功能</h5>
 <ul class="list-disc pl-6 mb-3 space-y-1">
   <li><strong>SSH远程连接</strong>：支持SSH客户端和服务器功能，可远程连接其他设备或让手机成为SSH主机。装上openssh后用<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">sshd</code>启动，默认监听8022端口，从别的设备连时要带上<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">-p 8022</code>。</li>
   <li><strong>加密工具</strong>：提供OpenSSL等加密工具，支持数据加密和安全通信。</li>
   <li><strong>服务器搭建</strong>：可配置Nginx或Apache搭建静态网页服务器。</li>
 </ul>
-<h5 class="font-semibold mt-3 mb-1">🔧 系统集成与扩展</h5>
+<h5 class="font-semibold mt-3 mb-1">系统集成与扩展</h5>
 <ul class="list-disc pl-6 mb-3 space-y-1">
   <li>访问手机存储权限，实现本地文件管理。</li>
   <li>通过Termux:API插件调用传感器、摄像头等Android硬件功能。</li>
@@ -6080,7 +6635,7 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
 <p class="mt-1">Termux及其插件必须从同一来源安装，因为它们共享相同的sharedUserId。混合来自不同来源（如F-Droid和GitHub）的安装将导致安装错误。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">四、安装与配置指南</h4>
-<h5 class="font-semibold mt-3 mb-1">📥 安装步骤</h5>
+<h5 class="font-semibold mt-3 mb-1">安装步骤</h5>
 <ol class="list-decimal pl-6 mb-3 space-y-1">
   <li><strong>下载应用</strong>：从项目官方渠道（F-Droid或GitHub Releases）下载安装Termux，无需root权限。应用商店里能搜到的Termux多半是好几年前的旧包，别装那个；不同Android版本的兼容包也可能不一样。</li>
   <li><strong>初始化系统</strong>：首次启动后等待"Installing bootstrap packages"完成。</li>
@@ -6088,19 +6643,19 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
   <li><strong>更新软件源</strong>：执行<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">pkg update &amp;&amp; pkg upgrade</code>更新软件包列表。</li>
 </ol>
 <p class="mb-2">存储权限也可以不给：不执行<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">termux-setup-storage</code>，Termux照样能在自己的家目录里干活，只是读不到相册和下载文件夹。能访问整个共享存储的终端，等于把你手机里的文件交给了你敲的每一条命令——按需授权，用不到就别开。</p>
-<h5 class="font-semibold mt-3 mb-1">⚙️ 基础优化</h5>
+<h5 class="font-semibold mt-3 mb-1">基础优化</h5>
 <ul class="list-disc pl-6 mb-3 space-y-1">
   <li><strong>换镜像源</strong>：使用<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">termux-change-repo</code>命令通过图形界面更换镜像源（推荐清华大学镜像源）。</li>
   <li><strong>快捷键设置</strong>：音量减键模拟Ctrl，音量加键模拟Esc，提升输入效率。</li>
   <li><strong>界面美化</strong>：安装Zsh + Oh My Zsh，配置主题和插件。</li>
 </ul>
 <h4 class="text-lg font-semibold mt-4 mb-2">五、典型应用场景</h4>
-<h5 class="font-semibold mt-3 mb-1">💻 移动开发测试</h5>
+<h5 class="font-semibold mt-3 mb-1">移动开发测试</h5>
 <p class="mb-2">在手机上搭建完整的开发环境，编写并运行Python脚本，使用GCC编译C程序，通过Git管理代码仓库，结合SSH与远程服务器同步。</p>
-<h5 class="font-semibold mt-3 mb-1">🖥️ 服务器运维</h5>
+<h5 class="font-semibold mt-3 mb-1">服务器运维</h5>
 <p class="mb-2">通过SSH远程管理服务器，执行系统维护、日志分析等任务，随时随地处理服务器问题。</p>
 <p class="mb-2">但预期要摆正：安卓对后台应用的管控一代比一代紧，任务跑一半被系统冻结是常事。SSH上去敲几条命令、看看日志没问题；真要挂机跑几个小时的任务，交给电脑或一台常供电的小设备更稳。</p>
-<h5 class="font-semibold mt-3 mb-1">📚 学习Linux操作</h5>
+<h5 class="font-semibold mt-3 mb-1">学习Linux操作</h5>
 <p class="mb-2">提供真实的Linux环境，是学习命令行和系统管理的理想平台，可练习Shell脚本编写、Linux文件权限管理（如 <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">chmod 755</code> 设置 rwxr-xr-x 权限位、<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">chown user:group</code> 修改文件归属、<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">ls -l</code> 查看 owner/group/other 三组九位权限）等基础命令。注意这是Unix/Linux经典的"三组九位"权限模型（owner / group / other × 读 / 写 / 执行），与Windows NTFS的ACL访问控制列表是完全不同的两套体系。</p>
 <h5 class="font-semibold mt-3 mb-1">🔐 网络安全测试</h5>
 <p class="mb-2">安装Nmap、SQLMap、Hydra、Metasploit等安全工具，进行网络扫描和渗透测试。</p>
@@ -6629,7 +7184,7 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
                     </table>
 <p class="mb-2">简单说：<strong>Git管"怎么记录变更"，GitHub管"变更放在哪、怎么协作"</strong>。Git是工具，在本地运行；GitHub是平台，把Git仓库放到云端，方便协作和展示。你可以只用Git不用GitHub（比如自己写代码做版本管理），但用GitHub一定要用Git（因为GitHub就是基于Git的）。</p>
 <h4 class="text-lg font-semibold mt-4 mb-2">三、GitHub的核心概念与功能</h4>
-<h5 class="font-semibold mt-3 mb-1">📁 基础概念</h5>
+<h5 class="font-semibold mt-3 mb-1">基础概念</h5>
 <p class="mb-2">在动手之前，先认识几个高频词汇，否则看GitHub的界面会一头雾水：</p>
 <ul class="list-disc pl-6 mb-3 space-y-1">
   <li><strong>仓库（Repository，简称Repo）</strong>：一个项目对应一个仓库，里面存放着这个项目的所有代码文件、历史版本和文档。可以理解为一个"项目文件夹"。</li>
@@ -6641,7 +7196,7 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
   <li><strong>议题（Issue）</strong>：用来记录bug、功能需求、讨论话题。每个Issue像一个讨论帖，可以指派负责人、打标签。</li>
   <li><strong>Fork</strong>：把别人的仓库复制一份到自己账号下，你可以在自己的副本上随意修改，不影响原仓库。改好后可以给原作者发PR，请求合并你的改进。</li>
 </ul>
-<h5 class="font-semibold mt-3 mb-1">🛠️ 核心功能</h5>
+<h5 class="font-semibold mt-3 mb-1">核心功能</h5>
 <p class="mb-2">GitHub提供的不只是代码存储，还包括：</p>
 <ul class="list-disc pl-6 mb-3 space-y-1">
   <li><strong>版本控制</strong>：记录每次代码更改的历史，改坏代码随时回到上一个正常版本。</li>
@@ -6654,14 +7209,14 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
   <li><strong>开源社区</strong>：你可以Star（收藏）喜欢的项目、Watch（关注）项目动态、Follow（关注）开发者，参与全球开源协作。</li>
 </ul>
 <h4 class="text-lg font-semibold mt-4 mb-2">四、注册与上手：五分钟创建你的第一个仓库</h4>
-<h5 class="font-semibold mt-3 mb-1">📝 注册账号</h5>
+<h5 class="font-semibold mt-3 mb-1">注册账号</h5>
 <ol class="list-decimal pl-6 mb-3 space-y-1">
   <li>访问<a href="https://github.com" class="text-primary hover:underline" target="_blank" rel="noopener">github.com</a>，点击"Sign up"。</li>
   <li>填写邮箱、设置密码和用户名（用户名会出现在你的个人主页地址里，建议用英文，比如<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">github.com/yourname</code>）。</li>
   <li>完成邮箱验证和人机验证。</li>
   <li>选择免费方案（Free）即可，对个人用户完全够用。</li>
 </ol>
-<h5 class="font-semibold mt-3 mb-1">📁 创建第一个仓库</h5>
+<h5 class="font-semibold mt-3 mb-1">创建第一个仓库</h5>
 <ol class="list-decimal pl-6 mb-3 space-y-1">
   <li>登录后点击右上角"+"号，选"New repository"。</li>
   <li>填写仓库名（Repository name），比如<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">my-first-project</code>。</li>
@@ -6698,13 +7253,13 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
 <p class="mb-2">这套流程保证了<strong>任何代码进入主分支前都经过审查</strong>，大大降低了出错概率。开源项目也是用这套机制接受全世界陌生人的贡献——你完全可以在某个知名开源项目上提交PR，被采纳后你就是这个项目的贡献者了。</p>
 <p class="mb-2">正式的团队仓库，一般还会给主分支开「分支保护」（Branch protection）：开了之后谁都不能直接往主分支push，所有改动必须走PR、审查通过才能合并——想绕都绕不过去。新建仓库时默认分支叫什么名字，以平台当前提示为准。给别人的项目做贡献，路径也一样：Fork、建分支、小步提交、写清改了什么、发PR等Review，第三十八章有完整的五步流程。</p>
 <h4 class="text-lg font-semibold mt-4 mb-2">七、GitHub的典型应用场景</h4>
-<h5 class="font-semibold mt-3 mb-1">🎓 学生参加比赛与课程项目</h5>
+<h5 class="font-semibold mt-3 mb-1">学生参加比赛与课程项目</h5>
 <p class="mb-2">计算机系学生参加ACM、黑客松、毕业设计，几乎都离不开GitHub。它既能作为团队协作平台，又能作为作品展示窗口——比赛评委可以直接看你的仓库，了解代码质量和协作过程。很多公司招聘时也会要求附上GitHub主页，作为技术能力的证明。</p>
-<h5 class="font-semibold mt-3 mb-1">📚 个人知识库与笔记托管</h5>
+<h5 class="font-semibold mt-3 mb-1">个人知识库与笔记托管</h5>
 <p class="mb-2">非程序员也能用GitHub。很多人用它托管学习笔记、技术博客（配合GitHub Pages可以免费建站）、电子书。Markdown格式写作 + Git版本管理 + 云端备份，三合一。</p>
 <h5 class="font-semibold mt-3 mb-1">🌐 参与开源项目</h5>
 <p class="mb-2">GitHub是全球开源运动的核心阵地。你可以Fork喜欢的项目，修改后发PR回馈社区；也可以单纯Star收藏好项目，跟踪更新。参与开源是提升技术、积累声誉的绝佳途径。</p>
-<h5 class="font-semibold mt-3 mb-1">🤖 自动化部署与CI/CD</h5>
+<h5 class="font-semibold mt-3 mb-1">自动化部署与CI/CD</h5>
 <p class="mb-2">借助GitHub Actions，可以实现"代码一push，自动测试+自动部署到服务器"的全自动流程。很多个人博客、文档站点都是这么搭建的，写完文章push一下，网站就自动更新了。</p>
 <h5 class="font-semibold mt-3 mb-1">💾 代码备份与多设备同步</h5>
 <p class="mb-2">把代码仓库当作云盘用，换电脑、多设备办公时，git pull一下就能拿到最新代码，再也不用U盘拷来拷去。</p>
@@ -6774,7 +7329,7 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
 </ol>
 <h5 class="font-semibold mt-3 mb-1">🔗 安全启动链</h5>
 <p class="mb-2">BL锁是整个安全启动链的第一环。它验证通过后，才会加载并执行下一阶段的引导程序（如内核），从而层层确保系统启动环境的可信。</p>
-<h5 class="font-semibold mt-3 mb-1">📊 锁定 vs 解锁：BL锁的双面影响</h5>
+<h5 class="font-semibold mt-3 mb-1">锁定 vs 解锁：BL锁的双面影响</h5>
 <p class="mb-2">为了更直观地理解 BL 锁的利弊，我们用一个对比表来展示它在 5 个核心维度上的差异：</p>
 <div class="overflow-x-auto">
 <table class="w-full border-collapse border border-gray-300 dark:border-gray-600 text-sm">
@@ -8537,32 +9092,32 @@ html.lg-adv:not(.lg-off):not(.safe) .search-panel {
 </ol>
 <p class="mb-2">数字不会说谎：Cursor 在 2026 年 4 月发布的 Cursor 3 版本中，<strong>Agent 模式的使用率首次反超 Tab 补全模式</strong>，标志着开发者已经大规模转向这种工作方式；而 Claude Code 这个终端原生的 AI 编程工具，到 2026 年中期已达到年化收入 25 亿美元的规模。下面的趋势图能让你直观感受这个交叉时刻：</p>
 <div class="figure">
-<svg style="max-width:100%;height:auto" width="640" height="300" viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="0" width="640" height="300" fill="#ffffff" rx="8"/>
-      <line x1="70" y1="240" x2="600" y2="240" stroke="#9ca3af" stroke-width="1.5"/>
-      <line x1="70" y1="240" x2="70" y2="30" stroke="#9ca3af" stroke-width="1.5"/>
-      <line x1="70" y1="190" x2="600" y2="190" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,4"/>
-      <line x1="70" y1="140" x2="600" y2="140" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,4"/>
-      <line x1="70" y1="90" x2="600" y2="90" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,4"/>
-      <line x1="70" y1="40" x2="600" y2="40" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,4"/>
-      <text x="62" y="244" font-size="10" fill="#6b7280" text-anchor="end">0</text>
-      <text x="62" y="194" font-size="10" fill="#6b7280" text-anchor="end">20</text>
-      <text x="62" y="144" font-size="10" fill="#6b7280" text-anchor="end">40</text>
-      <text x="62" y="94" font-size="10" fill="#6b7280" text-anchor="end">60</text>
-      <text x="62" y="44" font-size="10" fill="#6b7280" text-anchor="end">80</text>
-      <text x="335" y="272" font-size="11" fill="#374151" text-anchor="middle">使用率 (%)</text>
-      <polyline points="70,215 220,172 370,152 590,116" fill="none" stroke="#4f46e5" stroke-width="2.5"/>
-      <polyline points="70,52 220,85 370,103 590,135" fill="none" stroke="#9ca3af" stroke-width="2.5"/>
-      <circle cx="70" cy="215" r="4" fill="#4f46e5"/><circle cx="220" cy="172" r="4" fill="#4f46e5"/><circle cx="370" cy="152" r="4" fill="#4f46e5"/><circle cx="590" cy="116" r="4" fill="#4f46e5"/>
-      <circle cx="70" cy="52" r="4" fill="#9ca3af"/><circle cx="220" cy="85" r="4" fill="#9ca3af"/><circle cx="370" cy="103" r="4" fill="#9ca3af"/><circle cx="590" cy="135" r="4" fill="#9ca3af"/>
-      <text x="70" y="285" font-size="10" fill="#6b7280" text-anchor="middle">2024 Q4</text>
-      <text x="220" y="285" font-size="10" fill="#6b7280" text-anchor="middle">2025 Q2</text>
-      <text x="370" y="285" font-size="10" fill="#6b7280" text-anchor="middle">2025 Q4</text>
-      <text x="590" y="285" font-size="10" fill="#6b7280" text-anchor="middle">2026 Q2</text>
-      <line x1="435" y1="60" x2="465" y2="60" stroke="#4f46e5" stroke-width="2.5"/>
-      <text x="472" y="63" font-size="10" fill="#374151">Agent 模式使用率</text>
-      <line x1="435" y1="82" x2="465" y2="82" stroke="#9ca3af" stroke-width="2.5"/>
-      <text x="472" y="85" font-size="10" fill="#374151">Tab 补全模式使用率</text>
+<svg style="max-width:100%;height:auto" width="640" height="300" viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0" y="0" width="640" height="300" style="fill:var(--ink-inverse)" rx="8"/>
+      <line x1="70" y1="240" x2="600" y2="240" stroke="var(--muted)" stroke-width="1.5"/>
+      <line x1="70" y1="240" x2="70" y2="30" stroke="var(--muted)" stroke-width="1.5"/>
+      <line x1="70" y1="190" x2="600" y2="190" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+      <line x1="70" y1="140" x2="600" y2="140" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+      <line x1="70" y1="90" x2="600" y2="90" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+      <line x1="70" y1="40" x2="600" y2="40" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+      <text x="62" y="244" font-size="10" fill="var(--muted-2)" text-anchor="end">0</text>
+      <text x="62" y="194" font-size="10" fill="var(--muted-2)" text-anchor="end">20</text>
+      <text x="62" y="144" font-size="10" fill="var(--muted-2)" text-anchor="end">40</text>
+      <text x="62" y="94" font-size="10" fill="var(--muted-2)" text-anchor="end">60</text>
+      <text x="62" y="44" font-size="10" fill="var(--muted-2)" text-anchor="end">80</text>
+      <text x="335" y="272" font-size="11" fill="var(--ink-2)" text-anchor="middle">使用率 (%)</text>
+      <polyline points="70,215 220,172 370,152 590,116" fill="none" stroke="var(--accent-book)" stroke-width="2.5"/>
+      <polyline points="70,52 220,85 370,103 590,135" fill="none" stroke="var(--muted)" stroke-width="2.5"/>
+      <circle cx="70" cy="215" r="4" fill="var(--accent-book)"/><circle cx="220" cy="172" r="4" fill="var(--accent-book)"/><circle cx="370" cy="152" r="4" fill="var(--accent-book)"/><circle cx="590" cy="116" r="4" fill="var(--accent-book)"/>
+      <circle cx="70" cy="52" r="4" fill="var(--muted)"/><circle cx="220" cy="85" r="4" fill="var(--muted)"/><circle cx="370" cy="103" r="4" fill="var(--muted)"/><circle cx="590" cy="135" r="4" fill="var(--muted)"/>
+      <text x="70" y="285" font-size="10" fill="var(--muted-2)" text-anchor="middle">2024 Q4</text>
+      <text x="220" y="285" font-size="10" fill="var(--muted-2)" text-anchor="middle">2025 Q2</text>
+      <text x="370" y="285" font-size="10" fill="var(--muted-2)" text-anchor="middle">2025 Q4</text>
+      <text x="590" y="285" font-size="10" fill="var(--muted-2)" text-anchor="middle">2026 Q2</text>
+      <line x1="435" y1="60" x2="465" y2="60" stroke="var(--accent-book)" stroke-width="2.5"/>
+      <text x="472" y="63" font-size="10" fill="var(--ink-2)">Agent 模式使用率</text>
+      <line x1="435" y1="82" x2="465" y2="82" stroke="var(--muted)" stroke-width="2.5"/>
+      <text x="472" y="85" font-size="10" fill="var(--ink-2)">Tab 补全模式使用率</text>
       <circle cx="529" cy="126" r="3" fill="#c0392b"/>
       <text x="529" y="152" font-size="10" fill="#c0392b" text-anchor="middle">≈ 2026 Q2 交叉</text>
     </svg>
@@ -9098,31 +9653,31 @@ Step 5: 数据导出</pre>
 <p class="text-xs text-gray-500 dark:text-gray-400 mb-3">国产五大模型横向对比（2026 年 8 月）</p>
 <p class="mb-2">一个重要的趋势是：<strong>国产模型与 GPT/Claude 的"代差感"已经消失</strong>。在逻辑推理和数学竞赛上，国产旗舰与 GPT-5 的分差基本在个位数。在系统化架构思维和复杂工程推理上，Claude 仍然领先——它能给出更有"灵气"的架构方案，而国产模型有时显得"教条"。但在中文场景、成本控制和合规部署上，国产模型有压倒性优势。</p>
 <div class="figure">
-<svg style="max-width:100%;height:auto" width="620" height="290" viewBox="0 0 620 290" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="0" width="620" height="290" fill="#ffffff" rx="8"/>
-      <line x1="70" y1="230" x2="590" y2="230" stroke="#9ca3af" stroke-width="1.5"/>
-      <line x1="70" y1="230" x2="70" y2="20" stroke="#9ca3af" stroke-width="1.5"/>
-      <line x1="70" y1="60" x2="590" y2="60" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,4"/>
-      <line x1="70" y1="116" x2="590" y2="116" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,4"/>
-      <line x1="70" y1="173" x2="590" y2="173" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,4"/>
-      <text x="62" y="234" font-size="10" fill="#6b7280" text-anchor="end">0</text>
-      <text x="62" y="120" font-size="10" fill="#6b7280" text-anchor="end">50</text>
-      <text x="62" y="64" font-size="10" fill="#6b7280" text-anchor="end">100</text>
-      <text x="340" y="262" font-size="10.5" fill="#374151" text-anchor="middle">输出价格（元/百万Token）</text>
+<svg style="max-width:100%;height:auto" width="620" height="290" viewBox="0 0 620 290" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0" y="0" width="620" height="290" style="fill:var(--ink-inverse)" rx="8"/>
+      <line x1="70" y1="230" x2="590" y2="230" stroke="var(--muted)" stroke-width="1.5"/>
+      <line x1="70" y1="230" x2="70" y2="20" stroke="var(--muted)" stroke-width="1.5"/>
+      <line x1="70" y1="60" x2="590" y2="60" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+      <line x1="70" y1="116" x2="590" y2="116" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+      <line x1="70" y1="173" x2="590" y2="173" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+      <text x="62" y="234" font-size="10" fill="var(--muted-2)" text-anchor="end">0</text>
+      <text x="62" y="120" font-size="10" fill="var(--muted-2)" text-anchor="end">50</text>
+      <text x="62" y="64" font-size="10" fill="var(--muted-2)" text-anchor="end">100</text>
+      <text x="340" y="262" font-size="10.5" fill="var(--ink-2)" text-anchor="middle">输出价格（元/百万Token）</text>
       <!-- bars: price -->
-      <rect x="95" y="218" width="60" height="12" fill="#4f46e5"/><text x="125" y="212" font-size="9" fill="#374151" text-anchor="middle">6</text><text x="125" y="248" font-size="9.5" fill="#374151" text-anchor="middle">DeepSeek</text>
-      <rect x="195" y="146" width="60" height="84" fill="#4f46e5"/><text x="225" y="140" font-size="9" fill="#374151" text-anchor="middle">36</text><text x="225" y="248" font-size="9.5" fill="#374151" text-anchor="middle">Qwen</text>
-      <rect x="295" y="182" width="60" height="48" fill="#4f46e5"/><text x="325" y="176" font-size="9" fill="#374151" text-anchor="middle">24</text><text x="325" y="248" font-size="9.5" fill="#374151" text-anchor="middle">GLM</text>
-      <rect x="395" y="200" width="60" height="30" fill="#4f46e5"/><text x="425" y="194" font-size="9" fill="#374151" text-anchor="middle">16</text><text x="425" y="248" font-size="9.5" fill="#374151" text-anchor="middle">Kimi</text>
-      <rect x="495" y="170" width="60" height="60" fill="#4f46e5"/><text x="525" y="164" font-size="9" fill="#374151" text-anchor="middle">30</text><text x="525" y="248" font-size="9.5" fill="#374151" text-anchor="middle">豆包</text>
+      <rect x="95" y="218" width="60" height="12" fill="var(--accent-book)"/><text x="125" y="212" font-size="9" fill="var(--ink-2)" text-anchor="middle">6</text><text x="125" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">DeepSeek</text>
+      <rect x="195" y="146" width="60" height="84" fill="var(--accent-book)"/><text x="225" y="140" font-size="9" fill="var(--ink-2)" text-anchor="middle">36</text><text x="225" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">Qwen</text>
+      <rect x="295" y="182" width="60" height="48" fill="var(--accent-book)"/><text x="325" y="176" font-size="9" fill="var(--ink-2)" text-anchor="middle">24</text><text x="325" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">GLM</text>
+      <rect x="395" y="200" width="60" height="30" fill="var(--accent-book)"/><text x="425" y="194" font-size="9" fill="var(--ink-2)" text-anchor="middle">16</text><text x="425" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">Kimi</text>
+      <rect x="495" y="170" width="60" height="60" fill="var(--accent-book)"/><text x="525" y="164" font-size="9" fill="var(--ink-2)" text-anchor="middle">30</text><text x="525" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">豆包</text>
       <!-- scores -->
-      <circle cx="125" cy="118" r="5" fill="#d4a017"/><text x="140" y="114" font-size="9" fill="#78350f">87.5</text>
-      <circle cx="225" cy="110" r="5" fill="#d4a017"/><text x="240" y="106" font-size="9" fill="#78350f">89.7</text>
-      <circle cx="325" cy="105" r="5" fill="#d4a017"/><text x="340" y="101" font-size="9" fill="#78350f">90.5</text>
-      <circle cx="425" cy="112" r="5" fill="#d4a017"/><text x="440" y="108" font-size="9" fill="#78350f">88+</text>
-      <circle cx="525" cy="116" r="5" fill="#d4a017"/><text x="540" y="112" font-size="9" fill="#78350f">85+</text>
-      <rect x="90" y="30" width="12" height="12" fill="#4f46e5"/><text x="108" y="41" font-size="9.5" fill="#374151">输出价格(越低越好)</text>
-      <circle cx="170" cy="36" r="5" fill="#d4a017"/><text x="182" y="40" font-size="9.5" fill="#374151">综合得分(越高越好)</text>
+      <circle cx="125" cy="118" r="5" fill="var(--gold)"/><text x="140" y="114" font-size="9" fill="#78350f">87.5</text>
+      <circle cx="225" cy="110" r="5" fill="var(--gold)"/><text x="240" y="106" font-size="9" fill="#78350f">89.7</text>
+      <circle cx="325" cy="105" r="5" fill="var(--gold)"/><text x="340" y="101" font-size="9" fill="#78350f">90.5</text>
+      <circle cx="425" cy="112" r="5" fill="var(--gold)"/><text x="440" y="108" font-size="9" fill="#78350f">88+</text>
+      <circle cx="525" cy="116" r="5" fill="var(--gold)"/><text x="540" y="112" font-size="9" fill="#78350f">85+</text>
+      <rect x="90" y="30" width="12" height="12" fill="var(--accent-book)"/><text x="108" y="41" font-size="9.5" fill="var(--ink-2)">输出价格(越低越好)</text>
+      <circle cx="170" cy="36" r="5" fill="var(--gold)"/><text x="182" y="40" font-size="9.5" fill="var(--ink-2)">综合得分(越高越好)</text>
     </svg>
 <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">图 4：五款模型的价格与性能对比（价格越低越好，得分越高越好）</p>
 </div>
@@ -9773,7 +10328,7 @@ Record { id, amount, type, category, note, date }
   <li>Andrej Karpathy. (2025). Vibe Coding. Social media post introducing the concept of vibe-driven programming with AI.</li>
   <li>Andrej Karpathy. (2025). CLAUDE.md - Project guidelines for AI-assisted development. GitHub repository, 70+K stars.</li>
   <li>Anthropic. (2026). Claude Code: Terminal-native AI programming. Official documentation and best practices.</li>
-  <li>Cursor Team. (2026). Cursor 3: The next generation of AI-first IDE. Release notes and documentation.</li>
+  <li>Cursor Team. (2026). Cursor 3: The the the next generation of tools of tools of AI-first IDE. Release notes and documentation.</li>
   <li>OpenAI. (2026). Codex CLI: Bringing AI to the terminal. Technical documentation.</li>
   <li>Model Context Protocol (MCP) Specification. (2025-2026). Open protocol for AI-tool integration.</li>
   <li>Vibe Coding Community. (2026). Community-curated skills and best practices for AI-assisted programming.</li>
@@ -9925,27 +10480,27 @@ Record { id, amount, type, category, note, date }
 <h4 class="text-lg font-semibold mt-4 mb-2">四、工程结构拆解：每个文件是干嘛的</h4>
 <p class="mb-2">第一次打开项目，左侧的文件树可能让你头晕。别慌，日常开发你 90% 的时间只跟下面这几个打交道：</p>
 <div class="figure">
-<svg style="max-width:100%;height:auto" width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="0" width="600" height="300" fill="#fafafa" rx="8"/>
-      <text x="20" y="30" font-size="13" font-weight="bold" fill="#111827">MyFirstApp/ 项目根目录</text>
-      <rect x="30" y="45" width="540" height="230" fill="#ffffff" stroke="#d1d5db" rx="6"/>
-      <text x="45" y="70" font-size="11" fill="#4f46e5" font-weight="bold">app/ ← 你写代码的地方</text>
-      <rect x="60" y="82" width="240" height="178" fill="#eef2ff" rx="5"/>
-      <text x="70" y="102" font-size="10" fill="#1e1b4b" font-weight="bold">src/main/</text>
-      <text x="80" y="120" font-size="10" fill="#374151">├ java/…/MainActivity.kt  ← 逻辑代码</text>
-      <text x="80" y="138" font-size="10" fill="#374151">├ res/  ← 资源（图片、文字、颜色）</text>
-      <text x="80" y="156" font-size="10" fill="#374151">└ AndroidManifest.xml  ← 应用"户口本"</text>
-      <text x="70" y="180" font-size="10" fill="#1e1b4b" font-weight="bold">build.gradle.kts</text>
-      <text x="80" y="198" font-size="10" fill="#6b7280">声明依赖的库（SDK 版本、Compose 等）</text>
-      <text x="70" y="222" font-size="10" fill="#1e1b4b" font-weight="bold">src/androidTest/ 与 test/</text>
-      <text x="80" y="240" font-size="10" fill="#6b7280">自动化测试代码（第 56 章用）</text>
+<svg style="max-width:100%;height:auto" width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0" y="0" width="600" height="300" fill="var(--surface-6)" rx="8"/>
+      <text x="20" y="30" font-size="13" font-weight="bold" fill="var(--surface-dark-2)">MyFirstApp/ 项目根目录</text>
+      <rect x="30" y="45" width="540" height="230" style="fill:var(--ink-inverse)" stroke="var(--line-2)" rx="6"/>
+      <text x="45" y="70" font-size="11" fill="var(--accent-book)" font-weight="bold">app/ ← 你写代码的地方</text>
+      <rect x="60" y="82" width="240" height="178" fill="var(--accent-wash)" rx="5"/>
+      <text x="70" y="102" font-size="10" fill="var(--accent-deep)" font-weight="bold">src/main/</text>
+      <text x="80" y="120" font-size="10" fill="var(--ink-2)">├ java/…/MainActivity.kt  ← 逻辑代码</text>
+      <text x="80" y="138" font-size="10" fill="var(--ink-2)">├ res/  ← 资源（图片、文字、颜色）</text>
+      <text x="80" y="156" font-size="10" fill="var(--ink-2)">└ AndroidManifest.xml  ← 应用"户口本"</text>
+      <text x="70" y="180" font-size="10" fill="var(--accent-deep)" font-weight="bold">build.gradle.kts</text>
+      <text x="80" y="198" font-size="10" fill="var(--muted-2)">声明依赖的库（SDK 版本、Compose 等）</text>
+      <text x="70" y="222" font-size="10" fill="var(--accent-deep)" font-weight="bold">src/androidTest/ 与 test/</text>
+      <text x="80" y="240" font-size="10" fill="var(--muted-2)">自动化测试代码（第 56 章用）</text>
       <rect x="320" y="82" width="230" height="178" fill="#f0fdf4" rx="5"/>
       <text x="330" y="102" font-size="10" fill="#065f46" font-weight="bold">根目录的其他文件</text>
-      <text x="340" y="122" font-size="10" fill="#374151">gradle/ + gradlew.bat  ← 构建脚本</text>
-      <text x="340" y="142" font-size="10" fill="#374151">settings.gradle.kts  ← 项目设置</text>
-      <text x="340" y="162" font-size="10" fill="#6b7280">（新手的口诀：只碰 app/ 目录，</text>
-      <text x="340" y="180" font-size="10" fill="#6b7280">其余的先当"黑盒"，别乱动）</text>
-      <text x="340" y="208" font-size="10" fill="#9ca3af">.gitignore  ← 版本控制忽略清单</text>
+      <text x="340" y="122" font-size="10" fill="var(--ink-2)">gradle/ + gradlew.bat  ← 构建脚本</text>
+      <text x="340" y="142" font-size="10" fill="var(--ink-2)">settings.gradle.kts  ← 项目设置</text>
+      <text x="340" y="162" font-size="10" fill="var(--muted-2)">（新手的口诀：只碰 app/ 目录，</text>
+      <text x="340" y="180" font-size="10" fill="var(--muted-2)">其余的先当"黑盒"，别乱动）</text>
+      <text x="340" y="208" font-size="10" fill="var(--muted)">.gitignore  ← 版本控制忽略清单</text>
     </svg>
 <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">图 2：新手必懂的工程结构（口诀：只碰 app/ 目录）</p>
 </div>
@@ -11311,26 +11866,26 @@ if (ActivityCompat.checkSelfPermission(this,
 <h4 class="text-lg font-semibold mt-4 mb-2">四、工程结构拆解：每个文件是干嘛的</h4>
 <p class="mb-2">左侧是工程导航器，新手只需认识这几个：</p>
 <div class="figure">
-<svg style="max-width:100%;height:auto" width="600" height="290" viewBox="0 0 600 290" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="0" width="600" height="290" fill="#fafafa" rx="8"/>
-      <text x="20" y="28" font-size="13" font-weight="bold" fill="#111827">MyFirstApp/ 项目根目录</text>
-      <rect x="30" y="42" width="540" height="225" fill="#ffffff" stroke="#d1d5db" rx="6"/>
-      <rect x="45" y="56" width="250" height="196" fill="#eef2ff" rx="5"/>
-      <text x="56" y="78" font-size="11" fill="#1e1b4b" font-weight="bold">MyFirstApp/（代码目录）</text>
-      <text x="66" y="100" font-size="10" fill="#374151">├ MyFirstAppApp.swift  ← 程序入口</text>
-      <text x="66" y="120" font-size="10" fill="#374151">├ ContentView.swift  ← 主界面</text>
-      <text x="66" y="140" font-size="10" fill="#374151">└ Assets.xcassets  ← 图标、图片、颜色</text>
-      <text x="56" y="166" font-size="10" fill="#6b7280">（新增文件都放这个目录下）</text>
-      <text x="56" y="196" font-size="10" fill="#1e1b4b" font-weight="bold">Info 标签页 / Info.plist</text>
-      <text x="66" y="216" font-size="10" fill="#6b7280">应用声明：名字、权限、设置</text>
+<svg style="max-width:100%;height:auto" width="600" height="290" viewBox="0 0 600 290" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0" y="0" width="600" height="290" fill="var(--surface-6)" rx="8"/>
+      <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--surface-dark-2)">MyFirstApp/ 项目根目录</text>
+      <rect x="30" y="42" width="540" height="225" style="fill:var(--ink-inverse)" stroke="var(--line-2)" rx="6"/>
+      <rect x="45" y="56" width="250" height="196" fill="var(--accent-wash)" rx="5"/>
+      <text x="56" y="78" font-size="11" fill="var(--accent-deep)" font-weight="bold">MyFirstApp/（代码目录）</text>
+      <text x="66" y="100" font-size="10" fill="var(--ink-2)">├ MyFirstAppApp.swift  ← 程序入口</text>
+      <text x="66" y="120" font-size="10" fill="var(--ink-2)">├ ContentView.swift  ← 主界面</text>
+      <text x="66" y="140" font-size="10" fill="var(--ink-2)">└ Assets.xcassets  ← 图标、图片、颜色</text>
+      <text x="56" y="166" font-size="10" fill="var(--muted-2)">（新增文件都放这个目录下）</text>
+      <text x="56" y="196" font-size="10" fill="var(--accent-deep)" font-weight="bold">Info 标签页 / Info.plist</text>
+      <text x="66" y="216" font-size="10" fill="var(--muted-2)">应用声明：名字、权限、设置</text>
       <rect x="310" y="56" width="245" height="196" fill="#f0fdf4" rx="5"/>
       <text x="321" y="78" font-size="11" fill="#065f46" font-weight="bold">其他重要位置</text>
-      <text x="331" y="100" font-size="10" fill="#374151">📁 Preview Content/  ← 预览素材</text>
-      <text x="331" y="122" font-size="10" fill="#374151"><i class="fas fa-bullseye mr-1"></i> Target 设置（蓝色工程图标）</text>
-      <text x="331" y="142" font-size="10" fill="#6b7280">——版本号、最低系统、签名都在这</text>
-      <text x="331" y="168" font-size="10" fill="#374151"><i class="fas fa-flask mr-1"></i> MyFirstAppTests/  ← 单元测试</text>
-      <text x="331" y="188" font-size="10" fill="#374151">📱 MyFirstAppUITests/ ← 界面测试</text>
-      <text x="331" y="216" font-size="10" fill="#9ca3af">（测试模板已生成，第 67 章用）</text>
+      <text x="331" y="100" font-size="10" fill="var(--ink-2)">📁 Preview Content/  ← 预览素材</text>
+      <text x="331" y="122" font-size="10" fill="var(--ink-2)"><i class="fas fa-bullseye mr-1"></i> Target 设置（蓝色工程图标）</text>
+      <text x="331" y="142" font-size="10" fill="var(--muted-2)">——版本号、最低系统、签名都在这</text>
+      <text x="331" y="168" font-size="10" fill="var(--ink-2)"><i class="fas fa-flask mr-1"></i> MyFirstAppTests/  ← 单元测试</text>
+      <text x="331" y="188" font-size="10" fill="var(--ink-2)">📱 MyFirstAppUITests/ ← 界面测试</text>
+      <text x="331" y="216" font-size="10" fill="var(--muted)">（测试模板已生成，第 67 章用）</text>
     </svg>
 <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">图 2：新手必懂的 Xcode 工程结构</p>
 </div>
@@ -15436,17 +15991,28 @@ struct TodoCard {
 <p class="font-semibold"><i class="fas fa-rocket mr-2"></i>v1.9 已落地：新增第十一至十五篇「手机与可穿戴篇」「旅行与手机篇」「手机与健康篇」「AI短视频创作篇」「竖屏短剧入门篇」（第81-105章，共25章）</p>
 <p class="mt-1">从可穿戴的选购与深度协同（Apple Watch / 华为手表 / Oura 与 Galaxy Ring）、出境旅行的全链路实操（eSIM / 离线地图 / 海外支付 / 翻译攻略）、健康管理的五大场景（运动 / 睡眠 / 心率血氧 / 女性与心理健康），到 AI 短视频创作流水线（剪映 AI / 可灵 AI / 数字人 / AI 配音）与竖屏短剧从剧本到变现的入门路径——带你把手机用到"生活与创作"的最后一公里。</p>
 </div>
+<!-- v19-appendix-h-2026-11 -->
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold"><i class="fas fa-wrench mr-2"></i>v1.9 深编修订（2026 年 11 月）：逐章增补与阅读体验修复</p>
+<p class="mt-1">这一轮没再新增篇章，改的是「每一章够不够扎实、读起来顺不顺」。全书 120 个内容区块按 2026 年末可核对的公开事实逐章增补细节，早先单列的「2026 年末补记」也整合进正文，不用再跳着看两部分。版本号只写官方文档能核对的，其余一律以官方为准。</p>
+<ul class="list-disc pl-6 mt-2 space-y-1">
+  <li><strong>硬件与影像补了机制</strong>：第一章新增 ALU 与 CPU / GPU / NPU 的分工、SoC 的调度与数据通路、基带与射频、CMOS 图像传感器；第十五章新增氮化镓适配器。讲的都是通用原理、边界和常见误区，不把参数表当成实际体验。</li>
+  <li><strong>事实与链接校订</strong>：过期的版本串、悬空的「补记」引用、分享图死链、附录 D 的两个友情链接，以及 PWA 在两种目录层级下的注册路径。</li>
+  <li><strong>显示问题一并修掉</strong>：折叠区裁掉长内容、超长章节入场动画造成整章白屏与锚点漂移、正文两端对齐。v1.9 两个副本和 v1.8 的 19 种语言都同步处理。</li>
+  <li><strong>在线阅读跟着换版</strong>：站点首页改为发布这一版 v1.9 内容，不再停留在 v1.8。</li>
+</ul>
+</div>
 <div class="warning-box rounded-lg p-4 mt-3">
 <p class="font-semibold"><i class="fas fa-exclamation-triangle mr-2"></i>关于时效性的说明</p>
-<p class="mt-1">手机技术迭代极快，本书主体内容基于2026年中的技术和市场状况编写，各章内容已按 2026 年 11 月的公开信息校订过一轮。AI能力、芯片型号、系统版本、价格区间都可能在你阅读时已发生变化。涉及具体操作步骤时，请以你设备的实际系统版本为准；涉及购买决策时，请查阅最新评测和用户反馈。</p>
+<p class="mt-1">手机技术迭代极快，本书主体内容基于2026年中的技术和市场状况编写，各章内容已按 2026 年 11 月的公开信息校订过一轮。AI能力、芯片型号、系统版本、价格区间都可能在你阅读时已发生变化。涉及具体操作步骤时，请以你设备的实际系统版本为准；涉及购买决策时，请查阅最新评测和用户反馈。这一轮新增的硬件原理章节只讲通用机制，不写具体芯片的规格与跑分；查参数请以厂商文档为准。</p>
 </div>
-<h4 class="text-lg font-semibold mt-4 mb-2">路线图：看方向，别把日期当承诺（更新至 2026 年 11 月）</h4>
+<h4 class="text-lg font-semibold mt-4 mb-2">路线图：看方向，别把日期当承诺（更新至 2026 年 11 月，含深编修订）</h4>
 <p class="mb-3">读这份路线图之前，有几条前提先说清楚：</p>
 <ul class="list-disc pl-6 mb-3 space-y-1">
   <li><strong>路线图是方向不是排期</strong>：技术版本、平台规则与外部依赖都会变，具体落地时间以实际发布为准。</li>
   <li><strong>v1.9 已落地的五组方向</strong>：可穿戴（第 81–85 章）、旅行与 eSIM（86–90）、健康管理（91–95）、AI 短视频（96–100）、竖屏短剧（101–105），本版中文已收录。</li>
-  <li><strong>本版的「与时俱进」方式</strong>：四大部分与全书各章统一按 2026 年末的公开事实校订；版本号只采用官方文档可核对的，其余一律写「以官方为准」。</li>
-  <li><strong>还值得继续的方向</strong>：多语言版本的内容翻译、更多真机实测截图、以及把书中的动手练习做成可自测的小测验。</li>
+  <li><strong>本版的「与时俱进」方式</strong>：全书各章按 2026 年末的公开事实逐章增补，并把补记整合进正文；版本号只采用官方文档可核对的，其余一律写「以官方为准」；新增的硬件章节只讲通用机制，不写具体芯片的规格与跑分。</li>
+  <li><strong>还值得继续的方向</strong>：把 v1.9 深编新增的技术章节同步到多语言版本、补更多真机实测截图、以及把书中的动手练习做成可自测的小测验。</li>
   <li><strong>参与方式</strong>：第 37 章（共创号召）与第二十三章附（GitHub 流程）给了从提 Issue 到合并的完整路径。</li>
 </ul>
 <div class="tip-box rounded-lg p-4 mb-3"><p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>一句话记牢</p><p class="mt-1">开源项目的路线图永远「未完待续」。它的价值在于指明往哪走，不在于承诺哪天到。</p></div>
@@ -15550,8 +16116,8 @@ struct TodoCard {
     </div>
 
     <!-- 阅读连续天数提示 -->
-    <div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;border:none;">
-        <i class="fas fa-fire" aria-hidden="true" style="color:#fbbf24"></i>
+    <div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),#7c3aed);color:var(--ink-inverse);border:none;">
+        <i class="fas fa-fire" aria-hidden="true" style="color:var(--gold-2)"></i>
         <span id="streak-toast-text">连续阅读第 X 天！</span>
     </div>
 
@@ -15569,7 +16135,7 @@ struct TodoCard {
 
     <!-- 回到顶部按钮 -->
     <button id="back-to-top" class="opacity-0 invisible" aria-label="回到顶部">
-        <svg class="progress-ring" viewBox="0 0 40 40">
+        <svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true">
             <circle class="bg" cx="20" cy="20" r="18"/>
             <circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/>
         </svg>
@@ -15784,18 +16350,26 @@ struct TodoCard {
             }
 
             // ===== 滚动入场动画 =====
-            const visibleObserver = new IntersectionObserver((entries) => {
+            // 渐进增强：只有观察器可用时才启用隐藏态，否则正文保持默认可见
+            const supportsIO = 'IntersectionObserver' in window;
+            if (supportsIO) html.classList.add('anim-ready');
+            const visibleObserver = supportsIO ? new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
+                    if (entry.isIntersecting || entry.intersectionRatio > 0) {
                         entry.target.classList.add('visible');
                         visibleObserver.unobserve(entry.target);
                     }
                 });
-            }, { rootMargin: '0px 0px -40px 0px', threshold: 0.05 });
+            }, { rootMargin: '0px 0px -40px 0px', threshold: 0 }) : null;
+            // 阈值必须为 0：超长章节用 0.05 永远达不到，会整章白屏
+            // 兜底：观察器若因任何原因未触发，2 秒后强制全部显示
+            setTimeout(() => {
+                sections.forEach(sec => sec.classList.add('visible'));
+            }, 2000);
             // 第一屏的内容直接可见
             sections.forEach((sec, i) => {
                 const rect = sec.getBoundingClientRect();
-                if (rect.top < window.innerHeight) {
+                if (!visibleObserver || rect.top < window.innerHeight) {
                     sec.classList.add('visible');
                 } else {
                     visibleObserver.observe(sec);
