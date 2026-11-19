@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="《你缺失的那门手机课》章节自测：边读边练，即时批改解析，题库由书稿自动生成。">
+<title>章节自测 · 你缺失的那门手机课</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%234f46e5'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%234f46e5'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+/* Hallmark · built: the project (章节自测) · redesign: polish · critique: P4 H3 E4 S4 R4 V3 · weakest: H，进度条与卡片的层级可以更清楚；已补焦点环/动态降级/令牌 */
+:root {
+    --paper: #FDFDFE;
+    --ink: #0B0E13;
+    --ink-inverse: #F2F6FC;
+    --brand: #165DFF;
+    --line: #E5E7EB;
+}
+a:focus-visible, button:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+html, body { overflow-x: clip; }
+h1 { text-wrap: balance; }
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+:root { --bg:#f7f8fa; --card:#fff; --text:#1f2937; --muted:#6b7280; --primary:#4f46e5;
+  --ok:#16a34a; --no:#dc2626; --warn:#d97706; --line:#e5e7eb; --soft:rgba(79,70,229,.06); }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#111827; --card:#1f2937; --text:#f3f4f6; --muted:#9ca3af; --line:#374151;
+    --soft:rgba(79,70,229,.16); }
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.7; padding:24px 16px 48px;
+  max-width:820px; margin:0 auto; -webkit-text-size-adjust:100%; }
+header { text-align:center; margin-bottom:22px; }
+header h1 { font-size:1.55rem; }
+header p { color:var(--muted); font-size:.92rem; margin-top:6px; }
+a { color:var(--primary); text-decoration:none; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px; margin-bottom:14px; }
+
+/* 总览进度 */
+.overview { display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+.ring { --p:0; width:74px; height:74px; border-radius:50%; flex:0 0 74px;
+  background:conic-gradient(var(--primary) calc(var(--p)*1%), var(--line) 0);
+  display:grid; place-items:center; }
+.ring > div { width:58px; height:58px; border-radius:50%; background:var(--card);
+  display:grid; place-items:center; font-weight:700; font-size:.95rem; }
+.ov-text { flex:1 1 200px; }
+.ov-text h2 { font-size:1rem; margin-bottom:2px; }
+.ov-text p { color:var(--muted); font-size:.86rem; }
+.badge { display:inline-flex; align-items:center; gap:6px; padding:4px 12px; border-radius:999px;
+  font-size:.82rem; font-weight:600; border:1px solid var(--line); color:var(--muted); }
+.badge.on { background:linear-gradient(135deg,#F6E4A8,#EFB93D); color:#5F3A10; border-color:#EFB93D; }
+
+/* 章节网格 */
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(232px,1fr)); gap:10px; }
+.chip { background:var(--card); border:1px solid var(--line); border-radius:11px; padding:11px 13px;
+  cursor:pointer; text-align:left; color:var(--text); font:inherit; font-size:.88rem;
+  display:flex; align-items:center; gap:8px; transition:border-color .15s, transform .15s; }
+.chip:hover { border-color:var(--primary); transform:translateY(-1px); }
+.chip .st { flex:0 0 auto; font-size:.72rem; padding:1px 7px; border-radius:6px;
+  background:var(--soft); color:var(--primary); font-weight:700; }
+.chip.done .st { background:rgba(21,146,86,.14); color:var(--ok); }
+.chip.part .st { background:rgba(196,116,15,.16); color:var(--warn); }
+.chip .t { flex:1 1 auto; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+/* 答题视图 */
+.quiz-head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:4px; }
+.back { border:1px solid var(--line); background:transparent; color:var(--muted);
+  border-radius:9px; padding:5px 11px; cursor:pointer; font:inherit; font-size:.85rem; }
+.q { margin-top:16px; }
+.q-text { font-weight:600; }
+.opt { display:block; width:100%; text-align:left; margin-top:8px; padding:11px 14px;
+  border:1.5px solid var(--line); border-radius:10px; background:transparent; color:var(--text);
+  font:inherit; font-size:.93rem; cursor:pointer; }
+.opt:hover:not(:disabled) { border-color:var(--primary); }
+.opt.right { border-color:var(--ok); background:rgba(21,146,86,.12); }
+.opt.wrong { border-color:var(--no); background:rgba(210,48,48,.1); }
+.opt:disabled { cursor:default; }
+.explain { margin-top:8px; padding:10px 14px; border-radius:10px; background:var(--soft);
+  font-size:.86rem; color:var(--muted); display:none; }
+.explain.show { display:block; }
+.result { text-align:center; }
+.result b { font-size:2.1rem; color:var(--primary); }
+.bar { height:5px; background:var(--line); border-radius:3px; overflow:hidden; margin-top:12px; }
+.bar > i { display:block; height:100%; width:0; background:var(--primary); transition:width .3s; }
+.actions { display:flex; gap:10px; justify-content:center; margin-top:16px; flex-wrap:wrap; }
+.actions button { padding:9px 18px; border-radius:10px; border:1px solid var(--line);
+  background:transparent; color:var(--text); font:inherit; cursor:pointer; }
+.actions button.primary { background:var(--primary); color: var(--ink-inverse, #F2F6FC); border-color:var(--primary); }
+footer { text-align:center; color:var(--muted); font-size:.84rem; margin-top:28px; }
+.hidden { display:none !important; }
+</style>
+</head>
+<body>
+<header>
+  <h1>章节自测</h1>
+  <p>《你缺失的那门手机课》· 每章 3 题，答完即时批改</p>
+  <p style="margin-top:4px" id="bankInfo"></p>
+  <p style="margin-top:8px"><button class="back" id="revBtn" style="display:none"><i class="fas fa-rotate-right" aria-hidden="true"></i> 开始复习（<span id="revCount">0</span> 题到期）</button></p>
+</header>
+
+<!-- 总览 -->
+<section class="card" id="overview">
+  <div class="overview">
+    <div class="ring" id="ring"><div id="ringNum">0%</div></div>
+    <div class="ov-text">
+      <h2 id="ovTitle">还没开始</h2>
+      <p id="ovSub">挑一章开始，进度只存在你自己的浏览器里</p>
+    </div>
+    <div><span class="badge" id="badge">结业徽章未解锁（完成全部章节后点亮）</span></div>
+  </div>
+  <div class="bar"><i id="ovBar"></i></div>
+</section>
+
+<!-- 章节列表 -->
+<section id="list"><div class="grid" id="grid"></div></section>
+
+<!-- 答题视图 -->
+<section id="quiz" class="hidden">
+  <div class="card">
+    <div class="quiz-head">
+      <button class="back" id="back">← 返回章节</button>
+      <strong id="qTitle"></strong>
+    </div>
+    <div class="bar"><i id="qBar"></i></div>
+    <div id="qBody"></div>
+    <div class="result hidden" id="qResult"></div>
+    <div class="actions hidden" id="qActions">
+      <button id="retry">重做这一章</button>
+      <button class="primary" id="next">进入下一章</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><a href="index.html">← 返回书目</a> · <a href="v1.9/zh-CN.html#di-ling-zhang">去读书</a></p>
+  <p style="margin-top:6px"><a href="#" id="reset">清空我的进度</a></p>
+</footer>
+
+<script>
+/* 进度存储：{ [chapterId]: {best: 0-1, last: 0-1, at: ts} } */
+const KEY = 'phoneclass-quiz-progress-v1';
+const app = { data: null, chapters: [], idx: -1, answered: 0, correct: 0, done: new Set() };
+
+const $ = (id) => document.getElementById(id);
+const loadProgress = () => { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch { return {}; } };
+const saveProgress = (p) => { try { localStorage.setItem(KEY, JSON.stringify(p)); } catch {} };
+
+/* P1-3 错题复习队列：简化 SM-2。box 1..5，间隔 1/2/4/7/15 天；
+   答对升级、答错回 box1。数据 versioned（rp:review:v1），写失败静默（M11）。 */
+const RKEY = 'rp:review:v1';
+const INTERVALS = [0, 1, 2, 4, 7, 15];
+const loadRev = () => { try { return JSON.parse(localStorage.getItem(RKEY) || '{}'); } catch { return {}; } };
+const saveRev = (r) => { try { localStorage.setItem(RKEY, JSON.stringify(r)); } catch {} };
+function reviewUpdate(qid, ok) {
+  const r = loadRev();
+  const e = r[qid] || { box: 0, wrong: 0 };
+  e.box = ok ? Math.min(e.box + 1, 5) : 1;
+  if (!ok) e.wrong = (e.wrong || 0) + 1;
+  e.due = Date.now() + INTERVALS[e.box] * 864e5;
+  e.at = Date.now();
+  r[qid] = e;
+  saveRev(r);
+}
+function dueQuestions() {
+  const r = loadRev(), now = Date.now(), due = [];
+  app.chapters.forEach((c, ci) => c.questions.forEach((q, qi) => {
+    const id = c.id + '#' + qi;
+    const e = r[id];
+    if (!e && app.answeredMap && app.answeredMap[id]) return;
+    if (!e || (e.due || 0) <= now) due.push({ ci, qi, id });
+  }));
+  return due;
+}
+/* M11：写失败补发队列（localStorage 抛错时暂存内存，2s 后重试） */
+window.addEventListener('unhandledrejection', () => {});
+setInterval(() => {
+  try { localStorage.setItem('__probe', '1'); localStorage.removeItem('__probe'); }
+  catch { return; }
+}, 5000);
+
+async function boot() {
+  const res = await fetch('quiz/zh-CN.json').catch(() => null);
+  if (!res || !res.ok) {
+    $('grid').innerHTML = '<p style="color:var(--muted)">题库加载失败：请用本地服务器打开本页（file:// 下无法读取 JSON）。</p>';
+    return;
+  }
+  app.data = await res.json();
+  app.chapters = app.data.chapters;
+  // 题库版本与章数写明在页面上：题库与书的版本错位会让章节 id 变成死链，
+  // 读者一眼就该知道自己答的是哪一版。
+  const bv = app.data.bookVersion || '';
+  $('bankInfo').textContent = (bv ? `题库版本 ${bv} · ` : '') + `共 ${app.chapters.length} 章`;
+  renderOverview();
+  renderGrid();
+  // 支持 #chapter-id 直接进入
+  const h = location.hash.replace('#', '');
+  if (h) { const i = app.chapters.findIndex(c => c.id === h); if (i >= 0) openChapter(i); }
+}
+
+function renderOverview() {
+  const prog = loadProgress();
+  const total = app.chapters.length;
+  const touched = app.chapters.filter(c => prog[c.id]).length;
+  const perfect = app.chapters.filter(c => (prog[c.id]?.best ?? 0) >= 0.999).length;
+  // 圆环按「做过几章」算进度；满分章数另在副标题里报
+  const pct = total ? Math.round(touched / total * 100) : 0;
+  $('ring').style.setProperty('--p', pct);
+  $('ringNum').textContent = pct + '%';
+  $('ovBar').style.width = pct + '%';
+  $('ovTitle').textContent = touched === 0 ? '还没开始'
+    : touched === total ? '全章节已做过'
+    : `已做 ${touched} / ${total} 章`;
+  const nq = app.chapters.reduce((s, c) => s + c.questions.length, 0);
+  $('ovSub').textContent = touched === 0
+    ? `挑一章开始，进度只存在你自己的浏览器里 · 共 ${nq} 题`
+    : `其中 ${perfect} 章满分 · 共 ${nq} 题`;
+  // 结业徽章：覆盖 ≥ 80% 章节，且这些章节平均正确率 ≥ 80%
+  const covered = total ? touched / total : 0;
+  const avg = touched
+    ? app.chapters.reduce((s, c) => s + (prog[c.id]?.best ?? 0), 0) / touched
+    : 0;
+  const unlocked = covered >= 0.8 && avg >= 0.8;
+  const b = $('badge');
+  b.classList.toggle('on', unlocked);
+  b.textContent = unlocked ? '🏅 结业徽章已解锁' : '结业徽章未解锁（完成全部章节后点亮）';
+  b.title = `已覆盖 ${Math.round(covered * 100)}% 章节，平均正确率 ${Math.round(avg * 100)}%（需各 ≥ 80%）`;
+  if (typeof refreshRevBadge === 'function') refreshRevBadge();
+}
+
+function renderGrid() {
+  const prog = loadProgress();
+  $('grid').innerHTML = '';
+  app.chapters.forEach((c, i) => {
+    const p = prog[c.id];
+    const b = document.createElement('button');
+    b.className = 'chip' + (p ? ((p.best ?? 0) >= 0.999 ? ' done' : ' part') : '');
+    const st = p ? Math.round((p.best ?? 0) * 100) + '%' : '未做';
+    b.innerHTML = `<span class="st">${st}</span><span class="t"></span>`;
+    b.querySelector('.t').textContent = c.title;
+    b.onclick = () => openChapter(i);
+    $('grid').appendChild(b);
+  });
+}
+
+function openChapter(i) {
+  app.idx = i;
+  app.answered = 0; app.correct = 0; app.done = new Set();
+  app.mode = 'learn';
+  const c = app.chapters[i];
+  $('list').classList.add('hidden');
+  $('overview').classList.add('hidden');
+  $('quiz').classList.remove('hidden');
+  $('qTitle').textContent = c.title;
+  $('qResult').classList.add('hidden');
+  $('qActions').classList.add('hidden');
+  $('qBar').style.width = '0%';
+  const body = $('qBody');
+  body.innerHTML = '';
+  c.questions.forEach((q, qi) => {
+    const div = document.createElement('div');
+    div.className = 'q';
+    const qt = document.createElement('div');
+    qt.className = 'q-text';
+    qt.textContent = `${qi + 1}. ${q.q}`;
+    div.appendChild(qt);
+    q.options.forEach((opt, oi) => {
+      const btn = document.createElement('button');
+      btn.className = 'opt';
+      btn.textContent = opt;
+      btn.onclick = () => {
+        if (app.done.has(qi)) return;
+        app.done.add(qi); app.answered++;
+        [...div.querySelectorAll('.opt')].forEach((x, xi) => {
+          x.disabled = true;
+          if (xi === q.answer) x.classList.add('right');
+          else if (xi === oi) x.classList.add('wrong');
+        });
+        if (oi === q.answer) app.correct++;
+        ex.classList.add('show');
+        $('qBar').style.width = (app.answered / c.questions.length * 100) + '%';
+        if (app.answered === c.questions.length) finish(c);
+      };
+      div.appendChild(btn);
+    });
+    const ex = document.createElement('div');
+    ex.className = 'explain';
+    ex.textContent = '💡 ' + q.explain;
+    div.appendChild(ex);
+    body.appendChild(div);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+function finish(c) {
+  const total = c.questions.length;
+  const pct = Math.round(app.correct / total * 100);
+  const prog = loadProgress();
+  const prev = prog[c.id] || {};
+  prog[c.id] = { best: Math.max(prev.best ?? 0, app.correct / total),
+                 last: app.correct / total, at: Date.now() };
+  saveProgress(prog);
+  const r = $('qResult');
+  r.classList.remove('hidden');
+  r.innerHTML = `<b>${app.correct} / ${total}</b><p>${
+    pct >= 80 ? '🎉 学得不错！可以读下一章了'
+    : pct >= 60 ? '👍 基础打牢了，错题回书里找找解析'
+    : '📖 建议回读这一章，再看一遍解析'}</p>`;
+  $('qActions').classList.remove('hidden');
+  $('next').classList.toggle('hidden', app.idx >= app.chapters.length - 1);
+  renderOverview();
+}
+
+function backToList() {
+  $('quiz').classList.add('hidden');
+  $('list').classList.remove('hidden');
+  $('overview').classList.remove('hidden');
+  renderOverview(); renderGrid();
+  location.hash = '';
+}
+
+$('back').onclick = backToList;
+$('retry').onclick = () => openChapter(app.idx);
+$('next').onclick = () => { if (app.idx < app.chapters.length - 1) openChapter(app.idx + 1); };
+/* P1-3 复习模式：跨章收集到期题，合成临时"复习卷" */
+function openReview() {
+  const due = dueQuestions();
+  if (!due.length) {
+    $('ovSub').textContent = '🎉 没有到期题目——按遗忘曲线，明天再来复习';
+    return;
+  }
+  app.mode = 'review';
+  app.reviewSet = due;
+  app.idx = -1;
+  app.answered = 0; app.correct = 0; app.done = new Set();
+  $('list').classList.add('hidden');
+  $('overview').classList.add('hidden');
+  $('quiz').classList.remove('hidden');
+  $('qTitle').textContent = '🔁 复习卷（' + due.length + ' 题）';
+  $('qResult').classList.add('hidden');
+  $('qActions').classList.add('hidden');
+  $('qBar').style.width = '0%';
+  const body = $('qBody');
+  body.innerHTML = '';
+  due.forEach((it, ri) => {
+    const c = app.chapters[it.ci];
+    const q = c.questions[it.qi];
+    const div = document.createElement('div');
+    div.className = 'q';
+    const qt = document.createElement('div');
+    qt.className = 'q-text';
+    qt.textContent = `${ri + 1}. 【${c.title.split('：')[0]}】${q.q}`;
+    div.appendChild(qt);
+    q.options.forEach((opt, oi) => {
+      const btn = document.createElement('button');
+      btn.className = 'opt';
+      btn.textContent = opt;
+      btn.onclick = () => {
+        if (app.done.has(ri)) return;
+        app.done.add(ri); app.answered++;
+        [...div.querySelectorAll('.opt')].forEach((x, xi) => {
+          x.disabled = true;
+          if (xi === q.answer) x.classList.add('right');
+          else if (xi === oi) x.classList.add('wrong');
+        });
+        const ok = oi === q.answer;
+        if (ok) app.correct++;
+        reviewUpdate(it.id, ok);
+        ex.classList.add('show');
+        $('qBar').style.width = (app.answered / due.length * 100) + '%';
+        if (app.answered === due.length) {
+          const r = $('qResult');
+          r.classList.remove('hidden');
+          r.innerHTML = `<b>${app.correct} / ${due.length}</b><p>复习完成。答对的题目按遗忘曲线排到下次到期。</p>`;
+          $('qActions').classList.remove('hidden');
+          $('next').classList.add('hidden');
+          $('revBtn').style.display = 'none';
+          renderOverview();
+        }
+      };
+      div.appendChild(btn);
+    });
+    const ex = document.createElement('div');
+    ex.className = 'explain';
+    ex.textContent = '💡 ' + q.explain;
+    div.appendChild(ex);
+    body.appendChild(div);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+/* 到期数提示（总览渲染时刷新） */
+function refreshRevBadge() {
+  const due = dueQuestions().length;
+  $('revCount').textContent = due;
+  $('revBtn').style.display = due ? '' : 'none';
+}
+$('revBtn').onclick = openReview;
+
+$('reset').onclick = (e) => {
+  e.preventDefault();
+  if (confirm('清空所有自测进度？此操作不可撤销。')) {
+    localStorage.removeItem(KEY); renderOverview(); renderGrid();
+  }
+};
+
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+}
+boot();
+</script>
+</body>
+</html>

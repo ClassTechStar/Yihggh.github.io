@@ -11,10 +11,7 @@
   "theme_color": "#4f46e5",
   "lang": "zh-CN",
   "dir": "ltr",
-  "categories": [
-    "education",
-    "books"
-  ],
+  "categories": ["education", "books"],
   "icons": [
     {
       "src": "./icons/icon-192.png",
@@ -46,12 +43,13 @@
       "name": "开始阅读第零章",
       "short_name": "开始阅读",
       "url": "./v1.9/zh-CN.html#di-ling-zhang",
-      "icons": [
-        {
-          "src": "./icons/icon-192.png",
-          "sizes": "192x192"
-        }
-      ]
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "章节自测",
+      "short_name": "自测",
+      "url": "./quiz.html",
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }]
     }
   ]
 }
