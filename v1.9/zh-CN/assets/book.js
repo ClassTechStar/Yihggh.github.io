@@ -1260,7 +1260,7 @@
                 if (healthScoreEl) healthScoreEl.textContent = checked + ' / ' + totalChecks;
                 if (healthBarEl) healthBarEl.style.width = healthPct + '%';
                 if (healthMsgEl) {
-                    if (checked === totalChecks) healthMsgEl.innerHTML = '<i class="fas fa-shield-check mr-1"></i>满分！你的手机安全状况优秀';
+                    if (checked === totalChecks) healthMsgEl.innerHTML = '<i class="fas fa-shield-halved mr-1"></i>满分！你的手机安全状况优秀';
                     else if (checked >= totalChecks * 0.7) healthMsgEl.textContent = '不错！还有 ' + (totalChecks - checked) + ' 项可以完善';
                     else if (checked >= totalChecks * 0.4) healthMsgEl.textContent = '及格，建议优先处理未勾选的安全项';
                     else healthMsgEl.innerHTML = '<i class="fas fa-triangle-exclamation mr-1"></i>你的手机存在安全隐患，请尽快完善';

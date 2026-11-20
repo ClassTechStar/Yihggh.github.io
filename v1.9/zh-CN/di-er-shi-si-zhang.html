@@ -1,59 +1,11 @@
- <!DOCTYPE html>
-<html lang="zh-CN" class="no-js">
-<head>
-    <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="你缺失的那门手机课 · 从入门到精通，全面掌控你的数字生活">
-    <meta name="keywords" content="手机教程,数码必修课,智能手机,安卓,iOS,鸿蒙,手机技巧,数字生活,AI大模型,AI编程,大模型API,Prompt工程,安卓开发,iOS开发,Swift,Kotlin,SwiftUI,Jetpack Compose,计算摄影,信息安全,密码管理,自动化,手机选购">
-    <meta name="author" content="数字生活向导">
-    <meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)">
-    <meta name="robots" content="index, follow">
-    <meta name="format-detection" content="telephone=no">
-    <meta property="og:type" content="book">
-    <meta property="og:title" content="你缺失的那门手机课 · v1.9">
-    <meta property="og:description" content="从入门到精通，全面掌控你的数字生活">
-    <meta property="og:locale" content="zh_CN">
-    <meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/icons/icon-512.png">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
-    <meta property="og:image:alt" content="你缺失的那门手机课">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="你缺失的那门手机课 · v1.9">
-    <meta name="twitter:description" content="从入门到精通，全面掌控你的数字生活">
-    <meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/icons/icon-512.png">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%234f46e5'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%234f46e5'/%3E%3C/svg%3E">
-    <link rel="apple-touch-icon" href="../../icons/icon-192.png">
-    <link rel="manifest" href="../../manifest.webmanifest">
-    <title>第二十四章：Root权限与BL锁深度解析 · 你缺失的那门手机课</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: 'var(--accent-book)',
-                        secondary: '#6B7280',
-                        light: '#F3F4F6',
-                        dark: '#1F2937',
-                        accent: '#7c3aed',
-                    },
-                    fontFamily: {
-                        sans: ['PingFang SC', 'Microsoft YaHei', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    
-    
+ <!DOCTYPE html><html lang="zh-CN" class="no-js"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="你缺失的那门手机课 · 从入门到精通，全面掌控你的数字生活"><meta name="keywords" content="手机教程,数码必修课,智能手机,安卓,iOS,鸿蒙,手机技巧,数字生活,AI大模型,AI编程,大模型API,Prompt工程,安卓开发,iOS开发,Swift,Kotlin,SwiftUI,Jetpack Compose,计算摄影,信息安全,密码管理,自动化,手机选购"><meta name="author" content="数字生活向导"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:type" content="book"><meta property="og:title" content="你缺失的那门手机课 · v1.9"><meta property="og:description" content="从入门到精通，全面掌控你的数字生活"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/icons/icon-512.png"><meta property="og:image:width" content="512"><meta property="og:image:height" content="512"><meta property="og:image:alt" content="你缺失的那门手机课"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="你缺失的那门手机课 · v1.9"><meta name="twitter:description" content="从入门到精通，全面掌控你的数字生活"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/icons/icon-512.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%234f46e5'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%234f46e5'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>第二十四章：Root权限与BL锁深度解析 · 你缺失的那门手机课</title>
+ 
 
 
 
-    <script id="liquid-glass-bundle">
+ <script id="liquid-glass-bundle">
     /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
      * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
      * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
@@ -95,69 +47,17 @@
       } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
     })();
     </script>
+ 
+
+
+<link rel="preload" href="../fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
 <link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-er-shi-si-zhang.html">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "第二十四章：Root权限与BL锁深度解析", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-er-shi-si-zhang.html", "isPartOf": {"@type": "Book", "name": "你缺失的那门手机课", "inLanguage": "zh-CN"}}</script>
 <link rel="stylesheet" href="assets/book.css">
-</head>
-<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-    <a class="skip-link focus-ring" href="index.html#content">跳到主要内容</a>
-    <div id="reading-progress" style="width:0%" aria-hidden="true"></div>
-    <header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner">
-        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-3 min-w-0">
-                <button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="打开目录菜单" aria-expanded="false" aria-controls="sidebar">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <a href="#top" class="flex items-center gap-2 min-w-0" aria-label="返回首页">
-                    <span class="hidden sm:inline-flex w-8 h-8 rounded-md bg-gradient-to-br from-primary to-accent text-white items-center justify-center text-sm font-bold flex-shrink-0" aria-hidden="true">
-                        <i class="fas fa-mobile-screen"></i>
-                    </span>
-                    <h1 class="text-base md:text-lg font-bold text-primary truncate">搞定手机 · 数码必修课</h1>
-                </a>
-            </div>
-            <nav class="flex items-center gap-1 md:gap-2" aria-label="主操作">
-                <a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="从基础开始">
-                    <i class="fas fa-graduation-cap" aria-hidden="true"></i><span>开始学习</span>
-                </a>
-                <button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="搜索 (Ctrl+K)" aria-label="搜索内容">
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                </button>
-                <div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="字号调整">
-                    <button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="缩小字体" aria-label="缩小字体">A-</button>
-                    <button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="重置字号" aria-label="重置字号">A</button>
-                    <button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="放大字体" aria-label="放大字体">A+</button>
-                </div>
-                <button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="切换深色/浅色模式" aria-label="切换深色/浅色模式">
-                    <i class="fas fa-moon dark:hidden" aria-hidden="true"></i>
-                    <i class="fas fa-sun hidden dark:inline" aria-hidden="true"></i>
-                </button>
-                <button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="打印 / 导出PDF" aria-label="打印或导出PDF">
-                    <i class="fas fa-print" aria-hidden="true"></i>
-                </button>
-                <a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="回到顶部">
-                    <i class="fas fa-arrow-up mr-1" aria-hidden="true"></i>顶部
-                </a>
-            </nav>
-        </div>
-    </header>
-
-    <div class="flex min-h-screen pt-16 relative">
-        <aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="文章目录">
-            <nav class="p-4">
-                <div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700">
-                    <h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">
-                        <span aria-hidden="true" class="fas fa-list-ul text-primary" aria-hidden="true"></span>学习目录
-                    </h2>
-                    <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
-                        <span id="reading-progress-text">0 / 38 章</span>
-                        <span id="reading-percent" class="font-semibold text-primary">0%</span>
-                    </div>
-                    <div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div>
-                </div>
-                <div class="mb-3 px-1">
-                    <input type="text" id="toc-filter" placeholder="筛选章节..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="筛选章节">
-                </div>
-                <ul class="space-y-1 text-sm" id="toc-list"><!-- 基础篇 -->
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">跳到主要内容</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="打开目录菜单" aria-expanded="false" aria-controls="sidebar"><i class="fas fa-bars"></i></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="返回首页"><span class="hidden sm:inline-flex w-8 h-8 rounded-md bg-gradient-to-br from-primary to-accent text-white items-center justify-center text-sm font-bold flex-shrink-0" aria-hidden="true"><i class="fas fa-mobile-screen"></i></span><h1 class="text-base md:text-lg font-bold text-primary truncate">搞定手机 · 数码必修课</h1></a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="主操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="从基础开始"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>开始学习</span></a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="搜索 (Ctrl+K)" aria-label="搜索内容"><i class="fas fa-search" aria-hidden="true"></i></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="字号调整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="缩小字体" aria-label="缩小字体">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="重置字号" aria-label="重置字号">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="放大字体" aria-label="放大字体">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="切换深色/浅色模式" aria-label="切换深色/浅色模式"><i class="fas fa-moon dark:hidden" aria-hidden="true"></i><i class="fas fa-sun hidden dark:inline" aria-hidden="true"></i></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="打印 / 导出PDF" aria-label="打印或导出PDF"><i class="fas fa-print" aria-hidden="true"></i></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="回到顶部"><i class="fas fa-arrow-up mr-1" aria-hidden="true"></i>顶部
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="文章目录"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2"><span aria-hidden="true" class="fas fa-list-ul text-primary" aria-hidden="true"></span>学习目录
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 章</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="筛选章节..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="筛选章节"></div><ul class="space-y-1 text-sm" id="toc-list"><!-- 基础篇 -->
                     <li class="toc-parent" data-group="ji-chu">
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">一、基础篇（第0-7章）</a>
@@ -466,35 +366,7 @@
                             <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>附录H：版本路线图</a></li>
                         </ul>
                     </li>
-</ul>
-            </nav>
-        </aside>
-
-        <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
-
-        <div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索">
-            <div class="search-panel">
-                <div class="search-input-wrapper">
-                    <i class="fas fa-search text-gray-400"></i>
-                    <input type="text" id="search-input" placeholder="搜索内容..." autocomplete="off" aria-label="搜索关键词">
-                    <button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭搜索">ESC</button>
-                </div>
-                <div id="search-results" class="search-results scrollbar-hide">
-                    <div class="p-4 text-center text-gray-400 text-sm">输入关键词开始搜索</div>
-                </div>
-            </div>
-        </div>
-
-        <main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen">
-            <div class="content-col">
-            <a id="top"></a>
-
-            <!-- 顶部面包屑 -->
-            <nav class="breadcrumb no-print" aria-label="位置">
-                <a href="#top">首页</a>
-                <span class="sep" aria-hidden="true">›</span>
-                <span class="text-gray-700 dark:text-gray-300">数码必修课 · v1.9</span>
-            </nav>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索"><div class="search-panel"><div class="search-input-wrapper"><i class="fas fa-search text-gray-400"></i><input type="text" id="search-input" placeholder="搜索内容..." autocomplete="off" aria-label="搜索关键词"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭搜索">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">输入关键词开始搜索</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 顶部面包屑 --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">首页</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">数码必修课 · v1.9</span></nav>
 <div id="di-er-shi-si-zhang" class="mb-10 content-section">
 <h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">第二十四章：Root权限与BL锁深度解析</h3>
 <p class="chapter-intro mb-4">这一章是对第二十章内容的深入扩展，适合那些想要真正理解手机底层机制、甚至尝试刷机的用户。请注意，这些操作有一定风险，请谨慎行事。</p>
@@ -1170,140 +1042,12 @@
 <nav class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a href="di-er-shi-san-zhang-github.html" class="text-primary hover:underline">← 附：GitHub入门指南</a><span></span><a href="di-er-shi-wu-zhang.html" class="text-primary hover:underline">第二十五章：旧手机卖出去之前，先做这几件事 →</a></nav>
 
             </section>
-            </div>
-        </main>
-    </div>
-
-    <!-- 快捷工具：浮动按钮组 -->
-    <div id="quick-tools" class="quick-tools no-print" aria-label="快捷工具">
-        <button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true">
-            <i class="fas fa-droplet" aria-hidden="true"></i>
-        </button>
-                <button id="quick-search" class="quick-tool-btn" title="搜索 (Ctrl+K)" aria-label="搜索">
-            <i class="fas fa-search" aria-hidden="true"></i>
-        </button>
-        <button id="quick-theme" class="quick-tool-btn" title="切换深色/浅色" aria-label="切换主题">
-            <i class="fas fa-circle-half-stroke" aria-hidden="true"></i>
-        </button>
-        <button id="quick-print" class="quick-tool-btn" title="打印 / 导出PDF" aria-label="打印或导出">
-            <i class="fas fa-print" aria-hidden="true"></i>
-        </button>
-        <button id="quick-toc" class="quick-tool-btn" title="目录" aria-label="打开目录">
-            <i class="fas fa-list" aria-hidden="true"></i>
-        </button>
-        <button id="quick-tts" class="quick-tool-btn" title="语音朗读" aria-label="语音朗读">
-            <i class="fas fa-headphones" aria-hidden="true"></i>
-        </button>
-        <button id="quick-shortcuts" class="quick-tool-btn" title="键盘快捷键 (?)" aria-label="快捷键面板">
-            <i class="fas fa-keyboard" aria-hidden="true"></i>
-        </button>
-        <button id="quick-backup" class="quick-tool-btn" title="备份/恢复进度" aria-label="备份进度">
-            <i class="fas fa-cloud-arrow-up" aria-hidden="true"></i>
-        </button>
-    </div>
-
-    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-      <defs>
-        <filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
-          <feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/>
-          <feGaussianBlur in="noise" stdDeviation="2" result="soft"/>
-          <feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/>
-        </filter>
-      </defs>
-    </svg>
-    <!-- 快捷键面板 -->
-    <div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="键盘快捷键">
-        <div class="search-panel" style="max-width:480px">
-            <div class="search-input-wrapper">
-                <i class="fas fa-keyboard text-gray-400"></i>
-                <span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">键盘快捷键</span>
-                <button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button>
-            </div>
-            <div class="p-4 space-y-2 text-sm">
-                <div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">搜索内容</span><span class="kbd">Ctrl + K</span></div>
-                <div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">切换深色/浅色</span><span class="kbd">T</span></div>
-                <div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">语音朗读 播放/暂停</span><span class="kbd">R</span></div>
-                <div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">停止朗读</span><span class="kbd">ESC</span></div>
-                <div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">打开快捷键面板</span><span class="kbd">?</span></div>
-                <div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">字号调大 / 调小</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div>
-                <div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">打印 / 导出PDF</span><span class="kbd">Ctrl + P</span></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 备份/恢复弹窗 -->
-    <div id="backup-overlay" class="search-overlay" role="dialog" aria-label="备份与恢复">
-        <div class="search-panel" style="max-width:520px">
-            <div class="search-input-wrapper">
-                <i class="fas fa-cloud-arrow-up text-gray-400"></i>
-                <span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">阅读进度备份与恢复</span>
-                <button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button>
-            </div>
-            <div class="p-5 space-y-4 text-sm">
-                <div class="info-box rounded-lg p-3">
-                    <p class="text-xs">备份包含：已读章节、书签、阅读位置、字号偏好、健康自检结果。数据保存在浏览器本地，更换浏览器或清除缓存后丢失，建议定期导出备份。</p>
-                </div>
-                <div>
-                    <button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-                        <i class="fas fa-download"></i> 导出备份文件
-                    </button>
-                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">下载一个 JSON 文件，保存到安全位置</p>
-                </div>
-                <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
-                    <button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-                        <i class="fas fa-upload"></i> 导入备份恢复
-                    </button>
-                    <input type="file" id="backup-import-input" accept=".json" class="hidden">
-                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">选择之前导出的备份文件恢复进度</p>
-                </div>
-                <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
-                    <button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-                        <i class="fas fa-trash"></i> 清除所有阅读数据
-                    </button>
-                    <p class="text-xs text-red-400 mt-1 text-center">不可恢复！请先导出备份</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 阅读连续天数提示 -->
-    <div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),#7c3aed);color:var(--ink-inverse);border:none;">
-        <i class="fas fa-fire" aria-hidden="true" style="color:var(--gold-2)"></i>
-        <span id="streak-toast-text">连续阅读第 X 天！</span>
-    </div>
-
-    <!-- 语音朗读控件栏 -->
-    <div id="tts-controls" class="tts-controls" role="region" aria-label="语音朗读控制" aria-live="polite">
-        <span class="tts-chapter-label" id="tts-label" title="当前朗读章节">未开始</span>
-        <button class="tts-btn" id="tts-prev" title="上一段" aria-label="上一段"><i class="fas fa-step-backward"></i></button>
-        <button class="tts-btn play-btn" id="tts-play" title="播放/暂停" aria-label="播放朗读"><i class="fas fa-play"></i></button>
-        <button class="tts-btn" id="tts-next" title="下一段" aria-label="下一段"><i class="fas fa-step-forward"></i></button>
-        <button class="tts-btn" id="tts-speed-down" title="减速" aria-label="减速">−</button>
-        <span class="tts-speed-badge" id="tts-speed-display">1.0x</span>
-        <button class="tts-btn" id="tts-speed-up" title="加速" aria-label="加速">+</button>
-        <button class="tts-btn" id="tts-stop" title="停止朗读" aria-label="停止朗读"><i class="fas fa-times"></i></button>
-    </div>
-
-    <!-- 回到顶部按钮 -->
-    <button id="back-to-top" class="opacity-0 invisible" aria-label="回到顶部">
-        <svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true">
-            <circle class="bg" cx="20" cy="20" r="18"/>
-            <circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/>
-        </svg>
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    </button>
-
-    <!-- 阅读位置恢复提示 -->
-    <div id="restore-toast" class="restore-position-toast" role="alert">
-        <i class="fas fa-bookmark" aria-hidden="true"></i>
-        <span id="restore-toast-text">上次读到：...</span>
-        <button class="btn-restore" id="restore-btn">继续阅读</button>
-        <button class="btn-dismiss" id="dismiss-btn">忽略</button>
-    </div>
-
-    <!-- JS脚本 -->
-    
-    <script>
+ </div></main></div><!-- 快捷工具：浮动按钮组 --><div id="quick-tools" class="quick-tools no-print" aria-label="快捷工具"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><i class="fas fa-droplet" aria-hidden="true"></i></button><button id="quick-search" class="quick-tool-btn" title="搜索 (Ctrl+K)" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></button><button id="quick-theme" class="quick-tool-btn" title="切换深色/浅色" aria-label="切换主题"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i></button><button id="quick-print" class="quick-tool-btn" title="打印 / 导出PDF" aria-label="打印或导出"><i class="fas fa-print" aria-hidden="true"></i></button><button id="quick-toc" class="quick-tool-btn" title="目录" aria-label="打开目录"><i class="fas fa-list" aria-hidden="true"></i></button><button id="quick-tts" class="quick-tool-btn" title="语音朗读" aria-label="语音朗读"><i class="fas fa-headphones" aria-hidden="true"></i></button><button id="quick-shortcuts" class="quick-tool-btn" title="键盘快捷键 (?)" aria-label="快捷键面板"><i class="fas fa-keyboard" aria-hidden="true"></i></button><button id="quick-backup" class="quick-tool-btn" title="备份/恢复进度" aria-label="备份进度"><i class="fas fa-cloud-arrow-up" aria-hidden="true"></i></button></div><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><!-- 快捷键面板 --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="键盘快捷键"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><i class="fas fa-keyboard text-gray-400"></i><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">键盘快捷键</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">搜索内容</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">切换深色/浅色</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">语音朗读 播放/暂停</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">停止朗读</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">打开快捷键面板</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">字号调大 / 调小</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">打印 / 导出PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- 备份/恢复弹窗 --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="备份与恢复"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><i class="fas fa-cloud-arrow-up text-gray-400"></i><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">阅读进度备份与恢复</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">备份包含：已读章节、书签、阅读位置、字号偏好、健康自检结果。数据保存在浏览器本地，更换浏览器或清除缓存后丢失，建议定期导出备份。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-download"></i> 导出备份文件
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">下载一个 JSON 文件，保存到安全位置</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-upload"></i> 导入备份恢复
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">选择之前导出的备份文件恢复进度</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-trash"></i> 清除所有阅读数据
+ </button><p class="text-xs text-red-400 mt-1 text-center">不可恢复！请先导出备份</p></div></div></div></div><!-- 阅读连续天数提示 --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),#7c3aed);color:var(--ink-inverse);border:none;"><i class="fas fa-fire" aria-hidden="true" style="color:var(--gold-2)"></i><span id="streak-toast-text">连续阅读第 X 天！</span></div><!-- 语音朗读控件栏 --><div id="tts-controls" class="tts-controls" role="region" aria-label="语音朗读控制" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="当前朗读章节">未开始</span><button class="tts-btn" id="tts-prev" title="上一段" aria-label="上一段"><i class="fas fa-step-backward"></i></button><button class="tts-btn play-btn" id="tts-play" title="播放/暂停" aria-label="播放朗读"><i class="fas fa-play"></i></button><button class="tts-btn" id="tts-next" title="下一段" aria-label="下一段"><i class="fas fa-step-forward"></i></button><button class="tts-btn" id="tts-speed-down" title="减速" aria-label="减速">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="加速" aria-label="加速">+</button><button class="tts-btn" id="tts-stop" title="停止朗读" aria-label="停止朗读"><i class="fas fa-times"></i></button></div><!-- 回到顶部按钮 --><button id="back-to-top" class="opacity-0 invisible" aria-label="回到顶部"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg><i class="fas fa-arrow-up" aria-hidden="true"></i></button><!-- 阅读位置恢复提示 --><div id="restore-toast" class="restore-position-toast" role="alert"><i class="fas fa-bookmark" aria-hidden="true"></i><span id="restore-toast-text">上次读到：...</span><button class="btn-restore" id="restore-btn">继续阅读</button><button class="btn-dismiss" id="dismiss-btn">忽略</button></div><!-- JS脚本 -->
+ 
+ <script>
         /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
         if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
             window.addEventListener('load', function () {
@@ -1313,5 +1057,4 @@
         }
     </script>
 <script src="assets/book.js" defer></script>
-</body>
-</html>
+</body></html>
