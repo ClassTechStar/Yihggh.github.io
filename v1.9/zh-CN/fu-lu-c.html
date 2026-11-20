@@ -6,64 +6,63 @@
 
 
  <script id="liquid-glass-bundle">
-    /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
-     * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
-     * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
-     * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
-    (function () {
-      if (window.__liquidGlass) return;
-      window.__liquidGlass = true;
-      if (window.__SAFE) return;
-      var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
-      var reduce = window.matchMedia &&
-        window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
-      if (!ok || reduce) return;
-      var root = document.documentElement;
-      root.classList.add('lg-ready');
-      if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
-      window.__lgToggle = function (v) {
-        var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
-        root.classList.toggle('lg-off', off);
-        if (window.RS) RS.set('liquidGlass', !off);
-        return !off;
-      };
-      var sync = function () {
-        var btn = document.getElementById('quick-glass');
-        if (!btn) return;
-        var off = root.classList.contains('lg-off');
-        btn.classList.toggle('lg-btn-off', off);
-        btn.setAttribute('aria-pressed', String(!off));
-        var ic = btn.querySelector('i');
-        if (ic) ic.className = off ? 'fas fa-droplet-slash' : 'fas fa-droplet';
-      };
-      /* bundle 在 head 执行时 #quick-glass 尚未存在——绑定延迟到 DOMContentLoaded */
-      document.addEventListener('DOMContentLoaded', function () {
-        var btn = document.getElementById('quick-glass');
-        if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
-        sync();
-      });
-      try {
-        if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
-      } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
-    })();
-    </script>
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var sync = function () {
+ var btn = document.getElementById('quick-glass');
+ if (!btn) return;
+ var off = root.classList.contains('lg-off');
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ };
+ /* bundle 在 head 执行时 #quick-glass 尚未存在——绑定延迟到 DOMContentLoaded */
+ document.addEventListener('DOMContentLoaded', function () {
+ var btn = document.getElementById('quick-glass');
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ });
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
  
 
 
 <link rel="preload" href="../fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../fonts/fa/fa-solid-900.subset.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/fu-lu-c.html">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "附录C：极简术语对照表", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/fu-lu-c.html", "isPartOf": {"@type": "Book", "name": "你缺失的那门手机课", "inLanguage": "zh-CN"}}</script>
 <link rel="stylesheet" href="assets/book.css">
-</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">跳到主要内容</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="打开目录菜单" aria-expanded="false" aria-controls="sidebar"><i class="fas fa-bars"></i></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="返回首页"><span class="hidden sm:inline-flex w-8 h-8 rounded-md bg-gradient-to-br from-primary to-accent text-white items-center justify-center text-sm font-bold flex-shrink-0" aria-hidden="true"><i class="fas fa-mobile-screen"></i></span><h1 class="text-base md:text-lg font-bold text-primary truncate">搞定手机 · 数码必修课</h1></a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="主操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="从基础开始"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>开始学习</span></a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="搜索 (Ctrl+K)" aria-label="搜索内容"><i class="fas fa-search" aria-hidden="true"></i></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="字号调整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="缩小字体" aria-label="缩小字体">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="重置字号" aria-label="重置字号">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="放大字体" aria-label="放大字体">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="切换深色/浅色模式" aria-label="切换深色/浅色模式"><i class="fas fa-moon dark:hidden" aria-hidden="true"></i><i class="fas fa-sun hidden dark:inline" aria-hidden="true"></i></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="打印 / 导出PDF" aria-label="打印或导出PDF"><i class="fas fa-print" aria-hidden="true"></i></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="回到顶部"><i class="fas fa-arrow-up mr-1" aria-hidden="true"></i>顶部
- </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="文章目录"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2"><span aria-hidden="true" class="fas fa-list-ul text-primary" aria-hidden="true"></span>学习目录
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">跳到主要内容</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="打开目录菜单" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="返回首页"><span class="hidden sm:inline-flex w-8 h-8 rounded-md bg-gradient-to-br from-primary to-accent text-white items-center justify-center text-sm font-bold flex-shrink-0" aria-hidden="true"></span><h1 class="text-base md:text-lg font-bold text-primary truncate">搞定手机 · 数码必修课</h1></a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="主操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="从基础开始"><span>开始学习</span></a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="搜索 (Ctrl+K)" aria-label="搜索内容"><span aria-hidden="true">搜</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="字号调整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="缩小字体" aria-label="缩小字体">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="重置字号" aria-label="重置字号">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="放大字体" aria-label="放大字体">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="切换深色/浅色模式" aria-label="切换深色/浅色模式"><span class="dark:hidden" aria-hidden="true">夜</span><span class="hidden dark:inline" aria-hidden="true">昼</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="打印 / 导出PDF" aria-label="打印或导出PDF"><span aria-hidden="true">印</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="回到顶部">顶部
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="文章目录"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">学习目录
  </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 章</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="筛选章节..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="筛选章节"></div><ul class="space-y-1 text-sm" id="toc-list"><!-- 基础篇 -->
                     <li class="toc-parent" data-group="ji-chu">
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">一、基础篇（第0-7章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起基础篇" data-target="child-ji-chu">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -85,7 +84,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">二、软件篇（第8-14章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起软件篇" data-target="child-ruan-jian">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -104,7 +103,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">三、进阶篇（第15-20章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起进阶篇" data-target="child-jin-jie">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -123,7 +122,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">四、超越篇（第21-26章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起超越篇" data-target="child-chao-yue">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -141,7 +140,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">五、实战篇（第27-32章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起实战篇" data-target="child-shi-zhan">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -158,7 +157,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">六、展望篇与车联篇（第33-34章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起展望篇" data-target="child-zhan-wang">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -171,7 +170,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">儿童与手机专题（第35-36章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起儿童与手机专题" data-target="child-er-tong-pian">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -184,7 +183,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">七、AI编程实战篇（第37-47章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起AI编程实战篇" data-target="child-ai-biancheng">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -206,7 +205,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">八、安卓开发实战篇（第48-58章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起安卓开发实战篇" data-target="child-an-zhuo-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -228,7 +227,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">九、iOS开发实战篇（第59-69章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起iOS开发实战篇" data-target="child-ios-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -250,7 +249,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-qi-shi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十、鸿蒙开发实战篇（第70-80章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起鸿蒙开发实战篇" data-target="child-hongmeng-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-hongmeng-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -272,7 +271,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十一、手机与可穿戴篇（第81-85章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十一、手机与可穿戴篇（第81-85章）目录开关" data-target="child-ke-chuan-she-bei">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ke-chuan-she-bei" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -288,7 +287,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-shi-liu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十二、旅行与手机篇（第86-90章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十二、旅行与手机篇（第86-90章）目录开关" data-target="child-lv-xing">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-lv-xing" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -304,7 +303,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-jiu-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十三、手机与健康篇（第91-95章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十三、手机与健康篇（第91-95章）目录开关" data-target="child-jian-kang">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-jian-kang" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -320,7 +319,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-jiu-shi-liu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十四、AI短视频创作篇（第96-100章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十四、AI短视频创作篇（第96-100章）目录开关" data-target="child-ai-duan-shi-pin">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ai-duan-shi-pin" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -336,7 +335,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-yi-bai-ling-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十五、竖屏短剧入门篇（第101-105章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十五、竖屏短剧入门篇（第101-105章）目录开关" data-target="child-shu-ping-duan-ju">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-shu-ping-duan-ju" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -352,7 +351,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十六、附录</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起附录" data-target="child-fu-lu">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -367,7 +366,7 @@
                             <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>附录H：版本路线图</a></li>
                         </ul>
                     </li>
-</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索"><div class="search-panel"><div class="search-input-wrapper"><i class="fas fa-search text-gray-400"></i><input type="text" id="search-input" placeholder="搜索内容..." autocomplete="off" aria-label="搜索关键词"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭搜索">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">输入关键词开始搜索</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 顶部面包屑 --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">首页</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">数码必修课 · v1.9</span></nav>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">搜</span><input type="text" id="search-input" placeholder="搜索内容..." autocomplete="off" aria-label="搜索关键词"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭搜索">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">输入关键词开始搜索</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 顶部面包屑 --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">首页</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">数码必修课 · v1.9</span></nav>
 <div id="fu-lu-c" class="mb-10 content-section">
 <h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">附录C：极简术语"黑话"对照表</h3>
 <p class="chapter-intro mb-4">这一页是全书的"术语急诊室"：你不需要记住任何黑话，只需要在被人唬住的那一刻，翻到这里查得到。前两节教你查表、给出原样的速查总表，外加一张"词家族"表帮你串记；后面按硬件、系统与账号、网络与通信、安全与隐私、开发、可穿戴与健康六个区，把最常见的词一个个讲透。每个词固定三行——它是什么、在本书哪章讲透、新手最容易误解哪一点。再往后是柜台话术翻译、单位数字的量级手感、按场景反查表、误区清单和FAQ门诊。愿你每次查完就走，别恋战。</p>
@@ -415,131 +414,131 @@
 <h5 class="font-semibold mt-3 mb-1">查完之后的三件小事</h5>
 <p class="mb-2">查到词只是第一步。顺手做三件事，这张表的价值会翻倍：一，把词记进自己的备忘录，配一句你自己写的大白话，自己写的解释，比任何清单都好记；二，看看它连接到哪一章，有空就去把正文读了，附录是入口，正文才是正餐；三，讲给一个人听，家人、同事都行。教是最好的学，这句话在术语这件事上格外灵。三件事都不超过两分钟，挑一件做也行。</p>
 <div class="practice-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-hand-pointer mr-2"></i>来动手</p>
+<p class="font-semibold">来动手</p>
 <p class="mt-1">现在就试一次：在这一页里用页面搜索找"UFS"，看它是不是仓库的传送带。找到一次，这张表的用法你就全会了，剩下的三十多个词，等你哪天撞上再说。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">二、极简术语速查总表</h4>
 <p class="mb-2">下面这张大表原样放在这里，仍是三栏：你可能听到的词、其实就是指……、一句话解释。表尾补充了一小批新词条，全是本章后面"深解"里会展开的词，先在表里看一句话版本，需要时再跳去对应的深解条目。老词条讲的道理不变，新词条补的是深解里的新朋友。</p>
 <div class="overflow-x-auto">
 <table class="w-full border-collapse border border-gray-300 text-sm">
-                            <thead>
-                                <tr class="bg-light dark:bg-gray-700">
-                                    <th class="border border-gray-300 dark:border-gray-600 px-4 py-2 text-left">你可能听到的词</th>
-                                    <th class="border border-gray-300 dark:border-gray-600 px-4 py-2 text-left">其实就是指……</th>
-                                    <th class="border border-gray-300 dark:border-gray-600 px-4 py-2 text-left">一句话解释</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">SoC / 芯片</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">手机的大脑和心脏</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">决定手机快不快、游戏卡不卡的核心部件。2026年的顶级档是骁龙 8 Elite Gen 5 和天玑 9500，看配置先对一对这一档。</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">RAM (运存)</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">手机的"短期工作桌"</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">桌越大，能同时开的App就越多，切换越流畅。</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">ROM (存储)</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">手机的"大仓库"</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">存照片、视频、App的地方。128G、256G说的就是它。</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">OLED / LCD</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">屏幕的两种材质</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">OLED色彩更艳、更省电；LCD更护眼、成本低。</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">NFC</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">近距离无线通讯</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">让你手机能变身公交卡、门禁卡、银行卡的"贴贴"功能。</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">OTA更新</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">无线系统升级</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">在【设置】里点的那个"系统更新"，就是它。</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Root</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">安卓超级管理员权限</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">获得后可以修改系统文件，但也有风险。</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">BL锁</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Bootloader锁</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">厂商加的安全锁，解锁后才能刷机。</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">NPU</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">神经网络处理器</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">专门处理AI任务的芯片，比CPU快几十倍、功耗更低。</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">端侧 AI / 云端 AI</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">在手机本地跑 / 要联网传数据</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">AI在手机上直接运行，不需要联网，速度快、隐私好；对应的「云端AI」要把数据传出去处理。同一个「AI」功能，走端侧还是云端，隐私代价差很多。</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Qi2</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">新一代无线充电标准</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">带磁吸定位的无线充电，类似MagSafe，充电更方便。</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">eSIM</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">嵌入式SIM卡</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">没有实体卡的SIM，直接写入手机，换运营商不用换卡。注意：国内号码的eSIM和境外旅行买的一次性数据套餐不是一回事，第八十七章有展开。</td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">LTPO</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">自适应刷新率技术</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">屏幕刷新率根据内容自动调节（1-120Hz），流畅又省电。</td>
-                                </tr>
+ <thead>
+ <tr class="bg-light dark:bg-gray-700">
+ <th class="border border-gray-300 dark:border-gray-600 px-4 py-2 text-left">你可能听到的词</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-4 py-2 text-left">其实就是指……</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-4 py-2 text-left">一句话解释</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">SoC / 芯片</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">手机的大脑和心脏</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">决定手机快不快、游戏卡不卡的核心部件。2026年的顶级档是骁龙 8 Elite Gen 5 和天玑 9500，看配置先对一对这一档。</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">RAM (运存)</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">手机的"短期工作桌"</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">桌越大，能同时开的App就越多，切换越流畅。</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">ROM (存储)</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">手机的"大仓库"</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">存照片、视频、App的地方。128G、256G说的就是它。</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">OLED / LCD</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">屏幕的两种材质</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">OLED色彩更艳、更省电；LCD更护眼、成本低。</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">NFC</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">近距离无线通讯</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">让你手机能变身公交卡、门禁卡、银行卡的"贴贴"功能。</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">OTA更新</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">无线系统升级</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">在【设置】里点的那个"系统更新"，就是它。</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Root</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">安卓超级管理员权限</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">获得后可以修改系统文件，但也有风险。</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">BL锁</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Bootloader锁</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">厂商加的安全锁，解锁后才能刷机。</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">NPU</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">神经网络处理器</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">专门处理AI任务的芯片，比CPU快几十倍、功耗更低。</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">端侧 AI / 云端 AI</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">在手机本地跑 / 要联网传数据</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">AI在手机上直接运行，不需要联网，速度快、隐私好；对应的「云端AI」要把数据传出去处理。同一个「AI」功能，走端侧还是云端，隐私代价差很多。</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Qi2</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">新一代无线充电标准</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">带磁吸定位的无线充电，类似MagSafe，充电更方便。</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">eSIM</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">嵌入式SIM卡</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">没有实体卡的SIM，直接写入手机，换运营商不用换卡。注意：国内号码的eSIM和境外旅行买的一次性数据套餐不是一回事，第八十七章有展开。</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">LTPO</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">自适应刷新率技术</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">屏幕刷新率根据内容自动调节（1-120Hz），流畅又省电。</td>
+ </tr>
 <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Wi-Fi 7</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">新一代Wi-Fi标准</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">2026年的中高端手机基本都已支持；下一代的Wi-Fi 8（802.11bn）还在标准化中，买手机不用专门等它。</td>
-                                </tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Wi-Fi 7</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">新一代Wi-Fi标准</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">2026年的中高端手机基本都已支持；下一代的Wi-Fi 8（802.11bn）还在标准化中，买手机不用专门等它。</td>
+ </tr>
 <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">PPG</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">手表测心率血氧的光学传感</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">用光反射推算血流量变化，是「信号推算」不是医疗测量；数据有参考价值，别拿它当诊断。</td>
-                                </tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">PPG</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">手表测心率血氧的光学传感</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">用光反射推算血流量变化，是「信号推算」不是医疗测量；数据有参考价值，别拿它当诊断。</td>
+ </tr>
 <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">单导联ECG</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">手表的心电图功能</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">只看一个方向的电活动，和医院的12导联心电图不是一回事；有异常提示，去医院复查。</td>
-                                </tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">单导联ECG</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">手表的心电图功能</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">只看一个方向的电活动，和医院的12导联心电图不是一回事；有异常提示，去医院复查。</td>
+ </tr>
 <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">一号双终端</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">手表和手机共用一个号码</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">eSIM的一种用法：手表共享手机的同一个号码，开通条件与支持机型以运营商清单为准。</td>
-                                </tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">一号双终端</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">手表和手机共用一个号码</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">eSIM的一种用法：手表共享手机的同一个号码，开通条件与支持机型以运营商清单为准。</td>
+ </tr>
 <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">UTG</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">折叠屏用的超薄柔性玻璃</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">减轻折痕，但不等于没有折痕；仍是柔性屏，比普通玻璃怕硬物压。</td>
-                                </tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">UTG</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">折叠屏用的超薄柔性玻璃</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">减轻折痕，但不等于没有折痕；仍是柔性屏，比普通玻璃怕硬物压。</td>
+ </tr>
 <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">MCP</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">智能体接外部系统的统一接口</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">让AI工具能连上文件、数据库这些外部系统；它是接口标准，不是某个具体工具，第四十六章有展开。</td>
-                                </tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">MCP</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">智能体接外部系统的统一接口</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">让AI工具能连上文件、数据库这些外部系统；它是接口标准，不是某个具体工具，第四十六章有展开。</td>
+ </tr>
 <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">AGENTS.md / CLAUDE.md</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">写进仓库的项目约定文件</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">把「这个项目要守什么规矩」写成文件放进仓库，换个工具也不用重写规则；第三十九章讲上下文工程时用过它。</td>
-                                </tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">AGENTS.md / CLAUDE.md</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">写进仓库的项目约定文件</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">把「这个项目要守什么规矩」写成文件放进仓库，换个工具也不用重写规则；第三十九章讲上下文工程时用过它。</td>
+ </tr>
 <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">spec-driven</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">先写规格再让智能体写代码</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">规格不是长文档，是没歧义的约束；第三十九章的SDD讲的就是它。</td>
-                                </tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">spec-driven</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">先写规格再让智能体写代码</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">规格不是长文档，是没歧义的约束；第三十九章的SDD讲的就是它。</td>
+ </tr>
 <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">vibe coding</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">完全不看代码凭感觉推进</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">与agentic engineering的分界线在「人有没有验收」；第三十七章把这条线讲得很清楚。</td>
-                                </tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">vibe coding</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">完全不看代码凭感觉推进</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">与agentic engineering的分界线在「人有没有验收」；第三十七章把这条线讲得很清楚。</td>
+ </tr>
 
 <tr>
 <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">卫星通信（SOS / 天通）</td>
@@ -677,26 +676,26 @@
 <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">App 上架前请用户先试用，凭邀请安装；第六十七章讲苹果发布流程时会遇到它。</td>
 </tr>
 </tbody>
-                        </table>
+ </table>
 </div>
 <div class="tip-box rounded-lg p-4 mb-3">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>一句话记牢</p>
+<p class="font-semibold">一句话记牢</p>
 <p class="mt-1">遇到不懂的词，先分清它是「硬件」「协议」「服务」还是「工作方式」，查起来会快很多。</p>
 </div>
 <p class="mb-2">表的末尾那批新词条，读法和原有词条一样：第二栏是比喻，第三栏是一句话解释。新增的词全部会在本章后面的深解里出现，算是给你"提前混脸熟"，总表负责混脸熟，深解负责讲明白，两头接得住。</p>
 <p class="mb-2">词多不怕，怕的是散。再给你一张"家族表"：同一个家族的词，本来就是一套装备的几个部件，串着记比散着记省一半力气。先记你用得最多的两族，其余的等用到再说；查表查到一半忘了另一个词归谁，回这张小表看一眼就行。</p>
 <div class="overflow-x-auto">
 <table class="w-full border-collapse border border-gray-300 text-sm mb-3">
-  <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">家族</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">家族成员</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">一句话串记</th></tr></thead>
-  <tbody>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">算力家族</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">SoC、GPU、NPU、基带、GHz</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">一颗芯片里的分工：主心骨、画师、AI 小灶、通信官，GHz 是心跳。</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">屏幕家族</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OLED、LCD、LTPO、UTG、Hz、nit、px、英寸</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">怎么发光、会不会变速、柔不柔、刷多快、多亮、多细、多大。</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">存储家族</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ROM、UFS、eMMC、zRAM、GB</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">仓库多大、传送带多快、要不要借仓库当台面。</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">充电家族</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">mAh、W、PD、Qi2、USB-C</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">水壶多大、龙头多猛、说什么方言、能不能磁吸。</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">网络家族</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Wi-Fi 7、5G-A、eSIM、NFC、蓝牙、热点、VoLTE、卫星通信</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">家里快车、外面马路、隐形卡、贴贴、短绳、插线板、高清通话、救命通道。</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">安全家族</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">权限、双重认证、云备份、查找设备、纯净模式、钓鱼、撞库、端到端加密</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">进门许可、第二道门、底稿、寻呼机、闸机、陷阱、撞门、暗号信。</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">开发家族</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">SDK、API、编译、签名、上架、TestFlight、安装包、模拟器</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">工具箱、窗口、翻译、印章、把关、试吃、装箱成品、虚拟手机。</td></tr>
-  </tbody>
+ <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">家族</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">家族成员</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">一句话串记</th></tr></thead>
+ <tbody>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">算力家族</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">SoC、GPU、NPU、基带、GHz</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">一颗芯片里的分工：主心骨、画师、AI 小灶、通信官，GHz 是心跳。</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">屏幕家族</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OLED、LCD、LTPO、UTG、Hz、nit、px、英寸</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">怎么发光、会不会变速、柔不柔、刷多快、多亮、多细、多大。</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">存储家族</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ROM、UFS、eMMC、zRAM、GB</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">仓库多大、传送带多快、要不要借仓库当台面。</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">充电家族</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">mAh、W、PD、Qi2、USB-C</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">水壶多大、龙头多猛、说什么方言、能不能磁吸。</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">网络家族</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Wi-Fi 7、5G-A、eSIM、NFC、蓝牙、热点、VoLTE、卫星通信</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">家里快车、外面马路、隐形卡、贴贴、短绳、插线板、高清通话、救命通道。</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">安全家族</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">权限、双重认证、云备份、查找设备、纯净模式、钓鱼、撞库、端到端加密</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">进门许可、第二道门、底稿、寻呼机、闸机、陷阱、撞门、暗号信。</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">开发家族</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">SDK、API、编译、签名、上架、TestFlight、安装包、模拟器</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">工具箱、窗口、翻译、印章、把关、试吃、装箱成品、虚拟手机。</td></tr>
+ </tbody>
 </table>
 </div>
 <p class="mb-2">这张家族表和总表是互补关系：总表回答"这个词是什么"，家族表回答"这个词跟谁是一伙的"。检索时先用家族表缩小范围，再回总表看解释；两层都熟了，参数页就从天书变成了熟面孔的集合。</p>
@@ -785,7 +784,7 @@
 <p class="mb-1"><strong>哪章讲透</strong>：第十四章《密码管理器专题》和第十六章《换机时，哪些账号能丢、哪些不能》从两个侧面讲它；第六章《手机丢了、密码忘了，怎么救》讲它为什么是安全底座。</p>
 <p class="mb-3"><strong>容易误解</strong>：别把短信验证码当成绝对保险，补办 SIM 卡的骗局真实存在。条件允许就换验证器 App，恢复码离线抄一份收好——那张纸丢了，比密码忘了还麻烦，值得和户口本放同一个抽屉。给爸妈开通时，把验证器或恢复码的用法也讲一遍——只有你会用，等于没开。</p>
 <div class="info-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2" aria-hidden="true"></i>小贴士</p>
+<p class="font-semibold">小贴士</p>
 <p class="mt-1">今天回去检查你最常用的三个账号：邮箱、支付、聊天。哪一个还没开双重认证，就把它开上。这三把锁的性价比，超过本书里任何一条购买建议。</p>
 </div>
 <h5 class="font-semibold mt-3 mb-1">云备份</h5>
@@ -1023,50 +1022,50 @@
 <p class="mb-2">你全程没为难任何人，只是把每个词都落到了具体问题上。接得住这些问题的店员，值得多聊；接不住的，你也就知道该怎么做了。这一段里的每一句追问，都在本节前面有出处。</p>
 <p class="mb-2">直播间和柜台还不大一样：没有样机可摸、节奏快、爱用"限时"。三招护身：参数看不懂就截图存下来，回本附录慢慢查；把"最后三分钟"当耳旁风。真优惠隔天通常还在；想买的先收藏，冷静十分钟再回来：十分钟后还想要，再买不迟。</p>
 <div class="practice-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-hand-pointer mr-2"></i>来动手</p>
+<p class="font-semibold">来动手</p>
 <p class="mt-1">打开购物 App，任选一台在售手机，把参数页里的五个黑话词翻成大白话，讲给家人听。卡壳的那个词，回本附录查一遍再讲，讲得出，才算真会。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">十、单位与数字：给量级一个手感</h4>
 <p class="mb-2">单位不算黑话，但看不懂单位就看不懂参数页。这一节不背换算，只给"量级手感"：多大算大，多小算小，数字翻倍意味着什么。表里的比喻都故意不精确——精确数字会过时，手感不会。单位词认全的过程，就是参数页对你"祛魅"的过程。</p>
 <div class="overflow-x-auto">
 <table class="w-full border-collapse border border-gray-300 text-sm mb-3">
-  <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">单位</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">它在量什么</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">量级手感（生活版）</th></tr></thead>
-  <tbody>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GB / MB</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">存储容量和流量的常用单位</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">一首歌几 MB，一部高清电影几个 GB，一个月刷短视频几十 GB；估存储、估流量，用这个数感就够。</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">英寸（in）</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">屏幕对角线的长度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">数字大屏幕大，但手感还要看机身宽度、重量和边框；同一英寸数，窄边框的能小一圈。参数页会写，线下摸一遍最实在。</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GHz</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">芯片的"心跳频率"</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">数字大心跳快，但步幅（核心设计）和体力（散热）同样决定快慢；别只比这一个数。</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">mAh</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">电池的"水壶容量"</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">数字大装电多；可大水壶配上漏水的水管（费电的屏幕和后台），照样一天两充。比电池要连整机一起比。</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">W</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">充电功率，充电头的"劲儿"</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">数字越大理论越猛；实际功率是手机、充电头、线三方谈判的结果，一方不配合就到不了标称值。</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">px</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">屏幕画面的"小格子"</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">格子越多画面越细；隔着正常距离看，超过一定程度肉眼差别就小了，别为分辨率单项加价。</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">nit</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">屏幕亮度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">数字越大，太阳底下越看得清；分清"峰值亮度"（小范围短时间的顶点）和"全局亮度"（整屏持续水平），宣传页爱用前者。</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">lm</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">光通量，"一共发多少光"</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">投影仪、灯泡的常见指标；数字大不代表画面亮，还要看投多大一面墙。</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Hz</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">"每秒多少次"</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">刷新率 60 就是每秒刷 60 张，120 就是 120 张，滑动跟手差别明显；也更费电，所以才有 LTPO 自动调。</td></tr>
-  </tbody>
+ <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">单位</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">它在量什么</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">量级手感（生活版）</th></tr></thead>
+ <tbody>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GB / MB</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">存储容量和流量的常用单位</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">一首歌几 MB，一部高清电影几个 GB，一个月刷短视频几十 GB；估存储、估流量，用这个数感就够。</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">英寸（in）</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">屏幕对角线的长度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">数字大屏幕大，但手感还要看机身宽度、重量和边框；同一英寸数，窄边框的能小一圈。参数页会写，线下摸一遍最实在。</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GHz</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">芯片的"心跳频率"</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">数字大心跳快，但步幅（核心设计）和体力（散热）同样决定快慢；别只比这一个数。</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">mAh</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">电池的"水壶容量"</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">数字大装电多；可大水壶配上漏水的水管（费电的屏幕和后台），照样一天两充。比电池要连整机一起比。</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">W</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">充电功率，充电头的"劲儿"</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">数字越大理论越猛；实际功率是手机、充电头、线三方谈判的结果，一方不配合就到不了标称值。</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">px</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">屏幕画面的"小格子"</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">格子越多画面越细；隔着正常距离看，超过一定程度肉眼差别就小了，别为分辨率单项加价。</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">nit</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">屏幕亮度</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">数字越大，太阳底下越看得清；分清"峰值亮度"（小范围短时间的顶点）和"全局亮度"（整屏持续水平），宣传页爱用前者。</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">lm</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">光通量，"一共发多少光"</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">投影仪、灯泡的常见指标；数字大不代表画面亮，还要看投多大一面墙。</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Hz</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">"每秒多少次"</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">刷新率 60 就是每秒刷 60 张，120 就是 120 张，滑动跟手差别明显；也更费电，所以才有 LTPO 自动调。</td></tr>
+ </tbody>
 </table>
 </div>
 <p class="mb-2">用这张表有个小窍门：单位从来不单打独斗，它们总是成对出现，买存储看 GB，谈快慢看 W 和 GHz，比屏幕看英寸、px、nit、Hz。把四五个单位当成一套仪表盘来读，参数页在你眼里就从天书变成了仪表板；哪根指针重要，取决于你拿手机干什么。</p>
 <p class="mb-2">三个速算习惯送给你：比存储，看"每多 128G 加多少钱"，别看总价；比电池，先在心里存一条"同档位一般多大"的基准线；比亮度，找"典型值"而不是"峰值"。习惯成自然之后，参数页对你的威慑力会直线下降。</p>
 <div class="warning-box rounded-lg p-4 mt-3">
-<p class="font-semibold"><i class="fas fa-exclamation-triangle mr-2"></i>避坑提醒</p>
+<p class="font-semibold">避坑提醒</p>
 <p class="mt-1">看到任何参数先问一句"测试条件是什么"。峰值亮度、实验室网速、特定游戏的帧率，都是"最好情况下"的数字；宣传页默认你不会问第二句。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">十一、按场景反查：办事前先认词</h4>
 <p class="mb-2">总表按词排，这一节按事排：你要办什么，就先认哪几个词。三层跳转，先定位场景，再回总表查词。然后进深解，两分钟内能到。这一节适合出发前扫一眼，当它是行李清单的"知识版"。</p>
 <div class="overflow-x-auto">
 <table class="w-full border-collapse border border-gray-300 text-sm mb-3">
-  <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">你要办的事</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">先认这些词</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">去哪深解</th></tr></thead>
-  <tbody>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">买手机、换手机</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">SoC、RAM/ROM、UFS、OLED/LCD、IP68、PD 快充</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第三节和第十节，再配第二十八章</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">给爸妈配机</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">纯净模式、无障碍、权限、查找设备、双重认证</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第四节、第六节，清单在第二十七章</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">手机丢了或被盗</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">查找设备、双重认证、SIM卡PIN</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第四节，流程看第三十二章</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">出国旅行</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">eSIM、一号双终端、卫星通信、PD 快充</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第五节，清单看第八十六章</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">柜台听推销</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">旗舰芯、大底传感器、自研芯片、百瓦快充</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第九节</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">聊天怕被看</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">端到端加密、锁屏密码、设备管理器</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第六节</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">开始跑步戴表</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">PPG、单导联ECG、一号双终端</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第八节，数据怎么用看第九十四章</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">想做口播视频</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">数字人、端侧AI与云端AI</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第四节，产线看第九十九章</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">远程帮爸妈修手机</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">无障碍、权限、纯净模式、云备份</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第四节、第六节，方法看第二十七章</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">送修或出二手</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">序列号、IMEI、云备份、查找设备</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">附录A讲核对，旧机处置看第二十五章</td></tr>
-  </tbody>
+ <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">你要办的事</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">先认这些词</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">去哪深解</th></tr></thead>
+ <tbody>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">买手机、换手机</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">SoC、RAM/ROM、UFS、OLED/LCD、IP68、PD 快充</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第三节和第十节，再配第二十八章</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">给爸妈配机</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">纯净模式、无障碍、权限、查找设备、双重认证</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第四节、第六节，清单在第二十七章</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">手机丢了或被盗</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">查找设备、双重认证、SIM卡PIN</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第四节，流程看第三十二章</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">出国旅行</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">eSIM、一号双终端、卫星通信、PD 快充</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第五节，清单看第八十六章</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">柜台听推销</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">旗舰芯、大底传感器、自研芯片、百瓦快充</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第九节</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">聊天怕被看</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">端到端加密、锁屏密码、设备管理器</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第六节</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">开始跑步戴表</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">PPG、单导联ECG、一号双终端</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第八节，数据怎么用看第九十四章</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">想做口播视频</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">数字人、端侧AI与云端AI</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第四节，产线看第九十九章</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">远程帮爸妈修手机</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">无障碍、权限、纯净模式、云备份</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">第四节、第六节，方法看第二十七章</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">送修或出二手</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">序列号、IMEI、云备份、查找设备</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">附录A讲核对，旧机处置看第二十五章</td></tr>
+ </tbody>
 </table>
 </div>
 <p class="mb-2">这张表会随你的生活生长：明年你多了一个"要办的事"，就自己添一行。附录给你的是格式，内容归你，自己攒出来的反查表，比任何通用版都好用。</p>
@@ -1099,11 +1098,11 @@
 <p class="mb-3">有。跟着这本书走最省力：第一章认手机，第三章过网络词，第六章过安全词，第二十八章过购买词。每章末尾的"一句话记牢"也是记忆钩子。串起来读一遍，词就挂在了故事上。附录B《动手练习小参考》配了练习，边做边记，比干读快得多。顺序可以打乱，按你的需要跳着走——术语书不是小说，没有剧透问题。</p>
 <p class="mb-3">查到的词，挑一个讲给别人听。讲得出来，才算真的懂了，这也是这张表最好的用法。</p>
 <div class="quote-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-quote-left mr-2"></i>一句话记牢</p>
+<p class="font-semibold">一句话记牢</p>
 <p class="mt-1">术语是别人起的名字，理解才是你的本事，名字会忘，本事不会。</p>
 </div>
 <div class="chapter-summary">
-<p class="font-semibold mb-1"><i class="fas fa-flag-checkered mr-1"></i>本章小结</p>
+<p class="font-semibold mb-1">本章小结</p>
 <ul class="list-disc pl-6 mb-3 space-y-1">
   <li>术语先分四类：硬件、协议、服务、工作方式：归类对了，查表快一半。</li>
   <li>硬件翻来覆去是几大件：芯片、运存、存储、屏幕、传感器、基带；GPU、防抖、定位、红外遥控都是它们的左膀右臂。</li>
@@ -1122,19 +1121,19 @@
 <nav class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a href="fu-lu-b.html" class="text-primary hover:underline">← 附录B：动手练习小参考</a><span></span><a href="fu-lu-d.html" class="text-primary hover:underline">附录D：靠谱资源去哪里找 →</a></nav>
 
             </section>
- </div></main></div><!-- 快捷工具：浮动按钮组 --><div id="quick-tools" class="quick-tools no-print" aria-label="快捷工具"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><i class="fas fa-droplet" aria-hidden="true"></i></button><button id="quick-search" class="quick-tool-btn" title="搜索 (Ctrl+K)" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></button><button id="quick-theme" class="quick-tool-btn" title="切换深色/浅色" aria-label="切换主题"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i></button><button id="quick-print" class="quick-tool-btn" title="打印 / 导出PDF" aria-label="打印或导出"><i class="fas fa-print" aria-hidden="true"></i></button><button id="quick-toc" class="quick-tool-btn" title="目录" aria-label="打开目录"><i class="fas fa-list" aria-hidden="true"></i></button><button id="quick-tts" class="quick-tool-btn" title="语音朗读" aria-label="语音朗读"><i class="fas fa-headphones" aria-hidden="true"></i></button><button id="quick-shortcuts" class="quick-tool-btn" title="键盘快捷键 (?)" aria-label="快捷键面板"><i class="fas fa-keyboard" aria-hidden="true"></i></button><button id="quick-backup" class="quick-tool-btn" title="备份/恢复进度" aria-label="备份进度"><i class="fas fa-cloud-arrow-up" aria-hidden="true"></i></button></div><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><!-- 快捷键面板 --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="键盘快捷键"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><i class="fas fa-keyboard text-gray-400"></i><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">键盘快捷键</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">搜索内容</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">切换深色/浅色</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">语音朗读 播放/暂停</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">停止朗读</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">打开快捷键面板</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">字号调大 / 调小</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">打印 / 导出PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- 备份/恢复弹窗 --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="备份与恢复"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><i class="fas fa-cloud-arrow-up text-gray-400"></i><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">阅读进度备份与恢复</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">备份包含：已读章节、书签、阅读位置、字号偏好、健康自检结果。数据保存在浏览器本地，更换浏览器或清除缓存后丢失，建议定期导出备份。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-download"></i> 导出备份文件
- </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">下载一个 JSON 文件，保存到安全位置</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-upload"></i> 导入备份恢复
- </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">选择之前导出的备份文件恢复进度</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-trash"></i> 清除所有阅读数据
- </button><p class="text-xs text-red-400 mt-1 text-center">不可恢复！请先导出备份</p></div></div></div></div><!-- 阅读连续天数提示 --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),#7c3aed);color:var(--ink-inverse);border:none;"><i class="fas fa-fire" aria-hidden="true" style="color:var(--gold-2)"></i><span id="streak-toast-text">连续阅读第 X 天！</span></div><!-- 语音朗读控件栏 --><div id="tts-controls" class="tts-controls" role="region" aria-label="语音朗读控制" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="当前朗读章节">未开始</span><button class="tts-btn" id="tts-prev" title="上一段" aria-label="上一段"><i class="fas fa-step-backward"></i></button><button class="tts-btn play-btn" id="tts-play" title="播放/暂停" aria-label="播放朗读"><i class="fas fa-play"></i></button><button class="tts-btn" id="tts-next" title="下一段" aria-label="下一段"><i class="fas fa-step-forward"></i></button><button class="tts-btn" id="tts-speed-down" title="减速" aria-label="减速">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="加速" aria-label="加速">+</button><button class="tts-btn" id="tts-stop" title="停止朗读" aria-label="停止朗读"><i class="fas fa-times"></i></button></div><!-- 回到顶部按钮 --><button id="back-to-top" class="opacity-0 invisible" aria-label="回到顶部"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg><i class="fas fa-arrow-up" aria-hidden="true"></i></button><!-- 阅读位置恢复提示 --><div id="restore-toast" class="restore-position-toast" role="alert"><i class="fas fa-bookmark" aria-hidden="true"></i><span id="restore-toast-text">上次读到：...</span><button class="btn-restore" id="restore-btn">继续阅读</button><button class="btn-dismiss" id="dismiss-btn">忽略</button></div><!-- JS脚本 -->
+ </div></main></div><!-- 快捷工具：浮动按钮组 --><div id="quick-tools" class="quick-tools no-print" aria-label="快捷工具"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">透</span></button><button id="quick-search" class="quick-tool-btn" title="搜索 (Ctrl+K)" aria-label="搜索"><span aria-hidden="true">搜</span></button><button id="quick-theme" class="quick-tool-btn" title="切换深色/浅色" aria-label="切换主题"><span aria-hidden="true">夜</span></button><button id="quick-print" class="quick-tool-btn" title="打印 / 导出PDF" aria-label="打印或导出"><span aria-hidden="true">印</span></button><button id="quick-toc" class="quick-tool-btn" title="目录" aria-label="打开目录"><span aria-hidden="true">目</span></button><button id="quick-tts" class="quick-tool-btn" title="语音朗读" aria-label="语音朗读"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="键盘快捷键 (?)" aria-label="快捷键面板"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="备份/恢复进度" aria-label="备份进度"><span aria-hidden="true">备</span></button></div><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><!-- 快捷键面板 --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="键盘快捷键"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">键盘快捷键</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">搜索内容</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">切换深色/浅色</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">语音朗读 播放/暂停</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">停止朗读</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">打开快捷键面板</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">字号调大 / 调小</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">打印 / 导出PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- 备份/恢复弹窗 --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="备份与恢复"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">阅读进度备份与恢复</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">备份包含：已读章节、书签、阅读位置、字号偏好、健康自检结果。数据保存在浏览器本地，更换浏览器或清除缓存后丢失，建议定期导出备份。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 导出备份文件
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">下载一个 JSON 文件，保存到安全位置</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 导入备份恢复
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">选择之前导出的备份文件恢复进度</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 清除所有阅读数据
+ </button><p class="text-xs text-red-400 mt-1 text-center">不可恢复！请先导出备份</p></div></div></div></div><!-- 阅读连续天数提示 --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),#7c3aed);color:var(--ink-inverse);border:none;"><span id="streak-toast-text">连续阅读第 X 天！</span></div><!-- 语音朗读控件栏 --><div id="tts-controls" class="tts-controls" role="region" aria-label="语音朗读控制" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="当前朗读章节">未开始</span><button class="tts-btn" id="tts-prev" title="上一段" aria-label="上一段"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="播放/暂停" aria-label="播放朗读"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="下一段" aria-label="下一段"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="减速" aria-label="减速">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="加速" aria-label="加速">+</button><button class="tts-btn" id="tts-stop" title="停止朗读" aria-label="停止朗读"><span aria-hidden="true">×</span></button></div><!-- 回到顶部按钮 --><button id="back-to-top" class="opacity-0 invisible" aria-label="回到顶部"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- 阅读位置恢复提示 --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">上次读到：...</span><button class="btn-restore" id="restore-btn">继续阅读</button><button class="btn-dismiss" id="dismiss-btn">忽略</button></div><!-- JS脚本 -->
  
  <script>
-        /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
-        if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
-                    .catch(function (err) { console.warn('SW 注册失败：', err); });
-            });
-        }
-    </script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
 <script src="assets/book.js" defer></script>
 </body></html>

@@ -6,64 +6,63 @@
 
 
  <script id="liquid-glass-bundle">
-    /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
-     * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
-     * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
-     * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
-    (function () {
-      if (window.__liquidGlass) return;
-      window.__liquidGlass = true;
-      if (window.__SAFE) return;
-      var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
-      var reduce = window.matchMedia &&
-        window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
-      if (!ok || reduce) return;
-      var root = document.documentElement;
-      root.classList.add('lg-ready');
-      if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
-      window.__lgToggle = function (v) {
-        var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
-        root.classList.toggle('lg-off', off);
-        if (window.RS) RS.set('liquidGlass', !off);
-        return !off;
-      };
-      var sync = function () {
-        var btn = document.getElementById('quick-glass');
-        if (!btn) return;
-        var off = root.classList.contains('lg-off');
-        btn.classList.toggle('lg-btn-off', off);
-        btn.setAttribute('aria-pressed', String(!off));
-        var ic = btn.querySelector('i');
-        if (ic) ic.className = off ? 'fas fa-droplet-slash' : 'fas fa-droplet';
-      };
-      /* bundle 在 head 执行时 #quick-glass 尚未存在——绑定延迟到 DOMContentLoaded */
-      document.addEventListener('DOMContentLoaded', function () {
-        var btn = document.getElementById('quick-glass');
-        if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
-        sync();
-      });
-      try {
-        if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
-      } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
-    })();
-    </script>
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var sync = function () {
+ var btn = document.getElementById('quick-glass');
+ if (!btn) return;
+ var off = root.classList.contains('lg-off');
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ };
+ /* bundle 在 head 执行时 #quick-glass 尚未存在——绑定延迟到 DOMContentLoaded */
+ document.addEventListener('DOMContentLoaded', function () {
+ var btn = document.getElementById('quick-glass');
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ });
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
  
 
 
 <link rel="preload" href="../fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../fonts/fa/fa-solid-900.subset.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-er-shi-san-zhang-github.html">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "附：GitHub入门指南", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-er-shi-san-zhang-github.html", "isPartOf": {"@type": "Book", "name": "你缺失的那门手机课", "inLanguage": "zh-CN"}}</script>
 <link rel="stylesheet" href="assets/book.css">
-</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">跳到主要内容</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="打开目录菜单" aria-expanded="false" aria-controls="sidebar"><i class="fas fa-bars"></i></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="返回首页"><span class="hidden sm:inline-flex w-8 h-8 rounded-md bg-gradient-to-br from-primary to-accent text-white items-center justify-center text-sm font-bold flex-shrink-0" aria-hidden="true"><i class="fas fa-mobile-screen"></i></span><h1 class="text-base md:text-lg font-bold text-primary truncate">搞定手机 · 数码必修课</h1></a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="主操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="从基础开始"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>开始学习</span></a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="搜索 (Ctrl+K)" aria-label="搜索内容"><i class="fas fa-search" aria-hidden="true"></i></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="字号调整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="缩小字体" aria-label="缩小字体">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="重置字号" aria-label="重置字号">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="放大字体" aria-label="放大字体">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="切换深色/浅色模式" aria-label="切换深色/浅色模式"><i class="fas fa-moon dark:hidden" aria-hidden="true"></i><i class="fas fa-sun hidden dark:inline" aria-hidden="true"></i></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="打印 / 导出PDF" aria-label="打印或导出PDF"><i class="fas fa-print" aria-hidden="true"></i></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="回到顶部"><i class="fas fa-arrow-up mr-1" aria-hidden="true"></i>顶部
- </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="文章目录"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2"><span aria-hidden="true" class="fas fa-list-ul text-primary" aria-hidden="true"></span>学习目录
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">跳到主要内容</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="打开目录菜单" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="返回首页"><span class="hidden sm:inline-flex w-8 h-8 rounded-md bg-gradient-to-br from-primary to-accent text-white items-center justify-center text-sm font-bold flex-shrink-0" aria-hidden="true"></span><h1 class="text-base md:text-lg font-bold text-primary truncate">搞定手机 · 数码必修课</h1></a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="主操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="从基础开始"><span>开始学习</span></a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="搜索 (Ctrl+K)" aria-label="搜索内容"><span aria-hidden="true">搜</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="字号调整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="缩小字体" aria-label="缩小字体">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="重置字号" aria-label="重置字号">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="放大字体" aria-label="放大字体">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="切换深色/浅色模式" aria-label="切换深色/浅色模式"><span class="dark:hidden" aria-hidden="true">夜</span><span class="hidden dark:inline" aria-hidden="true">昼</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="打印 / 导出PDF" aria-label="打印或导出PDF"><span aria-hidden="true">印</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="回到顶部">顶部
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="文章目录"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">学习目录
  </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 章</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="筛选章节..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="筛选章节"></div><ul class="space-y-1 text-sm" id="toc-list"><!-- 基础篇 -->
                     <li class="toc-parent" data-group="ji-chu">
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">一、基础篇（第0-7章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起基础篇" data-target="child-ji-chu">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -85,7 +84,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">二、软件篇（第8-14章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起软件篇" data-target="child-ruan-jian">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -104,7 +103,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">三、进阶篇（第15-20章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起进阶篇" data-target="child-jin-jie">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -123,7 +122,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">四、超越篇（第21-26章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起超越篇" data-target="child-chao-yue">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -141,7 +140,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">五、实战篇（第27-32章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起实战篇" data-target="child-shi-zhan">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -158,7 +157,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">六、展望篇与车联篇（第33-34章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起展望篇" data-target="child-zhan-wang">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -171,7 +170,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">儿童与手机专题（第35-36章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起儿童与手机专题" data-target="child-er-tong-pian">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -184,7 +183,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">七、AI编程实战篇（第37-47章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起AI编程实战篇" data-target="child-ai-biancheng">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -206,7 +205,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">八、安卓开发实战篇（第48-58章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起安卓开发实战篇" data-target="child-an-zhuo-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -228,7 +227,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">九、iOS开发实战篇（第59-69章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起iOS开发实战篇" data-target="child-ios-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -250,7 +249,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-qi-shi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十、鸿蒙开发实战篇（第70-80章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起鸿蒙开发实战篇" data-target="child-hongmeng-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-hongmeng-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -272,7 +271,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十一、手机与可穿戴篇（第81-85章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十一、手机与可穿戴篇（第81-85章）目录开关" data-target="child-ke-chuan-she-bei">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ke-chuan-she-bei" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -288,7 +287,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-shi-liu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十二、旅行与手机篇（第86-90章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十二、旅行与手机篇（第86-90章）目录开关" data-target="child-lv-xing">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-lv-xing" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -304,7 +303,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-jiu-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十三、手机与健康篇（第91-95章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十三、手机与健康篇（第91-95章）目录开关" data-target="child-jian-kang">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-jian-kang" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -320,7 +319,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-jiu-shi-liu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十四、AI短视频创作篇（第96-100章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十四、AI短视频创作篇（第96-100章）目录开关" data-target="child-ai-duan-shi-pin">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ai-duan-shi-pin" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -336,7 +335,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-yi-bai-ling-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十五、竖屏短剧入门篇（第101-105章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十五、竖屏短剧入门篇（第101-105章）目录开关" data-target="child-shu-ping-duan-ju">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-shu-ping-duan-ju" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -352,7 +351,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十六、附录</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起附录" data-target="child-fu-lu">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -367,7 +366,7 @@
                             <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>附录H：版本路线图</a></li>
                         </ul>
                     </li>
-</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索"><div class="search-panel"><div class="search-input-wrapper"><i class="fas fa-search text-gray-400"></i><input type="text" id="search-input" placeholder="搜索内容..." autocomplete="off" aria-label="搜索关键词"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭搜索">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">输入关键词开始搜索</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 顶部面包屑 --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">首页</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">数码必修课 · v1.9</span></nav>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">搜</span><input type="text" id="search-input" placeholder="搜索内容..." autocomplete="off" aria-label="搜索关键词"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭搜索">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">输入关键词开始搜索</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 顶部面包屑 --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">首页</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">数码必修课 · v1.9</span></nav>
 <div id="di-er-shi-san-zhang-github" class="mb-10 content-section">
 <h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">第二十三章附：GitHub入门指南——从代码托管到协作平台</h3>
 <p class="chapter-intro mb-4">上一章我们讲了"编程思维"，而真正要把编程思维落地、和他人一起做项目，就绕不开一个名字——GitHub。无论你是计算机系学生要参加比赛、想保存自己的代码作品，还是单纯想看看全球开发者在折腾什么，GitHub都是你必须认识的平台。这一节我们从最基础的概念讲起，帮你建立一个清晰的认知。</p>
@@ -424,7 +423,7 @@
 <p class="mb-2">commit 时那句说明（commit message），新手普遍不当回事，随手一个"update"完事。三个月后你想找"哪次提交改了登录逻辑"，面对一排一模一样的 update，等于面对一片没有碑文的坟地。</p>
 <div class="code-block">
 <div class="code-head"><span>TEXT · 同一件事的两种说明</span><span class="dots">···</span></div>
-<pre>update                          （半年后：你到底改了啥？）
+<pre>update （半年后：你到底改了啥？）
 修复：登录成功后跳转到错误页面的问题（半年后：一眼看懂）</pre>
 </div>
 <p class="mb-2">好说明就两个标准：一句话内说完，并且说清"为什么改"。写说明多花的十秒钟，未来会成倍还给你。</p>
@@ -433,46 +432,46 @@
 <h4 class="text-lg font-semibold mt-4 mb-2">二、Git和GitHub的区别（关键概念！）</h4>
 <p class="mb-2">很多人第一次接触时会混淆这两个词，这里帮你梳理清楚：</p>
 <table class="w-full border-collapse border border-gray-300 text-sm mb-3">
-                        <thead>
-                            <tr class="bg-light dark:bg-gray-700">
-                                <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">对比项</th>
-                                <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Git</th>
-                                <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">GitHub</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">本质</td>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">版本控制工具（软件）</td>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">代码托管平台（网站）</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">运行位置</td>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">本地电脑上</td>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">云端（浏览器访问）</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">核心职责</td>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">记录文件的每次变更（怎么改的、谁改的、何时改的）</td>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把Git仓库放到云端，方便存储、展示、协作</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">是否需要网络</td>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">不需要，离线可用</td>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">需要联网访问</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">归属</td>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">开源软件，由Linus Torvalds（Linux之父）创建</td>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">微软旗下产品</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">同类竞品</td>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">SVN、Mercurial</td>
-                                <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GitLab、Gitee（码云）、Bitbucket</td>
-                            </tr>
-                        </tbody>
-                    </table>
+ <thead>
+ <tr class="bg-light dark:bg-gray-700">
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">对比项</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Git</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">GitHub</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">本质</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">版本控制工具（软件）</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">代码托管平台（网站）</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">运行位置</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">本地电脑上</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">云端（浏览器访问）</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">核心职责</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">记录文件的每次变更（怎么改的、谁改的、何时改的）</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把Git仓库放到云端，方便存储、展示、协作</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">是否需要网络</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">不需要，离线可用</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">需要联网访问</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">归属</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">开源软件，由Linus Torvalds（Linux之父）创建</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">微软旗下产品</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">同类竞品</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">SVN、Mercurial</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GitLab、Gitee（码云）、Bitbucket</td>
+ </tr>
+ </tbody>
+ </table>
 <p class="mb-2">简单说：<strong>Git管"怎么记录变更"，GitHub管"变更放在哪、怎么协作"</strong>。Git是工具，在本地运行；GitHub是平台，把Git仓库放到云端，方便协作和展示。你可以只用Git不用GitHub（比如自己写代码做版本管理），但用GitHub一定要用Git（因为GitHub就是基于Git的）。</p>
 <h5 class="font-semibold mt-3 mb-1">三个高频误解，一次说清</h5>
 <p class="mb-2"><strong>误解一：不装 Git，只在网页上改，行不行？</strong>行。网页上点铅笔图标改文件、填一句说明提交，本质也是一次 commit。但网页编辑只适合小修小补：没法批量改文件、没法离线干活、很多进阶操作做不了。把 Git 装进电脑，才算拿到完整体验。</p>
@@ -510,17 +509,17 @@
 <p class="mb-2">回头看：仓库是家，分支是各自的草稿线，Issue 是议事厅，PR 是验收单，合并是交割，Actions 是质检员。一个词都不多余，一次作业全部用上。</p>
 <div class="overflow-x-auto">
 <table class="w-full border-collapse border border-gray-300 text-sm mb-3">
-  <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">概念</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">一句话比喻</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">对应的动作</th></tr></thead>
-  <tbody>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">仓库</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">整个项目的相册，附全部"拍摄记录"</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">新建仓库 / git init / git clone</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">提交</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">带备注的游戏存档</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">git commit</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">分支</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">平行存档线</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">git branch / git switch</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">合并</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把草稿誊回正本</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">git merge / Pull Request</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Fork</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把别人家的户型图复印一份，自己照着改</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">网页上点 Fork 按钮</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Push / Pull</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">上传 / 下载</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">git push / git pull</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Issue</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">项目议事厅里的发言帖</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">网页上开 Issue</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pull Request</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">"我改好了，请过目"的验收单</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">网页上发 PR</td></tr>
-  </tbody>
+ <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">概念</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">一句话比喻</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">对应的动作</th></tr></thead>
+ <tbody>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">仓库</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">整个项目的相册，附全部"拍摄记录"</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">新建仓库 / git init / git clone</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">提交</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">带备注的游戏存档</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">git commit</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">分支</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">平行存档线</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">git branch / git switch</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">合并</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把草稿誊回正本</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">git merge / Pull Request</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Fork</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把别人家的户型图复印一份，自己照着改</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">网页上点 Fork 按钮</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Push / Pull</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">上传 / 下载</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">git push / git pull</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Issue</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">项目议事厅里的发言帖</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">网页上开 Issue</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pull Request</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">"我改好了，请过目"的验收单</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">网页上发 PR</td></tr>
+ </tbody>
 </table>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">四、注册与上手：五分钟创建你的第一个仓库</h4>
@@ -544,7 +543,7 @@
   <li>点击"Create repository"，你的第一个GitHub仓库就诞生了！</li>
 </ol>
 <div class="info-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-info-circle mr-2"></i>小知识：README是什么</p>
+<p class="font-semibold">小知识：README是什么</p>
 <p class="mt-1">README.md是一个Markdown格式的文件，是别人打开你仓库时第一眼看到的内容，一个好的README通常包含：项目简介、安装方法、使用示例、许可证、联系方式。写好README是程序员的基本素养，也是项目能否被他人使用的第一道门槛。</p>
 </div>
 <h5 class="font-semibold mt-3 mb-1">网页上直接改文件：你的第一次"提交"</h5>
@@ -581,7 +580,7 @@
 </ol>
 <p class="mb-2">对新手来说，记住这个口诀：<strong>"先pull后改，改完add，commit带说明，最后push上去"</strong>。养成这个习惯，团队协作就不会乱。</p>
 <div class="tip-box rounded-lg p-4 mb-3">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>一句话记牢</p>
+<p class="font-semibold">一句话记牢</p>
 <p class="mt-1">Git最难的不是命令，是「每次提交只做一件事」这个习惯。</p>
 </div>
 <h5 class="font-semibold mt-3 mb-1">动手前：把 Git 装进电脑并报上名</h5>
@@ -774,7 +773,7 @@ git merge upstream/main
   <li><strong>很多人以为"双重许可=两个都能要"</strong>，其实同一代码按两种协议发放（常见的是 GPL 版＋付费商业版）时，你只能选其中一份并遵守它的全部条款。</li>
 </ul>
 <div class="quote-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-quote-left mr-2"></i>一句话记牢</p>
+<p class="font-semibold">一句话记牢</p>
 <p class="mt-1">没有协议的代码"看着免费、用着违法"；选协议不是选信仰，是在给"你和所有后来者"定一份使用合同，想清楚再挂，挂了就别轻易改。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">Git 命令速查表：先收藏，用到再查</h4>
@@ -782,81 +781,81 @@ git merge upstream/main
 <h5 class="font-semibold mt-3 mb-1">初始化与配置</h5>
 <div class="overflow-x-auto">
 <table class="w-full border-collapse border border-gray-300 text-sm mb-3">
-  <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">命令</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">干什么用</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">新手注意</th></tr></thead>
-  <tbody>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git init</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把当前文件夹变成 Git 仓库</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">在项目根目录执行，别在磁盘根目录乱试</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git clone &lt;地址&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把云端仓库完整复制到本地</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">地址从仓库页面绿色 Code 按钮复制</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git config --global user.name / user.email</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">设置提交者身份</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">邮箱用注册 GitHub 的同一个</td></tr>
-  </tbody>
+ <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">命令</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">干什么用</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">新手注意</th></tr></thead>
+ <tbody>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git init</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把当前文件夹变成 Git 仓库</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">在项目根目录执行，别在磁盘根目录乱试</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git clone &lt;地址&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把云端仓库完整复制到本地</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">地址从仓库页面绿色 Code 按钮复制</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git config --global user.name / user.email</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">设置提交者身份</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">邮箱用注册 GitHub 的同一个</td></tr>
+ </tbody>
 </table>
 </div>
 <h5 class="font-semibold mt-3 mb-1">日常四件套</h5>
 <div class="overflow-x-auto">
 <table class="w-full border-collapse border border-gray-300 text-sm mb-3">
-  <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">命令</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">干什么用</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">新手注意</th></tr></thead>
-  <tbody>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git status</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">看当前状态</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">每步操作前先看一眼</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git add &lt;文件&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把改动放进暂存区</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">git add . 会暂存全部改动，想清楚再用</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git commit -m "说明"</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">正式记录一次提交</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">说明写"为什么"，别只写 update</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git push</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把本地提交推上云端</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">被拒先 pull，别急着 --force</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git pull</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把云端更新拉到本地</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">开工前先拉一次，保持同步</td></tr>
-  </tbody>
+ <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">命令</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">干什么用</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">新手注意</th></tr></thead>
+ <tbody>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git status</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">看当前状态</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">每步操作前先看一眼</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git add &lt;文件&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把改动放进暂存区</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">git add . 会暂存全部改动，想清楚再用</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git commit -m "说明"</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">正式记录一次提交</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">说明写"为什么"，别只写 update</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git push</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把本地提交推上云端</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">被拒先 pull，别急着 --force</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git pull</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把云端更新拉到本地</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">开工前先拉一次，保持同步</td></tr>
+ </tbody>
 </table>
 </div>
 <p class="mb-2">提交说明还有个社区常见的小习惯：用前缀标类型，比如 fix: 修 bug、docs: 改文档、feat: 加功能，扫一眼历史就知道每条提交在干什么。这只是流行习惯而非标准，项目有自己的约定就照项目的来。另外，说明里别堆表情符号，一两个点睛可以，刷屏就吵了。</p>
 <h5 class="font-semibold mt-3 mb-1">查看历史与差异</h5>
 <div class="overflow-x-auto">
 <table class="w-full border-collapse border border-gray-300 text-sm mb-3">
-  <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">命令</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">干什么用</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">新手注意</th></tr></thead>
-  <tbody>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git log</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">查看提交历史</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">翻页后按 q 退出</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git log --oneline</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">每条提交压成一行</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">快速浏览用</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git diff</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">看未暂存的改动</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">加 --staged 看已暂存的</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git show &lt;提交编号&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">看某次提交的详情</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">编号从 git log 里复制</td></tr>
-  </tbody>
+ <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">命令</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">干什么用</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">新手注意</th></tr></thead>
+ <tbody>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git log</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">查看提交历史</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">翻页后按 q 退出</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git log --oneline</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">每条提交压成一行</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">快速浏览用</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git diff</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">看未暂存的改动</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">加 --staged 看已暂存的</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git show &lt;提交编号&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">看某次提交的详情</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">编号从 git log 里复制</td></tr>
+ </tbody>
 </table>
 </div>
 <h5 class="font-semibold mt-3 mb-1">分支管理</h5>
 <div class="overflow-x-auto">
 <table class="w-full border-collapse border border-gray-300 text-sm mb-3">
-  <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">命令</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">干什么用</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">新手注意</th></tr></thead>
-  <tbody>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git branch</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">列出本地分支</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">当前分支带星号</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git switch &lt;分支&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">切换分支</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">旧教程里的 git checkout 是同一件事的老写法</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git switch -c &lt;新分支&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">新建并切换</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">名字用英文短横线风格</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git merge &lt;分支&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把指定分支并进当前分支</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">合并前先确认自己在哪条分支</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git branch -d &lt;分支&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">删除已合并的分支</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">大写 -D 是强删，慎用</td></tr>
-  </tbody>
+ <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">命令</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">干什么用</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">新手注意</th></tr></thead>
+ <tbody>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git branch</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">列出本地分支</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">当前分支带星号</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git switch &lt;分支&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">切换分支</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">旧教程里的 git checkout 是同一件事的老写法</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git switch -c &lt;新分支&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">新建并切换</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">名字用英文短横线风格</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git merge &lt;分支&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">把指定分支并进当前分支</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">合并前先确认自己在哪条分支</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git branch -d &lt;分支&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">删除已合并的分支</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">大写 -D 是强删，慎用</td></tr>
+ </tbody>
 </table>
 </div>
 <h5 class="font-semibold mt-3 mb-1">远程操作</h5>
 <div class="overflow-x-auto">
 <table class="w-full border-collapse border border-gray-300 text-sm mb-3">
-  <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">命令</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">干什么用</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">新手注意</th></tr></thead>
-  <tbody>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git remote -v</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">查看已配置的远程地址</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">remote add 写错不报错，push 才报</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git remote add origin &lt;地址&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">关联远程仓库</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">写重复会报错，set-url 可改</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git push -u origin &lt;分支&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">首次推送并建立关联</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">之后该分支直接 git push 即可</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git fetch</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">只下载不合并</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">想先看看云端有什么再决定时用</td></tr>
-  </tbody>
+ <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">命令</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">干什么用</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">新手注意</th></tr></thead>
+ <tbody>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git remote -v</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">查看已配置的远程地址</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">remote add 写错不报错，push 才报</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git remote add origin &lt;地址&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">关联远程仓库</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">写重复会报错，set-url 可改</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git push -u origin &lt;分支&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">首次推送并建立关联</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">之后该分支直接 git push 即可</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git fetch</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">只下载不合并</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">想先看看云端有什么再决定时用</td></tr>
+ </tbody>
 </table>
 </div>
 <h5 class="font-semibold mt-3 mb-1">撤销与补救</h5>
 <div class="overflow-x-auto">
 <table class="w-full border-collapse border border-gray-300 text-sm mb-3">
-  <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">命令</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">干什么用</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">新手注意</th></tr></thead>
-  <tbody>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git restore &lt;文件&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">丢弃某文件未暂存的改动</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">丢弃即消失，先想清楚</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git restore --staged &lt;文件&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">移出暂存区，改动保留</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">和上一条的区别先分清</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git commit --amend</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">修改最后一次提交</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">只对还没 push 的提交用</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git reset --soft HEAD~1</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">撤销最后一次提交，改动退回暂存区</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">想保留劳动成果时用它</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git revert &lt;提交&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">用一条"反向提交"抵消某次改动</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">已推送的提交用 revert，别用 reset</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git reflog</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">看指针移动历史</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">"完了我搞没了"时先跑它</td></tr>
-  </tbody>
+ <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">命令</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">干什么用</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">新手注意</th></tr></thead>
+ <tbody>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git restore &lt;文件&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">丢弃某文件未暂存的改动</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">丢弃即消失，先想清楚</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git restore --staged &lt;文件&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">移出暂存区，改动保留</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">和上一条的区别先分清</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git commit --amend</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">修改最后一次提交</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">只对还没 push 的提交用</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git reset --soft HEAD~1</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">撤销最后一次提交，改动退回暂存区</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">想保留劳动成果时用它</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git revert &lt;提交&gt;</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">用一条"反向提交"抵消某次改动</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">已推送的提交用 revert，别用 reset</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git reflog</code></td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">看指针移动历史</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">"完了我搞没了"时先跑它</td></tr>
+ </tbody>
 </table>
 </div>
 <div class="info-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2" aria-hidden="true"></i>小贴士：先开个练习仓库</p>
+<p class="font-semibold">小贴士：先开个练习仓库</p>
 <p class="mt-1">撤销类命令第一次用，先开一个练习仓库随便造：新建一个空文件夹，git init，随手提交几次，把表里的命令挨个跑一遍，看每条命令执行后 git status 和 git log 的变化。半小时的练习，换来以后所有的淡定。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">Markdown 速成：GitHub 上的通用文字格式</h4>
@@ -965,7 +964,7 @@ git merge upstream/main
 </ul>
 <p class="mb-2">这八条建议里，被违反最多的是"勤提交"和"开分支"那两条：攒一个大提交、直接在主分支上改，短期都"没出事"，直到某天你改坏了找不到原因，或者两个人的改动搅成一团。习惯的成本在养成那天就付清了，收益则在你每次出事时兑现。另外，.gitignore 别自己从零编：GitHub 上有官方维护的各语言通用模板仓库，搜 github/gitignore 就能找到，抄一份改改就能用。</p>
 <div class="warning-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-exclamation-triangle mr-2"></i>安全提醒</p>
+<p class="font-semibold">安全提醒</p>
 <ul class="list-disc pl-6 mt-1 space-y-1">
   <li>千万不要把密码、API密钥、token、数据库连接串、.env文件等敏感信息提交到GitHub，尤其是公开仓库——一旦泄露，会被爬虫秒抓，后果严重。这类文件一律提前写进.gitignore。</li>
   <li>不小心提交了敏感信息，<strong>第一件事是在平台上撤销并轮换</strong>这把密钥，删提交记录不算补救，历史里还留着。然后再用<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">git filter-repo</code>清理历史（官方已弃用 filter-branch）。</li>
@@ -973,11 +972,11 @@ git merge upstream/main
 </ul>
 </div>
 <div class="info-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-info-circle mr-2"></i>国内访问GitHub的注意事项</p>
+<p class="font-semibold">国内访问GitHub的注意事项</p>
 <p class="mt-1">GitHub在国内访问有时不稳定，可能出现打不开、克隆慢的情况。可以尝试：① 使用国内镜像站加速克隆（镜像更替频繁，如 ghfast.top、gh-proxy.com，用前先确认在线）；② 配置Hosts或使用代理；③ 如果主要面向国内协作，也可以考虑国产替代品<strong>Gitee（码云）</strong>，功能类似且访问速度快。很多团队会同时在GitHub和Gitee上托管，兼顾国际化和国内速度。</p>
 </div>
 <div class="success-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>进阶玩法：用GitHub Pages搭建免费个人博客</p>
+<p class="font-semibold">进阶玩法：用GitHub Pages搭建免费个人博客</p>
 <p class="mt-1">GitHub Pages允许你免费托管一个静态网站，配合Jekyll、Hexo、Hugo等静态站点生成器，可以轻松搭建个人博客。写完Markdown文章push到仓库，博客自动更新，还自带HTTPS和自定义域名。无数技术博主的博客都是这么搭的，零成本、无广告、版本可控。</p>
 </div>
 <p class="mb-2">顺着 Pages 这个进阶玩法多说一句：把仓库取名为"你的用户名.github.io"，它就会成为你的个人主页地址：简历、作品集、博客都能挂在同一个地方，规则细节以官方文档为准。不少求职者的简历链接，就是这样一个干净清爽的个人主页。</p>
@@ -1049,7 +1048,7 @@ git merge upstream/main
 </ul>
 <p class="mb-2">每个阶段的动作都不难，难的是"每周固定"。工具学不会的人少，习惯养不成的人多，把提交变成像记账一样的日常动作，剩下的都会水到渠成。</p>
 <div class="quote-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-quote-left mr-2"></i>一句话记牢</p>
+<p class="font-semibold">一句话记牢</p>
 <p class="mt-1">仓库是历史的容器：你现在写下的每一句提交说明，都是在给未来的自己留路标。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">九、为什么每个人都该了解GitHub</h4>
@@ -1057,7 +1056,7 @@ git merge upstream/main
 <p class="mb-2">对计算机系的学生来说，GitHub更是必备技能：它是你的作品集、协作平台、学习资源库，也是未来求职时最有说服力的"简历"。早点注册账号，把自己的课程作业、小项目传上去，慢慢积累，几年后你会拥有一份让面试官眼前一亮的技术履历。</p>
 <p class="mb-2">如果你读到这里仍然觉得"GitHub 离我很远"，换个角度想：这一章真正想教你的不是一个网站，而是一套工作节奏：任何需要"反复修改、多人参与、留下痕迹"的事情，都适用"小步提交、写清说明、改动先上草稿、合并前过目"这套流程。学一次，搬到论文、方案、书稿上，全都顺手。</p>
 <div class="practice-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-hands mr-2"></i>来动手：完成你的GitHub初体验</p>
+<p class="font-semibold">来动手：完成你的GitHub初体验</p>
 <ol class="list-decimal pl-6 mt-1 space-y-1">
   <li>注册一个GitHub账号，完善个人资料（头像、简介、感兴趣的技术领域）。</li>
   <li>创建一个名为<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">hello-github</code>的公开仓库，勾选"Add a README file"。</li>
@@ -1073,19 +1072,19 @@ git merge upstream/main
 <nav class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a href="di-er-shi-san-zhang.html" class="text-primary hover:underline">← 第二十三章：让手机替你干重复活</a><span></span><a href="di-er-shi-si-zhang.html" class="text-primary hover:underline">第二十四章：Root权限与BL锁深度解析 →</a></nav>
 
             </section>
- </div></main></div><!-- 快捷工具：浮动按钮组 --><div id="quick-tools" class="quick-tools no-print" aria-label="快捷工具"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><i class="fas fa-droplet" aria-hidden="true"></i></button><button id="quick-search" class="quick-tool-btn" title="搜索 (Ctrl+K)" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></button><button id="quick-theme" class="quick-tool-btn" title="切换深色/浅色" aria-label="切换主题"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i></button><button id="quick-print" class="quick-tool-btn" title="打印 / 导出PDF" aria-label="打印或导出"><i class="fas fa-print" aria-hidden="true"></i></button><button id="quick-toc" class="quick-tool-btn" title="目录" aria-label="打开目录"><i class="fas fa-list" aria-hidden="true"></i></button><button id="quick-tts" class="quick-tool-btn" title="语音朗读" aria-label="语音朗读"><i class="fas fa-headphones" aria-hidden="true"></i></button><button id="quick-shortcuts" class="quick-tool-btn" title="键盘快捷键 (?)" aria-label="快捷键面板"><i class="fas fa-keyboard" aria-hidden="true"></i></button><button id="quick-backup" class="quick-tool-btn" title="备份/恢复进度" aria-label="备份进度"><i class="fas fa-cloud-arrow-up" aria-hidden="true"></i></button></div><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><!-- 快捷键面板 --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="键盘快捷键"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><i class="fas fa-keyboard text-gray-400"></i><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">键盘快捷键</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">搜索内容</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">切换深色/浅色</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">语音朗读 播放/暂停</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">停止朗读</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">打开快捷键面板</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">字号调大 / 调小</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">打印 / 导出PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- 备份/恢复弹窗 --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="备份与恢复"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><i class="fas fa-cloud-arrow-up text-gray-400"></i><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">阅读进度备份与恢复</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">备份包含：已读章节、书签、阅读位置、字号偏好、健康自检结果。数据保存在浏览器本地，更换浏览器或清除缓存后丢失，建议定期导出备份。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-download"></i> 导出备份文件
- </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">下载一个 JSON 文件，保存到安全位置</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-upload"></i> 导入备份恢复
- </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">选择之前导出的备份文件恢复进度</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-trash"></i> 清除所有阅读数据
- </button><p class="text-xs text-red-400 mt-1 text-center">不可恢复！请先导出备份</p></div></div></div></div><!-- 阅读连续天数提示 --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),#7c3aed);color:var(--ink-inverse);border:none;"><i class="fas fa-fire" aria-hidden="true" style="color:var(--gold-2)"></i><span id="streak-toast-text">连续阅读第 X 天！</span></div><!-- 语音朗读控件栏 --><div id="tts-controls" class="tts-controls" role="region" aria-label="语音朗读控制" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="当前朗读章节">未开始</span><button class="tts-btn" id="tts-prev" title="上一段" aria-label="上一段"><i class="fas fa-step-backward"></i></button><button class="tts-btn play-btn" id="tts-play" title="播放/暂停" aria-label="播放朗读"><i class="fas fa-play"></i></button><button class="tts-btn" id="tts-next" title="下一段" aria-label="下一段"><i class="fas fa-step-forward"></i></button><button class="tts-btn" id="tts-speed-down" title="减速" aria-label="减速">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="加速" aria-label="加速">+</button><button class="tts-btn" id="tts-stop" title="停止朗读" aria-label="停止朗读"><i class="fas fa-times"></i></button></div><!-- 回到顶部按钮 --><button id="back-to-top" class="opacity-0 invisible" aria-label="回到顶部"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg><i class="fas fa-arrow-up" aria-hidden="true"></i></button><!-- 阅读位置恢复提示 --><div id="restore-toast" class="restore-position-toast" role="alert"><i class="fas fa-bookmark" aria-hidden="true"></i><span id="restore-toast-text">上次读到：...</span><button class="btn-restore" id="restore-btn">继续阅读</button><button class="btn-dismiss" id="dismiss-btn">忽略</button></div><!-- JS脚本 -->
+ </div></main></div><!-- 快捷工具：浮动按钮组 --><div id="quick-tools" class="quick-tools no-print" aria-label="快捷工具"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">透</span></button><button id="quick-search" class="quick-tool-btn" title="搜索 (Ctrl+K)" aria-label="搜索"><span aria-hidden="true">搜</span></button><button id="quick-theme" class="quick-tool-btn" title="切换深色/浅色" aria-label="切换主题"><span aria-hidden="true">夜</span></button><button id="quick-print" class="quick-tool-btn" title="打印 / 导出PDF" aria-label="打印或导出"><span aria-hidden="true">印</span></button><button id="quick-toc" class="quick-tool-btn" title="目录" aria-label="打开目录"><span aria-hidden="true">目</span></button><button id="quick-tts" class="quick-tool-btn" title="语音朗读" aria-label="语音朗读"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="键盘快捷键 (?)" aria-label="快捷键面板"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="备份/恢复进度" aria-label="备份进度"><span aria-hidden="true">备</span></button></div><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><!-- 快捷键面板 --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="键盘快捷键"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">键盘快捷键</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">搜索内容</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">切换深色/浅色</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">语音朗读 播放/暂停</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">停止朗读</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">打开快捷键面板</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">字号调大 / 调小</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">打印 / 导出PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- 备份/恢复弹窗 --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="备份与恢复"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">阅读进度备份与恢复</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">备份包含：已读章节、书签、阅读位置、字号偏好、健康自检结果。数据保存在浏览器本地，更换浏览器或清除缓存后丢失，建议定期导出备份。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 导出备份文件
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">下载一个 JSON 文件，保存到安全位置</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 导入备份恢复
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">选择之前导出的备份文件恢复进度</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 清除所有阅读数据
+ </button><p class="text-xs text-red-400 mt-1 text-center">不可恢复！请先导出备份</p></div></div></div></div><!-- 阅读连续天数提示 --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),#7c3aed);color:var(--ink-inverse);border:none;"><span id="streak-toast-text">连续阅读第 X 天！</span></div><!-- 语音朗读控件栏 --><div id="tts-controls" class="tts-controls" role="region" aria-label="语音朗读控制" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="当前朗读章节">未开始</span><button class="tts-btn" id="tts-prev" title="上一段" aria-label="上一段"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="播放/暂停" aria-label="播放朗读"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="下一段" aria-label="下一段"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="减速" aria-label="减速">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="加速" aria-label="加速">+</button><button class="tts-btn" id="tts-stop" title="停止朗读" aria-label="停止朗读"><span aria-hidden="true">×</span></button></div><!-- 回到顶部按钮 --><button id="back-to-top" class="opacity-0 invisible" aria-label="回到顶部"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- 阅读位置恢复提示 --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">上次读到：...</span><button class="btn-restore" id="restore-btn">继续阅读</button><button class="btn-dismiss" id="dismiss-btn">忽略</button></div><!-- JS脚本 -->
  
  <script>
-        /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
-        if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
-                    .catch(function (err) { console.warn('SW 注册失败：', err); });
-            });
-        }
-    </script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
 <script src="assets/book.js" defer></script>
 </body></html>

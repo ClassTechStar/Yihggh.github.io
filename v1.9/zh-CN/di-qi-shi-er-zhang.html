@@ -6,64 +6,63 @@
 
 
  <script id="liquid-glass-bundle">
-    /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
-     * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
-     * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
-     * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
-    (function () {
-      if (window.__liquidGlass) return;
-      window.__liquidGlass = true;
-      if (window.__SAFE) return;
-      var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
-      var reduce = window.matchMedia &&
-        window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
-      if (!ok || reduce) return;
-      var root = document.documentElement;
-      root.classList.add('lg-ready');
-      if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
-      window.__lgToggle = function (v) {
-        var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
-        root.classList.toggle('lg-off', off);
-        if (window.RS) RS.set('liquidGlass', !off);
-        return !off;
-      };
-      var sync = function () {
-        var btn = document.getElementById('quick-glass');
-        if (!btn) return;
-        var off = root.classList.contains('lg-off');
-        btn.classList.toggle('lg-btn-off', off);
-        btn.setAttribute('aria-pressed', String(!off));
-        var ic = btn.querySelector('i');
-        if (ic) ic.className = off ? 'fas fa-droplet-slash' : 'fas fa-droplet';
-      };
-      /* bundle 在 head 执行时 #quick-glass 尚未存在——绑定延迟到 DOMContentLoaded */
-      document.addEventListener('DOMContentLoaded', function () {
-        var btn = document.getElementById('quick-glass');
-        if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
-        sync();
-      });
-      try {
-        if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
-      } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
-    })();
-    </script>
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var sync = function () {
+ var btn = document.getElementById('quick-glass');
+ if (!btn) return;
+ var off = root.classList.contains('lg-off');
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ };
+ /* bundle 在 head 执行时 #quick-glass 尚未存在——绑定延迟到 DOMContentLoaded */
+ document.addEventListener('DOMContentLoaded', function () {
+ var btn = document.getElementById('quick-glass');
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ });
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
  
 
 
 <link rel="preload" href="../fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../fonts/fa/fa-solid-900.subset.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-qi-shi-er-zhang.html">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "第七十二章：ArkTS 语言速成", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-qi-shi-er-zhang.html", "isPartOf": {"@type": "Book", "name": "你缺失的那门手机课", "inLanguage": "zh-CN"}}</script>
 <link rel="stylesheet" href="assets/book.css">
-</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">跳到主要内容</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="打开目录菜单" aria-expanded="false" aria-controls="sidebar"><i class="fas fa-bars"></i></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="返回首页"><span class="hidden sm:inline-flex w-8 h-8 rounded-md bg-gradient-to-br from-primary to-accent text-white items-center justify-center text-sm font-bold flex-shrink-0" aria-hidden="true"><i class="fas fa-mobile-screen"></i></span><h1 class="text-base md:text-lg font-bold text-primary truncate">搞定手机 · 数码必修课</h1></a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="主操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="从基础开始"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>开始学习</span></a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="搜索 (Ctrl+K)" aria-label="搜索内容"><i class="fas fa-search" aria-hidden="true"></i></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="字号调整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="缩小字体" aria-label="缩小字体">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="重置字号" aria-label="重置字号">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="放大字体" aria-label="放大字体">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="切换深色/浅色模式" aria-label="切换深色/浅色模式"><i class="fas fa-moon dark:hidden" aria-hidden="true"></i><i class="fas fa-sun hidden dark:inline" aria-hidden="true"></i></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="打印 / 导出PDF" aria-label="打印或导出PDF"><i class="fas fa-print" aria-hidden="true"></i></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="回到顶部"><i class="fas fa-arrow-up mr-1" aria-hidden="true"></i>顶部
- </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="文章目录"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2"><span aria-hidden="true" class="fas fa-list-ul text-primary" aria-hidden="true"></span>学习目录
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">跳到主要内容</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="打开目录菜单" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="返回首页"><span class="hidden sm:inline-flex w-8 h-8 rounded-md bg-gradient-to-br from-primary to-accent text-white items-center justify-center text-sm font-bold flex-shrink-0" aria-hidden="true"></span><h1 class="text-base md:text-lg font-bold text-primary truncate">搞定手机 · 数码必修课</h1></a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="主操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="从基础开始"><span>开始学习</span></a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="搜索 (Ctrl+K)" aria-label="搜索内容"><span aria-hidden="true">搜</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="字号调整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="缩小字体" aria-label="缩小字体">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="重置字号" aria-label="重置字号">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="放大字体" aria-label="放大字体">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="切换深色/浅色模式" aria-label="切换深色/浅色模式"><span class="dark:hidden" aria-hidden="true">夜</span><span class="hidden dark:inline" aria-hidden="true">昼</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="打印 / 导出PDF" aria-label="打印或导出PDF"><span aria-hidden="true">印</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="回到顶部">顶部
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="文章目录"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">学习目录
  </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 章</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="筛选章节..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="筛选章节"></div><ul class="space-y-1 text-sm" id="toc-list"><!-- 基础篇 -->
                     <li class="toc-parent" data-group="ji-chu">
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">一、基础篇（第0-7章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起基础篇" data-target="child-ji-chu">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -85,7 +84,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">二、软件篇（第8-14章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起软件篇" data-target="child-ruan-jian">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -104,7 +103,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">三、进阶篇（第15-20章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起进阶篇" data-target="child-jin-jie">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -123,7 +122,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">四、超越篇（第21-26章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起超越篇" data-target="child-chao-yue">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -141,7 +140,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">五、实战篇（第27-32章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起实战篇" data-target="child-shi-zhan">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -158,7 +157,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">六、展望篇与车联篇（第33-34章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起展望篇" data-target="child-zhan-wang">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -171,7 +170,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">儿童与手机专题（第35-36章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起儿童与手机专题" data-target="child-er-tong-pian">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -184,7 +183,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">七、AI编程实战篇（第37-47章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起AI编程实战篇" data-target="child-ai-biancheng">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -206,7 +205,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">八、安卓开发实战篇（第48-58章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起安卓开发实战篇" data-target="child-an-zhuo-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -228,7 +227,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">九、iOS开发实战篇（第59-69章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起iOS开发实战篇" data-target="child-ios-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -250,7 +249,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-qi-shi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十、鸿蒙开发实战篇（第70-80章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起鸿蒙开发实战篇" data-target="child-hongmeng-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-hongmeng-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -272,7 +271,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十一、手机与可穿戴篇（第81-85章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十一、手机与可穿戴篇（第81-85章）目录开关" data-target="child-ke-chuan-she-bei">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ke-chuan-she-bei" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -288,7 +287,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-shi-liu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十二、旅行与手机篇（第86-90章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十二、旅行与手机篇（第86-90章）目录开关" data-target="child-lv-xing">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-lv-xing" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -304,7 +303,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-jiu-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十三、手机与健康篇（第91-95章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十三、手机与健康篇（第91-95章）目录开关" data-target="child-jian-kang">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-jian-kang" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -320,7 +319,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-jiu-shi-liu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十四、AI短视频创作篇（第96-100章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十四、AI短视频创作篇（第96-100章）目录开关" data-target="child-ai-duan-shi-pin">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ai-duan-shi-pin" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -336,7 +335,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-yi-bai-ling-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十五、竖屏短剧入门篇（第101-105章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十五、竖屏短剧入门篇（第101-105章）目录开关" data-target="child-shu-ping-duan-ju">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-shu-ping-duan-ju" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -352,7 +351,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十六、附录</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起附录" data-target="child-fu-lu">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -367,7 +366,7 @@
                             <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>附录H：版本路线图</a></li>
                         </ul>
                     </li>
-</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索"><div class="search-panel"><div class="search-input-wrapper"><i class="fas fa-search text-gray-400"></i><input type="text" id="search-input" placeholder="搜索内容..." autocomplete="off" aria-label="搜索关键词"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭搜索">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">输入关键词开始搜索</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 顶部面包屑 --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">首页</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">数码必修课 · v1.9</span></nav>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">搜</span><input type="text" id="search-input" placeholder="搜索内容..." autocomplete="off" aria-label="搜索关键词"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭搜索">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">输入关键词开始搜索</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 顶部面包屑 --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">首页</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">数码必修课 · v1.9</span></nav>
 <div id="di-qi-shi-er-zhang" class="mb-10 content-section">
 <h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">第七十二章：ArkTS 语言速成——从 TypeScript 到鸿蒙</h3>
 <p class="chapter-intro mb-4">ArkTS = TypeScript + 鸿蒙应用框架约束。所以这一章的学法很明确：会 TS/JS 的你，重点看"鸿蒙收紧了什么、加了什么"；不会的也没关系，跟着 Kotlin/Swift 的类比走。上一章那个 @State 你已经见过了，这一章把语言层补齐。</p>
@@ -392,23 +391,23 @@
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 基础语法</span><span class="dots">···</span></div>
 <pre>interface Todo {
-  id: number
-  title: string
-  done: boolean
+ id: number
+ title: string
+ done: boolean
 }
 
 class TodoStore {
-  private items: Todo[] = []
+ private items: Todo[] = []
 
-  add(title: string): Todo {
-    let todo: Todo = { id: Date.now(), title: title, done: false }
-    this.items.push(todo)
-    return todo
-  }
+ add(title: string): Todo {
+ let todo: Todo = { id: Date.now(), title: title, done: false }
+ this.items.push(todo)
+ return todo
+ }
 
-  get count(): number {
-    return this.items.length
-  }
+ get count(): number {
+ return this.items.length
+ }
 }
 
 let store = new TodoStore()
@@ -448,7 +447,7 @@ store.add('学 ArkTS')</pre>
 <p class="mb-2">装饰器的本质是"给类和属性贴标签"，框架在编译期读取这些标签，生成对应的观察与刷新逻辑。你不需要理解装饰器的实现原理（那是框架的事），只需要记住每个标签的"契约"：@State 说"我变了你就刷新"，@Prop 说"父组件给我值但我不回写"，@Link 说"我们双向同步"。第 73 章的 ArkUI 会把这些契约放进真实界面里反复练习。</p>
 <p class="mb-2">本节的表格还有个 V1/V2 的背景要说清楚：上表是 V1 状态管理（成熟稳定），鸿蒙后来推出了 V2（@Local、@Param、@Event 等新装饰器），两者可以在一个应用里共存但推荐新项目用 V2。学习顺序建议：先学 V1（资料多、概念全），再按第 79 章的进阶内容迁移 V2，就像先学 Swift 再追新特性一样。</p>
 <div class="practice-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-hands mr-2"></i>来动手：把 TodoStore 搬进 DevEco</p>
+<p class="font-semibold">来动手：把 TodoStore 搬进 DevEco</p>
 <p class="mt-1">1. 在上一章的项目里新建 ets 文件夹下的 model/TodoStore.ets，把热身代码粘进去；2. 故意把一个返回类型删掉，看编译器报什么错；3. 故意用 any，看 arkts 报错码长什么样；4. 恢复代码，确认编译通过。报错不是失败——这是你和编译器建立信任的过程。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">四、常用语法速查：数组、Map、Set 在 ArkTS 里怎么用</h4>
@@ -458,36 +457,36 @@ store.add('学 ArkTS')</pre>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 数组常用操作</span><span class="dots">···</span></div>
 <pre>let names: string[] = ['阿黄', '小美', '老王']
-names.push('大鹏')                    // 尾部加一个
-names = names.filter(n => n !== '老王')   // 过滤，返回新数组
-let found = names.find(n => n.startsWith('小'))  // 找第一个匹配的
-let hasMei: boolean = names.includes('小美')      // 是否存在
+names.push('大鹏') // 尾部加一个
+names = names.filter(n => n !== '老王') // 过滤，返回新数组
+let found = names.find(n => n.startsWith('小')) // 找第一个匹配的
+let hasMei: boolean = names.includes('小美') // 是否存在
 
-let lengths: number[] = names.map(n => n.length)  // 一对一变换
+let lengths: number[] = names.map(n => n.length) // 一对一变换
 
 let scores: number[] = [88, 92, 75]
-scores.sort((a: number, b: number) => a - b)      // 从小到大</pre>
+scores.sort((a: number, b: number) => a - b) // 从小到大</pre>
 </div>
 <p class="mb-2">几个值得说的点。filter、map、find 这些高阶方法的回调参数不用手写类型，因为数组元素类型已经确定了，编译器推得出来。sort 永远给比较函数，JS 里不传比较函数的 sort 会把数字当字符串排（[9, 10] 会排成 [10, 9]），这个默认行为到了 ArkTS 也别赌，比较函数永远写上，一行代码省半天排查。</p>
 <p class="mb-2">新手最常见的数组错误是"不带类型的空数组"和"往里混着塞"。看一组错误示范和纠正：</p>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 数组的错误示范与纠正</span><span class="dots">···</span></div>
 <pre>// 错误示范一：空数组不标类型
-let list = []              // 编译器不知道这是什么的数组
-list.push('购物')          // 报错
+let list = [] // 编译器不知道这是什么的数组
+list.push('购物') // 报错
 
 // 错误示范二：一个数组混装几种东西
 let mixed: string[] = []
 mixed.push('购物')
-mixed.push(123)            // 报错：number 塞不进 string[]
+mixed.push(123) // 报错：number 塞不进 string[]
 
 // 纠正：先定形状，再往里放
 interface TodoItem {
-  title: string
-  done: boolean
+ title: string
+ done: boolean
 }
 let list: TodoItem[] = []
-list.push({ title: '购物', done: false })   // 字面量有类型可归，合法</pre>
+list.push({ title: '购物', done: false }) // 字面量有类型可归，合法</pre>
 </div>
 <p class="mb-2">注意最后那行：对象字面量不是不能写。对象字面量是必须"有类型可归"。声明了 <code class="inline">TodoItem[]</code>，push 一个长得符合 TodoItem 的字面量就合法；什么都不声明就写字面量，编译器没法替你担保，就报错。这套逻辑贯穿 ArkTS 全部语法，记住它，一半的报错你都能自己看懂。</p>
 <h5 class="font-semibold mt-3 mb-1">Map：键值对，查得快</h5>
@@ -495,20 +494,20 @@ list.push({ title: '购物', done: false })   // 字面量有类型可归，合�
 <div class="code-block">
 <div class="code-head"><span>ARKTS · Map 常用操作</span><span class="dots">···</span></div>
 <pre>let ages: Map&lt;string, number&gt; = new Map()
-ages.set('阿黄', 3)                 // 存
+ages.set('阿黄', 3) // 存
 ages.set('小美', 5)
 
-let a = ages.get('阿黄')            // 取，取不到时是 undefined
+let a = ages.get('阿黄') // 取，取不到时是 undefined
 if (a !== undefined) {
-  console.info('阿黄 ' + a + ' 岁')
+ console.info('阿黄 ' + a + ' 岁')
 }
 
-console.info('' + ages.has('老王'))   // 有没有这个键
-ages.delete('小美')                 // 删
-console.info('' + ages.size)        // 几条
+console.info('' + ages.has('老王')) // 有没有这个键
+ages.delete('小美') // 删
+console.info('' + ages.size) // 几条
 
 ages.forEach((age: number, name: string) => {
-  console.info(name + ': ' + age)   // 遍历
+ console.info(name + ': ' + age) // 遍历
 })</pre>
 </div>
 <p class="mb-2">两个习惯要养好。第一，get 之前想清楚"取不到怎么办"：取不到时拿到的是 undefined，直接拿去算数就会出运行时错误，用 if 判断一下再往下走。第二，键的类型要稳定，别一会儿存字符串一会儿存数字，Map 没那么聪明，乱塞早晚会还债。</p>
@@ -518,14 +517,14 @@ ages.forEach((age: number, name: string) => {
 <div class="code-head"><span>ARKTS · Set 常用操作</span><span class="dots">···</span></div>
 <pre>let seen: Set&lt;string&gt; = new Set()
 seen.add('点赞')
-seen.add('点赞')            // 重复加，没用，还是一条
-console.info('' + seen.has('点赞'))   // true
+seen.add('点赞') // 重复加，没用，还是一条
+console.info('' + seen.has('点赞')) // true
 seen.delete('点赞')
-console.info('' + seen.size)          // 0</pre>
+console.info('' + seen.size) // 0</pre>
 </div>
 <p class="mb-2">三种集合怎么选，有个顺口溜：要顺序、要排序、要列表渲染，用数组；要按键快速找，用 Map；只关心"有没有"和去重，用 Set。还有一句要交代：列表数据基本都用数组承载，因为它是 ArkUI 的可观察类型之一；Map 和 Set 更多用在逻辑层做缓存、索引、去重。它们要不要进状态管理、怎么进，以第 73 章和官方文档为准。</p>
 <div class="info-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2" aria-hidden="true"></i>小贴士</p>
+<p class="font-semibold">小贴士</p>
 <p class="mt-1">弱引用容器这类高级玩法入门阶段先别碰，具体支持范围各版本可能不同，需要时查官方文档。前面这三种集合，够你写完前十个练手项目。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">五、函数与闭包的进阶写法</h4>
@@ -536,12 +535,12 @@ console.info('' + seen.size)          // 0</pre>
 <div class="code-head"><span>ARKTS · 函数写法对比</span><span class="dots">···</span></div>
 <pre>// 错误示范：函数表达式
 const greet = function (name: string): string {
-  return '你好，' + name
+ return '你好，' + name
 }
 
 // 纠正：箭头函数
 const greet = (name: string): string => {
-  return '你好，' + name
+ return '你好，' + name
 }
 
 // 单个表达式还能更短，大括号和 return 一起省
@@ -554,22 +553,22 @@ const greet = (name: string): string => '你好，' + name</pre>
 <div class="code-head"><span>ARKTS · 参数的三种花样</span><span class="dots">···</span></div>
 <pre>// 可选参数：标问号，函数体内就得处理"没传"的情况
 function hello(name?: string): void {
-  let who: string = name !== undefined ? name : '朋友'
-  console.info('你好，' + who)
+ let who: string = name !== undefined ? name : '朋友'
+ console.info('你好，' + who)
 }
 
 // 默认值：不传就用默认的
 function greet(name: string, prefix: string = '同学'): void {
-  console.info(prefix + ' ' + name + '，你好')
+ console.info(prefix + ' ' + name + '，你好')
 }
 
 // 剩余参数：不知道会传几个
 function sum(...nums: number[]): number {
-  let total: number = 0
-  for (let n of nums) {
-    total += n
-  }
-  return total
+ let total: number = 0
+ for (let n of nums) {
+ total += n
+ }
+ return total
 }</pre>
 </div>
 <p class="mb-2">可选参数和默认值选一个用就好，别又标问号又给默认值：语义重复，读代码的人会困惑。剩余参数收进来的是一个数组，遍历它就行。</p>
@@ -585,13 +584,13 @@ let byDesc: Comparator = (a: number, b: number) => b - a
 
 // 回调作为参数传入时，参数类型写清楚
 function processIds(ids: number[], each: (id: number) => void): void {
-  for (let id of ids) {
-    each(id)
-  }
+ for (let id of ids) {
+ each(id)
+ }
 }
 
 processIds([1, 2, 3], (id: number) => {
-  console.info('处理 ' + id)
+ console.info('处理 ' + id)
 })</pre>
 </div>
 <p class="mb-2">回调类型标清楚，编辑器补全才准，写错参数个数也会立刻被指出。这条在 UI 章会天天用到，ArkUI 的事件回调全是这个模式，现在练熟，到那边就是复制粘贴的事。</p>
@@ -600,17 +599,17 @@ processIds([1, 2, 3], (id: number) => {
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 闭包计数器</span><span class="dots">···</span></div>
 <pre>function makeCounter(): () => number {
-  let count: number = 0
-  return (): number => {
-    count++
-    return count
-  }
+ let count: number = 0
+ return (): number => {
+ count++
+ return count
+ }
 }
 
 let c = makeCounter()
-console.info('' + c())   // 1
-console.info('' + c())   // 2
-console.info('' + c())   // 3</pre>
+console.info('' + c()) // 1
+console.info('' + c()) // 2
+console.info('' + c()) // 3</pre>
 </div>
 <p class="mb-2">count 是 makeCounter 里的局部变量，按理说函数返回就该销毁，但返回的那个箭头函数还引用着它，于是它被"记住"了。防抖、节流、简单缓存，都是这一个原理的变体。JS 有个老坑：循环里用 var 声明计数变量，闭包里读到的全是循环结束后的值。这个坑在 ArkTS 里自动消失，var 根本不让用，let 每轮循环都是新变量，各闭包记各的。</p>
 <p class="mb-2">最后说一下 this。两条经验：class 里的方法用方法写法，this 指向实例；把方法"摘下来"当回调传出去时，this 会丢，要么用箭头函数包一层再传，要么把这段逻辑写成不依赖 this 的纯函数，参数进、结果出。在类外面单独使用 this 是被禁止的，编译器会拦，别跟它较劲。</p>
@@ -620,22 +619,22 @@ console.info('' + c())   // 3</pre>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · Article 类</span><span class="dots">···</span></div>
 <pre>class Article {
-  readonly id: number          // 只读：初始化之后不许改
-  title: string                // 不写修饰符，默认公开
-  private views: number = 0    // 私有：只有类自己能动
+ readonly id: number // 只读：初始化之后不许改
+ title: string // 不写修饰符，默认公开
+ private views: number = 0 // 私有：只有类自己能动
 
-  constructor(id: number, title: string) {
-    this.id = id
-    this.title = title
-  }
+ constructor(id: number, title: string) {
+ this.id = id
+ this.title = title
+ }
 
-  read(): void {
-    this.views++               // 类内部可以碰 private
-  }
+ read(): void {
+ this.views++ // 类内部可以碰 private
+ }
 
-  get hotness(): number {
-    return this.views
-  }
+ get hotness(): number {
+ return this.views
+ }
 }
 
 let art: Article = new Article(1, 'ArkTS 十日谈')
@@ -647,57 +646,57 @@ console.info('' + art.hotness)</pre>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 继承</span><span class="dots">···</span></div>
 <pre>class Animal {
-  name: string
-  constructor(name: string) {
-    this.name = name
-  }
-  sound(): string {
-    return '...'
-  }
+ name: string
+ constructor(name: string) {
+ this.name = name
+ }
+ sound(): string {
+ return '...'
+ }
 }
 
 class Dog extends Animal {
-  constructor(name: string) {
-    super(name)                // 先把父类构造完，再做自己的事
-  }
-  sound(): string {            // 重写父类方法
-    return '汪！我是' + this.name
-  }
+ constructor(name: string) {
+ super(name) // 先把父类构造完，再做自己的事
+ }
+ sound(): string { // 重写父类方法
+ return '汪！我是' + this.name
+ }
 }
 
 let d: Animal = new Dog('阿黄')
-console.info(d.sound())        // 汪！我是阿黄</pre>
+console.info(d.sound()) // 汪！我是阿黄</pre>
 </div>
 <p class="mb-2">子类构造函数里必须先调 <code class="inline">super(...)</code> 再碰自己的 this，顺序错了直接报错。子类可以重写父类方法，签名要兼容。ArkTS 只有单继承，一个类只能 extends 一个父类，想要"多种能力"，用接口组合：类可以实现（implements）多个接口，每个接口只约定一小块能力，拼装着用。</p>
 <h5 class="font-semibold mt-3 mb-1">抽象类与接口：分工不同</h5>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · abstract 与 implements</span><span class="dots">···</span></div>
 <pre>abstract class Shape {
-  abstract area(): number                  // 只声明，不实现
-  describe(): string {                     // 抽象类可以带现成的方法
-    return '面积是 ' + this.area()
-  }
+ abstract area(): number // 只声明，不实现
+ describe(): string { // 抽象类可以带现成的方法
+ return '面积是 ' + this.area()
+ }
 }
 
 class Circle extends Shape {
-  r: number
-  constructor(r: number) {
-    super()
-    this.r = r
-  }
-  area(): number {
-    return Math.PI * this.r * this.r
-  }
+ r: number
+ constructor(r: number) {
+ super()
+ this.r = r
+ }
+ area(): number {
+ return Math.PI * this.r * this.r
+ }
 }
 
 interface Speaker {
-  speak(): string
+ speak(): string
 }
 
 class Robot implements Speaker {
-  speak(): string {
-    return '哔——'
-  }
+ speak(): string {
+ return '哔——'
+ }
 }</pre>
 </div>
 <p class="mb-2">一句话分清两者：接口只管"你会不会这些动作"（有什么方法），抽象类还管"一部分动作我替你做了"。抽象类不能直接 new，必须由子类继承并补齐抽象方法。拿捏不准就先用接口，它更轻，类的包袱更小。</p>
@@ -709,11 +708,11 @@ class Robot implements Speaker {
 interface PointB { x: number, y: number }
 
 function draw(p: PointA): void {
-  console.info('画点 ' + p.x + ',' + p.y)
+ console.info('画点 ' + p.x + ',' + p.y)
 }
 
 let b: PointB = { x: 1, y: 2 }
-draw(b)      // 在 TS 里畅通无阻，在 ArkTS 里报错</pre>
+draw(b) // 在 TS 里畅通无阻，在 ArkTS 里报错</pre>
 </div>
 <p class="mb-2">修法有两个。治本：两处数据形状一样，就抽成一个 interface 共用，别复制粘贴定义。治标：实在动不了旧定义，写一个显式的转换函数，逐字段构造新对象。顺带说，instanceof 在 ArkTS 里可以正常用，收窄类型、判断"这到底是不是某个类"都靠它，第九节的错误处理里它会高频出场。</p>
 <h4 class="text-lg font-semibold mt-4 mb-2">七、异步编程：async/await 与 Promise</h4>
@@ -723,20 +722,20 @@ draw(b)      // 在 TS 里畅通无阻，在 ArkTS 里报错</pre>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 手写一个 Promise</span><span class="dots">···</span></div>
 <pre>function fetchQuote(): Promise&lt;string&gt; {
-  return new Promise&lt;string&gt;(
-    (resolve: (v: string) => void, reject: (e: Error) => void) => {
-      setTimeout(() => {
-        // 假装这里是网络请求
-        resolve('今天也要好好吃饭')
-      }, 1000)
-    }
-  )
+ return new Promise&lt;string&gt;(
+ (resolve: (v: string) => void, reject: (e: Error) => void) => {
+ setTimeout(() => {
+ // 假装这里是网络请求
+ resolve('今天也要好好吃饭')
+ }, 1000)
+ }
+ )
 }
 
 fetchQuote().then((quote: string) => {
-  console.info(quote)
+ console.info(quote)
 }).catch((err: Object) => {
-  console.error('失败了')
+ console.error('失败了')
 })</pre>
 </div>
 <p class="mb-2">实际开发里你大多是"接欠条"的一方，系统 API 给你 Promise，你负责接住，自己手写 new Promise 的机会不多。接的方式有两种：then/catch 链，或者下一节的 async/await。</p>
@@ -744,14 +743,14 @@ fetchQuote().then((quote: string) => {
 <div class="code-block">
 <div class="code-head"><span>ARKTS · async/await</span><span class="dots">···</span></div>
 <pre>async function showQuote(): Promise&lt;void&gt; {
-  try {
-    let quote: string = await fetchQuote()
-    console.info('拿到：' + quote)
-    let another: string = await fetchQuote()
-    console.info('再拿一条：' + another)
-  } catch (e) {
-    console.error('出错了，界面提示重试')
-  }
+ try {
+ let quote: string = await fetchQuote()
+ console.info('拿到：' + quote)
+ let another: string = await fetchQuote()
+ console.info('再拿一条：' + another)
+ } catch (e) {
+ console.error('出错了，界面提示重试')
+ }
 }</pre>
 </div>
 <p class="mb-2">三个规则记牢：await 必须待在 async 函数里；async 函数的返回类型一定是 Promise，没返回东西就写 <code class="inline">Promise&lt;void&gt;</code>；await 的东西可能失败，外面要套 try/catch（catch 里的类型问题在错误处理一节细讲）。顺序请求直接上下两行 await 写，比 then 套 then 清爽得多。几种风格别混着来：一个函数里要么全 await，要么全 then 链，混着写排查问题时会晕。</p>
@@ -759,11 +758,11 @@ fetchQuote().then((quote: string) => {
 <div class="code-block">
 <div class="code-head"><span>ARKTS · Promise.all</span><span class="dots">···</span></div>
 <pre>async function loadPage(): Promise&lt;void&gt; {
-  // 三个请求一起发，全部完成才往下走
-  let quotes: string[] = await Promise.all([
-    fetchQuote(), fetchQuote(), fetchQuote()
-  ])
-  console.info('共拿到 ' + quotes.length + ' 条')
+ // 三个请求一起发，全部完成才往下走
+ let quotes: string[] = await Promise.all([
+ fetchQuote(), fetchQuote(), fetchQuote()
+ ])
+ console.info('共拿到 ' + quotes.length + ' 条')
 }</pre>
 </div>
 <p class="mb-2">Promise.all 适合"互相不依赖"的请求：首屏要同时拿头像、昵称、列表，就别一个 await 完再 await 下一个，三个一起发，总耗时约等于最慢的那个。注意前提是"互不依赖"：后一个请求要拿前一个的结果，老老实实顺序 await。</p>
@@ -772,22 +771,22 @@ fetchQuote().then((quote: string) => {
 <div class="code-head"><span>ARKTS · 事件回调与异步</span><span class="dots">···</span></div>
 <pre>// 错误示范：回调里调 async 方法，返回的 Promise 没人管
 Button('换一句')
-  .onClick(() => {
-    this.loadQuote()      // loadQuote 内部若出错，这里无人接住
-  })
+ .onClick(() => {
+ this.loadQuote() // loadQuote 内部若出错，这里无人接住
+ })
 
 // 纠正：async 方法内部自己兜底，把错误消化在方法里
 async function loadQuote(): Promise&lt;void&gt; {
-  try {
-    let quote: string = await fetchQuote()
-    this.current = quote
-  } catch (e) {
-    this.current = '网络开小差了，再点一次试试'
-  }
+ try {
+ let quote: string = await fetchQuote()
+ this.current = quote
+ } catch (e) {
+ this.current = '网络开小差了，再点一次试试'
+ }
 }</pre>
 </div>
 <div class="warning-box rounded-lg p-4 mt-3">
-<p class="font-semibold"><i class="fas fa-exclamation-triangle mr-2"></i>避坑提醒</p>
+<p class="font-semibold">避坑提醒</p>
 <p class="mt-1">async 不等于多线程。await 等待期间主线程确实会去干别的（比如响应你的点击），但 CPU 密集的计算，解析大 JSON、图片处理、复杂排序：照样占着主线程，界面照样卡。重活儿要走 Worker/TaskPool 那套多线程手段，后面的章节会讲，以官方文档为准。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">八、模块化：import/export 与工程组织</h4>
@@ -796,22 +795,22 @@ async function loadQuote(): Promise&lt;void&gt; {
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 导出（model/Todo.ets）</span><span class="dots">···</span></div>
 <pre>export class Todo {
-  id: number = 0
-  title: string = ''
-  done: boolean = false
+ id: number = 0
+ title: string = ''
+ done: boolean = false
 }
 
 export function formatTitle(raw: string): string {
-  return raw.trim()
+ return raw.trim()
 }</pre>
 </div>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 导入（pages/Index.ets）</span><span class="dots">···</span></div>
 <pre>import { Todo, formatTitle } from '../model/Todo'
-import { Todo as Task } from '../model/Todo'   // 重命名，避免撞名
+import { Todo as Task } from '../model/Todo' // 重命名，避免撞名
 
 let t: Todo = new Todo()
-t.title = formatTitle('  收拾桌面  ')</pre>
+t.title = formatTitle(' 收拾桌面 ')</pre>
 </div>
 <p class="mb-2">跟着官方示例走，用命名导出（<code class="inline">export class</code>、<code class="inline">export function</code>）最稳，导入时花括号里写名字。名字撞了就用 as 改名。至于 default 导出，官方示例里很少见，具体支持情况以文档为准，新手直接养成命名导出的习惯就好。</p>
 <h5 class="font-semibold mt-3 mb-1">系统模块：@ 开头的来客</h5>
@@ -842,16 +841,16 @@ initApp()</pre>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 目录树参考</span><span class="dots">···</span></div>
 <pre>entry/src/main/ets/
-├── entryability/      入口 Ability（工程模板自带）
-│   └── EntryAbility.ets
-├── pages/             页面，一个页面一个文件
-│   └── Index.ets
-├── model/             数据模型：interface 与 class
-│   ├── Todo.ets
-│   └── TodoStore.ets
-├── service/           网络请求、本地存储这类"做事"的代码
-├── view/              可复用的自定义组件
-└── utils/             到处都可能用的小工具</pre>
+├── entryability/ 入口 Ability（工程模板自带）
+│ └── EntryAbility.ets
+├── pages/ 页面，一个页面一个文件
+│ └── Index.ets
+├── model/ 数据模型：interface 与 class
+│ ├── Todo.ets
+│ └── TodoStore.ets
+├── service/ 网络请求、本地存储这类"做事"的代码
+├── view/ 可复用的自定义组件
+└── utils/ 到处都可能用的小工具</pre>
 </div>
 <p class="mb-2">分层的心法一句话：页面管"长什么样"，model 管"数据长什么样"，service 管"数据从哪来"，utils 放"谁都可能用"的小函数。判断一段代码该放哪，问自己一个问题："将来换个界面，这段代码还要不要存在？"要，就别写在页面文件里。工程再大之后，公共代码可以抽成共享包（官方叫 HAR、HSP 两种），DevEco 里新建时选对应模板即可，入门阶段用不到，等做第二个应用想复用代码时再回来看官方的共享包文档。</p>
 <h4 class="text-lg font-semibold mt-4 mb-2">九、错误处理：try/catch 与自定义错误</h4>
@@ -860,18 +859,18 @@ initApp()</pre>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 解析一个可能出错的字符串</span><span class="dots">···</span></div>
 <pre>function parseCount(text: string): number {
-  try {
-    let n: number = Number(text)
-    if (Number.isNaN(n)) {
-      throw new Error('不是数字：' + text)
-    }
-    return n
-  } catch (e) {
-    console.error('解析失败，按 0 处理')
-    return 0
-  } finally {
-    console.info('解析结束')     // 无论成败都会执行
-  }
+ try {
+ let n: number = Number(text)
+ if (Number.isNaN(n)) {
+ throw new Error('不是数字：' + text)
+ }
+ return n
+ } catch (e) {
+ console.error('解析失败，按 0 处理')
+ return 0
+ } finally {
+ console.info('解析结束') // 无论成败都会执行
+ }
 }</pre>
 </div>
 <p class="mb-2">注意 catch 的括号里没写类型——这不是偷懒，是规矩。ArkTS 禁止给 catch 参数标类型（报错码形如 arkts-no-types-in-catch）：能进 catch 的东西类型不可靠，标了也担保不了。那怎么知道抓到的到底是什么？往下看。</p>
@@ -879,11 +878,11 @@ initApp()</pre>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 收窄错误类型</span><span class="dots">···</span></div>
 <pre>catch (e) {
-  if (e instanceof Error) {
-    console.error('消息：' + e.message)
-  } else {
-    console.error('不知道是什么错误，原样打出来看看')
-  }
+ if (e instanceof Error) {
+ console.error('消息：' + e.message)
+ } else {
+ console.error('不知道是什么错误，原样打出来看看')
+ }
 }</pre>
 </div>
 <p class="mb-2">调用系统能力（网络、文件、传感器）时，官方对错误对象有统一约定：它长 BusinessError 的样子，带 code（数字错误码）和 message。惯用写法是转换之后取字段：</p>
@@ -892,10 +891,10 @@ initApp()</pre>
 <pre>import { BusinessError } from '@kit.BasicServicesKit'
 
 try {
-  // 某个系统 API 调用，比如请求网络
+ // 某个系统 API 调用，比如请求网络
 } catch (err) {
-  let e: BusinessError = err as BusinessError
-  console.error('错误码 ' + e.code + '：' + e.message)
+ let e: BusinessError = err as BusinessError
+ console.error('错误码 ' + e.code + '：' + e.message)
 }</pre>
 </div>
 <p class="mb-2">code 是排障的关键线索，把它的含义到官方文档里搜一下，比笼统的"失败了"有用得多。给爸妈远程帮忙时你大概没法看日志，但自己开发时，养成"先看 code 再改代码"的习惯，能少走很多弯路。</p>
@@ -903,29 +902,29 @@ try {
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 自定义错误类</span><span class="dots">···</span></div>
 <pre>class ApiError extends Error {
-  code: number
-  constructor(code: number, message: string) {
-    super(message)
-    this.code = code
-  }
+ code: number
+ constructor(code: number, message: string) {
+ super(message)
+ this.code = code
+ }
 }
 
 // 业务上发现不对，就抛一个带语义的错误
 function handleResponse(code: number, body: string): string {
-  if (code !== 0) {
-    throw new ApiError(code, '服务器说不行')
-  }
-  return body
+ if (code !== 0) {
+ throw new ApiError(code, '服务器说不行')
+ }
+ return body
 }
 
 try {
-  handleResponse(401, '')
+ handleResponse(401, '')
 } catch (e) {
-  if (e instanceof ApiError) {
-    console.error('业务错误码 ' + e.code)
-  } else if (e instanceof Error) {
-    console.error('普通异常：' + e.message)
-  }
+ if (e instanceof ApiError) {
+ console.error('业务错误码 ' + e.code)
+ } else if (e instanceof Error) {
+ console.error('普通异常：' + e.message)
+ }
 }</pre>
 </div>
 <p class="mb-2">抛错误时 throw new Error(...)，别 throw 一个字符串——字符串没有 message、没有堆栈，接的人什么都查不到。自定义错误类继承 Error，加上业务字段（比如 code），接的人用 instanceof 一分，就知道该走哪条处理路径。</p>
@@ -934,20 +933,20 @@ try {
 <div class="code-head"><span>ARKTS · try 包不住没 await 的调用</span><span class="dots">···</span></div>
 <pre>// 错误示范：忘写 await
 async function load(): Promise&lt;void&gt; {
-  try {
-    fetchSlow()          // fetchSlow 内部抛的错，这里接不到
-  } catch (e) {
-    // 永远走不到这里
-  }
+ try {
+ fetchSlow() // fetchSlow 内部抛的错，这里接不到
+ } catch (e) {
+ // 永远走不到这里
+ }
 }
 
 // 纠正：await 一写，错误才会落到这个 try 里
 async function load(): Promise&lt;void&gt; {
-  try {
-    await fetchSlow()
-  } catch (e) {
-    console.error('这回真的接住了')
-  }
+ try {
+ await fetchSlow()
+ } catch (e) {
+ console.error('这回真的接住了')
+ }
 }</pre>
 </div>
 <p class="mb-2">最后一条纪律：catch 里不要什么都不写。"吞掉错误"是新手最常见的反模式：界面不崩了，但数据是错的，你连哪错了都不知道。至少 console.error 记一笔；能恢复就恢复（给默认值、提示重试），不能恢复就继续往上层抛，让有 UI 的那一层给用户看提示。</p>
@@ -975,18 +974,18 @@ async function load(): Promise&lt;void&gt; {
 <div class="code-head"><span>ARKTS · any 依赖症</span><span class="dots">···</span></div>
 <pre>// 症状
 function process(data: any): void {
-  console.info(data.name)
+ console.info(data.name)
 }
 // 诊断：any 的意思是"我不想想类型"。ArkTS 直接禁。
 // 处方：想清楚它到底是什么。是用户？就定义 User。
 
 interface User {
-  name: string
-  age: number
+ name: string
+ age: number
 }
 
 function process(data: User): void {
-  console.info(data.name)   // 编辑器还能帮你补全 name</pre>
+ console.info(data.name) // 编辑器还能帮你补全 name</pre>
 </div>
 <p class="mb-2">遇到"类型说不清"的时候，别用 any 打发，把说不清本身当成信号：说明这块数据的形状你还没想明白。想明白了写下来，就是 interface；写完之后编辑器的补全和检查全是白送的。</p>
 <h5 class="font-semibold mt-3 mb-1">会诊二：拿对象当字典用</h5>
@@ -994,12 +993,12 @@ function process(data: User): void {
 <div class="code-head"><span>ARKTS · 字符串下标的两种修法</span><span class="dots">···</span></div>
 <pre>// 症状：JS 老习惯，对象当字典
 let obj = { a: 1, b: 2 }
-let va = obj['a']            // 字符串下标——报错
+let va = obj['a'] // 字符串下标——报错
 
 // 修法一：字段固定，直接点出来
 interface Config {
-  a: number
-  b: number
+ a: number
+ b: number
 }
 let c: Config = { a: 1, b: 2 }
 let va: number = c.a
@@ -1007,7 +1006,7 @@ let va: number = c.a
 // 修法二：键真的是动态的，用 Record
 let scores: Record&lt;string, number&gt; = {}
 scores['math'] = 90
-let ms = scores['math']      // Record 允许下标访问</pre>
+let ms = scores['math'] // Record 允许下标访问</pre>
 </div>
 <p class="mb-2">判断标准：编译期能列出全部键，用 interface；键要到运行时才知道（比如以用户 id 为键的缓存），用 Record 或 Map。Record 是官方给"字符串键字典"留的正门，比绕路强。</p>
 <h5 class="font-semibold mt-3 mb-1">会诊三：长得一样不算数</h5>
@@ -1018,16 +1017,16 @@ interface A { x: number, y: number }
 interface B { x: number, y: number }
 function show(p: A): void { console.info('' + p.x) }
 let b: B = { x: 1, y: 2 }
-show(b)          // 报错：B 不能当 A 用
+show(b) // 报错：B 不能当 A 用
 
 // 修法：共用一个定义
 interface Point { x: number, y: number }
 function show(p: Point): void { console.info('' + p.x) }
 let b: Point = { x: 1, y: 2 }
-show(b)          // 通过</pre>
+show(b) // 通过</pre>
 </div>
 <div class="practice-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-hand-pointer mr-2"></i>来动手：主动制造三个报错</p>
+<p class="font-semibold">来动手：主动制造三个报错</p>
 <p class="mt-1">1. 写一行 let x: any = 1，记下面板上的报错码；2. 写一个 function 表达式赋值给变量，再记一个；3. 在 catch 括号里标个类型。每一条都先试编辑器的快速修复，修不动就对照上面的门诊表手改。主动犯一次错，比被动撞十次记得牢。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">十一、TS/JS 老手的迁移对照表</h4>
@@ -1064,10 +1063,10 @@ let all: string[] = arr1.concat(arr2)
 
 // 旧习惯：let both = { ...base, ...patch }
 function merge(base: Config, patch: Config): Config {
-  let out: Config = { a: base.a, b: base.b }
-  if (patch.a !== undefined) { out.a = patch.a }
-  if (patch.b !== undefined) { out.b = patch.b }
-  return out
+ let out: Config = { a: base.a, b: base.b }
+ if (patch.a !== undefined) { out.a = patch.a }
+ if (patch.b !== undefined) { out.b = patch.b }
+ return out
 }</pre>
 </div>
 <p class="mb-2">迁移的整体心态：这不是"重新学一门语言"。这是"把以前靠运气的地方改成靠类型"。你过去写 any 省下的每一秒，都在未来的某次线上问题里等着你还；ArkTS 只是提前把账单递到了你手上。</p>
@@ -1084,8 +1083,8 @@ function merge(base: Config, patch: Config): Config {
 <p class="mb-2">第一步，变量与类型。核心就三行代码的事：</p>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 变量与类型</span><span class="dots">···</span></div>
-<pre>let name: string = '阿黄'      // 会变的，用 let
-const maxTries: number = 3     // 不变的，用 const
+<pre>let name: string = '阿黄' // 会变的，用 let
+const maxTries: number = 3 // 不变的，用 const
 let done: boolean = false</pre>
 </div>
 <p class="mb-2">一个新手常见困惑：const 是"绑定不可变"，不是"内容不可变"<code class="inline">const arr: number[] = []</code> 之后依然可以 push，只是不能把 arr 重新赋值成别的东西。想连内容都不许动，那是 readonly 的活儿。这个区别现在记不住没关系，写两周自然懂。</p>
@@ -1095,9 +1094,9 @@ let done: boolean = false</pre>
 <pre>let scores: number[] = [88, 92, 75]
 let pass: number = 0
 for (let s of scores) {
-  if (s >= 80) {
-    pass++
-  }
+ if (s >= 80) {
+ pass++
+ }
 }
 console.info('80 分以上 ' + pass + ' 人')</pre>
 </div>
@@ -1140,22 +1139,22 @@ count++</pre>
 <pre>// 第一版的样子：类型全是谜
 let rows = []
 function addRow(who, howMuch) {
-  rows.push({ name: who, amount: howMuch, time: Date.now() })
+ rows.push({ name: who, amount: howMuch, time: Date.now() })
 }</pre>
 </div>
 <p class="mb-2">这段在 JS 里能跑，在 ArkTS 里第一行就报错：数组没类型，函数参数没类型。别嫌编译器烦，一个月后你回头看这段代码，rows 里到底装了什么，只有当时赶工的你一个人知道。改成下面这样：</p>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 给数据定形状</span><span class="dots">···</span></div>
 <pre>interface DebtRow {
-  name: string
-  amount: number
-  time: number
+ name: string
+ amount: number
+ time: number
 }
 
 let rows: DebtRow[] = []
 
 function addRow(who: string, howMuch: number): void {
-  rows.push({ name: who, amount: howMuch, time: Date.now() })
+ rows.push({ name: who, amount: howMuch, time: Date.now() })
 }</pre>
 </div>
 <p class="mb-2">对象字面量能直接 push 进去，因为它有 DebtRow 可归。数据形状定了，后面每一步都有地方落脚。</p>
@@ -1164,37 +1163,37 @@ function addRow(who: string, howMuch: number): void {
 <div class="code-block">
 <div class="code-head"><span>ARKTS · Ledger 类</span><span class="dots">···</span></div>
 <pre>class Ledger {
-  private rows: DebtRow[] = []
+ private rows: DebtRow[] = []
 
-  add(name: string, amount: number): DebtRow {
-    let row: DebtRow = { name: name, amount: amount, time: Date.now() }
-    this.rows.push(row)
-    return row
-  }
+ add(name: string, amount: number): DebtRow {
+ let row: DebtRow = { name: name, amount: amount, time: Date.now() }
+ this.rows.push(row)
+ return row
+ }
 
-  settle(name: string, amount: number): boolean {
-    let row = this.rows.find(r => r.name === name)
-    if (row === undefined) {
-      return false            // 人都不在账上，销个啥
-    }
-    row.amount = row.amount - amount
-    if (row.amount &lt;= 0) {
-      this.rows = this.rows.filter(r => r.name !== name)
-    }
-    return true
-  }
+ settle(name: string, amount: number): boolean {
+ let row = this.rows.find(r => r.name === name)
+ if (row === undefined) {
+ return false // 人都不在账上，销个啥
+ }
+ row.amount = row.amount - amount
+ if (row.amount &lt;= 0) {
+ this.rows = this.rows.filter(r => r.name !== name)
+ }
+ return true
+ }
 
-  total(): number {
-    let sum: number = 0
-    for (let r of this.rows) {
-      sum += r.amount
-    }
-    return sum
-  }
+ total(): number {
+ let sum: number = 0
+ for (let r of this.rows) {
+ sum += r.amount
+ }
+ return sum
+ }
 
-  get all(): DebtRow[] {
-    return this.rows
-  }
+ get all(): DebtRow[] {
+ return this.rows
+ }
 }</pre>
 </div>
 <p class="mb-2">注意 rows 是 private——外面想动账本，只能走 add 和 settle，想绕过校验直接改数组？编译器不答应。settle 里那个人可能根本不在账上，所以返回 boolean 告诉调用方"销没销成"，比默默什么都不做强太多。等下一章把界面做完，UI 只需要拿着 Ledger 调方法，一行账务逻辑都不用碰。</p>
@@ -1205,21 +1204,21 @@ function addRow(who: string, howMuch: number): void {
 <pre>import { DebtRow } from '../model/DebtRow'
 
 export function sumDebts(rows: DebtRow[]): number {
-  let sum: number = 0
-  for (let r of rows) {
-    sum += r.amount
-  }
-  return sum
+ let sum: number = 0
+ for (let r of rows) {
+ sum += r.amount
+ }
+ return sum
 }
 
 export function topDebtor(rows: DebtRow[]): string | undefined {
-  let top: DebtRow | undefined = undefined
-  for (let r of rows) {
-    if (top === undefined || r.amount > top.amount) {
-      top = r
-    }
-  }
-  return top === undefined ? undefined : top.name
+ let top: DebtRow | undefined = undefined
+ for (let r of rows) {
+ if (top === undefined || r.amount > top.amount) {
+ top = r
+ }
+ }
+ return top === undefined ? undefined : top.name
 }</pre>
 </div>
 <p class="mb-2">纯函数的好处是"随便测"：不用起界面、不用连数据，构造几行假数据传进去就知道对不对。参数进、结果出，不碰任何全局变量，写的时候守这条，测试的时候省半天。</p>
@@ -1230,13 +1229,13 @@ export function topDebtor(rows: DebtRow[]): string | undefined {
 <pre>import { BusinessError } from '@kit.BasicServicesKit'
 
 async function saveLedger(rows: DebtRow[]): Promise&lt;void&gt; {
-  try {
-    await saveToDisk(rows)      // 假想的存储调用
-  } catch (err) {
-    let e: BusinessError = err as BusinessError
-    console.error('保存失败，错误码 ' + e.code)
-    // 界面上提示"这笔记账没存上"，别让用户白记
-  }
+ try {
+ await saveToDisk(rows) // 假想的存储调用
+ } catch (err) {
+ let e: BusinessError = err as BusinessError
+ console.error('保存失败，错误码 ' + e.code)
+ // 界面上提示"这笔记账没存上"，别让用户白记
+ }
 }</pre>
 </div>
 <p class="mb-2">骨架的意义在于：错误处理的形状先长好，等真正接上系统能力，你只需要换掉中间那一行调用。</p>
@@ -1245,14 +1244,14 @@ async function saveLedger(rows: DebtRow[]): Promise&lt;void&gt; {
 <div class="code-head"><span>ARKTS · 拆完之后的目录</span><span class="dots">···</span></div>
 <pre>ets/
 ├── pages/
-│   └── Index.ets            页面：只管显示和响应点击
+│ └── Index.ets 页面：只管显示和响应点击
 ├── model/
-│   ├── DebtRow.ets          interface DebtRow
-│   └── Ledger.ets           class Ledger
+│ ├── DebtRow.ets interface DebtRow
+│ └── Ledger.ets class Ledger
 ├── service/
-│   └── LedgerStore.ets      保存、读取
+│ └── LedgerStore.ets 保存、读取
 └── utils/
-    └── stats.ets            sumDebts、topDebtor</pre>
+ └── stats.ets sumDebts、topDebtor</pre>
 </div>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 页面里的导入</span><span class="dots">···</span></div>
@@ -1274,11 +1273,11 @@ import { sumDebts, topDebtor } from '../utils/stats'</pre>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 最小泛型</span><span class="dots">···</span></div>
 <pre>function pick&lt;T&gt;(items: T[], index: number): T {
-  return items[index]
+ return items[index]
 }
 
-let n: number = pick([10, 20, 30], 1)      // 20
-let s: string = pick(['a', 'b'], 0)        // 'a'</pre>
+let n: number = pick([10, 20, 30], 1) // 20
+let s: string = pick(['a', 'b'], 0) // 'a'</pre>
 </div>
 <p class="mb-2">复杂的泛型约束用到再查，别提前折磨自己——你在这个阶段写的十个函数里，九个用不上。</p>
 <p class="mb-2"><strong>问：报错多得看不下去，正常吗？</strong><br>答：正常，而且是好事。报错多说明问题被拦在了运行之前，而不是等你手机上白屏了才炸。头两周把每个报错码都查一次文档，第三周你会发现报错肉眼可见地变少——不是编译器心软了，是你已经开始"用类型的脑子"写代码了。</p>
@@ -1302,19 +1301,19 @@ let idx: number = ages.indexOf(30)
 <div class="code-block">
 <div class="code-head"><span>ARKTS · filter 接 map</span><span class="dots">···</span></div>
 <pre>interface Order {
-  user: string
-  amount: number
+ user: string
+ amount: number
 }
 
 let orders: Order[] = [
-  { user: '阿黄', amount: 88 },
-  { user: '小美', amount: 199 },
-  { user: '老王', amount: 120 }
+ { user: '阿黄', amount: 88 },
+ { user: '小美', amount: 199 },
+ { user: '老王', amount: 120 }
 ]
 
 let bigUsers: string[] = orders
-  .filter((o: Order) => o.amount > 100)
-  .map((o: Order) => o.user)
+ .filter((o: Order) => o.amount > 100)
+ .map((o: Order) => o.user)
 // 结果：['小美', '老王']</pre>
 </div>
 <p class="mb-2">两三段的链式调用清晰好读，超过三段就建议拆成 for..of 加中间变量，链子一长，后来的人（包括三个月后的你）要从尾往头倒着读，容易断。另外链式每一段都会产生一个中间数组，数据量特别大、又抠性能的时候，写成一个循环更省。</p>
@@ -1322,13 +1321,13 @@ let bigUsers: string[] = orders
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 先按金额，再按名字</span><span class="dots">···</span></div>
 <pre>let sorted: Order[] = orders.slice().sort((a: Order, b: Order) => {
-  if (a.amount !== b.amount) {
-    return b.amount - a.amount        // 金额大的在前
-  }
-  if (a.user !== b.user) {
-    return a.user > b.user ? 1 : -1   // 同额按名字排
-  }
-  return 0
+ if (a.amount !== b.amount) {
+ return b.amount - a.amount // 金额大的在前
+ }
+ if (a.user !== b.user) {
+ return a.user > b.user ? 1 : -1 // 同额按名字排
+ }
+ return 0
 })</pre>
 </div>
 <p class="mb-2">两个细节。开头先 slice() 复制一份再排，sort 会原地修改数组，不复制就把原顺序毁了，界面上一闪一闪的诡异排序多半是这个原因。多条件排序的套路是"从主要到次要"逐级比较：第一条件分不出胜负，才比第二条件，最后返回 0 表示平局。</p>
@@ -1336,28 +1335,28 @@ let bigUsers: string[] = orders
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 转换要先验伤</span><span class="dots">···</span></div>
 <pre>function toCount(text: string): number {
-  let n: number = Number(text)
-  if (Number.isNaN(n) || n &lt; 0) {
-    return 0                // 不是数、是负数，都按 0 算
-  }
-  return Math.floor(n)
+ let n: number = Number(text)
+ if (Number.isNaN(n) || n &lt; 0) {
+ return 0 // 不是数、是负数，都按 0 算
+ }
+ return Math.floor(n)
 }
 
 let tags: string[] = '学习,运动,睡觉'.split(',')
-let line: string = tags.join(' · ')   // '学习 · 运动 · 睡觉'</pre>
+let line: string = tags.join(' · ') // '学习 · 运动 · 睡觉'</pre>
 </div>
 <p class="mb-2">来自输入框、网络、存储的字符串一律先验证再转换：Number('') 是 0，Number('12abc') 是 NaN，这两个边界记牢。split 按分隔符拆成数组，join 反向拼回字符串。一对搭档处理逗号分隔的数据非常好用。模板字符串（反引号加 ${}）也在，拼长字符串比加号清爽，该用就用。</p>
 <h5 class="font-semibold mt-3 mb-1">引用还是副本：新手第一大坑</h5>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 赋值赋的是地址</span><span class="dots">···</span></div>
 <pre>let a: number[] = [1, 2, 3]
-let b: number[] = a          // b 和 a 是同一个数组
+let b: number[] = a // b 和 a 是同一个数组
 b.push(4)
-console.info('' + a.length)  // 4！a 也"变"了
+console.info('' + a.length) // 4！a 也"变"了
 
-let c: number[] = a.slice()  // 复制一份新的
+let c: number[] = a.slice() // 复制一份新的
 c.push(5)
-console.info('' + a.length)  // 还是 4，a 安然无恙</pre>
+console.info('' + a.length) // 还是 4，a 安然无恙</pre>
 </div>
 <p class="mb-2">对象和数组赋值时传的是"地址"，不是内容——b 和 a 拿到的是同一个柜子的钥匙，b 往里塞东西，a 打开柜子当然也看得见。想复制：数组用 slice() 或 concat()；对象逐字段新建一个；对象里还嵌着对象时，浅拷一层不够，嵌套字段指向的还是旧地址，要写个 clone 函数逐层新建。这个坑在"我明明改了数据，界面怎么没动"一类问题里是常客，第 73 章讲状态管理时，你还会和它打照面，先混个脸熟。</p>
 <h4 class="text-lg font-semibold mt-4 mb-2">十七、自测：十二道题检查你学没学会</h4>
@@ -1392,12 +1391,12 @@ console.info('' + a.length)  // 还是 4，a 安然无恙</pre>
 <p class="mb-2">遇到实在解决不了的报错，提问也有姿势：把报错码、十行以内的最小复现代码、你期望的行为和实际行为这"三件套"贴全，别只丢一句"它报错了"。三件套给全，别人三十秒就能帮你看出问题；只丢一句话，大概率等来的是沉默。官方社区和论坛也吃这一套，完整的提问往往能直接换回改好的代码，而不是来回追问三轮。这个习惯在团队协作里同样是硬通货：会描述问题的开发者，走到哪里都不缺帮手。</p>
 <p class="mb-2">至于"什么时候算学会"，有个朴素的标准：当你写新功能时，第一反应是"先定义 interface"；报错弹出来时，第一反应是"读码、查文档"，而不是随手 as 一下绕过去。不用别人告诉你，你自己会感觉到那个瞬间。到了那时，这一章的任务就真正完成了。</p>
 <div class="quote-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-quote-left mr-2"></i>一句话记牢</p>
+<p class="font-semibold">一句话记牢</p>
 <p class="mt-1">ArkTS 的所有规矩，都是在替未来的你省排查时间。</p>
 </div>
 <p class="mb-2">到这里，语言这一章的全部内容就齐了。你已经能读懂模型层的代码、看懂报错、把逻辑拆进合适的文件。下一章把这些零件装进界面，装饰器们会在那里正式开工。</p>
 <div class="chapter-summary">
-<p class="font-semibold mb-1"><i class="fas fa-flag-checkered mr-1"></i>本章小结</p>
+<p class="font-semibold mb-1">本章小结</p>
 <ul class="list-disc pl-6 mb-3 space-y-1">
   <li>ArkTS 保留 TS 核心：类型、接口、类、泛型、箭头函数</li>
   <li>六条收紧：禁 any、形状固定、无结构化类型、渲染类型受限、类型写全、字面量要有类型</li>
@@ -1414,19 +1413,19 @@ console.info('' + a.length)  // 还是 4，a 安然无恙</pre>
 <nav class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a href="di-qi-shi-yi-zhang.html" class="text-primary hover:underline">← 第七十一章：搭建开发环境——DevEco Studio</a><span></span><a href="di-qi-shi-san-zhang.html" class="text-primary hover:underline">第七十三章：ArkUI 声明式界面 →</a></nav>
 
             </section>
- </div></main></div><!-- 快捷工具：浮动按钮组 --><div id="quick-tools" class="quick-tools no-print" aria-label="快捷工具"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><i class="fas fa-droplet" aria-hidden="true"></i></button><button id="quick-search" class="quick-tool-btn" title="搜索 (Ctrl+K)" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></button><button id="quick-theme" class="quick-tool-btn" title="切换深色/浅色" aria-label="切换主题"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i></button><button id="quick-print" class="quick-tool-btn" title="打印 / 导出PDF" aria-label="打印或导出"><i class="fas fa-print" aria-hidden="true"></i></button><button id="quick-toc" class="quick-tool-btn" title="目录" aria-label="打开目录"><i class="fas fa-list" aria-hidden="true"></i></button><button id="quick-tts" class="quick-tool-btn" title="语音朗读" aria-label="语音朗读"><i class="fas fa-headphones" aria-hidden="true"></i></button><button id="quick-shortcuts" class="quick-tool-btn" title="键盘快捷键 (?)" aria-label="快捷键面板"><i class="fas fa-keyboard" aria-hidden="true"></i></button><button id="quick-backup" class="quick-tool-btn" title="备份/恢复进度" aria-label="备份进度"><i class="fas fa-cloud-arrow-up" aria-hidden="true"></i></button></div><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><!-- 快捷键面板 --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="键盘快捷键"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><i class="fas fa-keyboard text-gray-400"></i><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">键盘快捷键</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">搜索内容</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">切换深色/浅色</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">语音朗读 播放/暂停</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">停止朗读</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">打开快捷键面板</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">字号调大 / 调小</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">打印 / 导出PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- 备份/恢复弹窗 --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="备份与恢复"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><i class="fas fa-cloud-arrow-up text-gray-400"></i><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">阅读进度备份与恢复</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">备份包含：已读章节、书签、阅读位置、字号偏好、健康自检结果。数据保存在浏览器本地，更换浏览器或清除缓存后丢失，建议定期导出备份。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-download"></i> 导出备份文件
- </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">下载一个 JSON 文件，保存到安全位置</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-upload"></i> 导入备份恢复
- </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">选择之前导出的备份文件恢复进度</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-trash"></i> 清除所有阅读数据
- </button><p class="text-xs text-red-400 mt-1 text-center">不可恢复！请先导出备份</p></div></div></div></div><!-- 阅读连续天数提示 --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),#7c3aed);color:var(--ink-inverse);border:none;"><i class="fas fa-fire" aria-hidden="true" style="color:var(--gold-2)"></i><span id="streak-toast-text">连续阅读第 X 天！</span></div><!-- 语音朗读控件栏 --><div id="tts-controls" class="tts-controls" role="region" aria-label="语音朗读控制" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="当前朗读章节">未开始</span><button class="tts-btn" id="tts-prev" title="上一段" aria-label="上一段"><i class="fas fa-step-backward"></i></button><button class="tts-btn play-btn" id="tts-play" title="播放/暂停" aria-label="播放朗读"><i class="fas fa-play"></i></button><button class="tts-btn" id="tts-next" title="下一段" aria-label="下一段"><i class="fas fa-step-forward"></i></button><button class="tts-btn" id="tts-speed-down" title="减速" aria-label="减速">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="加速" aria-label="加速">+</button><button class="tts-btn" id="tts-stop" title="停止朗读" aria-label="停止朗读"><i class="fas fa-times"></i></button></div><!-- 回到顶部按钮 --><button id="back-to-top" class="opacity-0 invisible" aria-label="回到顶部"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg><i class="fas fa-arrow-up" aria-hidden="true"></i></button><!-- 阅读位置恢复提示 --><div id="restore-toast" class="restore-position-toast" role="alert"><i class="fas fa-bookmark" aria-hidden="true"></i><span id="restore-toast-text">上次读到：...</span><button class="btn-restore" id="restore-btn">继续阅读</button><button class="btn-dismiss" id="dismiss-btn">忽略</button></div><!-- JS脚本 -->
+ </div></main></div><!-- 快捷工具：浮动按钮组 --><div id="quick-tools" class="quick-tools no-print" aria-label="快捷工具"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">透</span></button><button id="quick-search" class="quick-tool-btn" title="搜索 (Ctrl+K)" aria-label="搜索"><span aria-hidden="true">搜</span></button><button id="quick-theme" class="quick-tool-btn" title="切换深色/浅色" aria-label="切换主题"><span aria-hidden="true">夜</span></button><button id="quick-print" class="quick-tool-btn" title="打印 / 导出PDF" aria-label="打印或导出"><span aria-hidden="true">印</span></button><button id="quick-toc" class="quick-tool-btn" title="目录" aria-label="打开目录"><span aria-hidden="true">目</span></button><button id="quick-tts" class="quick-tool-btn" title="语音朗读" aria-label="语音朗读"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="键盘快捷键 (?)" aria-label="快捷键面板"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="备份/恢复进度" aria-label="备份进度"><span aria-hidden="true">备</span></button></div><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><!-- 快捷键面板 --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="键盘快捷键"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">键盘快捷键</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">搜索内容</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">切换深色/浅色</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">语音朗读 播放/暂停</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">停止朗读</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">打开快捷键面板</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">字号调大 / 调小</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">打印 / 导出PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- 备份/恢复弹窗 --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="备份与恢复"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">阅读进度备份与恢复</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">备份包含：已读章节、书签、阅读位置、字号偏好、健康自检结果。数据保存在浏览器本地，更换浏览器或清除缓存后丢失，建议定期导出备份。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 导出备份文件
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">下载一个 JSON 文件，保存到安全位置</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 导入备份恢复
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">选择之前导出的备份文件恢复进度</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 清除所有阅读数据
+ </button><p class="text-xs text-red-400 mt-1 text-center">不可恢复！请先导出备份</p></div></div></div></div><!-- 阅读连续天数提示 --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),#7c3aed);color:var(--ink-inverse);border:none;"><span id="streak-toast-text">连续阅读第 X 天！</span></div><!-- 语音朗读控件栏 --><div id="tts-controls" class="tts-controls" role="region" aria-label="语音朗读控制" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="当前朗读章节">未开始</span><button class="tts-btn" id="tts-prev" title="上一段" aria-label="上一段"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="播放/暂停" aria-label="播放朗读"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="下一段" aria-label="下一段"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="减速" aria-label="减速">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="加速" aria-label="加速">+</button><button class="tts-btn" id="tts-stop" title="停止朗读" aria-label="停止朗读"><span aria-hidden="true">×</span></button></div><!-- 回到顶部按钮 --><button id="back-to-top" class="opacity-0 invisible" aria-label="回到顶部"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- 阅读位置恢复提示 --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">上次读到：...</span><button class="btn-restore" id="restore-btn">继续阅读</button><button class="btn-dismiss" id="dismiss-btn">忽略</button></div><!-- JS脚本 -->
  
  <script>
-        /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
-        if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
-                    .catch(function (err) { console.warn('SW 注册失败：', err); });
-            });
-        }
-    </script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
 <script src="assets/book.js" defer></script>
 </body></html>

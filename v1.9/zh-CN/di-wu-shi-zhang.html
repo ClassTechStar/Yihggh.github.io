@@ -6,64 +6,63 @@
 
 
  <script id="liquid-glass-bundle">
-    /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
-     * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
-     * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
-     * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
-    (function () {
-      if (window.__liquidGlass) return;
-      window.__liquidGlass = true;
-      if (window.__SAFE) return;
-      var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
-      var reduce = window.matchMedia &&
-        window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
-      if (!ok || reduce) return;
-      var root = document.documentElement;
-      root.classList.add('lg-ready');
-      if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
-      window.__lgToggle = function (v) {
-        var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
-        root.classList.toggle('lg-off', off);
-        if (window.RS) RS.set('liquidGlass', !off);
-        return !off;
-      };
-      var sync = function () {
-        var btn = document.getElementById('quick-glass');
-        if (!btn) return;
-        var off = root.classList.contains('lg-off');
-        btn.classList.toggle('lg-btn-off', off);
-        btn.setAttribute('aria-pressed', String(!off));
-        var ic = btn.querySelector('i');
-        if (ic) ic.className = off ? 'fas fa-droplet-slash' : 'fas fa-droplet';
-      };
-      /* bundle 在 head 执行时 #quick-glass 尚未存在——绑定延迟到 DOMContentLoaded */
-      document.addEventListener('DOMContentLoaded', function () {
-        var btn = document.getElementById('quick-glass');
-        if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
-        sync();
-      });
-      try {
-        if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
-      } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
-    })();
-    </script>
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var sync = function () {
+ var btn = document.getElementById('quick-glass');
+ if (!btn) return;
+ var off = root.classList.contains('lg-off');
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ };
+ /* bundle 在 head 执行时 #quick-glass 尚未存在——绑定延迟到 DOMContentLoaded */
+ document.addEventListener('DOMContentLoaded', function () {
+ var btn = document.getElementById('quick-glass');
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ });
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
  
 
 
 <link rel="preload" href="../fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../fonts/fa/fa-solid-900.subset.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-wu-shi-zhang.html">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "第五十章：Kotlin快速上手——安卓开发的第一语言", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-wu-shi-zhang.html", "isPartOf": {"@type": "Book", "name": "你缺失的那门手机课", "inLanguage": "zh-CN"}}</script>
 <link rel="stylesheet" href="assets/book.css">
-</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">跳到主要内容</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="打开目录菜单" aria-expanded="false" aria-controls="sidebar"><i class="fas fa-bars"></i></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="返回首页"><span class="hidden sm:inline-flex w-8 h-8 rounded-md bg-gradient-to-br from-primary to-accent text-white items-center justify-center text-sm font-bold flex-shrink-0" aria-hidden="true"><i class="fas fa-mobile-screen"></i></span><h1 class="text-base md:text-lg font-bold text-primary truncate">搞定手机 · 数码必修课</h1></a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="主操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="从基础开始"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>开始学习</span></a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="搜索 (Ctrl+K)" aria-label="搜索内容"><i class="fas fa-search" aria-hidden="true"></i></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="字号调整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="缩小字体" aria-label="缩小字体">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="重置字号" aria-label="重置字号">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="放大字体" aria-label="放大字体">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="切换深色/浅色模式" aria-label="切换深色/浅色模式"><i class="fas fa-moon dark:hidden" aria-hidden="true"></i><i class="fas fa-sun hidden dark:inline" aria-hidden="true"></i></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="打印 / 导出PDF" aria-label="打印或导出PDF"><i class="fas fa-print" aria-hidden="true"></i></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="回到顶部"><i class="fas fa-arrow-up mr-1" aria-hidden="true"></i>顶部
- </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="文章目录"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2"><span aria-hidden="true" class="fas fa-list-ul text-primary" aria-hidden="true"></span>学习目录
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">跳到主要内容</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="打开目录菜单" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="返回首页"><span class="hidden sm:inline-flex w-8 h-8 rounded-md bg-gradient-to-br from-primary to-accent text-white items-center justify-center text-sm font-bold flex-shrink-0" aria-hidden="true"></span><h1 class="text-base md:text-lg font-bold text-primary truncate">搞定手机 · 数码必修课</h1></a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="主操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="从基础开始"><span>开始学习</span></a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="搜索 (Ctrl+K)" aria-label="搜索内容"><span aria-hidden="true">搜</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="字号调整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="缩小字体" aria-label="缩小字体">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="重置字号" aria-label="重置字号">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="放大字体" aria-label="放大字体">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="切换深色/浅色模式" aria-label="切换深色/浅色模式"><span class="dark:hidden" aria-hidden="true">夜</span><span class="hidden dark:inline" aria-hidden="true">昼</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="打印 / 导出PDF" aria-label="打印或导出PDF"><span aria-hidden="true">印</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="回到顶部">顶部
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="文章目录"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">学习目录
  </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 章</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="筛选章节..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="筛选章节"></div><ul class="space-y-1 text-sm" id="toc-list"><!-- 基础篇 -->
                     <li class="toc-parent" data-group="ji-chu">
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">一、基础篇（第0-7章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起基础篇" data-target="child-ji-chu">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -85,7 +84,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">二、软件篇（第8-14章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起软件篇" data-target="child-ruan-jian">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -104,7 +103,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">三、进阶篇（第15-20章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起进阶篇" data-target="child-jin-jie">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -123,7 +122,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">四、超越篇（第21-26章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起超越篇" data-target="child-chao-yue">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -141,7 +140,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">五、实战篇（第27-32章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起实战篇" data-target="child-shi-zhan">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -158,7 +157,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">六、展望篇与车联篇（第33-34章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起展望篇" data-target="child-zhan-wang">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -171,7 +170,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">儿童与手机专题（第35-36章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起儿童与手机专题" data-target="child-er-tong-pian">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -184,7 +183,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">七、AI编程实战篇（第37-47章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起AI编程实战篇" data-target="child-ai-biancheng">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -206,7 +205,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">八、安卓开发实战篇（第48-58章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起安卓开发实战篇" data-target="child-an-zhuo-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -228,7 +227,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">九、iOS开发实战篇（第59-69章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起iOS开发实战篇" data-target="child-ios-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -250,7 +249,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-qi-shi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十、鸿蒙开发实战篇（第70-80章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起鸿蒙开发实战篇" data-target="child-hongmeng-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-hongmeng-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -272,7 +271,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十一、手机与可穿戴篇（第81-85章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十一、手机与可穿戴篇（第81-85章）目录开关" data-target="child-ke-chuan-she-bei">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ke-chuan-she-bei" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -288,7 +287,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-shi-liu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十二、旅行与手机篇（第86-90章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十二、旅行与手机篇（第86-90章）目录开关" data-target="child-lv-xing">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-lv-xing" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -304,7 +303,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-jiu-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十三、手机与健康篇（第91-95章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十三、手机与健康篇（第91-95章）目录开关" data-target="child-jian-kang">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-jian-kang" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -320,7 +319,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-jiu-shi-liu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十四、AI短视频创作篇（第96-100章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十四、AI短视频创作篇（第96-100章）目录开关" data-target="child-ai-duan-shi-pin">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ai-duan-shi-pin" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -336,7 +335,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-yi-bai-ling-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十五、竖屏短剧入门篇（第101-105章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十五、竖屏短剧入门篇（第101-105章）目录开关" data-target="child-shu-ping-duan-ju">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-shu-ping-duan-ju" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -352,7 +351,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十六、附录</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起附录" data-target="child-fu-lu">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -367,7 +366,7 @@
                             <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>附录H：版本路线图</a></li>
                         </ul>
                     </li>
-</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索"><div class="search-panel"><div class="search-input-wrapper"><i class="fas fa-search text-gray-400"></i><input type="text" id="search-input" placeholder="搜索内容..." autocomplete="off" aria-label="搜索关键词"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭搜索">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">输入关键词开始搜索</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 顶部面包屑 --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">首页</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">数码必修课 · v1.9</span></nav>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">搜</span><input type="text" id="search-input" placeholder="搜索内容..." autocomplete="off" aria-label="搜索关键词"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭搜索">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">输入关键词开始搜索</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 顶部面包屑 --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">首页</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">数码必修课 · v1.9</span></nav>
 <div id="di-wu-shi-zhang" class="mb-10 content-section">
 <h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">第五十章：Kotlin 快速上手——安卓开发的第一语言</h3>
 <p class="chapter-intro mb-4">这一章咱们正式学语言。别紧张，Kotlin 是出了名的"对新手友好"，而且你不需要背语法书：先掌握 20% 的语法，就能看懂和写出 80% 的日常代码。剩下的边做项目边查。记住咱们的学习原则：<strong>看懂 > 记住，会用 > 精通</strong>。</p>
@@ -401,14 +400,14 @@
 <p class="mb-2">程序就是"数据 + 逻辑"。变量，就是给数据起个名字存起来。Kotlin 有两种声明方式：</p>
 <div class="code-block">
 <div class="code-head"><span>KOTLIN · 变量</span><span class="dots">···</span></div>
-<pre>val name = "张三"        // val：只读变量（推荐默认用这个）
-var age = 18             // var：可变变量（以后还能改）
+<pre>val name = "张三" // val：只读变量（推荐默认用这个）
+var age = 18 // var：可变变量（以后还能改）
 
-age = 19                 // <i class="fas fa-check-circle mr-1"></i> var 可以改
-// name = "李四"         // <i class="fas fa-times-circle mr-1"></i> val 不能改，编译会报错
+age = 19 // var 可以改
+// name = "李四" // val 不能改，编译会报错
 
-val score: Int = 100     // 也可以显式写明类型
-val pi = 3.14            // 不写也能自动推断</pre>
+val score: Int = 100 // 也可以显式写明类型
+val pi = 3.14 // 不写也能自动推断</pre>
 </div>
 <p class="mb-2">常用类型就几种，一张表记住：</p>
 <div class="overflow-x-auto">
@@ -420,7 +419,7 @@ val pi = 3.14            // 不写也能自动推断</pre>
 <p class="mb-2">运算符就五个主力：<code class="inline">+ - * / %</code>。前三个不解释，除号和百分号各有一个坑要提前拆。<strong>除号坑：整数除整数还是整数</strong>——<code class="inline">5 / 2</code> 得到 2 不是 2.5！因为两边都是 Int，Kotlin 做的是"整除"，小数部分直接扔掉。想要 2.5，至少一边是 Double：<code class="inline">5.0 / 2</code> 或 <code class="inline">5.toDouble() / 2</code>。记账、算平均分这类场景，这个坑能让你调试一小时还找不到原因，现在记住它，等于省了一小时。<strong>百分号（取余）</strong>：拿除完剩下的零头，<code class="inline">7 % 3</code> 得 1。最经典的用法是"奇偶判断"<code class="inline">if (number % 2 == 0)</code> 就是偶数。另外简写运算符 <code class="inline">+=、-=、*=</code> 都通用：<code class="inline">count += 1</code> 等于 <code class="inline">count = count + 1</code>，计数器专用。</p>
 <p class="mb-2">val 和 var 的取舍，光看定义容易轻敌。给你一个真实场景：记账本里有一笔金额 <code class="inline">var amount = 12.5</code>。三个月后你翻回这段代码，要花十分钟想"这金额中途被谁改过"，每一处赋值都得查。如果当时用的是 val，金额从创建起就是 12.5，一眼定案。数据能不变就不变，逻辑才好推理，这是"val 优先"背后的全部思想。</p>
 <div class="info-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>小贴士：val 优先原则</p>
+<p class="font-semibold">小贴士：val 优先原则</p>
 <p class="mt-1">Kotlin 社区的铁律：<strong>默认用 val，确有必要再用 var</strong>。能用 val 的地方用 var，IDE 会黄字警告你。这个习惯能帮你少掉一大类"变量被意外修改"的 bug，代码越少变化，越容易推理。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">字符串模板再进一步：不只是 $变量</h4>
@@ -431,10 +430,10 @@ val pi = 3.14            // 不写也能自动推断</pre>
 <div class="code-block">
 <div class="code-head"><span>KOTLIN · 原样字符串</span><span class="dots">···</span></div>
 <pre>val receipt = """
-    记账小票
-    ----------
-    午餐：12.5 元
-    交通：5.0 元
+ 记账小票
+ ----------
+ 午餐：12.5 元
+ 交通：5.0 元
 """.trimIndent()
 
 println(receipt)</pre>
@@ -445,15 +444,15 @@ println(receipt)</pre>
 <p class="mb-2">基础类型表里那个 <code class="inline">List&lt;T&gt;</code> 单拎出来讲，因为它是"从单数到复数"的跨越——学会了它，一个变量就能装下整个通讯录。</p>
 <div class="code-block">
 <div class="code-head"><span>KOTLIN · List 入门</span><span class="dots">···</span></div>
-<pre>val fruits = listOf("苹果", "香蕉", "橙子")   // 创建一个列表
+<pre>val fruits = listOf("苹果", "香蕉", "橙子") // 创建一个列表
 
-println(fruits.size)        // 3（元素个数）
-println(fruits[0])          // 苹果（下标从 0 开始！）
-println(fruits.last())      // 橙子
-println(fruits.contains("香蕉"))   // true
+println(fruits.size) // 3（元素个数）
+println(fruits[0]) // 苹果（下标从 0 开始！）
+println(fruits.last()) // 橙子
+println(fruits.contains("香蕉")) // true
 
 val scores = listOf(85, 92, 78)
-println(scores.sum())       // 255（求和，第 54 章的记账本要用）</pre>
+println(scores.sum()) // 255（求和，第 54 章的记账本要用）</pre>
 </div>
 <p class="mb-2">三个新手必须刻进脑子的事实。<strong>第一，下标从 0 开始</strong>：第一个元素是 <code class="inline">fruits[0]</code> 不是 <code class="inline">fruits[1]</code>——全世界程序员都被这个惯例绊过一脚，绊一次就记住了。<strong>第二，listOf 创建的是只读列表</strong>：往 fruits 里"添加"元素会编译报错。想要能增删的列表，用 <code class="inline">mutableListOf(...)</code>，配合 <code class="inline">add()</code>、<code class="inline">remove()</code> 使用。看出规律没有？可读写的版本在名字里就写了 "mutable"——Kotlin 把"会不会变"又写进了名字里，跟 val/var 一脉相承。<strong>第三，列表里的元素类型必须一致</strong>：<code class="inline">listOf(1, 2, 3)</code> 是 Int 列表，往里塞字符串会被编译器拦下。泛型 T 的意思就是"这个盒子里装的都是 T 这种类型"。</p>
 <p class="mb-2">除了 List，还有两个近亲混个脸熟：<strong>Set</strong>（<code class="inline">setOf(...)</code>）不允许重复元素，适合装"去重后的标签"；<strong>Map</strong>（<code class="inline">mapOf("姓名" to "张三", "城市" to "杭州")</code>）是键值对，适合装"一个东西的多个属性"。本节先把 List 玩熟。Set 和 Map 遇到时再补——它们在本书项目里出场的机会比 List 少。</p>
@@ -470,15 +469,15 @@ println(scores.sum())       // 255（求和，第 54 章的记账本要用）</p
 <div class="code-block">
 <div class="code-head"><span>KOTLIN · 函数</span><span class="dots">···</span></div>
 <pre>fun greet(name: String): String {
-    return "你好，$name！"     // $ 符号把变量插进字符串
+ return "你好，$name！" // $ 符号把变量插进字符串
 }
 
-println(greet("张三"))        // 输出：你好，张三！
+println(greet("张三")) // 输出：你好，张三！
 
 // 单行函数可以简写成表达式
 fun add(a: Int, b: Int) = a + b
 
-println(add(3, 5))            // 输出：8</pre>
+println(add(3, 5)) // 输出：8</pre>
 </div>
 <p class="mb-2">几个要点：参数写在括号里（名字在前、类型在后，用冒号隔开）；返回类型写在括号后；<strong>字符串模板</strong> <code class="inline">$变量名</code> 是 Kotlin 的招牌便利，不用再像 Java 那样"字符串 + 变量"地拼来拼去。</p>
 <p class="mb-2">"返回类型写在哪"这个记忆点容易忘，给你一个顺口的读法：<strong>从左往右读一遍，就是函数的说明书</strong>——"fun greet，输入 name（String），输出 String"。把签名当句子读，看陌生代码时特别管用：先读函数签名，猜它干什么，再看函数体验证，这个顺序和"先看封面再看正文"一样自然。</p>
@@ -487,11 +486,11 @@ println(add(3, 5))            // 输出：8</pre>
 <div class="code-block">
 <div class="code-head"><span>KOTLIN · 第一个真事函数</span><span class="dots">···</span></div>
 <pre>fun splitBill(total: Double, people: Int): Double {
-    return total / people
+ return total / people
 }
 
 val share = splitBill(216.4, 4)
-println("每人应付：$share 元")   // 每人应付：54.1 元</pre>
+println("每人应付：$share 元") // 每人应付：54.1 元</pre>
 </div>
 <p class="mb-2">这个函数小到不值一提，但注意它做对了三件事：参数有名字（看调用就知道传什么）、返回类型明确（Double，钱要用小数）、逻辑只有一行（没有多余动作）。真实项目里的函数就是这样的放大版——名字说清楚自己干嘛，参数说明白需要什么，函数体只做一件事。以后你写一百行的函数时，随时问自己一句："它还能不能拆成几个 splitBill 这样的零件？"拆到不能再拆，你的代码就比九成新手干净了。</p>
 <p class="mb-2">还有一个特殊的返回类型会遇到：<strong>Unit</strong>。函数不返回任何东西时，返回类型是 Unit（可以不写，编译器自动补）。它就像 Swift 里的 Void，"我干完活就走，不带回东西"。打印日志、更新界面这类函数十有八九返回 Unit。</p>
@@ -505,8 +504,8 @@ println("每人应付：$share 元")   // 每人应付：54.1 元</pre>
 <div class="code-block">
 <div class="code-head"><span>KOTLIN · 默认参数与具名参数</span><span class="dots">···</span></div>
 <pre>fun orderTea(type: String, sugar: Int = 0, ice: Boolean = false): String {
-    val desc = if (ice) "加冰" else "去冰"
-    return "一杯$type，糖 $snow 份，$desc"
+ val desc = if (ice) "加冰" else "去冰"
+ return "一杯$type，糖 $snow 份，$desc"
 }</pre>
 </div>
 <p class="mb-2">上面这段代码里藏了一个故意写错的地方，你找到了吗？<code class="inline">$snow</code> 应该是 <code class="inline">$sugar</code>。编译器会立刻报错：找不到叫 snow 的变量。这个错误的好处是<strong>报在编译期</strong>：程序根本没跑起来就拦住了你，而不是跑到一半蹦出奇怪的结果。Kotlin 大量的设计都是这个思路：能编译期发现的问题，绝不留到运行期。把运行代码前被拦住当成常态，你会越来越喜欢这种"严厉"。</p>
@@ -526,23 +525,23 @@ println("每人应付：$share 元")   // 每人应付：54.1 元</pre>
 <pre>// 判断：if / else
 val age = 17
 if (age >= 18) {
-    println("成年人")
+ println("成年人")
 } else {
-    println("未成年")
+ println("未成年")
 }
 
 // 多分支：when（比 switch 好用一百倍）
 val score = 85
 val level = when {
-    score >= 90 -> "优秀"
-    score >= 60 -> "及格"
-    else -> "再接再厉"
+ score >= 90 -> "优秀"
+ score >= 60 -> "及格"
+ else -> "再接再厉"
 }
 
 // 重复：for 循环
 val fruits = listOf("苹果", "香蕉", "橙子")
 for (fruit in fruits) {
-    println("我爱吃$fruit")
+ println("我爱吃$fruit")
 }</pre>
 </div>
 <p class="mb-2"><code class="inline">when</code> 是 Kotlin 里最常用的多分支写法，安卓开发里你会天天用到它（比如根据状态显示不同界面）。</p>
@@ -555,19 +554,19 @@ for (fruit in fruits) {
 <pre>// 形态一：带主语（对同一个值反复判断）
 val weather = "雨"
 when (weather) {
-    "晴" -> println("适合出门")
-    "雨" -> println("记得带伞")
-    "雪" -> println("注意保暖")
-    else -> println("查查天气 App")
+ "晴" -> println("适合出门")
+ "雨" -> println("记得带伞")
+ "雪" -> println("注意保暖")
+ else -> println("查查天气 App")
 }
 
 // 形态二：区间匹配（不用一个个列举）
 val temp = 26
 when (temp) {
-    in 35..100 -> println("高温预警")
-    in 24..34  -> println("舒适")
-    in 10..23  -> println("微凉")
-    else -> println("要穿外套了")
+ in 35..100 -> println("高温预警")
+ in 24..34 -> println("舒适")
+ in 10..23 -> println("微凉")
+ else -> println("要穿外套了")
 }</pre>
 </div>
 <p class="mb-2">带主语的 when 读起来像中文的"看天气说话"：是晴就怎样，是雨就怎样，区间匹配用 <code class="inline">in 起点..终点</code>，特别适合"温度、分数、金额"这类连续数值。两种形态都能当表达式赋值给变量，跟入门示例一样。</p>
@@ -577,10 +576,10 @@ when (temp) {
 <p class="mb-2">"循环 10 次"、"倒着数"、"隔一个取一个"这些常见需求，Kotlin 全部用区间语法解决：</p>
 <div class="code-block">
 <div class="code-head"><span>KOTLIN · 区间四件套</span><span class="dots">···</span></div>
-<pre>for (i in 1..5)        println(i)   // 1 2 3 4 5（含 5）
-for (i in 1 until 5)   println(i)   // 1 2 3 4（不含 5）
-for (i in 5 downTo 1)  println(i)   // 5 4 3 2 1（倒数）
-for (i in 1..10 step 2) println(i)  // 1 3 5 7 9（隔一个）</pre>
+<pre>for (i in 1..5) println(i) // 1 2 3 4 5（含 5）
+for (i in 1 until 5) println(i) // 1 2 3 4（不含 5）
+for (i in 5 downTo 1) println(i) // 5 4 3 2 1（倒数）
+for (i in 1..10 step 2) println(i) // 1 3 5 7 9（隔一个）</pre>
 </div>
 <p class="mb-2">四个写法的区别就在"端点"和"步子"上：<code class="inline">..</code> 两端都含；<code class="inline">until</code> 含头不含尾，配合"列表长度"用最顺手（列表下标从 0 到 长度-1，<code class="inline">0 until list.size</code> 正好不越界）；<code class="inline">downTo</code> 倒数；<code class="inline">step</code> 调步幅。这四个组合词不是函数调用，是 Kotlin 语法的一部分，写的次数多了肌肉记忆就来了。</p>
 <p class="mb-2">循环控制词只有两个，借用很多语言的传统：<strong>break</strong>（跳出整个循环）和 <strong>continue</strong>（跳过本轮、进下一轮）。找东西找到就停用 break，过滤掉不合适的用 continue。while 循环（"满足条件就一直做"）在安卓业务代码里出现频率不高，认识即可：<code class="inline">while (条件) { ... }</code>。</p>
@@ -589,22 +588,22 @@ for (i in 1..10 step 2) println(i)  // 1 3 5 7 9（隔一个）</pre>
 <p class="mb-2">Java 时代最著名的 bug 叫 <strong>NullPointerException（空指针异常）</strong>——程序访问了一个"什么都没有"的东西，直接崩溃。据统计它是安卓崩溃排行榜的常年第一。Kotlin 从语言层面解决了它：<strong>默认不允许空值</strong>。</p>
 <div class="code-block">
 <div class="code-head"><span>KOTLIN · 空安全</span><span class="dots">···</span></div>
-<pre>var name: String = "张三"   // 普通类型：绝不允许是 null
-// name = null                // <i class="fas fa-times-circle mr-1"></i> 编译错误，直接把你拦住
+<pre>var name: String = "张三" // 普通类型：绝不允许是 null
+// name = null // 编译错误，直接把你拦住
 
 var nickname: String? = null // 加个问号：允许为 null
 nickname = "三儿"
 
 // 使用可空类型时，必须安全地处理：
-println(nickname?.length)    // 安全调用：null 就返回 null，不崩
-val len = nickname?.length ?: 0   // Elvis 操作符：null 时给默认值
+println(nickname?.length) // 安全调用：null 就返回 null，不崩
+val len = nickname?.length ?: 0 // Elvis 操作符：null 时给默认值
 println(len)</pre>
 </div>
 <p class="mb-2">把空安全的思路翻译成人话：<strong>Kotlin 把"这里可能什么都没有"写进了类型本身。</strong>类型后面不带问号。编译器向你担保"这个变量永远有值"；带了问号，编译器的态度变成"它可能没值，所以你必须逐次处理"。崩溃从"运行时的惊喜"变成了"编译时的选择题"：你被迫在写代码时就回答"没值怎么办"，答案无非三种：给默认值（?:）、跳过不处理（?.）、或者斩钉截铁地说"绝不可能为空"（!!，后面讲它的危险）。</p>
 <p class="mb-2">为什么这个设计在安卓里格外值钱？因为安卓代码里"空"无处不在：刚打开的页面，用户还没输入昵称，空；网络没回来，数据还没到手，空；通讯录里查一个不存在的联系人：空。老代码里这三种情况各写各的"防崩补丁"，写漏一处就是线上崩溃。Kotlin 的问号把这些"可能为空"标在了明面上，编译器成了你雇的、不睡觉的检查员。</p>
 <p class="mb-2">可空类型的"必须处理"有多严格？严格到 <code class="inline">nickname.length</code> 这种直接调用都会编译报错，哪怕你上一行刚赋了值。编译器的逻辑是：可空类型的值，每个使用点都要检查。接下来的一节讲"检查"的完整工具箱。</p>
 <div class="warning-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-exclamation-triangle mr-2"></i>注意：? 和 ?: 别搞混</p>
+<p class="font-semibold">注意：? 和 ?: 别搞混</p>
 <p class="mt-1"><code class="inline">String?</code> 是"允许为空"，<code class="inline">a ?: b</code> 是"a 为空时用 b"（长得像猫王发型，所以叫 Elvis 操作符）。刚开始写代码时，看到编译器报"null 相关错误"，八成是你忘了处理可空类型——这正是语言在保护你。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">空安全工具箱补全：let、!! 与智能检查</h4>
@@ -623,7 +622,7 @@ nickname?.let { println("昵称是 $it，长度 ${it.length}") }
 
 // 智能转换：检查过就放行
 if (nickname != null) {
-    println(nickname.length)   // 这里不用写 ?.，编译器知道它非空
+ println(nickname.length) // 这里不用写 ?.，编译器知道它非空
 }</pre>
 </div>
 <p class="mb-2">这一节的四个工具（?、?:、?.let、!!）覆盖了日常空处理的 95% 场景。选哪个的直觉可以这么建：<strong>要有值就用 ?:，要做动作就用 ?.let，要自证清白就用 if 检查，!! 永远是最后手段。</strong>第 55 章处理"网络数据可能拿不到"时，这套工具会成建制地登场。</p>
@@ -685,9 +684,9 @@ if (nickname != null) {
 <div class="code-head"><span>KOTLIN · 一周花销统计</span><span class="dots">···</span></div>
 <pre>val expenses = listOf(12.5, 88.0, 5.0, 23.3, 0.0, 66.0, 45.2)
 
-val total = expenses.sum()                      // 总共：240.0
-val biggest = expenses.max()                    // 最大的一笔：88.0
-val days = expenses.count { it > 0 }            // 有花销的天数：6
+val total = expenses.sum() // 总共：240.0
+val biggest = expenses.max() // 最大的一笔：88.0
+val days = expenses.count { it > 0 } // 有花销的天数：6
 
 println("本周合计：$total 元")
 println("最大单笔：$biggest 元")
@@ -701,17 +700,17 @@ println("花钱的日子有 $days 天")</pre>
 <div class="code-head"><span>KOTLIN · 类与数据类</span><span class="dots">···</span></div>
 <pre>// 普通类：模具
 class Dog(val name: String) {
-    fun bark() = println("$name 汪汪！")
+ fun bark() = println("$name 汪汪！")
 }
 
-val dog = Dog("旺财")      // 造对象
-dog.bark()                 // 旺财 汪汪！
+val dog = Dog("旺财") // 造对象
+dog.bark() // 旺财 汪汪！
 
 // data class：装数据的盒子（自动带 equals/copy 等）
 data class User(val id: Int, val name: String, val email: String)
 
 val me = User(1, "张三", "zhangsan@example.com")
-val twin = me.copy(name = "张三丰")   // 复制并改一个字段</pre>
+val twin = me.copy(name = "张三丰") // 复制并改一个字段</pre>
 </div>
 <p class="mb-2">以后你做记账本，一笔账就是一个 data class：<code class="inline">data class Record(val amount: Double, val category: String, val date: String)</code>。看，你已经能写出真实项目的代码结构了。</p>
 <p class="mb-2">普通类和 data class 的分工现在就能说清：<strong>普通类装"会做事的东西"（Dog 会叫），data class 装"被记录的事实"（一笔账、一个用户）。</strong>这个分界在界面开发里极其好用：按钮、页面用普通类（严格说是 Compose 函数，第 51 章见），用户的一笔账、一条消息、一次天气查询结果，全是 data class。你写 App 的大部分时间都在跟"事实"打交道，所以 data class 的出场率远高于普通类。这也是为什么它值得单独一节深讲。</p>
@@ -731,14 +730,14 @@ val twin = me.copy(name = "张三丰")   // 复制并改一个字段</pre>
 val a = Record(12.5, "餐饮", "10-01")
 val b = Record(12.5, "餐饮", "10-01")
 
-println(a == b)            // true——按内容比较，不是"同一条"才算相等
-println(a)                 // Record(amount=12.5, category=餐饮, date=10-01)
-val edited = a.copy(amount = 20.0)   // 只改金额，其他字段原样带走
-println(edited)            // Record(amount=20.0, category=餐饮, date=10-01)</pre>
+println(a == b) // true——按内容比较，不是"同一条"才算相等
+println(a) // Record(amount=12.5, category=餐饮, date=10-01)
+val edited = a.copy(amount = 20.0) // 只改金额，其他字段原样带走
+println(edited) // Record(amount=20.0, category=餐饮, date=10-01)</pre>
 </div>
 <p class="mb-2">还有一个隐藏福利：解构。<code class="inline">val (amount, category, date) = a</code> 一行把三个字段拆给三个变量，顺序就是字段声明顺序。第三节埋的 withIndex 伏笔在这里接上了：同一个语法，既能拆列表的"下标+元素"，也能拆数据类的各个字段。</p>
 <div class="warning-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-exclamation-triangle mr-2"></i>注意：data class 的字段也要守 val 优先</p>
+<p class="font-semibold">注意：data class 的字段也要守 val 优先</p>
 <p class="mt-1">data class 的字段默认都写成 <code class="inline">val</code>（只读），改数据用 copy 造新对象，而不是直接改旧对象的字段。"数据不可变 + 改动即复制"是现代界面开发的通行哲学，Compose 把它当基本前提。刚开始会觉得绕，用两次就顺了。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">密封类：把"状态"圈起来</h4>
@@ -746,15 +745,15 @@ println(edited)            // Record(amount=20.0, category=餐饮, date=10-01)</
 <div class="code-block">
 <div class="code-head"><span>KOTLIN · 密封类建模界面状态</span><span class="dots">···</span></div>
 <pre>sealed class UiState {
-    object Loading : UiState()                          // 加载中（没有数据，用 object）
-    data class Success(val list: List&lt;String&gt;) : UiState()   // 成功（带着数据）
-    data class Error(val message: String) : UiState()   // 失败（带着原因）
+ object Loading : UiState() // 加载中（没有数据，用 object）
+ data class Success(val list: List&lt;String&gt;) : UiState() // 成功（带着数据）
+ data class Error(val message: String) : UiState() // 失败（带着原因）
 }
 
 fun render(state: UiState): String = when (state) {
-    is UiState.Loading -> "加载中…"
-    is UiState.Success -> "加载到 ${state.list.size} 条数据"
-    is UiState.Error -> "出错了：${state.message}"
+ is UiState.Loading -> "加载中…"
+ is UiState.Success -> "加载到 ${state.list.size} 条数据"
+ is UiState.Error -> "出错了：${state.message}"
 }</pre>
 </div>
 <p class="mb-2">三句话解读。第一句：UiState 是密封类，它圈定了"界面状态只可能是 Loading、Success、Error 三种"，子类必须在花括号里出生：这就是"密封"的含义，圈外不许有第三个可能。第二句：三种可能里有的是"光秃秃的状态"（Loading 用 object），有的是"状态+数据"（Success 带着 list，Error 带着 message）：data class 和 object 各司其职。第三句：when 处理密封类时，编译器知道可能情况全部枚举了。<strong>漏写一个分支直接编译报错</strong>。以后产品加第四种状态"空数据"，你把 when 一编译，所有没处理它的地方全部标红，编译器替你做全局检查。</p>
@@ -776,7 +775,7 @@ fun double(x: Int) = x * 2
 val result = listOf(1, 2, 3).map(::double)
 
 // lambda 写法：就地定义，轻快直接
-val result2 = listOf(1, 2, 3).map { it * 2 }   // it = 当前元素
+val result2 = listOf(1, 2, 3).map { it * 2 } // it = 当前元素
 
 // 筛选 + 变换连招（真实项目里极常见）
 val bills = listOf(12.5, 88.0, 5.0, 200.0)
@@ -791,12 +790,12 @@ val bigBills = bills.filter { it > 50 }.sorted()
 <div class="code-block">
 <div class="code-head"><span>KOTLIN · 第一个高阶函数</span><span class="dots">···</span></div>
 <pre>fun calc(a: Int, b: Int, op: (Int, Int) -> Int): Int {
-    return op(a, b)
+ return op(a, b)
 }
 
-println(calc(3, 5) { x, y -> x + y })   // 8
-println(calc(3, 5) { x, y -> x * y })   // 15
-println(calc(10, 3) { x, y -> x - y })  // 7</pre>
+println(calc(3, 5) { x, y -> x + y }) // 8
+println(calc(3, 5) { x, y -> x * y }) // 15
+println(calc(10, 3) { x, y -> x - y }) // 7</pre>
 </div>
 <p class="mb-2">读一下签名：<code class="inline">op: (Int, Int) -> Int</code> 的意思是"op 是一个函数，吃两个 Int，吐一个 Int"。调用时把具体的逻辑用 lambda 塞进去：加法、乘法、减法，同一个 calc 全能干。这就是"把行为当参数传"的威力<strong>变化的逻辑写成参数，不变的框架写成函数</strong>。空调的"模式"键就是这个思想的实体：制冷、制热、除湿是传进去的行为，吹风框架是函数本体。</p>
 <p class="mb-2">调用时那个 <code class="inline">calc(3, 5) { ... }</code> 的写法叫"尾 lambda"（trailing lambda）：函数的最后一个参数是 lambda 时，花括号可以挪到括号外面。这是 Kotlin 的招牌排版，Compose 里满屏都是它，以后你写 <code class="inline">Button(onClick = { ... }) { Text("点我") }</code>，用的就是这个语法。现在知道"花括号为什么能在外面"就够了。</p>
@@ -808,25 +807,25 @@ println(calc(10, 3) { x, y -> x - y })  // 7</pre>
 <pre>data class Record(val amount: Double, val category: String)
 
 val records = listOf(
-    Record(12.5, "餐饮"), Record(30.0, "交通"),
-    Record(20.0, "餐饮"), Record(88.0, "购物")
+ Record(12.5, "餐饮"), Record(30.0, "交通"),
+ Record(20.0, "餐饮"), Record(88.0, "购物")
 )
 
 // groupBy：按某个条件分组，得到"组名 -> 组员列表"的 Map
 val byCategory = records.groupBy { it.category }
-println(byCategory["餐饮"]?.size)   // 2（餐饮组有两条）
+println(byCategory["餐饮"]?.size) // 2（餐饮组有两条）
 
 // associateBy：按某个字段建立索引，得到"键 -> 对象"的 Map
 val byName = records.associateBy { it.category }
 
 // fold：带着"累积值"遍历——比 sum 更自由的归并
 val total = records.fold(0.0) { acc, r -> acc + r.amount }
-println(total)                      // 150.5
+println(total) // 150.5
 
 // 组合技：分组后算各组总额
 val sums = records.groupBy { it.category }
-    .mapValues { (_, group) -> group.sumOf { it.amount } }
-println(sums)                       // {餐饮=32.5, 交通=30.0, 购物=88.0}</pre>
+ .mapValues { (_, group) -> group.sumOf { it.amount } }
+println(sums) // {餐饮=32.5, 交通=30.0, 购物=88.0}</pre>
 </div>
 <p class="mb-2">组合技那几行值得多看两眼，"按分类分组，再把每组的金额加总"，这就是记账 App"分类饼图"背后的全部数据加工。<code class="inline">sumOf { it.amount }</code> 是 sum 的带字段版，专门对付对象列表。<code class="inline">mapValues</code> 是 map 的"只变值不变键"版。连招库比想象的大，但记住本节开头的话：你不需要全记住，需要时查，用三五次就长在脑子里了。</p>
 <p class="mb-2">读连招代码的诀窍送你一个：<strong>从左往右读成流水句</strong>。"records.groupBy { 它的分类 }.mapValues { 组合计 }"读出来就是"先分组、再求每组合计"。连招代码的可读性建立在"每个函数名都是动词"上，filter 筛、map 变、group 分组、fold 折叠、sum 加总。像读句子一样读代码，这是 Kotlin 社区引以为傲的阅读体验。</p>
@@ -837,17 +836,17 @@ println(sums)                       // {餐饮=32.5, 交通=30.0, 购物=88.0}</
 <pre>// 给 String 加一个"喊话"方法
 fun String.shout(): String = this.uppercase() + "！！"
 
-println("你好".shout())          // 你好！！
-println("kotlin".shout())        // KOTLIN！！
+println("你好".shout()) // 你好！！
+println("kotlin".shout()) // KOTLIN！！
 
 // 给 Int 加一个"打折"方法
 fun Int.discount(rate: Double): Double = this * rate
 
-println(100.discount(0.8))       // 80.0
+println(100.discount(0.8)) // 80.0
 
 // 更实用的例子：金额格式化
 fun Double.toPrice(): String = "%.2f".format(this)
-println(54.1.toPrice())          // 54.10</pre>
+println(54.1.toPrice()) // 54.10</pre>
 </div>
 <p class="mb-2">语法的读法：<code class="inline">fun String.shout()</code>——"给 String 扩展一个叫 shout 的函数"。函数体里的 <code class="inline">this</code> 指"被作用的那个字符串本身"。写好之后，任何字符串后面直接 <code class="inline">.shout()</code>，就像它原生自带这个方法一样。IDE 的补全列表里它和官方方法并肩出现，完全无缝。</p>
 <p class="mb-2">它解决的真实痛点是：第三方类的功能不够用时，你不用继承、不用工具类（<code class="inline">PriceUtils.format(54.1)</code> 那种），直接"挂件式"补方法。安卓开发里有一批框架级好物本身就是扩展函数构成的：比如 Compose 里给界面元素"上妆"的 Modifier（第 51 章主角），链式调用的一环环全是扩展。可以这样理解扩展函数：<strong>它是"把常用操作变成 .方法"的包装术</strong>，学会了它。你写代码的语感会明显接近官方库的语感。</p>
@@ -859,18 +858,18 @@ println(54.1.toPrice())          // 54.10</pre>
 <pre>import kotlinx.coroutines.*
 
 fun main() = runBlocking {
-    launch {
-        delay(1000L)                    // 模拟"等 1 秒"（网络、读文件）
-        println("慢操作完成了")
-    }
-    println("这行先打印")               // 不会等上面那秒，立刻执行
-    delay(1500L)                        // 撑住 main，让协程有时间跑完
+ launch {
+ delay(1000L) // 模拟"等 1 秒"（网络、读文件）
+ println("慢操作完成了")
+ }
+ println("这行先打印") // 不会等上面那秒，立刻执行
+ delay(1500L) // 撑住 main，让协程有时间跑完
 }</pre>
 </div>
 <p class="mb-2">三个新面孔，各给一句话解释。<strong>suspend</strong>：能"暂停再恢复"的函数标记，本例里 delay 就是标准库的 suspend 函数——它暂停的是当前协程，不是整个程序。<strong>launch</strong>："开一个后台任务"，花括号里的东西去别处跑，本行立刻往下走。<strong>runBlocking</strong>："开一个能等协程的容器"，Playground 和 main 函数里用它兜底；真实安卓项目里你几乎不用它，界面有专门的容器（viewModelScope，第 53 章的主角）。现在只需要建立直觉：<strong>慢活儿丢进 launch，界面该干嘛干嘛，活儿干完自动回来</strong>。</p>
 <p class="mb-2">协程的完整故事（作用域、异常、Flow）是第 53 章的主菜，这里只上一盘开胃菜，够你在 Playground 里玩"同时跑三个 delay、看谁先打印"的小实验即可。与 Swift 对照：协程 ≈ Swift 的 async/await，suspend 函数 ≈ async 函数，launch ≈ Task。两边都是"用同步的写法干异步的活"，这是现代语言的又一次殊途同归，也是本章最后一次对照：你会发现每次对照，"现代语言进化论"都在加强。</p>
 <div class="info-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>小贴士：协程最容易记错的一件事</p>
+<p class="font-semibold">小贴士：协程最容易记错的一件事</p>
 <p class="mt-1">协程不等于多线程，它是"可暂停的任务"。大多数时候你不需要关心它跑在哪个线程上——框架已经替你安排好了（界面相关的活儿在主线程，网络文件在后台线程，第 53 章细说）。新手阶段对协程的过度关心，九成九是提前焦虑。</p>
 </div>
 <p class="mb-2">为什么"别挡界面"这件事如此重要，值得单独用语言特性来解决？给你一个画面：界面绘制由主线程负责，主线程每秒要画几十帧：就像翻页动画，翻得够快才流畅。如果主线程被一个"等 2 秒的网络请求"占住，动画就翻不动了：手指滑动没反应、按钮按下去没动静、系统弹"应用未响应"。用户体验里最致命的几种差评，全都指向这一个原因。所以现代语言纷纷把"让等待不挡路"做成语言级能力：Kotlin 的协程、Swift 的 async/await、Dart 的 async/await，出发点一模一样。</p>
@@ -904,7 +903,7 @@ fun main() = runBlocking {
 <p class="mb-2">版本号的具体语境再补一句：写这本书的时候，Kotlin 的稳定版是 2.4 系（2.4.x），上一章版本表里"Compose 1.13 要求 Kotlin 2.2"说的就是这条进化线上的门槛。你不需要追最新版<strong>语法主干在 2.x 全系通用</strong>，本章代码在 2.2、2.3、2.4 上跑起来没有差别。真正要盯版本号的场景只有一个：新项目向导生成的 Kotlin 版本和网上某篇教程不一致时，以你的向导为准，教程的思路照学，数字照抄反而容易错位。</p>
 <p class="mb-2">"语言版本升级学不学新东西"的判断方法也给你一套：看<strong>语法层面的新增</strong>（新关键字、新语法糖）和<strong>行为层面的收紧</strong>（编译器开始拒绝以前容忍的写法）。前者值得学，它们通常是效率工具；后者不用怕：报错信息会教你怎么改，而且改完的代码更稳。这正好呼应本章空安全的哲学：编译器变严，是它在替你的用户挡崩溃。</p>
 <div class="tip-box rounded-lg p-4 mb-3">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>一句话记牢</p>
+<p class="font-semibold">一句话记牢</p>
 <p class="mt-1">语言版本升级通常不动语法，动的是「编译器愿意容忍什么」。报错变多往往是变严格了，不是你写错了。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">编译报错暗号表：新手最常见的五条</h4>
@@ -932,13 +931,13 @@ fun main() = runBlocking {
 <div class="code-head"><span>KOTLIN · 迷你记账本（合练版）</span><span class="dots">···</span></div>
 <pre>data class Record(val amount: Double, val category: String, val note: String)
 
-fun Double.toPrice(): String = "%.2f".format(this)   // 扩展函数：格式化金额
+fun Double.toPrice(): String = "%.2f".format(this) // 扩展函数：格式化金额
 
 val records = listOf(
-    Record(12.5, "餐饮", "午餐"),
-    Record(30.0, "交通", "地铁"),
-    Record(88.0, "购物", "卫衣"),
-    Record(20.0, "餐饮", "奶茶")
+ Record(12.5, "餐饮", "午餐"),
+ Record(30.0, "交通", "地铁"),
+ Record(88.0, "购物", "卫衣"),
+ Record(20.0, "餐饮", "奶茶")
 )
 
 // 总支出（sum 连招）
@@ -947,9 +946,9 @@ println("总支出：${total.toPrice()} 元")
 
 // 分组统计（groupBy + mapValues 组合技）
 val byCategory = records.groupBy { it.category }
-    .mapValues { (_, group) -> group.sumOf { it.amount } }
+ .mapValues { (_, group) -> group.sumOf { it.amount } }
 byCategory.forEach { (category, sum) ->
-    println("$category：${sum.toPrice()} 元")
+ println("$category：${sum.toPrice()} 元")
 }
 
 // 大额消费（filter + sorted 连招）
@@ -958,15 +957,15 @@ big.forEach { println("大额：${it.amount.toPrice()} 元 - ${it.note}") }
 
 // 状态建模（sealed class + when 穷尽检查）
 sealed class Report {
-    object Empty : Report()
-    data class Summary(val count: Int, val total: Double) : Report()
+ object Empty : Report()
+ data class Summary(val count: Int, val total: Double) : Report()
 }
 
 val report = if (records.isEmpty()) Report.Empty
-             else Report.Summary(records.size, total)
+ else Report.Summary(records.size, total)
 when (report) {
-    is Report.Empty -> println("本周还没有记账")
-    is Report.Summary -> println("共 ${report.count} 笔，合计 ${report.total.toPrice()} 元")
+ is Report.Empty -> println("本周还没有记账")
+ is Report.Summary -> println("共 ${report.count} 笔，合计 ${report.total.toPrice()} 元")
 }</pre>
 </div>
 <p class="mb-2">三十行出头的代码里，val、字符串模板、data class、扩展函数、四招连招、组合技；sealed class、when 穷尽检查全部到场：这一章教的东西，一件不少。跑起来看看输出，然后用"三遍法"通读一遍：第一遍看骨架，第二遍跟 total 这条数据从 sum 到 report 的旅程，第三遍抠你不熟的写法。</p>
@@ -981,11 +980,11 @@ when (report) {
   <li><strong>问：协程要现在学深吗？看着有点吓人。</strong>答：不需要。本章你只需要三个直觉：慢活儿别挡界面、launch 开后台任务、suspend 函数能等。这三个直觉支撑你读完第 51、52 章；第 53 章做网络请求时会带着真实需求把协程学完整：那时它不再吓人，因为每个概念都有活儿等着它干。</li>
 </ul>
 <div class="practice-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-hands mr-2"></i>来动手：不装任何软件，先玩 10 分钟 Kotlin</p>
+<p class="font-semibold">来动手：不装任何软件，先玩 10 分钟 Kotlin</p>
 <p class="mt-1">浏览器打开 play.kotlinlang.org（Kotlin 官方在线演练场），把本章的每一段代码都粘进去跑一遍，改改数字和文字，看看输出怎么变。这个"先玩后学"的 10 分钟，会让你第 51 章上手时轻松一倍。</p>
 </div>
 <div class="chapter-summary">
-<p class="font-semibold mb-1"><i class="fas fa-flag-checkered mr-1"></i>本章小结</p>
+<p class="font-semibold mb-1">本章小结</p>
 <ul class="list-disc pl-6 mb-3 space-y-1">
   <li>val 优先，var 慎用；类型可自动推断，冒号后显式声明也行</li>
   <li>函数 = 打包的逻辑；字符串模板 $ 是招牌便利</li>
@@ -1003,19 +1002,19 @@ when (report) {
 <nav class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a href="di-si-shi-jiu-zhang.html" class="text-primary hover:underline">← 第四十九章：搭建开发环境——Android Studio与第一个项目</a><span></span><a href="di-wu-shi-yi-zhang.html" class="text-primary hover:underline">第五十一章：界面开发——Jetpack Compose入门 →</a></nav>
 
             </section>
- </div></main></div><!-- 快捷工具：浮动按钮组 --><div id="quick-tools" class="quick-tools no-print" aria-label="快捷工具"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><i class="fas fa-droplet" aria-hidden="true"></i></button><button id="quick-search" class="quick-tool-btn" title="搜索 (Ctrl+K)" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></button><button id="quick-theme" class="quick-tool-btn" title="切换深色/浅色" aria-label="切换主题"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i></button><button id="quick-print" class="quick-tool-btn" title="打印 / 导出PDF" aria-label="打印或导出"><i class="fas fa-print" aria-hidden="true"></i></button><button id="quick-toc" class="quick-tool-btn" title="目录" aria-label="打开目录"><i class="fas fa-list" aria-hidden="true"></i></button><button id="quick-tts" class="quick-tool-btn" title="语音朗读" aria-label="语音朗读"><i class="fas fa-headphones" aria-hidden="true"></i></button><button id="quick-shortcuts" class="quick-tool-btn" title="键盘快捷键 (?)" aria-label="快捷键面板"><i class="fas fa-keyboard" aria-hidden="true"></i></button><button id="quick-backup" class="quick-tool-btn" title="备份/恢复进度" aria-label="备份进度"><i class="fas fa-cloud-arrow-up" aria-hidden="true"></i></button></div><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><!-- 快捷键面板 --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="键盘快捷键"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><i class="fas fa-keyboard text-gray-400"></i><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">键盘快捷键</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">搜索内容</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">切换深色/浅色</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">语音朗读 播放/暂停</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">停止朗读</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">打开快捷键面板</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">字号调大 / 调小</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">打印 / 导出PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- 备份/恢复弹窗 --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="备份与恢复"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><i class="fas fa-cloud-arrow-up text-gray-400"></i><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">阅读进度备份与恢复</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">备份包含：已读章节、书签、阅读位置、字号偏好、健康自检结果。数据保存在浏览器本地，更换浏览器或清除缓存后丢失，建议定期导出备份。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-download"></i> 导出备份文件
- </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">下载一个 JSON 文件，保存到安全位置</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-upload"></i> 导入备份恢复
- </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">选择之前导出的备份文件恢复进度</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-trash"></i> 清除所有阅读数据
- </button><p class="text-xs text-red-400 mt-1 text-center">不可恢复！请先导出备份</p></div></div></div></div><!-- 阅读连续天数提示 --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),#7c3aed);color:var(--ink-inverse);border:none;"><i class="fas fa-fire" aria-hidden="true" style="color:var(--gold-2)"></i><span id="streak-toast-text">连续阅读第 X 天！</span></div><!-- 语音朗读控件栏 --><div id="tts-controls" class="tts-controls" role="region" aria-label="语音朗读控制" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="当前朗读章节">未开始</span><button class="tts-btn" id="tts-prev" title="上一段" aria-label="上一段"><i class="fas fa-step-backward"></i></button><button class="tts-btn play-btn" id="tts-play" title="播放/暂停" aria-label="播放朗读"><i class="fas fa-play"></i></button><button class="tts-btn" id="tts-next" title="下一段" aria-label="下一段"><i class="fas fa-step-forward"></i></button><button class="tts-btn" id="tts-speed-down" title="减速" aria-label="减速">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="加速" aria-label="加速">+</button><button class="tts-btn" id="tts-stop" title="停止朗读" aria-label="停止朗读"><i class="fas fa-times"></i></button></div><!-- 回到顶部按钮 --><button id="back-to-top" class="opacity-0 invisible" aria-label="回到顶部"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg><i class="fas fa-arrow-up" aria-hidden="true"></i></button><!-- 阅读位置恢复提示 --><div id="restore-toast" class="restore-position-toast" role="alert"><i class="fas fa-bookmark" aria-hidden="true"></i><span id="restore-toast-text">上次读到：...</span><button class="btn-restore" id="restore-btn">继续阅读</button><button class="btn-dismiss" id="dismiss-btn">忽略</button></div><!-- JS脚本 -->
+ </div></main></div><!-- 快捷工具：浮动按钮组 --><div id="quick-tools" class="quick-tools no-print" aria-label="快捷工具"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">透</span></button><button id="quick-search" class="quick-tool-btn" title="搜索 (Ctrl+K)" aria-label="搜索"><span aria-hidden="true">搜</span></button><button id="quick-theme" class="quick-tool-btn" title="切换深色/浅色" aria-label="切换主题"><span aria-hidden="true">夜</span></button><button id="quick-print" class="quick-tool-btn" title="打印 / 导出PDF" aria-label="打印或导出"><span aria-hidden="true">印</span></button><button id="quick-toc" class="quick-tool-btn" title="目录" aria-label="打开目录"><span aria-hidden="true">目</span></button><button id="quick-tts" class="quick-tool-btn" title="语音朗读" aria-label="语音朗读"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="键盘快捷键 (?)" aria-label="快捷键面板"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="备份/恢复进度" aria-label="备份进度"><span aria-hidden="true">备</span></button></div><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><!-- 快捷键面板 --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="键盘快捷键"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">键盘快捷键</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">搜索内容</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">切换深色/浅色</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">语音朗读 播放/暂停</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">停止朗读</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">打开快捷键面板</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">字号调大 / 调小</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">打印 / 导出PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- 备份/恢复弹窗 --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="备份与恢复"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">阅读进度备份与恢复</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">备份包含：已读章节、书签、阅读位置、字号偏好、健康自检结果。数据保存在浏览器本地，更换浏览器或清除缓存后丢失，建议定期导出备份。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 导出备份文件
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">下载一个 JSON 文件，保存到安全位置</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 导入备份恢复
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">选择之前导出的备份文件恢复进度</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 清除所有阅读数据
+ </button><p class="text-xs text-red-400 mt-1 text-center">不可恢复！请先导出备份</p></div></div></div></div><!-- 阅读连续天数提示 --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),#7c3aed);color:var(--ink-inverse);border:none;"><span id="streak-toast-text">连续阅读第 X 天！</span></div><!-- 语音朗读控件栏 --><div id="tts-controls" class="tts-controls" role="region" aria-label="语音朗读控制" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="当前朗读章节">未开始</span><button class="tts-btn" id="tts-prev" title="上一段" aria-label="上一段"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="播放/暂停" aria-label="播放朗读"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="下一段" aria-label="下一段"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="减速" aria-label="减速">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="加速" aria-label="加速">+</button><button class="tts-btn" id="tts-stop" title="停止朗读" aria-label="停止朗读"><span aria-hidden="true">×</span></button></div><!-- 回到顶部按钮 --><button id="back-to-top" class="opacity-0 invisible" aria-label="回到顶部"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- 阅读位置恢复提示 --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">上次读到：...</span><button class="btn-restore" id="restore-btn">继续阅读</button><button class="btn-dismiss" id="dismiss-btn">忽略</button></div><!-- JS脚本 -->
  
  <script>
-        /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
-        if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
-                    .catch(function (err) { console.warn('SW 注册失败：', err); });
-            });
-        }
-    </script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
 <script src="assets/book.js" defer></script>
 </body></html>

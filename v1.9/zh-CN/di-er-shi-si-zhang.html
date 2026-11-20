@@ -6,64 +6,63 @@
 
 
  <script id="liquid-glass-bundle">
-    /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
-     * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
-     * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
-     * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
-    (function () {
-      if (window.__liquidGlass) return;
-      window.__liquidGlass = true;
-      if (window.__SAFE) return;
-      var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
-      var reduce = window.matchMedia &&
-        window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
-      if (!ok || reduce) return;
-      var root = document.documentElement;
-      root.classList.add('lg-ready');
-      if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
-      window.__lgToggle = function (v) {
-        var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
-        root.classList.toggle('lg-off', off);
-        if (window.RS) RS.set('liquidGlass', !off);
-        return !off;
-      };
-      var sync = function () {
-        var btn = document.getElementById('quick-glass');
-        if (!btn) return;
-        var off = root.classList.contains('lg-off');
-        btn.classList.toggle('lg-btn-off', off);
-        btn.setAttribute('aria-pressed', String(!off));
-        var ic = btn.querySelector('i');
-        if (ic) ic.className = off ? 'fas fa-droplet-slash' : 'fas fa-droplet';
-      };
-      /* bundle 在 head 执行时 #quick-glass 尚未存在——绑定延迟到 DOMContentLoaded */
-      document.addEventListener('DOMContentLoaded', function () {
-        var btn = document.getElementById('quick-glass');
-        if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
-        sync();
-      });
-      try {
-        if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
-      } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
-    })();
-    </script>
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var sync = function () {
+ var btn = document.getElementById('quick-glass');
+ if (!btn) return;
+ var off = root.classList.contains('lg-off');
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ };
+ /* bundle 在 head 执行时 #quick-glass 尚未存在——绑定延迟到 DOMContentLoaded */
+ document.addEventListener('DOMContentLoaded', function () {
+ var btn = document.getElementById('quick-glass');
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ });
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
  
 
 
 <link rel="preload" href="../fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../fonts/fa/fa-solid-900.subset.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-er-shi-si-zhang.html">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "第二十四章：Root权限与BL锁深度解析", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-er-shi-si-zhang.html", "isPartOf": {"@type": "Book", "name": "你缺失的那门手机课", "inLanguage": "zh-CN"}}</script>
 <link rel="stylesheet" href="assets/book.css">
-</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">跳到主要内容</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="打开目录菜单" aria-expanded="false" aria-controls="sidebar"><i class="fas fa-bars"></i></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="返回首页"><span class="hidden sm:inline-flex w-8 h-8 rounded-md bg-gradient-to-br from-primary to-accent text-white items-center justify-center text-sm font-bold flex-shrink-0" aria-hidden="true"><i class="fas fa-mobile-screen"></i></span><h1 class="text-base md:text-lg font-bold text-primary truncate">搞定手机 · 数码必修课</h1></a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="主操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="从基础开始"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>开始学习</span></a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="搜索 (Ctrl+K)" aria-label="搜索内容"><i class="fas fa-search" aria-hidden="true"></i></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="字号调整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="缩小字体" aria-label="缩小字体">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="重置字号" aria-label="重置字号">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="放大字体" aria-label="放大字体">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="切换深色/浅色模式" aria-label="切换深色/浅色模式"><i class="fas fa-moon dark:hidden" aria-hidden="true"></i><i class="fas fa-sun hidden dark:inline" aria-hidden="true"></i></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="打印 / 导出PDF" aria-label="打印或导出PDF"><i class="fas fa-print" aria-hidden="true"></i></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="回到顶部"><i class="fas fa-arrow-up mr-1" aria-hidden="true"></i>顶部
- </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="文章目录"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2"><span aria-hidden="true" class="fas fa-list-ul text-primary" aria-hidden="true"></span>学习目录
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">跳到主要内容</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="打开目录菜单" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="返回首页"><span class="hidden sm:inline-flex w-8 h-8 rounded-md bg-gradient-to-br from-primary to-accent text-white items-center justify-center text-sm font-bold flex-shrink-0" aria-hidden="true"></span><h1 class="text-base md:text-lg font-bold text-primary truncate">搞定手机 · 数码必修课</h1></a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="主操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="从基础开始"><span>开始学习</span></a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="搜索 (Ctrl+K)" aria-label="搜索内容"><span aria-hidden="true">搜</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="字号调整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="缩小字体" aria-label="缩小字体">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="重置字号" aria-label="重置字号">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="放大字体" aria-label="放大字体">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="切换深色/浅色模式" aria-label="切换深色/浅色模式"><span class="dark:hidden" aria-hidden="true">夜</span><span class="hidden dark:inline" aria-hidden="true">昼</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="打印 / 导出PDF" aria-label="打印或导出PDF"><span aria-hidden="true">印</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="回到顶部">顶部
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="文章目录"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">学习目录
  </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 章</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="筛选章节..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="筛选章节"></div><ul class="space-y-1 text-sm" id="toc-list"><!-- 基础篇 -->
                     <li class="toc-parent" data-group="ji-chu">
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">一、基础篇（第0-7章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起基础篇" data-target="child-ji-chu">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -85,7 +84,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">二、软件篇（第8-14章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起软件篇" data-target="child-ruan-jian">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -104,7 +103,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">三、进阶篇（第15-20章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起进阶篇" data-target="child-jin-jie">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -123,7 +122,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">四、超越篇（第21-26章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起超越篇" data-target="child-chao-yue">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -141,7 +140,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">五、实战篇（第27-32章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起实战篇" data-target="child-shi-zhan">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -158,7 +157,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">六、展望篇与车联篇（第33-34章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起展望篇" data-target="child-zhan-wang">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -171,7 +170,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">儿童与手机专题（第35-36章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起儿童与手机专题" data-target="child-er-tong-pian">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -184,7 +183,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">七、AI编程实战篇（第37-47章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起AI编程实战篇" data-target="child-ai-biancheng">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -206,7 +205,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">八、安卓开发实战篇（第48-58章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起安卓开发实战篇" data-target="child-an-zhuo-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -228,7 +227,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">九、iOS开发实战篇（第59-69章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起iOS开发实战篇" data-target="child-ios-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -250,7 +249,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-qi-shi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十、鸿蒙开发实战篇（第70-80章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起鸿蒙开发实战篇" data-target="child-hongmeng-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-hongmeng-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -272,7 +271,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十一、手机与可穿戴篇（第81-85章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十一、手机与可穿戴篇（第81-85章）目录开关" data-target="child-ke-chuan-she-bei">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ke-chuan-she-bei" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -288,7 +287,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-shi-liu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十二、旅行与手机篇（第86-90章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十二、旅行与手机篇（第86-90章）目录开关" data-target="child-lv-xing">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-lv-xing" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -304,7 +303,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-jiu-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十三、手机与健康篇（第91-95章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十三、手机与健康篇（第91-95章）目录开关" data-target="child-jian-kang">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-jian-kang" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -320,7 +319,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-jiu-shi-liu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十四、AI短视频创作篇（第96-100章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十四、AI短视频创作篇（第96-100章）目录开关" data-target="child-ai-duan-shi-pin">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ai-duan-shi-pin" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -336,7 +335,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-yi-bai-ling-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十五、竖屏短剧入门篇（第101-105章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十五、竖屏短剧入门篇（第101-105章）目录开关" data-target="child-shu-ping-duan-ju">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-shu-ping-duan-ju" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -352,7 +351,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十六、附录</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起附录" data-target="child-fu-lu">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -367,7 +366,7 @@
                             <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>附录H：版本路线图</a></li>
                         </ul>
                     </li>
-</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索"><div class="search-panel"><div class="search-input-wrapper"><i class="fas fa-search text-gray-400"></i><input type="text" id="search-input" placeholder="搜索内容..." autocomplete="off" aria-label="搜索关键词"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭搜索">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">输入关键词开始搜索</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 顶部面包屑 --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">首页</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">数码必修课 · v1.9</span></nav>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">搜</span><input type="text" id="search-input" placeholder="搜索内容..." autocomplete="off" aria-label="搜索关键词"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭搜索">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">输入关键词开始搜索</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 顶部面包屑 --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">首页</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">数码必修课 · v1.9</span></nav>
 <div id="di-er-shi-si-zhang" class="mb-10 content-section">
 <h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">第二十四章：Root权限与BL锁深度解析</h3>
 <p class="chapter-intro mb-4">这一章是对第二十章内容的深入扩展，适合那些想要真正理解手机底层机制、甚至尝试刷机的用户。请注意，这些操作有一定风险，请谨慎行事。</p>
@@ -442,41 +441,41 @@
 <p class="mb-2">为了更直观地理解 BL 锁的利弊，我们用一个对比表来展示它在 5 个核心维度上的差异：</p>
 <div class="overflow-x-auto">
 <table class="w-full border-collapse border border-gray-300 dark:border-gray-600 text-sm">
-                            <thead>
-                                <tr class="bg-gray-100 dark:bg-gray-800">
-                                    <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">核心作用</th>
-                                    <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">锁定状态（默认）</th>
-                                    <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">解锁后状态</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">系统安全</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">防止刷入未签名的非官方系统，保护系统完整性与底层安全<br><span class="text-emerald-600 dark:text-emerald-400">✅ 高安全：仅加载官方签名镜像，有效抵御恶意固件篡改</span></td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><span class="text-amber-600 dark:text-amber-400">⚠️ 安全降低：允许刷入第三方 ROM，系统完整性校验机制失效，恶意软件若获取 Root 权限可深度篡改系统</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">系统稳定性</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">确保手机运行经过厂商测试和优化的官方系统，保障稳定流畅<br><span class="text-emerald-600 dark:text-emerald-400">✅ 稳定：使用官方固件，功能完整，OTA 升级可靠</span></td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><span class="text-amber-600 dark:text-amber-400">⚠️ 风险增加：第三方 ROM 可能存在兼容性问题，可能导致系统崩溃、变砖、硬件功能异常（如摄像头、快充），OTA 更新可能失败</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">保修权益</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">厂商通过锁定 BL 提供稳定的官方系统，以提供保修服务<br><span class="text-emerald-600 dark:text-emerald-400">✅ 保修有效：享受官方免费保修服务（非人为损坏）</span></td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><span class="text-amber-600 dark:text-amber-400">⚠️ 保修失效：绝大多数厂商将解锁 BL 视为主动放弃保修的行为，即使重新上锁，也可能被检测出历史解锁记录而拒保</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">数据安全</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">解锁过程通常强制清除数据，防止旧数据在新系统环境下被恶意利用<br><span class="text-emerald-600 dark:text-emerald-400">✅ 数据安全：日常使用中，BL 锁限制了恶意程序对系统分区的修改能力</span></td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><span class="text-amber-600 dark:text-amber-400">⚠️ 数据风险：解锁时会强制清除所有用户数据；若解锁后未正确加密，数据存储可能不安全；丢失后更易被刷机提取数据</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">功能限制</td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">确保依赖安全环境的功能（如支付、银行 App）正常运行<br><span class="text-emerald-600 dark:text-emerald-400">✅ 功能完整：所有官方功能均可正常使用</span></td>
-                                    <td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><span class="text-amber-600 dark:text-amber-400">⚠️ 功能受限：部分安全敏感应用（如 Google Pay、银行 App）可能因检测到 BL 解锁状态而拒绝运行；DRM 服务可能降级，影响高清视频播放</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
+ <thead>
+ <tr class="bg-gray-100 dark:bg-gray-800">
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">核心作用</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">锁定状态（默认）</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">解锁后状态</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">系统安全</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">防止刷入未签名的非官方系统，保护系统完整性与底层安全<br><span class="text-emerald-600 dark:text-emerald-400">✅ 高安全：仅加载官方签名镜像，有效抵御恶意固件篡改</span></td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><span class="text-amber-600 dark:text-amber-400">⚠️ 安全降低：允许刷入第三方 ROM，系统完整性校验机制失效，恶意软件若获取 Root 权限可深度篡改系统</span></td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">系统稳定性</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">确保手机运行经过厂商测试和优化的官方系统，保障稳定流畅<br><span class="text-emerald-600 dark:text-emerald-400">✅ 稳定：使用官方固件，功能完整，OTA 升级可靠</span></td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><span class="text-amber-600 dark:text-amber-400">⚠️ 风险增加：第三方 ROM 可能存在兼容性问题，可能导致系统崩溃、变砖、硬件功能异常（如摄像头、快充），OTA 更新可能失败</span></td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">保修权益</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">厂商通过锁定 BL 提供稳定的官方系统，以提供保修服务<br><span class="text-emerald-600 dark:text-emerald-400">✅ 保修有效：享受官方免费保修服务（非人为损坏）</span></td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><span class="text-amber-600 dark:text-amber-400">⚠️ 保修失效：绝大多数厂商将解锁 BL 视为主动放弃保修的行为，即使重新上锁，也可能被检测出历史解锁记录而拒保</span></td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">数据安全</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">解锁过程通常强制清除数据，防止旧数据在新系统环境下被恶意利用<br><span class="text-emerald-600 dark:text-emerald-400">✅ 数据安全：日常使用中，BL 锁限制了恶意程序对系统分区的修改能力</span></td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><span class="text-amber-600 dark:text-amber-400">⚠️ 数据风险：解锁时会强制清除所有用户数据；若解锁后未正确加密，数据存储可能不安全；丢失后更易被刷机提取数据</span></td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">功能限制</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">确保依赖安全环境的功能（如支付、银行 App）正常运行<br><span class="text-emerald-600 dark:text-emerald-400">✅ 功能完整：所有官方功能均可正常使用</span></td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2"><span class="text-amber-600 dark:text-amber-400">⚠️ 功能受限：部分安全敏感应用（如 Google Pay、银行 App）可能因检测到 BL 解锁状态而拒绝运行；DRM 服务可能降级，影响高清视频播放</span></td>
+ </tr>
+ </tbody>
+ </table>
 </div>
 <p class="mb-2">表格是静态的账，还有几笔动态的账要一起算。2026年的现实是：解锁与Root的收益在缩小，代价在变大。最直接的一笔，支付、银行、企业办公、部分流媒体和游戏，会通过完整性检测拒绝在解锁设备上运行。动手前拿张纸列一列你每天必须用的App，有几个在名单上，答案就清楚了一半。</p>
 <p class="mb-2">安全这笔账是长期的：解锁引导加载程序后，设备对物理接触的防护变弱，手机落到别人手里，刷机提取数据的门槛比锁定状态低得多。钱包这笔账也一样：多数厂商对解锁过的设备有单独的保修政策，二手价普遍要打折，打算以后出手的，第二十五章会讲出售前怎么处理。而另一边，Google的设备完整性认证正往硬件证明走，Play Integrity的最高一级要硬件密钥背书（第二十章细讲），纯软件层面的伪装空间被一点点挤掉，指望隐藏方案长期打擦边球，越来越不现实。</p>
@@ -494,7 +493,7 @@
 <p class="mb-2">简化理解成三档：设备来源正规、系统未被改动，给最宽的通行；有改动但能用软件层面的说辞圆过去，给有限的通行；最严的一档要求硬件密钥背书，2025年起，强完整性已经往这条路上走，纯软件伪装的空间被一点点挤掉。</p>
 <p class="mb-2">这解释了本章反复出现的一个判断：隐藏手段能解决一部分"误伤"，但解决不了硬件级的"较真"。把这一点放在决策最前面，后面很多选择会变得简单，你不是在选"藏得好不好"。你是在选"哪些App你愿意放弃"。</p>
 <div class="tip-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2" aria-hidden="true"></i>小贴士</p>
+<p class="font-semibold">小贴士</p>
 <p class="mt-1">解锁BL本身不会让手机变快、变省电、信号变好。它只是把"你能不能动系统"这张许可证发给你——至于拿证之后做什么、值不值，取决于你后面要做的事。</p>
 </div>
 <h5 class="font-semibold mt-3 mb-1">为什么厂商要锁BL：把他们的立场也听一遍</h5>
@@ -537,7 +536,7 @@
 <p class="mb-2">然后按"先物理、后软件"的顺序排查：换一根靠谱的数据线、换一个USB口、重装驱动，再试一次。多数"工具识别不到设备"的情况，在这一步就解决了。</p>
 <p class="mb-2">还是不行就去官方渠道问。解锁流程卡住的设备，大多还处在"能进fastboot"的状态，离变砖很远，别自己吓自己，更别病急乱投医去找第三方工具。</p>
 <div class="tip-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2" aria-hidden="true"></i>小贴士</p>
+<p class="font-semibold">小贴士</p>
 <p class="mt-1">解锁当天准备一张纸或者一个备忘录：记录你用的工具版本、每一步的屏幕提示、报错信息。将来万一要救砖、要回原厂、要问社区，这些记录比你的记忆可靠得多。</p>
 </div>
 <h5 class="font-semibold mt-3 mb-1">解锁与账号安全：一根绳上的两个蚂蚱</h5>
@@ -587,7 +586,7 @@
 <p class="mb-2">动手之前，先花一个小时做侦察：去你的机型社区（XDA的机型版块、国内的酷安、官方社区）把置顶帖读一遍，确认三件事：这台机型能不能解锁；社区主流的Root路线是哪条；出了问题有没有现成的救砖方案。</p>
 <p class="mb-2">侦察的结果直接决定你下一层的决策：资料丰富、救砖方案成熟，试错成本就低；一个冷门机型、没人维护、教程停在几年前。那你面对的不是"折腾"，是"探险"。探险不是不行，但要用探险的资源配置来做，至少备一台能正常用的设备。</p>
 <div class="practice-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-hand-pointer mr-2"></i>来动手</p>
+<p class="font-semibold">来动手</p>
 <p class="mt-1">今天只做侦察不动手：找到你机型的社区版块，抄下三个信息，机型代号、社区主流Root路线、最近一次"翻车后成功救回"的帖子链接。把这三样存进备忘录，做完这一步，你对"我该不该继续"就有一半答案了。</p>
 </div>
 <h5 class="font-semibold mt-3 mb-1">免Root先修课：ADB能帮你做到哪一步</h5>
@@ -650,11 +649,11 @@
 </ul>
 <p class="mb-2">顺便说一句救砖的事：三星的线刷工具链相当成熟，软砖大多救得回来。但救回来的是机器，不是Knox状态，"砖能救，身份救不回"，这一句话足够概括三星的解锁账。</p>
 <div class="warning-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-exclamation-triangle mr-2"></i>三思而后行</p>
+<p class="font-semibold">三思而后行</p>
 <p class="mt-1">三星的 Knox 熔断是<strong>不可逆</strong>的，一旦触发就回不去原厂状态。如果你只是想用一些原本需要 Root 的功能，建议先查查有没有不需要 Root 的替代方案——很多原本要Root才能做的事，现在用系统自带的自动化、开发者选项、ADB授权（见第二十章）或Termux（见第二十章附）就能做到，不必动引导加载程序。</p>
 </div>
 <div class="danger-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-skull-crossbones mr-2"></i>重要警告</p>
+<p class="font-semibold">重要警告</p>
 <p class="mt-1">刷机有风险，操作需谨慎。可能导致：</p>
 <ul class="list-disc pl-6 mt-1 space-y-1">
   <li>手机变砖（无法开机）</li>
@@ -665,11 +664,11 @@
 <p class="mt-1">刷机前务必做好完整备份，仔细阅读教程，确认机型和版本匹配。</p>
 </div>
 <div class="tip-box rounded-lg p-4 mb-3">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>一句话记牢</p>
+<p class="font-semibold">一句话记牢</p>
 <p class="mt-1">动手前问一句：我要的这个功能，值不值得让支付、银行和保修一起承担风险？</p>
 </div>
 <div class="info-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-info-circle mr-2"></i>推荐资源</p>
+<p class="font-semibold">推荐资源</p>
 <ul class="list-disc pl-6 mt-1 space-y-1">
   <li><strong>XDA Developers</strong>：全球最大的安卓开发者社区，有丰富的刷机教程和ROM资源。</li>
   <li><strong>酷安</strong>：国内知名的数码社区，有很多中文教程和讨论。</li>
@@ -678,11 +677,11 @@
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">六、常见问题解答（Q&amp; A）</h4>
 <div class="qa-item mt-3">
-<p class="font-semibold mb-1"><i class="fas fa-question-circle text-primary mr-1"></i>Q1：解锁BL锁后还能恢复吗？</p>
+<p class="font-semibold mb-1">Q1：解锁BL锁后还能恢复吗？</p>
 <p class="mb-2 pl-6"><strong>A：</strong>可以重新上锁。通常需要刷入官方完整的线刷包，并使用特定的刷机脚本（如小米的 <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">flash_all_lock.bat</code>）即可重新上锁。但注意，重新上锁后，因解锁而触发的一些安全熔断（如三星的Knox）可能无法逆转。</p>
 </div>
 <div class="qa-item mt-3">
-<p class="font-semibold mb-1"><i class="fas fa-question-circle text-primary mr-1"></i>Q2：解锁后如何Root？</p>
+<p class="font-semibold mb-1">Q2：解锁后如何Root？</p>
 <p class="mb-2 pl-6"><strong>A：</strong>解锁BL锁只是第一步。Root通常需要：</p>
 <ol class="list-decimal pl-12 mb-2 space-y-1">
   <li>刷入自定义Recovery（如TWRP）。</li>
@@ -690,35 +689,35 @@
 </ol>
 </div>
 <div class="qa-item mt-3">
-<p class="font-semibold mb-1"><i class="fas fa-question-circle text-primary mr-1"></i>Q3：Root了手机会更容易中毒吗？</p>
+<p class="font-semibold mb-1">Q3：Root了手机会更容易中毒吗？</p>
 <p class="mb-2 pl-6"><strong>A：</strong>权限本身不产生病毒，但它改变了"出事之后的破坏半径"：普通App出错，影响的是自己那点地盘；拿到Root授权的恶意程序，碰的是整个系统。所以问题不是"会不会中毒"，而是"授权纪律好不好"。管好授权弹窗与应用来源，风险可控；见弹窗就允许，Root就是放大器。</p>
 </div>
 <div class="qa-item mt-3">
-<p class="font-semibold mb-1"><i class="fas fa-question-circle text-primary mr-1"></i>Q4：解锁BL后银行App闪退，还有救吗？</p>
+<p class="font-semibold mb-1">Q4：解锁BL后银行App闪退，还有救吗？</p>
 <p class="mb-2 pl-6"><strong>A：</strong>先把DenyList和"隐藏Magisk应用"都配置好，一部分App这样就够用了。还在闹的，要看它是不是强完整性级别的检测——那一级要求硬件密钥背书，软件伪装基本无解（SafetyNet已于2025年初关停，现在是Play Integrity的时代）。务实的选择只有两个：留一台锁定状态的设备专门处理支付与银行，或者接受这台设备不装那类App。</p>
 </div>
 <div class="qa-item mt-3">
-<p class="font-semibold mb-1"><i class="fas fa-question-circle text-primary mr-1"></i>Q5：Root、解锁BL、刷机，到底是不是一回事？</p>
+<p class="font-semibold mb-1">Q5：Root、解锁BL、刷机，到底是不是一回事？</p>
 <p class="mb-2 pl-6"><strong>A：</strong>不是。第三节专门辨析过：解锁BL是拿"改装资格"，Root是改装后到手的"最高权限"，刷机是整套更换系统。三件事各有各的代价，别把一份需求做成了三份手术。</p>
 </div>
 <div class="qa-item mt-3">
-<p class="font-semibold mb-1"><i class="fas fa-question-circle text-primary mr-1"></i>Q6：解锁要清空数据，我把东西都传云盘行不行？</p>
+<p class="font-semibold mb-1">Q6：解锁要清空数据，我把东西都传云盘行不行？</p>
 <p class="mb-2 pl-6"><strong>A：</strong>云盘解决的是"文件"，解决不了"应用与状态"：聊天记录、App登录态、游戏进度，多数不在普通云盘里。正确姿势是组合拳：文件上云盘；聊天记录走各自的官方迁移工具；应用与数据用换机克隆或Root备份工具（见后面场景三）。</p>
 </div>
 <div class="qa-item mt-3">
-<p class="font-semibold mb-1"><i class="fas fa-question-circle text-primary mr-1"></i>Q7：手机变砖了怎么办？"砖"分几种？</p>
+<p class="font-semibold mb-1">Q7：手机变砖了怎么办？"砖"分几种？</p>
 <p class="mb-2 pl-6"><strong>A：</strong>分两种。软砖：开不了机，但能进fastboot、Recovery或下载模式——用官方线刷包整包救回，绝大多数都有救。硬砖：连下载模式都进不去、电脑完全不识别——这基本超出普通用户的能力范围，走售后。降低变砖概率的老三样：电量充足、镜像版本匹配、教程与机型对应。</p>
 </div>
 <div class="qa-item mt-3">
-<p class="font-semibold mb-1"><i class="fas fa-question-circle text-primary mr-1"></i>Q8：Magisk更新了要跟着动吗？模块失灵怎么办？</p>
+<p class="font-semibold mb-1">Q8：Magisk更新了要跟着动吗？模块失灵怎么办？</p>
 <p class="mb-2 pl-6"><strong>A：</strong>Magisk本体的常规更新，App内点一下就行，一般不需要重新修补镜像（涉及大版本变化时，按它的官方说明来）。模块失灵先查兼容性——系统大版本更新之后最容易出问题。处理顺序：停用模块，确认系统本身正常，再找替代或等作者更新。别在系统刚更新完、模块还没适配的时间窗口里硬折腾。</p>
 </div>
 <div class="qa-item mt-3">
-<p class="font-semibold mb-1"><i class="fas fa-question-circle text-primary mr-1"></i>Q9：Root之后，系统OTA更新还能正常收吗？</p>
+<p class="font-semibold mb-1">Q9：Root之后，系统OTA更新还能正常收吗？</p>
 <p class="mb-2 pl-6"><strong>A：</strong>大多数情况会变复杂：Root环境可能拦住OTA，装完更新Root还可能失效。常见路径是：卸载模块，在Magisk里还原boot，装OTA，再用新系统的boot镜像重新修补刷回（不同方案细节不同，以Magisk官方文档为准）。嫌麻烦的人，这一条本身就是最实的劝退理由。</p>
 </div>
 <div class="qa-item mt-3">
-<p class="font-semibold mb-1"><i class="fas fa-question-circle text-primary mr-1"></i>Q10：解锁或Root，影响卖二手吗？</p>
+<p class="font-semibold mb-1">Q10：解锁或Root，影响卖二手吗？</p>
 <p class="mb-2 pl-6"><strong>A：</strong>影响。验机时解锁状态是常规检查项，解锁过的机器普遍要压价，三星的Knox熔断更是明牌。打算出手的，出手前怎么处理、怎么如实描述，第二十五章会讲出售前怎么处理。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">七、各品牌解锁流程详解：谁友好，谁已关门</h4>
@@ -756,14 +755,14 @@
 <p class="mb-2">先讲个常见的场景。有位读者深夜发来一句话："怎么把那个卸不掉的预装App干掉？"这是Root需求里最典型的一种。我先反问了一句："ADB卸载试过吗？"十分钟后他回了个"好了"。所以这一节的任务，是在你伸手要钥匙之前，先看看哪些门其实没锁。</p>
 <div class="overflow-x-auto">
 <table class="w-full border-collapse border border-gray-300 text-sm mb-3">
-  <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">你的需求</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Root的玩法</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">免Root的替代</th></tr></thead>
-  <tbody>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">卸载预装App</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Root卸载器连根拔</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ADB卸载（见第二十章），覆盖大部分目标</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">全局屏蔽广告</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Root改系统hosts</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">本地VPN类过滤App、DNS过滤</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">冻结流氓后台</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Root冻结工具</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ADB冻结或系统自带的后台管控</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">完整备份应用数据</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Root备份工具</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">厂商换机克隆、各App官方迁移</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">高级自动化</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Tasker的Root动作</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Tasker加ADB授权（见第二十章）</td></tr>
-  </tbody>
+ <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">你的需求</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Root的玩法</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">免Root的替代</th></tr></thead>
+ <tbody>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">卸载预装App</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Root卸载器连根拔</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ADB卸载（见第二十章），覆盖大部分目标</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">全局屏蔽广告</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Root改系统hosts</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">本地VPN类过滤App、DNS过滤</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">冻结流氓后台</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Root冻结工具</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ADB冻结或系统自带的后台管控</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">完整备份应用数据</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Root备份工具</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">厂商换机克隆、各App官方迁移</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">高级自动化</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Tasker的Root动作</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Tasker加ADB授权（见第二十章）</td></tr>
+ </tbody>
 </table>
 </div>
 <p class="mb-2">表格怎么用？从上往下逐行试"免Root的替代"那一列，用两周，再盘点还剩下什么。很多人做完发现，真正需要Root的理由只剩一两条，那就要掂量：为一两条需求，值不值得付出解锁清数据、保修受损、部分App罢工的整套代价？</p>
@@ -775,7 +774,7 @@
   <li><strong>"我想玩、想学"</strong>：这是唯一无可指摘的理由——为乐趣折腾本身成立，前提是你承担得起代价，并且手里有备用设备。</li>
 </ul>
 <div class="tip-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2" aria-hidden="true"></i>小贴士</p>
+<p class="font-semibold">小贴士</p>
 <p class="mt-1">动手前把你的头号理由写在备忘录第一行，再设一个一周后的提醒。一周后回看那行字：还想做，就是真需求；不想做了，这一周帮你省下的，是一整台手机的折腾成本。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">九、Root之后的管理：Magisk的使用与模块推荐</h4>
@@ -808,7 +807,7 @@
 <p class="mb-2">还有一笔账平时没人提：Root环境下，应用之间的"隔离墙"变矮了。带授权的备份工具能读取所有应用数据，这是能力；但反过来，任何拿到授权的东西都读得到。能力的另一面，就是暴露面。</p>
 <p class="mb-2">落地成一条原则：授权最小化。只给真正需要的工具授权，用完可以撤销；家人共用的设备、办公室公用的设备，干脆不要Root——你管不住每一双碰它的手，就别把所有房间的大门都敞开。</p>
 <div class="warning-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-exclamation-triangle mr-2"></i>避坑提醒</p>
+<p class="font-semibold">避坑提醒</p>
 <p class="mt-1">最危险的心态是"我Root了，所以什么都能装"。恰好相反：你放弃了系统的默认保护，装任何东西之前都要多问一句"我信得过它吗"。拿不准的，先放到没有Root的设备上试，别拿有Root的主力机当小白鼠。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">十、卸载Root的方法：后悔药怎么吃</h4>
@@ -830,12 +829,12 @@
 </ul>
 <div class="overflow-x-auto">
 <table class="w-full border-collapse border border-gray-300 text-sm mb-3">
-  <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">ROM</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">风格取向</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">自定义程度</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">适合谁</th></tr></thead>
-  <tbody>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">LineageOS</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">接近原生，克制</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">适中，选项够用</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">想要"接近原生加稳定"的人</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">crDroid</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">原生底子加大自定义</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">高</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">喜欢调细节的玩家</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Evolution X</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pixel风体验</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">高</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">喜欢Pixel观感的人</td></tr>
-  </tbody>
+ <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">ROM</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">风格取向</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">自定义程度</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">适合谁</th></tr></thead>
+ <tbody>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">LineageOS</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">接近原生，克制</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">适中，选项够用</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">想要"接近原生加稳定"的人</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">crDroid</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">原生底子加大自定义</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">高</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">喜欢调细节的玩家</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Evolution X</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pixel风体验</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">高</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">喜欢Pixel观感的人</td></tr>
+ </tbody>
 </table>
 </div>
 <p class="mb-2">名字之外还有许多项目在起落，判断标准统一：看维护者是否活跃、看最近更新时间、看机型版块的风评。名字响不响不重要，"现在还有人管"才重要。</p>
@@ -982,25 +981,25 @@
 </ol>
 <p class="mb-2">这份清单的本质，是把"出了事再补救"换成"每月小步维护"。折腾设备与养植物差不多，定期看一眼，比出事再抢救有效得多，心情也好得多。</p>
 <div class="practice-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-hand-pointer mr-2"></i>来动手</p>
+<p class="font-semibold">来动手</p>
 <p class="mt-1">给你留个周末作业：挑一台你敢折腾的设备（最好是退役机），完成三件事，空手进一次fastboot再正常退出；空手进一次Recovery再正常退出；把本章的"准备清单"抄成你自己的版本，补上你的账号、机型代号与备份位置。做完这三件事，你就完成了从"读者"到"准玩家"的过渡：后面的每一步，都会比你想象中稳。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">十九、故障速查表：症状、可能原因与第一动作</h4>
 <p class="mb-2">这一节把本章散落各处的故障处理收进一张表。真出事的时候没工夫读长文，照着"第一动作"那一列走，多数局面都能稳住。</p>
 <div class="overflow-x-auto">
 <table class="w-full border-collapse border border-gray-300 text-sm mb-3">
-  <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">症状</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">可能的原因</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">第一动作</th></tr></thead>
-  <tbody>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">解锁工具识别不到设备</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">多半是数据线、接口或驱动的问题，不是手机坏了</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">换一根靠谱的数据线、换一个USB口、重装官方驱动，再重连一次</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">刷入补丁后Root没生效</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">boot镜像与当前系统版本不匹配</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">核对系统版本号，重新提取与版本一致的镜像，修补后再刷入</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">开机卡在开机画面很久</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">新系统首次启动在重建数据，属正常现象</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">再等几分钟到十几分钟，不要长按电源强制重启</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">装完模块开不了机</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">模块冲突、不兼容或模块本身有问题</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">开机时按住音量下进安全模式，进去删掉新装的模块</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">银行或支付App突然罢工</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">环境变化触发了完整性检测</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">检查DenyList与隐藏配置；若是硬件级强检测，接受现实别硬刚</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">卡在开机画面反复重启</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">刷入的内容与机型或分区不匹配</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">进fastboot，用官方线刷包整包救回</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OTA更新失败或入口消失</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Root环境拦住了更新</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">走"还原boot、更新、重新修补"的流程，参照进阶一节</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">电脑完全不识别设备</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">可能是硬砖</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">联系官方售后，别自行拆解，也别反复通电试机</td></tr>
-    <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">NFC、指纹等功能突然异常</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">模块或精简操作误伤了系统组件</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">回想最近动过什么，解冻、停用或回滚对应的改动</td></tr>
-  </tbody>
+ <thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">症状</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">可能的原因</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">第一动作</th></tr></thead>
+ <tbody>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">解锁工具识别不到设备</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">多半是数据线、接口或驱动的问题，不是手机坏了</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">换一根靠谱的数据线、换一个USB口、重装官方驱动，再重连一次</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">刷入补丁后Root没生效</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">boot镜像与当前系统版本不匹配</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">核对系统版本号，重新提取与版本一致的镜像，修补后再刷入</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">开机卡在开机画面很久</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">新系统首次启动在重建数据，属正常现象</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">再等几分钟到十几分钟，不要长按电源强制重启</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">装完模块开不了机</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">模块冲突、不兼容或模块本身有问题</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">开机时按住音量下进安全模式，进去删掉新装的模块</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">银行或支付App突然罢工</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">环境变化触发了完整性检测</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">检查DenyList与隐藏配置；若是硬件级强检测，接受现实别硬刚</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">卡在开机画面反复重启</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">刷入的内容与机型或分区不匹配</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">进fastboot，用官方线刷包整包救回</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OTA更新失败或入口消失</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Root环境拦住了更新</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">走"还原boot、更新、重新修补"的流程，参照进阶一节</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">电脑完全不识别设备</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">可能是硬砖</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">联系官方售后，别自行拆解，也别反复通电试机</td></tr>
+ <tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">NFC、指纹等功能突然异常</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">模块或精简操作误伤了系统组件</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">回想最近动过什么，解冻、停用或回滚对应的改动</td></tr>
+ </tbody>
 </table>
 </div>
 <p class="mb-2">表格覆盖不了的情况，带上截图、版本号和操作记录去机型社区发帖。把信息给全，你就已经帮了那个愿意帮你的人一半。</p>
@@ -1029,11 +1028,11 @@
 <p class="mb-2">到这里，这一章的正文就全部讲完了。回头看一眼目录会发现一条暗线：前半章讲"怎么解锁、怎么Root"，后半章反复在讲"要不要"。这不是结构松散，技术操作只占折腾的一小部分，判断与准备才是大头。把判断做在前面的读者，几乎不会翻车；跳过判断直奔操作的读者，社区里每天都有他们的新帖。愿你属于前一种。</p>
 <p class="mb-2">另外提醒一句时效性：本章里所有政策类的信息，各品牌的解锁口径、完整性检测规则的松紧、ROM项目的兴衰，都会随时间变化，读到的当下请以官方说明为准。但原理不会过时：启动链、签名验证、权限模型、完整性检测的分层，这些是理解一切新政策的底座。工具会老，思维方式不会。</p>
 <div class="tip-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2" aria-hidden="true"></i>小贴士</p>
+<p class="font-semibold">小贴士</p>
 <p class="mt-1">收藏本章的正确姿势：把三张表格（锁定与解锁对比、免Root替代、故障速查）单独截图存进相册的"工具"文件夹，把"准备清单"和"一页纸"抄进备忘录。下次无论是自己动手还是帮朋友参谋，打开相册就能用：这一章的价值，本来就该在动手的那一刻兑现。</p>
 </div>
 <div class="quote-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-quote-left mr-2"></i>一句话记牢</p>
+<p class="font-semibold">一句话记牢</p>
 <p class="mt-1">折腾一圈，你真正买到的是"选择权"，知道每条路的代价之后，还能安心用回原厂状态的人，才是这条路上走得最远的人。</p>
 </div>
 
@@ -1043,19 +1042,19 @@
 <nav class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a href="di-er-shi-san-zhang-github.html" class="text-primary hover:underline">← 附：GitHub入门指南</a><span></span><a href="di-er-shi-wu-zhang.html" class="text-primary hover:underline">第二十五章：旧手机卖出去之前，先做这几件事 →</a></nav>
 
             </section>
- </div></main></div><!-- 快捷工具：浮动按钮组 --><div id="quick-tools" class="quick-tools no-print" aria-label="快捷工具"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><i class="fas fa-droplet" aria-hidden="true"></i></button><button id="quick-search" class="quick-tool-btn" title="搜索 (Ctrl+K)" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></button><button id="quick-theme" class="quick-tool-btn" title="切换深色/浅色" aria-label="切换主题"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i></button><button id="quick-print" class="quick-tool-btn" title="打印 / 导出PDF" aria-label="打印或导出"><i class="fas fa-print" aria-hidden="true"></i></button><button id="quick-toc" class="quick-tool-btn" title="目录" aria-label="打开目录"><i class="fas fa-list" aria-hidden="true"></i></button><button id="quick-tts" class="quick-tool-btn" title="语音朗读" aria-label="语音朗读"><i class="fas fa-headphones" aria-hidden="true"></i></button><button id="quick-shortcuts" class="quick-tool-btn" title="键盘快捷键 (?)" aria-label="快捷键面板"><i class="fas fa-keyboard" aria-hidden="true"></i></button><button id="quick-backup" class="quick-tool-btn" title="备份/恢复进度" aria-label="备份进度"><i class="fas fa-cloud-arrow-up" aria-hidden="true"></i></button></div><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><!-- 快捷键面板 --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="键盘快捷键"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><i class="fas fa-keyboard text-gray-400"></i><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">键盘快捷键</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">搜索内容</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">切换深色/浅色</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">语音朗读 播放/暂停</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">停止朗读</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">打开快捷键面板</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">字号调大 / 调小</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">打印 / 导出PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- 备份/恢复弹窗 --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="备份与恢复"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><i class="fas fa-cloud-arrow-up text-gray-400"></i><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">阅读进度备份与恢复</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">备份包含：已读章节、书签、阅读位置、字号偏好、健康自检结果。数据保存在浏览器本地，更换浏览器或清除缓存后丢失，建议定期导出备份。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-download"></i> 导出备份文件
- </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">下载一个 JSON 文件，保存到安全位置</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-upload"></i> 导入备份恢复
- </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">选择之前导出的备份文件恢复进度</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-trash"></i> 清除所有阅读数据
- </button><p class="text-xs text-red-400 mt-1 text-center">不可恢复！请先导出备份</p></div></div></div></div><!-- 阅读连续天数提示 --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),#7c3aed);color:var(--ink-inverse);border:none;"><i class="fas fa-fire" aria-hidden="true" style="color:var(--gold-2)"></i><span id="streak-toast-text">连续阅读第 X 天！</span></div><!-- 语音朗读控件栏 --><div id="tts-controls" class="tts-controls" role="region" aria-label="语音朗读控制" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="当前朗读章节">未开始</span><button class="tts-btn" id="tts-prev" title="上一段" aria-label="上一段"><i class="fas fa-step-backward"></i></button><button class="tts-btn play-btn" id="tts-play" title="播放/暂停" aria-label="播放朗读"><i class="fas fa-play"></i></button><button class="tts-btn" id="tts-next" title="下一段" aria-label="下一段"><i class="fas fa-step-forward"></i></button><button class="tts-btn" id="tts-speed-down" title="减速" aria-label="减速">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="加速" aria-label="加速">+</button><button class="tts-btn" id="tts-stop" title="停止朗读" aria-label="停止朗读"><i class="fas fa-times"></i></button></div><!-- 回到顶部按钮 --><button id="back-to-top" class="opacity-0 invisible" aria-label="回到顶部"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg><i class="fas fa-arrow-up" aria-hidden="true"></i></button><!-- 阅读位置恢复提示 --><div id="restore-toast" class="restore-position-toast" role="alert"><i class="fas fa-bookmark" aria-hidden="true"></i><span id="restore-toast-text">上次读到：...</span><button class="btn-restore" id="restore-btn">继续阅读</button><button class="btn-dismiss" id="dismiss-btn">忽略</button></div><!-- JS脚本 -->
+ </div></main></div><!-- 快捷工具：浮动按钮组 --><div id="quick-tools" class="quick-tools no-print" aria-label="快捷工具"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">透</span></button><button id="quick-search" class="quick-tool-btn" title="搜索 (Ctrl+K)" aria-label="搜索"><span aria-hidden="true">搜</span></button><button id="quick-theme" class="quick-tool-btn" title="切换深色/浅色" aria-label="切换主题"><span aria-hidden="true">夜</span></button><button id="quick-print" class="quick-tool-btn" title="打印 / 导出PDF" aria-label="打印或导出"><span aria-hidden="true">印</span></button><button id="quick-toc" class="quick-tool-btn" title="目录" aria-label="打开目录"><span aria-hidden="true">目</span></button><button id="quick-tts" class="quick-tool-btn" title="语音朗读" aria-label="语音朗读"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="键盘快捷键 (?)" aria-label="快捷键面板"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="备份/恢复进度" aria-label="备份进度"><span aria-hidden="true">备</span></button></div><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><!-- 快捷键面板 --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="键盘快捷键"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">键盘快捷键</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">搜索内容</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">切换深色/浅色</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">语音朗读 播放/暂停</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">停止朗读</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">打开快捷键面板</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">字号调大 / 调小</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">打印 / 导出PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- 备份/恢复弹窗 --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="备份与恢复"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">阅读进度备份与恢复</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">备份包含：已读章节、书签、阅读位置、字号偏好、健康自检结果。数据保存在浏览器本地，更换浏览器或清除缓存后丢失，建议定期导出备份。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 导出备份文件
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">下载一个 JSON 文件，保存到安全位置</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 导入备份恢复
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">选择之前导出的备份文件恢复进度</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 清除所有阅读数据
+ </button><p class="text-xs text-red-400 mt-1 text-center">不可恢复！请先导出备份</p></div></div></div></div><!-- 阅读连续天数提示 --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),#7c3aed);color:var(--ink-inverse);border:none;"><span id="streak-toast-text">连续阅读第 X 天！</span></div><!-- 语音朗读控件栏 --><div id="tts-controls" class="tts-controls" role="region" aria-label="语音朗读控制" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="当前朗读章节">未开始</span><button class="tts-btn" id="tts-prev" title="上一段" aria-label="上一段"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="播放/暂停" aria-label="播放朗读"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="下一段" aria-label="下一段"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="减速" aria-label="减速">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="加速" aria-label="加速">+</button><button class="tts-btn" id="tts-stop" title="停止朗读" aria-label="停止朗读"><span aria-hidden="true">×</span></button></div><!-- 回到顶部按钮 --><button id="back-to-top" class="opacity-0 invisible" aria-label="回到顶部"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- 阅读位置恢复提示 --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">上次读到：...</span><button class="btn-restore" id="restore-btn">继续阅读</button><button class="btn-dismiss" id="dismiss-btn">忽略</button></div><!-- JS脚本 -->
  
  <script>
-        /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
-        if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
-                    .catch(function (err) { console.warn('SW 注册失败：', err); });
-            });
-        }
-    </script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
 <script src="assets/book.js" defer></script>
 </body></html>

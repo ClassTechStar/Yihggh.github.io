@@ -6,64 +6,63 @@
 
 
  <script id="liquid-glass-bundle">
-    /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
-     * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
-     * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
-     * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
-    (function () {
-      if (window.__liquidGlass) return;
-      window.__liquidGlass = true;
-      if (window.__SAFE) return;
-      var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
-      var reduce = window.matchMedia &&
-        window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
-      if (!ok || reduce) return;
-      var root = document.documentElement;
-      root.classList.add('lg-ready');
-      if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
-      window.__lgToggle = function (v) {
-        var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
-        root.classList.toggle('lg-off', off);
-        if (window.RS) RS.set('liquidGlass', !off);
-        return !off;
-      };
-      var sync = function () {
-        var btn = document.getElementById('quick-glass');
-        if (!btn) return;
-        var off = root.classList.contains('lg-off');
-        btn.classList.toggle('lg-btn-off', off);
-        btn.setAttribute('aria-pressed', String(!off));
-        var ic = btn.querySelector('i');
-        if (ic) ic.className = off ? 'fas fa-droplet-slash' : 'fas fa-droplet';
-      };
-      /* bundle 在 head 执行时 #quick-glass 尚未存在——绑定延迟到 DOMContentLoaded */
-      document.addEventListener('DOMContentLoaded', function () {
-        var btn = document.getElementById('quick-glass');
-        if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
-        sync();
-      });
-      try {
-        if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
-      } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
-    })();
-    </script>
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var sync = function () {
+ var btn = document.getElementById('quick-glass');
+ if (!btn) return;
+ var off = root.classList.contains('lg-off');
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ };
+ /* bundle 在 head 执行时 #quick-glass 尚未存在——绑定延迟到 DOMContentLoaded */
+ document.addEventListener('DOMContentLoaded', function () {
+ var btn = document.getElementById('quick-glass');
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ });
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
  
 
 
 <link rel="preload" href="../fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../fonts/fa/fa-solid-900.subset.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-qi-shi-qi-zhang.html">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "第七十七章：实战项目二——天气助手", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-qi-shi-qi-zhang.html", "isPartOf": {"@type": "Book", "name": "你缺失的那门手机课", "inLanguage": "zh-CN"}}</script>
 <link rel="stylesheet" href="assets/book.css">
-</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">跳到主要内容</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="打开目录菜单" aria-expanded="false" aria-controls="sidebar"><i class="fas fa-bars"></i></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="返回首页"><span class="hidden sm:inline-flex w-8 h-8 rounded-md bg-gradient-to-br from-primary to-accent text-white items-center justify-center text-sm font-bold flex-shrink-0" aria-hidden="true"><i class="fas fa-mobile-screen"></i></span><h1 class="text-base md:text-lg font-bold text-primary truncate">搞定手机 · 数码必修课</h1></a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="主操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="从基础开始"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>开始学习</span></a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="搜索 (Ctrl+K)" aria-label="搜索内容"><i class="fas fa-search" aria-hidden="true"></i></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="字号调整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="缩小字体" aria-label="缩小字体">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="重置字号" aria-label="重置字号">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="放大字体" aria-label="放大字体">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="切换深色/浅色模式" aria-label="切换深色/浅色模式"><i class="fas fa-moon dark:hidden" aria-hidden="true"></i><i class="fas fa-sun hidden dark:inline" aria-hidden="true"></i></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="打印 / 导出PDF" aria-label="打印或导出PDF"><i class="fas fa-print" aria-hidden="true"></i></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="回到顶部"><i class="fas fa-arrow-up mr-1" aria-hidden="true"></i>顶部
- </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="文章目录"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2"><span aria-hidden="true" class="fas fa-list-ul text-primary" aria-hidden="true"></span>学习目录
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">跳到主要内容</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="打开目录菜单" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="返回首页"><span class="hidden sm:inline-flex w-8 h-8 rounded-md bg-gradient-to-br from-primary to-accent text-white items-center justify-center text-sm font-bold flex-shrink-0" aria-hidden="true"></span><h1 class="text-base md:text-lg font-bold text-primary truncate">搞定手机 · 数码必修课</h1></a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="主操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="从基础开始"><span>开始学习</span></a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="搜索 (Ctrl+K)" aria-label="搜索内容"><span aria-hidden="true">搜</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="字号调整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="缩小字体" aria-label="缩小字体">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="重置字号" aria-label="重置字号">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="放大字体" aria-label="放大字体">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="切换深色/浅色模式" aria-label="切换深色/浅色模式"><span class="dark:hidden" aria-hidden="true">夜</span><span class="hidden dark:inline" aria-hidden="true">昼</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="打印 / 导出PDF" aria-label="打印或导出PDF"><span aria-hidden="true">印</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="回到顶部">顶部
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="文章目录"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">学习目录
  </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 章</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="筛选章节..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="筛选章节"></div><ul class="space-y-1 text-sm" id="toc-list"><!-- 基础篇 -->
                     <li class="toc-parent" data-group="ji-chu">
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">一、基础篇（第0-7章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起基础篇" data-target="child-ji-chu">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -85,7 +84,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">二、软件篇（第8-14章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起软件篇" data-target="child-ruan-jian">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -104,7 +103,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">三、进阶篇（第15-20章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起进阶篇" data-target="child-jin-jie">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -123,7 +122,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">四、超越篇（第21-26章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起超越篇" data-target="child-chao-yue">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -141,7 +140,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">五、实战篇（第27-32章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起实战篇" data-target="child-shi-zhan">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -158,7 +157,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">六、展望篇与车联篇（第33-34章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起展望篇" data-target="child-zhan-wang">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -171,7 +170,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">儿童与手机专题（第35-36章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起儿童与手机专题" data-target="child-er-tong-pian">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -184,7 +183,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">七、AI编程实战篇（第37-47章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起AI编程实战篇" data-target="child-ai-biancheng">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -206,7 +205,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">八、安卓开发实战篇（第48-58章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起安卓开发实战篇" data-target="child-an-zhuo-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -228,7 +227,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">九、iOS开发实战篇（第59-69章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起iOS开发实战篇" data-target="child-ios-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -250,7 +249,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-qi-shi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十、鸿蒙开发实战篇（第70-80章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起鸿蒙开发实战篇" data-target="child-hongmeng-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-hongmeng-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -272,7 +271,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十一、手机与可穿戴篇（第81-85章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十一、手机与可穿戴篇（第81-85章）目录开关" data-target="child-ke-chuan-she-bei">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ke-chuan-she-bei" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -288,7 +287,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-shi-liu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十二、旅行与手机篇（第86-90章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十二、旅行与手机篇（第86-90章）目录开关" data-target="child-lv-xing">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-lv-xing" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -304,7 +303,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-jiu-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十三、手机与健康篇（第91-95章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十三、手机与健康篇（第91-95章）目录开关" data-target="child-jian-kang">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-jian-kang" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -320,7 +319,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-jiu-shi-liu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十四、AI短视频创作篇（第96-100章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十四、AI短视频创作篇（第96-100章）目录开关" data-target="child-ai-duan-shi-pin">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ai-duan-shi-pin" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -336,7 +335,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-yi-bai-ling-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十五、竖屏短剧入门篇（第101-105章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十五、竖屏短剧入门篇（第101-105章）目录开关" data-target="child-shu-ping-duan-ju">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-shu-ping-duan-ju" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -352,7 +351,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十六、附录</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起附录" data-target="child-fu-lu">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -367,7 +366,7 @@
                             <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>附录H：版本路线图</a></li>
                         </ul>
                     </li>
-</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索"><div class="search-panel"><div class="search-input-wrapper"><i class="fas fa-search text-gray-400"></i><input type="text" id="search-input" placeholder="搜索内容..." autocomplete="off" aria-label="搜索关键词"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭搜索">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">输入关键词开始搜索</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 顶部面包屑 --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">首页</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">数码必修课 · v1.9</span></nav>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">搜</span><input type="text" id="search-input" placeholder="搜索内容..." autocomplete="off" aria-label="搜索关键词"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭搜索">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">输入关键词开始搜索</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 顶部面包屑 --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">首页</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">数码必修课 · v1.9</span></nav>
 <div id="di-qi-shi-qi-zhang" class="mb-10 content-section">
 <h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">第七十七章：实战项目二——天气助手应用</h3>
 <p class="chapter-intro mb-4">待办清单练的是"本地数据"，这一章的项目练"网络 + 状态管理 + UI 组合"：做一个天气助手，输入城市、请求天气 API、展示当前与预报。它对应安卓篇的天气查询与 iOS 篇的第二个项目<strong>"网络应用"是移动开发中最常见的一类</strong>，套路学会了就能举一反三。</p>
@@ -395,25 +394,25 @@
 <pre>import { http } from '@kit.NetworkKit'
 
 export interface Weather {
-  city: string
-  temp: number
-  text: string        // 天气现象：晴/多云/小雨
+ city: string
+ temp: number
+ text: string // 天气现象：晴/多云/小雨
 }
 
 export class WeatherService {
-  async fetch(city: string): Promise&lt;Weather&gt; {
-    let req = http.createHttp()
-    try {
-      let resp = await req.request(
-        'https://api.example.com/weather?city=' + encodeURIComponent(city),
-        { method: http.RequestMethod.GET,
-          header: { 'Content-Type': 'application/json' },
-          expectDataType: http.HttpDataType.STRING })
-      let data = JSON.parse(resp.result as string)
-      return { city: data.city, temp: data.temp, text: data.text }
-    } finally {
-      req.destroy()
-    }</pre>
+ async fetch(city: string): Promise&lt;Weather&gt; {
+ let req = http.createHttp()
+ try {
+ let resp = await req.request(
+ 'https://api.example.com/weather?city=' + encodeURIComponent(city),
+ { method: http.RequestMethod.GET,
+ header: { 'Content-Type': 'application/json' },
+ expectDataType: http.HttpDataType.STRING })
+ let data = JSON.parse(resp.result as string)
+ return { city: data.city, temp: data.temp, text: data.text }
+ } finally {
+ req.destroy()
+ }</pre>
 </div>
 <p class="mb-2">三层拆分的设计意图再强调一遍：WeatherService 不知道"谁在调用它"，UI 不知道"数据从哪来"。这样分层后，换 API 提供商只改 Service，换界面风格只改 UI 层——第 37 章的"封装变化点"原则，在网络应用里的具体落点就是 Service 层。三态管理（loading/data/error）则是网络 UI 的"万能模板"：任何接口调用都会经历这三态，把三态的渲染写成条件分支，错误处理就有了固定的家。</p>
 <p class="mb-2">代码里有个容易忽略的细节：finally 里的 req.destroy()。HTTP 请求对象用完必须销毁，否则高频调用（比如用户连续搜索城市）会累积连接资源。这和第 74 章讲的"该释放的资源要释放"是同一类纪律。</p>
@@ -424,7 +423,7 @@ export class WeatherService {
 <p class="mb-2">书里用 api.example.com 做演示占位。实际开发请选择真实可用的天气 API（国内常用的有和风天气、心知天气等，它们提供免费额度的开发者套餐；国际项目可用 OpenWeatherMap）。接入真实 API 时，重点工作变成"读懂返回的 JSON"：真实 API 的响应结构通常比示例复杂得多，嵌套对象、数组、状态码字段都需要正确解析。第 72 章的 interface 定义在这里发挥作用：先照着 API 文档定义响应接口，再用 JSON.parse 之后按接口取值。</p>
 <p class="mb-2">JSON 解析的常见报错有两类：字段名对不上（返回 snake_case、你的接口是 camelCase，用映射解决）、类型不匹配（温度返回的是字符串"25"而非数字 25）。防御式解析的做法是"对每个字段做类型守卫"，宁可显示"数据异常"也不要让应用崩溃。</p>
 <div class="practice-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-hands mr-2"></i>来动手：完成天气助手</p>
+<p class="font-semibold">来动手：完成天气助手</p>
 <p class="mt-1">1. 注册一个真实天气 API 的免费开发者账号，替换示例 URL；2. 按 API 文档定义响应 interface 并解析；3. 实现输入城市 → 点击查询 → 三态渲染的完整闭环；4. 加上"上次查询城市"的本地记忆（第 75 章的 Preferences）。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">四、预报数据：未来 7 天列表的解析与横向滚动展示</h4>
@@ -434,57 +433,57 @@ export class WeatherService {
 <div class="code-block">
 <div class="code-head"><span>JSON · 预报接口示意返回（字段名以服务商文档为准）</span><span class="dots">···</span></div>
 <pre>{
-  "city": "北京",
-  "updateTime": "2026-11-13 08:00",
-  "daily": [
-    { "date": "2026-11-13", "textDay": "晴",   "tempMax": 14, "tempMin": 3 },
-    { "date": "2026-11-14", "textDay": "多云", "tempMax": 12, "tempMin": 2 },
-    { "date": "2026-11-15", "textDay": "小雨", "tempMax": 9,  "tempMin": 1 }
-    // ……后面还有几天，实际长度以接口返回为准
-  ]
+ "city": "北京",
+ "updateTime": "2026-11-13 08:00",
+ "daily": [
+ { "date": "2026-11-13", "textDay": "晴", "tempMax": 14, "tempMin": 3 },
+ { "date": "2026-11-14", "textDay": "多云", "tempMax": 12, "tempMin": 2 },
+ { "date": "2026-11-15", "textDay": "小雨", "tempMax": 9, "tempMin": 1 }
+ // ……后面还有几天，实际长度以接口返回为准
+ ]
 }</pre>
 </div>
 <p class="mb-2">解析思路和第三节一致，但要多立两条纪律。一是<strong>数组元素逐条校验</strong>：整条数据合法才收进来，某一天缺了最低温度就跳过那一天，而不是让一次解析异常把整个列表渲染掀翻。二是<strong>长度不假设</strong>：别把"7 天"写死，不少服务商的免费套餐只给 3 天或 5 天预报，你的界面要来几天显示几天。写死数字这种事，上线后第一个帮你想起来的是用户评分区。</p>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · service/WeatherService.ets（追加预报接口）</span><span class="dots">···</span></div>
 <pre>export interface DailyItem {
-  date: string        // 形如 2026-11-13，具体格式看服务商文档
-  textDay: string     // 白天天气现象
-  tempMax: number
-  tempMin: number
+ date: string // 形如 2026-11-13，具体格式看服务商文档
+ textDay: string // 白天天气现象
+ tempMax: number
+ tempMin: number
 }
 
 export interface Forecast {
-  city: string
-  days: DailyItem[]
+ city: string
+ days: DailyItem[]
 }
 
 async fetchForecast(city: string): Promise&lt;Forecast&gt; {
-  let req = http.createHttp()
-  try {
-    let resp = await req.request(
-      'https://api.example.com/forecast?city=' + encodeURIComponent(city) + '&amp;days=7',
-      { method: http.RequestMethod.GET,
-        connectTimeout: 10000, readTimeout: 10000,
-        expectDataType: http.HttpDataType.STRING })
-    let raw = JSON.parse(resp.result as string)
-    let list: DailyItem[] = []
-    if (Array.isArray(raw.daily)) {
-      for (let d of raw.daily) {
-        // 逐条校验：缺关键字段的那天直接跳过
-        if (typeof d.date === 'string' &amp;&amp;
-            typeof d.tempMax === 'number' &amp;&amp;
-            typeof d.tempMin === 'number') {
-          list.push({ date: d.date,
-            textDay: typeof d.textDay === 'string' ? d.textDay : '未知',
-            tempMax: d.tempMax, tempMin: d.tempMin })
-        }
-      }
-    }
-    return { city: typeof raw.city === 'string' ? raw.city : '', days: list }
-  } finally {
-    req.destroy()
-  }
+ let req = http.createHttp()
+ try {
+ let resp = await req.request(
+ 'https://api.example.com/forecast?city=' + encodeURIComponent(city) + '&amp;days=7',
+ { method: http.RequestMethod.GET,
+ connectTimeout: 10000, readTimeout: 10000,
+ expectDataType: http.HttpDataType.STRING })
+ let raw = JSON.parse(resp.result as string)
+ let list: DailyItem[] = []
+ if (Array.isArray(raw.daily)) {
+ for (let d of raw.daily) {
+ // 逐条校验：缺关键字段的那天直接跳过
+ if (typeof d.date === 'string' &amp;&amp;
+ typeof d.tempMax === 'number' &amp;&amp;
+ typeof d.tempMin === 'number') {
+ list.push({ date: d.date,
+ textDay: typeof d.textDay === 'string' ? d.textDay : '未知',
+ tempMax: d.tempMax, tempMin: d.tempMin })
+ }
+ }
+ }
+ return { city: typeof raw.city === 'string' ? raw.city : '', days: list }
+ } finally {
+ req.destroy()
+ }
 }</pre>
 </div>
 <p class="mb-2">三个防御点值得逐行看：typeof 校验挡住了"温度给的是字符串"的服务商；textDay 缺失时兜一个"未知"，而不是让 undefined 直接渲染成界面上的空白；finally 里照旧 destroy。你可能觉得逐条校验太啰嗦，等你哪天碰上服务商悄悄改版、中午开始有一批数据缺字段、用户群里炸锅的时候，会回头感谢这些啰嗦的。防御式解析不是多此一举，是给"接口会变"这件事提前买保险。</p>
@@ -496,10 +495,10 @@ async fetchForecast(city: string): Promise&lt;Forecast&gt; {
 
 // dateStr 是接口给的日期，todayStr 是本地算出的今天（同格式）
 export function weekdayLabel(dateStr: string, todayStr: string): string {
-  let d = new Date(dateStr)
-  if (isNaN(d.getTime())) { return '' }   // 解析失败给空串，别显示 NaN
-  if (dateStr === todayStr) { return '今天' }
-  return WEEK[d.getDay()]
+ let d = new Date(dateStr)
+ if (isNaN(d.getTime())) { return '' } // 解析失败给空串，别显示 NaN
+ if (dateStr === todayStr) { return '今天' }
+ return WEEK[d.getDay()]
 }</pre>
 </div>
 <p class="mb-2">为什么要单独抽一个工具函数而不是写在页面里？因为下一节的逐小时预报、第八节的温度曲线都要用日期翻译，写在页面里迟早被复制三遍。第 37 章说的"变化点封装"，在项目里最常见的形态就是这种小工具函数，它不高级，但每一次复用都在给你省将来的调试时间。</p>
@@ -510,27 +509,27 @@ export function weekdayLabel(dateStr: string, todayStr: string): string {
 <pre>@State forecast: Forecast | null = null
 
 Column({ space: 4 }) {
-  Text('未来 7 天').fontSize(14).fontColor('#888888')
-  Scroll() {
-    Row({ space: 12 }) {
-      ForEach(this.forecast!.days, (d: DailyItem) =&gt; {
-        Column({ space: 6 }) {
-          Text(weekdayLabel(d.date, this.todayStr)).fontSize(13)
-          Text(d.textDay).fontSize(12).fontColor('#888888')
-          Text(d.tempMin + '° ~ ' + d.tempMax + '°').fontSize(14)
-        }
-        .padding(10).borderRadius(12)
-        .backgroundColor('#F2F3F5')
-      }, (d: DailyItem) =&gt; d.date)   // 键值用日期，别用下标
-    }.padding({ left: 12, right: 12 })
-  }
-  .scrollable(ScrollDirection.Horizontal)
-  .edgeEffect(EdgeEffect.Spring)
+ Text('未来 7 天').fontSize(14).fontColor('#888888')
+ Scroll() {
+ Row({ space: 12 }) {
+ ForEach(this.forecast!.days, (d: DailyItem) =&gt; {
+ Column({ space: 6 }) {
+ Text(weekdayLabel(d.date, this.todayStr)).fontSize(13)
+ Text(d.textDay).fontSize(12).fontColor('#888888')
+ Text(d.tempMin + '° ~ ' + d.tempMax + '°').fontSize(14)
+ }
+ .padding(10).borderRadius(12)
+ .backgroundColor('#F2F3F5')
+ }, (d: DailyItem) =&gt; d.date) // 键值用日期，别用下标
+ }.padding({ left: 12, right: 12 })
+ }
+ .scrollable(ScrollDirection.Horizontal)
+ .edgeEffect(EdgeEffect.Spring)
 }</pre>
 </div>
 <p class="mb-2">ForEach 的第二个参数是键值生成函数，这里用日期字符串当键。新手爱用数组下标当键，平时看不出问题，等你做了"删掉一项后刷新列表"，就会见到数据错位、图标串行的灵异现象。第六节的多城市管理会再撞上这个坑一次，习惯现在就养对：键值要用数据自己的身份，不用位置。</p>
 <div class="warning-box rounded-lg p-4 mt-3">
-<p class="font-semibold"><i class="fas fa-exclamation-triangle mr-2"></i>避坑提醒</p>
+<p class="font-semibold">避坑提醒</p>
 <p class="mt-1">预报列表最隐蔽的 bug 是"长度写死"：有人写完 7 个 Text 的硬编码版本，开发时接口刚好回 7 天，一切正常；上线后某天服务商调整了免费额度只回 3 天，界面下半截挂着三个空白格子。判定标准很简单。凡是跟着接口数据走的数量，都必须来自 ForEach 循环，不能来自你手写的份数。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">五、定位与自动天气：位置权限、反查城市、下拉刷新</h4>
@@ -540,16 +539,16 @@ Column({ space: 4 }) {
 <div class="code-block">
 <div class="code-head"><span>JSON5 · module.json5（权限声明节选）</span><span class="dots">···</span></div>
 <pre>"requestPermissions": [
-  {
-    "name": "ohos.permission.LOCATION",
-    "reason": "$string:location_reason",
-    "usedScene": { "abilities": ["WeatherAbility"], "when": "inuse" }
-  },
-  {
-    "name": "ohos.permission.APPROXIMATE_LOCATION",
-    "reason": "$string:location_reason",
-    "usedScene": { "abilities": ["WeatherAbility"], "when": "inuse" }
-  }
+ {
+ "name": "ohos.permission.LOCATION",
+ "reason": "$string:location_reason",
+ "usedScene": { "abilities": ["WeatherAbility"], "when": "inuse" }
+ },
+ {
+ "name": "ohos.permission.APPROXIMATE_LOCATION",
+ "reason": "$string:location_reason",
+ "usedScene": { "abilities": ["WeatherAbility"], "when": "inuse" }
+ }
 ]
 
 // string.json 里对应写：
@@ -562,31 +561,31 @@ Column({ space: 4 }) {
 import { abilityAccessCtrl } from '@kit.AbilityKit'
 
 async locateAndLoad() {
-  try {
-    let mgr = abilityAccessCtrl.createAtManager()
-    let result = await mgr.requestPermissionsFromUser(this.context,
-      ['ohos.permission.LOCATION', 'ohos.permission.APPROXIMATE_LOCATION'])
-    let granted = result.authResults.every((r: number) =&gt; r === 0)
-    // 授权判定细节以官方文档为准
-    if (!granted) {
-      this.city = '北京'   // 回退默认城市，别让页面卡在空白
-      this.hint = '未开启定位，先显示默认城市，可在系统设置里打开'
-      return this.load()
-    }
-    let loc = geoLocationManager.getCurrentLocation()
-    this.city = await this.svc.cityFromLocation(loc.latitude, loc.longitude)
-    this.load()
-  } catch (e) {
-    this.hint = '定位失败，可以手动输入城市查询'
-    this.load()
-  }
+ try {
+ let mgr = abilityAccessCtrl.createAtManager()
+ let result = await mgr.requestPermissionsFromUser(this.context,
+ ['ohos.permission.LOCATION', 'ohos.permission.APPROXIMATE_LOCATION'])
+ let granted = result.authResults.every((r: number) =&gt; r === 0)
+ // 授权判定细节以官方文档为准
+ if (!granted) {
+ this.city = '北京' // 回退默认城市，别让页面卡在空白
+ this.hint = '未开启定位，先显示默认城市，可在系统设置里打开'
+ return this.load()
+ }
+ let loc = geoLocationManager.getCurrentLocation()
+ this.city = await this.svc.cityFromLocation(loc.latitude, loc.longitude)
+ this.load()
+ } catch (e) {
+ this.hint = '定位失败，可以手动输入城市查询'
+ this.load()
+ }
 }</pre>
 </div>
 <p class="mb-2">这段代码比"拿到定位就查天气"多出来的全是兜底：授权被拒，回退默认城市并在页面留一句提示，不白屏、不反复弹窗；定位失败（在室内、电梯里信号差很常见），给出"手动输入"的出路；两条失败路径最后都调用 load()，保证界面永远有东西可看。第三步就是这些兜底本身，写权限代码之前，先想好"用户说不"之后你的界面长什么样，这一步想清楚了，权限就是普通功能；想不清楚，权限就是事故源。</p>
 <h5 class="font-semibold mt-3 mb-1">经纬度换城市：两条路</h5>
 <p class="mb-2">定位拿到的是一对经纬度数字，而天气接口多半认城市名或城市 ID。衔接有两条路，优先走第一条：<strong>直接用服务商的"按坐标查询"</strong>——主流天气 API 基本都支持传经纬度拿天气，一步到位，连换算都省了。第二条路是逆地理编码：把坐标翻译成"北京市海淀区"这样的地址描述，再从中截出城市名去查天气，位置服务一般自带这类接口（方法名以官方文档为准）。逆地理编码多一次请求、多一层解析，能走第一条就别绕第二条，除非你的服务商只认城市名。</p>
 <div class="warning-box rounded-lg p-4 mt-3">
-<p class="font-semibold"><i class="fas fa-exclamation-triangle mr-2"></i>避坑提醒</p>
+<p class="font-semibold">避坑提醒</p>
 <p class="mt-1">两条提醒。其一，模拟器里的定位是"假位置"：你可以在模拟器的位置设置里手动选一个点，但最终验证一定要上真机，站在小区楼下跑一次，看看拿到的城市对不对。其二，天气应用用<strong>单次定位就够了</strong>，别开持续位置监听：天气不会因为你走了两条街就变，持续监听是导航类应用的事，用在这里只多耗电不多准确（第十节细说）。</p>
 </div>
 <h5 class="font-semibold mt-3 mb-1">下拉刷新：Refresh 一包就行</h5>
@@ -596,17 +595,17 @@ async locateAndLoad() {
 <pre>@State refreshing: boolean = false
 
 Refresh({ refreshing: this.refreshing }) {
-  Column() {
-    // ……原来的三态内容原样放进来
-  }
-  .width('100%')
+ Column() {
+ // ……原来的三态内容原样放进来
+ }
+ .width('100%')
 }
 .onRefreshing(() =&gt; {
-  if (this.loading) {           // 上一次请求还没回来就别发了
-    this.refreshing = false
-    return
-  }
-  this.load().finally(() =&gt; { this.refreshing = false })
+ if (this.loading) { // 上一次请求还没回来就别发了
+ this.refreshing = false
+ return
+ }
+ this.load().finally(() =&gt; { this.refreshing = false })
 })</pre>
 </div>
 <p class="mb-2">两个细节决定这东西好不好用。一是刷新回调里也要走 loading 守卫，用户下拉时可能上一次请求还在路上，放任不管就是重复请求（第九节门诊会专门治它）。二是刷新完成后记得把 refreshing 置回 false。否则那个圈会停在顶部收不回去，表现特别迷惑人：数据其实已经更新了，就剩个圈挂在那，用户以为一直没刷出来。另外，下拉刷新期间不要清空旧数据，请求回来之前让旧内容继续显示，数据到了整体替换，页面就不会"闪一下白屏"。</p>
@@ -617,10 +616,10 @@ Refresh({ refreshing: this.refreshing }) {
 <div class="code-block">
 <div class="code-head"><span>ARKTS · model/CityItem.ets</span><span class="dots">···</span></div>
 <pre>export interface CityItem {
-  id: string           // 服务商的城市 ID，重名城市靠它区分
-  name: string         // 展示名
-  temp: number | null  // 还没请求到数据时是 null
-  updatedAt: number    // 上次刷新的时间戳，缓存要用
+ id: string // 服务商的城市 ID，重名城市靠它区分
+ name: string // 展示名
+ temp: number | null // 还没请求到数据时是 null
+ updatedAt: number // 上次刷新的时间戳，缓存要用
 }</pre>
 </div>
 <p class="mb-2">两个设计决策解释一下。第一，<strong>主键用服务商的城市 ID，不用城市名</strong>。中国同名地名不少：提到"朝阳"，北京有个区，辽宁有个市；提到"新城"，好几个省都有。你自己拿名字当唯一键，早晚会把两个城市的数据混在一起。添加城市的标准流程因此是两段式：先调服务商的"城市搜索"接口把名字换成 ID（返回多个候选时让用户选），再拿 ID 查天气。</p>
@@ -629,15 +628,15 @@ Refresh({ refreshing: this.refreshing }) {
 <div class="code-block">
 <div class="code-head"><span>ARKTS · WeatherPage.ets（添加城市）</span><span class="dots">···</span></div>
 <pre>async addCity(id: string, name: string) {
-  // 去重：同一个 ID 只加一次
-  let exists = this.cities.some((c: CityItem) =&gt; c.id === id)
-  if (exists) {
-    this.hint = '这个城市已经在列表里了'
-    return
-  }
-  this.cities.push({ id: id, name: name, temp: null, updatedAt: 0 })
-  await this.saveCityList()   // 持久化，见下文
-  this.loadCity(this.cities.length - 1)
+ // 去重：同一个 ID 只加一次
+ let exists = this.cities.some((c: CityItem) =&gt; c.id === id)
+ if (exists) {
+ this.hint = '这个城市已经在列表里了'
+ return
+ }
+ this.cities.push({ id: id, name: name, temp: null, updatedAt: 0 })
+ await this.saveCityList() // 持久化，见下文
+ this.loadCity(this.cities.length - 1)
 }</pre>
 </div>
 <p class="mb-2">去重看起来是小事，其实是体验问题：用户在搜索页手一抖点了两次"添加"，城市列表里出现两个一模一样的"北京"，他会觉得这应用"不靠谱"，而且说不清为什么。类似的还有删除后的空态：城市全删光了，页面要显示"还没有城市，点这里添加"，而不是一片空白。</p>
@@ -647,42 +646,42 @@ Refresh({ refreshing: this.refreshing }) {
 <div class="code-head"><span>ARKTS · CityListPage.ets（侧滑删除节选）</span><span class="dots">···</span></div>
 <pre>@Builder
 deleteButton(index: number) {
-  Button('删除')
-    .backgroundColor('#E5484D')
-    .onClick(() =&gt; this.removeCity(index))
+ Button('删除')
+ .backgroundColor('#E5484D')
+ .onClick(() =&gt; this.removeCity(index))
 }
 
 List({ space: 8 }) {
-  ForEach(this.cities, (c: CityItem, i: number) =&gt; {
-    ListItem() {
-      Row() {
-        Text(c.name).fontSize(16).layoutWeight(1)
-        Text(c.temp === null ? '--' : c.temp + '°').fontSize(16)
-      }
-      .padding(14).borderRadius(12)
-    }
-    .swipeAction({ end: this.deleteButton(i) })
-  }, (c: CityItem) =&gt; c.id)
+ ForEach(this.cities, (c: CityItem, i: number) =&gt; {
+ ListItem() {
+ Row() {
+ Text(c.name).fontSize(16).layoutWeight(1)
+ Text(c.temp === null ? '--' : c.temp + '°').fontSize(16)
+ }
+ .padding(14).borderRadius(12)
+ }
+ .swipeAction({ end: this.deleteButton(i) })
+ }, (c: CityItem) =&gt; c.id)
 }</pre>
 </div>
 <p class="mb-2">错误示范先摆出来：删除函数只写 this.cities.splice(index, 1)，不处理选中下标。会发生什么，你正看着列表里第 3 个城市，把它删了，current 还停在 3，而列表只剩 2 个城市，详情区引用一个不存在的条目，轻则白屏，重则崩溃。纠正版：</p>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · 删除城市（含下标修正）</span><span class="dots">···</span></div>
 <pre>removeCity(index: number) {
-  this.cities.splice(index, 1)
-  if (this.current &gt; index) {
-    this.current--              // 删的是前面的城市，选中下标左移
-  } else if (this.current === index) {
-    this.current = Math.max(0, Math.min(index, this.cities.length - 1))
-  }                             // 删的就是当前城市，就近落到一个合法位置
-  this.saveCityList()
+ this.cities.splice(index, 1)
+ if (this.current &gt; index) {
+ this.current-- // 删的是前面的城市，选中下标左移
+ } else if (this.current === index) {
+ this.current = Math.max(0, Math.min(index, this.cities.length - 1))
+ } // 删的就是当前城市，就近落到一个合法位置
+ this.saveCityList()
 }</pre>
 </div>
 <p class="mb-2">"删的是当前项"和"删的是别的项"是两种情况，分开处理。这类下标问题没有高深的算法，靠的是删除那一刻在心里把每种情况过一遍——数组操作的所有 bug，几乎都是"情况没过全"。</p>
 <h5 class="font-semibold mt-3 mb-1">切换与持久化</h5>
 <p class="mb-2">切换城市就是改 current 下标，UI 跟着 ForEach 自动换内容，这部分是声明式 UI 的红利，不用写任何"刷新界面"的代码。要上心的是持久化：上一章待办清单里用 Preferences 存数据的那套直接搬过来——把城市列表序列化成 JSON（存 ID 和名字就够，温度不该存），启动时读回来。区别只有一个：待办清单存的是一坨整体，城市列表存的是"引用"，温度、更新时间这些数据每次启动重新请求，列表本身才是要记住的东西。</p>
 <div class="info-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>小贴士</p>
+<p class="font-semibold">小贴士</p>
 <p class="mt-1">城市列表别贪多。天气 API 的免费额度几乎都按调用量计费，10 个城市每次启动全部刷新，额度消耗速度是单城市的 10 倍。合理策略是只刷用户正在看的那个城市，其他城市切过去时再刷（配合第七节的缓存）。省额度、省电、省流量，一箭三雕。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">七、缓存与离线：上次数据的展示与过期标记</h4>
@@ -695,65 +694,65 @@ List({ space: 8 }) {
 <pre>import { preferences } from '@kit.ArkData'
 
 export class WeatherCache {
-  private store: preferences.Preferences | null = null
+ private store: preferences.Preferences | null = null
 
-  // context 从 Ability 里传进来
-  async init(context: Context): Promise&lt;void&gt; {
-    this.store = await preferences.getPreferences(context, 'weather_cache')
-  }
+ // context 从 Ability 里传进来
+ async init(context: Context): Promise&lt;void&gt; {
+ this.store = await preferences.getPreferences(context, 'weather_cache')
+ }
 
-  async save(cityId: string, rawJson: string): Promise&lt;void&gt; {
-    if (this.store === null) { return }
-    await this.store.put('raw_' + cityId, rawJson)
-    await this.store.put('time_' + cityId, Date.now())
-    await this.store.flush()
-  }
+ async save(cityId: string, rawJson: string): Promise&lt;void&gt; {
+ if (this.store === null) { return }
+ await this.store.put('raw_' + cityId, rawJson)
+ await this.store.put('time_' + cityId, Date.now())
+ await this.store.flush()
+ }
 
-  async load(cityId: string): Promise&lt;string | null&gt; {
-    if (this.store === null) { return null }
-    let raw = await this.store.get('raw_' + cityId, '') as string
-    return raw === '' ? null : raw
-  }
+ async load(cityId: string): Promise&lt;string | null&gt; {
+ if (this.store === null) { return null }
+ let raw = await this.store.get('raw_' + cityId, '') as string
+ return raw === '' ? null : raw
+ }
 
-  async savedAt(cityId: string): Promise&lt;number&gt; {
-    if (this.store === null) { return 0 }
-    return await this.store.get('time_' + cityId, 0) as number
-  }
+ async savedAt(cityId: string): Promise&lt;number&gt; {
+ if (this.store === null) { return 0 }
+ return await this.store.get('time_' + cityId, 0) as number
+ }
 }</pre>
 </div>
 <p class="mb-2">键名按城市 ID 拆开（raw_ 前缀存数据、time_ 前缀存时间），而不是把所有城市塞进一条记录。原因还是那句"为将来想一步"：单条记录太胖，读一个城市要解析全部；将来想清掉某个城市的缓存，也没法精准下手。</p>
 <div class="warning-box rounded-lg p-4 mt-3">
-<p class="font-semibold"><i class="fas fa-exclamation-triangle mr-2"></i>避坑提醒</p>
+<p class="font-semibold">避坑提醒</p>
 <p class="mt-1">缓存里存"原始响应"还是"给 UI 的模型"？强烈建议存原始响应的 JSON 字符串。存 UI 模型的话，哪天你改了个字段名、加了个显示需求，所有旧缓存瞬间作废，用户升级后的第一次启动满屏异常；存原始响应，解析逻辑升级了，旧缓存照样能被新逻辑消化。缓存的数据格式要跟接口对齐，不要跟界面对齐。</p>
 </div>
 <h5 class="font-semibold mt-3 mb-1">启动两步走与过期标记</h5>
 <div class="code-block">
 <div class="code-head"><span>ARKTS · WeatherPage.ets（启动时的读写顺序）</span><span class="dots">···</span></div>
 <pre>async onPageShow() {
-  await this.cache.init(this.context)
-  // 第一步：先上缓存，页面立刻有内容
-  let cached = await this.cache.load(this.currentCityId)
-  if (cached !== null) {
-    this.applyData(cached, true)
-  }
-  // 第二步：再要新数据，成功后整体覆盖
-  this.load()
+ await this.cache.init(this.context)
+ // 第一步：先上缓存，页面立刻有内容
+ let cached = await this.cache.load(this.currentCityId)
+ if (cached !== null) {
+ this.applyData(cached, true)
+ }
+ // 第二步：再要新数据，成功后整体覆盖
+ this.load()
 }
 
 applyData(rawJson: string, fromCache: boolean) {
-  this.weather = parseWeather(rawJson)   // 第四节那套防御式解析
-  if (fromCache) {
-    let at = this.lastSavedAt
-    this.updatedText = '数据更新于 ' + formatTime(at)
-    // 过期线自己定：比如超过 3 小时就算"可能过期"，按天气数据的更新节奏来
-    this.stale = Date.now() - at &gt; 3 * 3600 * 1000
-  }
+ this.weather = parseWeather(rawJson) // 第四节那套防御式解析
+ if (fromCache) {
+ let at = this.lastSavedAt
+ this.updatedText = '数据更新于 ' + formatTime(at)
+ // 过期线自己定：比如超过 3 小时就算"可能过期"，按天气数据的更新节奏来
+ this.stale = Date.now() - at &gt; 3 * 3600 * 1000
+ }
 }</pre>
 </div>
 <p class="mb-2">过期线定多长不是玄学，跟着天气数据本身的更新节奏走：实况数据通常几十分钟到几小时才上一个台阶，把过期线定在比它长一点的位置就好，定成"5 分钟就过期"只会让用户满屏看到不必要的黄色警告。过期标记的界面形态：温度旁边一行小字，"今天 08:32 更新"，过期了就变成"数据可能已过期，下拉可刷新"——注意错误提示的老原则依然适用：说清发生了什么，给出能做什么。</p>
 <p class="mb-2">这里有一个容易做反的细节：缓存渲染时<strong>不要把 loading 态叠上去</strong>。既然有旧数据可看，就不该再转圈，转圈的意义是"页面上什么都没有，你等等"，有内容时转圈只会让用户以为卡死了。三态模板遇到缓存要灵活：loading 态只在"完全没有任何数据"时才登场。</p>
 <div class="info-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>小贴士</p>
+<p class="font-semibold">小贴士</p>
 <p class="mt-1">测试缓存别靠"等它过期"。开发期把过期线临时改成 10 秒，跑一遍"有网 → 断网 → 重启应用"的流程：断网重启后能看到旧数据并带着过期标记，这个流程通了，缓存就算验收了。验收完把过期线改回去，别把调试参数带上生产。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">八、UI 打磨：天气图标映射、温度曲线与深色模式</h4>
@@ -763,19 +762,19 @@ applyData(rawJson: string, fromCache: boolean) {
 <div class="code-block">
 <div class="code-head"><span>ARKTS · utils/WeatherIcon.ets</span><span class="dots">···</span></div>
 <pre>const ICON_MAP: Record&lt;string, string&gt; = {
-  '晴': 'ic_sunny',
-  '多云': 'ic_partly',
-  '阴': 'ic_overcast',
-  '小雨': 'ic_rain_light',
-  '大雨': 'ic_rain_heavy',
-  '雷阵雨': 'ic_thunder',
-  '雪': 'ic_snow',
-  '雾': 'ic_fog',
-  '霾': 'ic_haze'
+ '晴': 'ic_sunny',
+ '多云': 'ic_partly',
+ '阴': 'ic_overcast',
+ '小雨': 'ic_rain_light',
+ '大雨': 'ic_rain_heavy',
+ '雷阵雨': 'ic_thunder',
+ '雪': 'ic_snow',
+ '雾': 'ic_fog',
+ '霾': 'ic_haze'
 }
 
 export function iconOf(text: string): string {
-  return ICON_MAP[text] ?? 'ic_unknown'   // 兜底图标必须有
+ return ICON_MAP[text] ?? 'ic_unknown' // 兜底图标必须有
 }</pre>
 </div>
 <p class="mb-2">两个要点。一是<strong>兜底图标必须有</strong>：服务商的天气现象词表很长，"浮尘""强沙尘暴"这类词什么时候冒出来你说了不算，映射表查不到时退到一张通用的"问号"图标，界面永远不会开天窗。二是集中管理的意义在"改一处生效"：哪天你想把图标换成动画版，只动这张表和资源文件，页面代码一行不碰。开发期图标资源还没做出来怎么办？先让 iconOf 返回文字占位，结构对了，皮随时能换。</p>
@@ -785,46 +784,46 @@ export function iconOf(text: string): string {
 <div class="code-head"><span>ARKTS · TempChart.ets（温度区间曲线）</span><span class="dots">···</span></div>
 <pre>@Component
 struct TempChart {
-  days: DailyItem[] = []
-  private ctx: CanvasRenderingContext2D =
-    new CanvasRenderingContext2D(new RenderingContextSettings(true))
+ days: DailyItem[] = []
+ private ctx: CanvasRenderingContext2D =
+ new CanvasRenderingContext2D(new RenderingContextSettings(true))
 
-  build() {
-    // 示例按固定尺寸示意；要做自适应，可在 onReady 里取实际宽高后再画
-    Canvas(this.ctx).width(336).height(120)
-      .onReady(() =&gt; this.draw())
-  }
+ build() {
+ // 示例按固定尺寸示意；要做自适应，可在 onReady 里取实际宽高后再画
+ Canvas(this.ctx).width(336).height(120)
+ .onReady(() =&gt; this.draw())
+ }
 
-  draw() {
-    if (this.days.length &lt; 2) { return }   // 一天画不成线，也防除以 0
-    let w = 336
-    let h = 120
-    let max = this.days[0].tempMax
-    let min = this.days[0].tempMin
-    for (let d of this.days) {
-      if (d.tempMax &gt; max) { max = d.tempMax }
-      if (d.tempMin &lt; min) { min = d.tempMin }
-    }
-    let span = Math.max(1, max - min)      // 温度都一样时也别除以 0
-    let step = w / (this.days.length - 1)
-    // 上下各留 20 像素边距，把温度映射成 y 坐标
-    let y = (t: number): number =&gt; 20 + (max - t) / span * (h - 40)
+ draw() {
+ if (this.days.length &lt; 2) { return } // 一天画不成线，也防除以 0
+ let w = 336
+ let h = 120
+ let max = this.days[0].tempMax
+ let min = this.days[0].tempMin
+ for (let d of this.days) {
+ if (d.tempMax &gt; max) { max = d.tempMax }
+ if (d.tempMin &lt; min) { min = d.tempMin }
+ }
+ let span = Math.max(1, max - min) // 温度都一样时也别除以 0
+ let step = w / (this.days.length - 1)
+ // 上下各留 20 像素边距，把温度映射成 y 坐标
+ let y = (t: number): number =&gt; 20 + (max - t) / span * (h - 40)
 
-    this.drawLine(this.days.map((d: DailyItem) =&gt; d.tempMax), y, step, '#FF7D00')
-    this.drawLine(this.days.map((d: DailyItem) =&gt; d.tempMin), y, step, '#4D88FF')
-  }
+ this.drawLine(this.days.map((d: DailyItem) =&gt; d.tempMax), y, step, '#FF7D00')
+ this.drawLine(this.days.map((d: DailyItem) =&gt; d.tempMin), y, step, '#4D88FF')
+ }
 
-  private drawLine(vals: number[], y: (t: number) =&gt; number,
-                   step: number, color: string) {
-    this.ctx.beginPath()
-    for (let i = 0; i &lt; vals.length; i++) {
-      if (i === 0) { this.ctx.moveTo(i * step, y(vals[i])) }
-      else { this.ctx.lineTo(i * step, y(vals[i])) }
-    }
-    this.ctx.strokeStyle = color
-    this.ctx.lineWidth = 2
-    this.ctx.stroke()
-  }
+ private drawLine(vals: number[], y: (t: number) =&gt; number,
+ step: number, color: string) {
+ this.ctx.beginPath()
+ for (let i = 0; i &lt; vals.length; i++) {
+ if (i === 0) { this.ctx.moveTo(i * step, y(vals[i])) }
+ else { this.ctx.lineTo(i * step, y(vals[i])) }
+ }
+ this.ctx.strokeStyle = color
+ this.ctx.lineWidth = 2
+ this.ctx.stroke()
+ }
 }</pre>
 </div>
 <p class="mb-2">代码里两处 Math.max 不是废话：温差为 0（七天内全是同一温度）时 span 如果是 0，除法直接出 NaN，整条线消失得无影无踪：你会以为 Canvas 坏了，其实是数学先坏了。画图类代码调试技巧说一句：先把坐标点用 Text 标出来验证位置对不对，再画线。想进阶的话，把 moveTo 换成贝塞尔曲线让线条圆滑、在线的端点标数值，都是在这一版基础上加层皮的事。</p>
@@ -834,20 +833,20 @@ struct TempChart {
 <div class="code-head"><span>JSON · resources 下的双份颜色</span><span class="dots">···</span></div>
 <pre>// resources/base/element/color.json（浅色）
 {
-  "color": [
-    { "name": "text_primary",   "value": "#1A1A1A" },
-    { "name": "text_secondary", "value": "#888888" },
-    { "name": "bg_card",        "value": "#F2F3F5" }
-  ]
+ "color": [
+ { "name": "text_primary", "value": "#1A1A1A" },
+ { "name": "text_secondary", "value": "#888888" },
+ { "name": "bg_card", "value": "#F2F3F5" }
+ ]
 }
 
 // resources/dark/element/color.json（深色，同名不同值）
 {
-  "color": [
-    { "name": "text_primary",   "value": "#E6E6E6" },
-    { "name": "text_secondary", "value": "#9E9E9E" },
-    { "name": "bg_card",        "value": "#2A2A2A" }
-  ]
+ "color": [
+ { "name": "text_primary", "value": "#E6E6E6" },
+ { "name": "text_secondary", "value": "#9E9E9E" },
+ { "name": "bg_card", "value": "#2A2A2A" }
+ ]
 }
 
 // 代码里一律引用资源：
@@ -886,17 +885,17 @@ struct TempChart {
 <pre>private seq: number = 0
 
 async load() {
-  let mySeq = ++this.seq          // 发起前领号
-  this.loading = true
-  try {
-    let data = await this.svc.fetch(this.city)
-    if (mySeq !== this.seq) { return }   // 已有更新的请求，这份结果作废
-    this.weather = data
-  } catch (e) {
-    if (mySeq !== this.seq) { return }   // 过期请求的报错同样不显示
-    this.error = '加载失败，请检查网络后重试'
-  }
-  this.loading = false
+ let mySeq = ++this.seq // 发起前领号
+ this.loading = true
+ try {
+ let data = await this.svc.fetch(this.city)
+ if (mySeq !== this.seq) { return } // 已有更新的请求，这份结果作废
+ this.weather = data
+ } catch (e) {
+ if (mySeq !== this.seq) { return } // 过期请求的报错同样不显示
+ this.error = '加载失败，请检查网络后重试'
+ }
+ this.loading = false
 }</pre>
 </div>
 <p class="mb-2">原理一句话：每个请求发起时领一个号，回来先对号，号不是最新的，说明路上已经有更新的请求了，这份结果默默扔掉。下拉刷新、切换城市、自动定位三个入口都可能触发请求，竞态防线是必配不是可选。</p>
@@ -924,21 +923,21 @@ async load() {
 private lastCity: string = ''
 
 async load() {
-  let now = Date.now()
-  // 同一城市一分钟内重复触发，直接复用上一次结果
-  if (this.city === this.lastCity &amp;&amp; now - this.lastFetchAt &lt; 60 * 1000) {
-    return
-  }
-  this.lastFetchAt = now
-  this.lastCity = this.city
-  // ……后面的请求逻辑不变
+ let now = Date.now()
+ // 同一城市一分钟内重复触发，直接复用上一次结果
+ if (this.city === this.lastCity &amp;&amp; now - this.lastFetchAt &lt; 60 * 1000) {
+ return
+ }
+ this.lastFetchAt = now
+ this.lastCity = this.city
+ // ……后面的请求逻辑不变
 }</pre>
 </div>
 <p class="mb-2">一分钟这个阈值不是标准答案，是个合理起点，你自己按"数据更新节奏 + 用户手感"调。加这段代码前记得配合第七节的缓存，被去抖挡掉的请求，用户看到的本来就是缓存数据，体验没有损失。</p>
 <p class="mb-2">电量怎么验收？别凭感觉，跑真实数据：把应用正常用一周，去系统设置里的电池用量排行看看它排第几（各家系统入口路径不同，找"电池"或"电池与性能"之类条目）。一个天气应用排进前五，一定是你哪里太勤快了，按这一节的清单回头收一遍。</p>
 <p class="mb-2">别保活。</p>
 <div class="quote-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-quote-left mr-2"></i>一句话记牢</p>
+<p class="font-semibold">一句话记牢</p>
 <p class="mt-1">天气应用的美德是克制：数据更新得慢，你就该请求得慢；用户不在场，你就该安静。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">十一、扩展练习：五个进阶题目与提示</h4>
@@ -969,7 +968,7 @@ async load() {
 <p class="mb-2">复盘时建议拿张纸，左边写"平台方言"（比如 @State 装饰器、Refresh 组件、Preferences 这些换平台就不存在的东西），右边写"通用功力"。右边那栏你大概率会写下这些：三态思维（任何异步操作都有加载、成功、失败，UI 要给每态一个家）；防御式解析（接口会变、数据会缺，逐条校验不亏）；失败兜底（旧数据 + 时间标记好过一个空白错误页）；竞态意识（并发请求要对号）；资源释放纪律（请求对象、监听器，用完就收）；真机验证（模拟器永远告诉你"一切正常"）。这六条没有一条写着"鸿蒙"，你把它们写进简历、带到任何平台都成立。</p>
 <p class="mb-2">两个常被问到的问题顺手答了。"三个平台都要学吗？"，不必都深学，但第二个平台一定要真的写一遍：第二个平台写起来会快得多，因为它逼你把"方言"和"功力"真正分开。"写完这个项目算入门网络应用了吗？"，算，但只算语法入门；项目删掉重写一遍，卡壳的地方才是你真正没学会的地方，那才是入门。</p>
 <div class="quote-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-quote-left mr-2"></i>一句话记牢</p>
+<p class="font-semibold">一句话记牢</p>
 <p class="mt-1">换平台只是换方言，"请求—解析—三态—兜底"这个骨架才是你自己的；项目做完不算完，删掉重写一遍才算。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">十三、发布前检验：五个真机场景过一遍</h4>
@@ -1007,11 +1006,11 @@ async load() {
 <p class="mb-2">还有一个习惯值得养成。每周看一眼服务商控制台的调用量曲线。看上两三周，你对自己的"正常消耗"就有手感了，之后任何异常尖峰都瞒不过你的眼睛。安全这事，绝大多数时候不靠高深技术，靠的是"知道东西放在哪、知道它正常长什么样"。</p>
 <p class="mb-2"><div class="stance-box"> <div class="stance-box-head">作者立场</div> <p>我的结论：客户端里不许持有 key，一条都不许。理由三条：</p> <ul> <li>客户端代码可以被反编译，硬编码的 key 对会拆包的人没有秘密性；</li> <li>key 进了 git 历史就等于已经泄露，删文件不算处理，只有在控制台吊销重发才算；</li> <li>免费额度耗尽的代价是应用当天瘫痪，而发现这件事靠的是每周看一眼调用量曲线，不是靠技术。</li> </ul> <p class="stance-box-note">（无利益相关。作者与任何天气服务商无赞助或分成关系；各服务商的额度、限流与绑定能力以其官方文档和控制台当日显示为准。）</p> </div></p>
 <div class="warning-box rounded-lg p-4 mt-3">
-<p class="font-semibold"><i class="fas fa-exclamation-triangle mr-2"></i>避坑提醒</p>
+<p class="font-semibold">避坑提醒</p>
 <p class="mt-1">key 一旦进过 git 历史，就按"已经泄露"处理：吊销重发，然后在新配置里换上新值。很多人删掉文件再提交一次就以为完事了，历史提交一翻。key 明晃晃躺在那里。同理，聊天记录里发过的 key、演示截图里拍到的 key，都按泄露处理。</p>
 </div>
 <div class="info-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>小贴士</p>
+<p class="font-semibold">小贴士</p>
 <p class="mt-1">别人问你要 key "借来用用"，直接拒绝，让他自己花五分钟注册一个免费账号。key 的额度和你这个注册账号绑在一起，借出去的每一笔调用都算你头上，出了滥用还得你去找服务商解释。这不是小气，是账号归属的基本责任问题。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">十五、问答：关于天气项目的八个真实疑问</h4>
@@ -1045,7 +1044,7 @@ async load() {
 <p class="mb-2"><strong>权限弹窗要提前铺垫</strong>：装完应用第一次打开，系统弹定位授权框，你在旁边说一句"点允许，它才能知道你在哪个城市，才能直接显示你们的天气"——这一句比任何界面设计都有效。远程给爸妈装的话，把这句话写进你发过去的安装说明里。他们拒绝过一次，之后系统多半不再弹窗（视系统策略而定），你还得引导去设置里开，成本比第一次就点允许高得多。</p>
 <p class="mb-2"><strong>更新与打扰要克制</strong>：别给他们开任何推送——他们不一定知道怎么关，关不掉又用不上的应用，结局就是被卸载。你自己升级版本的节奏也要克制：每次改布局，他们就要重新学一遍，改得越勤，学得越多。功能迭代攒一攒、界面尽量稳，这对年轻用户是"少折腾"，对他们是"还能用"。</p>
 <div class="info-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>小贴士</p>
+<p class="font-semibold">小贴士</p>
 <p class="mt-1">适老化的验收方法：把系统字号调到最大，用你不常用的那只手、慢慢点，自己把应用用满一周。过关标准只有一条，爸妈第一次完全独立地查到了"明天的天气"，中途没喊你。</p>
 </div>
 <p class="mb-2">这一节的建议没有一行新代码，但它决定应用"能不能真的被用起来"。技术决定一个项目的下限，这些决定决定它会不会真的出现在别人的生活里。你后面做的每一个应用，都值得过一遍这节清单，用户不都是二十岁、网络好、系统字号标准的人。</p>
@@ -1056,7 +1055,7 @@ async load() {
 <p class="mb-2"><strong>故事三：城市越加越多，找不着了。</strong>反馈："加了十来个城市，每次找北京都要滑半天。"定性：这不是 bug，是需求。先用最小代价回应——做了"置顶"功能（第十一节第四题的简版），长按某个城市把它钉在列表最上面；至于完整的拖动排序，先不做，看置顶够不够用。一个月后反馈是"够用了"，排序编辑器就永远不用写了。收获：很多功能不是设计出来的，是被使用反馈顶出来的；先用最小版本接住需求，别一上来造完整工具。</p>
 <p class="mb-2">三个故事讲完，给你留一个可以直接抄走的习惯：建一个迭代记录，一行一条，日期、用户原话、定位结论、改了什么、怎么验证的。用户原话务必照抄，转述会丢掉情绪，而情绪里藏着真实的优先级。这份流水账坚持三个月，就是这应用最好的一份文档；等你哪天要把项目写进简历，它顺手就是素材。</p>
 <div class="quote-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-quote-left mr-2"></i>一句话记牢</p>
+<p class="font-semibold">一句话记牢</p>
 <p class="mt-1">应用不是写完那天出生的，是被第一批用户的反馈养大的；听反馈、小步改、记下来。</p>
 </div>
 <h4 class="text-lg font-semibold mt-4 mb-2">十八、一天的使用：把所有机制串成一条线</h4>
@@ -1069,13 +1068,13 @@ async load() {
 <p class="mb-2"><strong>22:40，睡前最后看一眼。</strong>这次刷新的数据写进缓存，时间戳停在 22:41——它是为明天早上 7:20 那半秒钟的秒开准备的。一天绕了一个圈，从缓存开始，到缓存结束，中间所有的请求、防御、克制，都是在为"下一个早晨快一点"服务。</p>
 <p class="mb-2">把这条时间线存下来当测试脚本，一个时间点一个时间点在真机上过。全都对上了，你的天气助手就不再是"跟着书做出来的 demo"，而是一个能在别人的生活里站住脚的应用。至于它还能走到哪，服务卡片、手表、智慧屏，另一台设备上看到同一份天气，那是第 79 章要展开的分布式故事，这一章你打的每一层地基，都会在那边接着用。</p>
 <div class="quote-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-quote-left mr-2"></i>一句话记牢</p>
+<p class="font-semibold">一句话记牢</p>
 <p class="mt-1">单点功能都会写，一天下来环环咬合不出错，才算真的把网络应用做完了。</p>
 </div>
 <p class="mb-2">写到这里，再交代一句放在最后的实话：这一章的代码示例刻意保持"最小可跑"，真要把它搬进你的工程，还要过一遍你自己的命名规范、日志规范和团队约定：书给的是骨架和判断力，不是可以照抄的模板。同样，示例里出现的接口地址、字段名、过期线、去抖阈值，都是教学用的占位与示意，落地时以你选定的服务商文档和你自己的用户反馈为准。把这两个"以什么为准"记住，你就不会把任何一本书，包括这本，当成终点。</p>
 <p class="mb-2">还有一件小事值得现在就做：给这份代码写一段三行的 README——用了哪个服务商的哪个接口、三态怎么渲染、缓存存在哪、过期线多长。别小看这三行，下周你自己回来看代码时，它们省下的恢复成本比任何注释都大。项目会过时，把"为什么这么做"写下来的习惯不会。至于下一站，挑一道扩展题做完，或者把这一章删掉凭记忆重写一遍，都好过急着奔向下一个新项目。</p>
 <div class="chapter-summary">
-<p class="font-semibold mb-1"><i class="fas fa-flag-checkered mr-1"></i>本章小结</p>
+<p class="font-semibold mb-1">本章小结</p>
 <ul class="list-disc pl-6 mb-3 space-y-1">
   <li>三层拆分：Service 管请求、页面管三态、UI 按状态渲染</li>
   <li>HTTP 请求用 @kit.NetworkKit 的 http 模块，用完 destroy</li>
@@ -1092,19 +1091,19 @@ async load() {
 <nav class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a href="di-qi-shi-liu-zhang.html" class="text-primary hover:underline">← 第七十六章：实战项目一——待办清单</a><span></span><a href="di-qi-shi-ba-zhang.html" class="text-primary hover:underline">第七十八章：上架华为应用市场 →</a></nav>
 
             </section>
- </div></main></div><!-- 快捷工具：浮动按钮组 --><div id="quick-tools" class="quick-tools no-print" aria-label="快捷工具"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><i class="fas fa-droplet" aria-hidden="true"></i></button><button id="quick-search" class="quick-tool-btn" title="搜索 (Ctrl+K)" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></button><button id="quick-theme" class="quick-tool-btn" title="切换深色/浅色" aria-label="切换主题"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i></button><button id="quick-print" class="quick-tool-btn" title="打印 / 导出PDF" aria-label="打印或导出"><i class="fas fa-print" aria-hidden="true"></i></button><button id="quick-toc" class="quick-tool-btn" title="目录" aria-label="打开目录"><i class="fas fa-list" aria-hidden="true"></i></button><button id="quick-tts" class="quick-tool-btn" title="语音朗读" aria-label="语音朗读"><i class="fas fa-headphones" aria-hidden="true"></i></button><button id="quick-shortcuts" class="quick-tool-btn" title="键盘快捷键 (?)" aria-label="快捷键面板"><i class="fas fa-keyboard" aria-hidden="true"></i></button><button id="quick-backup" class="quick-tool-btn" title="备份/恢复进度" aria-label="备份进度"><i class="fas fa-cloud-arrow-up" aria-hidden="true"></i></button></div><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><!-- 快捷键面板 --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="键盘快捷键"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><i class="fas fa-keyboard text-gray-400"></i><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">键盘快捷键</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">搜索内容</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">切换深色/浅色</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">语音朗读 播放/暂停</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">停止朗读</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">打开快捷键面板</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">字号调大 / 调小</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">打印 / 导出PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- 备份/恢复弹窗 --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="备份与恢复"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><i class="fas fa-cloud-arrow-up text-gray-400"></i><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">阅读进度备份与恢复</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">备份包含：已读章节、书签、阅读位置、字号偏好、健康自检结果。数据保存在浏览器本地，更换浏览器或清除缓存后丢失，建议定期导出备份。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-download"></i> 导出备份文件
- </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">下载一个 JSON 文件，保存到安全位置</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-upload"></i> 导入备份恢复
- </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">选择之前导出的备份文件恢复进度</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-trash"></i> 清除所有阅读数据
- </button><p class="text-xs text-red-400 mt-1 text-center">不可恢复！请先导出备份</p></div></div></div></div><!-- 阅读连续天数提示 --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),#7c3aed);color:var(--ink-inverse);border:none;"><i class="fas fa-fire" aria-hidden="true" style="color:var(--gold-2)"></i><span id="streak-toast-text">连续阅读第 X 天！</span></div><!-- 语音朗读控件栏 --><div id="tts-controls" class="tts-controls" role="region" aria-label="语音朗读控制" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="当前朗读章节">未开始</span><button class="tts-btn" id="tts-prev" title="上一段" aria-label="上一段"><i class="fas fa-step-backward"></i></button><button class="tts-btn play-btn" id="tts-play" title="播放/暂停" aria-label="播放朗读"><i class="fas fa-play"></i></button><button class="tts-btn" id="tts-next" title="下一段" aria-label="下一段"><i class="fas fa-step-forward"></i></button><button class="tts-btn" id="tts-speed-down" title="减速" aria-label="减速">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="加速" aria-label="加速">+</button><button class="tts-btn" id="tts-stop" title="停止朗读" aria-label="停止朗读"><i class="fas fa-times"></i></button></div><!-- 回到顶部按钮 --><button id="back-to-top" class="opacity-0 invisible" aria-label="回到顶部"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg><i class="fas fa-arrow-up" aria-hidden="true"></i></button><!-- 阅读位置恢复提示 --><div id="restore-toast" class="restore-position-toast" role="alert"><i class="fas fa-bookmark" aria-hidden="true"></i><span id="restore-toast-text">上次读到：...</span><button class="btn-restore" id="restore-btn">继续阅读</button><button class="btn-dismiss" id="dismiss-btn">忽略</button></div><!-- JS脚本 -->
+ </div></main></div><!-- 快捷工具：浮动按钮组 --><div id="quick-tools" class="quick-tools no-print" aria-label="快捷工具"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">透</span></button><button id="quick-search" class="quick-tool-btn" title="搜索 (Ctrl+K)" aria-label="搜索"><span aria-hidden="true">搜</span></button><button id="quick-theme" class="quick-tool-btn" title="切换深色/浅色" aria-label="切换主题"><span aria-hidden="true">夜</span></button><button id="quick-print" class="quick-tool-btn" title="打印 / 导出PDF" aria-label="打印或导出"><span aria-hidden="true">印</span></button><button id="quick-toc" class="quick-tool-btn" title="目录" aria-label="打开目录"><span aria-hidden="true">目</span></button><button id="quick-tts" class="quick-tool-btn" title="语音朗读" aria-label="语音朗读"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="键盘快捷键 (?)" aria-label="快捷键面板"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="备份/恢复进度" aria-label="备份进度"><span aria-hidden="true">备</span></button></div><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><!-- 快捷键面板 --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="键盘快捷键"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">键盘快捷键</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">搜索内容</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">切换深色/浅色</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">语音朗读 播放/暂停</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">停止朗读</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">打开快捷键面板</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">字号调大 / 调小</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">打印 / 导出PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- 备份/恢复弹窗 --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="备份与恢复"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">阅读进度备份与恢复</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">备份包含：已读章节、书签、阅读位置、字号偏好、健康自检结果。数据保存在浏览器本地，更换浏览器或清除缓存后丢失，建议定期导出备份。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 导出备份文件
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">下载一个 JSON 文件，保存到安全位置</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 导入备份恢复
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">选择之前导出的备份文件恢复进度</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 清除所有阅读数据
+ </button><p class="text-xs text-red-400 mt-1 text-center">不可恢复！请先导出备份</p></div></div></div></div><!-- 阅读连续天数提示 --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),#7c3aed);color:var(--ink-inverse);border:none;"><span id="streak-toast-text">连续阅读第 X 天！</span></div><!-- 语音朗读控件栏 --><div id="tts-controls" class="tts-controls" role="region" aria-label="语音朗读控制" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="当前朗读章节">未开始</span><button class="tts-btn" id="tts-prev" title="上一段" aria-label="上一段"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="播放/暂停" aria-label="播放朗读"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="下一段" aria-label="下一段"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="减速" aria-label="减速">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="加速" aria-label="加速">+</button><button class="tts-btn" id="tts-stop" title="停止朗读" aria-label="停止朗读"><span aria-hidden="true">×</span></button></div><!-- 回到顶部按钮 --><button id="back-to-top" class="opacity-0 invisible" aria-label="回到顶部"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- 阅读位置恢复提示 --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">上次读到：...</span><button class="btn-restore" id="restore-btn">继续阅读</button><button class="btn-dismiss" id="dismiss-btn">忽略</button></div><!-- JS脚本 -->
  
  <script>
-        /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
-        if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
-                    .catch(function (err) { console.warn('SW 注册失败：', err); });
-            });
-        }
-    </script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
 <script src="assets/book.js" defer></script>
 </body></html>

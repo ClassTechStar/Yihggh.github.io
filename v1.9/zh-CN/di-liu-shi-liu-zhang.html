@@ -6,64 +6,63 @@
 
 
  <script id="liquid-glass-bundle">
-    /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
-     * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
-     * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
-     * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
-    (function () {
-      if (window.__liquidGlass) return;
-      window.__liquidGlass = true;
-      if (window.__SAFE) return;
-      var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
-      var reduce = window.matchMedia &&
-        window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
-      if (!ok || reduce) return;
-      var root = document.documentElement;
-      root.classList.add('lg-ready');
-      if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
-      window.__lgToggle = function (v) {
-        var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
-        root.classList.toggle('lg-off', off);
-        if (window.RS) RS.set('liquidGlass', !off);
-        return !off;
-      };
-      var sync = function () {
-        var btn = document.getElementById('quick-glass');
-        if (!btn) return;
-        var off = root.classList.contains('lg-off');
-        btn.classList.toggle('lg-btn-off', off);
-        btn.setAttribute('aria-pressed', String(!off));
-        var ic = btn.querySelector('i');
-        if (ic) ic.className = off ? 'fas fa-droplet-slash' : 'fas fa-droplet';
-      };
-      /* bundle 在 head 执行时 #quick-glass 尚未存在——绑定延迟到 DOMContentLoaded */
-      document.addEventListener('DOMContentLoaded', function () {
-        var btn = document.getElementById('quick-glass');
-        if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
-        sync();
-      });
-      try {
-        if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
-      } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
-    })();
-    </script>
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var sync = function () {
+ var btn = document.getElementById('quick-glass');
+ if (!btn) return;
+ var off = root.classList.contains('lg-off');
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ };
+ /* bundle 在 head 执行时 #quick-glass 尚未存在——绑定延迟到 DOMContentLoaded */
+ document.addEventListener('DOMContentLoaded', function () {
+ var btn = document.getElementById('quick-glass');
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ });
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
  
 
 
 <link rel="preload" href="../fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../fonts/fa/fa-solid-900.subset.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-liu-shi-liu-zhang.html">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "第六十六章：项目二——天气查询App（网络版）", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-liu-shi-liu-zhang.html", "isPartOf": {"@type": "Book", "name": "你缺失的那门手机课", "inLanguage": "zh-CN"}}</script>
 <link rel="stylesheet" href="assets/book.css">
-</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">跳到主要内容</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="打开目录菜单" aria-expanded="false" aria-controls="sidebar"><i class="fas fa-bars"></i></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="返回首页"><span class="hidden sm:inline-flex w-8 h-8 rounded-md bg-gradient-to-br from-primary to-accent text-white items-center justify-center text-sm font-bold flex-shrink-0" aria-hidden="true"><i class="fas fa-mobile-screen"></i></span><h1 class="text-base md:text-lg font-bold text-primary truncate">搞定手机 · 数码必修课</h1></a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="主操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="从基础开始"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>开始学习</span></a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="搜索 (Ctrl+K)" aria-label="搜索内容"><i class="fas fa-search" aria-hidden="true"></i></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="字号调整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="缩小字体" aria-label="缩小字体">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="重置字号" aria-label="重置字号">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="放大字体" aria-label="放大字体">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="切换深色/浅色模式" aria-label="切换深色/浅色模式"><i class="fas fa-moon dark:hidden" aria-hidden="true"></i><i class="fas fa-sun hidden dark:inline" aria-hidden="true"></i></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="打印 / 导出PDF" aria-label="打印或导出PDF"><i class="fas fa-print" aria-hidden="true"></i></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="回到顶部"><i class="fas fa-arrow-up mr-1" aria-hidden="true"></i>顶部
- </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="文章目录"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2"><span aria-hidden="true" class="fas fa-list-ul text-primary" aria-hidden="true"></span>学习目录
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">跳到主要内容</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="打开目录菜单" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="返回首页"><span class="hidden sm:inline-flex w-8 h-8 rounded-md bg-gradient-to-br from-primary to-accent text-white items-center justify-center text-sm font-bold flex-shrink-0" aria-hidden="true"></span><h1 class="text-base md:text-lg font-bold text-primary truncate">搞定手机 · 数码必修课</h1></a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="主操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="从基础开始"><span>开始学习</span></a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="搜索 (Ctrl+K)" aria-label="搜索内容"><span aria-hidden="true">搜</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="字号调整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="缩小字体" aria-label="缩小字体">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="重置字号" aria-label="重置字号">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="放大字体" aria-label="放大字体">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="切换深色/浅色模式" aria-label="切换深色/浅色模式"><span class="dark:hidden" aria-hidden="true">夜</span><span class="hidden dark:inline" aria-hidden="true">昼</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="打印 / 导出PDF" aria-label="打印或导出PDF"><span aria-hidden="true">印</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="回到顶部">顶部
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="文章目录"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">学习目录
  </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 章</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="筛选章节..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="筛选章节"></div><ul class="space-y-1 text-sm" id="toc-list"><!-- 基础篇 -->
                     <li class="toc-parent" data-group="ji-chu">
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">一、基础篇（第0-7章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起基础篇" data-target="child-ji-chu">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -85,7 +84,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">二、软件篇（第8-14章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起软件篇" data-target="child-ruan-jian">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -104,7 +103,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">三、进阶篇（第15-20章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起进阶篇" data-target="child-jin-jie">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -123,7 +122,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">四、超越篇（第21-26章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起超越篇" data-target="child-chao-yue">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -141,7 +140,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">五、实战篇（第27-32章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起实战篇" data-target="child-shi-zhan">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -158,7 +157,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">六、展望篇与车联篇（第33-34章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起展望篇" data-target="child-zhan-wang">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -171,7 +170,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">儿童与手机专题（第35-36章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起儿童与手机专题" data-target="child-er-tong-pian">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -184,7 +183,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">七、AI编程实战篇（第37-47章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起AI编程实战篇" data-target="child-ai-biancheng">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -206,7 +205,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">八、安卓开发实战篇（第48-58章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起安卓开发实战篇" data-target="child-an-zhuo-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -228,7 +227,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">九、iOS开发实战篇（第59-69章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起iOS开发实战篇" data-target="child-ios-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -250,7 +249,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-qi-shi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十、鸿蒙开发实战篇（第70-80章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起鸿蒙开发实战篇" data-target="child-hongmeng-kai-fa">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-hongmeng-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -272,7 +271,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十一、手机与可穿戴篇（第81-85章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十一、手机与可穿戴篇（第81-85章）目录开关" data-target="child-ke-chuan-she-bei">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ke-chuan-she-bei" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -288,7 +287,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-ba-shi-liu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十二、旅行与手机篇（第86-90章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十二、旅行与手机篇（第86-90章）目录开关" data-target="child-lv-xing">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-lv-xing" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -304,7 +303,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-jiu-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十三、手机与健康篇（第91-95章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十三、手机与健康篇（第91-95章）目录开关" data-target="child-jian-kang">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-jian-kang" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -320,7 +319,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-jiu-shi-liu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十四、AI短视频创作篇（第96-100章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十四、AI短视频创作篇（第96-100章）目录开关" data-target="child-ai-duan-shi-pin">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-ai-duan-shi-pin" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -336,7 +335,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="di-yi-bai-ling-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十五、竖屏短剧入门篇（第101-105章）</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起十五、竖屏短剧入门篇（第101-105章）目录开关" data-target="child-shu-ping-duan-ju">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-shu-ping-duan-ju" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -352,7 +351,7 @@
                         <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
                             <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十六、附录</a>
                             <button class="toc-toggle-btn" type="button" aria-label="展开/收起附录" data-target="child-fu-lu">
-                                <i class="fas fa-chevron-down toc-toggle-icon text-xs transition-transform duration-300"></i>
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
                             </button>
                         </div>
                         <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
@@ -367,7 +366,7 @@
                             <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>附录H：版本路线图</a></li>
                         </ul>
                     </li>
-</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索"><div class="search-panel"><div class="search-input-wrapper"><i class="fas fa-search text-gray-400"></i><input type="text" id="search-input" placeholder="搜索内容..." autocomplete="off" aria-label="搜索关键词"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭搜索">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">输入关键词开始搜索</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 顶部面包屑 --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">首页</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">数码必修课 · v1.9</span></nav>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">搜</span><input type="text" id="search-input" placeholder="搜索内容..." autocomplete="off" aria-label="搜索关键词"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭搜索">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">输入关键词开始搜索</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 顶部面包屑 --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">首页</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">数码必修课 · v1.9</span></nav>
 <div id="di-liu-shi-liu-zhang" class="mb-10 content-section">
 <h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">第六十六章：项目二——天气查询 App（网络版）</h3>
 <p class="chapter-intro mb-4">记账本是"练内功"，天气 App 是"见世面"：它要和互联网打交道。这个项目你会学到：申请免费 API、解析 JSON、处理"加载中/成功/失败"三种界面状态，以及怎么把 API 密钥藏好。做完它，你就具备了做任何"联网 App"的能力，新闻、汇率、翻译，套路一模一样。</p>
@@ -415,9 +414,9 @@
 <div class="code-block">
 <div class="code-head"><span>JSON · 返回示例（节选）</span><span class="dots">···</span></div>
 <pre>{
-  "weather": [ { "description": "晴" } ],
-  "main": { "temp": 26.5, "humidity": 40 },
-  "name": "北京"
+ "weather": [ { "description": "晴" } ],
+ "main": { "temp": 26.5, "humidity": 40 },
+ "name": "北京"
 }</pre>
 </div>
 <ul class="list-disc pl-6 mb-3 space-y-1">
@@ -438,7 +437,7 @@
 </div>
 <p class="text-xs text-gray-500 dark:text-gray-400 mb-3">三家天气服务的取舍</p>
 <div class="danger-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-exclamation-circle mr-2"></i>避坑提醒：密钥绝不能写死在代码里</p>
+<p class="font-semibold">避坑提醒：密钥绝不能写死在代码里</p>
 <p class="mt-1">API Key 相当于你的"钱包密码"，写进代码一提交到 GitHub，几小时内就会被爬虫扫走盗刷。iOS 的正确做法：放进 <code class="inline">Config.xcconfig</code>（配置文件，已被 gitignore 忽略），通过 Info.plist 读入代码。搜索"iOS xcconfig 管理密钥"照着改即可。</p>
 </div>
 <h5 class="font-semibold mt-3 mb-1">密钥藏进 xcconfig：三步走</h5>
@@ -452,8 +451,8 @@
 <div class="code-block">
 <div class="code-head"><span>SWIFT · Config.swift（读密钥）</span><span class="dots">···</span></div>
 <pre>enum Config {
-    static let apiKey = Bundle.main.object(
-        forInfoDictionaryKey: "WEATHER_API_KEY") as? String ?? ""
+ static let apiKey = Bundle.main.object(
+ forInfoDictionaryKey: "WEATHER_API_KEY") as? String ?? ""
 }</pre>
 </div>
 <p class="mb-2">配置对不对，验收办法很直接：打印 <code class="inline">Config.apiKey</code> 看是不是你的 Key（验证完把打印删掉）。细节记不全没关系：照官方文档和搜索关键词走一遍。第二次就熟了。要记的是原则：<strong>密钥只住在配置文件里，代码里永远是"去取"，不是"写死"</strong>。</p>
@@ -467,27 +466,27 @@
 <div class="code-head"><span>SWIFT · 数据模型 + 服务</span><span class="dots">···</span></div>
 <pre>// JSON: {"weather":[{"description":"晴"}],"main":{"temp":26.5,"humidity":40},"name":"北京"}
 struct WeatherResponse: Codable {
-    let weather: [Weather]
-    let main: Main
-    let name: String
+ let weather: [Weather]
+ let main: Main
+ let name: String
 }
 struct Weather: Codable { let description: String }
 struct Main: Codable { let temp: Double; let humidity: Int }
 
 struct WeatherService {
-    let key: String   // 从 xcconfig 读入
+ let key: String // 从 xcconfig 读入
 
-    func fetchWeather(city: String) async throws -> WeatherResponse {
-        var comps = URLComponents(string: "https://api.openweathermap.org/data/2.5/weather")!
-        comps.queryItems = [
-            URLQueryItem(name: "q", value: city),
-            URLQueryItem(name: "appid", value: key),
-            URLQueryItem(name: "units", value: "metric"),
-            URLQueryItem(name: "lang", value: "zh_cn")
-        ]
-        let (data, _) = try await URLSession.shared.data(from: comps.url!)
-        return try JSONDecoder().decode(WeatherResponse.self, from: data)
-    }
+ func fetchWeather(city: String) async throws -> WeatherResponse {
+ var comps = URLComponents(string: "https://api.openweathermap.org/data/2.5/weather")!
+ comps.queryItems = [
+ URLQueryItem(name: "q", value: city),
+ URLQueryItem(name: "appid", value: key),
+ URLQueryItem(name: "units", value: "metric"),
+ URLQueryItem(name: "lang", value: "zh_cn")
+ ]
+ let (data, _) = try await URLSession.shared.data(from: comps.url!)
+ return try JSONDecoder().decode(WeatherResponse.self, from: data)
+ }
 }</pre>
 </div>
 <h5 class="font-semibold mt-3 mb-1">逐行拆解：为什么用 URLComponents 而不是字符串拼接</h5>
@@ -501,13 +500,13 @@ struct WeatherService {
 <div class="code-block">
 <div class="code-head"><span>SWIFT · 字段改名映射（示意）</span><span class="dots">···</span></div>
 <pre>struct Main: Codable {
-    let temp: Double
-    let humidity: Int
+ let temp: Double
+ let humidity: Int
 
-    enum CodingKeys: String, CodingKey {
-        case temp
-        case humidity = "humidity_percent"   // JSON 里叫这个，模型里叫 humidity
-    }
+ enum CodingKeys: String, CodingKey {
+ case temp
+ case humidity = "humidity_percent" // JSON 里叫这个，模型里叫 humidity
+ }
 }</pre>
 </div>
 <p class="mb-2">再记住一条铁则：<strong>类型也要对上</strong>。JSON 里 temp 万一给了个字符串"26.5"，解码当场抛错：这就是第六节调试手段里"打印原始数据"的价值：解析失败时，先看原始 JSON 长什么样，别对着报错空想。顺带教你读解码报错：错信息里通常带着"哪个字段、期待什么类型、实际拿到什么"，例如 typeMismatch 之类的字样，顺着它指的字段去原始 JSON 里核对，十有八九一眼破案。实在读不懂就整段复制给搜索引擎或 AI，报错原文是最值钱的搜索词。</p>
@@ -521,20 +520,20 @@ struct WeatherService {
 <div class="code-block">
 <div class="code-head"><span>SWIFT · 第一次真请求（临时验证）</span><span class="dots">···</span></div>
 <pre>struct TempTestView: View {
-    @State private var text = "请求中…"
+ @State private var text = "请求中…"
 
-    var body: some View {
-        Text(text)
-            .task {
-                do {
-                    let service = WeatherService(key: Config.apiKey)
-                    let data = try await service.fetchWeather(city: "beijing")
-                    text = "\(data.name)：\(data.main.temp)°C"
-                } catch {
-                    text = "失败：\(error)"
-                }
-            }
-    }
+ var body: some View {
+ Text(text)
+ .task {
+ do {
+ let service = WeatherService(key: Config.apiKey)
+ let data = try await service.fetchWeather(city: "beijing")
+ text = "\(data.name)：\(data.main.temp)°C"
+ } catch {
+ text = "失败：\(error)"
+ }
+ }
+ }
 }</pre>
 </div>
 <p class="mb-2">跑起来看到"Beijing：26.5°C"（数字随当天天气变），网络层就算通了。这步的验收意义和记账本"塞三条测试数据"一样：地基先验，再往上盖。失败也别慌：把报错原样读一遍，九成是密钥没配对或 Key 还没生效。</p>
@@ -543,25 +542,25 @@ struct WeatherService {
 <div class="code-block">
 <div class="code-head"><span>SWIFT · 界面状态</span><span class="dots">···</span></div>
 <pre>enum LoadState {
-    case loading                  // 转圈中
-    case success(WeatherResponse) // 成功
-    case error(String)            // 失败
+ case loading // 转圈中
+ case success(WeatherResponse) // 成功
+ case error(String) // 失败
 }
 
 @Observable
 class WeatherViewModel {
-    var state: LoadState = .loading
-    private let service = WeatherService(key: Config.apiKey)
+ var state: LoadState = .loading
+ private let service = WeatherService(key: Config.apiKey)
 
-    func search(city: String) async {
-        state = .loading
-        do {
-            let data = try await service.fetchWeather(city: city)
-            state = .success(data)
-        } catch {
-            state = .error("查不到这个城市，换个名字试试？")
-        }
-    }
+ func search(city: String) async {
+ state = .loading
+ do {
+ let data = try await service.fetchWeather(city: city)
+ state = .success(data)
+ } catch {
+ state = .error("查不到这个城市，换个名字试试？")
+ }
+ }
 }
 
 // 界面里：
@@ -579,19 +578,19 @@ case .error(let msg): Text(msg).foregroundColor(.secondary)
 <div class="code-block">
 <div class="code-head"><span>SWIFT · 按 URLError 分支提示</span><span class="dots">···</span></div>
 <pre>do {
-    let data = try await service.fetchWeather(city: city)
-    state = .success(data)
+ let data = try await service.fetchWeather(city: city)
+ state = .success(data)
 } catch let e as URLError {
-    switch e.code {
-    case .notConnectedToNetwork:
-        state = .error("没有网络，检查一下 Wi-Fi 或蜂窝数据")
-    case .timedOut:
-        state = .error("网络太慢，超时了，请稍后再试")
-    default:
-        state = .error("出了点小问题，请稍后再试")
-    }
+ switch e.code {
+ case .notConnectedToNetwork:
+ state = .error("没有网络，检查一下 Wi-Fi 或蜂窝数据")
+ case .timedOut:
+ state = .error("网络太慢，超时了，请稍后再试")
+ default:
+ state = .error("出了点小问题，请稍后再试")
+ }
 } catch {
-    state = .error("出了点小问题，请稍后再试")
+ state = .error("出了点小问题，请稍后再试")
 }</pre>
 </div>
 <p class="mb-2">注意这层分支管的是"根本没到服务器"的失败；到了服务器但被拒绝（比如被限流的 HTTP 429、服务端出错的 5xx），得看响应的状态码<code class="inline">URLSession</code> 返回的第二个值（前面代码里用 <code class="inline">_</code> 丢掉的那个 response）就是干这个的，它是 HTTPURLResponse，取 <code class="inline">statusCode</code> 判断。两条线合起来，错误才算真的"分了级"，思路在 64 章"网络错误分级"那节铺过底，这里是它的第一场实战。</p>
@@ -607,41 +606,41 @@ case .error(let msg): Text(msg).foregroundColor(.secondary)
 <div class="code-head"><span>SWIFT · ViewModel 里的"last good"</span><span class="dots">···</span></div>
 <pre>@Observable
 class WeatherViewModel {
-    var state: LoadState = .loading
-    private(set) var lastGood: WeatherResponse?   // 最近一次成功的结果
-    private(set) var lastUpdated: Date?           // 它是什么时候拿到的
+ var state: LoadState = .loading
+ private(set) var lastGood: WeatherResponse? // 最近一次成功的结果
+ private(set) var lastUpdated: Date? // 它是什么时候拿到的
 
-    private let service = WeatherService(key: Config.apiKey)
+ private let service = WeatherService(key: Config.apiKey)
 
-    func search(city: String) async {
-        state = .loading
-        do {
-            let data = try await service.fetchWeather(city: city)
-            lastGood = data          // 成功一次，就存一份底
-            lastUpdated = Date()
-            state = .success(data)
-        } catch {
-            state = .error("查不到这个城市，换个名字试试？")
-        }
-    }
+ func search(city: String) async {
+ state = .loading
+ do {
+ let data = try await service.fetchWeather(city: city)
+ lastGood = data // 成功一次，就存一份底
+ lastUpdated = Date()
+ state = .success(data)
+ } catch {
+ state = .error("查不到这个城市，换个名字试试？")
+ }
+ }
 }</pre>
 </div>
 <p class="mb-2">界面里 error 分支顺便把旧数据画出来：</p>
 <div class="code-block">
 <div class="code-head"><span>SWIFT · error 状态里展示旧数据</span><span class="dots">···</span></div>
 <pre>case .error(let msg):
-    VStack(spacing: 10) {
-        if let d = vm.lastGood {
-            WeatherContent(data: d)
-            if let t = vm.lastUpdated {
-                Text("数据时间 \(t.formatted(date: .omitted, time: .shortened)) · 暂为旧数据")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-            }
-        }
-        Text(msg)
-            .foregroundColor(.secondary)
-    }</pre>
+ VStack(spacing: 10) {
+ if let d = vm.lastGood {
+ WeatherContent(data: d)
+ if let t = vm.lastUpdated {
+ Text("数据时间 \(t.formatted(date: .omitted, time: .shortened)) · 暂为旧数据")
+ .font(.footnote)
+ .foregroundColor(.secondary)
+ }
+ }
+ Text(msg)
+ .foregroundColor(.secondary)
+ }</pre>
 </div>
 <p class="mb-2">用户看到的是：熟悉的天气界面还在，只是顶上一行小字承认"这是旧数据"。体面，就是这么攒出来的。这一版缓存只活在内存里——App 一杀就没了；把它存进磁盘（第 64 章的 UserDefaults 或文件方案都能装），重启也能兜底，留给本节末尾的扩展练习。缓存和「重试」按钮是一对搭档：旧数据管"看得见"，重试管"有出路"，两个都在，用户才不会觉得被丢下。</p>
 <p class="mb-2"><strong>一句话记牢：一个项目的成熟度，看它在最差网络下是什么样子。</strong></p>
@@ -649,24 +648,24 @@ class WeatherViewModel {
 <div class="code-block">
 <div class="code-head"><span>SWIFT · 天气界面（核心片段）</span><span class="dots">···</span></div>
 <pre>struct WeatherContent: View {
-    let data: WeatherResponse
+ let data: WeatherResponse
 
-    var body: some View {
-        VStack(spacing: 12) {
-            Text(data.name)
-                .font(.title.bold())
-            Text("\(Int(data.main.temp))°C")
-                .font(.system(size: 76, weight: .thin))
-            Text(data.weather.first?.description ?? "未知")
-                .font(.title3)
-                .foregroundColor(.secondary)
-            HStack(spacing: 24) {
-                Label("湿度 \(data.main.humidity)%", systemImage: "humidity")
-                Label("当前气温 \(Int(data.main.temp))°C", systemImage: "thermometer")
-            }
-        }
-        .padding()
-    }
+ var body: some View {
+ VStack(spacing: 12) {
+ Text(data.name)
+ .font(.title.bold())
+ Text("\(Int(data.main.temp))°C")
+ .font(.system(size: 76, weight: .thin))
+ Text(data.weather.first?.description ?? "未知")
+ .font(.title3)
+ .foregroundColor(.secondary)
+ HStack(spacing: 24) {
+ Label("湿度 \(data.main.humidity)%", systemImage: "humidity")
+ Label("当前气温 \(Int(data.main.temp))°C", systemImage: "thermometer")
+ }
+ }
+ .padding()
+ }
 }</pre>
 </div>
 <p class="mb-2">几个小细节值得学：<code class="inline">first?</code> 安全取第一个元素（列表可能为空），<code class="inline">?? "未知"</code> 给兜底文案；76 号细字重的温度数字是天气类 App 的经典配方；<code class="inline">Label</code> 是"图标+文字"的官方组件，比手拼 HStack 更规范。</p>
@@ -677,19 +676,19 @@ class WeatherViewModel {
 <div class="code-block">
 <div class="code-head"><span>SWIFT · 天气图标映射</span><span class="dots">···</span></div>
 <pre>func icon(for description: String) -> String {
-    switch description {
-    case let d where d.contains("雨"):  return "cloud.rain"
-    case let d where d.contains("雪"):  return "snowflake"
-    case let d where d.contains("雷"):  return "cloud.bolt.rain"
-    case let d where d.contains("云"):  return "cloud"
-    case let d where d.contains("雾"):  return "cloud.fog"
-    default:                            return "sun.max"
-    }
+ switch description {
+ case let d where d.contains("雨"): return "cloud.rain"
+ case let d where d.contains("雪"): return "snowflake"
+ case let d where d.contains("雷"): return "cloud.bolt.rain"
+ case let d where d.contains("云"): return "cloud"
+ case let d where d.contains("雾"): return "cloud.fog"
+ default: return "sun.max"
+ }
 }
 
 // 用在 WeatherContent 里：
 Image(systemName: icon(for: data.weather.first?.description ?? ""))
-    .font(.largeTitle)</pre>
+ .font(.largeTitle)</pre>
 </div>
 <p class="mb-2">这里用"包含雨字就给雨图标"的粗匹配，练手够用，更正经的做法是按服务方定义的天气代码查表（官方文档里有完整对照），各家代码表不一样，以你选的服务的文档为准。图标想换色就 <code class="inline">.foregroundColor</code>，别去找彩色贴图。</p>
 <h5 class="font-semibold mt-3 mb-1">第二行信息：加字段之前先看返回里有什么</h5>
@@ -701,38 +700,38 @@ Image(systemName: icon(for: data.weather.first?.description ?? ""))
 <div class="code-block">
 <div class="code-head"><span>SWIFT · WeatherView.swift（主界面）</span><span class="dots">···</span></div>
 <pre>struct WeatherView: View {
-    @State private var vm = WeatherViewModel()
-    @State private var cityInput = "beijing"
+ @State private var vm = WeatherViewModel()
+ @State private var cityInput = "beijing"
 
-    var body: some View {
-        NavigationStack {
-            VStack(spacing: 16) {
-                HStack {
-                    TextField("城市拼音，如 beijing", text: $cityInput)
-                        .textFieldStyle(.roundedBorder)
-                    Button("查询") {
-                        Task { await vm.search(city: cityInput) }
-                    }
-                }
-                .padding(.horizontal)
+ var body: some View {
+ NavigationStack {
+ VStack(spacing: 16) {
+ HStack {
+ TextField("城市拼音，如 beijing", text: $cityInput)
+ .textFieldStyle(.roundedBorder)
+ Button("查询") {
+ Task { await vm.search(city: cityInput) }
+ }
+ }
+ .padding(.horizontal)
 
-                switch vm.state {
-                case .loading:
-                    ProgressView("加载中…")
-                case .success(let d):
-                    WeatherContent(data: d)
-                case .error(let msg):
-                    Text(msg).foregroundColor(.secondary)
-                }
+ switch vm.state {
+ case .loading:
+ ProgressView("加载中…")
+ case .success(let d):
+ WeatherContent(data: d)
+ case .error(let msg):
+ Text(msg).foregroundColor(.secondary)
+ }
 
-                Spacer()
-            }
-            .navigationTitle("天气")
-            .task {                       // 进页面自动查一次
-                await vm.search(city: cityInput)
-            }
-        }
-    }
+ Spacer()
+ }
+ .navigationTitle("天气")
+ .task { // 进页面自动查一次
+ await vm.search(city: cityInput)
+ }
+ }
+ }
 }</pre>
 </div>
 <p class="mb-2">跑一下：进页面自动转圈，然后出现天气卡片；输入 "shanghai" 点查询，卡片一秒换脸。到这一步，网络层、状态层、界面层三条线全部合龙，你已经拥有一个真能用的天气 App 了。剩下的全是让它"从能用变好用"：搜索框升级、收藏城市、下拉刷新，都在下一节。</p>
@@ -750,11 +749,11 @@ Image(systemName: icon(for: data.weather.first?.description ?? ""))
 <div class="code-block">
 <div class="code-head"><span>SWIFT · searchable 接入搜索</span><span class="dots">···</span></div>
 <pre>NavigationStack {
-    // …三态界面…
-    .searchable(text: $cityInput, prompt: "城市拼音，如 beijing")
-    .onSubmit(of: .search) {
-        Task { await vm.search(city: cityInput) }
-    }
+ // …三态界面…
+ .searchable(text: $cityInput, prompt: "城市拼音，如 beijing")
+ .onSubmit(of: .search) {
+ Task { await vm.search(city: cityInput) }
+ }
 }</pre>
 </div>
 <p class="mb-2"><code class="inline">onSubmit(of: .search)</code> 在用户点键盘上的"搜索"键时触发，比"查询"按钮顺手——键盘一收一回，天气就换好了。自己手搓一个 TextField 也能实现，但系统搜索框带着"下拉呼出"的手感，这种系统级的交互细节，能用现成的就用现成的。</p>
@@ -772,11 +771,11 @@ favorites = UserDefaults.standard.stringArray(forKey: "favorite_cities") ?? []
 
 // 界面：用 .task 在页面出现时自动查第一个收藏
 .task {
-    if let first = favorites.first {
-        await vm.search(city: first)
-    } else {
-        await vm.search(city: "beijing")   // 没收藏就查默认城市
-    }
+ if let first = favorites.first {
+ await vm.search(city: first)
+ } else {
+ await vm.search(city: "beijing") // 没收藏就查默认城市
+ }
 }</pre>
 </div>
 <p class="mb-2">界面上给收藏一个入口：天气卡片下方一排城市小按钮，点谁查谁，长按弹出"加入收藏/移除"（Context Menu，系统组件）。注意这里存的是城市名字符串列表，够用了。哪天收藏要带更多信息（备注、排序），再升级成 Codable 数组存档，思路在第 64 章都有。</p>
@@ -785,8 +784,8 @@ favorites = UserDefaults.standard.stringArray(forKey: "favorite_cities") ?? []
 <div class="code-block">
 <div class="code-head"><span>SWIFT · 下拉刷新</span><span class="dots">···</span></div>
 <pre>.refreshable {
-    let city = lastCity   // 记住上一次查的是哪儿
-    await vm.search(city: city)
+ let city = lastCity // 记住上一次查的是哪儿
+ await vm.search(city: city)
 }</pre>
 </div>
 <p class="mb-2">系统自动在下拉时出转圈、收手时结束，你只管给一个 async 闭包。配套的小事是"进页面自动查一次"：.task 里查第一个收藏城市（上一段写过），用户打开 App 就有数据，不用先点一下。两个细节合起来，App 就有了"打开即看、想刷就刷"的节奏。</p>
@@ -795,7 +794,7 @@ favorites = UserDefaults.standard.stringArray(forKey: "favorite_cities") ?? []
 <h5 class="font-semibold mt-3 mb-1">定位：锦上添花的功能，降级要提前想好</h5>
 <p class="mb-2">"自动定位当前城市"很香，但它要权限：而权限是用户可以拒绝的。产品化的思路是两条路并行：定位成功就用定位城市，被拒绝或失败就落到手动搜索，功能一条都不缺。清单里那句"权限弹窗只弹一次"是系统行为，弹过一次你再想要，用户得去设置里翻，所以第一次弹窗的时机要挑（用户主动点了"用我的位置"再弹，比一进 App 就弹通过率高得多），具体申请姿势第 68 章细讲。本章先把手动搜索这条路铺结实，定位留给进阶的你。</p>
 <div class="info-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>小贴士：中文城市的"梗"</p>
+<p class="font-semibold">小贴士：中文城市的"梗"</p>
 <p class="mt-1">OpenWeatherMap 对中文城市名支持一般，搜"北京"可能无结果而 "beijing" 正常。产品化做法是内置一份"城市名 → 英文/坐标"映射表，或接国内天气服务。练手阶段先支持拼音/英文城市名即可，别和它较劲。</p>
 </div>
 <p class="mb-2">这条小贴士值得再往下挖半步：映射表不用一步到位，先建一个十几条常用城市的小字典（北京 → beijing、上海 → shanghai），用户输中文就查表转拼音，查不到再原样发给服务器。几百条主流城市的中文-拼音对照，网上有现成公开数据可参考，自己手打常用的二十来条也够练手用。第五节收官时，你的 App 已经是"搜索、收藏、刷新、降级"四项俱全，接下来该学怎么伺候它出毛病了。</p>
@@ -820,11 +819,11 @@ print("GET weather q=\(city) key=\(maskedKey)")</pre>
 <h5 class="font-semibold mt-3 mb-1">弱网模拟：让"转圈半天"提前现形</h5>
 <p class="mb-2">开发时 Wi-Fi 飞快，你以为世界都这么快；用户在地铁隧道里，页面转圈转到怀疑人生。弱网模拟就是把这种用户提前请进你的开发流程。模拟器里开 Network Link Conditioner，选一个低带宽高延迟的档位，然后走一遍完整流程：进页面自动加载要多久？转圈文案还贴切吗？超时分支触发了吗？重试按钮好吗使？缓存旧数据出来了吗？凡是"感觉还行"，在弱网下都会现原形——改完再切回正常网络，确认没把好体验改坏。</p>
 <div class="info-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-lightbulb mr-2"></i>小贴士：请求没过 ATS？</p>
+<p class="font-semibold">小贴士：请求没过 ATS？</p>
 <p class="mt-1">如果请求一发出就报 "App Transport Security" 错误，八成是用了 http:// 明文地址。正式接口必须 HTTPS；本地调试临时开例外（Info.plist 加 NSAllowsLocalNetworking），上架前记得清干净。</p>
 </div>
 <div class="practice-box rounded-lg p-4 mt-4">
-<p class="font-semibold"><i class="fas fa-hands mr-2"></i>来动手：天气 App 验收清单</p>
+<p class="font-semibold">来动手：天气 App 验收清单</p>
 <p class="mt-1">① 正常搜索出天气；② 断开网络，App 优雅报错不崩溃（模拟器里关掉 Mac 的网络测！）；③ 输一个不存在的城市，提示友好；④ 收藏两个城市，重启 App 还在；⑤ 深色模式下界面不刺眼；⑥ 开飞行模式再搜一次，App 不崩、文案友好，顺便看看有没有把上次的天气缓存出来；后台切回、弱网各试一遍，模拟器对这些场景不敏感，最好真机来。六条全过，这个项目才算毕业。</p>
 </div>
 <h5 class="font-semibold mt-3 mb-1">破案实录：三招连用的十五分钟</h5>
@@ -862,21 +861,21 @@ print("GET weather q=\(city) key=\(maskedKey)")</pre>
 <div class="code-block">
 <div class="code-head"><span>SWIFT · 带一次自动重试的 search</span><span class="dots">···</span></div>
 <pre>func search(city: String, retryCount: Int = 0) async {
-    state = .loading
-    do {
-        let data = try await service.fetchWeather(city: city)
-        lastGood = data
-        lastUpdated = Date()
-        state = .success(data)
-    } catch {
-        // 只自动重试一次，且被取消的任务不再重试
-        if retryCount < 1, !(error is CancellationError) {
-            try? await Task.sleep(for: .seconds(2))
-            await search(city: city, retryCount: retryCount + 1)
-        } else {
-            state = .error("查不到这个城市，换个名字试试？")
-        }
-    }
+ state = .loading
+ do {
+ let data = try await service.fetchWeather(city: city)
+ lastGood = data
+ lastUpdated = Date()
+ state = .success(data)
+ } catch {
+ // 只自动重试一次，且被取消的任务不再重试
+ if retryCount < 1, !(error is CancellationError) {
+ try? await Task.sleep(for: .seconds(2))
+ await search(city: city, retryCount: retryCount + 1)
+ } else {
+ state = .error("查不到这个城市，换个名字试试？")
+ }
+ }
 }</pre>
 </div>
 <p class="mb-2">两个讲究：其一，重试要挑对象：网络抖动和超时值得自动再试，被限流（429）就不能自动连发，否则是在火上浇油；其二，重试次数封顶，别写无限循环，本文给的"一次"是练手版够用的值。更系统的重试策略（指数退避那些名词）留给正式项目，你知道方向在哪就行。</p>
@@ -885,12 +884,12 @@ print("GET weather q=\(city) key=\(maskedKey)")</pre>
 <div class="code-block">
 <div class="code-head"><span>SWIFT · service 里检查状态码</span><span class="dots">···</span></div>
 <pre>enum ServiceError: Error {
-    case serverError(Int)      // 带上状态码，界面好分级
+ case serverError(Int) // 带上状态码，界面好分级
 }
 
 let (data, response) = try await URLSession.shared.data(from: url)
 if let http = response as? HTTPURLResponse, http.statusCode != 200 {
-    throw ServiceError.serverError(http.statusCode)
+ throw ServiceError.serverError(http.statusCode)
 }</pre>
 </div>
 <p class="mb-2">这样 ViewModel 的 catch 就能区分"服务器拒绝了（401/429）"和"网络根本没通"两类失败，各自配文案。参数化一下更好，把 200 写死改成"2xx 都算成功"的区间判断，服务偶尔返回 201、204 时就不会误伤。练手版不检查状态码也能跑（成功路径都是 200）。但"安检门"装上的那一天，你的错误处理才算闭环。</p>
@@ -997,7 +996,7 @@ if let http = response as? HTTPURLResponse, http.statusCode != 200 {
 <p class="mb-2">这一天里，他亲手写下的每个零件都接住了真实世界的刁难：三态管住了断网、缓存救了白屏、降级绕过了中文城市、弱网模拟提前揪出了转圈体验。没有一样是"高级技术"：全是这章反复念叨的基础功夫。</p>
 <p class="mb-2">按惯例，他给自己写了三段复盘：做了什么，三态、缓存、收藏、降级四件套全落地，验收清单六条过五条（最后一条弱网项改完文案后补过）；卡在哪——中文城市那次最久，根治手段是映射表；下次提前做什么，开工前就把"服务端对中文的支持程度"查清楚，别等用户（自己）在高铁上撞上。这份复盘跟着 git 提交一起留了档。下一章（第 67 章）我们要谈测试、调试与上架，把小周手里这个"自己能用的 App"，变成"能放进 App Store 的 App"。</p>
 <div class="chapter-summary">
-<p class="font-semibold mb-1"><i class="fas fa-flag-checkered mr-1"></i>本章小结</p>
+<p class="font-semibold mb-1">本章小结</p>
 <ul class="list-disc pl-6 mb-3 space-y-1">
   <li>先浏览器试 API、看懂 JSON，再写代码，"预习"永远不亏</li>
   <li>API Key 藏进 xcconfig，绝不进代码库</li>
@@ -1013,19 +1012,19 @@ if let http = response as? HTTPURLResponse, http.statusCode != 200 {
 <nav class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a href="di-liu-shi-wu-zhang.html" class="text-primary hover:underline">← 第六十五章：项目一——我的记账本（本地版）</a><span></span><a href="di-liu-shi-qi-zhang.html" class="text-primary hover:underline">第六十七章：打磨与发布——上架App Store →</a></nav>
 
             </section>
- </div></main></div><!-- 快捷工具：浮动按钮组 --><div id="quick-tools" class="quick-tools no-print" aria-label="快捷工具"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><i class="fas fa-droplet" aria-hidden="true"></i></button><button id="quick-search" class="quick-tool-btn" title="搜索 (Ctrl+K)" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></button><button id="quick-theme" class="quick-tool-btn" title="切换深色/浅色" aria-label="切换主题"><i class="fas fa-circle-half-stroke" aria-hidden="true"></i></button><button id="quick-print" class="quick-tool-btn" title="打印 / 导出PDF" aria-label="打印或导出"><i class="fas fa-print" aria-hidden="true"></i></button><button id="quick-toc" class="quick-tool-btn" title="目录" aria-label="打开目录"><i class="fas fa-list" aria-hidden="true"></i></button><button id="quick-tts" class="quick-tool-btn" title="语音朗读" aria-label="语音朗读"><i class="fas fa-headphones" aria-hidden="true"></i></button><button id="quick-shortcuts" class="quick-tool-btn" title="键盘快捷键 (?)" aria-label="快捷键面板"><i class="fas fa-keyboard" aria-hidden="true"></i></button><button id="quick-backup" class="quick-tool-btn" title="备份/恢复进度" aria-label="备份进度"><i class="fas fa-cloud-arrow-up" aria-hidden="true"></i></button></div><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><!-- 快捷键面板 --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="键盘快捷键"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><i class="fas fa-keyboard text-gray-400"></i><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">键盘快捷键</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">搜索内容</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">切换深色/浅色</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">语音朗读 播放/暂停</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">停止朗读</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">打开快捷键面板</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">字号调大 / 调小</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">打印 / 导出PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- 备份/恢复弹窗 --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="备份与恢复"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><i class="fas fa-cloud-arrow-up text-gray-400"></i><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">阅读进度备份与恢复</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">备份包含：已读章节、书签、阅读位置、字号偏好、健康自检结果。数据保存在浏览器本地，更换浏览器或清除缓存后丢失，建议定期导出备份。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-download"></i> 导出备份文件
- </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">下载一个 JSON 文件，保存到安全位置</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-upload"></i> 导入备份恢复
- </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">选择之前导出的备份文件恢复进度</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><i class="fas fa-trash"></i> 清除所有阅读数据
- </button><p class="text-xs text-red-400 mt-1 text-center">不可恢复！请先导出备份</p></div></div></div></div><!-- 阅读连续天数提示 --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),#7c3aed);color:var(--ink-inverse);border:none;"><i class="fas fa-fire" aria-hidden="true" style="color:var(--gold-2)"></i><span id="streak-toast-text">连续阅读第 X 天！</span></div><!-- 语音朗读控件栏 --><div id="tts-controls" class="tts-controls" role="region" aria-label="语音朗读控制" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="当前朗读章节">未开始</span><button class="tts-btn" id="tts-prev" title="上一段" aria-label="上一段"><i class="fas fa-step-backward"></i></button><button class="tts-btn play-btn" id="tts-play" title="播放/暂停" aria-label="播放朗读"><i class="fas fa-play"></i></button><button class="tts-btn" id="tts-next" title="下一段" aria-label="下一段"><i class="fas fa-step-forward"></i></button><button class="tts-btn" id="tts-speed-down" title="减速" aria-label="减速">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="加速" aria-label="加速">+</button><button class="tts-btn" id="tts-stop" title="停止朗读" aria-label="停止朗读"><i class="fas fa-times"></i></button></div><!-- 回到顶部按钮 --><button id="back-to-top" class="opacity-0 invisible" aria-label="回到顶部"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg><i class="fas fa-arrow-up" aria-hidden="true"></i></button><!-- 阅读位置恢复提示 --><div id="restore-toast" class="restore-position-toast" role="alert"><i class="fas fa-bookmark" aria-hidden="true"></i><span id="restore-toast-text">上次读到：...</span><button class="btn-restore" id="restore-btn">继续阅读</button><button class="btn-dismiss" id="dismiss-btn">忽略</button></div><!-- JS脚本 -->
+ </div></main></div><!-- 快捷工具：浮动按钮组 --><div id="quick-tools" class="quick-tools no-print" aria-label="快捷工具"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">透</span></button><button id="quick-search" class="quick-tool-btn" title="搜索 (Ctrl+K)" aria-label="搜索"><span aria-hidden="true">搜</span></button><button id="quick-theme" class="quick-tool-btn" title="切换深色/浅色" aria-label="切换主题"><span aria-hidden="true">夜</span></button><button id="quick-print" class="quick-tool-btn" title="打印 / 导出PDF" aria-label="打印或导出"><span aria-hidden="true">印</span></button><button id="quick-toc" class="quick-tool-btn" title="目录" aria-label="打开目录"><span aria-hidden="true">目</span></button><button id="quick-tts" class="quick-tool-btn" title="语音朗读" aria-label="语音朗读"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="键盘快捷键 (?)" aria-label="快捷键面板"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="备份/恢复进度" aria-label="备份进度"><span aria-hidden="true">备</span></button></div><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><!-- 快捷键面板 --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="键盘快捷键"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">键盘快捷键</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">搜索内容</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">切换深色/浅色</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">语音朗读 播放/暂停</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">停止朗读</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">打开快捷键面板</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">字号调大 / 调小</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">打印 / 导出PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- 备份/恢复弹窗 --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="备份与恢复"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">阅读进度备份与恢复</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="关闭">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">备份包含：已读章节、书签、阅读位置、字号偏好、健康自检结果。数据保存在浏览器本地，更换浏览器或清除缓存后丢失，建议定期导出备份。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 导出备份文件
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">下载一个 JSON 文件，保存到安全位置</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 导入备份恢复
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">选择之前导出的备份文件恢复进度</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 清除所有阅读数据
+ </button><p class="text-xs text-red-400 mt-1 text-center">不可恢复！请先导出备份</p></div></div></div></div><!-- 阅读连续天数提示 --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),#7c3aed);color:var(--ink-inverse);border:none;"><span id="streak-toast-text">连续阅读第 X 天！</span></div><!-- 语音朗读控件栏 --><div id="tts-controls" class="tts-controls" role="region" aria-label="语音朗读控制" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="当前朗读章节">未开始</span><button class="tts-btn" id="tts-prev" title="上一段" aria-label="上一段"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="播放/暂停" aria-label="播放朗读"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="下一段" aria-label="下一段"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="减速" aria-label="减速">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="加速" aria-label="加速">+</button><button class="tts-btn" id="tts-stop" title="停止朗读" aria-label="停止朗读"><span aria-hidden="true">×</span></button></div><!-- 回到顶部按钮 --><button id="back-to-top" class="opacity-0 invisible" aria-label="回到顶部"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- 阅读位置恢复提示 --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">上次读到：...</span><button class="btn-restore" id="restore-btn">继续阅读</button><button class="btn-dismiss" id="dismiss-btn">忽略</button></div><!-- JS脚本 -->
  
  <script>
-        /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
-        if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
-                    .catch(function (err) { console.warn('SW 注册失败：', err); });
-            });
-        }
-    </script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
 <script src="assets/book.js" defer></script>
 </body></html>
