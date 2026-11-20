@@ -9,7 +9,10 @@
  }
 
  html {
- scroll-behavior: smooth;
+ /* 不设 scroll-behavior:smooth：全局平滑会让「原生 #hash 跳转」变成动画，
+ 而 content-visibility:auto 下动画的目标是渲染前的占位坐标——动画在途时
+ scrollToAnchor 的逐帧校准滚动会被它逐帧顶掉（实测落点偏移 5 万 px）。
+ 平滑效果由 JS 在需要处显式请求（scrollToAnchor 的收尾一步）。 */
  scroll-padding-top: 5rem;
  }
  body {
@@ -163,8 +166,8 @@
  .toc-child.open {
  max-height: 3000px;
  }
- /* 整章不做 content-visibility:auto：超长章节离屏按 800px 占位，
- 会让锚点跳转、scrollIntoView 与入场观察器全部失准。
+ /* 整章懒渲染见 #singlefile-lazy 样式块（方案 §5.1）：auto 占位 + 锚点强制渲染补偿，
+ 历史上的固定 800px 占位漂移事故不再复现。
  表格/代码块的局部懒渲染见下方 P2-2 规则，不受影响。 */
  .content-section p {
  margin-bottom: 1rem;

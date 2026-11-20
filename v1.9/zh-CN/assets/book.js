@@ -346,23 +346,42 @@
 
  // ===== 全局锚点导航：补偿固定导航栏偏移 =====
  // 必须用 scrollIntoView 而非手动算坐标：.content-section 设了
- // content-visibility:auto + contain-intrinsic-size(0 800px)，屏幕外章节
- // 按 800px 占位，getBoundingClientRect 拿到的是占位坐标，直接 scrollTo
+ // content-visibility:auto + contain-intrinsic-size(auto 500px)，屏幕外章节
+ // 按估算高度占位，getBoundingClientRect 拿到的是占位坐标，直接 scrollTo
  // 会落到错误位置（越靠后的章节累计偏差越大）。scrollIntoView 由浏览器
  // 负责按需渲染目标并定位，配合 html{scroll-padding-top:5rem} 抵消固定
  // 导航栏高度。
  function scrollToAnchor(id) {
  const el = document.getElementById(id);
  if (!el) return;
- // 第一步：instant 模式先强制渲染目标章节并定位，避免 content-visibility
- // 在 smooth 滚动过程中因延迟渲染导致定位漂移。
+ // content-visibility:auto 下未渲染区块按估算高度占位，滚动落点会随
+ // 就地渲染（占位 → 实高）漂移。对策：instant 归位后跨帧校准——
+ // 渲染扩张发生在帧边界，同帧内量两次只会得到「没动」的假收敛，
+ // 必须等下一帧回读落点，不在导航栏下沿就再滚，几帧内收敛后再平滑。
+ const pad = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+ let tries = 0;
+ const calibrate = () => {
+ tries += 1;
  el.scrollIntoView({ behavior: 'instant', block: 'start' });
- // 第二步：在目标已渲染、坐标稳定后，再触发一次 smooth 滚动以获得平滑体验。
+ requestAnimationFrame(() => {
+ const top = el.getBoundingClientRect().top;
+ if (tries < 8 && Math.abs(top - pad) > 2) {
+ calibrate();
+ return;
+ }
  requestAnimationFrame(() => {
  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
  el.classList.add('scroll-target-flash');
  setTimeout(() => el.classList.remove('scroll-target-flash'), 1200);
  });
+ });
+ };
+ calibrate();
+ // 渲染扩张（占位 → 实高）可能在校准收敛之后才落地，落点会被再推偏：
+ // 随后几拍复查，漂了就重新校准。每章只渲染一次，几拍内彻底稳定。
+ [300, 800, 1600].forEach(ms => setTimeout(() => {
+ if (Math.abs(el.getBoundingClientRect().top - pad) > 2) calibrate();
+ }, ms));
  }
  document.addEventListener('click', (e) => {
  const link = e.target.closest('a[href^="#"]');
@@ -374,6 +393,12 @@
  if (window.innerWidth < 1024) closeSidebar();
  requestAnimationFrame(() => scrollToAnchor(targetId));
  }, { passive: false });
+
+ // 初始 #hash 载入走同一套校准：现代浏览器对 content-visibility:auto 的目标
+ // 会先渲染再定位，这里补一次 instant 落点，兜住占位未渲染时的定位偏差。
+ window.addEventListener('load', () => {
+ if (location.hash.length > 1) scrollToAnchor(location.hash.slice(1));
+ });
 
  // ===== 目录折叠 =====
  $$('.toc-toggle-btn').forEach(btn => {
