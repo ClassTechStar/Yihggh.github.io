@@ -1046,7 +1046,7 @@
                         ${level === 'beginner' ? '入门' : level === 'intermediate' ? '进阶' : '高阶'}
                     </span>
                     <span class="reading-time">
-                        <i class="far fa-clock" aria-hidden="true"></i>约 ${minutes} 分钟
+                        <i class="fas fa-clock" aria-hidden="true"></i>约 ${minutes} 分钟
                     </span>
                 `;
                 h3.parentNode.insertBefore(meta, h3);
