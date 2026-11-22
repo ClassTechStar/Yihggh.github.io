@@ -1,554 +1,146 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head>
+<html lang="zh-CN">
+<head>
 <meta charset="UTF-8">
-<script>(function(){try{var m=localStorage.getItem('pc-theme');if(m==='dark')document.documentElement.classList.add('dark');else if(m==='light')document.documentElement.classList.add('light');}catch(e){}})();</script><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="你缺失的那门手机课 · 手机是用会的，不是看会的。120 个内容区块，353.8 万字，从找回误删照片讲到亲手做出第一个 App。">
-<meta name="author" content="ClassTechStar">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0074d9">
-<meta property="og:type" content="website">
-<meta property="og:title" content="你缺失的那门手机课 · 网页版">
-<meta property="og:description" content="写给普通人的手机使用课程：零门槛、讲原理、能动手。v1.9 最新中文版 120 个内容区块，另有 19 种语言完整翻译版。">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>你缺失的那门手机课 · v1.9 · 在线阅读</title>
+<meta name="description" content="一本写给普通人的手机素养开源书。120 章、15 篇、19 种语言，从看懂一台手机到亲手做出一个 App。公益、免费、开源。">
+<meta name="theme-color" content="#0B0E13" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F7FAFA" media="(prefers-color-scheme: light)">
+<meta property="og:type" content="book">
+<meta property="og:title" content="你缺失的那门手机课 · v1.9">
+<meta property="og:description" content="120 章、15 篇、19 种语言。从看懂一台手机，到亲手做出一个 App。">
 <meta property="og:locale" content="zh_CN">
-<meta name="twitter:card" content="summary">
-<title>你缺失的那门手机课 · 网页版</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E">
+<meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/">
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F8A8A'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230F8A8A'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230F8A8A'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="manifest" href="manifest.webmanifest">
-  <style>
-  :root{
-    --link:#0074d9;--link-visited:#454db6;
-    --g1:#f8f9fa;--g2:#e9ecef;--g3:#dee2e6;--g5:#adb5bd;--g8:#495057;
-    --ink:#1a1a1a;--surface:#ffffff;
-    --hint-bg:#f1f2f3;--hint-warn:#fff8ec;--hint-warn-line:#ffc266;
-  }
-  html.dark{
-      --link:#66b5f2;--link-visited:#8f96e8;
-      --g1:#111827;--g2:#1f2937;--g3:#374151;--g5:#6b7280;--g8:#d1d5db;
-      --ink:#e5e7eb;--surface:#111827;
-      --hint-bg:#1f2937;--hint-warn:#2d2413;
-      color-scheme:dark;
-  }
-  @media (prefers-color-scheme:dark){
-    html:not(.light):not(.dark){
-      --link:#66b5f2;--link-visited:#8f96e8;
-      --g1:#111827;--g2:#1f2937;--g3:#374151;--g5:#6b7280;--g8:#d1d5db;
-      --ink:#e5e7eb;--surface:#111827;
-      --hint-bg:#1f2937;--hint-warn:#2d2413;
-      color-scheme:dark;
-    }
-  }
-  html{font-size:16px;scroll-behavior:smooth}
-  body{
-    margin:0;background:var(--surface);color:var(--ink);
-    font-family:inter,source han sans sc,source han sans cn,noto sans sc,MiSans,'PingFang SC','Microsoft YaHei',system-ui,sans-serif;
-    letter-spacing:.33px;line-height:1.85;text-rendering:optimizeLegibility;
-    -webkit-font-smoothing:antialiased;
-  }
-  header.top{
-    border-bottom:1px solid var(--g2);background:var(--surface);
-    position:sticky;top:0;z-index:10;
-  }
-  header.top .bar{
-    max-width:46rem;margin:0 auto;padding:.7rem 1rem;
-    display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
-  }
-  header.top .brand{font-weight:600;color:var(--ink);text-decoration:none;font-size:1.02rem;line-height:1.3}
-  header.top nav{display:flex;gap:1.2rem}
-  header.top nav a{color:var(--g8);text-decoration:none;font-size:.92rem}
-  header.top nav a:hover{color:var(--link)}
-  .theme-toggle{display:flex;gap:.25rem;align-items:center}
-  .theme-toggle button{
-    border:1px solid var(--g2);background:var(--surface);color:var(--g8);
-    border-radius:.375rem;width:1.9rem;height:1.7rem;cursor:pointer;
-    font-size:.95rem;line-height:1;padding:0;
-  }
-  .theme-toggle button.on{background:var(--link);color:#fff;border-color:var(--link)}
-  main{max-width:46rem;margin:0 auto;padding:2.6rem 1rem 4rem}
-  h1{font-size:1.9rem;font-weight:600;line-height:1.35;margin:0 0 1rem}
-  h2{font-size:1.3rem;font-weight:600;margin:2.6rem 0 .8rem;padding-bottom:.4rem;border-bottom:1px solid var(--g2)}
-  h2 a.head-anchor{color:var(--g5);text-decoration:none;font-size:.85rem;margin-left:.4rem}
-  h3{font-size:1.08rem;font-weight:600;margin:1.6rem 0 .5rem}
-  p{margin:.9rem 0}
-  a{color:var(--link)}
-  a:hover{text-decoration:underline}
-  ol.toc,ul.cw-cards,.plain-list{padding-inline-start:1.4rem;margin:.8rem 0}
-  ol.toc li,.plain-list li{margin:.32rem 0}
-  ol.toc li.toc-part{list-style:none;margin:1.1rem 0 .3rem;font-weight:600;color:var(--ink)}
-  ol.toc{list-style:none;padding-inline-start:0}
-  ol.toc li{margin:.28rem 0}
-  ol.toc li.toc-part{border-bottom:1px solid var(--g2);padding-bottom:.25rem}
-  ol.toc li a{text-decoration:none}
-  ol.toc li a:hover{text-decoration:underline}
-  .stats{display:flex;flex-wrap:wrap;gap:2.2rem;margin:1rem 0}
-  .stat p{font-weight:600;margin:0;font-size:1.5rem;color:var(--ink)}
-  .stat small{display:block;font-size:.8rem;font-weight:400;color:var(--g8);letter-spacing:0}
-  .cw-versions{margin:1.4rem 0}
-  .cw-versions h3{margin:1.5rem 0 .4rem}
-  ul.cw-cards{list-style:none;padding:0;margin:.4rem 0}
-  ul.cw-cards li{margin:.5rem 0;padding-bottom:.5rem;border-bottom:1px solid var(--g2)}
-  ul.cw-cards li a{font-weight:600;text-decoration:none}
-  ul.cw-cards li a:hover{text-decoration:underline}
-  .cw-label{color:var(--g8);font-size:.85rem;margin-inline-start:.5rem}
-  .cw-desc{margin:.2rem 0 0;font-size:.92rem;color:var(--g8)}
-  .cw-tier{margin:.2rem 0 0;font-size:.82rem;color:#b58900}
-  .note{
-    background:var(--hint-bg);border-inline-start:.25rem solid var(--g5);
-    border-radius:.25rem;padding:.6rem .9rem;margin:1rem 0;font-size:.95rem;
-  }
-  .note.warn{border-inline-start-color:var(--hint-warn-line);background:var(--hint-warn)}
-  footer{
-    border-top:1px solid var(--g2);color:var(--g8);
-    max-width:46rem;margin:0 auto;padding:1.4rem 1rem 3rem;font-size:.9rem;
-  }
-  footer a{color:var(--link)}
-  hr{border:0;border-top:1px solid var(--g2);margin:2.4rem 0}
-  </style>
-<script>(function(){try{var m=localStorage.getItem('pc-theme');if(m==='dark')document.documentElement.classList.add('dark');else if(m==='light')document.documentElement.classList.add('light');}catch(e){}})();</script>
+<link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:MiSans;src:url("fonts/MiSans-subset.woff2") format("woff2"),url("fonts/MiSans-Normal.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap;}
+:root{
+  --ink:#16333A; --body:#3F5A63; --muted:#7B9098; --line:#D3E2E2;
+  --bg:#F7FAFA; --card:#FFFFFF; --accent:#0F8A8A; --accent-ink:#0B6E70; --warm:#F0873B;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --ink:#E7EFEF; --body:#B9CCCC; --muted:#7E9696; --line:#243838;
+         --bg:#0B1516; --card:#12201F; --accent:#3FB3B3; --accent-ink:#7FD6D6; --warm:#F0873B; }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--body);
+  font-family:MiSans,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  line-height:1.7;min-height:100vh;display:flex;flex-direction:column}
+.wrap{width:min(760px,calc(100% - 2.5rem));margin:0 auto}
+header{padding:1.4rem 0;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.brand{color:var(--ink);font-weight:600;text-decoration:none;letter-spacing:.02em}
+.brand small{color:var(--muted);font-weight:400;margin-left:.5rem;font-size:.8rem}
+header nav a{color:var(--muted);text-decoration:none;font-size:.85rem;margin-left:1.1rem}
+header nav a:hover{color:var(--accent)}
+main{flex:1;padding:4rem 0 3rem}
+h1{color:var(--ink);font-size:clamp(2rem,6vw,3rem);line-height:1.25;margin:0 0 .9rem;letter-spacing:.02em}
+.lede{font-size:clamp(1rem,2.4vw,1.12rem);color:var(--body);margin:0 0 .6rem}
+.stats{color:var(--muted);font-size:.9rem;margin:0 0 2.4rem}
+.stats b{color:var(--accent-ink);font-weight:600}
+.actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:.9rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.6rem;border-radius:.6rem;
+  text-decoration:none;font-weight:600;font-size:1rem;border:1px solid transparent;transition:.18s}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-ink)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:var(--card)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn .size{font-weight:400;font-size:.8rem;opacity:.75}
+.hint{color:var(--muted);font-size:.85rem;margin:0 0 3rem}
+.hint code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.82em;
+  background:var(--line);padding:.1rem .35rem;border-radius:.25rem;color:var(--body)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:2.6rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:.7rem;padding:1.1rem 1.2rem;
+  text-decoration:none;color:inherit;display:block;transition:.18s}
+.card:hover{border-color:var(--accent);transform:translateY(-1px)}
+.card h2{font-size:.95rem;color:var(--ink);margin:0 0 .3rem;font-weight:600}
+.card p{margin:0;color:var(--muted);font-size:.84rem}
+.card .tag{float:right;color:var(--warm);font-size:.72rem;font-weight:600}
+footer{border-top:1px solid var(--line);padding:1.6rem 0 2.2rem;color:var(--muted);font-size:.82rem}
+footer a{color:var(--muted)}
+footer a:hover{color:var(--accent)}
+footer .row{display:flex;gap:1.2rem;flex-wrap:wrap;margin-bottom:.5rem}
+@media (prefers-reduced-motion:reduce){.btn,.card{transition:none}.card:hover{transform:none}}
+</style>
 </head>
 <body>
-<header class="top"><div class="bar">
-  <a class="brand" href="#top">你缺失的那门<br>手机课</a>
-  <nav><a href="#top">首页</a><a href="#目录">目录</a><a href="#版本">版本</a><a href="#致敬">致敬</a><a href="#反馈">反馈</a></nav>
-  <div class="theme-toggle" role="group" aria-label="主题切换">
-    <button type="button" data-t="light" title="浅色">☀</button>
-    <button type="button" data-t="auto" title="跟随系统">◐</button>
-    <button type="button" data-t="dark" title="深色">☾</button>
+<header>
+  <div class="wrap">
+    <a class="brand" href="./">你缺失的那门手机课<small>v1.9</small></a>
+    <nav>
+      <a href="languages.html">19 种语言</a>
+      <a href="quiz.html">章节自测</a>
+      <a href="errata.html">勘误</a>
+      <a href="https://github.com/ClassTechStar/Your-Missing-Phone-Class">GitHub</a>
+    </nav>
   </div>
-</div></header>
-<script>
-(function(){
-  "use strict";
-  var btns = document.querySelectorAll('.theme-toggle button');
-  function mark(){
-    var m = 'auto';
-    try { m = localStorage.getItem('pc-theme') || 'auto'; } catch(e){}
-    btns.forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-t') === m); });
-  }
-  btns.forEach(function(b){
-    b.addEventListener('click', function(){
-      var v = b.getAttribute('data-t');
-      try { localStorage.setItem('pc-theme', v); } catch(e){}
-      var h = document.documentElement;
-      h.classList.toggle('dark', v === 'dark');
-      h.classList.toggle('light', v === 'light');
-      mark();
-    });
-  });
-  mark();
-})();
-</script>
-<main id="top">
-  <h1>你缺失的那门手机课（网页版）</h1>
-  <p>这是一份写给普通人的手机使用课程。它平易近人，娓娓道来：从找回误删的照片、识破一条诈骗短信讲起，到把手机调成顺手的工具，再到亲手做出第一个 App——安卓、iOS、鸿蒙三个平台都走一遍。</p>
-  <p>它也试图回答一些「手机课」之外的问题：AI 时代该怎样指挥机器干活，个人信息是怎样泄露的又该怎么守住，可穿戴设备和健康数据能帮我们做什么。零门槛、讲原理、能动手——这是本书从第一天起就坚持的三件事。</p>
-  <p>最新中文版 v1.9 共 120 个内容区块、353.8 万字；另有 v1.8 完整翻译版，覆盖 19 种语言。</p>
+</header>
 
-  <h2 id="目录">目录 <a class="head-anchor" href="#目录">#</a></h2>
-  <p>点击任一标题，即可跳到 v1.9 的对应章节。着急用的时候，也可以按「你现在遇到的事」直接翻——书里的附录 G 是一张全册速查索引。</p>
-  <ol class="toc">
-      <li class="toc-part">一、基础篇（第0-7章）</li>
-      <li><a href="v1.9/zh-CN.html#di-ling-zhang">第零章：先说三句实话</a></li>
-      <li><a href="v1.9/zh-CN.html#di-yi-zhang">第一章：先认识这台机器</a></li>
-      <li><a href="v1.9/zh-CN.html#di-yi-zhang-memory">附：安卓手机内存拓展解析</a></li>
-      <li><a href="v1.9/zh-CN.html#di-yi-zhang-harmony">第一章附：鸿蒙操作系统专题</a></li>
-      <li><a href="v1.9/zh-CN.html#di-er-zhang">第二章：手机里的东西，找不到了怎么办？</a></li>
-      <li><a href="v1.9/zh-CN.html#di-san-zhang">第三章：连不上网，先别急着重启</a></li>
-      <li><a href="v1.9/zh-CN.html#di-si-zhang">第四章：装软件之前，先看三眼</a></li>
-      <li><a href="v1.9/zh-CN.html#di-wu-zhang">第五章：把手机调成你顺手的样子</a></li>
-      <li><a href="v1.9/zh-CN.html#di-liu-zhang">第六章：手机丢了、密码忘了，怎么救</a></li>
-      <li><a href="v1.9/zh-CN.html#di-qi-zhang-jichu">第七章：这些新功能，先别急着开</a></li>
-      <li class="toc-part">二、软件篇（第8-14章）</li>
-      <li><a href="v1.9/zh-CN.html#di-ba-zhang">第八章：短信、电话和那些群消息</a></li>
-      <li><a href="v1.9/zh-CN.html#di-jiu-zhang">第九章：手机当电脑用，能干多少活？</a></li>
-      <li><a href="v1.9/zh-CN.html#di-shi-zhang">第十章：移动支付与生活服务</a></li>
-      <li><a href="v1.9/zh-CN.html#di-shi-yi-zhang">第十一章：拍得好看，比拍得多更要紧</a></li>
-      <li><a href="v1.9/zh-CN.html#di-shi-yi-zhang-advanced">第十一章附：专业影像技术知识</a></li>
-      <li><a href="v1.9/zh-CN.html#di-shi-er-zhang">第十二章：追剧看书听歌，怎么省电</a></li>
-      <li><a href="v1.9/zh-CN.html#di-shi-san-zhang">第十三章：哪些 App 值得装，哪些别装</a></li>
-      <li><a href="v1.9/zh-CN.html#di-shi-si-zhang">第十四章：密码管理器专题</a></li>
-      <li class="toc-part">三、进阶篇（第15-20章）</li>
-      <li><a href="v1.9/zh-CN.html#di-shi-wu-zhang">第十五章：一天两充，是电池不行还是用法不对？</a></li>
-      <li><a href="v1.9/zh-CN.html#di-shi-liu-zhang">第十六章：换机时，哪些账号能丢、哪些不能</a></li>
-      <li><a href="v1.9/zh-CN.html#di-shi-qi-zhang">第十七章：手机与其他设备的联动</a></li>
-      <li><a href="v1.9/zh-CN.html#di-shi-ba-zhang">第十八章：备份，别等到想不起来那天</a></li>
-      <li><a href="v1.9/zh-CN.html#di-shi-jiu-zhang">第十九章：坏了怎么办：先别急着修</a></li>
-      <li><a href="v1.9/zh-CN.html#di-er-shi-zhang-jinjie">第二十章：开发者模式与高级权限</a></li>
-      <li><a href="v1.9/zh-CN.html#di-er-shi-zhang-termux">第二十章附：Termux——Android设备上的便携式Linux终端环境</a></li>
-      <li class="toc-part">四、超越篇（第21-26章）</li>
-      <li><a href="v1.9/zh-CN.html#di-er-shi-yi-zhang">第二十一章：公共 Wi-Fi 到底能不能连</a></li>
-      <li><a href="v1.9/zh-CN.html#di-er-shi-er-zhang">第二十二章：AI 在你手机里到底干了什么</a></li>
-      <li><a href="v1.9/zh-CN.html#di-er-shi-san-zhang">第二十三章：让手机替你干重复活</a></li>
-      <li><a href="v1.9/zh-CN.html#di-er-shi-san-zhang-github">第二十三章附：GitHub入门指南——从代码托管到协作平台</a></li>
-      <li><a href="v1.9/zh-CN.html#di-er-shi-si-zhang">第二十四章：Root权限与BL锁深度解析</a></li>
-      <li><a href="v1.9/zh-CN.html#di-er-shi-wu-zhang">第二十五章：旧手机卖出去之前，先做这几件事</a></li>
-      <li><a href="v1.9/zh-CN.html#di-er-shi-liu-zhang">第二十六章：这些新技术，先等等</a></li>
-      <li class="toc-part">五、实战篇（第27-32章）</li>
-      <li><a href="v1.9/zh-CN.html#di-er-shi-qi-zhang">第二十七章：给爸妈调手机</a></li>
-      <li><a href="v1.9/zh-CN.html#di-er-shi-ba-zhang">第二十八章：买手机前，先想清楚这三件事</a></li>
-      <li><a href="v1.9/zh-CN.html#di-er-shi-jiu-zhang">第二十九章：手机用了多少时间，你其实不知道</a></li>
-      <li><a href="v1.9/zh-CN.html#di-san-shi-zhang">第三十章：投屏、插线，还是车载</a></li>
-      <li><a href="v1.9/zh-CN.html#di-san-shi-yi-zhang">第三十一章：短视频拍摄与内容创作入门</a></li>
-      <li><a href="v1.9/zh-CN.html#di-san-shi-er-zhang">第三十二章：出事了怎么办：三十秒止损</a></li>
-      <li class="toc-part">六、展望篇与车联篇（第33-34章）</li>
-      <li><a href="v1.9/zh-CN.html#di-san-shi-san-zhang">第三十三章：下一个十年，手机会变成什么样</a></li>
-      <li><a href="v1.9/zh-CN.html#di-san-shi-si-zhang">第三十四章：手机和车，怎么连才顺手</a></li>
-      <li class="toc-part">儿童与手机专题（第35-36章）</li>
-      <li><a href="v1.9/zh-CN.html#di-san-shi-wu-zhang">第三十五章：给孩子一部手机，怎么定规矩</a></li>
-      <li><a href="v1.9/zh-CN.html#di-san-shi-liu-zhang">第三十六章：手机与智能家居——让家变聪明</a></li>
-      <li class="toc-part">七、AI编程实战篇（第37-47章）</li>
-      <li><a href="v1.9/zh-CN.html#di-san-shi-qi-zhang">第三十七章：你不用写代码，但你得会交代</a></li>
-      <li><a href="v1.9/zh-CN.html#di-san-shi-ba-zhang">第三十八章：跟 AI 打交道，先改五个习惯</a></li>
-      <li><a href="v1.9/zh-CN.html#di-san-shi-jiu-zhang">第三十九章：AI 听不懂你，多半是你没说清</a></li>
-      <li><a href="v1.9/zh-CN.html#di-si-shi-zhang">第四十章：先说清楚，再动手</a></li>
-      <li><a href="v1.9/zh-CN.html#di-si-shi-yi-zhang">第四十一章：这些工具，我一个个试过</a></li>
-      <li><a href="v1.9/zh-CN.html#di-si-shi-er-zhang">第四十二章：大模型全景与API实战</a></li>
-      <li><a href="v1.9/zh-CN.html#di-si-shi-san-zhang">第四十三章：对话工程——与AI高效协作的对话技术</a></li>
-      <li><a href="v1.9/zh-CN.html#di-si-shi-si-zhang">第四十四章：做一个真能用的东西</a></li>
-      <li><a href="v1.9/zh-CN.html#di-si-shi-wu-zhang">第四十五章：AI 写完不算完</a></li>
-      <li><a href="v1.9/zh-CN.html#di-si-shi-liu-zhang">第四十六章：进阶之路——从使用者到架构师</a></li>
-      <li><a href="v1.9/zh-CN.html#di-si-shi-qi-zhang">第四十七章：速查手册与资源</a></li>
-      <li class="toc-part">八、安卓开发实战篇（第48-58章）</li>
-      <li><a href="v1.9/zh-CN.html#di-si-shi-ba-zhang">第四十八章：认识安卓——从操作系统到开发生态</a></li>
-      <li><a href="v1.9/zh-CN.html#di-si-shi-jiu-zhang">第四十九章：搭建开发环境——Android Studio 与第一个项目</a></li>
-      <li><a href="v1.9/zh-CN.html#di-wu-shi-zhang">第五十章：Kotlin 快速上手——安卓开发的第一语言</a></li>
-      <li><a href="v1.9/zh-CN.html#di-wu-shi-yi-zhang">第五十一章：界面开发——Jetpack Compose 入门</a></li>
-      <li><a href="v1.9/zh-CN.html#di-wu-shi-er-zhang">第五十二章：四大组件与 Activity 生命周期</a></li>
-      <li><a href="v1.9/zh-CN.html#di-wu-shi-san-zhang">第五十三章：数据存储与网络请求</a></li>
-      <li><a href="v1.9/zh-CN.html#di-wu-shi-si-zhang">第五十四章：项目一——我的记账本（本地版）</a></li>
-      <li><a href="v1.9/zh-CN.html#di-wu-shi-wu-zhang">第五十五章：项目二——天气查询 App（网络版）</a></li>
-      <li><a href="v1.9/zh-CN.html#di-wu-shi-liu-zhang">第五十六章：打磨与发布——测试、调试与上架 Google Play</a></li>
-      <li><a href="v1.9/zh-CN.html#di-wu-shi-qi-zhang">第五十七章：进阶之路——权限、通知与现代架构</a></li>
-      <li><a href="v1.9/zh-CN.html#di-wu-shi-ba-zhang">第五十八章：速查手册与资源</a></li>
-      <li class="toc-part">九、iOS开发实战篇（第59-69章）</li>
-      <li><a href="v1.9/zh-CN.html#di-wu-shi-jiu-zhang">第五十九章：认识 iOS——苹果生态与开发生态</a></li>
-      <li><a href="v1.9/zh-CN.html#di-liu-shi-zhang">第六十章：搭建开发环境——Xcode 与第一个项目</a></li>
-      <li><a href="v1.9/zh-CN.html#di-liu-shi-yi-zhang">第六十一章：Swift 快速上手——苹果开发的第一语言</a></li>
-      <li><a href="v1.9/zh-CN.html#di-liu-shi-er-zhang">第六十二章：界面开发——SwiftUI 入门</a></li>
-      <li><a href="v1.9/zh-CN.html#di-liu-shi-san-zhang">第六十三章：视图、状态与导航</a></li>
-      <li><a href="v1.9/zh-CN.html#di-liu-shi-si-zhang">第六十四章：数据存储与网络请求</a></li>
-      <li><a href="v1.9/zh-CN.html#di-liu-shi-wu-zhang">第六十五章：项目一——我的记账本（本地版）</a></li>
-      <li><a href="v1.9/zh-CN.html#di-liu-shi-liu-zhang">第六十六章：项目二——天气查询 App（网络版）</a></li>
-      <li><a href="v1.9/zh-CN.html#di-liu-shi-qi-zhang">第六十七章：打磨与发布——测试、调试与上架 App Store</a></li>
-      <li><a href="v1.9/zh-CN.html#di-liu-shi-ba-zhang">第六十八章：进阶之路——权限、通知与现代架构</a></li>
-      <li><a href="v1.9/zh-CN.html#di-liu-shi-jiu-zhang">第六十九章：速查手册与资源</a></li>
-      <li class="toc-part">十、鸿蒙开发实战篇（第70-80章）</li>
-      <li><a href="v1.9/zh-CN.html#di-qi-shi-zhang">第七十章：认识鸿蒙——从「备胎」到全场景操作系统</a></li>
-      <li><a href="v1.9/zh-CN.html#di-qi-shi-yi-zhang">第七十一章：搭建开发环境——DevEco Studio 与第一个项目</a></li>
-      <li><a href="v1.9/zh-CN.html#di-qi-shi-er-zhang">第七十二章：ArkTS 语言速成——从 TypeScript 到鸿蒙</a></li>
-      <li><a href="v1.9/zh-CN.html#di-qi-shi-san-zhang">第七十三章：ArkUI 声明式界面——组件、布局与状态管理</a></li>
-      <li><a href="v1.9/zh-CN.html#di-qi-shi-si-zhang">第七十四章：页面路由与应用模型——UIAbility 与生命周期</a></li>
-      <li><a href="v1.9/zh-CN.html#di-qi-shi-wu-zhang">第七十五章：数据持久化与网络请求</a></li>
-      <li><a href="v1.9/zh-CN.html#di-qi-shi-liu-zhang">第七十六章：实战项目一——待办清单应用</a></li>
-      <li><a href="v1.9/zh-CN.html#di-qi-shi-qi-zhang">第七十七章：实战项目二——天气助手应用</a></li>
-      <li><a href="v1.9/zh-CN.html#di-qi-shi-ba-zhang">第七十八章：上架华为应用市场——签名、审核与发布</a></li>
-      <li><a href="v1.9/zh-CN.html#di-qi-shi-jiu-zhang">第七十九章：进阶之路——服务卡片、元服务与分布式</a></li>
-      <li><a href="v1.9/zh-CN.html#di-ba-shi-zhang">第八十章：速查手册与资源</a></li>
-      <li class="toc-part">十一、手机与可穿戴篇（第81-85章）</li>
-      <li><a href="v1.9/zh-CN.html#di-ba-shi-yi-zhang">第八十一章：手表、手环、戒指，先想清楚要不要买</a></li>
-      <li><a href="v1.9/zh-CN.html#di-ba-shi-er-zhang">第八十二章：Apple Watch 值不值得买</a></li>
-      <li><a href="v1.9/zh-CN.html#di-ba-shi-san-zhang">第八十三章：华为手表与运动健康生态</a></li>
-      <li><a href="v1.9/zh-CN.html#di-ba-shi-si-zhang">第八十四章：智能戒指——Oura 与 Galaxy Ring</a></li>
-      <li><a href="v1.9/zh-CN.html#di-ba-shi-wu-zhang">第八十五章：可穿戴进阶——表盘、快捷指令与自动化</a></li>
-      <li class="toc-part">十二、旅行与手机篇（第86-90章）</li>
-      <li><a href="v1.9/zh-CN.html#di-ba-shi-liu-zhang">第八十六章：出门前那晚，手机要准备什么</a></li>
-      <li><a href="v1.9/zh-CN.html#di-ba-shi-qi-zhang">第八十七章：eSIM 实操与国际流量方案</a></li>
-      <li><a href="v1.9/zh-CN.html#di-ba-shi-ba-zhang">第八十八章：信号没了，地图还能用吗</a></li>
-      <li><a href="v1.9/zh-CN.html#di-ba-shi-jiu-zhang">第八十九章：海外支付与汇率管理</a></li>
-      <li><a href="v1.9/zh-CN.html#di-jiu-shi-zhang">第九十章：翻译软件，谁的中文更像人话</a></li>
-      <li class="toc-part">十三、手机与健康篇（第91-95章）</li>
-      <li><a href="v1.9/zh-CN.html#di-jiu-shi-yi-zhang">第九十一章：手表说的事，不一定是病</a></li>
-      <li><a href="v1.9/zh-CN.html#di-jiu-shi-er-zhang">第九十二章：运动记录实操——跑步、骑行与游泳</a></li>
-      <li><a href="v1.9/zh-CN.html#di-jiu-shi-san-zhang">第九十三章：睡眠监测与作息改善</a></li>
-      <li><a href="v1.9/zh-CN.html#di-jiu-shi-si-zhang">第九十四章：手表量出来的血氧，能当诊断用吗</a></li>
-      <li><a href="v1.9/zh-CN.html#di-jiu-shi-wu-zhang">第九十五章：生理期 App 和心理 App，值不值得装</a></li>
-      <li class="toc-part">十四、AI短视频创作篇（第96-100章）</li>
-      <li><a href="v1.9/zh-CN.html#di-jiu-shi-liu-zhang">第九十六章：AI 做视频，哪些环节能省，哪些不能</a></li>
-      <li><a href="v1.9/zh-CN.html#di-jiu-shi-qi-zhang">第九十七章：剪映 AI 实操——图文成片与智能字幕</a></li>
-      <li><a href="v1.9/zh-CN.html#di-jiu-shi-ba-zhang">第九十八章：可灵 AI 实操——文生视频与图生视频</a></li>
-      <li><a href="v1.9/zh-CN.html#di-jiu-shi-jiu-zhang">第九十九章：数字人与 AI 配音——口播流水线</a></li>
-      <li><a href="v1.9/zh-CN.html#di-yi-bai-zhang">第一百章：从选题到发布——工作流与平台规则</a></li>
-      <li class="toc-part">十五、竖屏短剧入门篇（第101-105章）</li>
-      <li><a href="v1.9/zh-CN.html#di-yi-bai-ling-yi-zhang">第一百零一章：竖屏短剧——市场、形态与机会</a></li>
-      <li><a href="v1.9/zh-CN.html#di-yi-bai-ling-er-zhang">第一百零二章：前三秒留住人，才有后面</a></li>
-      <li><a href="v1.9/zh-CN.html#di-yi-bai-ling-san-zhang">第一百零三章：手机竖屏拍摄实操</a></li>
-      <li><a href="v1.9/zh-CN.html#di-yi-bai-ling-si-zhang">第一百零四章：剪辑与包装——竖屏节奏感</a></li>
-      <li><a href="v1.9/zh-CN.html#di-yi-bai-ling-wu-zhang">第一百零五章：平台政策与变现路径</a></li>
-      <li class="toc-part">十六、附录</li>
-      <li><a href="v1.9/zh-CN.html#fu-lu-a">附录A：新手机开箱「保姆级」流程</a></li>
-      <li><a href="v1.9/zh-CN.html#fu-lu-b">附录B：动手练习小参考</a></li>
-      <li><a href="v1.9/zh-CN.html#fu-lu-c">附录C：极简术语「黑话」对照表</a></li>
-      <li><a href="v1.9/zh-CN.html#fu-lu-d">附录D：靠谱资源去哪里找？</a></li>
-      <li><a href="v1.9/zh-CN.html#fu-lu-e">附录E：感谢与说明</a></li>
-      <li><a href="v1.9/zh-CN.html#fu-lu-f">附录F：折叠屏选购与使用专题</a></li>
-      <li><a href="v1.9/zh-CN.html#fu-lu-g">附录G：全书速查索引</a></li>
-      <li><a href="v1.9/zh-CN.html#fu-lu-h">附录H：版本路线图</a></li>
-      <li><a href="v1.9/zh-CN.html#jie-yu">结语：把手机用明白，就这么点事</a></li>
-  </ol>
+<main>
+  <div class="wrap">
+    <h1>你缺失的那门手机课</h1>
+    <p class="lede">手机是用会的，不是看会的。这本书讲清楚一台手机里到底装了什么、哪些东西丢了能找回来、遇到陌生来电和链接怎么办。</p>
+    <p class="stats"><b>120</b> 章 · <b>15</b> 篇 · <b>371.7</b> 万字 · <b>19</b> 种语言 · 公益免费，永久开源</p>
 
-  <h2 id="版本">本作品的各种版本 <a class="head-anchor" href="#版本">#</a></h2>
-  <ul class="plain-list">
-    <li><strong>网页版（最新中文版）</strong>：<a href="v1.9/zh-CN.html">v1.9 · zh-CN</a> —— 单文件，离线也能打开；本站首页即 v1.9。</li>
-    <li><strong>多语言版本</strong>：<a href="v1.8/zh-CN.html">v1.8 · 简体中文</a> 等 19 种语言，见下方列表。</li>
-    <li><strong>Android 应用</strong>：19 种语言各一个 APK，内置检查更新，见 <a href="https://github.com/ClassTechStar/Your-Missing-Phone-Class/releases/tag/apk-v1.8-r4">apk-v1.8-r4 Release</a>。</li>
-    <li><strong>LaTeX 排版 PDF</strong>：五个 Release 共 93 本，见 <a href="https://github.com/ClassTechStar/Your-Missing-Phone-Class/releases">Releases</a>。</li>
-    <li><strong>源代码</strong>：<a href="https://github.com/ClassTechStar/Your-Missing-Phone-Class">GitHub 仓库</a>（本页由 <code>bookkit index</code> 维护语言卡片与统计数字）。</li>
-  </ul>
-  <div class="note">应用与网页都内置了「检查更新」：更新源默认是本仓库的 GitHub Release。应用启动时会自动检查（一天最多一次），也可以随时点应用里的「更新」按钮手动查。</div>
+    <div class="actions">
+      <a class="btn btn-primary" href="v1.9/zh-CN/">开始阅读</a>
+      <a class="btn btn-ghost" href="v1.9/zh-CN.html">下载单文件<span class="size">（13 MB）</span></a>
+    </div>
+    <p class="hint">分章阅读：每章一页，手机流量打开约 <code>180 KB</code>，翻到哪读哪。<br>
+      单文件：整本 120 章打成一个 HTML，适合离线保存或拷进 U 盘；首次打开要加载全部内容，会慢一些。</p>
 
-            <!-- AUTOGEN:languages-v1.8 START - 由 python -m bookkit index 生成，勿手改 -->
-            <section class="cw-versions">
-                <h3>v1.8 · 19 种语言完整翻译版</h3>
-                <ul class="cw-cards">
-
-                <li>
-                    <a href="v1.8/zh-CN.html">简体中文</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">你缺失的那门手机课 V1.8</p>
-                    <p class="cw-tier" title="作者逐章审校：12 个锚章节人工重写，操作路径登记在 path_db.json，勘误公开">★★★★★ 人工审校版</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/zh-TW.html">繁體中文</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">你缺失的那門手機課 V1.8</p>
-                    <p class="cw-tier" title="繁体转换 + 人工抽查每篇 1 章；用词仍以简体中文版为准">★★★ 机翻 + 人工抽查</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/yue.html">粵語</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">你缺失嘅嗰門手機課 V1.8</p>
-                    <p class="cw-tier" title="文白夹杂需要母语感，关键章由群内粤语读者过一遍">★★★ 机翻 + 母语群友抽查</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/en.html">English</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">Master Your Phone V1.8</p>
-                    <p class="cw-tier" title="机器翻译 + 每篇抽 1 章人工校对；术语表已统一">★★★ 机翻 + 人工抽查</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/ko.html">한국어</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">스마트폰 정복 V1.8</p>
-                    <p class="cw-tier" title="机器翻译 + 术语表统一，未做逐章人工校对；请把中文版当作准本">★★ 机器翻译版，质量不承诺</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/ja.html">日本語</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">スマホ攻略 V1.8</p>
-                    <p class="cw-tier" title="机器翻译 + 术语表统一，未做逐章人工校对；请把中文版当作准本">★★ 机器翻译版，质量不承诺</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/ru.html">Русский</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">Освой смартфон V1.8</p>
-                    <p class="cw-tier" title="机器翻译 + 术语表统一，未做逐章人工校对；请把中文版当作准本">★★ 机器翻译版，质量不承诺</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/it.html">Italiano</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">Corso Digitale V1.8</p>
-                    <p class="cw-tier" title="机器翻译 + 术语表统一，未做逐章人工校对；请把中文版当作准本">★★ 机器翻译版，质量不承诺</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/pt.html">Português</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">Domine o Celular V1.8</p>
-                    <p class="cw-tier" title="机器翻译 + 术语表统一，未做逐章人工校对；请把中文版当作准本">★★ 机器翻译版，质量不承诺</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/es.html">Español</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">Domina tu Móvil V1.8</p>
-                    <p class="cw-tier" title="机器翻译 + 术语表统一，未做逐章人工校对；请把中文版当作准本">★★ 机器翻译版，质量不承诺</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/fr.html">Français</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">Maîtrisez votre Mobile V1.8</p>
-                    <p class="cw-tier" title="机器翻译 + 术语表统一，未做逐章人工校对；请把中文版当作准本">★★ 机器翻译版，质量不承诺</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/de.html">Deutsch</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">Handy im Griff V1.8</p>
-                    <p class="cw-tier" title="机器翻译 + 术语表统一，未做逐章人工校对；请把中文版当作准本">★★ 机器翻译版，质量不承诺</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/ar.html">العربية</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">إتقان الهاتف V1.8</p>
-                    <p class="cw-tier" title="机器翻译 + 术语表统一，未做逐章人工校对；请把中文版当作准本">★★ 机器翻译版，质量不承诺</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/he.html">עברית</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">שליטה בסמארטפון V1.8</p>
-                    <p class="cw-tier" title="机器翻译 + 术语表统一，未做逐章人工校对；请把中文版当作准本">★★ 机器翻译版，质量不承诺</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/th.html">ภาษาไทย</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">ครองสมาร์ทโฟน V1.8</p>
-                    <p class="cw-tier" title="机器翻译 + 术语表统一，未做逐章人工校对；请把中文版当作准本">★★ 机器翻译版，质量不承诺</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/id.html">Bahasa Indonesia</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">Kuasai Ponselmu V1.8</p>
-                    <p class="cw-tier" title="机器翻译 + 术语表统一，未做逐章人工校对；请把中文版当作准本">★★ 机器翻译版，质量不承诺</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/ms.html">Bahasa Melayu</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">Kuasai Telefon Pintar V1.8</p>
-                    <p class="cw-tier" title="机器翻译 + 术语表统一，未做逐章人工校对；请把中文版当作准本">★★ 机器翻译版，质量不承诺</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/el.html">Ελληνικά</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">Κυριαρχήστε το Κινητό V1.8</p>
-                    <p class="cw-tier" title="机器翻译 + 术语表统一，未做逐章人工校对；请把中文版当作准本">★★ 机器翻译版，质量不承诺</p>
-                </li>
-
-                <li>
-                    <a href="v1.8/lzh.html">文言文</a><span class="cw-label">v1.8 最新</span>
-                    <p class="cw-desc">手機課 V1.8</p>
-                    <p class="cw-tier" title="文言文版是语言表演，不承担教学用途；风格化本就是它的预期">☆ 文化彩蛋</p>
-                </li>
-                </ul>
-            </section>
-            <!-- AUTOGEN:languages-v1.8 END -->
-
-            <!-- AUTOGEN:languages-v1.9 START - 由 python -m bookkit index 生成，勿手改 -->
-            <section class="cw-versions">
-                <h3>v1.9 · 最新中文版（中文先行）</h3>
-                <ul class="cw-cards">
-
-                <li>
-                    <a href="v1.9/zh-CN.html">简体中文</a><span class="cw-label">v1.9 预览</span>
-                    <p class="cw-desc">简体中文 · 含鸿蒙开发与可穿戴/旅行/健康/AI短视频/短剧五篇</p>
-                    <p class="cw-tier" title="作者逐章审校：12 个锚章节人工重写，操作路径登记在 path_db.json，勘误公开">★★★★★ 人工审校版</p>
-                </li>
-                </ul>
-            </section>
-            <!-- AUTOGEN:languages-v1.9 END -->
-
-  <h2 id="反馈">反馈与交流 <a class="head-anchor" href="#反馈">#</a></h2>
-  <p>我们非常希望听到读者的声音。无论是对编写方向有想法，还是发现了叙述不正确或不严谨的地方，亦或是找到了一个错别字，都请告诉我们——每一条反馈都会认真对待。</p>
-  <ul class="plain-list">
-    <li><strong>GitHub Issues</strong>：<a href="https://github.com/ClassTechStar/Your-Missing-Phone-Class/issues">主仓库 · 提交问题</a>（勘误会被记录并公示）</li>
-    <li><strong>QQ 交流群</strong>：1074995524</li>
-    <li><strong>哔哩哔哩</strong>：<a href="https://space.bilibili.com/702063384">@ClassTechStar</a></li>
-  </ul>
-
-  <h2 id="作者">作者 <a class="head-anchor" href="#作者">#</a></h2>
-  <p>ClassTechStar：白天写代码，晚上教爸妈用手机。教着教着发现，市面上要么是太浅的入门册子，要么是维修手册，把原理讲清楚的没几本——于是就有了这本。</p>
-
-  <h2 id="致敬">感谢与致敬 <a class="head-anchor" href="#致敬">#</a></h2>
-  <p>这本书的名字里带着「缺失」二字，而这个开头并不是我们首创——它来自两门同样以「缺失」为名的课。没有它们，就不会有这本书。</p>
-  <ul class="plain-list">
-    <li><strong>《你缺失的那门计算机课》</strong>（<a href="https://www.criwits.top/missing/">www.criwits.top/missing</a>）：中文开源的计算机通识读本，从文件管理一路讲到字符编码与 AI 对话，平易近人，娓娓道来。本书的理念、体例，乃至「你缺失的那门」这个名字，正是从它长出来的——如果你还没读过，请一定去读。</li>
-    <li><strong>《计算机教育中缺失的一课》</strong>（The Missing Semester of Your CS Education · MIT，<a href="https://missing.csail.mit.edu/">missing.csail.mit.edu</a>）：MIT 的免费公开课，补的是 shell、Git、命令行这些学校不教、却天天要用的东西。「学校不教，一生受用」的思路，同样是我们写这本书的出发点。</li>
-  </ul>
-  <p>向这两门课的作者与维护者致以诚挚的感谢。教育这件事，总得有人把缺的那一门补上；我们做的，不过是把这套思路从电脑搬到了手机上。</p>
-
-  <h2 id="修订记录">修订记录 <a class="head-anchor" href="#修订记录">#</a></h2>
-  <p>本作品持续更新中，最近一次更新在 2026 年 11 月 21 日。</p>
-  <ul class="plain-list">
-    <li>Acknowledgements: 门户新增「感谢与致敬」，致谢两门「缺失」课 (26/11/21)</li>
-    <li>Update check: 全端检查更新与自动更新，更新源 GitHub Release (26/11/21)</li>
-    <li>Source write-back: v1.9 全部 120 个区块纳入 source/ 构建，站点基建 lint 上线 (26/11/20)</li>
-    <li>Appendices: 附录 A–H 扩写至每章约 3 万字，全书达到 353.8 万字 (26/11/15)</li>
-    <li>Full expansion: 111 章全部扩写至 29K+ 字符/章，43.5 万 → 331.7 万字 (26/11/14)</li>
-    <li>Deep edit: 120 章按可核对的公开事实逐章深编 (26/11/07)</li>
-    <li>更早的修订记录见 GitHub 提交历史。</li>
-  </ul>
-
-  <h2 id="统计信息">统计信息 <a class="head-anchor" href="#统计信息">#</a></h2>
-  <div class="stats">
-    <div class="stat"><p class="text-4xl md:text-5xl font-black mb-2">120</p><small>个内容区块</small></div>
-    <div class="stat"><p class="text-4xl md:text-5xl font-black mb-2">v1.9</p><small>最新中文版</small></div>
-    <div class="stat"><p class="text-4xl md:text-5xl font-black mb-2">19</p><small>种语言完整翻译</small></div>
-    <div class="stat"><p class="text-4xl md:text-5xl font-black mb-2">∞</p><small>免费开源</small></div>
+    <div class="grid">
+      <a class="card" href="v1.9/zh-CN/">
+        <span class="tag">推荐</span>
+        <h2>分章目录</h2>
+        <p>120 章按篇分组，点进去就是那一章</p>
+      </a>
+      <a class="card" href="v1.9/zh-CN.html">
+        <h2>单文件整本</h2>
+        <p>一个文件包含全部内容，可离线</p>
+      </a>
+      <a class="card" href="languages.html">
+        <h2>19 种语言</h2>
+        <p>含粤语、繁体、文言文彩蛋</p>
+      </a>
+      <a class="card" href="quiz.html">
+        <h2>章节自测</h2>
+        <p>读完一章，做几道题</p>
+      </a>
+      <a class="card" href="errata.html">
+        <h2>勘误与修订</h2>
+        <p>发现错误就在这里提</p>
+      </a>
+      <a class="card" href="https://github.com/ClassTechStar/Your-Missing-Phone-Class">
+        <h2>开源仓库</h2>
+        <p>源稿、脚本、APK 全公开</p>
+      </a>
+    </div>
   </div>
-
-  <h2 id="许可">著作权、许可与声明 <a class="head-anchor" href="#许可">#</a></h2>
-  <p>《你缺失的那门手机课》· 版权所有 © 2026 ClassTechStar。</p>
-  <p>本书的内容与代码以 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享署名—非商业性使用—相同方式共享 4.0 国际版（CC BY-NC-SA 4.0）</a> 授权。你可以在协议允许的范围内自由分享、复制本书内容并进行二次创作，但请注明出处并附上链接，且不得用于商业目的。</p>
-  <p>本书所有内容「按原样」提供，不含任何明示或暗示的担保。我们不保证书中任何部分绝对正确——手机界面的按钮位置随版本而变，操作时请以你的设备实际显示为准。若你认为书中叙述与其他来源相悖，请遵循你自己的判断，并把差异反馈给我们。</p>
 </main>
+
 <footer>
-  <p>《你缺失的那门手机课》网页版 · <a href="https://github.com/ClassTechStar/Your-Missing-Phone-Class">GitHub</a> · CC BY-NC-SA 4.0</p>
-  <p>手机是用会的，不是看会的。</p>
+  <div class="wrap">
+    <div class="row">
+      <a href="https://github.com/ClassTechStar/Your-Missing-Phone-Class">github.com/ClassTechStar</a>
+      <a href="https://space.bilibili.com/">B 站 @ClassTechStar</a>
+      <span>QQ 群 1074995524</span>
+    </div>
+    <div>CC BY-NC-SA 4.0 · 公益 · 免费 · 永远开源 · CLASS TECH STAR</div>
+  </div>
 </footer>
 <script>
-/* 更新检查：更新源 = GitHub Release（书版通道：v<数字> 开头的 tag）。 */
-(function(){
-"use strict";
-var PAGE_VERSION="v1.9";
-var REPO="ClassTechStar/Your-Missing-Phone-Class";
-function cmpVer(a,b){a=String(a).replace(/^v/,"");b=String(b).replace(/^v/,"");var A=a.split(/[-.]/),B=b.split(/[-.]/),i,x,y;for(i=0;i<Math.max(A.length,B.length);i++){x=parseInt(A[i]||"0",10);y=parseInt(B[i]||"0",10);if(x!==y)return x-y;}return 0;}
-function show(tag,url){
-var b=document.createElement("div");
-b.style.cssText="position:fixed;left:12px;bottom:12px;z-index:99990;background:#0074d9;color:#fff;padding:10px 14px;border-radius:999px;font:14px/1.4 system-ui,sans-serif;box-shadow:0 6px 20px rgba(0,0,0,.25);display:flex;gap:10px;align-items:center;max-width:92vw";
-var t=document.createElement("span");t.textContent="New version "+tag+" is available";
-var a=document.createElement("a");a.href=url;a.target="_blank";a.rel="noopener";
-a.textContent="View update";a.style.cssText="color:#fff;text-decoration:underline;font-weight:600";
-var x=document.createElement("button");x.type="button";x.textContent="\u00d7";x.setAttribute("aria-label","Close");
-x.style.cssText="background:rgba(255,255,255,.25);border:0;color:#fff;width:22px;height:22px;border-radius:50%;cursor:pointer;font-size:14px;line-height:1";
-x.onclick=function(){b.remove();try{var s=JSON.parse(localStorage.getItem("pc-gh-update")||"{}");s.d=tag;localStorage.setItem("pc-gh-update",JSON.stringify(s));}catch(e){}};
-b.appendChild(t);b.appendChild(a);b.appendChild(x);
-document.body.appendChild(b);
-setTimeout(function(){if(b.parentNode)b.parentNode.removeChild(b);},60000);
-}
-try{
-if(location.protocol==="file:")return;
-var st=null;try{st=JSON.parse(localStorage.getItem("pc-gh-update")||"null");}catch(e){}
-var now=Date.now();
-if(st&&st.v===PAGE_VERSION&&now-(st.t||0)<86400e3)return;
-var done=function(){try{localStorage.setItem("pc-gh-update",JSON.stringify({t:now,v:PAGE_VERSION}));}catch(e){}};
-fetch("https://api.github.com/repos/"+REPO+"/releases?per_page=30",{headers:{"Accept":"application/vnd.github+json"}}).then(function(r){return r.ok?r.json():[];}).then(function(list){
-if(!Array.isArray(list))return done();
-for(var i=0;i<list.length;i++){
-var tag=String(list[i]&&list[i].tag_name||"");
-if(/^v\d/.test(tag)){
-if(cmpVer(tag,PAGE_VERSION)>0&&(!st||st.d!==tag))show(tag,list[i].html_url||("https://github.com/"+REPO+"/releases/tag/"+tag));
-break;
-}
-}
-done();
-}).catch(function(){done();});
-}catch(e){}
-})();
-</script>
-<script>
-/* Service Worker：门户与语言书离线可用。file:// 打开时跳过。 */
-if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
-    window.addEventListener('load', function () {
-        navigator.serviceWorker.register('sw.js')
-            .catch(function (err) { console.warn('SW 注册失败：', err); });
-    });
-}
-</script>
-<script>
-(function(){
-  "use strict";
-  var btns = document.querySelectorAll('.theme-toggle button');
-  function mark(){
-    var m = 'auto';
-    try { m = localStorage.getItem('pc-theme') || 'auto'; } catch(e){}
-    btns.forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-t') === m); });
-  }
-  btns.forEach(function(b){
-    b.addEventListener('click', function(){
-      var v = b.getAttribute('data-t');
-      try { localStorage.setItem('pc-theme', v); } catch(e){}
-      var h = document.documentElement;
-      h.classList.toggle('dark', v === 'dark');
-      h.classList.toggle('light', v === 'light');
-      mark();
-    });
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js', { scope: './' }).catch(function () {});
   });
-  mark();
-})();
+}
 </script>
 </body>
 </html>
