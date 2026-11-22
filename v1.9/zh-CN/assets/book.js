@@ -1504,7 +1504,7 @@ var REPO="ClassTechStar/Your-Missing-Phone-Class";
 function cmpVer(a,b){a=String(a).replace(/^v/,"");b=String(b).replace(/^v/,"");var A=a.split(/[-.]/),B=b.split(/[-.]/),i,x,y;for(i=0;i<Math.max(A.length,B.length);i++){x=parseInt(A[i]||"0",10);y=parseInt(B[i]||"0",10);if(x!==y)return x-y;}return 0;}
 function show(tag,url){
 var b=document.createElement("div");
-b.style.cssText="position:fixed;left:12px;bottom:12px;z-index:99990;background:#0074d9;color:#fff;padding:10px 14px;border-radius:999px;font:14px/1.4 system-ui,sans-serif;box-shadow:0 6px 20px rgba(0,0,0,.25);display:flex;gap:10px;align-items:center;max-width:92vw";
+b.style.cssText="position:fixed;left:12px;bottom:12px;z-index:99990;background:var(--accent-book);color:#fff;padding:10px 14px;border-radius:999px;font:14px/1.4 system-ui,sans-serif;box-shadow:0 6px 20px rgba(0,0,0,.25);display:flex;gap:10px;align-items:center;max-width:92vw";
 var t=document.createElement("span");t.textContent="New version "+tag+" is available";
 var a=document.createElement("a");a.href=url;a.target="_blank";a.rel="noopener";
 a.textContent="View update";a.style.cssText="color:#fff;text-decoration:underline;font-weight:600";
