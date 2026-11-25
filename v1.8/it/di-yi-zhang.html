@@ -1,0 +1,570 @@
+ <!DOCTYPE html><html lang="it"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="La lezione di smartphone che ti è mancata · Da principiante a esperto, prendi il pieno controllo della tua vita digitale"><meta name="keywords" content="tutorial smartphone, corso di base sul digitale, smartphone, Android, iOS, HarmonyOS, trucchi per smartphone, vita digitale, modelli AI, programmazione con l'AI, API dei modelli AI, prompt engineering, sviluppo Android, sviluppo iOS, Swift, Kotlin, SwiftUI, Jetpack Compose, fotografia computazionale, sicurezza informatica, gestione delle password, automazione, guida all'acquisto smartphone"><meta name="author" content="Guida alla vita digitale"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-yi-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="Capitolo 1: Conosciamo prima questa macchina"><meta property="og:description" content="Il tuo cellulare, in realtà, è il supercomputer più personale che tu abbia in …"><meta property="og:locale" content="it_IT"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="La lezione di smartphone che ti è mancata"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="La lezione di smartphone che ti è mancata · v1.8"><meta name="twitter:description" content="Da principiante a esperto, prendi il pieno controllo della tua vita digitale"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>Capitolo 1: Conosciamo prima questa macchina · La lezione di smartphone che ti è mancata</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-yi-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "Capitolo 1: Conosciamo prima questa macchina", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-yi-zhang.html", "isPartOf": {"@type": "Book", "name": "La lezione di smartphone che ti è mancata", "inLanguage": "it"}}</script>
+<link rel="prefetch" href="di-yi-zhang-memory.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-yi-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-yi-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-yi-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-yi-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-yi-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-yi-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-yi-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-yi-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-yi-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-yi-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-yi-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-yi-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-yi-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-yi-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-yi-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-yi-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-yi-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-yi-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-yi-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-yi-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">Vai al contenuto principale</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="Apri il menu dell'indice" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="Torna alla home">La lezione di smartphone che ti è mancata</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="Azione principale"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="Parti dalle basi">Inizia a imparare</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Cerca (Ctrl+K)" aria-label="Cerca nel contenuto"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="Regola la dimensione del testo"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="Riduci il testo" aria-label="Riduci il testo">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="Reimposta la dimensione del testo" aria-label="Reimposta la dimensione del testo">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="Ingrandisci il testo" aria-label="Ingrandisci il testo">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Attiva/disattiva modalità scura/chiaro" aria-label="Attiva/disattiva la modalità scura/chiaro"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="Stampa / Esporta in PDF" aria-label="Stampa o esporta in PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="Torna all'inizio">Torna su
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="Indice dell'articolo"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">Indice
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 capitoli</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="Filtra i capitoli..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="Filtra i capitoli"></div><ul class="space-y-1 text-sm" id="toc-list"><!--Fondamenti-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Inizia a imparare</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione basi" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>Capitolo 0: Tre cose da dire prima di cominciare</a></li>
+                            <li><a href="#di-yi-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>Capitolo 1: Conosciamo prima questa macchina</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Appendice: Analisi dell'espansione memoria su Android</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Appendice al Capitolo 1: Speciale sistema operativo HarmonyOS</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>Capitolo 2: Non trovi qualcosa sul telefono?</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>Capitolo 3: Niente rete? Non riavviare subito</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>Capitolo 4: Prima di installare un'app, date un'occhiata</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Appendice: Elementi del pacchetto di installazione</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>Capitolo 5: Regolate il telefono come preferite</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>Capitolo 6: Telefono perso? Password dimenticata?</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>Capitolo 7: Tutte le funzioni più avanzate spiegate bene</a></li>
+                        </ul>
+                    </li>
+<!--Software-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">2. Sezione software (Capitoli 8-14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione software" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>Capitolo 8: Comunicazione: SMS, chiamate e social</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>Capitolo 9: Ufficio mobile e apprendimento</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>Capitolo 10: Pagamenti mobili e servizi di vita</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>Capitolo 11: Meglio una foto bella che dieci brutte</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Appendice al Capitolo 11: Tecniche fotografiche professionali</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>Capitolo 12: Intrattenimento audio-video e lettura</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>Capitolo 13: Quali app vale la pena installare e quali no</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>Capitolo 14: Focus sui gestori di password</a></li>
+                        </ul>
+                    </li>
+<!--Avanzato-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">3. Sezione avanzata (Capitoli 15-20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione avanzata" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>Capitolo 15: Due ricariche al giorno: batteria o abitudini?</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Appendice: tutti i protocolli di ricarica rapida spiegati</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>Capitolo 16: Cambiando telefono: quali account puoi perdere?</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>Capitolo 17: Il telefono insieme agli altri dispositivi</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>Capitolo 18: Fai il backup adesso, non quando servirà</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>Capitolo 19: Rotto? Non affrettarti a riparare</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>Capitolo 20: Modalità sviluppatore e permessi avanzati</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Appendice: Termux terminale Linux portatile</a></li>
+                        </ul>
+                    </li>
+<!--Oltre-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">4. Sezione oltre le basi (Capitoli 21-26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione oltre le basi" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>Capitolo 21: Si può collegare al Wi-Fi pubblico?</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>Capitolo 22: Cosa fa davvero l'IA nel tuo telefono?</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>Capitolo 23: Lascia al telefono i compiti ripetitivi</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Appendice: Guida per principianti a GitHub</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>Capitolo 24: Permessi di root e blocco BL spiegati a fondo</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>Capitolo 25: Vendi il vecchio telefono? Fai prima queste cose</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>Capitolo 26: Le nuove tecnologie possono aspettare</a></li>
+                        </ul>
+                    </li>
+<!--5,Pratica(capitoli 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">5. Sezione pratica (Capitoli 27-32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione pratica" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>Capitolo 27: Configura il telefono per i tuoi genitori</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>Capitolo 28: Prima di comprare, chiarisci queste tre cose</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>Capitolo 29: Quanto tempo usi davvero il telefono?</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>Capitolo 30: Screen mirroring, presentazioni e connettività in auto</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>Capitolo 31: Introduzione alle riprese e alla creazione di contenuti in video brevi</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>Capitolo 32: Problemi? Trenta secondi per limitare i danni</a></li>
+                        </ul>
+                    </li>
+<!--6,Prospettive(Capitolo 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">6. Prospettive (Capitolo 33)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione prospettive" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>Capitolo 33: Come sarà il telefono tra dieci anni?</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>Capitolo 34: Telefono e auto: collegarli senza complicazioni</a></li>
+                        </ul>
+                    </li>
+<!--Speciale bambini e telefoni(Capitolo 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Speciale bambini e cellulare (Capitoli 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi l'approfondimento Bambini e smartphone" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>Capitolo 35: Dai il telefono a tuo figlio: poni le regole</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>Capitolo 36: Come collegare tutti i dispositivi di casa</a></li>
+                        </ul>
+                    </li>
+<!--Programmazione con l'IA in pratica-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">7. Programmazione con l'AI in pratica (Capitoli 37-47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione Programmazione con l'AI in pratica" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>Capitolo 37: La rivoluzione di paradigma — Dal scrivere codice al dirigere l'AI che scrive codice</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>Capitolo 38: I cinque principi di pensiero della programmazione con l'AI</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>Capitolo 39: L'AI non capisce? Forse non hai detto bene</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>Capitolo 40: Prima dillo chiaro, poi agisci</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>Capitolo 41: Panorama degli strumenti di programmazione AI nel 2026</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>Capitolo 42: Panorama dei modelli di grandi dimensioni e pratica con le API</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>Capitolo 43: Come parlare all'AI perché ti capisca</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>Capitolo 44: Pratica dal 0 all'1 — Il percorso completo di un progetto</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>Capitolo 45: L'AI ha scritto, ma il lavoro non è finito</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>Capitolo 46: Il percorso di crescita — Da utente ad architetto</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>Capitolo 47: Manuale di consultazione rapida e risorse</a></li>
+                        </ul>
+                    </li>
+<!--Sviluppo Android in pratica-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">8. Sviluppo Android in pratica (Capitoli 48-58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione Sviluppo Android in pratica" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>Capitolo 48: Come è diventato Android quello che è oggi?</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>Capitolo 49: Preparare l'ambiente di sviluppo — Android Studio e il primo progetto</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>Capitolo 50: Kotlin al volo — Il primo linguaggio dello sviluppo Android</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>Capitolo 51: Sviluppare l'interfaccia — Introduzione a Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>Capitolo 52: I quattro componenti fondamentali e il ciclo di vita delle Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>Capitolo 53: Archiviazione dei dati e richieste di rete</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>Capitolo 54: Progetto 1 — Il mio registro delle spese (versione locale)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>Capitolo 55: Progetto 2 — App meteo (versione in rete)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>Capitolo 56: La tua app è pronta, ora pubblicala</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>Capitolo 57: Il percorso di crescita — Permessi, notifiche e architettura moderna</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>Capitolo 58: Manuale di consultazione rapida e risorse</a></li>
+                        </ul>
+                    </li>
+<!--Sviluppo iOS in pratica-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">9. Sviluppo iOS in pratica (Capitoli 59-69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione Sviluppo iOS in pratica" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>Capitolo 59: Conoscere iOS — L'ecosistema Apple e quello dello sviluppo</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>Capitolo 60: Preparare l'ambiente di sviluppo — Xcode e il primo progetto</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>Capitolo 61: Swift al volo — Il primo linguaggio dello sviluppo Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>Capitolo 62: Sviluppare l'interfaccia — Introduzione a SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>Capitolo 63: View, stato e navigazione</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>Capitolo 64: Archiviazione dei dati e richieste di rete</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>Capitolo 65: Progetto 1 — Il mio registro delle spese (versione locale)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>Capitolo 66: Progetto 2 — App meteo (versione in rete)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>Capitolo 67: Rifinire e pubblicare — Pubblicare sull'App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>Capitolo 68: Il percorso di crescita — Permessi, notifiche e architettura moderna</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>Capitolo 69: Manuale di consultazione rapida e risorse</a></li>
+                        </ul>
+                    </li>
+<!--Appendice-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">10. Appendici</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi le appendici" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>AAppendice A: Procedura di unboxing del nuovo cellulare</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>Appendice B: Ti sei bloccato su un esercizio?</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C Appendice C: Glossario essenziale dei termini</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>DAppendice D: Dove trovare risorse affidabili</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>EAppendice E: Ringraziamenti e note</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F Appendice F: Approfondimento su acquisto e uso degli schermi pieghevoli</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>Conclusione: Capire il telefono, tutto qui</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>GAppendice G: Indice di consultazione rapida del libro</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>HAppendice H: Roadmap delle versioni</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="Cerca"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="Cerca nel contenuto..." autocomplete="off" aria-label="Parole chiave della ricerca"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Chiudi la ricerca">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">Digita una parola chiave per iniziare la ricerca</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- Torna su (breadcrumb) --><nav class="breadcrumb no-print" aria-label="Posizione"><a href="#top">Home</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">Corso di base sul digitale · v1.8</span></nav>
+<div id="di-yi-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">Capitolo 1: Conosciamo prima questa macchina</h3>
+<p class="chapter-intro mb-4">Il tuo cellulare, in realtà, è il supercomputer più personale che tu abbia in tasca. È innumerevoli volte più potente dei computer che hanno portato l'uomo sulla Luna, eppure riposa silenzioso nel palmo della tua mano. Oggi conosciamo a fondo questo "gigante silenzioso".</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>"Cinque organi e sei viscere" dell'hardware del cellulare: analisi approfondita</li>
+</ol>
+<p class="mb-2">Il cellulare è piccolo ma completo. Conosciamo uno per uno questi componenti di precisione, come in una lezione di anatomia.</p>
+<h5 class="font-semibold mt-3 mb-1">1. SoC (System on Chip): il "cervello + cuore" del cellulare</h5>
+<p class="mb-2">SoC sta per System on Chip, che si traduce in "infila l'intero sistema in un chip". Non è solo la CPU (Central Processing Unit), ma integra CPU, GPU (Graphics Processing Unit), NPU (Neural Processing Unit), ISP (Image Signal Processor), baseband (responsabile delle comunicazioni) e altro ancora.</p>
+<p class="mb-2">È come costruire il municipio, la centrale elettrica, il centro comunicazioni e la stazione di polizia di una città tutti in un unico edificio: efficienza altissima.</p>
+<h5 class="font-semibold mt-3 mb-1">CPU: il cuore del calcolo general-purpose</h5>
+<p class="mb-2">La CPU è il componente più centrale del SoC, responsabile della maggior parte dei compiti di calcolo. Le CPU dei cellulari usano l'architettura ARM; a differenza dell'architettura x86 dei PC, ARM si caratterizza per un set di istruzioni ridotto (RISC), con consumi più bassi, più adatta ai dispositivi mobili.</p>
+<p class="mb-2"><strong>Design big.LITTLE della CPU</strong>: le CPU mobili moderne adottano diffusamente un'architettura "big.LITTLE" (tecnologia big.LITTLE di ARM), dividendo i core in livelli di prestazioni diversi:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Super core / big core</strong>: prestazioni massime, si occupa dei compiti più pesanti. Ad esempio caricamento di giochi, avvio delle app, calcoli complessi. Frequenza più alta (3GHz+), ma anche consumi maggiori.</li>
+  <li><strong>Medium core</strong>: equilibrio prestazioni/consumi, gestisce compiti medi quotidiani. Scorrere Weibo, guardare video, cambiare app: se ne occupa principalmente lui.</li>
+  <li><strong>Small core / efficiency core</strong>: consumo minimo, per compiti leggeri in background. Standby, ascolto musica, ricezione messaggi, quasi non consuma batteria.</li>
+</ul>
+<p class="mb-2">I tre livelli di core collaborano: lo scheduler di sistema assegna automaticamente in base al carico: i compiti leggeri ai small core per risparmiare, i lavori pesanti ai big core a tutta forza, poi si torna ai small core. Ecco perché il cellulare riesce a far girare fluidamente i giochi e a restare in standby tutto il giorno.</p>
+<p class="mb-2"><strong>Caratteristiche delle architetture dei vari brand</strong>:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Qualcomm Snapdragon 8 Elite</strong>: adotta l'architettura CPU Oryon proprietaria (derivata dall'acquisizione di Nuvia), 2 super core (4.32GHz) + 6 performance core (3.53GHz), tutti basati sul processo N3E di seconda generazione a 3nm di TSMC. Dice addio definitivo all'architettura pubblica ARM, con miglioramenti a salti sia single-core sia multi-core. GPU Adreno 830 con architettura a slice, prestazioni grafiche +40%; Hexagon NPU a circa 45 TOPS, prestazioni di inferenza AI +45%. (Nota: la versione custom Samsung Galaxy ha frequenze più alte, super core fino a 4.47GHz.).</li>
+  <li><strong>MediaTek Dimensity 9400</strong>: 1 super core (Cortex-X925, 3.62GHz) + 3 performance core (Cortex-X4, 3.3GHz) + 4 efficiency core (Cortex-A720, 2.4GHz), architettura full-big-core continuata, processo N3E di seconda generazione a 3nm di TSMC. GPU Immortalis-G925 (12 core), prestazioni di picco +41%, ray tracing +40%. Processore AI di ottava generazione NPU 890, supporta LLM on-device, training LoRA on-device e generazione video on-device.</li>
+  <li><strong>Apple A18 Pro</strong>: 2 performance core (circa 4.04GHz) + 4 efficiency core (circa 2.4GHz), processo N3E di seconda generazione a 3nm di TSMC. GPU a 6 core con ray tracing hardware-level, NPU a 16 core (circa 35 TOPS) che fornisce potenza di calcolo per AI on-device e Apple Intelligence. L'architettura proprietaria Apple resta leader in prestazioni single-core ed efficienza, e l'architettura a memoria unificata offre vantaggi di ampiezza di banda per l'inferenza AI.</li>
+  <li><strong>HiSilicon Kirin 9020 di Huawei</strong>: montato sulla serie Mate 70, adotta l'architettura CPU Taishan proprietaria, con capacità NPU e ISP continuamente potenziate, supporta 5.5G e comunicazione satellitare, rappresenta l'ultima svolta dei chip nazionali cinesi.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">GPU: motore di rendering grafico</h5>
+<p class="mb-2">La GPU (Graphics Processing Unit) si occupa specificamente di grafica e calcolo parallelo. Ha molti più core della CPU (spesso centinaia o migliaia), ma ogni core ha funzioni relativamente semplici, adatte a gestire contemporaneamente grandi quantità di calcoli simili.</p>
+<p class="mb-2"><strong>Flusso di rendering grafico</strong>:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>Elaborazione dei vertici</strong>: calcolo delle coordinate di posizione di ogni vertice nel modello 3D.</li>
+  <li><strong>Rasterizzazione</strong>: conversione della grafica 3D in pixel sullo schermo 2D.</li>
+  <li><strong>Pixel shading</strong>: calcolo del colore, texture ed effetto di illuminazione per ogni pixel.</li>
+  <li><strong>Composizione output</strong>: composizione di tutti i layer nell'immagine finale, inviata allo schermo.</li>
+</ol>
+<p class="mb-2"><strong>Impatto della GPU sull'uso quotidiano</strong>: non solo giochi! Scorrimento delle interfacce, animazioni, riproduzione video, filtri foto, app AR dipendono tutti dalla GPU. Un cellulare con GPU debole può avere frame drop nello scorrimento e crash nei giochi.</p>
+<p class="mb-2"><strong>GPU dei vari brand</strong>: Qualcomm usa la GPU Adreno proprietaria; MediaTek usa la GPU ARM Mali; Apple usa una GPU proprietaria, con prestazioni ed efficienza entrambe benchmark del settore.</p>
+<h5 class="font-semibold mt-3 mb-1">NPU: motore di accelerazione AI</h5>
+<p class="mb-2">La NPU (Neural Processing Unit) è un processore progettato specificamente per il calcolo delle reti neurali. Rispetto a CPU e GPU, la NPU è più efficiente e consuma meno nei task AI.</p>
+<p class="mb-2"><strong>Modalità di calcolo delle reti neurali</strong>: il calcolo principale della NPU è la moltiplicazione matriciale e la convoluzione — i calcoli più basilari e frequenti nelle reti neurali. Con ottimizzazioni hardware-level, la NPU può parallelizzare grandi quantità di calcoli matriciali, decine di volte più veloce della CPU e con consumi molto più bassi.</p>
+<p class="mb-2"><strong>Flusso di elaborazione AI</strong>:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>Input dati</strong>: immagini della fotocamera, audio del microfono, dati dei sensori, ecc.</li>
+  <li><strong>Pre-elaborazione</strong>: regolazione di formato e dimensione dei dati per adattarli ai requisiti di input della rete neurale.</li>
+  <li><strong>Inferenza</strong>: la NPU carica il modello addestrato, esegue il calcolo forward sui dati di input e produce il risultato.</li>
+  <li><strong>Post-elaborazione</strong>: converte l'output AI in risultati utilizzabili, come coordinate dei volti, contenuto testuale, etichette di scena.</li>
+</ol>
+<p class="mb-2"><strong>Scenari applicativi reali</strong>:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Fotografia computazionale</strong>: sintesi notturna, ritratto con sfondo sfocato, elaborazione HDR, bellezza AI.</li>
+  <li><strong>Assistente vocale</strong>: riconoscimento vocale, comprensione del linguaggio naturale, sintesi vocale.</li>
+  <li><strong>Traduzione in tempo reale</strong>: sottotitoli AI, traduzione conversazionale.</li>
+  <li><strong>Riconoscimento intelligente</strong>: riconoscimento testo (OCR), riconoscimento oggetti, riconoscimento scene.</li>
+  <li><strong>LLM on-device</strong>: gli ultimi chip di punta supportano già l'esecuzione on-device di piccoli modelli AI (livello parametri 7B), per dialoghi AI offline, riassunto documenti, scrittura intelligente. L'Hexagon NPU dello Snapdragon 8 Elite ha circa 45 TOPS, l'NPU 890 del Dimensity 9400 supporta anch'esso LLM on-device (velocità di inferenza LLM +80%), la NPU a 16 core dell'A18 Pro di Apple fornisce circa 35 TOPS.</li>
+  <li><strong>Elaborazione immagini AI</strong>: rimozione AI (cancellazione con un tocco dei passanti nelle foto), espansione AI (estensione dei bordi dell'immagine), conversione stile AI, generazione immagini da testo, ecc.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">ISP: Image Signal Processor</h5>
+<p class="mb-2">L'ISP elabora i dati grezzi provenienti dalla fotocamera, trasformando il segnale luminoso in belle foto.</p>
+<p class="mb-2"><strong>Come valutare le prestazioni?</strong> Guarda il modello! Apple A18 Pro, Qualcomm Snapdragon 8 Elite, MediaTek Dimensity 9400, Huawei Kirin 9020 sono tutti di livello flagship. Fascia media: Snapdragon 8s Gen3/7+ Gen3, Dimensity 8400. Non guardare solo il numero di core: architettura e processo (nanometri) contano di più. Il processo a 3nm è oggi il più avanzato, con un'efficienza molto superiore a 5nm e 4nm.</p>
+<h5 class="font-semibold mt-3 mb-1">2. RAM: banco di lavoro temporaneo</h5>
+<p class="mb-2">La RAM è come la tua scrivania: più è grande, più documenti puoi aprire contemporaneamente. 12GB è lo standard attuale, 16GB per utenti intensivi, 24GB+ per gamer e geek.</p>
+<p class="mb-2">Anche il tipo di RAM è importante: LPDDR5 è più veloce ed efficiente di LPDDR4X. Apple, pur avendo RAM ridotte, ottimizza bene il sistema, quindi sembra "sufficiente".</p>
+<p class="mb-2"><strong>Cosa succede se la RAM non basta?</strong> Le app vengono killate in background dal sistema e al cambio richiedono un nuovo caricamento. Ecco perché a volte, passando a WeChat, il gioco scompare.</p>
+<h5 class="font-semibold mt-3 mb-1">3. Storage (ROM/flash): magazzino a lungo termine</h5>
+<p class="mb-2">Lo storage è come la tua libreria: dove stanno tutte le foto, i video, le app. Lo standard attuale è UFS 3.1 o UFS 4.0, molto più veloce del vecchio eMMC.</p>
+<p class="mb-2"><strong>Perché la velocità dello storage conta?</strong> Determina la velocità di apertura delle app, di caricamento dei giochi, di salvataggio delle foto. Col tempo, storage lento rende il cellulare sempre più laggy.</p>
+<h5 class="font-semibold mt-3 mb-1">4. Schermo: i tuoi occhi</h5>
+<p class="mb-2">Lo schermo è la finestra principale di interazione tra te e il cellulare; la sua qualità influisce direttamente sull'esperienza.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Materiale</strong>: OLED colori vivaci, alto contrasto, più efficiente (i pixel non emettono luce quando mostrano nero), ma a bassa luminosità può avere flicker fastidioso per gli occhi; LCD più riposante, costo più basso, ma contrasto e colore inferiori all'OLED.</li>
+  <li><strong>Risoluzione</strong>: 1080P è lo standard, 2K più nitido ma più energivoro. Il concetto di "retina display" di Apple è: a una certa distanza, l'occhio umano non distingue i pixel.</li>
+  <li><strong>Refresh rate</strong>: 60Hz standard, 90Hz/120Hz più fluido, scorrimento setoso. Alto refresh rate consuma di più, quindi molti cellulari supportano refresh rate adattivo (LTPO), regolato dinamicamente in base al contenuto.</li>
+  <li><strong>Touch sampling rate</strong>: influisce sulla velocità di risposta al tocco; i gamer devono farci caso, più alto è, più il telefono è reattivo.</li>
+  <li><strong>Modalità di dimming</strong>: il dimming DC è più riposante del dimming PWM, a bassa luminosità affatica meno gli occhi. Oggi molti cellulari supportano PWM ad alta frequenza, sempre per proteggere gli occhi.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Tecnologia HDR dello schermo</h5>
+<p class="mb-2">L'HDR (High Dynamic Range) consente allo schermo di mostrare contemporaneamente luci più luminose e ombre più scure, con grande miglioramento della profondità dell'immagine.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Principio</strong>: la gamma di luminosità degli schermi normali (SDR) è limitata, con differenza insufficiente tra il più luminoso e il più scuro. Gli schermi HDR hanno peak brightness più alta (di solito oltre 1000 nit), contrasto maggiore, gamut cromatico più ampio, riescono a mostrare più dettagli.</li>
+  <li><strong>Standard principali</strong>: HDR10 (il più base, gratuito e open source), HDR10+ (spinto da Samsung, metadati dinamici), Dolby Vision (qualità migliore ma richiede licenza). Lo standard supportato dal cellulare dipende dall'hardware dello schermo e dalle licenze di sistema.</li>
+  <li><strong>Effetto reale</strong>: guardando video HDR, la luce del sole è più abbagliante, le ombre più profonde, i colori più ricchi. A patto che il video sia prodotto in HDR e lo schermo supporti la visualizzazione HDR.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Tecnologia HDR fotografico</h5>
+<p class="mb-2">L'HDR in fotografia e quello dello schermo sono due cose diverse. L'HDR fotografico risolve via algoritmo il problema delle "luci sovraesposte e ombre nere morte".</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Principio algoritmico</strong>: allo scatto, il cellulare scatta in realtà più foto con esposizioni diverse (sottoesposizione per conservare i dettagli in luce, sovraesposizione per le ombre, esposizione normale per i toni medi), per poi fonderle in un'unica foto ad alta gamma dinamica.</li>
+  <li><strong>Flusso</strong>: cattura multi-frame → allineamento e compensazione (anti-shake) → fusione esposizione / tone mapping → correzione colore → output foto finale.</li>
+  <li><strong>Ottimizzazione</strong>: oggi i cellulari riescono a fare "HDR in tempo reale", ciò che vedi nel mirino è l'effetto HDR elaborato, WYSIWYG. Smart HDR di Apple e auto HDR di Android sono entrambi molto maturi.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">5. Batteria e ricarica: sorgente di energia</h5>
+<p class="mb-2">La batteria è il componente più "effimero" del cellulare: in due o tre anni si degrada visibilmente. La capacità mainstream oggi è 5500-7500mAh.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Potenza di ricarica</strong>: il campo Android è arrivato a 100W o persino 200W, carica completa in dieci minuti; Apple è ancora sui 20-30W. La ricarica rapida rovina la batteria? Con accessori originali non ci sono problemi, il cellulare ha protezione termica.</li>
+  <li><strong>Ricarica wireless</strong>: comoda ma inefficiente, con molto calore. Adatta alla ricarica "a portata di mano" in ufficio, non quando si ha fretta di uscire.</li>
+  <li><strong>Ricarica inversa</strong>: il cellulare diventa power bank, per caricare auricolari e smartwatch, per emergenze.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">6. Fotocamere: la magia di luce e ombra</h5>
+<p class="mb-2">Oggi i cellulari hanno tre o quattro fotocamere, ciascuna con un ruolo:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Principale</strong>: la più usata, sensore più grande, qualità migliore.</li>
+  <li><strong>Grandangolo</strong>: per paesaggi e architettura, campo visivo più ampio.</li>
+  <li><strong>Teleobiettivo</strong>: per soggetti lontani, con zoom ottico e zoom digitale.</li>
+  <li><strong>Macro</strong>: per piccoli soggetti a brevissima distanza.</li>
+</ul>
+<p class="mb-2"><strong>I megapixel non sono tutto!</strong> La dimensione del sensore (un sensore più grande batte uno più piccolo), l'apertura del diaframma (f/1.8 è più grande di f/2.4), lo stabilizzatore (OIS ottico è importante) influenzano la qualità. La fotografia computazionale (algoritmi AI) è sempre più importante, capace di fonder più scatti in un'unica bella foto.</p>
+<h5 class="font-semibold mt-3 mb-1">Teleobiettivo periscopico</h5>
+<p class="mb-2">I teleobiettivi tradizionali richiedono un percorso ottico lungo, che renderebbe il cellulare spesso. Il teleobiettivo periscopico usa un prisma a 90 gradi per rifrangere la luce, sviluppando il percorso ottico orizzontalmente dentro il cellulare, mantenendolo sottile e ottenendo zoom ottico 5x o persino 10x.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Struttura</strong>: la luce entra dalla lente → il prisma la rifrange di 90° → attraversa il gruppo di lenti in direzione della larghezza del cellulare → arriva al sensore. Equivale a mettere un telescopio verticale in orizzontale.</li>
+  <li><strong>Caratteristiche ottiche</strong>: zoom ottico elevato (5x-10x), qualità molto superiore allo zoom digitale. Ma il sensore è di solito più piccolo del principale, prestazioni in luce debole mediocri.</li>
+  <li><strong>Vantaggi</strong>: fotografare la luna, architetture lontane, dettagli sul palco, impareggiabili per un cellulare normale.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">OIS stabilizzazione ottica vs EIS stabilizzazione elettronica</h5>
+<p class="mb-2">Lo stabilizzatore è una tecnologia chiave per la qualità di foto e video; le due modalità hanno principi completamente diversi:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>OIS (stabilizzazione ottica)</strong>: compensa il tremore della mano muovendo fisicamente le lenti o il sensore. All'interno della lente c'è un micro giroscopio che rileva direzione e ampiezza del tremore, poi un motore sposta il gruppo di lenti in direzione opposta. Pro: nessuna perdita di qualità; contro: costo elevato, occupa spazio.</li>
+  <li><strong>EIS (stabilizzazione elettronica)</strong>: compensa il tremore ritagliando e spostando l'immagine via software. Il cellulare registra un'area leggermente più grande. In base ai dati del giroscopio, ritaglia una zona stabile. Pro: nessun hardware aggiuntivo; contro: ritaglia l'immagine (campo visivo più piccolo), in luce debole può sfocare.</li>
+  <li><strong>Scelta pratica</strong>: in foto privilegia l'OIS, in video la combinazione dei due è la migliore. Oggi molti flagship supportano "Sensor-Shift" (spostamento del sensore), con effetti migliori della tradizionale stabilizzazione delle lenti.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Zoom ottico vs zoom digitale</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Zoom ottico</strong>: spostando fisicamente il gruppo di lenti cambia la lunghezza focale, senza perdita di qualità. Lo zoom ottico sui cellulari ha di solito solo ingrandimenti fissi (2x, 3x, 5x, 10x), non può zoomare in modo continuo come le fotocamere.</li>
+  <li><strong>Zoom digitale</strong>: ingrandisce l'area centrale dell'immagine, in pratica ritaglia + interpolazione. Più ingrandisci, peggio è la qualità. Lo zoom digitale 100x sembra figo, ma la qualità è ormai molto sfocata.</li>
+  <li><strong>Zoom ibrido</strong>: combina ottico e digitale, tra gli ingrandimenti ottici usa algoritmi multi-frame per compensare la perdita di qualità. Meglio del puro digitale, ma sempre peggio dell'ottico.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Audio: altoparlanti e chip grafico dedicato</h5>
+<p class="mb-2"><strong>Altoparlante singolo vs doppio altoparlante</strong>:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Altoparlante singolo</strong>: solo un'unità in basso, il suono è sbilanciato da un lato, senza tridimensionalità. Comune nei cellulari di fascia medio-bassa.</li>
+  <li><strong>Doppio altoparlante (stereo)</strong>: uno in alto e uno in basso, creano un campo sonoro stereo. Guardando video o ascoltando musica, i canali sinistro e destro sono distinti, l'immersione molto maggiore. La capsula auricolare spesso funge da altoparlante superiore.</li>
+  <li><strong>Differenza di qualità</strong>: i doppi altoparlanti non sono solo "più forti", la chiave è la spazialità e la stratificazione. Con un altoparlante singolo, guardare un blockbuster sembra sempre mancare di qualcosa.</li>
+</ul>
+<p class="mb-2"><strong>Chip grafico dedicato nei cellulari da gaming</strong>:</p>
+<p class="mb-2">Alcuni cellulari da gaming e performanti montano un chip di elaborazione video indipendente, con queste funzioni:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Frame insertion</strong>: interpola i frame del gioco da 30fps a 60fps o 120fps, più fluido. Elaborato sul chip grafico dedicato, non occupa la GPU del SoC.</li>
+  <li><strong>Super-resolution</strong>: algoritmi AI per aumentare la risoluzione, qualità più nitida.</li>
+  <li><strong>Riduzione consumi</strong>: poiché frame insertion e super-resolution sono gestiti dal chip dedicato, il carico del SoC diminuisce, meno calore e consumi, gioco più stabile.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Posizionamento GPS: singola frequenza vs doppia frequenza</h5>
+<p class="mb-2">Il posizionamento del cellulare si basa principalmente su sistemi di navigazione satellitare come il GPS.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>GPS mono-frequenza</strong>: riceve solo il segnale della banda L1, precisione di circa 3-5 metri. All'aperto è sufficiente, ma nei canyon urbani con grattacieli fitti, la riflessione del segnale causa scostamenti più grandi.</li>
+  <li><strong>GPS dual-frequency</strong>: riceve contemporaneamente L1 e L5. La banda L5 ha lunghezza d'onda maggiore e maggiore resistenza ai disturbi; la risoluzione congiunta delle due frequenze elimina la maggior parte degli errori ionosferici, con precisione di 1-3 metri. Vantaggi evidenti in navigazione urbana e localizzazione dei taxi.</li>
+  <li><strong>Supporto multi-costellazione</strong>: i cellulari moderni supportano non solo il GPS, ma anche BeiDou (Cina), GLONASS (Russia), Galileo (Europa) e altri sistemi satellitari. Più satelliti connessi contemporaneamente, più veloce e precisa è la localizzazione.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">7. Sensori: le antenne del cellulare</h5>
+<p class="mb-2">Dentro il cellulare si nascondono oltre dieci sensori, che lavorano silenziosamente:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Accelerometro + giroscopio</strong>: rileva l'orientamento del cellulare, sterzo nei giochi, rotazione automatica dello schermo.</li>
+  <li><strong>Sensore di luce</strong>: regola automaticamente la luminosità dello schermo.</li>
+  <li><strong>Sensore di prossimità</strong>: durante le chiamate, quando il cellulare si avvicina all'orecchio spegne lo schermo.</li>
+  <li><strong>Sensore di impronte</strong>: oggi lo standard è l'impronta ottica sotto-schermo o ultrasonica.</li>
+  <li><strong>Riconoscimento facciale</strong>: il Face ID di Apple è structured light 3D, sicurezza alta; molti Android usano il riconoscimento 2D di foto, sicurezza media.</li>
+  <li><strong>NFC</strong>: Near Field Communication, per carte di trasporto, badge, carte bancarie.</li>
+  <li><strong>Barometro</strong>: misura l'altitudine, rileva persino quando sali le scale.</li>
+  <li><strong>Sensore a effetto Hall</strong>: rileva l'apertura/chiusura della cover magnetica.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">2. Sistema operativo: Android VS iOS VS HarmonyOS</h4>
+<p class="mb-2">L'hardware è il corpo, il sistema operativo è l'anima. I tre grandi sistemi hanno ciascuno le proprie caratteristiche:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Android</strong>: come una comunità open source, i produttori possono personalizzarlo in profondità, molta scelta. Puoi cambiare tema, installare store di terze parti, smanettare. Ma proprio per via dell'apertura, la frammentazione è grave e l'esperienza tra brand è molto diversa.</li>
+  <li><strong>iOS</strong>: come un giardino curato, Apple controlla hardware e software, esperienza unificata e fluida. Qualità delle app alta, protezione della privacy buona, ma libertà ridotta, molte cose vanno fatte a modo di Apple.</li>
+  <li><strong>HarmonyOS</strong>: la nuova specie di Huawei, si caratterizza per le capacità distribuite, che consentono a dispositivi diversi di collaborare senza soluzione di continuità. Ne parleremo in modo specifico più avanti.</li>
+</ul>
+<p class="mb-2">L'ecosistema di tutti e tre è ricchissimo; scegli quello che si adatta al tuo stile di vita. Non c'è un bene o male assoluto, solo un adatto o non adatto.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">3. Analisi completa delle interfacce del cellulare</h4>
+<p class="mb-2">L'interfaccia del cellulare è il ponte con il mondo esterno; le interfacce diverse si differenziano molto:</p>
+<h5 class="font-semibold mt-3 mb-1">Micro USB</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Caratteristiche fisiche</strong>: interfaccia trapezoidale piatta, con dritto e rovescio distinti (inserita al contrario non entra). Ormai quasi del tutto abbandonata sui cellulari, ma ancora usata in alcuni dispositivi economici e datati.</li>
+  <li><strong>Limiti di trasmissione</strong>: supporta solo lo standard USB 2.0, massima velocità 480 Mbps, potenza di ricarica di solito non superiore a 10W.</li>
+  <li><strong>Svantaggi</strong>: non reversibile, vita utile delle inserzioni breve, velocità di trasmissione lenta, potenza di ricarica bassa.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Lightning (interfaccia Apple, dismessa)</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Caratteristiche fisiche</strong>: interfaccia a 8 pin sviluppata da Apple, inseribile da entrambi i lati. Usata su iPhone 14 e modelli precedenti, ora completamente dismessa.</li>
+  <li><strong>Limiti di trasmissione</strong>: l'interfaccia Lightning supporta fisicamente solo lo standard USB 2.0, massima velocità 480 Mbps. Anche con cavo USB-C to Lightning, la velocità è limitata dall'interfaccia Lightning stessa.</li>
+  <li><strong>Motivo della dismissione</strong>: l'Unione Europea ha approvato una normativa che impone dal 2024 l'uso unificato di USB-C su tutti i cellulari; Apple a partire dalla serie iPhone 15 è passata completamente a Type-C. Lightning è uscita di scena.</li>
+  <li><strong>Nota</strong>: il cavo certificato MFi di Apple contiene un chip di autenticazione; cavi non certificati potrebbero non caricare o trasmettere correttamente. Se usi ancora un vecchio iPhone, tieni pronti cavi Lightning.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">USB Type-C</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Caratteristiche fisiche</strong>: interfaccia ovale a 24 pin, inseribile da entrambi i lati. È diventata lo standard per cellulari e la maggior parte dei dispositivi elettronici. L'UE ha imposto per legge dal 2024 l'uso unificato di USB-C per tutti i cellulari, tablet, auricolari e altri dispositivi portatili; altre regioni del mondo stanno seguendo.</li>
+  <li><strong>Protocollo di trasmissione</strong>: Type-C è solo la forma dell'interfaccia; la capacità di trasmissione effettiva dipende dal protocollo interno. Supporta USB 2.0 (480 Mbps), USB 3.0/3.1/3.2 (5-20 Gbps) e persino USB4 (40 Gbps).</li>
+  <li><strong>Distinzione importante</strong>: non tutte le interfacce Type-C supportano USB 3.0! Molti cellulari, pur usando Type-C, collegano internamente solo i pin USB 2.0, con velocità lenta come le vecchie interfacce. iPhone 16/17 standard supporta solo USB 2.0, la versione Pro supporta USB 3.0 (con cavo USB-C to USB-C).</li>
+  <li><strong>Capacità di ricarica</strong>: supporta protocolli di ricarica rapida come USB PD, fino a 240W.</li>
+  <li><strong>Output video</strong>: supporta DisplayPort Alt Mode, tramite adattatore può mandare video a un monitor.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Interfaccia audio 3.5mm</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Caratteristiche fisiche</strong>: jack tondo a 3 o 4 poli, a 3 poli trasmette i canali audio sinistro e destro, a 4 poli ha un canale microfonico in più.</li>
+  <li><strong>Caratteristiche</strong>: trasmissione di segnale analogico, plug-and-play, senza driver o conversioni. Qualità audio stabile, latenza zero.</li>
+  <li><strong>Stato attuale</strong>: la maggior parte dei cellulari di punta ha eliminato il jack 3.5mm, serve un adattatore Type-C o auricolari Bluetooth. Alcuni cellulari di fascia media e da gaming lo mantengono.</li>
+</ul>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Sistema di prodotti del cellulare e regole di denominazione</li>
+</ol>
+<p class="mb-2">Di fronte alle linee di prodotto spesso confusionarie dei vari brand, capire le regole di denominazione ti aiuta a posizionare rapidamente il modello adatto a te.</p>
+<h5 class="font-semibold mt-3 mb-1">Serie di prodotti dei principali brand:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Apple</strong>: iPhone (standard) / iPhone Plus (grande schermo), iPhone Pro (professionale) / iPhone Pro Max (grande schermo professionale) / iPhone SE (economica) / iPhone 16e (versione AI economica, con chip A18 e baseband C1 proprietaria di Apple). Nel 2026 la serie iPhone 17 monta completamente il chip A19 Pro, con capacità AI ulteriormente migliorate</li>
+  <li><strong>Huawei</strong>: serie Mate (flagship business), serie P/Pura (flagship imaging) / serie Mate X (flagship pieghevole) / serie nova (giovane medio-tier) / serie Enjoy (entry-level)</li>
+  <li><strong>Xiaomi</strong>: serie numerica Xiaomi (flagship), Xiaomi MIX (flagship esplorativo/pieghevole) / serie Redmi K (flagship prestazionale) / serie Redmi Note (mid-range) / serie numerica Redmi (entry-level)</li>
+  <li><strong>OPPO</strong>: serie Find X (flagship) / serie Reno (mid-range) / serie A (entry-level) / serie numerica OnePlus (flagship prestazionale)</li>
+  <li><strong>vivo</strong>: serie X (flagship imaging) / serie iQOO numerica (flagship prestazionale) / serie S (selfie mid-range) / serie Y (entry-level)</li>
+  <li><strong>Samsung</strong>: serie Galaxy S (flagship) / Galaxy Z Fold/Flip (flagship pieghevole) / serie Galaxy A (mid-range)</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Significato dei suffissi più comuni:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Pro</strong>: abbreviazione di Professional, versione professionale. Di solito, rispetto alla versione standard, upgrade di fotocamere, schermo, processore e altre configurazioni chiave.</li>
+  <li><strong>Max</strong>: versione massima. Schermo e batteria più grandi, ma le specifiche non sono necessariamente superiori al Pro.</li>
+  <li><strong>Ultra</strong>: versione estrema. Di solito rappresenta la configurazione più alta della serie, con specifiche spinte e prezzo più alto. Ad esempio Samsung S24 Ultra, Xiaomi 14 Ultra.</li>
+  <li><strong>SE</strong>: Special Edition edizione speciale, in realtà spesso la versione economica. Specifiche ridotte, prezzo più basso. Ad esempio iPhone SE.</li>
+  <li><strong>Plus</strong>: versione ingrandita. Schermo più grande dello standard, batteria più grande, ma configurazione di base equivalente.</li>
+  <li><strong>Lite / Youth Edition</strong>: versione leggera. Specifiche ridotte, prezzo più basso.</li>
+  <li><strong>Note</strong>: originariamente indicava cellulari con grande schermo, oggi i brand lo usano in modi diversi. Redmi Note è una serie mid-range.</li>
+  <li><strong>Neo</strong>: versione nuova. Di solito si riferisce a modelli mid-range orientati alle prestazioni.</li>
+</ul>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Baseband e antenne: i protagonisti dietro le quinte della comunicazione</li>
+</ol>
+<p class="mb-2">Che il cellulare possa chiamare e navigare lo si deve alla coppia formata da chip baseband e antenna.</p>
+<h5 class="font-semibold mt-3 mb-1">Chip baseband:</h5>
+<p class="mb-2">La baseband è il processore del cellulare responsabile delle comunicazioni wireless: modula il segnale digitale in onde radio per la trasmissione e demodula le onde radio ricevute in segnale digitale. Le prestazioni della baseband influenzano direttamente la qualità delle chiamate, la velocità di navigazione e la stabilità del segnale. Qualcomm è il maggior fornitore di baseband per cellulari; MediaTek e Samsung hanno baseband proprietarie. Apple, a partire dall'iPhone 16e, monta la baseband C1 proprietaria, segnando l'ingresso ufficiale di Apple nell'era baseband proprietaria; la C1 usa un processo a 4nm con consumi eccellenti; iPhone 16/16 Plus/16 Pro/16 Pro Max usano ancora baseband Qualcomm (Snapdragon X75 5G), si prevede che i modelli successivi passino gradualmente alle baseband proprietarie. I precedenti iPhone XS/11 con baseband Intel avevano prestazioni del segnale scadenti, un problema per molti utenti.</p>
+<h5 class="font-semibold mt-3 mb-1">Design delle antenne:</h5>
+<p class="mb-2">Le antenne del cellulare sono nascoste all'interno del corpo, di solito disposte lungo il bordo. Il design dell'antenna influisce direttamente sulle prestazioni di ricezione del segnale:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Tecnologia MIMO</strong>: Multiple-Input Multiple-Output, usa più antenne per inviare e ricevere dati contemporaneamente, migliorando velocità e stabilità. 4×4 MIMO è più veloce di 2×2 MIMO.</li>
+  <li><strong>Numero di antenne</strong>: i flagship hanno di solito oltre dieci antenne (cellulare, Wi-Fi, Bluetooth, NFC, GPS ciascuno con antenna dedicata).</li>
+  <li><strong>Influenza del corpo metallico</strong>: il metallo scherma il segnale, quindi i cellulari con corpo metallico devono avere antenna bands (le strisce di plastica sul bordo). Corpi in vetro e plastica hanno minore impatto sul segnale.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Evoluzione delle tecnologie di rete:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>4G LTE</strong>: velocità teorica di picco in downlink 1 Gbps, uplink 500 Mbps (Cat.18), in pratica 50-150 Mbps. Copertura più ampia, sufficiente.</li>
+  <li><strong>5G NR</strong>: velocità teorica di picco in downlink oltre 10 Gbps. La banda Sub-6GHz ha copertura migliore, le onde millimetriche mmWave sono velocissime ma con copertura minima.</li>
+  <li><strong>5G-A (5G Advanced)</strong>: versione potenziata del 5G, chiamata anche 5.5G. Downlink fino a 10 Gbps, uplink 1 Gbps, densità di connessioni e precisione di localizzazione molto migliori. Dal 2024 China Mobile, China Telecom e China Unicom hanno iniziato a distribuire reti 5G-A nelle città principali; i flagship come Huawei Mate 70/80 series e Xiaomi 15/16 series supportano già il 5G-A. Il 5G-A porta anche capacità "integrated sensing and communication", le stazioni base possono comunicare e percepire l'ambiente contemporaneamente, fornendo infrastruttura per l'economia low-altitude (consegne con drone) e per la connettività veicolare.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Classificazione delle bande di rete:</h5>
+<p class="mb-2">Le bande di rete supportate dal cellulare determinano in quali paesi e su quali operatori può essere usato:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>FDD-LTE Band (serie B)</strong>: come B1, B3, B5, bande 4G. Paesi diversi usano bande diverse; la Cina usa principalmente B1/B3/B5/B8/B34/B38/B39/B40/B41.</li>
+  <li><strong>TDD-LTE Band</strong>: l'altra modalità del 4G, molto usata in Cina con B38/B39/B40/B41.</li>
+  <li><strong>5G NR Band (serie N)</strong>: come n1, n3, n28, n41, n78, n79. n78 (3.5GHz) è la banda principale del 5G in Cina, n41 (2.5GHz) è molto usata da China Mobile.</li>
+  <li><strong>Consiglio d'acquisto</strong>: se devi usarlo all'estero, prima di acquistare verifica che il cellulare supporti le bande del paese di destinazione. I modelli "National Bank" cinesi supportano di solito tutte le bande cinesi ma potrebbero mancare di alcune bande estere.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">6. Il tuo cellulare, quanti ruoli sta interpretando?</h4>
+<p class="mb-2">Non è più solo un telefono:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>Strumento di comunicazione</strong>: chiamate, SMS, WeChat, email...</li>
+  <li><strong>Fotocamera intelligente</strong>: foto, video, scansione documenti...</li>
+  <li><strong>Portafoglio</strong>: pagamenti, carte di trasporto, carte bancarie, carte fedeltà...</li>
+  <li><strong>Porta informazioni</strong>: notizie, meteo, azioni, conoscenza...</li>
+  <li><strong>Console di gioco</strong>: dal casual game ai blockbuster AAA...</li>
+  <li><strong>Ufficio mobile</strong>: documenti, fogli, riunioni, collaborazione...</li>
+  <li><strong>Assistente salute</strong>: contapassi, battito, sonno, sport...</li>
+  <li><strong>Telecomando casa intelligente</strong>: controlla luci, condizionatori, TV, robot aspirapolvere...</li>
+  <li><strong>Carta d'identità digitale</strong>: carta d'identità elettronica, patente elettronica, codice sanitario...</li>
+  <li><strong>Centro svago</strong>: musica, video, ebook, podcast...</li>
+</ol>
+<p class="mb-2">Pensaci: un piccolo dispositivo, quanta vita porta con sé! Quindi, imparare a usarlo bene è imparare a vivere meglio.</p>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Pratica: conosci la configurazione hardware</p>
+<p class="mt-1">In [Impostazioni], vedi se riesci a trovare il modello del processore, la dimensione della RAM e dello storage (ROM). Fatti un'idea delle capacità del tuo cellulare. Gli utenti Android possono scaricare "AnTuTu" o "DevCheck" per informazioni dettagliate sull'hardware.</p>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">Trovato un errore in questo capitolo? <a href="../../errata.html" class="text-primary hover:underline">Segnalalo sulla pagina delle correzioni</a> — percorso superato, fatto impreciso, frase poco chiara: tutto benvenuto. Puoi anche scrivere nel gruppo QQ 1074995524.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-ling-zhang.html" class="text-primary hover:underline">← Capitolo 0: Tre cose da dire prima di cominciare</a><span></span><a id="next-link" href="di-yi-zhang-memory.html" class="text-primary hover:underline">Appendice: Analisi dell'espansione memoria su Android →</a></nav>
+ </div></main></div><!-- Strumenti rapidi: gruppo di pulsanti flottanti --><div id="quick-tools" class="quick-tools no-print" aria-label="Strumenti rapidi"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="Cerca (Ctrl+K)" aria-label="Cerca"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="Attiva/disattiva scuro/chiaro" aria-label="Cambia tema"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="Stampa / Esporta in PDF" aria-label="Stampa o esporta"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="Indice" aria-label="Apri l'indice"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="Lettura vocale" aria-label="Lettura vocale"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="Scorciatoie da tastiera (?)" aria-label="Pannello delle scorciatoie"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="Backup/ripristino dei progressi" aria-label="Backup dei progressi"><span aria-hidden="true">B</span></button></div><!-- Pannello scorciatoie --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="Scorciatoie da tastiera"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Scorciatoie da tastiera</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Chiudi">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Cerca nel contenuto</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Tema scuro/chiaro</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Lettura vocale: play/pausa</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Ferma la lettura</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Apri il pannello delle scorciatoie</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Testo più grande / più piccolo</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">Stampa / esporta PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- Finestra backup/ripristino --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="Backup e ripristino"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Backup e ripristino dell'avanzamento lettura</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Chiudi">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">Il backup include: capitoli letti, segnalibri, posizione di lettura, preferenze sulla dimensione del testo ed esiti dell'autocontrollo. I dati restano nel browser in locale e si perdono cambiando browser o svuotando la cache: ti consigliamo di esportare il backup di tanto in tanto.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Esporta file di backup
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Scarica un file JSON e salvalo in un posto sicuro</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Importa backup per ripristinare
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Seleziona un file di backup esportato in precedenza per ripristinare i progressi</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Cancella tutti i dati di lettura
+ </button><p class="text-xs text-red-400 mt-1 text-center">Non recuperabile! Esporta prima il backup</p></div></div></div></div><!-- Avviso giorni di lettura consecutivi --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">Giorno X di lettura di fila!</span></div><!-- Barra dei controlli di lettura vocale --><div id="tts-controls" class="tts-controls" role="region" aria-label="Comandi della lettura vocale" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="Capitolo in lettura">Non iniziato</span><button class="tts-btn" id="tts-prev" title="Paragrafo precedente" aria-label="Paragrafo precedente"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="Riproduci/Pausa" aria-label="Riproduci la lettura"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="Paragrafo successivo" aria-label="Paragrafo successivo"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="Rallenta" aria-label="Rallenta">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="Accelera" aria-label="Accelera">+</button><button class="tts-btn" id="tts-stop" title="Interrompi la lettura" aria-label="Interrompi la lettura"><span aria-hidden="true">×</span></button></div><!-- Pulsante «Torna su» --><button id="back-to-top" class="opacity-0 invisible" aria-label="Torna all'inizio"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- Avviso ripristino posizione di lettura --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">Ultima lettura: ...</span><button class="btn-restore" id="restore-btn">Annulla</button><button class="btn-dismiss" id="dismiss-btn">Ignora</button></div><!-- Script JS -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

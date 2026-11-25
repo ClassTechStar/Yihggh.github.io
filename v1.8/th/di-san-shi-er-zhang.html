@@ -1,0 +1,491 @@
+ <!DOCTYPE html><html lang="th"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="คาบเรียนมือถือที่คุณขาดไป · จากเริ่มต้นสู่ระดับเชี่ยวชาญ ควบคุมชีวิตดิจิทัลของคุณได้อย่างเบ็ดเสร็จ"><meta name="keywords" content="บทเรียนมือถือ,วิชาพื้นฐานดิจิทัล,สมาร์ตโฟน,Android,iOS,HarmonyOS,เทคนิคมือถือ,ชีวิตดิจิทัล,โมเดล AI ขนาดใหญ่,เขียนโปรแกรมด้วย AI,API โมเดลขนาดใหญ่,Prompt Engineering,พัฒนา Android,พัฒนา iOS,Swift,Kotlin,SwiftUI,Jetpack Compose,การถ่ายภาพเชิงคำนวณ,ความปลอดภัยสารสนเทศ,การจัดการรหัสผ่าน,ระบบอัตโนมัติ,การเลือกซื้อมือถือ"><meta name="author" content="ผู้นำทางชีวิตดิจิทัล"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-san-shi-er-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="บทที่ 32: เกิดเรื่อง หยุดความเสียหายในสามสิบวินาที"><meta property="og:description" content="บทนี้คือ &quot;แผนฉุกเฉิน&quot; เราหวังว่าคุณจะไม่มีวันต้องใช้มันเลย แต่ถ้าเผลอเจอเหตุกา…"><meta property="og:locale" content="th_TH"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="คาบเรียนมือถือที่คุณขาดไป"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="คาบเรียนมือถือที่คุณขาดไป · v1.8"><meta name="twitter:description" content="จากเริ่มต้นสู่ระดับเชี่ยวชาญ ควบคุมชีวิตดิจิทัลของคุณได้อย่างเบ็ดเสร็จ"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>บทที่ 32: เกิดเรื่อง หยุดความเสียหายในสามสิบวินาที · คาบเรียนมือถือที่คุณขาดไป</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-san-shi-er-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "บทที่ 32: เกิดเรื่อง หยุดความเสียหายในสามสิบวินาที", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-san-shi-er-zhang.html", "isPartOf": {"@type": "Book", "name": "คาบเรียนมือถือที่คุณขาดไป", "inLanguage": "th"}}</script>
+<link rel="prefetch" href="di-san-shi-san-zhang.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-san-shi-er-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-san-shi-er-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">ข้ามไปที่เนื้อหาหลัก</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="เปิดเมนูสารบัญ" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="กลับหน้าแรก">คาบเรียนมือถือที่คุณขาดไป</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="การทำงานหลัก"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="เริ่มจากพื้นฐาน">เริ่มเรียน</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="ค้นหา (Ctrl+K)" aria-label="ค้นหาเนื้อหา"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="ปรับขนาดตัวอักษร"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="ย่อตัวอักษร" aria-label="ย่อตัวอักษร">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="รีเซ็ตขนาดตัวอักษร" aria-label="รีเซ็ตขนาดตัวอักษร">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="ขยายตัวอักษร" aria-label="ขยายตัวอักษร">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="สลับโหมดมืด/สว่าง" aria-label="สลับโหมดมืด/สว่าง"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="พิมพ์ / ส่งออก PDF" aria-label="พิมพ์หรือส่งออก PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="กลับขึ้นด้านบน">ด้านบน
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="สารบัญบทความ"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">สารบัญ
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 บท</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="กรองบท..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="กรองบท"></div><ul class="space-y-1 text-sm" id="toc-list"><!--ภาคพื้นฐาน-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">เริ่มเรียน</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคพื้นฐาน" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>บทที่ 0: สามเรื่องที่ต้องพูดก่อนเริ่ม</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>บทที่ 1: มาทำความรู้จักเครื่องนี้กัน</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>ภาคผนวก: การวิเคราะห์การขยายหน่วยความจำมือถือแอนดรอยด์</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>บทที่ 1 ภาคผนวก: หัวข้อพิเศษระบบปฏิบัติการฮาร์โมนีโอเอส</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>บทที่ 2: หาไฟล์ในโทรศัพท์ไม่เจอ จะทำอย่างไร？</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>บทที่ 3: ต่อเน็ตไม่ได้ อย่าเพิ่งรีบูต</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>บทที่ 4: ก่อนติดตั้งแอป ลองมองให้ดีสักสามครั้ง</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> ภาคผนวก: องค์ประกอบของแพ็กเกจติดตั้งซอฟต์แวร์</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>บทที่ 5: ปรับโทรศัพท์ให้เข้ากับมือคุณ</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>บทที่ 6: โทรศัพท์หาย รหัสผ่านลืม จะช่วยตัวเองยังไง</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>บทที่ 7: ถอดรหัสฟีเจอร์ล้ำสมัยทั้งหมด</a></li>
+                        </ul>
+                    </li>
+<!--ภาคซอฟต์แวร์-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">2. ภาคซอฟต์แวร์ (บทที่ 8-14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคซอฟต์แวร์" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>หลักการ</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>บทที่ 9: การทำงานและการเรียนรู้บนมือถือ</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>บทที่ 10: การชำระเงินมือถือและบริการในชีวิตประจำวัน</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>บทที่ 11: ถ่ายดีสำคัญกว่าถ่ายเยอะ</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>บทที่ 11 ภาคผนวก: เทคโนโลยีภาพระดับมืออาชีพ</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>ไม่กี่ฟังเพลงเล็กทักษะช่างฝีมือ</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>บทที่ 13: แอปไหนควรลง อันไหนไม่ต้องลง？</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>บทที่ 14: โฟกัสพิเศษเรื่องตัวจัดการรหัสผ่าน</a></li>
+                        </ul>
+                    </li>
+<!--ภาคระดับกลาง-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">3. ภาคระดับกลาง (บทที่ 15-20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคระดับกลาง" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>บทที่ 15: ชาร์จวันละสองครั้ง เป็นเรื่องแบตหรือวิธีใช้？</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> ภาคผนวก: ถอดรหัสโปรโตคอลชาร์จเร็วทั้งหมด</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>บทที่ 16: เปลี่ยนเครื่องใหม่ บัญชีไหนทิ้งได้ อันไหนต้องเก็บ</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>บทที่ 17: การเชื่อมโยงมือถือกับอุปกรณ์อื่น</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>บทที่ 18: สำรองข้อมูลตั้งแต่วันนี้ อย่ารอจนต้องใช้</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>บทที่ 19: เครื่องมีปัญหา อย่าเพิ่งรีบซ่อม</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>บทที่ 20: โหมดนักพัฒนาและสิทธิ์ระดับสูง</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>บทที่ 20 ภาคผนวก</a></li>
+                        </ul>
+                    </li>
+<!--ภาคก้าวไกล-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">4. ภาคก้าวไกล (บทที่ 21-26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคก้าวไกล" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>บทที่ 21: ควรต่อ Wi-Fi สาธารณะจริงหรือเปล่า？</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>บทที่ 22: AI ในโทรศัพท์ทำอะไรกันแน่？</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>บทที่ 23: ให้โทรศัพท์ทำงานต่อเนื่องแทนเรา</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>ภาคผนวก: คู่มือเริ่มต้น GitHub</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>บทที่ 24: เจาะลึกสิทธิ์ Root และ BL Lock</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>บทที่ 25: ก่อนขายมือถือเก่า ต้องทำสิ่งเหล่านี้</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>บทที่ 26:เทคโนโลยีใหม่ ค่อยรอก่อน</a></li>
+                        </ul>
+                    </li>
+<!--5,ภาคลงมือปฏิบัติ(บทที่ 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">5. ภาคใช้งานจริง (บทที่ 27-32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคใช้งานจริง" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>บทที่ 27: ปรับมือถือให้พ่อแม่ใช้</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>บทที่ 28:ก่อนซื้อ คิดให้ชัดเรื่องสามข้อ</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>บทที่ 29:คุณรู้จริงไหมว่าใช้เวลาหน้าจอมานานแค่ไหน</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>บทที่ 30: การฉายจอ การนำเสนอ และการเชื่อมต่อในรถยนต์</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>บทที่ 31: เริ่มต้นถ่ายคลิปสั้นและสร้างคอนเทนต์</a></li>
+                            <li><a href="#di-san-shi-er-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>บทที่ 32: เกิดเรื่อง หยุดความเสียหายในสามสิบวินาที</a></li>
+                        </ul>
+                    </li>
+<!--6,มองไปข้างหน้า(บทที่ 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">6. บทมองการณ์ไกล (บทที่ 33-41)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคมองอนาคต" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>บทที่ 33:อีกสิบปีข้างหน้า โทรศัพท์จะเป็นแบบไหน？</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>บทที่ 34:โทรศัพท์กับรถยนต์ เชื่อมต่อให้ลื่นไหล</a></li>
+                        </ul>
+                    </li>
+<!--หัวข้อพิเศษ เด็กกับโทรศัพท์(บทที่ 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">โฟกัสพิเศษเด็กกับมือถือ (บทที่ 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบโฟกัสพิเศษเด็กกับมือถือ" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>บทที่ 35:ให้ลูกมีมือถือแล้วตั้งกฎยังไง</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>บทที่ 36: อุปกรณ์ในบ้านทั้งหมด เชื่อมกันยังไง</a></li>
+                        </ul>
+                    </li>
+<!--ภาคปฏิบัติ: เขียนโค้ดด้วย AI-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">7. ภาคปฏิบัติการเขียนโปรแกรมด้วย AI (บทที่ 37-47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคปฏิบัติการเขียนโปรแกรมด้วย AI" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>บทที่ 37: การปฏิวัติกระบวนทัศน์ — จากการเขียนโค้ดเองสู่การสั่ง AI เขียนโค้ด</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>บทที่ 38: หลักคิด 5 ข้อของการเขียนโปรแกรมด้วย AI</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>บทที่ 39: AI ไม่เข้าใจ ส่วนใหญ่เพราะเราพูดไม่ชัด</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>บทที่ 40: บอกความต้องการให้ชัดก่อน แล้วค่อยลงมือ</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>บทที่ 41: ภูมิทัศน์เครื่องมือเขียนโปรแกรมด้วย AI ปี 2026</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>บทที่ 42: ภูมิทัศน์โมเดลขนาดใหญ่และการใช้ API จริง</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>บทที่ 43: คุยกับ AI ยังไงให้มันเข้าใจ</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>บทที่ 44: ลงมือทำจาก 0 ถึง 1 — ขั้นตอนครบวงจรของโปรเจกต์เต็ม</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>บทที่ 45: AI เขียนแล้ว ยังไม่เสร็จ</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>บทที่ 46: เส้นทางระดับสูง — จากผู้ใช้สู่สถาปนิกระบบ</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>บทที่ 47: คู่มือเปิดค้นด่วนและแหล่งข้อมูล</a></li>
+                        </ul>
+                    </li>
+<!--ภาคปฏิบัติ: พัฒนาแอนดรอยด์-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">8. ภาคปฏิบัติการพัฒนา Android (บทที่ 48-58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคปฏิบัติการพัฒนา Android" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>บทที่ 48: แอนดרอยด์โตมาแบบไหนมาถึงจุดนี้？</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>บทที่ 49: ตั้งค่าสภาพแวดล้อมการพัฒนา — Android Studio กับโปรเจกต์แรก</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>บทที่ 50: เริ่มต้น Kotlin อย่างรวดเร็ว — ภาษาหลักของการพัฒนา Android</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>บทที่ 51: การพัฒนาหน้าจอ — เริ่มต้น Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>บทที่ 52: องค์ประกอบหลัก 4 ตัวและวงจรชีวิตของ Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>บทที่ 53: การจัดเก็บข้อมูลและการร้องขอผ่านเครือข่าย</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>บทที่ 54: โปรเจกต์ 1 — สมุดบัญชีรายรับรายจ่ายของฉัน (เวอร์ชันในเครื่อง)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>บทที่ 55: โปรเจกต์ 2 — แอปดูอากาศ (เวอร์ชันออนไลน์)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>บทที่ 56: แอปทำเสร็จแล้ว เอาขึ้น Google Play</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>บทที่ 57: เส้นทางระดับสูง — สิทธิ์การเข้าถึง การแจ้งเตือน และสถาปัตยกรรมสมัยใหม่</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>บทที่ 58: คู่มือเปิดค้นด่วนและแหล่งข้อมูล</a></li>
+                        </ul>
+                    </li>
+<!--ภาคปฏิบัติ: พัฒนา iOS-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">9. ภาคปฏิบัติการพัฒนา iOS (บทที่ 59-69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคปฏิบัติการพัฒนา iOS" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>บทที่ 59: รู้จัก iOS — ระบบนิเวศ Apple และระบบนิเวศการพัฒนา</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>บทที่ 60: ตั้งค่าสภาพแวดล้อมการพัฒนา — Xcode กับโปรเจกต์แรก</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>บทที่ 61: เริ่มต้น Swift อย่างรวดเร็ว — ภาษาหลักของการพัฒนาบน Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>บทที่ 62: การพัฒนาหน้าจอ — เริ่มต้น SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>บทที่ 63: วิว สถานะ และการนำทาง</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>บทที่ 64: การจัดเก็บข้อมูลและการร้องขอผ่านเครือข่าย</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>บทที่ 65: โปรเจกต์ 1 — สมุดบัญชีรายรับรายจ่ายของฉัน (เวอร์ชันในเครื่อง)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>บทที่ 66: โปรเจกต์ 2 — แอปดูอากาศ (เวอร์ชันออนไลน์)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>บทที่ 67: ขัดเกลาและเผยแพร่ — ขึ้น App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>บทที่ 68: เส้นทางระดับสูง — สิทธิ์การเข้าถึง การแจ้งเตือน และสถาปัตยกรรมสมัยใหม่</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>บทที่ 69: คู่มือเปิดค้นด่วนและแหล่งข้อมูล</a></li>
+                        </ul>
+                    </li>
+<!--ภาคผนวก-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">10. ภาคผนวก</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคผนวก" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>Aภาคผนวก A: ขั้นตอนเปิดกล่องโทรศัพท์ใหม่</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>ภาคผนวก B: ทำแบบฝึกหัดแล้วติด จะทำอย่างไร？</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C ภาคผนวก C: ตารางศัพท์ฉบับย่อที่สุด</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>Dภาคผนวก D: หาแหล่งข้อมูลที่น่าเชื่อถือได้ที่ไหน</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>Eที่210บทแนบ:</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F ภาคผนวก F: โฟกัสพิเศษการเลือกซื้อและใช้งานมือถือจอพับ</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>บทส่งท้าย: ใช้โทรศัพท์ให้เป็น แค่นี้ก็พอ</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>Gภาคผนวก G：ดัชนีค้นหาด่วนทั้งเล่ม</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>Hภาคผนวก H：แผนงานเวอร์ชัน</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="ค้นหา"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="ค้นหาเนื้อหา..." autocomplete="off" aria-label="คำค้นหา"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="ปิดการค้นหา">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">พิมพ์คำค้นเพื่อเริ่มค้นหา</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- Breadcrumb ด้านบน --><nav class="breadcrumb no-print" aria-label="ตำแหน่ง"><a href="#top">หน้าแรก</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">วิชาพื้นฐานดิจิทัล · v1.8</span></nav>
+<div id="di-san-shi-er-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">บทที่ 32: เกิดเรื่อง หยุดความเสียหายในสามสิบวินาที</h3>
+<p class="chapter-intro mb-4">บทนี้คือ "แผนฉุกเฉิน" เราหวังว่าคุณจะไม่มีวันต้องใช้มันเลย แต่ถ้าเผลอเจอเหตุการณ์มือถือหาย ถูกขโมย หรือโดนหลอกลวง คู่มือเล่มนี้จะช่วยให้ความเสียหายน้อยที่สุด และเวลาภัยพิบัติอย่างแผ่นดินไหวหรือฝนตกหนักถล่มมา มือถือ, ก็คือเครื่องมือรับการแจ้งเตือน ระบุตำแหน่งขอความช่วยเหลือ และติดต่อสื่อสาร แนะนำให้อ่านผ่านทั้งบทตั้งแต่ตอนนี้ แล้วแคปหน้าจอขั้นตอนสำคัญเก็บไว้ หรือสั่งพิมพ์วางไว้ที่บ้าน เพราะตอนเกิดเรื่องมือถืออาจไม่อยู่ในมือแล้ว ส่วนตอนภัยพิบัติแบตอาจหมดหรือสัญญาณอาจหาย</p>
+<p class="mb-2">ฉากที่ 0: แผ่นดินไหว/สภาพอากาศสุดขั้ว - มือถือช่วยชีวิตคุณได้อย่างไร</p>
+<p class="mb-2">จุดเน้นคือความปลอดภัยของตัวคุณ ไม่ใช่บัญชีหรือเงิน ส่วนการตั้งค่าการแจ้งเตือนดูได้ใน บทที่ 13 "การแจ้งเตือนสภาพอากาศ ภัยธรรมชาติ และแผ่นดินไหว" ที่นี่จะพูดถึงแค่สิ่งที่ควรทำหลังเสียงแจ้งเตือนดังขึ้น</p>
+<div class="danger-box rounded-lg p-4 mt-3">
+<p class="font-semibold">เสียงแจ้งเตือนแผ่นดินไหวดังแล้ว: หลบก่อนแล้วค่อยอพยพ อย่ามัวแต่ถ่ายคลิป</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>หลบภัยใกล้ตัว: ก้มลงต่ำ หาที่กำบัง จับให้แน่น (ใต้โต๊ะ มุมผนังรับน้ำหนัก ข้างเฟอร์นิเจอร์ชิ้นใหญ่ที่แข็งแรง) ปกป้องศีรษะและคอ อยู่ห่างจากกระจก ผนังด้านนอก และโคมไฟห้อย</li>
+  <li>อย่าพรวดพราดวิ่งลงตึก: แรงสั่นหลักมักใช้เวลาแค่สิบกว่าวินาทีถึงไม่กี่สิบวินาที บันไดอาจอันตรายกว่า และห้ามใช้ลิฟต์เด็ดขาด</li>
+  <li>เมื่อแรงสั่นหยุดแล้วจึงอพยพอย่างเป็นระเบียบ: ใช้บันได ระวังแรงสั่นตามหลังและสิ่งของที่ร่วงหล่น ไปยังที่โล่ง ๆ และอยู่ห่างเสาไฟฟ้า ป้ายโฆษณา และอาคารที่เสียหาย</li>
+  <li>ใช้มือถือแบบเอาอยู่: ส่งข้อความสั้น ๆ ให้ผู้ติดต่อฉุกเฉิน ("ฉันอยู่ที่XX ปลอดภัย/บาดเจ็บ ต้องการความช่วยเหลือ") ประหยัดแบตกว่าโทรยาว ถ้าส่ง SMS/WeChat ได้ให้ใช้ข้อความก่อน</li>
+  <li>ถ้าไม่มีสัญญาณ: ดู บทที่ 7 เรื่อง SOS ผ่านดาวเทียม / ข้อความผ่านดาวเทียม (เฉพาะรุ่นที่รองรับ) หรือไปยังที่สูงหรือที่โล่งแล้วลองใหม่ ในบางสถานการณ์การโทรคุยผ่าน Bluetooth แบบไม่ใช้เน็ตก็ช่วยได้</li>
+  <li>ปิดฟังก์ชันที่ไม่จำเป็น: ตอนฉุกเฉินเปิดโหมดเครื่องบินแล้วตั้งเวลาเปิด-ปิด ปิดการสแกน Bluetooth ลดความสว่างหน้าจอ จะช่วยให้แบตอึดขึ้นอีกหลายชั่วโมง เก็บไฟเหลือนิดเดียวไว้สำหรับส่งข่าวปลอดภัยและรับข้อมูลการช่วยเหลือ</li>
+</ol>
+</div>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">ฝนตกหนัก/พายุไต้ฝุ่น/น้ำท่วมฉับพลันตามไหล่เขา: ต้องลงมือตั้งแต่ขั้นแจ้งเตือน</p>
+<ul class="list-disc pl-6 mt-1 space-y-1 text-sm">
+  <li>เห็นแจ้งเตือนระดับสีแดง: พยายามออกจากบ้านให้น้อยที่สุด อยู่ห่างพื้นที่ใต้ดิน สะพานลอด ลำน้ำ และทางลาดชัน</li>
+  <li>ถ้าติดอยู่กลางแจ้ง: เดินขึ้นไปยังจุดสูงของอาคารที่แข็งแรง อย่าฝืนลุยน้ำ (น้ำท่วมอาจมีฝาปิดท่อหายหรือไฟรั่ว) เวลาโทร 119/110 ให้บอกจุดสังเกตและระดับน้ำให้ชัดเจน</li>
+  <li>ก่อนออกเดินทาง: ใช้แอปสภาพอากาศและช่องแจ้งเตือนภัยของท้องถิ่นเช็กความเสี่ยง ถ้าขับรถไกลให้เลี่ยงเส้นทางเขาที่ลัดเลาะริมน้ำหรือริมหน้าผา</li>
+  <li>ตกลงกันในครอบครัว: นัดหมายกันว่า "ถ้าติดต่อกันไม่ได้ ให้ใช้ตำแหน่งพิกัดล่าสุดจาก WeChat/SMS เป็นหลัก" เพื่อไม่ให้ทุกคนโทรรัวจนแบตหมดกันหมด</li>
+</ul>
+</div>
+<div class="practice-box rounded-lg p-4 mt-3">
+<p class="font-semibold">4 สิ่งที่ควรทำเอาไว้ตั้งแต่ปกติ</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>เปิดการแจ้งเตือนแผ่นดินไหวของระบบ หรือแอปแจ้งเตือนที่เชื่อถือได้ และอนุญาตให้มันดังข้ามโหมดเงียบได้</li>
+  <li>ปักหมุด "ผู้ติดต่อฉุกเฉิน" ไว้บนสุด 2-3 คน ให้แสดงได้ที่หน้าล็อกจอ (iOS/Android มีการ์ดฉุกเฉินทางการแพทย์หรือข้อความบนหน้าล็อกจอ)</li>
+  <li>เตรียมพาวเวอร์แบงก์ไว้ที่บ้านและในกระเป๋า ก่อนเดินทางไกลชาร์จให้เต็มและพาสายชาร์จไปด้วย</li>
+  <li>จำเบอร์ที่ "โทรได้โดยไม่ต้องเปิดสมุดรายชื่อ" สักหนึ่งเบอร์ (เบอร์มือถือคนในครอบครัว) แล้วจดใส่กระดาษเก็บไว้ในกระเป๋าสตางค์</li>
+</ol>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">ฉากที่ 1: มือถือหาย/ถูกขโมย - 30 นาทีทอง</h4>
+<p class="mb-2">30 นาทีแรกหลังมือถือหายคือ "ช่วงเวลาทอง" ถ้าจัดการถูกวิธีจะช่วยเงินทองและความเป็นส่วนตัวของคุณไว้ได้ ทำตามลำดับข้างล่างนี้ ห้ามข้ามขั้นตอนไหนเด็ดขาด:</p>
+<div class="danger-box rounded-lg p-4 mt-3">
+<p class="font-semibold">ขั้นตอนมาตรฐานภายใน 30 นาทีหลังมือถือหาย</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>ยืมมือถือคนอื่นโทรเข้าเบอร์ตัวเอง (นาทีที่ 1): อาจแค่ตกอยู่แถวนั้น ถ้าคนดี ๆ รับสายก็ได้คืน</li>
+  <li>ล็อกมือถือจากระยะไกล (นาทีที่ 2-5): ใช้มือถือหรือคอมของคนอื่นเข้าสู่ระบบบริการค้นหาอุปกรณ์: iPhone: iCloud.com > Find My > เลือกอุปกรณ์ของคุณ > ทำเครื่องหมายว่าสูญหาย</li>
+  <li>Android แต่ละแบรนด์: Huawei cloud.huawei.com / Xiaomi i.mi.com / OPPO cloud.oppo.com ฯลฯ</li>
+  <li>แจ้งหาย SIM (นาทีที่ 5-10): โทรฝ่ายบริการลูกค้าของผู้ให้บริการ (China Mobile 10086/China Unicom 10010/China Telecom 10000) แจ้งว่ามือถือหายและขอระงับบริการ SIM ชั่วคราว ขั้นตอนนี้สำคัญที่สุด เพราะถ้ามิจฉาชีพได้ SIM ของคุณไป จะรับรหัสยืนยันและรีเซ็ตรหัสผ่านทุกอย่างของคุณได้</li>
+  <li>ระงับบัญชีชำระเงินชั่วคราว (นาทีที่ 10-20): Alipay: โทร 95188 แจ้งหาย หรือล็อกอิน Alipay บนมือถือของคนอื่น > ของฉัน > การตั้งค่า > ศูนย์ความปลอดภัย > ระงับฉุกเฉิน</li>
+  <li>WeChat: แจ้งตำรวจ 110 แล้วติดต่อฝ่ายบริการลูกค้า WeChat หรือไปที่ศูนย์ความปลอดภัย WeChat > ระงับบัญชี</li>
+  <li>แอปธนาคาร: โทรเบอร์บริการลูกค้าที่พิมพ์อยู่ด้านหลังบัตร แล้วขอระงับการใช้งาน Internet Banking</li>
+  <li>แจ้งคนใกล้ตัว (นาทีที่ 20-25): โพสต์ลง Moments บน WeChat หรือให้คนในครอบครัวช่วยส่งข้อความ แจ้งเพื่อนฝูงว่ามือถือหาย เพื่อกันมิจฉาชีพเอาตัวตนของคุณไปหลอกคนอื่น</li>
+  <li>แจ้งความ (นาทีที่ 25-30): โทร 110 หรือไปที่สถานีตำรวจที่ใกล้ที่สุดเพื่อแจ้งความ และเก็บใบรับแจ้งความไว้ เพราะทั้งการเคลมประกันและข้อพิพาทกับธนาคารภายหลังต้องใช้ใบนี้</li>
+</ol>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">ฉากที่ 2: โดนหลอก - ช่วง 72 ชั่วโมงทองสำหรับการรับมือ</h4>
+<p class="mb-2">เมื่อรู้ตัวว่าโดนหลอก สิ่งสำคัญที่สุดคือใจเย็น ๆ การตัดสินใจผิดพลาดตอนตื่นตระหนกจะทำให้เสียเพิ่มอีกรอบ ทำตามขั้นตอนต่อไปนี้:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>หยุดการโอนเงินทุกอย่างทันที: ไม่ว่ามิจฉาชีพจะพูดอะไร อย่าโอนเพิ่มแม้แต่บาทเดียว "โอนเงินประกันอีกก้อนแล้วเงินเดิมจะคืน" คือสคริปต์หลอกรอบสองแบบคลาสสิก</li>
+  <li>เก็บหลักฐานทั้งหมด: อย่าลบประวัติแชท! อย่าลบประวัติการโทร! แคปหน้าจอบันทึกแชท บันทึกการโอนเงิน และข้อมูลบัญชีของอีกฝ่ายไว้ ทั้งหมดนี้คือหลักฐานสำคัญสำหรับการแจ้งความและการตามเงินคืน</li>
+  <li>โทร 96110 ทันที: นี่คือสายด่วนต่อต้านมิจฉาชีพระดับประเทศ ที่ปรึกษาจะแนะนำวิธีหยุดโอนฉุกเฉิน ถ้าโอนไปไม่นาน (ปกติภายใน 24 ชั่วโมง) ธนาคารอาจระงับบัญชีฝ่ายตรงข้ามเพื่อดักเงินไว้ได้</li>
+  <li>โทร 110 แจ้งความ: พามือถือ บัตรประชาชน และหลักฐานการโอนเงินไปที่สถานีตำรวจที่ใกล้ที่สุดเพื่อให้ปากคำ</li>
+  <li>ติดต่อธนาคาร/แพลตฟอร์มชำระเงิน: แจ้งสถานการณ์ว่าโดนหลอก และขอระงับบัญชีที่เกี่ยวข้อง ถ้าเป็นเครดิตการ์ดถูกสวมรอยใช้ ให้ขอธนาคารเริ่มขั้นตอน chargeback</li>
+  <li>เปลี่ยนรหัสผ่านทุกตัว: เปลี่ยนรหัสผ่านของ Apple ID/บัญชีแบรนด์ WeChat Alipay และแอปธนาคารจากอุปกรณ์อื่นที่ปลอดภัย แล้วเปิดการยืนยันตัวตนสองชั้นด้วย</li>
+</ol>
+<h4 class="text-lg font-semibold mt-4 mb-2">ฉากที่ 3: มือถือติดไวรัส/โทรจัน - ทำอย่างไรดี</h4>
+<p class="mb-2">ถ้าคุณพบว่ามือถือมีอาการแบบนี้ โฆษณาเด้งขึ้นมาเองโดยไม่ทราบสาเหตุ ติดตั้งแอปแปลก ๆ เองอัตโนมัติ ค่าโทรพุ่งขึ้นฉับพลัน หรือเน็ตถูกใช้ผิดปกติ ก็น่าจะติดมัลแวร์แล้ว:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>ขั้นที่ 1: เข้าเซฟโหมด (Safe Mode) - บนมือถือ Android กดค้างปุ่มเปิด-ปิดเพื่อปิดเครื่อง แล้วกดค้างปุ่มเปิด-ปิดอีกครั้งเพื่อเปิดเครื่อง เมื่อเครื่องสั่นตอนบูต ให้กดค้างปุ่มลดเสียงไว้ไม่ปล่อยจนเข้าเซฟโหมด (มุมซ้ายล่างจะขึ้นคำว่า "Safe Mode") ในเซฟโหมดแอปบุคคลที่สามทุกตัวจะถูกปิดใช้งาน ช่วยให้ไล่หาตัวการได้ง่าย</li>
+  <li>ขั้นที่ 2: ถอนการติดตั้งแอปที่น่าสงสัย - ในเซฟโหมดเข้า [การตั้งค่า] > [การจัดการแอป] จัดเรียงตามเวลา แล้วถอนแอปแปลก ๆ ที่เพิ่งติดตั้งล่าสุดและจำไม่ได้ว่ามาจากไหน</li>
+  <li>ขั้นที่ 3: ติดตั้งแอปความปลอดภัยมาสแกน - ดาวน์โหลด Tencent Mobile Manager หรือ 360 Mobile Guard มาสแกนทั้งเครื่องหนึ่งรอบ</li>
+  <li>ขั้นที่ 4: รีเซ็ตเครื่องกลับค่าโรงงาน (ทางเลือกสุดท้าย) - ถ้าวิธีข้างบนไม่ได้ผล ให้สำรองข้อมูลสำคัญก่อนแล้วค่อยรีเซ็ตระบบ ระวัง: การรีเซ็ตจะลบข้อมูลทั้งหมด ต้องสำรองรูปภาพ สมุดรายชื่อ และไฟล์สำคัญอื่น ๆ ให้เรียบร้อยก่อนเสมอ</li>
+  <li>iPhone แทบไม่มีทางติดไวรัส ระบบ sandbox ของ iOS ทำให้มัลแวร์อยู่รอดยากมาก ถ้า iPhone ของคุณทำงานผิดปกติ ส่วนใหญ่มักเป็นบั๊กของแอปสักตัวหรือปัญหาการตั้งค่า ไม่ใช่ไวรัส การรีเซ็ตเครื่องกลับค่าโรงงานแก้ปัญหาได้ 99%</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">ฉากที่ 4: บัญชีถูกแฮ็ก - แย่งสิทธิ์ควบคุมคืนอย่างรวดเร็ว</h4>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>เปลี่ยนรหัสผ่านทันที: ถ้ายังล็อกอินบัญชีได้อยู่ ให้เปลี่ยนรหัสผ่านเป็นอย่างแรก รหัสใหม่ต้องต่างจากรหัสเดิมสนิท</li>
+  <li>ไล่อุปกรณ์อื่นออก: เข้าไปที่ "การจัดการอุปกรณ์ที่ล็อกอิน" ในการตั้งค่าความปลอดภัยของบัญชี แล้วดันอุปกรณ์แปลกหน้าออกจากระบบให้หมด</li>
+  <li>ตรวจประวัติการล็อกอิน: ดูประวัติการล็อกอิน 7 วันล่าสุด ถ้ามีการล็อกอินจากตำแหน่งที่ไม่คุ้นเคย แปลว่าบัญชีถูกขโมยจริง</li>
+  <li>เปิดการยืนยันตัวตนสองชั้น: ถ้ายังไม่เคยเปิด ให้เปิดเดี๋ยวนี้เลย นี่คือวิธีที่ได้ผลที่สุดในการกันบัญชีถูกขโมยซ้ำ</li>
+  <li>ตรวจข้อมูลที่ผูกกับบัญชี: เช็กว่าเบอร์มือถือและอีเมลที่ผูกกับบัญชีถูกเปลี่ยนไปหรือเปล่า ถ้าถูกเปลี่ยน ให้ใช้ฟังก์ชันอุทธรณ์/ขอคืนบัญชีเพื่อกู้คืน</li>
+  <li>ตรวจการตั้งค่าการชำระเงิน: ถ้าโดนขโมยคือ WeChat/Alipay ให้เช็กว่าการจ่ายแบบไม่ต้องใส่รหัสและการหักเงินอัตโนมัติถูกแก้ไขไหม และบัตรธนาคารถูกเพิ่มเข้าบัญชีแปลกหน้าหรือเปล่า</li>
+</ol>
+<h4 class="text-lg font-semibold mt-4 mb-2">ฉากที่ 5: ได้รับข้อความกดเรียกค่าไถ่ - อย่ากลัว อย่าจ่าย</h4>
+<p class="mb-2">แบบแผนการกดเรียกค่าไถ่ที่พบบ่อยมีสองแบบ: (1) "ฉันมีคลิป/รูปลับของคุณ ถ้าไม่จ่ายจะส่งให้ทุกคนในสมุดรายชื่อของคุณ" (2) "มือถือของคุณถูกแฮ็กเกอร์ควบคุมแล้ว ถ้าไม่จ่ายจะล็อกถาวร" เจอแบบนี้แล้วให้ทำดังนี้:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>99.9% คือมิจฉาชีพ: พวกเขาไม่มีข้อมูลส่วนตัวของคุณอยู่ในมือเลย แค่ส่งข้อความกดเรียกค่าไถ่แบบเดียวกันเป็นหมื่นเป็นแสนฉบับ เดี๋ยวก็มีคนกลัวจนจ่าย</li>
+  <li>อย่าตอบ อย่าจ่ายเงิน: การตอบกลับเท่ากับบอกอีกฝ่ายว่า "เบอร์นี้มีคนใช้อยู่" คุณจะถูกแท็กว่าเป็น "เป้าหมายที่กดเรียกค่าไถ่ได้" แล้วจะยิ่งโดนรบกวนต่อไปอีกเพียบ</li>
+  <li>แคปหน้าจอเก็บหลักฐาน: แล้วบล็อกอีกฝ่ายทิ้ง</li>
+  <li>เปลี่ยนรหัสผ่าน: ถ้ายังกังวลอยู่ ก็เปลี่ยนรหัสผ่านของบัญชีหลัก ๆ สักรอบเพื่อความอุ่นใจ</li>
+  <li>ถ้ามีความเสี่ยงข้อมูลส่วนตัวรั่วไหลจริง ๆ: แจ้งความ ตำรวจมีประสบการณ์จัดการคดีแบบนี้</li>
+</ul>
+<p class="mb-2">ฉากที่ 6: มิจฉาชีพ AI เปลี่ยนใบหน้า/AI เลียนแบบเสียง - เห็นด้วยตาก็ไม่จริงอีกต่อไป</p>
+<p class="mb-2">ตั้งแต่ปี 2024 เป็นต้นมา เทคโนโลยี AI เปลี่ยนใบหน้าและ AI เลียนแบบเสียงทำให้มิจฉาชีพ "กลายเป็น" ใบหน้าและเสียงของครอบครัว หัวหน้า หรือเพื่อนของคุณในวิดีโอคอลได้แล้ว "แม่คะ ลูกมีเรื่อง รีบโอนเงินมาหน่อย" คนในคลิปหน้าตาและเสียงเหมือนลูกชายคุณเป๊ะ แต่จริง ๆ เป็นของปลอม นี่คือหนึ่งในมือของมิจฉาชีพที่กันยากที่สุดและอันตรายที่สุดในตอนนี้</p>
+<div class="danger-box rounded-lg p-4 mt-3">
+<p class="font-semibold">ขั้นที่ 1: หาจุดพร่อง - รอยตำหนิที่พบบ่อย 4 อย่างของงานปลอมจาก AI</p>
+<ul class="list-disc pl-6 mt-1 space-y-1">
+  <li>ความถี่การกะพริบตาผิดปกติ: คนจริงกะพริบตา 15-20 ครั้งต่อนาที แต่ใบหน้าปลอมจาก AI มักกะพริบน้อยเกินไปหรือจังหวะแข็ง ๆ ไม่เป็นธรรมชาติ</li>
+  <li>ริมฝีปากกับเสียงไม่ตรงกัน: ดูดี ๆ จะเห็นว่ารูปปากกับเสียงที่ได้ยินหลุดกันอยู่เสี้ยววินาที</li>
+  <li>ขอบใบหน้าเบลอ: กรอบหน้า แถวใบหู และเส้นขอบผมมักมี "ขอบหยัก ๆ" หรือกระพริบสั่นได้</li>
+  <li>ทิศทางแสงเงาไม่สอดคล้อง: ไฮไลต์และเงาบนใบหน้าไม่ตรงกับทิศแสงของฉากหลัง หรือเวลาหันหน้าเฉียง อวัยวะส่วนหน้า "หมุนตาม" ไม่ถูกต้อง</li>
+</ul>
+</div>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">ขั้นที่ 2: สามเทคนิคทดสอบว่าอีกฝ่ายจริงหรือปลอม</p>
+<ul class="list-disc pl-6 mt-1 space-y-1">
+  <li>ขอให้อีกฝ่ายทำท่าเฉพาะ: ให้เขาหันหัว เอามือปิดหน้า หรือใช้มือบังปากแล้วทำปากเปิด-ปิด ใบหน้าปลอมจาก AI จะ "หลุดบ่อง" ง่ายที่สุดตอนถูกบังหรือหันหัวเฉียงมุมใหญ่ ใบหน้าจะเบี้ยวหรือตามท่าไม่ทัน</li>
+  <li>ถามคำถามที่มีแต่อีกฝ่ายรู้: แต่งคำถามขึ้นมา เช่น "คราวก่อนพาหมาบ้านเราไปรักษาที่คลินิกไหน?" ถ้าเป็นมิจฉาชีพ เขาจะตอบไม่ได้หรือพูดลุกลั่ม</li>
+  <li>โทรกลับเบอร์ที่รู้จัก: วางสายวิดีโอ แล้วโทรกลับด้วยเบอร์ที่เก็บไว้ในสมุดรายชื่อของคุณโดยตรง มิจฉาชีพควบคุมเบอร์มือถือจริงของคนนั้นไม่ได้ โทรเมื่อไหร่ก็เผยทันที</li>
+</ul>
+</div>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">ขั้นที่ 3: ขั้นตอนแจ้งความหลังยืนยันว่าโดนหลอก</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>หยุดการโอนเงินทันที: ยังไงก็ "ด่วน" แค่ไหนก็ให้หยุดก่อน ใครก็ตามที่รีบให้ "โอนเร็วเข้า อย่าวางสาย" แทบทุกคนคือมิจฉาชีพ</li>
+  <li>เก็บหลักฐานทั้งหมด: อัดหน้าจอ แคปภาพหน้าจอวิดีโอคอล บันทึกแชท บัญชีของอีกฝ่าย และหลักฐานการโอนเงิน ทั้งหมดนี้คือวัสดุพยานสำคัญสำหรับการตรวจพิสูจน์ทางเทคนิค</li>
+  <li>โทรสายด่วนต่อต้านมิจฉาชีพ 96110: แจ้งว่าเป็นมิจฉาชีพประเภท "AI เปลี่ยนหน้า/เลียนเสียง" ทางสายด่วนจะเริ่มขั้นตอนหยุดโอนฉุกเฉินให้</li>
+  <li>โทร 110 แจ้งความ: พาหลักฐานครบไปที่สถานีตำรวจเพื่อให้ปากคำ โดยระบุชัดว่าฝ่ายนั้นใช้เทคโนโลยีปลอมแปลงด้วย AI เพื่อให้ตำรวจเปิดคดีและจัดชนิดคดีได้ถูกต้อง</li>
+  <li>แจ้งคนใกล้ตัว: มิจฉาชีพอาจเอาวิดีโอปลอมของคุณไปหลอกคนอื่น ลองโพสต์เตือนลง Moments หรือกลุ่มครอบครัวไว้ก่อน</li>
+</ol>
+</div>
+<p class="mb-2">ฉากที่ 7: การโจมตี SIM swap (การแย่งชิงซิม) - เบอร์ของคุณถูก "ขโมย" ไปแล้ว</p>
+<p class="mb-2">นี่คือการโจมตีที่หลายคนไม่เคยได้ยิน แต่สร้างความเสียหายร้ายแรงมาก SIM swap (การแย่งชิงซิมการ์ด) คือการที่ผู้โจมตีปลอมข้อมูลตัวตนของคุณ แล้วแอบอ้างเป็นคุณไป, ที่ศูนย์บริการเพื่อทำซิมใหม่แทนเบอร์เดิม พอทำสำเร็จ สัญญาณมือถือของคุณจะหายไปพรวดเดียว ส่วนมือถือของผู้โจมตีที่เสียบซิมใบใหม่นั้นจะรับรหัสยืนยันทาง SMS ทั้งหมดของคุณได้ ทั้ง Alipay ธนาคาร WeChat ประตูบานใหญ่ทุกบานเปิดโล่งหมด</p>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">จะรู้ได้อย่างไร? สัญญาณเตือน 3 อย่างของ SIM swap</p>
+<ul class="list-disc pl-6 mt-1 space-y-1">
+  <li>มือถือขึ้น "ไม่มีสัญญาณ"/"ไม่พบซิมการ์ด" ทั้งที่คุณไม่ได้แตะซิมเลย และรีสตาร์ตก็ไม่หาย มักเป็นช่วงเวลาที่ซิมถูกแย่งไปพอดี</li>
+  <li>ได้รับ SMS จากผู้ให้บริการว่า "ทำซิมใหม่สำเร็จ" หรือ "ทำรายการสำเร็จ" ทั้งที่คุณไม่ได้ทำเองเลย</li>
+  <li>ทันทีทันใดรับรหัสยืนยันไม่ได้ แถม SMS อื่น ๆ ก็หายหมด เพราะข้อความถูกดักไปที่ซิมของผู้โจมตีแล้ว</li>
+</ul>
+</div>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">มาตรการป้องกัน - ใส่กุญแจให้ซิมการ์ดด้วย</p>
+<ul class="list-disc pl-6 mt-1 space-y-1">
+  <li>ตั้งรหัส PIN ให้ซิมการ์ด: เส้นทาง [การตั้งค่า] > [โทรศัพท์] > [รหัส PIN ซิมการ์ด] เปิดใช้แล้ว ทุกครั้งที่รีสตาร์ตเครื่องหรือเปลี่ยนซิม ต้องกรอก PIN ก่อนถึงจะใช้ซิมนี้ได้ ผู้โจมตีได้ซิมไปก็ใช้ไม่ได้</li>
+  <li>เปิดการยืนยันสองชั้นกับผู้ให้บริการ: ล็อกอินแอป China Mobile/China Unicom/China Telecom แล้วหา "ศูนย์ความปลอดภัย" หรือ "การยืนยันทำรายการ" เปิด SMS แจ้งเตือนเมื่อมีคนอื่นทำซิมแทน และยืนยันรหัสผ่านรอบสองสำหรับการทำรายการ อย่างนี้ใครไปทำซิมแทนคุณ พนักงานจะขอตรวจสอบตัวตนเพิ่ม</li>
+  <li>บัญชีสำคัญอย่าพึ่ง SMS อย่างเดียว: บัญชีมูลค่าสูงอย่างธนาคารหรือ Apple ID ควรใช้แอปยืนยันตัวตน (Google Authenticator, Microsoft Authenticator) หรือฮาร์ดแวร์คีย์เป็นหลัก ไม่ใช่รหัสยืนยันทาง SMS</li>
+  <li>ใส่ลายน้ำบนสำเนาบัตรประชาชน: สำเนาที่ใช้ทำรายการให้เขียนกำกับว่า "ใช้สำหรับรายการ XX เท่านั้น" เพราะผู้โจมตีมักอาศัยข้อมูลบัตรประชาชนที่รั่วไหลไปปลอมเป็นคุณ</li>
+</ul>
+</div>
+<div class="danger-box rounded-lg p-4 mt-3">
+<p class="font-semibold">การรับมือฉุกเฉินหลังซิมถูกแย่ง - ความเร็วคือทุกอย่าง</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>โทรฝ่ายบริการลูกค้าของผู้ให้บริการเพื่อแจ้งหายทันที: China Mobile 10086 / China Unicom 10010 / China Telecom 10000 ขอระงับเบอร์และระงับบริการทำซิมใหม่ทันที เพื่อกันไม่ให้ผู้โจมตีใช้เบอร์ของคุณต่อ</li>
+  <li>ล็อกอินบัญชีสำคัญจากอุปกรณ์อื่น: ใช้คอมหรือมือถือของคนในครอบครัว เปลี่ยนรหัสผ่านของธนาคาร Alipay WeChat Apple ID ทันที แล้วไล่อุปกรณ์แปลกหน้าออกด้วย</li>
+  <li>ระงับบัญชีชำระเงิน: Alipay โทร 95188 แจ้งหาย, WeChat ระงับผ่านศูนย์ความปลอดภัย, ธนาคารให้ฝ่ายบริการลูกค้าระงับ Internet Banking</li>
+  <li>พาบัตรประชาชนไปศูนย์บริการ: ไปด้วยตัวเองพร้อมบัตรประชาชนที่ศูนย์บริการหลักของผู้ให้บริการเพื่อทำซิมใหม่ แล้วกลับมาใช้เบอร์เดิมได้ตามปกติ</li>
+  <li>แจ้งความ: SIM swap ถือเป็นความผิดฐานละเมิดข้อมูลส่วนบุคคลแล้ว พาหลักฐานให้ครบ (บันทึกเวลาที่เบอร์ถูกระงับ, ความเสียหายทางการเงิน, บันทึกการทำซิมใหม่) ไปแจ้งความ</li>
+  <li>ตรวจสอบทั้งระบบ: หลังกลับมาใช้เบอร์ได้ ไล่เช็กประวัติการล็อกอินและรายการเงินช่วงล่าสุดทีละรายการ เพื่อยืนยันว่าไม่มีร่องรอยถูกเอาตัวตนไปใช้</li>
+</ol>
+</div>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">กันไว้ดีกว่าแก้ - 5 สิ่งที่ทำได้ในชีวิตประจำวัน</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>รหัสล็อกจอ + การยืนยันตัวตนสองชั้น เปิดทั้งสองอย่าง</li>
+  <li>ยืนยันว่า "ค้นหามือถือของฉัน" เปิดอยู่</li>
+  <li>ตั้ง PIN ให้ซิมการ์ด ([การตั้งค่า] > [โทรศัพท์] > [รหัส PIN ซิมการ์ด]) มือถือหายแล้วคนอื่นจะใช้ซิมของคุณไม่ได้</li>
+  <li>ไม่ติดตั้งแอปที่ไม่รู้ที่มา ไม่คลิกลิงก์ของคนแปลกหน้า</li>
+  <li>สำรองข้อมูลสำคัญสม่ำเสมอ (รูปภาพ สมุดรายชื่อ บันทึกแชท)</li>
+</ol>
+</div>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">ลงมือทำ: ทำ "บัตรติดต่อฉุกเฉิน" ของคุณเอง</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>หากระดาษมาแผ่นหนึ่ง จดเบอร์เหล่านี้: ฝ่ายบริการลูกค้าผู้ให้บริการ (China Mobile 10086/China Unicom 10010/China Telecom 10000) ฝ่ายบริการลูกค้าธนาคาร สายด่วนต่อต้านมิจฉาชีพ 96110 แจ้งเหตุด่วน 110 และเบอร์คนในครอบครัว</li>
+  <li>จดอีเมลที่ใช้สมัครและช่องทางติดต่อสำรองของ Apple ID/บัญชีแบรนด์ของคุณ</li>
+  <li>เก็บกระดาษแผ่นนี้ไว้ในกระเป๋าสตางค์หรือแปะไว้ที่ตู้เย็น อย่าเก็บไว้ในมือถือ เพราะตอนเกิดเรื่องมือถืออาจไม่อยู่กับตัว</li>
+  <li>เช็กเดี๋ยวนี้เลย: "ค้นหามือถือของฉัน" เปิดแล้วหรือยัง และ PIN ของซิมการ์ดตั้งไว้แล้วหรือยัง</li>
+</ol>
+</div>
+<div class="chapter-summary">
+<p class="font-semibold mb-1">สรุปบทนี้</p>
+<ul class="list-disc pl-5 text-sm space-y-0.5">
+  <li>30 นาทีทองหลังมือถือหาย: ยืมมือถือโทรเข้าเบอร์ตัวเอง → ล็อกระยะไกล → แจ้งหายซิม → ระงับบัญชีชำระเงิน → แจ้งคนใกล้ตัว → แจ้งความ</li>
+  <li>72 ชั่วโมงหลังโดนหลอก: หยุดโอนเงิน → เก็บหลักฐาน → โทร 96110 → แจ้งความ → ติดต่อธนาคาร → เปลี่ยนรหัสผ่าน</li>
+  <li>มือถือติดไวรัส: เซฟโหมด → ถอนแอปน่าสงสัย → สแกนความปลอดภัย → รีเซ็ตค่าโรงงาน (ทางเลือกสุดท้าย)</li>
+</ul>
+<p class="mb-2">บัญชีถูกขโมย：</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>เปลี่ยนรหัสผ่าน</li>
+  <li>ไล่อุปกรณ์</li>
+  <li>ตรวจประวัติล็อกอิน</li>
+  <li>เปิดยืนยันสองชั้น</li>
+  <li>ตรวจข้อมูลผูกบัญชี</li>
+  <li>ตรวจการชำระเงิน</li>
+  <li>ข้อความกดเรียกค่าไถ่ 99.9% เป็นมิจฉาชีพ ไม่ตอบ ไม่จ่ายเงิน แคปหลักฐานแล้วบล็อก</li>
+  <li>มิจฉาชีพ AI เปลี่ยนหน้า/เลียนเสียง: จับผิดจากการกะพริบตา/รูปปาก/ขอบใบหน้า/แสงเงา ขอให้อีกฝ่ายหันหัวปิดหน้า ถามคำถามลับ และโทรกลับเบอร์ที่รู้จัก</li>
+  <li>การแย่งชิง SIM swap: เมื่อมือถือขึ้น "ไม่มีสัญญาณ" ฉับพลันให้ตื่นตัวทันที ตั้ง PIN ซิม เปิดยืนยันสองชั้นกับผู้ให้บริการ และเปลี่ยนบัญชีสำคัญมาใช้แอปยืนยันตัวตน</li>
+  <li>การป้องกันประจำวัน 5 อย่าง: ล็อกจอ+2FA ค้นหามือถือ PIN ซิม ไม่ติดตั้งแอปไม่รู้ที่มา และสำรองข้อมูลสม่ำเสมอ</li>
+</ol>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">พบข้อผิดพลาดในบทนี้หรือไม่? <a href="../../errata.html" class="text-primary hover:underline">แจ้งได้ที่หน้าแก้ไข</a> — เส้นทางล้าสมัย ข้อเท็จจริงไม่ถูกต้อง ถ้อยคำกำกวม: ทั้งหมดยินดีรับ. แจ้งผ่านกลุ่ม QQ 1074995524 ก็ได้.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-san-shi-yi-zhang.html" class="text-primary hover:underline">← บทที่ 31: เริ่มต้นถ่ายคลิปสั้นและสร้างคอนเทนต์</a><span></span><a id="next-link" href="di-san-shi-san-zhang.html" class="text-primary hover:underline">บทที่ 33:อีกสิบปีข้างหน้า โทรศัพท์จะเป็นแบบไหน？ →</a></nav>
+ </div></main></div><!-- เครื่องมือด่วน: กลุ่มปุ่มลอย --><div id="quick-tools" class="quick-tools no-print" aria-label="เครื่องมือลัด"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="ค้นหา (Ctrl+K)" aria-label="ค้นหา"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="สลับมืด/สว่าง" aria-label="สลับธีม"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="พิมพ์ / ส่งออก PDF" aria-label="พิมพ์หรือส่งออก"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="สารบัญ" aria-label="เปิดสารบัญ"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="อ่านออกเสียง" aria-label="อ่านออกเสียง"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="คีย์ลัดคีย์บอร์ด (?)" aria-label="แผงคีย์ลัด"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="สำรอง/กู้คืนความคืบหน้า" aria-label="สำรองความคืบหน้า"><span aria-hidden="true">B</span></button></div><!-- แผงปุ่มลัด --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="คีย์ลัดคีย์บอร์ด"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">คีย์ลัด</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="ปิด">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">ค้นหาเนื้อหา</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">สลับโหมดมืด/สว่าง</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">อ่านออกเสียง เล่น/พัก</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">หยุดอ่านออกเสียง</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">เปิดแผงคีย์ลัด</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">ขยาย / ย่อขนาดตัวอักษร</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">พิมพ์ / ส่งออก PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- กล่องโต้ตอบสำรอง/กู้คืน --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="สำรองและกู้คืน"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">สำรองและกู้คืนความคืบหน้าการอ่าน</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="ปิด">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">ข้อมูลสำรองประกอบด้วย: บทที่อ่านแล้ว ที่คั่น ตำแหน่งการอ่าน ค่าที่ตั้งขนาดตัวอักษร และผลตรวจสุขภาพมือถือ ข้อมูลเก็บไว้ในเบราว์เซอร์ภายในเครื่อง หากเปลี่ยนเบราว์เซอร์หรือล้างแคชจะสูญหาย แนะนำให้ส่งออกข้อมูลสำรองเป็นระยะ</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> ส่งออกไฟล์สำรอง
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">ดาวน์โหลดไฟล์ JSON หนึ่งไฟล์ แล้วบันทึกไว้ในที่ปลอดภัย</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> นำเข้าไฟล์สำรองเพื่อกู้คืน
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">เลือกไฟล์สำรองที่เคยส่งออกไว้ก่อนหน้าเพื่อกู้คืนความคืบหน้า</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> ล้างข้อมูลการอ่านทั้งหมด
+ </button><p class="text-xs text-red-400 mt-1 text-center">กู้คืนไม่ได้! กรุณาส่งออกข้อมูลสำรองก่อน</p></div></div></div></div><!-- การแจ้งเตือนวันอ่านต่อเนื่อง --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">อ่านต่อเนื่องวันที่ X แล้ว!</span></div><!-- แถบควบคุมการอ่านออกเสียง --><div id="tts-controls" class="tts-controls" role="region" aria-label="ตัวควบคุมการอ่านออกเสียง" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="บทที่กำลังอ่านออกเสียง">ยังไม่เริ่ม</span><button class="tts-btn" id="tts-prev" title="ย่อหน้าก่อนหน้า" aria-label="ย่อหน้าก่อนหน้า"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="เล่น/พัก" aria-label="เล่นการอ่านออกเสียง"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="ย่อหน้าถัดไป" aria-label="ย่อหน้าถัดไป"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="ช้าลง" aria-label="ช้าลง">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="เร็วขึ้น" aria-label="เร็วขึ้น">+</button><button class="tts-btn" id="tts-stop" title="หยุดการอ่านออกเสียง" aria-label="หยุดการอ่านออกเสียง"><span aria-hidden="true">×</span></button></div><!-- ปุ่มกลับขึ้นด้านบน --><button id="back-to-top" class="opacity-0 invisible" aria-label="กลับขึ้นด้านบน"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- การแจ้งเตือนกู้คืนตำแหน่งการอ่าน --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">อ่านครั้งล่าสุดถึง: ...</span><button class="btn-restore" id="restore-btn">เลิกทำ</button><button class="btn-dismiss" id="dismiss-btn">ข้าม</button></div><!-- สคริปต์ JS -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

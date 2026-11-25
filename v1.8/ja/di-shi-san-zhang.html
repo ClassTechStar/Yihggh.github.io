@@ -1,0 +1,792 @@
+ <!DOCTYPE html><html lang="ja"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="あなたに足りなかったスマホの授業 · 入門からマスターまで、あなたのデジタルライフをまるごとコントロール"><meta name="keywords" content="スマホ講座,デジタル必修講座,スマートフォン,Android,iOS,HarmonyOS,スマホテクニック,デジタルライフ,AI大規模言語モデル,AIプログラミング,大規模モデルAPI,Promptエンジニアリング,Android開発,iOS開発,Swift,Kotlin,SwiftUI,Jetpack Compose,計算写真,情報セキュリティ,パスワード管理,自動化,スマホ選び"><meta name="author" content="デジタルライフガイド"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-shi-san-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="第十三章：入れるべきAppと、避けるべきApp"><meta property="og:description" content="この章では、効率・健康・旅行系のツールを厳選して紹介し、実用的なシステム機能やデバイス間連携も補足します。"><meta property="og:locale" content="ja_JP"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="あなたに足りなかったスマホの授業"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="あなたに足りなかったスマホの授業 · v1.8"><meta name="twitter:description" content="入門からマスターまで、あなたのデジタルライフをまるごとコントロール"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>第十三章：入れるべきAppと、避けるべきApp · あなたに足りなかったスマホの授業</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-shi-san-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "第十三章：入れるべきAppと、避けるべきApp", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-shi-san-zhang.html", "isPartOf": {"@type": "Book", "name": "あなたに足りなかったスマホの授業", "inLanguage": "ja"}}</script>
+<link rel="prefetch" href="di-shi-si-zhang.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-shi-san-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">本文へスキップ</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="目次メニューを開く" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="ホームに戻る">あなたに足りなかったスマホの授業</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="メイン操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="基礎から始める">学習を始める</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="検索 (Ctrl+K)" aria-label="本文を検索"><span aria-hidden="true">搜</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="文字サイズの調整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="文字を縮小" aria-label="文字を縮小">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="文字サイズをリセット" aria-label="文字サイズをリセット">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="文字を拡大" aria-label="文字を拡大">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="ダーク/ライトモードの切り替え" aria-label="ダーク/ライトモードの切り替え"><span class="dark:hidden" aria-hidden="true">夜</span><span class="hidden dark:inline" aria-hidden="true">昼</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="印刷 / PDF書き出し" aria-label="印刷またはPDF書き出し"><span aria-hidden="true">印</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="先頭へ戻る">先頭へ
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="このページの目次"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">目次
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38章</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="章を絞り込み..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="章を絞り込む"></div><ul class="space-y-1 text-sm" id="toc-list"><!--基礎編-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">学習を始める</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起基礎編を開く/閉じる" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>第零章：始める前に、三つだけ本音で</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>第一章：まず、このマシンを知ろう</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>付録：Androidスマートフォンメモリ拡張解析</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>第一章付録：HarmonyOSオペレーティングシステム特集</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>第二章：スマホ内のもの、見つからないときは？</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>第三章：ネットにつながらない、再起動はあとで</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>第四章：アプリを入れる前に、ひととおり見よう</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> 附：ソフトウェアインストールパッケージの構成要素</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>第五章：スマホをいつもの使い方に合わせて設定</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>第六章：スマホをなくした日、パスワードを忘れた日</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>第七章：最先端機能をまるごと解説</a></li>
+                        </ul>
+                    </li>
+<!--ソフトウェア編-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">二、ソフトウェア編（第8〜14章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ソフト編を開く/閉じる" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>役割</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>第九章：モバイルオフィスと学習</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>第十章：モバイル決済と生活サービス</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>第十一章：多く撮るより、上手に撮るほうが大事</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>第十一章付録：プロ級の撮影テクニック</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>第十二章：映像・音楽の楽しみと読書</a></li>
+                            <li><a href="#di-shi-san-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>第十三章：入れるべきAppと、避けるべきApp</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>第十四章：パスワードマネージャー特集</a></li>
+                        </ul>
+                    </li>
+<!--応用編-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">三、ステップアップ編（第15〜20章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起発展編を開く/閉じる" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>第十五章：一日二度充電、電池か使い方のどっち？</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> 附：急速充電規格の徹底解説</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>第十六章：機種変更、なくしてもいいアカウントはどれ？</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>第十七章：スマホとほかのデバイスの連携</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>第十八章：バックアップは「忘れた日」にしないで</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>第十九章：壊れた？まず焦らず、原因を探る</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>第二十章：開発者モードと高度な権限</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>第二十章付録</a></li>
+                        </ul>
+                    </li>
+<!--発展編-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">四、超越編（第21-26章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起超越編を開く/閉じる" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>第二十一章：公共Wi-Fi、接続していいのか？</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>第二十二章：AIがスマホで実際に何をしているのか？</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>第二十三章：同じ作業はスマホに任せる</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>附：GitHub入門ガイド</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>第二十四章：Root権限とBLロック徹底解説</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>第二十五章：中古スマホを売る前に、済ませておくこと</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>第二十六章：新しい技術は待ち</a></li>
+                        </ul>
+                    </li>
+<!--五、実戦編（第27〜32章）-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">五、実践編（第27-32章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起実践編を開く/閉じる" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>第二十七章：両親のスマホを整える</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>第二十八章：買う前に、決めておく三つのこと</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>第二十九章：スマホを何時間使っているか、自分でも知らない</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>第三十章：画面ミラーリング、プレゼン、車載連携</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>第三十一章：ショート動画の撮影とコンテンツ制作入門</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>第三十二章：異変が起きたら、30秒で被害を止める</a></li>
+                        </ul>
+                    </li>
+<!--六、展望編（第三十三章）-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">六、展望編（第33-41章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起展望編を開く/閉じる" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>第三十三章：次の10年、スマホはどう変わる？</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>第三十四章：スマホと車、手軽につなぐには</a></li>
+                        </ul>
+                    </li>
+<!--子どもとスマホ特集（第三十五章）-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">子どもとスマホ特集（第三十五・三十六章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起子どもとスマホ特集を開く/閉じる" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>第三十五章：子どもにスマホを渡すときのルール</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>第三十六章：家中のデバイス、まとめてつなぐ</a></li>
+                        </ul>
+                    </li>
+<!--AIプログラミング実戦編-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">七、AIプログラミング実践編（第37-47章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起AIプログラミング実践編を開く/閉じる" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>第三十七章：パラダイム革命——コードを書く時代からAIに書かせる時代へ</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>第三十八章：AIプログラミングの5つの思考原則</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>第三十九章：AIに伝わらないのは、言い方のせいかも</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>第四十章：動かす前に、はっきり伝える</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>第四十一章：2026年AIプログラミングツールの全体像</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>第四十二章：大規模言語モデルの全体像とAPI実践</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>第四十三章：AIに話して伝わる話し方</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>第四十四章：0から1への実践——プロジェクトの全工程</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>第四十五章：AIが書いただけでは完成じゃない</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>第四十六章：上達への道——使い手からアーキテクトへ</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>第四十七章：クイックリファレンスとリソース</a></li>
+                        </ul>
+                    </li>
+<!--Android開発実戦編-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">八、Android開発実践編（第48-58章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Android開発実践編を開く/閉じる" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>第四十八章：Androidはどうやって今の形になったのか</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>第四十九章：開発環境の構築——Android Studioと最初のプロジェクト</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>第五十章：Kotlinにすばやく入門——Android開発の第一言語</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>第五十一章：UI開発——Jetpack Compose入門</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>第五十二章：4大コンポーネントとActivityのライフサイクル</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>第五十三章：データ保存とネットワーク通信</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>第五十四章：プロジェクト1——家計簿アプリ（ローカル版）</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>第五十五章：プロジェクト2——天気チェックアプリ（ネットワーク版）</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>第五十六章：Appをストアに出すまで</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>第五十七章：上達への道——権限、通知、モダンアーキテクチャ</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>第五十八章：クイックリファレンスとリソース</a></li>
+                        </ul>
+                    </li>
+<!--iOS開発実戦編-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">九、iOS開発実践編（第59-69章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起iOS開発実践編を開く/閉じる" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>第五十九章：iOSを知る——Appleのエコシステムと開発エコシステム</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>第六十章：開発環境の構築——Xcodeと最初のプロジェクト</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>第六十一章：Swiftにすばやく入門——Apple開発の第一言語</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>第六十二章：UI開発——SwiftUI入門</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>第六十三章：ビュー、ステート、ナビゲーション</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>第六十四章：データ保存とネットワーク通信</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>第六十五章：プロジェクト1——家計簿アプリ（ローカル版）</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>第六十六章：プロジェクト2——天気チェックアプリ（ネットワーク版）</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>第六十七章：仕上げとリリース——App Storeへの公開</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>第六十八章：上達への道——権限、通知、モダンアーキテクチャ</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>第六十九章：クイックリファレンスとリソース</a></li>
+                        </ul>
+                    </li>
+<!--付録-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十、付録</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起付録を開く/閉じる" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>A付録A：新規スマホの開封手順</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>付録B：実践で詰まったらどうする？</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C付録C：かんたん用語対照表</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>D付録D：信頼できるリソースの探し方</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>E付録E：謝辞と説明</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F付録F：折りたたみスマホの選び方と使い方特集</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>おわりに：スマホを理解すれば、それだけだ</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>G付録G：全書早見インデックス</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>H付録H：バージョンロードマップ</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="検索"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">搜</span><input type="text" id="search-input" placeholder="本文を検索..." autocomplete="off" aria-label="検索キーワード"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="検索を閉じる">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">キーワードを入力して検索</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 上部パンくずリスト --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">ホーム</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">デジタル必修講座 · v1.8</span></nav>
+<div id="di-shi-san-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">第十三章：入れるべきAppと、避けるべきApp</h3>
+<p class="chapter-intro mb-4">この章では、効率・健康・旅行系のツールを厳選して紹介し、実用的なシステム機能やデバイス間連携も補足します。Qingzhuoなどのクリーン／迷惑対策、スマホ標準のブロック設定、天気と地震速報、向日葵／ToDeskによる遠隔操作、TraeなどのAIオフィス、人工デスクトップ、LocalSendなどのLAN転送、デバイス間クリップボード、Aegis／Microsoft Authenticatorの動的パスワード、TickTickのスケジュール管理と紙の書類スキャンなどです。</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">一、効率ツール：時間と注意力を管理する</h4>
+<p class="mb-2">効率ツールはデジタル生活の「骨格」です。ばらばらのアイデア、タスク、資料を整理整頓してくれます。シーン別に紹介します。</p>
+<h5 class="font-semibold mt-3 mb-1">1. ToDoリスト（タスク管理）</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>TickTick（TickTick）　対象：仕事・生活・学習のタスクとスケジュールを一元管理したい人。本節の重点推奨のひとつ。強み：スマホ／PC／タブレット／Webで同期。リスト＋カレンダー＋ポモドーロの3in1。「明日の午後3時に会議」「毎週月曜に週報提出」のような自然言語入力で日時と繰り返しルールを自動認識。サブタスク、タグ、優先度、添付、共同リストに対応。「スケジュール＋タスク消化＋日次レビュー」を一体で管理できます。</li>
+  <li>TickTickをもっと使いこなすコツ： 収集箱：まず全部「今日／収集箱」に放り込み、夜に仕事・家庭・学習のリストへ振り分けます。</li>
+  <li>カレンダービュー：会議や締切をカレンダーにドラッグして予定の重なりを確認。ToDoリストだけを見るより直感的です。</li>
+  <li>繰り返しタスク：服薬、支払い、運動はルール化して自動繰り返しに。毎回入力する手間がなくなります。</li>
+  <li>ポモドーロ：タスクの上でそのまま集中モードを開始。今週「本当に完了したもの」を集計できます。</li>
+  <li>スマホ機能との連携：音声アシスタントで「リマインドして…」と言えばシステム通知に。重要な締切はシステムカレンダーにも入れて二重の安心を。</li>
+</ul>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Todoist　対象：ミニマル志向のクロスプラットフォームユーザー。強み：すっきりしたUI、明確なプロジェクト階層（タスク→サブタスク→孫タスク）、karmaポイントで習慣化を後押し。</li>
+  <li>Microsoft To Do　対象：オフィスワーカー、Outlookユーザー。強み：完全無料・広告なし。「My Day」で毎日リセットされ、心理的負担が軽い。Microsoftエコシステムと深く連携。</li>
+  <li>システムのメモ／リマインダー　対象：サードパーティアプリを入れたくないライトユーザー。強み：ネイティブ体験で遅延ゼロ。Siri／小愛で音声追加でき、システムウィジェットとも連動。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. ポモドーロ（集中力トレーニング）</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Forest　対象：スマホを触りすぎてしまう人。強み：集中中に木を育て、途中で離れると木が枯れる「仮想の命」でポジティブなフィードバックを形成。友だちと共同育成も可能。</li>
+  <li>潮汐（Tide）　対象：ホワイトノイズで集中／入眠したい人。強み：自然音（雨、波、森）＋ポモドーロ＋瞑想の3in1。ミニマルで癒やされるUI。</li>
+  <li>原則：定番は25分集中＋5分休憩。自分の状態に合わせて50／10や90／20に調整してもOKです。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">3. カレンダー（時間の可視化）</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>システムカレンダー　対象：全ユーザー。強み：ネイティブ通知が最も安定し、バッテリー消費も最小。Siri／小愛で音声追加できます。</li>
+  <li>Google Calendar　対象：複数デバイス利用者。他人と予定を共有したい人。強み：「目標」機能が運動／学習時間を自動で調整。Gmailと連携し、メール中のイベントを賢く認識します。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">4. メモ系（知識の定着）</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Notion　対象：メモ、タスク、データベース、wikiを一元管理したい人。学生、フリーランス、チーム協働に。強み：万能なナレッジベース。Block単位のモジュール編集で、個人ページ、読書リスト、プロジェクトボードを構築可能。テンプレートも豊富です。</li>
+  <li>Obsidian　対象：深い知識管理をする人、研究者、ライター。強み：ローカルのMarkdown保存、双方向リンク＋グラフビューでノートが「第二の脳」に。データは完全にあなたのもの。</li>
+  <li>flomo　対象：断片的なアイデアを残したいけど長文は書きたくない人。強み：カード型メモ。朋友圈のように気軽に記録でき、#タグで分類、タイムラインで振り返れます。</li>
+  <li>Appleメモ　対象：iPhone／Macユーザー、軽い記録需要。強み：起動が速く、書類スキャン／手描き／チェックリスト／iCloud同期に対応。無料でシステムと深く統合。</li>
+  <li>印象筆記（Evernote中国版）　対象：Webクリップや資料アーカイブを大量に使う上級者。強み：Webクリップ拡張が強力。画像内の文字をOCR認識。老舗で安定しているが、上位プランは有料です。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">5. PDFツール</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>PDF Expert　対象：iPad／iPhoneユーザー、契約書に批注が必要なビジネスパーソン、学生。強み：iOSで定評のある最強PDFエディタ。注釈が滑らかで、署名、結合・分割、フォーム入力に対応。</li>
+  <li>WPS　対象：Word／Excel／PPT／PDFをまとめて扱うオフィスワーカー。強み：オールインワンのオフィススイート。国内のクラウドストレージやWeChatファイルとの互換性が高く、無料版でも日常用途は十分です。</li>
+  <li>Adobe Acrobat　対象：PDFの規格準拠を重視する人（法律、デザイン、出版）。強み：公式標準。PDF/A形式への変換が正確で、デバイス間同期と電子署名もプロ級。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">6. スキャン系（紙の書類をデジタル化）</h5>
+<p class="mb-2">紙の契約書、領収書、宿題、ホワイトボードメモ、身分証のコピー……スマホのカメラでスキャナーの大半は代替できます。基本フロー：きれいに撮る → 自動トリミングと歪み補正 → PDF／画像を書き出し → 任意でOCR。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>スキャナ全能王（CamScanner）　対象：契約書、チケット、証明書を頻繁にスキャンするビジネスパーソンと学生。強み：端の自動検出、遠近補正、OCR文字認識。複数ページPDFの生成とクラウド同期に対応。</li>
+  <li>Microsoft Lens　対象：学生、ホワイトボードや書籍をWordにしたい人。強み：無料で広告なし。OneNote／Wordへワンタップ書き出し。文字認識の精度が高い。</li>
+  <li>Appleメモのスキャン　対象：iPhoneユーザー、軽いスキャン需要。強み：アプリ不要。メモ内のカメラアイコンからスキャンでき、影の除去や署名注釈も自動。無料で使いやすい。</li>
+  <li>白描／スキャナ全能王Web版／メーカー純正カメラの「書類スキャン」：Huawei、Xiaomi、OPPO、vivoの標準カメラには「書類／スキャン」モードが搭載されていることが多い。AndroidではGoogleカメラや標準のスキャン機能も使えます。急ぎで契約書1枚を撮るのに便利です。</li>
+  <li>撮影のコツ：光は均一に、スマホは紙面と平行に、四隅を合わせる。複数ページは順番に撮ってからPDFに結合。機密書類は透かしと保存場所に注意し、使い終えたら「最近削除した項目」から完全削除しましょう。</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">二、健康・運動</h4>
+<p class="mb-2">健康系アプリは、スマホの中でもっとも過小評価されている「秘書」です。睡眠、心拍、運動量を継続的に追跡し、たまに病院に行くより長期的な状態を映し出してくれます。</p>
+<h5 class="font-semibold mt-3 mb-1">1. 運動・フィットネス</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Keep　対象：自宅トレーニング派、完全初心者、ダイエットや体型づくりをしたい人。強み：HIITからヨガまで充実した無料講座が豊富。AIがトレーニングプランを自動生成。コミュニティも活発です。</li>
+  <li>Nike Training Club（NTC）　対象：プロの指導を受け、体系的にトレーニングしたい人。強み：Nike公式。講座はすべて無料で、動作解説はプロのコーチが収録。筋群／器具別に整理されています。</li>
+  <li>Apple Fitness　対象：Apple Watchユーザー。活動リングで運動習慣を続けたい人。強み：毎日の3つのアクティビティリング（Move／Exercise／Stand）で目標を可視化。ウォッチの心拍データとシームレスに連携します。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. 睡眠トラッキング</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>AutoSleep　対象：Apple Watchユーザー、毎晩の深い睡眠／浅い睡眠の比率を知りたい人。強み：腕時計をつけて寝るだけで自動トラッキング。手動の開始・停止は不要。睡眠の質スコアと就寝アドバイスを提供します。</li>
+  <li>Sleep Cycle　対象：時計をつけずに寝る人、スマホで睡眠を記録したい人。強み：マイクで寝返りやいびきを解析し、浅い睡眠のタイミングでスマート起床。つらい目覚めを防ぎます。</li>
+  <li>小米運動健康　対象：Xiaomiスマートバンド／ウォッチユーザー。強み：無料でXiaomiバンドと深く連携。心拍・血中酸素・睡眠を一体でトラッキングでき、コスパが高い。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">3. 瞑想・リラックス</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Calm　対象：ストレスの多い社会人、入眠困難な人。強み：「毎日の平静」瞑想ガイド＋睡眠ストーリー（有名人の朗読）。美しいUIで、英語コンテンツが豊富です。</li>
+  <li>潮汐（Tide）　対象：ホワイトノイズで集中／入眠したい中国語ユーザー。強み：国産の高品質アプリ。自然音＋瞑想講座＋ポモドーロ。中国語ガイドが親しみやすい。</li>
+  <li>小睡眠　対象：入眠音や、寝言・いびきの記録が必要な人。強み：豊富なホワイトノイズを重ねて組み合わせ可能（雨＋扇風機＋焚き火）。就寝前にタイマーOFF。寝言の録音は面白くて実用的です。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">4. 女性の健康</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Flo　対象：生理記録、妊娠準備、女性の健康を気にする人。強み：AIが次の生理／排卵日を高精度で予測。コミュニティで匿名質問可能。洗練されたUIです。</li>
+  <li>美柚　対象：国内の女性ユーザー、中国語のコミュニティや解説を読みたい人。強み：ローカライズされた内容が充実。生理／妊娠準備／妊娠中／育児の段階ごとに役立つ知識を提供します。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">5. 服薬リマインダー</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>用薬助手　対象：長期服薬の慢性疾患患者、家族の服薬を支える子ども。強み：バーコードで薬を識別し、服薬リストを自動作成。時間になるとポップアップ通知。服薬記録は家族と共有できます。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">6. データハブ</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Apple Health／Google Fit　対象：すべてのスマートフォンユーザー。強み：スマホ、バンド、サードパーティ健康アプリのデータ（歩数、心拍、睡眠、生理など）を集約する、統一された「健康カルテセンター」です。</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">三、旅行・おでかけ</h4>
+<p class="mb-2">出先では、使いやすいアプリがあるだけで無数の失敗を防げます。旅行の流れに沿って紹介します。</p>
+<h5 class="font-semibold mt-3 mb-1">1. 航空券・高速鉄道</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>航旅縦横（UMetrip）　対象：よく飛行機を使うビジネスパーソン。強み：公式の民間航空データ。フライト状況／搭乗口変更／遅延予報が最も正確。機材種別や座席表も確認できます。</li>
+  <li>12306　対象：国内で鉄道を使うすべての人。強み：公式唯一の信頼できる購入チャネル。待機購入（キャンセルが出たら自動で確保）に対応。学生割引や団体券の手続きも簡単です。</li>
+  <li>飛常準（VariFlight）　対象：定時性に敏感な人、送迎が必要な人。強み：遅延予測が正確。旅程を家族と共有して、現在地と到着予定をリアルタイムで確認できます。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. 地図・ナビ</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>高徳地図（Amap）　対象：国内都市のユーザー、自家用車／タクシー派。強み：リアルタイム交通情報が正確で、渋滞回避力が高い。タクシー配車や相乗りもワンストップ。公共交通の乗り換え案内も充実。</li>
+  <li>百度地図（Baidu Maps）　対象：スポット情報や屋内ナビが必要な人。強み：パノラマ地図／ARナビ。観光地や商業施設の屋内地図が詳細。音声パックも豊富です。</li>
+  <li>Google Maps　対象：海外旅行者。強み：世界最大級のカバレッジと現地のレビュー。ストリートビューとオフライン地図は、異国の地での救世主です。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">3. 翻訳</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Google翻訳　対象：海外旅行者、語学学習者。強み：「会話」のリアルタイム双方向翻訳、「カメラ」の即時単語翻訳は旅行の必需品。オフライン言語パックのダウンロードにも対応。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">4. 両替・為替換算</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>極簡匯率（Minimal Exchange）　対象：海外旅行、越境EC、海外ショッピングをする人。強み：極限まですっきりしたUI。160以上の通貨に対応し、為替はリアルタイム更新。複数通貨の同時比較、数字の長押しでクイック換算も可能です。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">5. 天気</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>システム天気／中国天気網　対象：全員。予報と公式気象警報を確認する第一候補。強み：メーカーの天気アプリと「中国天気」などの公式チャネルが気象台の警報と連携。豪雨、台風、猛暑などの警報がバナー／通知で届き、信頼性が高い。</li>
+  <li>彩雲天気（Caiyun Weather）　対象：分単位の降雨予報が必要な人。強み：「今後2時間に降るか」の精度は業界トップクラス。降雨の動的地図が直感的で、雨が降る前に通知してくれます。</li>
+  <li>Carrot Weather　対象：ユーモアと豊富なウィジェットを求める天気ファン。強み：毒舌AIが天気を読み上げ。カスタマイズ可能なウィジェットが大量。レーダーもプロ級。有料版はさらに多機能です。</li>
+  <li>警報のポイント：天気アプリは通知を許可しないと警報を受け取れません。警報は青・黄・橙・赤の4段階で、赤は災害級の天候リスクが最も高いことを意味します。表示に従って行動を調整しましょう。有効化方法の詳細は、本章第7節「天気警報／自然災害警報／地震速報」をご覧ください。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">6. 旅行ガイド</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>馬蜂窩（Mafengwo）　対象：詳細な旅行計画を立てる人、ドライブ旅行／じっくり旅派。強み：ユーザーのオリジナル紀行文が充実。目的地の遊び方／ルート／失敗回避ガイドが詳しく、オフラインガイドもダウンロードできます。</li>
+  <li>小紅書（RED）　対象：リアルな体験談や、穴場スポット／グルメを探したい若い旅行者。強み：画像・短文・動画が直感的。「○○都市3日間モデルコース」などの情報が新しく、鮮度が高い。検索体験も優秀です。</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">四、自動化ツール入門</h4>
+<p class="mb-2">自動化は「一度の設定で長く楽になる」レバーです。毎日繰り返している何十回もの操作をゼロにできます。この節では概念の入り口だけを扱い、具体的な使い方は第二十三章「プログラミング的思考と自動化入門」で詳しく解説します。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>iOS「ショートカット」：Apple公式の自動化ツール。プログラミング不要で、「帰宅したらWi-Fiをオン＋輝度を下げる＋天気を読み上げ」などの複合アクションをワンタップで実行できます。</li>
+  <li>Androidの自動化：システムレベルのシーン連動（Xiaomi「自動タスク」、Huawei「情景インテリジェンス」など）が最も簡単。Taskerは多機能ですが学習曲線が急なので、上級者向けです。</li>
+  <li>基本の考え方：まず「毎日繰り返している操作」を特定し、「1つのトリガー条件＋複数のアクションで代替できるか」を考えます。詳しい例と応用は第二十三章をご覧ください。</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">五、ブラウザと検索エンジン：情報への入り口</h4>
+<p class="mb-2">ブラウザはインターネットへの窓、検索エンジンは情報の海を進むコンパスです。使いこなせば、遠回りがぐっと減ります。</p>
+<h5 class="font-semibold mt-3 mb-1">ブラウザの仕組み：</h5>
+<p class="mb-2">ブラウザにURLを入力すると、①DNSサーバーへドメインのIPアドレスを照会、②そのIPのサーバーにHTTP/HTTPSリクエストを送信、③サーバーがWebページのコード（HTML、CSS、JavaScript）を返す、④ブラウザがコードを解析して画面に描画します。</p>
+<h5 class="font-semibold mt-3 mb-1">主要ブラウザのおすすめ：</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Microsoft Edge：Chromiumベースで高速・高互換。Copilot AIアシスタントを内蔵し、ページ要約、翻訳、会話が可能。デバイス間同期に対応し、メインブラウザとして強くおすすめします。</li>
+  <li>Safari：Appleデバイスの標準ブラウザ。システムと深く統合され、省電力で効率的。プライバシー保護も良好ですが、拡張機能は少なめです。</li>
+  <li>Chrome：世界で最も普及率が高く、拡張も豊富。ただしメモリ消費が大きく、スマホではバッテリーをやや使いやすい。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">検索エンジンの選び方：</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Bing：Microsoftの検索エンジンで、Edgeと深く連携。AI要約が答えを直接提示し、検索効率が高い。画像検索の体験も良好です。</li>
+  <li>Yandex：ロシア最大の検索エンジン。画像検索と逆画像検索に強く、類似画像の検索や物体の識別に便利です。</li>
+  <li>百度（Baidu）：国内情報検索の主力。ただし広告が多いため、見極める力が必要です。</li>
+  <li>Google：世界で最も精度の高い検索エンジン。ただし国内では特別なネットワークが必要です。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">効率的な情報検索ガイド：</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>AI検索を活用：BingのAI要約やEdgeのCopilotは質問に直接答え、大量の結果から要点を抽出してくれます。リンクを1つずつ開くよりはるかに効率的です。</li>
+  <li>偽情報と広告の見分け方：検索結果で「広告」や「スポンサー」と表示されるものは有料プロモーションで、自然検索結果ではありません。情報源の信頼性を確認し、公式サイトや著名メディアの内容を優先しましょう。</li>
+  <li>正しいアプリのダウンロード：検索エンジンで「アプリ名＋公式」と入力（例：「WeChat 公式」）し、公式ドメインの結果を優先します。サードパーティのダウンロードサイトからのインストールは避けてください。不正ソフトが同梱されていることがよくあります。</li>
+  <li>公式サイトの見分け方：Windows 11ならmicrosoft.com、Chromeならgoogle.com。ドメインがブランドと一致しているかを見るのが、最も基本的な見分け方です。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Webサイトのドメイン知識：</h5>
+<p class="mb-2">ドメインはサイトの「住所」です。読めば、サイトの性質と出どころが分かります：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>一般的な拡張子の意味： .com — 商業組織。最も一般的</li>
+  <li>.cn — 中国の国別ドメイン</li>
+  <li>.org — 非営利団体</li>
+  <li>.net — ネットワーク関連サービス</li>
+  <li>.edu — 教育機関</li>
+  <li>.gov — 政府機関</li>
+  <li>.xyz/.tech/.info — 新興の汎用ドメイン。取得のハードルが低く、要注意</li>
+</ul>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>国・地域ドメイン： .jp — 日本</li>
+  <li>.kr — 韓国</li>
+  <li>.uk — イギリス</li>
+  <li>.de — ドイツ</li>
+  <li>.tw — 台湾</li>
+  <li>.hk — 香港</li>
+  <li>セキュリティのヒント：.govや.eduのサイトは取得ハードルが高く、比較的信頼できます。.xyzや.topなどの安価なドメインはフィッシングに悪用されやすいので、アクセス時は注意しましょう</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">広告ブロック：</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>AdGuard　対象：ポップアップ、インストリーム広告、アプリ内広告に悩むすべてのユーザー。強み：システムレベルの広告ブロック（ブラウザだけでなく）。アプリ内のバナー広告や起動時トラッキングもフィルタ。データ節約とページ表示の高速化にもつながり、有料版は全デバイス対応。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">プライバシー重視ブラウザ：</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Brave　対象：プライバシーを重視し、広告トラッキングされたくない日常ユーザー。強み：Chromiumベースで、初期設定のまま広告とトラッカーをブロック。Tor非公開モードを内蔵し、Chromeより高速でメモリ消費も軽い。</li>
+  <li>DuckDuckGo　対象：「一度検索しただけで全Webから広告を追われたくない」ユーザー。強み：同名の検索エンジンを内蔵（検索履歴を記録しない）、ワンタップですべての閲覧痕跡を消去（「燃焼ボタン」）、プラットフォームをまたいだ統一感のある体験。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">ブラウザ比較一覧：</h5>
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+ <thead>
+ <tr class="bg-light dark:bg-gray-700">
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">ブラウザ</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">主な強み</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">向いている人</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Microsoft Edge</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Chromiumベース＋Copilot AI内蔵。ページ要約／翻訳／会話が可能</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">効率を重視するオフィスワーカー、AIヘビーユーザー（メイン推奨）</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Safari</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Appleエコシステムと深く統合。省電力・高効率、プライバシー保護が強い</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">iPhone／Macユーザー、バッテリーとシステム連携を重視する人</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Chrome</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">世界最大の普及率、最も豊富な拡張エコシステム</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">拡張を多用する上級者、デバイス間同期派</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Brave</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">初期設定で広告とトラッカーをブロック、高速</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">プライバシー重視、拡張なしで広告をブロックしたい人</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">DuckDuckGo</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">同名検索エンジンが履歴を記録せず、ワンタップで痕跡消去</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">パーソナライズ追跡を避けたいプライバシー敏感なユーザー</td>
+ </tr>
+ </tbody>
+ </table>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">「就寝前リラックス」の自動化を作ってみよう</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>トリガー条件を作成：特定時刻（例：22:30）。</li>
+  <li>実行アクションを追加：音量を下げる > おやすみモードをオン > リラックス用プレイリストを再生 > 輝度を下げる。</li>
+  <li>保存してテスト。</li>
+</ol>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">六、実用システムツール：クリーンアップ、迷惑対策、セキュリティ</h4>
+<p class="mb-2">効率・健康系アプリ以外に、日常体験を本当に左右するのは「迷惑が少ない」「ストレージが足りる」「詐欺が入ってこない」の3つです。この節では定番の実用ソフトを整理したあと、スマホ標準の迷惑ブロック機能を掘り下げます。スマホを何年使っても、これらのスイッチを一度も開いたことがない人が多いのです。</p>
+<h5 class="font-semibold mt-3 mb-1">1. システムクリーンアップとストレージ最適化</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Qingzhuo　対象：Androidユーザー。キャッシュ、残留ファイル、空フォルダを軽く掃除したいけど、「スマホマネージャー」の詰め合わせには煩わされたくない人。強み：軽量で広告なし。アプリ残留の深層スキャン、大容量ファイルの特定、使用量分析に対応。商業の「一括加速」より控えめで。自力メンテナンス好きな人に。注意：掃除前にパスを確認し、WeChat、写真、書類フォルダを無闇に全選択しないこと。システムキャッシュはメーカー標準のクリーンアップを優先し、サードパーティは補助にとどめましょう。</li>
+  <li>スマホ標準のストレージクリーンアップ　対象：全員、特にご高齢や設定を変えるのが苦手な人。強み：Androidは[設定] > [ストレージ] > [クリーンアップ]、iOSは[設定] > [一般] > [iPhoneのストレージ]。自社アプリのキャッシュ構造を最も理解しており、誤削除リスクが最低。第一候補にすべきです。</li>
+  <li>WeChat／QQ内蔵のストレージ管理　対象：チャットをよく使う人。強み：WeChatの[マイページ] > [設定] > [全般] > [保存スペース]。チャットやファイル種別で細かく整理でき、外部の「WeChat掃除」系ツールより安全です。</li>
+  <li>原則：システム／アプリ標準の機能があればサードパーティは使わない。パスや種別で選べるなら「一括全削除」はしない。クリーンアップの目的は容量の解放であり、大事なデータまで消すことではありません。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. 迷惑対策・セキュリティ系の実用ソフト</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>国家反詐中心　対象：全員、特にご高齢、経理関係、ネット通販や知らない番号からの着信が多い人。強み：公式提供。着信警告、SMSリスク通知、疑わしいURL検出に対応。公安の詐欺対策データベースと連携し、「三つの防衛線」の中で最も公式の裏付けがある一環です。</li>
+  <li>メーカーのセキュリティセンター／スマホマネージャー　対象：各ブランドのユーザー。強み：Huaweiスマホマネージャー、Xiaomiセキュリティセンター、OPPOスマホマネージャー、vivoスマホマネージャーなど。迷惑ブロック、ウイルス対策、権限管理、決済保護を統合。通常無料で、システム下層との連携も良い。2つ目の商業セキュリティを入れて権限衝突を起こすのは避けましょう。</li>
+  <li>通信事業者の迷惑対策サービス　対象：高頻度の自動発信やAI音声電話に悩む人。強み：China MobileはKTFSRを10086へ送信して開通。China Telecomは「天翼防騷擾」をフォロー。China Unicomは「聯通手机管家」で設定。ブロックは事業者側で行われるため、スマホが鳴らなくても迷惑番号を防げます。</li>
+  <li>AdGuard　対象：ポップアップ、インストリーム広告、アプリ内広告に悩むすべてのユーザー。強み：システムレベルの広告ブロック（ブラウザだけでなく）。アプリ内のバナー広告や起動時トラッキングもフィルタ。データ節約とページ表示の高速化にもつながり、有料版は全デバイス対応。</li>
+  <li>「クリーンアップ加速／迷惑ブロック」の詰め合わせに注意：一部のサードパーティ管理ツールは常駐し、連絡先やSMSの権限を何度も要求します。ブロック力がシステムに勝るとは限らず、電池消費とプライバシーリスクが増えるだけのことも。まず標準機能を有効にし、次に公式の反詐アプリを検討しましょう。</li>
+</ul>
+<div class="success-box rounded-lg p-4 mt-3">
+<p class="font-semibold">実用ソフトの選定原則</p>
+<ul class="list-disc pl-6 mt-1 space-y-1 text-sm">
+  <li>システム優先：ブロック、クリーンアップ、権限管理は、まずスマホ標準のスイッチをオンに。</li>
+  <li>公式で補完：国家反詐中心や通信事業者の迷惑対策は公式チャネルなので、重ねて使えます。</li>
+  <li>サードパーティは控えめに：同じ機能は1つで十分。権限の衝突とバックグラウンドのリソース争奪を避けましょう。</li>
+  <li>少ないほど多い：ツールを入れるほど通知と権限が増え、「ツール自体」に邪魔される確率が上がります。</li>
+</ul>
+</div>
+<h5 class="font-semibold mt-3 mb-1">3. スマホ標準の迷惑ブロック：ブランド別の有効化方法</h5>
+<p class="mb-2">以下にブランド別の入口を示します。名称はOSバージョンで多少変わることがあるので、設定内で「迷惑」「ブロック」「不明な着信」と検索してください。第八章「迷惑電話対策」との違い：ここはスイッチの場所が中心、あちらは番号表示と誤表示の申立てが中心です。</p>
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+ <thead>
+ <tr class="bg-light dark:bg-gray-700">
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">プラットフォーム</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">入口パス</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">推奨オン項目</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">iPhone / iOS</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">[設定] > [電話] / [メッセージ]</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">不明な着信を消音。ブロック済み連絡先。メッセージの「不明な送信者をフィルタ」</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Xiaomi / Redmi</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">電話アプリ > 設定 > 迷惑ブロック。またはセキュリティセンター</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">スマートブロック、知らない番号の一回鳴り切断、SMSキーワードフィルタ</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Huawei / Honor</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">電話 > 迷惑ブロック。スマホマネージャー > 迷惑ブロック</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">着信識別、ブラックリスト、SMSスマートブロック</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OPPO / realme / OnePlus</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">電話アプリ > 迷惑ブロック。または本機 > 迷惑ブロック</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">着信ブロック、詐欺電話識別、SMSブロックルール</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">vivo / iQOO</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">電話 > 迷惑電話ブロック。iマネージャー</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">迷惑ブロック、詐欺電話警告、メッセージフィルタ</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Samsung</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">電話 > 設定 > 番号をブロック / 発信者表示と迷惑電話</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">不明な番号のブロック、迷惑電話識別（地域により対応が異なる）</td>
+ </tr>
+ </tbody>
+ </table>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">3層防御の重ね方</p>
+<p class="mt-1">日常は「システムブロック＋通信事業者の迷惑対策＋国家反詐中心」の3層を重ねるのがおすすめ。システムが表示とブラックリスト、事業者がネットワーク側で高頻度発信を遮断、反詐中心が公式警告を補完します。3層すべてを最強にしなくてもOK。宅配、出前、医師からの電話まで誤ブロックしないよう、連絡先と最近の通話相手は許可しましょう。</p>
+</div>
+<div class="practice-box rounded-lg p-4 mt-3">
+<p class="font-semibold">実践：今日から迷惑ブロックをオンに</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>電話アプリの設定を開き、「迷惑ブロック／不明な着信を消音」を見つけてスマートブロックをオンに。</li>
+  <li>親のスマホも確認：同じパスで＋通信事業者の迷惑対策を開通（China MobileはKTFSRを10086へ送信）。</li>
+  <li>アプリストアで「国家反詐中心」をインストールし、登録して着信警告をオンに。</li>
+  <li>表示済みのテスト番号にかけて（またはブロック記録を確認して）、機能が効いているか確かめましょう。</li>
+</ol>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">七、天気警報・自然災害警報・地震速報</h4>
+<p class="mb-2">迷惑ブロックが防ぐのは「電話詐欺」、警報機能が防ぐのは「天災と異常気象」です。天気アプリを入れて気温だけ見ている人は多いのですが、通知や地震速報をオフのままにしています。豪雨の赤色警報、台風、地震が来る前の数秒から数十秒，スマホは本来、貴重な避難時間を確保する道具なのです。</p>
+<h5 class="font-semibold mt-3 mb-1">1. 天気警報：豪雨・台風・猛暑の受け取り方</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>公式チャネル優先：中国気象局／中央気象台／各省政府気象局の警報が最も信頼できます。「中国天気」のWeChat公式アカウントやWeiboをフォローするか、「中国天気」などの公式アプリをダウンロードしましょう。</li>
+  <li>スマホ標準の天気アプリ：Huawei天気、Xiaomi天気、OPPO天気、vivo天気、Apple「天気」など。多くが現地気象台の警報をプッシュします。天気アプリの設定で「気象警報／災害性天候」の通知がオンになっているか確認してください。</li>
+  <li>彩雲天気などの分単位降雨予報：通勤や子どもの送迎前に「この30分、傘が必要か」を判断するのに便利。ただし警報は公式気象台を基準にしましょう。</li>
+  <li>警報色の意味（共通）： 青：注意喚起。通常どおり外出し、更新を確認。</li>
+  <li>黄：警戒を強化。不要な屋外活動を減らす。</li>
+  <li>橙：重大。できるだけ屋内に留まり、危険区域から離れる。</li>
+  <li>赤：特に重大。休校・休業・避難の指示に従い、冠水路、土砂災害、強風区間を無理に通行しない。</li>
+</ul>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>主な警報の種類：豪雨、大雪、台風、猛暑、寒波、強風、雷、ひょう、道路凍結、濃霧、干ばつ、地質災害リスク。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. 自然災害警報：「雨」だけではない</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>発表主体：気象系は気象台が担当。地質災害や土砂災害などは自然資源、水利、応急管理部門が共同で発表することも。地方政府が応急放送、SMS、12379などのチャネルで伝えることもあります。</li>
+  <li>複数チャネルでの受信方法： スマホのシステム通知＋天気アプリの警報。</li>
+  <li>WeChatで現地の「応急管理局」「気象局」の公式アカウントをフォロー。</li>
+  <li>12379の国家警報発信関連チャネル（SMS／サービス、地域により開通状況が異なる）。</li>
+  <li>テレビ、応急放送、村・地域の拡声器——山間部や洪水期はスマホだけに頼らない。</li>
+</ul>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>屋外・外出時の注意：台風時は看板の近くや木の下を避ける。豪雨では地下駐車場、トンネル、アンダーパスに入らない。山岳旅行で「地質災害気象リスク」の警報が出たら、すぐに急斜面や谷から離れる。</li>
+  <li>救急マニュアルとの連携：災害後に連絡が取れない、スマホが切れた、位置情報で救助を求めたい場合は、第三十二章「地震・災害シナリオ」と第七章「衛星通信・圏外通信」をご覧ください。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">3. 地震速報：「地震予知」とは違う</h5>
+<p class="mb-2">地震速報（EEW）は、地震波（特に破壊力の大きいS波）が対象地域に到達する前に、電磁波が地震波より速く伝わることと、観測所がP波を先に捉える仕組みを利用し、影響を受ける可能性のある地域へ数秒〜数十秒前に警報を送るものです。地震が起きるかどうかを予測するものではなく、「その場で身を守る、火を止める、エレベーターから出る」時間を稼ぎます。震央に近いほど予告時間は短く、間に合わないこともあります。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>公式・業界のソリューション：中国大陸では中国地震警報網関連の機能や、成都高新減災研究所などが推進する警報サービスが一般的。一部のメーカーはスマホにプリインストールするか、ネット経由で受信できます。</li>
+  <li>サードパーティアプリ：アプリストアで「地震速報」などの公式・機関系アプリを検索（インストール前に開発者を確認し、関係のない権限を要求する偽アプリを避ける）。</li>
+  <li>警報を受けたら：屋内ではすぐ近くで身を守る（机の下、耐力壁の角、頑丈な家具のそば）。頭と首を守り、窓、外壁、高い家具から離れる。階段や窓から飛び降りない。エレベーター中は最寄りの階ですぐ降りる。屋外では開けた場所へ移動し、電線、看板、危険建築物から離れる。震後はガスと電気を確認し、余震に注意。</li>
+  <li>おやすみモードで遮断しない：地震速報は「消音／おやすみモードを突破」できるようにしておく。寝る前は手の届く場所にスマホを置き、着信音量を0にしない。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">4. スマホ標準の地震速報：ブランド別の有効化方法</h5>
+<p class="mb-2">以下の入口はOSバージョンで多少変わることがあります。設定内で「地震」「警報」「安全警報」と検索してください。iOS自体の国内地震速報対応は限定的なため、信頼できるサードパーティの警報アプリをインストールし、位置情報と通知の権限を許可したままにしておく必要があります。</p>
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+ <thead>
+ <tr class="bg-light dark:bg-gray-700">
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">プラットフォーム</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">主な入口</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">説明</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Xiaomi / Redmi</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">スマホマネージャー／セキュリティセンター > 地震速報。または設定で「地震」を検索</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">一部バージョンはシステム内蔵の警報サービス。ネット接続と位置情報の有効化が必要</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Huawei / Honor</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">設定 > セキュリティ > 緊急警報通知 / 地震速報</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">名称は「緊急警報通知」の場合あり。地震などを含む</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OPPO / realme / OnePlus</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">設定 > セキュリティ（SOS緊急連絡）> 地震速報</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">機種と地域サービスのカバレッジによる</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">vivo / iQOO</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">天気アプリ、または設定 > セキュリティ／その他 > 地震速報</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">実際のOSバージョンのメニューに従うこと</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">iPhone / iOS</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">システム設定に完全な内蔵スイッチがないことが多い。信頼できる地震速報アプリをインストールして通知を許可</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">アプリにはバックグラウンド実行と位置情報の権限が必要。おやすみモードで警報を遮断しない</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Samsungなど</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">設定 > セキュリティと緊急事態 / ワイヤレス緊急警報</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">「緊急警報」のカバレッジは地域と通信事業者で異なる</td>
+ </tr>
+ </tbody>
+ </table>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">地震速報に関するよくある誤解</p>
+<ul class="list-disc pl-6 mt-1 space-y-1 text-sm">
+  <li>速報≠予知：「明日地震があるか」を教えてくれるものではなく、地震が発生し、波がまだ届いていないときにだけ警報します。</li>
+  <li>どこでも何十秒も前もってくれるわけではない：震央付近では数秒しかなく、間に合わないことも。主に周辺地域が恩恵を受けます。</li>
+  <li>通知を切れば入れたのと同じ：どんなに優れた警報でも、消音、バックグラウンド停止、位置情報拒否では受信できません。</li>
+  <li>偽アプリ注意：連絡先やSMSの権限を求める「地震予知」ソフトに注意。システム内蔵か正規機関のソリューションを優先しましょう。</li>
+</ul>
+</div>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">警報機能の組み合わせ方</p>
+<p class="mt-1">日常のおすすめ：「システムの天気警報通知＋公式の気象／応急チャネル＋地震速報（システムまたは正規アプリ）」。迷惑対策と同様、同種のソフトを山ほど入れる必要はありません。大事なのは通知権限、位置情報の許可、おやすみモードの突破。ご高齢のスマホで迷惑ブロックを設定したら、ついでに天気警報と地震速報も確認しましょう。</p>
+</div>
+<div class="practice-box rounded-lg p-4 mt-3">
+<p class="font-semibold">実践：10分で警報設定をチェック</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>スマホ標準の天気アプリを開き、設定で「気象警報／災害性天候」の通知をオンに。</li>
+  <li>システム設定で「地震」または「警報」を検索し、地震速報／緊急警報を見つけてオンに（Android）。iPhoneは正規の地震速報アプリを入れて通知を許可。</li>
+  <li>現地の気象局または応急管理局の公式アカウントをフォローし、プッシュを許可。</li>
+  <li>警報音がおやすみモードで完全に消音されないか確認。親のスマホも同じようにチェックしましょう。</li>
+</ol>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">八、デバイス間連携：遠隔操作、高速転送、アカウントセキュリティ</h4>
+<p class="mb-2">スマホが使いやすいのは、パソコンやタブレットと「チーム」を組んでいるからです。この節では、スマホからのパソコン遠隔操作、AIオフィスとリモート協働、ライブ壁紙、LAN高速転送、デバイス間クリップボード、動的パスワードの2FA、紙のスキャンとスケジュール管理の連携を補足します。より体系的なマルチデバイス連携は第十七章をご覧ください。</p>
+<h5 class="font-semibold mt-3 mb-1">1. スマホからパソコンを遠隔操作：向日葵／ToDesk</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>向日葵遠隔控制（Sunlogin）　対象：外出先から自宅や会社のWindows／Macを操作したい人。ご高齢のスマホを遠隔でサポートするのにもよく使われます（第二十七章参照）。強み：国内エコシステムが成熟。スマホアプリでパソコンデスクトップ操作、ファイル転送、電源オン／オフ（一部はハードウェア必要）。無料版で個人の軽い用途は十分。</li>
+  <li>ToDesk　対象：接続の安定性と低遅延を求めるリモートワーク／運用担当者。強み：デバイスコード＋パスワード接続。スマホからパソコン操作、パソコンからスマホ操作（バージョンによる）、ファイル転送、マルチモニタ切替がスムーズ。国内ノードの体験は良好。</li>
+  <li>基本の使い方：パソコンにクライアントをインストールしてログイン／オンライン維持。スマホにアプリをインストール。デバイスID＋接続パスワード（または同一アカウント）でセッション確立。スマホのタッチパッド／ジェスチャーでデスクトップ操作。</li>
+  <li>セキュリティのレッドライン（必ず覚える）： 見知らぬ人が「カスタマーサービス／警察・検察・裁判所／通信事業者」を名乗り、向日葵やToDeskを入れさせてスマホやパソコンを遠隔操作させようとするのは、すべて拒否，典型的な詐欺手口です（第二十七章参照）。</li>
+  <li>自分で使うとき：二段階認証をオン、初期パスワードを変更、使わないときはログアウトまたは無人モードをオフ。会社のパソコンは社内のセキュリティ規定に従うこと。</li>
+  <li>公共の場でリモートワークするときは、画面やパスワードをのぞき見されていないか注意しましょう。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. AIオフィスソフト：Trae／WorkBuddy／Dumate</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Trae　対象：プログラミングと文書協働をするユーザー。中国語環境に親しみやすい。強み：ByteDanceのAI IDE／プログラミングアシスタント。SOLOモードで一文からプロジェクトを生成。日常のコーディングや文書修正が効率的。パソコンで実行する場合、モバイル側は遠隔操作や公式の付随機能でタスクの確認・追跡が可能（最新の製品形態に準拠）。第四十一章「AIプログラミングツール全景」も参照。</li>
+  <li>WorkBuddy　対象：会議メモ、メール、報告書、オフィス文書の整理をAIに任せたい社会人。強み：オフィスシーン向けのAIアシスタント。「下書き—推敲—要約」のような高頻度の文章作業に最適。一部のワークフローはスマホから開始でき、重い作業はパソコンで完結。</li>
+  <li>Dumate　対象：複数人での協働、文書と知識管理を一体で行いたいチーム／個人。強み：AI協働型のオフィスツール。資料の集約と共同編集を重視。スマホでは閲覧と軽い編集、複雑なレイアウトはパソコンの大画面で。</li>
+  <li>「スマホからパソコンを遠隔操作」の意味：多くのAIオフィス機能はパソコン／Webで動きます。スマホから向日葵／ToDeskでパソコンに戻るか、製品のスマホアプリ／Webを使えば、通勤中にパソコン上のAIタスクを「遠隔操作」できます。原則：重い計算と長文書はパソコンへ。進捗確認と数行の修正はスマホで。</li>
+  <li>プライバシーの注意：契約書、身分証、顧客データをアップロードする前に、製品のプライバシー条項と企業のコンプライアンス要件を確認。会社の資料は社内指定のツールを優先しましょう。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">3. 人工デスクトップ：miHoYoライブ壁紙（スマホ＋PC）</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>人工デスクトップ　対象：miHoYoのキャラクターが好きで、無料のライブ壁紙が欲しい人。強み：miHoYo提供の無料ライブ壁紙アプリ。スマホとPCに対応。キャラクターのLive2D／モーション演出を壁紙にでき、機種／OSによってはロック画面やデスクトップ壁紙に設定可能。</li>
+  <li>省電力とパフォーマンス：ライブ壁紙は静止画より電池とGPUを消費。バッテリー残量が少ないときや古い機種では、充電中のみ使うか、フレームレートを下げる（アプリにオプションがあれば）。</li>
+  <li>インストール元：公式サイト／正規のアプリストアを優先し、サードパーティの「クラック版」にトロイの木馬が同梱されているのを避ける。PC版はインストールパスと起動時の自動起動が必要かどうかを確認しましょう。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">4. LANファイル高速転送：LocalSend／FeiGe／AirDrop</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>LocalSend　対象：Android／Windows／iOS／Mac／Linuxを混在させ、クロスプラットフォームで、クラウドを経由せずに転送したい人。強み：オープンソース、LAN直接接続。同じWi-Fi下で写真・動画・文書を転送。ケーブル不要、メーカーのサーバーを経由せず、速度はルーター次第。</li>
+  <li>FeiGe（IPMsg）　対象：オフィスのWindowsパソコン間、昔ながらのLANオフィス環境。強み：老舗のLAN転送／チャットツール。社内ネットでの大容量ファイル転送に便利。正規チャネルからダウンロードし、企業内ネットではITポリシーに従うこと。</li>
+  <li>AirDrop　対象：iPhone、iPad、Macユーザー。強み：Appleエコシステムでワンタップ共有。Bluetooth探索＋Wi-Fi直接転送で通信量ゼロ。「連絡先のみ」に設定すれば、見知らぬ人からの迷惑を減らせます。</li>
+  <li>その他：Xiaomi Share、Huawei共有、vivo Shareなどのブランド方案は、同ブランド端末間で高速。WeChatの「ファイル転送アシスタント」は便利ですが、ファイルサイズとログイン端末に制限があります。大容量はLocalSend／AirDropがおすすめ。</li>
+  <li>使い方のヒント：両方の端末を同じWi-Fiに接続。公共Wi-Fiでの機密ファイル転送はリスクがあるため、プライベートホットスポットを優先。転送後は受信側でファイルの完全性を確認しましょう。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">5. デバイス間クリップボード同期：KDE Connect／スマホ・パソコン互いに転送</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Apple「ユニバーサルクリップボード」　対象：iPhone＋Macユーザー。強み：同じApple IDでログインし、ハンドオフを有効にすると、スマホでコピー→Macでペースト（その逆も）。テキストと一部ファイルに対応。</li>
+  <li>KDE Connect　対象：Android＋Windows／Linux／Mac。オープンソースのクリップボード同期、通知ミラー、リモート入力が欲しい人。強み：LANペアリング後にクリップボードを同期、スマホ通知をパソコンへ転送、スマホをスライド送り／タッチパッドとして使用。データはサードパーティアカウントを経由しません。</li>
+  <li>ブランドの「スマホ・パソコン互いに転送」：Huawei多屏協同／スーパーターミナル、Xiaomi妙享、vivo Share、OPPO互連、Honor互聯など。デバイス間クリップボードとファイルドラッグを備え、同ブランドなら体験が最良です。</li>
+  <li>Windows＋Androidの公式チャネル：「スマホ接続／Link to Windows」（Your Phoneの進化版）。パソコン上でスマホの通知や写真を確認でき、対応シーンではコピー＆ペーストも可能。Samsungなどはさらに深い連携があります。</li>
+  <li>セキュリティの注意：クリップボードにはパスワードや認証コードが残ることがあります。共有パソコンでは全体同期を慎重に使い。パスワード欄で再ペーストによる漏えいを避ける。一部の入力メソッドもクリップボードを読むため、権限に注意しましょう。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">6. 動的パスワード2FA：Aegis／Microsoft Authenticator</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>SMSではなく認証アプリを使う理由：SMS認証コードはSIMスワップ攻撃のリスクがあります。TOTPの動的パスワードはローカルで時間アルゴリズムにより生成され、携帯電波に依存せず、フィッシングや盗聴に強い（トロイの木馬とスクリーンショットには依然注意が必要）。</li>
+  <li>Aegis Authenticator　対象：Androidユーザー。オープンソースとローカル管理を好む人。強み：オープンソースで無料。暗号化バックアップとインポート／エクスポートに対応。すっきりしたUIで、指紋／顔認証でトークン一覧をロック解除可能。</li>
+  <li>Microsoft Authenticator　対象：Microsoftアカウント、Office 365／企業アカウントを使う人。iOS／Android対応。強み：プッシュ承認ログイン、パスワード監視、アカウントバックアップ（製品バージョンによる）。Windows／企業ID基盤と深く統合。</li>
+  <li>Google Authenticator／2FAS など：各エコシステム内でもよく使われています。大事なのは暗号化バックアップがあって、機種変更してもトークンを失わないこと。</li>
+  <li>機種変更時に必ずやること：旧機種から移行するか、サービス内の「バックアップコード／リカバリーキー」を使います。バックアップコードは紙に印刷して2か所に保管し、同じ1台のスマホだけに残さないこと。</li>
+  <li>パスワード管理ツールとの併用：一部のパスワード管理ツールでも TOTP を保存できますが、便利なぶんリスクが1か所に集中します。重要度の高いアカウントは「パスワード管理ツール＋専用認証アプリ」で役割を分けるのがおすすめ。詳しくは第十四章を参照。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">7. おすすめの組み合わせ：1日の流れでどうつなげるか</h5>
+<div class="success-box rounded-lg p-4 mt-3">
+<p class="font-semibold">実用的なワークフロー例</p>
+<ul class="list-disc pl-6 mt-1 space-y-1 text-sm">
+  <li>朝：TickTick で今日の予定を確認 → 天気／警報をひと目チェック → パソコンで Trae やドキュメントを開き、スマホは脇に置く。</li>
+  <li>日中：紙の資料はスキャン系アプリで PDF に変換し、LocalSend／AirDrop でパソコンへ送る。長文はパソコンの AI オフィスツールで草案づくり。</li>
+  <li>外出先：ToDesk／Sunlogin（向日葵）でパソコンにつないで作業を続行。重要なアカウントへのログインは Aegis／Microsoft Authenticator のワンタイムパスワードで。</li>
+  <li>夜：TickTick で完了したタスクにチェック。必要に応じて、デスクトップの壁紙を手動で変えて一息つきましょう。</li>
+</ul>
+</div>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">リモート操作とアカウント安全の心得</p>
+<ul class="list-disc pl-6 mt-1 space-y-1 text-sm">
+  <li>見知らぬ人にリモート操作ソフトのインストールを求められたら → 電話を切り、自分で公式サポートに連絡する。</li>
+  <li>認証コードやワンタイムパスワードは、「配達員」「カスタマーサポート」を含め、誰にも教えない。</li>
+  <li>会社のパソコンのリモート操作や AI ソフトのインストールの前に、まず IT 部門に可否を確認する。</li>
+  <li>公衆ネットワークでのファイル送信やリモートログインでは、とりわけ警戒を。</li>
+</ul>
+</div>
+<div class="practice-box rounded-lg p-4 mt-3">
+<p class="font-semibold">実践練習：「デバイス間連携」を一度通しで試そう</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>スマホとパソコンを同じ Wi-Fi につなぎ、LocalSend（または AirDrop）で写真を1枚やり取りする。</li>
+  <li>TickTick に「今夜8時：スキャン書類の整理」というタスクを作り、スマホとパソコンの両方から見えることを確認する。</li>
+  <li>メールや WeChat で 2FA（対応している場合）を有効にし、Aegis か Microsoft Authenticator で連携して、バックアップコードを保存する。</li>
+  <li>自分のパソコンに Sunlogin（向日葵）か ToDesk を入れ、自分のスマホから接続に成功したら、ログアウトするかパスワードを強化する。流れに慣れつつ、安全な抜け道は残さないこと。</li>
+</ol>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">この章に誤りがありましたら、<a href="../../errata.html" class="text-primary hover:underline">勘誤ページ</a>へ（古いパス、違う事実、読みにくい表現、すべて歓迎）。QQ グループ 1074995524 でも報告できます。</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-shi-er-zhang.html" class="text-primary hover:underline">← 第十二章：映像・音楽の楽しみと読書</a><span></span><a id="next-link" href="di-shi-si-zhang.html" class="text-primary hover:underline">第十四章：パスワードマネージャー特集 →</a></nav>
+
+            </section>
+ </div></main></div><!-- クイックツール：フローティングボタングループ --><div id="quick-tools" class="quick-tools no-print" aria-label="クイックツール"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">透</span></button><button id="quick-search" class="quick-tool-btn" title="検索 (Ctrl+K)" aria-label="検索"><span aria-hidden="true">搜</span></button><button id="quick-theme" class="quick-tool-btn" title="ダーク/ライトの切り替え" aria-label="テーマの切り替え"><span aria-hidden="true">夜</span></button><button id="quick-print" class="quick-tool-btn" title="印刷 / PDF書き出し" aria-label="印刷または書き出し"><span aria-hidden="true">印</span></button><button id="quick-toc" class="quick-tool-btn" title="目次" aria-label="目次を開く"><span aria-hidden="true">目</span></button><button id="quick-tts" class="quick-tool-btn" title="音声読み上げ" aria-label="音声読み上げ"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="キーボードショートカット (?)" aria-label="ショートカット一覧"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="バックアップ/復元の進行状況" aria-label="バックアップの進行状況"><span aria-hidden="true">備</span></button></div><!-- ショートカットパネル --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="キーボードショートカット"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">キーボードショートカット</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="閉じる">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">コンテンツを検索</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">ダーク/ライト切替</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">読み上げ 再生/一時停止</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">読み上げを停止</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">ショートカットパネルを開く</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">文字サイズを大きく / 小さく</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">印刷 / PDF書き出し</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- バックアップ/復元モーダル --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="バックアップと復元"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">読書の進捗バックアップと復元</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="閉じる">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">バックアップの内容：既読の章、しおり、読書位置、文字サイズの設定、健康セルフチェックの結果。データはブラウザのローカルに保存されるため、ブラウザを変えたりキャッシュを消したりすると失われます。定期的にバックアップを書き出すことをおすすめします。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> バックアップファイルを書き出す
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">JSON ファイルをダウンロードし、安全な場所に保存します</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> バックアップを読み込んで復元
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">以前書き出したバックアップファイルを選んで進捗を復元します</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 読書データをすべて消去
+ </button><p class="text-xs text-red-400 mt-1 text-center">復元できません！先にバックアップを書き出してください</p></div></div></div></div><!-- 連続読書日数トースト --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">連続X日読書！</span></div><!-- 音声読み上げコントロールバー --><div id="tts-controls" class="tts-controls" role="region" aria-label="音声読み上げコントロール" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="現在読み上げ中の章">未開始</span><button class="tts-btn" id="tts-prev" title="前の段落へ" aria-label="前の段落へ"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="再生/一時停止" aria-label="読み上げを再生"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="次の段落へ" aria-label="次の段落へ"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="速度を下げる" aria-label="速度を下げる">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="速度を上げる" aria-label="速度を上げる">+</button><button class="tts-btn" id="tts-stop" title="読み上げを停止" aria-label="読み上げを停止"><span aria-hidden="true">×</span></button></div><!-- トップへ戻るボタン --><button id="back-to-top" class="opacity-0 invisible" aria-label="先頭へ戻る"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- 読書位置復元トースト --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">前回読んだ位置：...</span><button class="btn-restore" id="restore-btn">元に戻す</button><button class="btn-dismiss" id="dismiss-btn">無視</button></div><!-- JSスクリプト -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

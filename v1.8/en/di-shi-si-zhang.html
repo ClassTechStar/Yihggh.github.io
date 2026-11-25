@@ -1,0 +1,618 @@
+ <!DOCTYPE html><html lang="en"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="Your Missing Phone Class · From beginner to expert — take full control of your digital life"><meta name="keywords" content="phone tutorials, digital literacy essentials, smartphone, Android, iOS, HarmonyOS, phone tips, digital life, AI large language models, AI coding, LLM APIs, prompt engineering, Android development, iOS development, Swift, Kotlin, SwiftUI, Jetpack Compose, computational photography, information security, password management, automation, phone buying guide"><meta name="author" content="Your Guide to Digital Life"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-shi-si-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="Chapter 14: Password Managers"><meta property="og:description" content="In the digital age, your passwords are the keys to your front door. But with t…"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Your Missing Phone Class"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Your Missing Phone Class · v1.8"><meta name="twitter:description" content="From beginner to expert — take full control of your digital life"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>Chapter 14: Password Managers · Your Missing Phone Class</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-shi-si-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "Chapter 14: Password Managers", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-shi-si-zhang.html", "isPartOf": {"@type": "Book", "name": "Your Missing Phone Class", "inLanguage": "en"}}</script>
+<link rel="prefetch" href="di-shi-wu-zhang.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-shi-si-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">Skip to main content</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="Open the table of contents menu" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="Back to home page">Your Missing Phone Class</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="Main action"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="Start with the basics">Get Started</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Search (Ctrl+K)" aria-label="Search content"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="Adjust font size"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="Smaller text" aria-label="Smaller text">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="Reset font size" aria-label="Reset font size">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="Larger text" aria-label="Larger text">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Toggle dark/light mode" aria-label="Toggle dark/light mode"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="Print / export PDF" aria-label="Print or export PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="Back to top">Top
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="Table of contents"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">Table of contents
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 chapters</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="Filter chapters..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="Filter chapters"></div><ul class="space-y-1 text-sm" id="toc-list"><!--Foundations-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Get Started</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expand/collapse Basics" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>Chapter 0: Three Things to Say Before We Start</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>Chapter 1: Let's Get to Know This Machine</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Appendix: Android Phone Memory Expansion Explained</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Chapter 1 Appendix: HarmonyOS Operating System Special Topic</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>Chapter 2: Can't Find Something on Your Phone?</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>Chapter 3: No Network? Don't Restart Just Yet</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>Chapter 4: Before You Install an App, Take a Closer Look</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Appendix: Components of a Software Installation Package</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>Chapter 5: Set Up Your Phone So It Feels Right</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>Chapter 6: Lost Your Phone? Forgot Your Password?</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>Chapter 7:Cutting-Edge Features Explained</a></li>
+                        </ul>
+                    </li>
+<!--Software-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Part 2: Software (Chapters 8-14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expand/collapse Software" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>Purpose</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>Chapter 9: Mobile Office and Learning</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>Chapter 10: Mobile Payment and Life Services</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>Chapter 11: Better Shots Matter More Than More Shots</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Chapter 11 Appendix:Professional Imaging Techniques</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>Chapter 12: Audio-Visual Entertainment and Reading</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>Chapter 13: Which Apps Are Worth It, and Which to Skip</a></li>
+                            <li><a href="#di-shi-si-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>Chapter 14: Password Managers</a></li>
+                        </ul>
+                    </li>
+<!--Advanced-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Part 3: Advanced (Chapters 15-20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expand/collapse Advanced" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>Chapter 15: Charging Twice a Day: Battery or Habits?</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Supplement: Fast-Charging Protocols Explained</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>Chapter 16: Switching Phones, Which Accounts Can You Lose?</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>Chapter 17: Connecting Your Phone with Other Devices</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>Chapter 18: Back Up Now, Not on the Day You Need It</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>Chapter 19: Broken? Don't Rush to Fix It</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>Chapter 20: Developer Mode and Advanced Permissions</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Chapter 20 Appendix</a></li>
+                        </ul>
+                    </li>
+<!--Beyond-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Part 4: Beyond (Chapters 21-26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expand/collapse Beyond" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>Chapter 21: Should You Actually Connect to Public Wi-Fi?</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>Chapter 22: What Is AI Actually Doing in Your Phone?</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>Chapter 23: Let Your Phone Handle the Repetitive Stuff</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Appendix: GitHub Getting Started Guide</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>Chapter 24: Root Access and the Bootloader Lock Explained</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>Chapter 25: Before Selling Your Old Phone, Do These First</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>Chapter 26: New Tech Can Wait</a></li>
+                        </ul>
+                    </li>
+<!--5,In Practice(Chapters 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Part 5: Hands-On Practice (Chapters 27-32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expand/collapse Hands-On Practice" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>Chapter 27: Setting Up Your Parents' Phone</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>Chapter 28: Before You Buy, Settle These Three Things First</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>Chapter 29: Do You Really Know How Long You Use Your Phone?</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>Chapter 30: Screen Mirroring, Presentations, and Car Connectivity</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>Chapter 31: Getting Started with Short-Video Filming and Content Creation</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>Chapter 32: Trouble? Thirty Seconds to Limit the Damage</a></li>
+                        </ul>
+                    </li>
+<!--6,Looking ahead(Chapter 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VI. Outlook (Chapters 33-41)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expand/collapse Outlook" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>Chapter 33: What Will Phones Look Like in the Next Decade?</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>Chapter 34: Phone and Car, Connecting Without the Fuss</a></li>
+                        </ul>
+                    </li>
+<!--Kids and phones special(Chapter 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Kids and Phones Special (Chapters 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expand/collapse Kids and Phones Special" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>Chapter 35: Giving Your Kid a Phone, Setting the Rules</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>Chapter 36: Connecting All the Devices in Your Home</a></li>
+                        </ul>
+                    </li>
+<!--AI Coding in Practice-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Part 7: AI Coding in Practice (Chapters 37-47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expand/collapse AI Coding in Practice" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>Chapter 37: A Paradigm Shift — From Writing Code to Directing AI to Write It</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>Chapter 38: Five Thinking Principles for AI Coding</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>Chapter 39: AI Doesn't Get It, So Say It More Clearly</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>Chapter 40: Say It Clearly Before You Start</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>Chapter 41: The 2026 Landscape of AI Coding Tools</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>Chapter 42: The Large-Model Landscape and Hands-On API Practice</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>Chapter 43: Talking to AI So It Actually Listens</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>Chapter 44: Hands-On from 0 to 1 — A Complete Project, Start to Finish</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>Chapter 45: AI Wrote It, Now Make It Work</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>Chapter 46: The Road Ahead — From User to Architect</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>Chapter 47: Quick Reference and Resources</a></li>
+                        </ul>
+                    </li>
+<!--Android Development in Practice-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Part 8: Android Development in Practice (Chapters 48-58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expand/collapse Android Development in Practice" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>Chapter 48: How Did Android Become What It Is Today?</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>Chapter 49: Setting Up Your Dev Environment — Android Studio and Your First Project</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>Chapter 50: A Quick Start with Kotlin — Android's First Language</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>Chapter 51: Building UIs — Getting Started with Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>Chapter 52: The Four Core Components and the Activity Lifecycle</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>Chapter 53: Data Storage and Network Requests</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>Chapter 54: Project 1 — My Expense Tracker (Local Version)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>Chapter 55: Project 2 — Weather App (Networked Version)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>Chapter 56: Your App Is Done, Now Get It Published</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>Chapter 57: Leveling Up — Permissions, Notifications, and Modern Architecture</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>Chapter 58: Quick Reference and Resources</a></li>
+                        </ul>
+                    </li>
+<!--iOS Development in Practice-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Part 9: iOS Development in Practice (Chapters 59-69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expand/collapse iOS Development in Practice" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>Chapter 59: Meet iOS — Apple's Ecosystem and Developer Ecosystem</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>Chapter 60: Setting Up Your Dev Environment — Xcode and Your First Project</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>Chapter 61: A Quick Start with Swift — Apple's First Language</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>Chapter 62: Building UIs — Getting Started with SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>Chapter 63: Views, State, and Navigation</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>Chapter 64: Data Storage and Network Requests</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>Chapter 65: Project 1 — My Expense Tracker (Local Version)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>Chapter 66: Project 2 — Weather App (Networked Version)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>Chapter 67: Polish and Publish — Launching on the App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>Chapter 68: Leveling Up — Permissions, Notifications, and Modern Architecture</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>Chapter 69: Quick Reference and Resources</a></li>
+                        </ul>
+                    </li>
+<!--Appendix-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Part 10: Appendices</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expand/collapse Appendices" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>AAppendix A: New Phone Unboxing Process</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>Appendix B: Stuck on an Exercise?</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C Appendix C: The Minimal Glossary</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>DAppendix D: Where to Find Reliable Resources</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>EAppendix E: Acknowledgments and Notes</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F Appendix F: Foldable Phones — How to Choose and Use Them</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>Conclusion: Figure Out Your Phone, That's All It Takes</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>GAppendix G: Complete Quick Reference Index</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>HAppendix H: Version Roadmap</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="Search content..." autocomplete="off" aria-label="Search keywords"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Close search">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">Type a keyword to start searching</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- Top breadcrumbs --><nav class="breadcrumb no-print" aria-label="Location"><a href="#top">Home</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">Digital Literacy Course · v1.8</span></nav>
+<div id="di-shi-si-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">Chapter 14: Password Managers</h3>
+<p class="chapter-intro mb-4">In the digital age, your passwords are the keys to your front door. But with too many keys, all too complex, what then? A password manager is your "universal key butler".</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">I. Why Do You Need a Password Manager?</h4>
+<p class="mb-2">Modern people have dozens or even hundreds of online accounts on average. If every account uses the same password, one hacked website puts all accounts at risk. If every account uses a different complex password, then they are impossible for anyone to actually remember.</p>
+<p class="mb-2">A password manager solves this dilemma: you only need to remember one master password, and it remembers all the others for you.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">2. How Password Managers Work</h4>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>Encrypted Storage</strong>: All passwords are stored with high-strength encryption, and only you can decrypt them.</li>
+  <li><strong>Master Password</strong>: You set a master password to unlock the password vault. The master password itself is not stored on the server.</li>
+  <li><strong>Auto-Fill</strong>: On website or app login pages, the password manager automatically fills in your account and password.</li>
+  <li><strong>Password Generation</strong>: Can generate random, complex passwords to improve security.</li>
+</ol>
+<h4 class="text-lg font-semibold mt-4 mb-2">III. Introduction to Encryption Principles</h4>
+<p class="mb-2">Understanding the encryption principles behind password managers helps you judge whether a service provider is trustworthy. Below are several core concepts explained in plain language.</p>
+<h5 class="font-semibold mt-3 mb-1">1. AES-256 Encryption</h5>
+<p class="mb-2">AES (Advanced Encryption Standard) is a symmetric encryption algorithm certified by the U.S. National Institute of Standards and Technology (NIST). It's widely used by banks, military, and government. "256" refers to the 256-bit key length, it would theoretically take longer than the age of the universe to brute-force. Mainstream password managers (1Password, Bitwarden, KeePass, etc.) all use AES-256 to encrypt your password vault.</p>
+<h5 class="font-semibold mt-3 mb-1">2. Zero-Knowledge Architecture</h5>
+<p class="mb-2">"Zero-knowledge" doesn't mean the service provider stores nothing: it means that <strong>encryption and decryption are both done locally on your device, and the server only stores encrypted ciphertext</strong>. The specific process:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>You enter your master password in the client.</li>
+  <li>The client derives an encryption key from the master password (this happens on your phone/computer).</li>
+  <li>Only the encrypted ciphertext is uploaded to the server.</li>
+  <li>On next login, the server sends back the ciphertext, and the client decrypts it again using your master password.</li>
+</ol>
+<p class="mb-2">Key Point:<strong>The master password itself never leaves your device</strong>, and the server doesn't have it either. So even if the service provider is hacked, the attacker only gets a pile of unbreakable ciphertext, unless they can guess your master password.</p>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Why does "zero-knowledge" mean the service provider can't see your passwords either?</p>
+<p class="mt-1">Because the decryption key is derived from your master password, which exists only in your mind and is used only on your local device. The service provider's server has neither the master password nor the decryption key — only ciphertext. That's why legitimate providers like Bitwarden and 1Password explicitly state "we cannot see your passwords either", it's not that they don't want to, it's that they technically can't.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">3. Key Derivation Functions: PBKDF2 and Argon2</h5>
+<p class="mb-2">The master password can't be used directly as an encryption key, it needs to be processed by a "key derivation function." The purpose of this function is to <strong>deliberately slow down computation</strong>, making the cost of brute-force attacks prohibitively high.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>PBKDF2</strong>: A well-established standard, widely used by iCloud Keychain, Bitwarden, LastPass, and others. Slows down cracking through repeated iteration (typically 100,000+ times) of hashing.</li>
+  <li><strong>Argon2</strong>: The winner of the 2015 Password Hashing Competition, more modern than PBKDF2. In addition to "computational cost," it introduces "memory cost", making it difficult for specialized hardware like GPUs/ASICs to accelerate cracking. Already supported by Bitwarden, KeePassXC, and others.</li>
+</ul>
+<p class="mb-2">Higher iteration counts are more secure but also slower to unlock. Legitimate providers publicly disclose their derivation algorithm and iteration counts for security community auditing.</p>
+<h5 class="font-semibold mt-3 mb-1">4. Case Study: The LastPass 2022 Data Breach</h5>
+<p class="mb-2">In August 2022, the veteran password manager LastPass announced that its development environment was breached; in November of the same year, it further disclosed that hackers had taken backups of users' password vaults (encrypted ciphertext). Key lessons from the incident:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Zero-Knowledge Architecture Held the Line</strong>: Since the password vault was encrypted, hackers got the ciphertext but couldn't decrypt it: provided the user's master password was strong enough.</li>
+  <li><strong>Users with Weak Master Passwords Are Most at Risk</strong>: Hackers can brute-force weak master passwords offline, so users with weak or reused master passwords face real risk.</li>
+  <li><strong>Metadata Was Also Leaked</strong>: Although password contents were encrypted, metadata like site URLs and notes may not have been, revealing which services the user used.</li>
+</ul>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Lessons Learned from LastPass</p>
+<p class="mt-1">First, your master password must be long and unique (16+ characters recommended, with upper/lower case, digits, and symbols); second, prioritize providers that support Argon2id with high iteration counts; third, always enable independent two-factor authentication for high-value accounts (bank, email) — don't rely solely on a password manager.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">IV. Mainstream Password Manager Recommendations</h4>
+<h5 class="font-semibold mt-3 mb-1">System Built-in:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>iCloud Keychain</strong>: The first choice for Apple ecosystem users. Seamlessly integrated with Safari and apps. It's free, and secure. The downside is that cross-platform use is inconvenient.</li>
+  <li><strong>Google Password Manager</strong>: Convenient for Android users. Integrates with Chrome and the Android system, free.</li>
+  <li><strong>Huawei Password Vault</strong>: Built into HarmonyOS, suitable for Huawei users.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Third-Party Professional Tools:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Bitwarden</strong>: Open source and free, powerful, supports all platforms. Highly recommended for privacy-conscious users.</li>
+  <li><strong>1Password</strong>: Beautiful interface, rich features, suitable for families and teams. Paid.</li>
+  <li><strong>LastPass</strong>: A long-established password manager, with limited features in the free version.</li>
+  <li><strong>KeePass</strong>: Completely local storage, open source and free. Suitable for geek users.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">V. Real Password Strength Assessment</h4>
+<p class="mb-2">Password managers generally display a "password strength" indicator bar (red/yellow/green), but this assessment often only considers length and character variety, which isn't comprehensive. To truly judge whether a password is secure, you need to consider "entropy" and "whether it has been leaked."</p>
+<h5 class="font-semibold mt-3 mb-1">1. Entropy: The Scientific Measure of Password Strength</h5>
+<p class="mb-2">"Entropy" measures the uncertainty of a password, measured in bits. The higher the entropy, the more attempts are needed for brute-force cracking.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>"123456"</strong>: Extremely low entropy, cracked instantly.</li>
+  <li><strong>"P@ssw0rd"</strong>: Appears complex, but appears in all dictionary attack lists, so entropy is still low.</li>
+  <li><strong>"correct horse battery staple"</strong>: Four random words, approximately 44 bits of entropy, far harder to crack than "P@ssw0rd.".</li>
+  <li><strong>16 random characters (including upper/lower case + digits + symbols)</strong>: Approximately 100 bits of entropy, uncrackable by brute force with current computing power.</li>
+</ul>
+<p class="mb-2">Conclusion:<strong>"Length + randomness" is more important than "complex symbols"</strong>. This is why the random long passwords generated by password managers are truly secure.</p>
+<h5 class="font-semibold mt-3 mb-1">2. HaveIBeenPwned: Check If Your Password Has Been Leaked</h5>
+<p class="mb-2">Maintained by security researcher Troy Hunt, <a href="https://haveibeenpwned.com" class="text-primary hover:underline" target="_blank" rel="noopener">haveibeenpwned.com</a> it collects accounts and passwords leaked in major data breaches. You can:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Enter your email to check if your account was exposed in a breach.</li>
+  <li>Use the Pwned Passwords feature to check if a password is in the known leaked database. Password managers and browsers have this built in.</li>
+</ol>
+<p class="mb-2">If a password appears in the leaked database,<strong>no matter how complex it looks, you must change it immediately</strong>— because dictionary attacks prioritize these known passwords.</p>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">k-Anonymity Query Principle</p>
+<p class="mt-1">Worried that entering your password on HaveIBeenPwned will cause another leak? No need to worry. Modern queries use the "k-anonymity" protocol: the browser only sends the first 5 characters of the password hash to the server, the server returns all hashes starting with those 5 characters, and the comparison is done locally. In other words, the server never sees your complete password hash. 1Password and Bitwarden's "leaked password detection" both work this way.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">3. Built-in Monitoring Features in Password Managers</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>1Password Watchtower</strong>: Real-time monitoring of weak passwords, reused passwords, leaked passwords, expired passwords, and sites not using 2FA, displayed with red/orange/yellow severity levels.</li>
+  <li><strong>Bitwarden Vault Health</strong>: Free version shows weak and reused passwords; paid version can detect leaked passwords (based on HaveIBeenPwned).</li>
+  <li><strong>iCloud Keychain "Security Recommendations"</strong>: iOS Settings → Passwords → Security Recommendations, alerts you which passwords appear in known leaks and which are reused.</li>
+  <li><strong>Google Password Manager "Password Checkup"</strong>: Built into Chrome, can one-tap check for leaked, weak, and reused passwords.</li>
+</ul>
+<div class="practice-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Check Now: Are Your Passwords Safe?</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>Go to haveibeenpwned.com, enter your commonly used email, and see which breach events it appeared in.</li>
+  <li>iPhone users: Settings → Passwords → Security Recommendations, address each red warning one by one.</li>
+  <li>Chrome users: Settings → Passwords → Check Passwords, follow prompts to change.</li>
+  <li>1Password/Bitwarden users: Open Watchtower/Health Reports, prioritize "leaked" and "reused" items.</li>
+</ol>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">VI. Passkey: The Future of Passwordless Login</h4>
+<p class="mb-2">In 2024-2026, password technology is undergoing a revolution<strong>Passkey</strong> is poised to completely replace traditional passwords. Jointly promoted by Apple, Google, and Microsoft, endorsed by the FIDO Alliance and the World Wide Web Consortium (W3C), this is the biggest change in login methods in decades.</p>
+<h5 class="font-semibold mt-3 mb-1">1. What Is Passkey?</h5>
+<p class="mb-2">Passkey is based on the FIDO2 / WebAuthn standard, using <strong>on-device key pairs</strong> to replace passwords. The principle can be simplified as:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Your phone generates a key pair:<strong>Public key</strong>(registered with the website) + <strong>Private key</strong>(permanently stored in your device's secure chip).</li>
+  <li>When logging in, the website sends a "challenge," your phone signs it with the private key, and the website verifies it with the public key.</li>
+  <li>Before signing, you need to confirm your identity via biometrics (Face ID / fingerprint) or device PIN.</li>
+  <li>Throughout this process,<strong>no password is transmitted over the network</strong>.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. Passkey vs. Traditional Passwords</h5>
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+ <thead>
+ <tr class="bg-light dark:bg-gray-700">
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Dimension</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Traditional Password</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Passkey</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">Phishing Resistance</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Poor, phishing sites can steal passwords</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Naturally phishing-resistant, private key only signs for real domains</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">Server Breach Impact</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Password hashes may be cracked</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Server only stores public key, no impact from breach</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">Convenience</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Requires memorization/entry/management</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Face ID/fingerprint login in one second</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">Replay Attack</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">May be intercepted and replayed by man-in-the-middle</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Each signature is one-time, cannot be replayed</td>
+ </tr>
+ </tbody>
+ </table>
+<h5 class="font-semibold mt-3 mb-1">3. Platform Support Status</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Apple iCloud Keychain Passkey</strong>: Native support on iOS 16+ / macOS Ventura+, Passkeys sync across all devices signed in with the same Apple ID, no need to recreate on new devices.</li>
+  <li><strong>Google Password Manager Passkey</strong>: Native support on Android + Chrome, Passkeys stored in Google Account, sync across Android devices; since 2023, Google personal accounts support Passkey login.</li>
+  <li><strong>Microsoft</strong>: Windows 11 / Edge already supports Passkey; Microsoft Account, Outlook, Office and other services are gradually opening up Passkey login, manageable in Microsoft Authenticator.</li>
+  <li><strong>1Password / Bitwarden</strong>: Already supports Passkey creation, storage, and cross-platform sync, freeing you from being locked into a single ecosystem.</li>
+</ul>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Cross-Device Sync Is the Key Breakthrough</p>
+<p class="mt-1">The biggest pain point of early Passkey was being "bound to a single device", you had to recreate it when switching phones. Starting in 2023, Apple, Google, and Microsoft implemented cloud sync for Passkeys: iCloud Keychain syncs across Apple devices, Google Password Manager syncs across Android devices. Third parties like 1Password have enabled cross-ecosystem sync. This means Passkey is now practical enough to replace passwords.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">4. How to Create and Use Passkey on Your Phone</h5>
+<p class="mb-2"><strong>iOS (iPhone) Path:</strong></p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>On the account security page of a Passkey-supporting website (such as Google, Microsoft, Amazon, eBay, PayPal), select "Add passkey.".</li>
+  <li>The system shows a Face ID / Touch ID verification window. Once verified, the Passkey is automatically generated and saved to iCloud Keychain.</li>
+  <li>Next time you log in to this website, enter your username and select "Sign in with iPhone": just a Face ID scan and you're in.</li>
+  <li>Management: Settings → Passwords → find the corresponding website to see the Passkey entry.</li>
+</ol>
+<p class="mb-2"><strong>Android Path:</strong></p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>On the account security page of a Passkey-supporting website, select "Add passkey.".</li>
+  <li>Google Password Manager popup → select your Google account → screen lock verification (fingerprint/pattern/PIN).</li>
+  <li>Passkey is automatically saved to Google Password Manager and synced across Android devices with the same account.</li>
+  <li>Next time you log in, select "Use Passkey": just unlock your screen and you're in.</li>
+  <li>Management: Android Settings → Passwords, passkeys &amp; autofill → Password Manager → google.com.</li>
+</ol>
+<h5 class="font-semibold mt-3 mb-1">5. Cross-Device Passkey Login</h5>
+<p class="mb-2">If you're on a Windows PC logging into a website that only has a Passkey on your iPhone, you can authorize via QR code scan:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>On the website login page, select "Use Passkey."</li>
+  <li>Select "Use another device."</li>
+  <li>The PC displays a QR code — scan it with your iPhone.</li>
+  <li>iPhone shows a Face ID verification, and upon confirmation, the website login is completed on the PC.</li>
+</ol>
+<p class="mb-2">This process uses dual encrypted communication via Bluetooth + internet, the Passkey private key never leaves your iPhone.</p>
+<div class="practice-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Try It Now: Experience Passwordless Login</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>Sign in to your Google Account → Security → Passkeys → Add a passkey, experience Face ID/fingerprint login.</li>
+  <li>Sign in to your Microsoft account → Security → Advanced Security Options → Add a passkey.</li>
+  <li>Try it on services that already support Passkey, such as Taobao, JD.com, eBay, and PayPal.</li>
+  <li>Keep traditional passwords as backup, gradually migrate high-value accounts to Passkey.</li>
+</ol>
+</div>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Transition Period Recommendations</p>
+<p class="mt-1">Passkey hasn't completely replaced passwords, many websites are still in a "Passkey + password" coexistence phase. Recommendation: prioritize enabling Passkey for high-value accounts, but <strong>don't immediately delete traditional passwords</strong>, keep them as backup; continue using your password manager, since not all websites support Passkey. Treat Passkey as a "powerful supplement to password managers" rather than an "immediate replacement."</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">VII. Hardware Security Keys</h4>
+<p class="mb-2">If your security requirements exceed those of ordinary users, for example, if you hold significant cryptocurrency, are an executive/journalist/activist, or protect enterprise core accounts — hardware security keys are a more reliable choice than SMS verification codes.</p>
+<h5 class="font-semibold mt-3 mb-1">1. What Is a Hardware Security Key?</h5>
+<p class="mb-2">A hardware key is a physical device (shaped like a USB drive) with an internal security chip that stores your private key, requiring physical contact or NFC to complete authentication. Representative products:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>YubiKey</strong>(Yubico): The most mainstream, supports FIDO2/WebAuthn, U2F, OTP, PIV, OpenPGP, with USB-C / USB-A / NFC and other interfaces. Series 5 costs $50-70.</li>
+  <li><strong>Google Titan</strong>: Made by Google, USB-C + NFC / Bluetooth, about $30-40.</li>
+  <li><strong>OnlyKey</strong>: Open-source alternative, supports multiple protocols.</li>
+  <li><strong>Domestic Alternatives</strong>: Such as Feitian ePasskey, more affordable.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. Why Are Hardware Keys Safer Than SMS Verification Codes?</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Phishing Resistance</strong>: Like Passkey, hardware keys only respond to the real domain, so phishing sites can't trick them into providing verification codes.</li>
+  <li><strong>SIM-Swap Resistance</strong>: SMS verification codes can be intercepted via SIM-swap attacks, while hardware keys don't need a phone number.</li>
+  <li><strong>Man-in-the-Middle Resistance</strong>: The FIDO2 protocol includes a challenge value in each signature, preventing replay.</li>
+  <li><strong>Physical Isolation</strong>: The private key remains inside the hardware chip forever: even if malware compromises your computer, it can't read it.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">3. Applicable Scenarios</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Cryptocurrency exchange accounts, wallet recovery.</li>
+  <li>Enterprise SSO, remote work VPN, SSH server login.</li>
+  <li>Email, GitHub, social media and other "master accounts", once compromised, all other accounts can be reset.</li>
+  <li>Journalists, lawyers, executives, and other high-sensitivity individuals.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">4. How to Configure a Hardware Key as Two-Factor Authentication</h5>
+<p class="mb-2">Using a Google Account + YubiKey as an example:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Purchase a YubiKey (recommended to buy two at once, one for daily use and one as backup, stored in different locations).</li>
+  <li>Sign in to myaccount.google.com → Security → 2-Step Verification.</li>
+  <li>Select "Add security key" → insert the YubiKey into the USB-C port or tap it against your phone's NFC sensor.</li>
+  <li>Follow the prompt to touch the YubiKey's metal contact to complete registration.</li>
+  <li>It's recommended to register a second backup key.</li>
+  <li>In the "2-Step Verification" settings, set the hardware key as the preferred verification method, with SMS as backup.</li>
+</ol>
+<p class="mb-2">Websites with mainstream support: Google, GitHub, Microsoft, Apple ID, Facebook, Twitter, Dropbox, GitLab, AWS, Coinbase, Binance, and more.</p>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Dual-Key Strategy</p>
+<p class="mt-1">The biggest risk of hardware keys is "loss." Recommendations: ① Register two different keys simultaneously; ② Carry one with you (on a keychain) and store one in a home safe or bank deposit box; ③ Some websites allow printing "backup recovery codes" for offline storage. This way, even if the primary key is lost, you won't be permanently locked out of your accounts.</p>
+</div>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Be Careful with Purchase Channels</p>
+<p class="mt-1">Always purchase from official stores or authorized dealers, don't buy used or keys from unknown sources, as pre-configured hardware could theoretically have been implanted with a backdoor. YubiKey firmware cannot be updated after manufacturing, but Yubico continuously publishes security advisories — follow their official website.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">VIII. Family/Team Password Sharing</h4>
+<p class="mb-2">In family scenarios, Netflix, home Wi-Fi, router admin, and smart lock passwords need to be shared among the whole family; in team scenarios, servers, databases, and social media accounts require multi-person collaboration. <strong>Sending passwords via WeChat or writing them in shared documents are high-risk practices</strong>. Once chat history or document permissions are leaked, the passwords are leaked too.</p>
+<h5 class="font-semibold mt-3 mb-1">1. 1Password's "Shared Vaults"</h5>
+<p class="mb-2">1Password is the benchmark product for family and team sharing. Its core mechanism is <strong>multiple vaults</strong>:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Personal Vault</strong>: Only you can see it, for private accounts like banks and email.</li>
+  <li><strong>Shared Vault</strong>: Family or team members can all see it, for shared items like Netflix, home Wi-Fi, and shared credit cards.</li>
+  <li><strong>Permission Tiers</strong>: The team version can set certain members to "view only" or "view but not edit.".</li>
+</ul>
+<p class="mb-2">Family or team members don't need to share a master password, each logs in with their own account and can see the shared vault content they're authorized for. Password changes sync in real-time to all members.</p>
+<h5 class="font-semibold mt-3 mb-1">2. Bitwarden's "Organizations" Feature</h5>
+<p class="mb-2">Bitwarden's free version supports individual password sharing (via the "Send" feature for time-limited sharing of a single password); the paid version can create "Organizations" to share entries with family or team colleagues with fine-grained permissions. Bitwarden also offers a self-hosted option, suitable for enterprises with high data sovereignty requirements.</p>
+<h5 class="font-semibold mt-3 mb-1">3. Family Scenarios: Secure Ways to Share Netflix, Wi-Fi, and Other Passwords</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Netflix / Streaming Sites</strong>: Store login passwords in 1Password Families' "Shared Vault", family members log in individually without sharing in a group chat.</li>
+  <li><strong>Home Wi-Fi Password</strong>: iOS devices can share Wi-Fi passwords directly via AirDrop to visiting guests without reading it aloud; Android 12+ also has a "Nearby Share Wi-Fi" feature.</li>
+  <li><strong>Smart Locks, Smart Appliances</strong>: Use the manufacturer app's "Family Members" feature to create individual accounts for each person, rather than sharing one admin account.</li>
+  <li><strong>Home Router Admin</strong>: Store the admin password in a 1Password Shared Vault, and set up a separate SSID for guest Wi-Fi.</li>
+</ul>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">1Password Families Value for Money</p>
+<p class="mt-1">1Password Families costs about $4.99/month, supporting up to 5 family members, each with an independent personal vault + 4 shared vaults. That's less than $1/person/month, currently the best family sharing experience. Bitwarden's family plan at $10/year supports 6 people, offering better value but with a slightly less polished interface.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">4. Team Scenarios: Server/Database Password Sharing</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>1Password Teams / Business</strong>: Can create multiple vaults by department and project team, with fine-grained permission control and auditable access logs.</li>
+  <li><strong>Bitwarden Teams / Enterprise</strong>: Open-source solution, self-hostable, enterprise version supports SSO integration and directory sync.</li>
+  <li><strong>Separation of Duties Principle</strong>: Admin passwords should not be held by only one person, designate 2-3 "emergency contacts" to ensure business continuity when key personnel leave or take vacation.</li>
+  <li><strong>Offboarding Process</strong>: Immediately revoke departing employees' password manager access, and rotate all high-sensitivity passwords they had access to if necessary.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">5. Emergency Access: In Case Something Happens to You</h5>
+<p class="mb-2">Imagine a scenario: you alone manage all the family's important accounts, but you're unexpectedly hospitalized or pass away, and your family can't log into the bank, email, or insurance accounts.<strong>The "Emergency Access" feature</strong> is designed exactly for this: authorize a trusted family member/friend to access your password vault when you can't respond.</p>
+<p class="mb-2"><strong>Bitwarden Emergency Access Setup:</strong></p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Log in to Bitwarden Web Vault → Settings → Emergency Access.</li>
+  <li>Add the trusted contact's email and invite them to accept.</li>
+  <li>Set a "wait period" (7-14 days recommended): the time window from when they make a request to when you confirm.</li>
+  <li>If you don't respond during the wait period (decline or take no action), the other person automatically gains access after it expires.</li>
+  <li>You can manually reject requests or revoke emergency access permissions at any time.</li>
+</ol>
+<p class="mb-2"><strong>1Password Emergency Access:</strong></p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>1Password doesn't call it "Emergency Access" directly, but it can be achieved through the "Family/Team Organization" feature, after adding family members to the family plan, place some entries in a "Shared Vault.".</li>
+  <li>For individual plan users, it's recommended to tell one highly trusted family member your master password, or write it in a sealed envelope stored in a safe.</li>
+  <li>1Password also provides a "Recovery Code", be sure to print and save it when enabling two-factor authentication.</li>
+</ol>
+<div class="practice-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Set Up Now: Leave a "Spare Key" for Your Family</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>Choose a trusted family member as your "emergency contact.".</li>
+  <li>Set up emergency access in your password manager (Bitwarden) or add them to a family shared vault (1Password).</li>
+  <li>Write the master password + recovery code on paper, seal in an envelope, store in a home safe or inform a trusted family member.</li>
+  <li>Review every six months to confirm the emergency contact is still appropriate.</li>
+</ol>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">IX. Password Manager Best Practices</h4>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Set a Strong Master Password</strong>: The master password is the last line of defense, make sure to set a long, complex password and memorize it firmly.</li>
+  <li><strong>Enable Two-Factor Authentication</strong>: Turn on 2FA for your password manager account to add a layer of protection.</li>
+  <li><strong>Regularly Check for Weak Passwords</strong>: Most password managers have a "security audit" feature that helps you find weak and duplicate passwords.</li>
+  <li><strong>Don't Forget the Master Password</strong>: The master password cannot be recovered, forgetting it means losing all passwords. It's recommended to write it down on paper and keep it in a safe place.</li>
+  <li><strong>Emergency Access</strong>: Set up an emergency contact, so if you can't access your account, a trusted person can obtain your passwords.</li>
+</ul>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Important Reminder</p>
+<p class="mt-1">Password managers are convenient but come with risks: if your master password leaks, all your passwords are exposed. So your master password must never reuse any other password, nor be written somewhere easily found. Also, choose a provider with a good security track record.</p>
+</div>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Try It Now: Get Started with a Password Manager</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>Pick a password manager (Bitwarden or your system’s built-in one is recommended).</li>
+  <li>Register an account and set a strong master password.</li>
+  <li>Import existing passwords (if any) or start adding new passwords.</li>
+  <li>Install the browser extension or mobile app, and experience the auto-fill feature.</li>
+  <li>Check the security audit report to find passwords that need improvement.</li>
+</ol>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">Found an error in this chapter? <a href="../../errata.html" class="text-primary hover:underline">Report it on the errata page</a> — outdated path, wrong fact, unclear wording, all welcome. You can also reach us on QQ group 1074995524.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-shi-san-zhang.html" class="text-primary hover:underline">← Chapter 13: Which Apps Are Worth It, and Which to Skip</a><span></span><a id="next-link" href="di-shi-wu-zhang.html" class="text-primary hover:underline">Chapter 15: Charging Twice a Day: Battery or Habits? →</a></nav>
+
+            </section>
+ </div></main></div><!-- Quick tools: floating button group --><div id="quick-tools" class="quick-tools no-print" aria-label="Quick tools"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="Search (Ctrl+K)" aria-label="Search"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="Toggle dark/light" aria-label="Toggle theme"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="Print / export PDF" aria-label="Print or export"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="Table of contents" aria-label="Open table of contents"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="Read aloud" aria-label="Read aloud"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="Keyboard shortcuts (?)" aria-label="Keyboard shortcuts panel"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="Back up / restore progress" aria-label="Back up progress"><span aria-hidden="true">B</span></button></div><!-- Shortcuts panel --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="Keyboard shortcuts"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Keyboard shortcuts</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Close">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Search content</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Toggle dark/light</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Read aloud: play/pause</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Stop reading</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Open the shortcuts panel</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Font size larger / smaller</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">Print / export PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- Backup/restore dialog --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="Backup and restore"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Reading progress backup and restore</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Close">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">Your backup includes: chapters you've read, bookmarks, reading position, font size preference, and health self-check results. The data is stored locally in your browser and will be lost if you switch browsers or clear the cache, so it's a good idea to export a backup regularly.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Export backup file
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Download a JSON file and save it somewhere safe</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Import backup to restore
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Pick a backup file you exported earlier to restore your progress</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Clear all reading data
+ </button><p class="text-xs text-red-400 mt-1 text-center">This cannot be undone! Export a backup first</p></div></div></div></div><!-- Reading streak toast --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">Day X of your reading streak!</span></div><!-- TTS controls bar --><div id="tts-controls" class="tts-controls" role="region" aria-label="Read-aloud controls" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="Chapter being read aloud">Not started</span><button class="tts-btn" id="tts-prev" title="Previous paragraph" aria-label="Previous paragraph"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="Play/Pause" aria-label="Play reading"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="Next paragraph" aria-label="Next paragraph"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="Slow down" aria-label="Slow down">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="Speed up" aria-label="Speed up">+</button><button class="tts-btn" id="tts-stop" title="Stop reading" aria-label="Stop reading"><span aria-hidden="true">×</span></button></div><!-- Back to Top button --><button id="back-to-top" class="opacity-0 invisible" aria-label="Back to top"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- Reading position restore toast --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">Last read: ...</span><button class="btn-restore" id="restore-btn">Undo</button><button class="btn-dismiss" id="dismiss-btn">Dismiss</button></div><!-- JS script -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

@@ -1,0 +1,649 @@
+ <!DOCTYPE html><html lang="fr"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="Le cours de smartphone qui vous manquait · De l'initiation à la maîtrise, prends en main toute ta vie numérique"><meta name="keywords" content="tutoriel téléphone,cours numérique obligatoire,smartphone,Android,iOS,HarmonyOS,astuces téléphone,vie numérique,grands modèles IA,programmation par IA,API grands modèles,ingénierie des prompts,développement Android,développement iOS,Swift,Kotlin,SwiftUI,Jetpack Compose,photographie computationnelle,sécurité informatique,gestion des mots de passe,automatisation,achat de téléphone"><meta name="author" content="Guide de la vie numérique"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-si-shi-er-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="Chapitre 42 : Panorama des grands modèles et pratique des API"><meta property="og:description" content="Les chapitres précédents portaient sur « comment collaborer avec l&#x27;IA » ; celu…"><meta property="og:locale" content="fr_FR"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Le cours de smartphone qui vous manquait"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Le cours de smartphone qui vous manquait · v1.8"><meta name="twitter:description" content="De l'initiation à la maîtrise, prends en main toute ta vie numérique"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>Chapitre 42 : Panorama des grands modèles et pratique des API · Le cours de smartphone qui vous manquait</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-si-shi-er-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "Chapitre 42 : Panorama des grands modèles et pratique des API", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-si-shi-er-zhang.html", "isPartOf": {"@type": "Book", "name": "Le cours de smartphone qui vous manquait", "inLanguage": "fr"}}</script>
+<link rel="prefetch" href="di-si-shi-san-zhang.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-si-shi-er-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">Aller au contenu principal</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="Ouvrir le menu du sommaire" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="Retour à l'accueil">Le cours de smartphone qui vous manquait</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="Action principale"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="Commencer par les bases">Commencer l'apprentissage</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Rechercher (Ctrl+K)" aria-label="Rechercher dans le contenu"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="Ajustement de la taille du texte"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="Réduire la police" aria-label="Réduire la police">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="Réinitialiser la taille" aria-label="Réinitialiser la taille">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="Agrandir la police" aria-label="Agrandir la police">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Basculer sombre/clair" aria-label="Basculer mode sombre/clair"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="Imprimer / Exporter en PDF" aria-label="Imprimer ou exporter en PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="Retour en haut">Haut de page
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="Sommaire de l'article"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">Sommaire
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 chap.</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="Filtrer les chapitres..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="Filtrer les chapitres"></div><ul class="space-y-1 text-sm" id="toc-list"><!--Les bases-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Commencer l'apprentissage</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie bases" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>Chapitre 0 : Trois petites choses à dire d'abord</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>Chapitre 1 : Apprenons d'abord à connaître votre smartphone</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Annexe : analyse de l'extension de mémoire Android</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Chapitre 1 Annexe : spécial HarmonyOS</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>Chapitre 2 : Vous ne trouvez rien sur votre smartphone ?</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>Chapitre 3 : Pas de réseau ? Ne redémarrez pas encore</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>Chapitre 4 : Avant d'installer une app, regardez-la bien</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Annexe : Composants d'un paquet d'installation logiciel</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>Chapitre 5 : Réglez votre smartphone comme il vous plaît</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>Chapitre 6 : Smartphone perdu ? Mot de passe oublié ?</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>Chapitre 7 : Décryptage complet des fonctions de pointe</a></li>
+                        </ul>
+                    </li>
+<!--Logiciels-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">II. Partie logicielle (chapitres 8-14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie logicielle" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>Chapitre 8 : Communication : SMS, appels et réseaux sociaux</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>Chapitre 9 : Travail et apprentissage mobiles</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>Chapitre 10 : Paiement mobile et services du quotidien</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>Chapitre 11 : Mieux shooter que shooter beaucoup</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Complément du chapitre 11 : techniques d'image professionnelle</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>Chapitre 12 : Loisirs, divertissement et lecture</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>Chapitre 13 : Quelles apps installer, et lesquelles éviter ?</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>Chapitre 14 : Dossier spécial gestionnaires de mots de passe</a></li>
+                        </ul>
+                    </li>
+<!--Perfectionnement-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">III. Partie avancée (chapitres 15-20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie avancée" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>Chapitre 15 : Deux recharges par jour : batterie ou usage ?</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Complément : décryptage complet des protocoles de charge rapide</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>Chapitre 16 : Changer de téléphone : quels comptes garder ?</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>Chapitre 17 : Interaction du téléphone avec les autres appareils</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>Chapitre 18 : Sauvegardez maintenant, pas quand ça compte</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>Chapitre 19 : Panne ? Ne vous précipitez pas à réparer</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>Chapitre 20 : Mode développeur et permissions avancées</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Annexe du Chapitre 20</a></li>
+                        </ul>
+                    </li>
+<!--Plus loin-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">IV. Partie Au-delà (chapitres 21-26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie Au-delà" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>Chapitre 21 : Peut-on se connecter à un Wi-Fi public ?</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>Chapitre 22 : Que fait vraiment l'IA dans le smartphone ?</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>Chapitre 23 : Que le smartphone fasse les tâches répétitives</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Annexe : Guide de démarrage avec GitHub</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>Chapitre 24 : Analyse approfondie des droits root et du verrou BL</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>Chapitre 25 : Avant de revendre : les gestes à faire d'abord</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>Chapitre 26 : Les nouvelles technologies peuvent attendre</a></li>
+                        </ul>
+                    </li>
+<!--5,Pratique(chapitres 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">V. Partie pratique (chapitres 27-32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie pratique" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>Chapitre 27 : Régler le smartphone de vos parents</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>Chapitre 28 : Avant d'acheter, clarifiez ces trois points</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>Chapitre 29 : Combien de temps l'utilisez-vous vraiment ?</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>Chapitre 30 : Projection d'écran, présentation et connectivité embarquée</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>Chapitre 31 : Initiation au tournage de vidéos courtes et à la création de contenu</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>Chapitre 32 : Problème ? 30 secondes pour limiter les dégâts</a></li>
+                        </ul>
+                    </li>
+<!--6,Perspectives(Chapitre 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VI. Section prospective (Chapitres 33-41)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie perspectives" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>Chapitre 33 : Comment sera le smartphone dans dix ans ?</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>Chapitre 34 : Téléphone et voiture : connecter sans galère</a></li>
+                        </ul>
+                    </li>
+<!--Spécial enfants et téléphones(Chapitre 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Dossier enfants et téléphone (chapitres 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier le dossier enfants et téléphone" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>Chapitre 35 : Donner un smartphone à un enfant : les règles</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>Chapitre 36 : Relier tous les appareils de la maison</a></li>
+                        </ul>
+                    </li>
+<!--Programmation par IA en pratique-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VII. Partie programmation par IA (chapitres 37-47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie programmation par IA" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>Chapitre 37 : Révolution de paradigme — d'écrire du code à diriger l'IA qui code</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>Chapitre 38 : Les cinq principes de pensée de la programmation par IA</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>Chapitre 39 : L'IA ne comprend pas : c'est mal expliqué</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>Chapitre 40 : Dites-le clairement, puis passez à l'action</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>Chapitre 41 : Panorama des outils de programmation par IA en 2026</a></li>
+                            <li><a href="#di-si-shi-er-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>Chapitre 42 : Panorama des grands modèles et pratique des API</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>Chapitre 43 : Parlez à l'IA pour qu'elle vous comprenne</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>Chapitre 44 : Pratique de zéro à un — le parcours complet d'un projet</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>Chapitre 45 : L'IA a écrit, mais ce n'est pas fini</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>Chapitre 46 : Montée en compétence — d'utilisateur à architecte</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>Chapitre 47 : Aide-mémoire et ressources</a></li>
+                        </ul>
+                    </li>
+<!--Développement Android en pratique-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VIII. Partie développement Android (chapitres 48-58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie développement Android" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>Chapitre 48 : Comment Android est devenu ce qu'il est ?</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>Chapitre 49 : Installer l'environnement de développement — Android Studio et le premier projet</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>Chapitre 50 : Prise en main rapide de Kotlin — le premier langage du développement Android</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>Chapitre 51 : Développement d'interfaces — initiation à Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>Chapitre 52 : Les quatre composants et le cycle de vie des Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>Chapitre 53 : Stockage des données et requêtes réseau</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>Chapitre 54 : Projet 1 — Mon carnet de comptes (version locale)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>Chapitre 55 : Projet 2 — App météo (version réseau)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>Chapitre 56 : Votre app est prête, mettez-la en ligne</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>Chapitre 57 : Montée en compétence — permissions, notifications et architecture moderne</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>Chapitre 58 : Aide-mémoire et ressources</a></li>
+                        </ul>
+                    </li>
+<!--Développement iOS en pratique-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">IX. Partie développement iOS (chapitres 59-69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie développement iOS" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>Chapitre 59 : Découvrir iOS — écosystème Apple et écosystème de développement</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>Chapitre 60 : Installer l'environnement de développement — Xcode et le premier projet</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>Chapitre 61 : Prise en main rapide de Swift — le premier langage du développement Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>Chapitre 62 : Développement d'interfaces — initiation à SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>Chapitre 63 : Vues, états et navigation</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>Chapitre 64 : Stockage des données et requêtes réseau</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>Chapitre 65 : Projet 1 — Mon carnet de comptes (version locale)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>Chapitre 66 : Projet 2 — App météo (version réseau)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>Chapitre 67 : Peaufiner et publier — mise en ligne sur l'App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>Chapitre 68 : Montée en compétence — permissions, notifications et architecture moderne</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>Chapitre 69 : Aide-mémoire et ressources</a></li>
+                        </ul>
+                    </li>
+<!--Annexe-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">X. Annexes</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier les annexes" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>AAnnexe A : Procédure de déballage d'un nouveau smartphone</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>Annexe B : Bloqué sur un exercice ?</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C Annexe C : lexique minimal des termes</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>DAnnexe D : Où trouver des ressources fiables</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>EAnnexe E : Remerciements et mentions</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F Annexe F : dossier écrans pliables — achat et utilisation</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>Conclusion : Comprendre son téléphone, c'est tout</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>GAnnexe G : Index de recherche rapide du livre</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>HAnnexe H : Feuille de route des versions</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="Rechercher"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="Rechercher dans le contenu..." autocomplete="off" aria-label="Mots-clés de recherche"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Fermer la recherche">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">Saisis un mot-clé pour lancer la recherche</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- Haut de page (fil d’Ariane) --><nav class="breadcrumb no-print" aria-label="Emplacement"><a href="#top">Accueil</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">Cours numérique essentiel · v1.8</span></nav>
+<div id="di-si-shi-er-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">Chapitre 42 : Panorama des grands modèles et pratique de l'API</h3>
+<p class="chapter-intro mb-4">Les chapitres précédents portaient sur « comment collaborer avec l'IA » ; celui-ci répond à une question plus fondamentale : « quel IA choisir, et comment l'utiliser ? » Le paysage des grands modèles en août 2026 est d'une richesse extrême, à l'international, la rivalité des trois géants GPT, Claude et Gemini ; en Chine, une floraison de DeepSeek, Tongyi Qianwen, GLM, Kimi et Doubao. Chaque modèle a son tempérament et ses points forts : bien choisir, c'est un effort moitié moindre pour un résultat double ; mal choisir, l'inverse. Ce chapitre te présente ces modèles, t'apprend à les connecter à tes applications via une API et t'aide à choisir le Token Plan (forfait d'usage) adapté à tes besoins.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">1. Les grands modèles internationaux : un trio de tête</h4>
+<p class="mb-2">En août 2026, le marché international des grands modèles s'organise autour d'un trio : OpenAI (série GPT), Anthropic (série Claude) et Google (série Gemini). Chacun a une identité bien marquée: faisons connaissance un par un.</p>
+<h5 class="font-semibold mt-3 mb-1">1. La série OpenAI GPT-5.6 : le généraliste au profil sans faille</h5>
+<p class="mb-2">OpenAI a déclenché la vague des grands modèles, et la série GPT demeure le plus utilisé des modèles au monde. Publiée en juillet 2026, la série GPT-5.6 adopte une stratégie en trois gammes : le vaisseau amiral GPT-5.6 Sol vise le raisonnement haut de gamme, le modèle équilibré GPT-5.6 Terra vise le développement quotidien, et le modèle léger GPT-5.6 Luna vise les scénarios à fort trafic et faible coût. Les trois partagent une fenêtre de contexte de 1,05 million de Token et acceptent tous les entrées image, les appels de fonctions et les sorties structurées.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Modèle</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Positionnement</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Entrée (/million de Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Sortie (/million de Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Fenêtre de contexte</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GPT-5.6 Sol</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Raisonnement haut de gamme</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">5,00 US$ (environ 36 yuans)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">30,00 US$ (environ 217 yuans)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1,05 M Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GPT-5.6 Terra</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Polyvalent quotidien</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2,50 US$ (environ 18 yuans)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">15,00 US$ (environ 109 yuans)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1,05 M Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GPT-5.6 Luna</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Léger et économique</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1,00 US$ (environ 7 yuans)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">6,00 US$ (environ 44 yuans)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1,05 M Token</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Tarifs de la série OpenAI GPT-5.6 (août 2026)</p>
+<p class="mb-2">L'atout majeur de la série GPT, c'est son équilibre, raisonnement, code, écriture, multimodal : aucun point faible marqué. Ajoute l'immense écosystème de plugins et la communauté de développeurs d'OpenAI : la documentation et la chaîne d'outils sont les plus complètes du marché. Pour les cas où « on ne sait pas quoi choisir », GPT est la réponse par défaut, celle qu'on peut choisir les yeux fermés. Ses faiblesses : l'accès depuis la Chine exige un réseau particulier, l'expression chinoise sonne parfois « traduite », et le prix de l'API se situe dans le haut du panier.</p>
+<div class="success-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Bonne nouvelle</p>
+<p class="mt-1">En août 2026, OpenAI a annoncé que le modèle par défaut des utilisateurs gratuits passait à GPT-5.6 Luna, avec discussion texte illimitée. Concrètement, tu peux découvrir les capacités de base de GPT à coût zéro ; tu ne paies que si tu as besoin d'un raisonnement plus puissant ou d'appels API.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">2. La série Anthropic Claude : le sommet du code et de la rigueur</h5>
+<p class="mb-2">Si GPT est le polyvalent, Claude est le « sommet » du domaine de la programmation. La série Claude d'Anthropic domine depuis longtemps, avec une avance écrasante, le SWE-bench (benchmark d'ingénierie logicielle) : première du secteur pour la qualité de génération de code et la capacité à mener des projets de niveau ingénierie. Détail précieux : le taux d'hallucination de Claude (probabilité de produire de fausses informations) est le plus bas du marché, environ 1 % — parfait pour les scénarios de haute précision comme la recherche ou le juridique.</p>
+<p class="mb-2">L'autre arme secrète de Claude est son très long contexte : une fenêtre de 1 million de Token, capable d'« avaler » d'un coup des centaines de pages de contrat ou une bibliothèque de code entière sans perdre un détail. Presque irremplaçable pour le refactoring de code ou l'analyse de longs documents. Claude Code, l'outil de programmation IA en terminal, atteignait mi-2026 un revenu annualisé de 2,5 milliards de dollars, la meilleure preuve de la reconnaissance des talents de Claude en programmation.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Modèle</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Positionnement</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Entrée (/million de Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Sortie (/million de Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Fenêtre de contexte</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Fable 5</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Vaisseau amiral</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">10,00 US$ (environ 72 yuans)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">50,00 US$ (environ 362 yuans)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 M Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Opus 4.8</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Modèle Pro</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">5,00 US$ (environ 36 yuans)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">25,00 US$ (environ 181 yuans)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 M Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Sonnet 5</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Rapport qualité-prix</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2,00 US$ (environ 14 yuans)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">10,00 US$ (environ 72 yuans)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 M Token</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Tarifs de la série Anthropic Claude (août 2026 ; Sonnet 5 au prix promotionnel)</p>
+<p class="mb-2">La faiblesse de Claude, c'est le prix : la sortie de Fable 5 est la plus chère de tous les modèles, 50 dollars par million de Token. Ses capacités multimodales (compréhension des images et des vidéos) restent aussi relativement modestes. Pour le développeur individuel au budget serré, Sonnet 5 en période promotionnelle offre un rapport qualité-prix remarquable.</p>
+<h5 class="font-semibold mt-3 mb-1">3. La série Google Gemini : le roi du multimodal</h5>
+<p class="mb-2">La série Gemini de Google en est, en 2026, à la version 3.1 Pro. Son atout majeur est le multimodal natif : analyse texte-image d'une grande précision, reconnaissance OCR des tableaux sans erreur, extraction efficace des images vidéo, sans oublier l'analyse poussée de l'audio et de la vidéo. Profondément lié à l'écosystème Google (recherche, messagerie, services cloud), il brille dans la recherche d'informations en temps réel et la compréhension intermodale. Gemini accepte aussi une entrée de contexte de 2 millions de Token — la plus grande fenêtre de contexte du moment.</p>
+<p class="mb-2">Gemini se positionne comme « le premier choix pour le raisonnement scientifique et les scénarios multimodaux ». Si ton projet implique beaucoup d'analyse d'images, de compréhension vidéo ou de calcul scientifique, Gemini n'a presque aucun rival. Mais il est légèrement en retrait de Claude pour la génération de code en texte pur, et son chinois est moins naturel que celui des modèles chinois.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Critère</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">GPT-5.6</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Claude Fable 5</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Gemini 3.1 Pro</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Score global</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">94.8</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">95.0</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">92.1</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Capacité de code (SWE-bench)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">74.9%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">64.3% (Pro)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Moyen</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Fenêtre de contexte</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1,05 M Token</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 M Token</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2 M Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Capacités multimodales</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Équilibré</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Faibles</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Le plus fort</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Taux d'hallucination</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Plutôt bas</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Le plus bas (environ 1 %)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Plutôt bas</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Accessibilité depuis la Chine</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Réseau particulier requis</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Réseau particulier requis</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Réseau particulier requis</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Écosystème API</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Le plus complet</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">En croissance</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Lié à l'écosystème Google</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Comparaison des trois grands modèles internationaux (août 2026)</p>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Attention : l'obstacle concret de l'usage en Chine</p>
+<p class="mt-1">Pour les développeurs en Chine, le principal obstacle à GPT, Claude et Gemini est l'accès réseau. On peut passer par des relais Azure ou des plateformes d'agrégation d'API, mais la stabilité et la conformité restent à évaluer soi-même. Si ton projet impose des exigences strictes de sécurité des données, commence par regarder les modèles chinois.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">2. Les grands modèles chinois : une floraison d'acteurs</h4>
+<p class="mb-2">En 2026, les grands modèles chinois ne sont plus des « poursuivants » mais des « coureurs au coude à coude », voire des « meneurs » dans certains domaines. Contrairement aux polémiques sur les « coquilles » (wrappers) de 2023, les modèles chinois phares de 2026 rivalisent avec les meilleurs modèles internationaux en raisonnement logique, génération de code et compréhension du chinois, l'écart s'étant réduit sous les 5 %. Mieux : les modèles chinois possèdent des atouts irremplaçables en scénarios chinois, en coût et en déploiement conforme.</p>
+<h5 class="font-semibold mt-3 mb-1">1. DeepSeek V4 : le roi du rapport qualité-prix</h5>
+<p class="mb-2">DeepSeek est un phénomène parmi les grands modèles chinois. Début 2025, DeepSeek-V3 a secoué le marché avec son positionnement « dix fois moins cher que GPT pour une capacité équivalente », au point que le milieu parle de sa « ligne d'élimination de l'IA générale » : moins cher que lui, c'est moins bon ; plus cher, rien ne délivre autant de volume. En août 2026 est sortie la version officielle de DeepSeek V4-Pro : architecture MoE de 1,6 billion de paramètres avec environ 49B activés, contexte sans perte d'1 million de Token, son rapport qualité-prix en code est largement considéré comme le plafond mondial.</p>
+<p class="mb-2">DeepSeek V4 a fait un bond considérable en capacités d'Agent : le benchmark DeepSWE est passé de 12,8 à 62,7 (+390 %) et NL2Repo de 38,5 à 61,5. Son API ajoute la prise en charge du double protocole Responses API et Anthropic API, qui le rend compatible avec les grands outils de programmation comme Codex et Claude Code. Autrement dit, tu peux remplacer l'API de Claude par celle de DeepSeek dans Claude Code — pour un coût divisé plusieurs fois, avec une expérience presque identique.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Modèle</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Positionnement</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Entrée (/million de Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Sortie (/million de Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Fenêtre de contexte</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">DeepSeek V4 Pro</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Raisonnement haut de gamme</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">3 yuans (environ 0,43 US$)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">6 yuans (environ 0,87 US$)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 M Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">DeepSeek V4 Flash</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Léger et rapide</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 yuan (environ 0,14 US$)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2 yuans (environ 0,28 US$)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 M Token</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Tarifs de la série DeepSeek V4 (août 2026, prix promotionnels)</p>
+<p class="mb-2">Comparaison de prix : pour le même lot d'1 million de Token en entrée + 1 million de Token en sortie, DeepSeek V4 Flash coûte environ 0,42 dollar, GPT-5.6 Sol environ 35 dollars et Claude Fable 5 environ 60 dollars. Un écart pouvant atteindre 80 à 140 fois.</p>
+<div class="danger-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Alerte piège : DeepSeek va augmenter ses prix</p>
+<p class="mt-1">DeepSeek a officiellement annoncé le 6 août 2026 son « intention d'augmenter fortement ses tarifs API prochainement » : le prix promotionnel pourrait ne pas durer. Certains médias évoquent une hausse pouvant aller jusqu'à 30 fois ; au 14 août, la grille finale n'était pas encore publiée. Par ailleurs, la version officielle de DeepSeek V4 introduit une tarification heures pleines/heures creuses : en heure de pointe, le prix d'appel double carrément. Surveille les annonces officielles pour les tarifs à jour.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">2. Qwen3.7 Max de Tongyi Qianwen : le choix entreprise d'Alibaba Cloud</h5>
+<p class="mb-2">La série Qwen (Tongyi Qianwen) d'Alibaba Cloud s'appuie sur son écosystème cloud et dispose d'atouts naturels pour le déploiement en entreprise. Qwen3.7 Max, sorti en juillet 2026, est le vaisseau amiral actuel : modèle dense de 235B paramètres, contexte natif de 256K extensible à 1M. Les forces clés de Qwen : un écosystème open source mûr (toute la gamme, de 7B à 235B, est ouverte), une compréhension fine des scénarios chinois et une intégration profonde avec l'infrastructure d'Alibaba Cloud.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Modèle</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Prix de sortie (/million de Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Cas d'usage</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen-turbo</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">0,6 yuan</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Q&R minimaliste, classification de texte, fort trafic</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen-long</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2,0 yuans</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Traitement de très longs contextes (10M)</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen3.7-flash</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">7,2 yuans</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Conversation générale, génération de contenu</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen3.7-plus</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">12,0 yuans</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Multimodal (images + vidéos), création en chinois</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen3.7-max</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">36,0 yuans</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Capacités chinoises phares, tâches complexes</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Tarification par paliers de la série Qwen de Tongyi Qianwen (août 2026)</p>
+<p class="mb-2">Qwen pratique une tarification par paliers, du très économique qwen-turbo (sortie à 0,6 yuan/million de Token) au vaisseau amiral qwen3.7-max (sortie à 36 yuans/million de Token), couvrant tous les besoins, de la simple Q&R au raisonnement complexe. Pour les entreprises déjà sur Alibaba Cloud, Qwen est l'option d'intégration la plus naturelle.</p>
+<h5 class="font-semibold mt-3 mb-1">3. GLM-5.1 de Zhipu : premier chinois au SWE-bench</h5>
+<p class="mb-2">La série GLM de Zhipu AI brille en 2026. GLM-5.1 décroche la première place chinoise au SWE-bench : architecture hybride dense MoE de 744B, contexte d'1 million de Token. Il se distingue par une compréhension sémantique du chinois très précise et un déploiement privé conforme aux règles chinoises, essentiel pour la finance et l'administration, très exigeantes en sécurité des données. GLM-5.1 est facturé 6 yuans en entrée et 24 yuans en sortie par million de Token, soit le milieu du panier chinois.</p>
+<h5 class="font-semibold mt-3 mb-1">4. Kimi K3 : le roi du très long texte</h5>
+<p class="mb-2">La série Kimi de Moonshot AI est célèbre pour son traitement des très longs textes. Kimi K3, publié en juillet 2026, affiche 2,8 billions de paramètres et rejoint le premier peloton mondial sur de nombreux tests de tâches complexes. Le cœur de Kimi : l'analyse de longues bases de code et la recherche augmentée dans de longs documents — il avale le texte d'un livre entier ou le code d'un projet complet, et excelle dans les tâches de recherche de type « aiguille dans une botte de foin ». Sa tarification est relativement élevée (sortie d'environ 12 à 20 yuans/million de Token), mais son rapport qualité-prix sur les longs textes reste imbattable.</p>
+<h5 class="font-semibold mt-3 mb-1">5. Doubao : le polyvalent de ByteDance</h5>
+<p class="mb-2">La série Doubao de ByteDance est d'une belle régularité en 2026. Doubao Seed 2.1 Pro est le modèle phare de Volcano Engine : 256K de contexte, une performance globale stable en tests réels et une expérience remarquable en chinois. Ses atouts : une grosse dotation de Token gratuits dès l'inscription, une intégration complète à l'écosystème Volcano Engine et des tarifs parmi les plus bas de Chine. Pour le débutant qui veut goûter vite à la programmation IA, Doubao est la porte d'entrée sans barrière.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Critère</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">DeepSeek V4</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Qwen3.7 Max</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">GLM-5.1</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Kimi K3</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Doubao 2.1 Pro</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Score global</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">87.5</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">89.7</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">90.5</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">88+</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">85+</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Capacité de code</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Très fort</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Fort</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Premier chinois au SWE</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Fort</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Au-dessus de la moyenne</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Compréhension du chinois</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Excellent</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Excellent</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Précis</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Excellent</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Excellent</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Fenêtre de contexte</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 M</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">256K-1M</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 M</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Très long</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">256K</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Prix de sortie (yuans/M)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">6</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">36</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">24</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">12-20</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">30</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Open source</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Licence MIT</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Toute la gamme ouverte</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Partiellement ouvert</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Fermé</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Fermé</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Déploiement privé</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Oui</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Oui</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Oui</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Non</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Non</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Comparaison des cinq grands modèles chinois (août 2026)</p>
+<p class="mb-2">Une tendance importante : le « sentiment d'écart de génération » entre modèles chinois et GPT/Claude a disparu. En raisonnement logique comme en compétition mathématique, l'écart entre les modèles chinois phares et GPT-5 se compte en unités. Sur la pensée d'architecture systémique et le raisonnement d'ingénierie complexe, Claude garde l'avantage — ses propositions d'architecture ont plus d'« inspiration », quand les modèles chinois paraissent parfois « dogmatiques ». Mais sur les scénarios chinois, la maîtrise des coûts et le déploiement conforme, les modèles chinois ont une avance écrasante.</p>
+<div class="figure">
+<svg style="max-width:100%;height:auto" width="620" height="290" viewBox="0 0 620 290" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+ <rect x="0" y="0" width="620" height="290" style="fill:var(--ink-inverse)" rx="8"/>
+ <line x1="70" y1="230" x2="590" y2="230" stroke="var(--muted)" stroke-width="1.5"/>
+ <line x1="70" y1="230" x2="70" y2="20" stroke="var(--muted)" stroke-width="1.5"/>
+ <line x1="70" y1="60" x2="590" y2="60" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+ <line x1="70" y1="116" x2="590" y2="116" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+ <line x1="70" y1="173" x2="590" y2="173" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+ <text x="62" y="234" font-size="10" fill="var(--muted-2)" text-anchor="end">0</text>
+ <text x="62" y="120" font-size="10" fill="var(--muted-2)" text-anchor="end">50</text>
+ <text x="62" y="64" font-size="10" fill="var(--muted-2)" text-anchor="end">100</text>
+ <text x="340" y="262" font-size="10.5" fill="var(--ink-2)" text-anchor="middle">Prix de sortie (yuan/million de tokens)</text>
+ <!-- bars: price -->
+ <rect x="95" y="218" width="60" height="12" fill="var(--accent-book)"/><text x="125" y="212" font-size="9" fill="var(--ink-2)" text-anchor="middle">6</text><text x="125" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">DeepSeek</text>
+ <rect x="195" y="146" width="60" height="84" fill="var(--accent-book)"/><text x="225" y="140" font-size="9" fill="var(--ink-2)" text-anchor="middle">36</text><text x="225" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">Qwen</text>
+ <rect x="295" y="182" width="60" height="48" fill="var(--accent-book)"/><text x="325" y="176" font-size="9" fill="var(--ink-2)" text-anchor="middle">24</text><text x="325" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">GLM</text>
+ <rect x="395" y="200" width="60" height="30" fill="var(--accent-book)"/><text x="425" y="194" font-size="9" fill="var(--ink-2)" text-anchor="middle">16</text><text x="425" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">Kimi</text>
+ <rect x="495" y="170" width="60" height="60" fill="var(--accent-book)"/><text x="525" y="164" font-size="9" fill="var(--ink-2)" text-anchor="middle">30</text><text x="525" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">Doubao</text>
+ <!-- scores -->
+ <circle cx="125" cy="118" r="5" fill="var(--gold)"/><text x="140" y="114" font-size="9" fill="#78350f">87.5</text>
+ <circle cx="225" cy="110" r="5" fill="var(--gold)"/><text x="240" y="106" font-size="9" fill="#78350f">89.7</text>
+ <circle cx="325" cy="105" r="5" fill="var(--gold)"/><text x="340" y="101" font-size="9" fill="#78350f">90.5</text>
+ <circle cx="425" cy="112" r="5" fill="var(--gold)"/><text x="440" y="108" font-size="9" fill="#78350f">88+</text>
+ <circle cx="525" cy="116" r="5" fill="var(--gold)"/><text x="540" y="112" font-size="9" fill="#78350f">85+</text>
+ <rect x="90" y="30" width="12" height="12" fill="var(--accent-book)"/><text x="108" y="41" font-size="9.5" fill="var(--ink-2)">Prix de sortie (plus bas = mieux)</text>
+ <circle cx="170" cy="36" r="5" fill="var(--gold)"/><text x="182" y="40" font-size="9.5" fill="var(--ink-2)">Score global (plus haut = mieux)</text>
+ </svg>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Figure 4 : prix et performance des cinq modèles (prix le plus bas possible, score le plus haut possible)</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">3. Le cadre de décision pour choisir un modèle</h4>
+<p class="mb-2">Une fois les caractéristiques de chaque modèle en tête, comment choisir pour ton projet ? Voici la « méthode des quatre questions » : y répondre suffit à verrouiller le modèle le plus adapté.</p>
+<div class="figure">
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> Ton projet est-il déployé en Chine ou à l'international ?</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">En Chine → choisis des modèles nationaux</span><span class="text-gray-400 mx-1">│</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">International → modèles étrangers possibles</span></div>
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> La tâche principale est-elle de coder ou autre chose ?</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">Coder → Claude ou DeepSeek</span><span class="text-gray-400 mx-1">│</span> <span class="border-2 border-gray-400 bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 rounded-md px-3 py-1 text-sm text-center">Autre chose → continue l'évaluation</span></div>
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> Besoin d'un contexte très long (&gt;500 000 tokens) ?</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">Oui → Gemini ou Kimi</span><span class="text-gray-400 mx-1">│</span> <span class="border-2 border-gray-400 bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 rounded-md px-3 py-1 text-sm text-center">Pas besoin → continue l'évaluation</span></div>
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> Budget serré ?</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">Serré → DeepSeek ou Qwen-turbo</span><span class="text-gray-400 mx-1">│</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">Peu sensible → GPT-5.6 ou Claude</span></div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Figure 5 : la méthode des quatre questions pour choisir un grand modèle</p>
+</div>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Astuce : la stratégie de combinaison</p>
+<p class="mt-1">Cette méthode n'est pas un dogme, beaucoup de scénarios demandent de combiner plusieurs modèles. Une combinaison courante : DeepSeek ou Qwen pour le développement quotidien (coût bas, bon en chinois), Claude pour les décisions d'architecture critiques (raisonnement puissant, peu d'hallucinations), Gemini pour l'analyse multimodale (traitement des images et vidéos). Change de modèle selon le besoin, au lieu de « faire vivre un seul modèle jusqu'au bout ».</p>
+</div>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Premiers pas avec l'API : brancher un grand modèle à partir de zéro</li>
+</ol>
+<p class="mb-2">Beaucoup de tutos de programmation IA se limitent à l'interface de discussion, mais la vraie « programmation IA », faire appeler un grand modèle par ton application — passe par une API. Une API (Application Programming Interface) est un protocole de communication entre programmes. Via l'API, ton code peut mobiliser la puissance d'un grand modèle comme s'il appelait une simple fonction.</p>
+<h5 class="font-semibold mt-3 mb-1">1. Qu'est-ce qu'un Token</h5>
+<p class="mb-2">Avant d'aborder l'API, il faut comprendre la notion de « Token ». Le Token est l'unité de facturation de base des grands modèles — l'« unité de lecture et d'écriture de l'IA ». Un Token correspond environ à 0,75 mot anglais (4 caractères) ou à 0,5 à 1 caractère chinois. Un texte chinois de 1000 caractères consomme à peu près 1500 à 2000 Token.</p>
+<p class="mb-2">Un Token n'est ni un mot ni un caractère. Les grands modèles découpent le texte en Token grâce à un tokenizer dédié. Le même mot peut donner un nombre différent de Token selon le modèle, un même terme peut ainsi valoir 3 Token dans GPT et 2 dans DeepSeek. La plupart des API renvoient le nombre de Token réellement consommé : tu peux le vérifier dans la réponse de l'API.</p>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Estimation rapide du coût en Token</p>
+<p class="mt-1">Un million de caractères chinois équivaut à environ 1,5 million de Token. Traiter 1 million de caractères en entrée + 1 million en sortie avec DeepSeek V4 Flash coûte environ 0,42 dollar (environ 3 yuans) ; avec Claude Fable 5, le même volume coûte environ 60 dollars (environ 434 yuans). Voilà pourquoi le choix du modèle pèse directement sur le coût de ton projet.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">2. Obtenir une clé API</h5>
+<p class="mb-2">La première étape pour utiliser l'API d'un grand modèle est d'obtenir une clé API, une chaîne secrète servant à l'authentification. Chaque fournisseur de modèles a sa propre plateforme API : crée un compte puis génère ta clé API. Voici les portails API des modèles principaux et la marche à suivre :</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Modèle</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Plateforme API</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Démarche d'obtention</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Quota gratuit</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">DeepSeek</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">platform.deepseek.com</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Inscription → vérification d'identité → création de la clé API</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Quota offert aux nouveaux comptes</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Tongyi Qianwen</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">bailian.aliyun.com (plateforme Bailian)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Connexion au compte Alibaba Cloud → activation du service → création de la clé</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Essai gratuit pour nouveaux comptes</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Zhipu GLM</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">open.bigmodel.cn</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Inscription → vérification d'identité → création de la clé API</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Quota offert aux nouveaux comptes</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Kimi</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">platform.moonshot.cn</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Inscription → vérification d'identité → création de la clé API</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Quota gratuit limité</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Doubao</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">volcengine.com (Volcano Engine)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Inscription → activation d'Ark → création de la clé API</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Beaucoup de Token offerts à l'inscription</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OpenAI GPT</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">platform.openai.com</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Inscription → carte bancaire rattachée → création de la clé API</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pas de quota gratuit (payant)</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Anthropic Claude</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">console.anthropic.com</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Inscription → carte rattachée → création de la clé API</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Petit quota pour nouveaux comptes</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Plateformes API des grands modèles et obtention des clés (août 2026)</p>
+<div class="danger-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Conseil sécurité : ta clé API = le mot de passe de ton portefeuille</p>
+<p class="mt-1">La clé API vaut le mot de passe de ton portefeuille, quiconque la détient peut consommer ton quota. Donc : n'écris jamais une clé API dans le code (gère-la par variables d'environnement) ; ne pousse jamais de code contenant la clé vers un dépôt Git public ; ne partage jamais de capture d'écran où elle apparaît. Si la clé fuit, supprime-la immédiatement sur la plateforme et recrée-en une.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">3. Ton premier appel d'API</h5>
+<p class="mb-2">Une fois la clé API en main, tu peux appeler l'API d'un grand modèle dans n'importe quel langage de programmation. Voici en Python l'appel le plus simple, envoyer un message à DeepSeek et récupérer sa réponse.</p>
+<div class="code-block">
+<div class="code-head"><span>PYTHON · Premier appel d'API</span><span class="dots">···</span></div>
+<pre># Installe le SDK : pip install openai
+# DeepSeek est compatible avec le SDK OpenAI, utilisable directement
+from openai import OpenAI
+import os
+
+# 1. créer le client (la clé API se lit dans la variable d'environnement)
+client = OpenAI(
+ api_key=os.environ.get("DEEPSEEK_API_KEY"),
+ base_url="https://api.deepseek.com"
+)
+
+# 2. envoyer la requête
+response = client.chat.completions.create(
+ model="deepseek-chat", # modèle choisi
+ messages=[
+ {"role": "system", "content": "Tu es un assistant de programmation Python."},
+ {"role": "user", "content": "Écris une fonction de tri rapide."}
+ ]
+)
+
+# 3. récupérer la réponse
+print(response.choices[0].message.content)
+
+# 4. voir la consommation de tokens
+print(f"Tokens d'entrée : {response.usage.prompt_tokens}")
+print(f"Tokens de sortie : {response.usage.completion_tokens}")
+print(f"Tokens totaux : {response.usage.total_tokens}")</pre>
+</div>
+<p class="mb-2">La logique de ce code : créer le client (avec la clé API et l'adresse du modèle) → construire la liste des messages (system définit le rôle, user porte la saisie de l'utilisateur) → envoyer la requête → récupérer la réponse. Ce schéma vaut pour presque tous les modèles compatibles avec le format OpenAI : changer de modèle revient à remplacer api_key et base_url. C'est pourquoi tant de modèles chinois choisissent la compatibilité avec le SDK OpenAI : deux lignes de code suffisent pour changer de modèle, à un coût de migration minime.</p>
+<p class="mb-2">Voici les différences de code pour passer à un autre modèle — remarque qu'il suffit de changer deux lignes :</p>
+<div class="code-block">
+<div class="code-head"><span>PYTHON · Changer de modèle ne demande que deux lignes</span><span class="dots">···</span></div>
+<pre># DeepSeek
+client = OpenAI(
+ api_key=os.environ.get("DEEPSEEK_API_KEY"),
+ base_url="https://api.deepseek.com"
+)
+# model="deepseek-chat"
+
+# Qwen (plateforme Bailian)
+client = OpenAI(
+ api_key=os.environ.get("DASHSCOPE_API_KEY"),
+ base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"
+)
+# model="qwen-plus"
+
+# GLM de Zhipu
+client = OpenAI(
+ api_key=os.environ.get("GLM_API_KEY"),
+ base_url="https://open.bigmodel.cn/api/paas/v4"
+)
+# model="glm-4"
+
+# OpenAI GPT
+client = OpenAI(
+ api_key=os.environ.get("OPENAI_API_KEY"),
+ # le base_url par défaut suffit
+)
+# model="gpt-5.6-terra"</pre>
+</div>
+<h5 class="font-semibold mt-3 mb-1">4. Traiter les réponses en flux</h5>
+<p class="mb-2">En pratique, tu ne veux généralement pas attendre que l'IA ait tout écrit avant d'afficher d'un bloc, l'utilisateur attendrait trop. La réponse en flux (streaming) affiche le texte mot à mot pendant que l'IA génère, ce qui améliore nettement l'expérience : comme sur une machine à écrire, les caractères jaillissent un à un, et la sensation est tout autre.</p>
+<div class="code-block">
+<div class="code-head"><span>PYTHON · Réponse en streaming</span><span class="dots">···</span></div>
+<pre># Réponse en streaming : sortie mot à mot
+stream = client.chat.completions.create(
+ model="deepseek-chat",
+ messages=[
+ {"role": "user", "content": "Écris un tutoriel du tri à bulles en Python"}
+ ],
+ stream=True # active le streaming
+)
+
+# reçoit et affiche par blocs
+for chunk in stream:
+ if chunk.choices[0].delta.content is not None:
+ print(chunk.choices[0].delta.content, end="", flush=True)
+# la sortie s'affichera lettre par lettre, comme une machine à écrire</pre>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">5. Guide d'achat des Token Plan</h4>
+<p class="mb-2">La plupart des fournisseurs proposent deux modes de facturation : le paiement à l'usage (Pay-as-you-go) et l'abonnement par forfait (Token Plan / Subscription). Comprendre la différence t'aidera à réduire nettement tes coûts d'usage.</p>
+<h5 class="font-semibold mt-3 mb-1">1. Paiement à l'usage vs abonnement</h5>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Dimension</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Paiement à l'usage (Pay-as-you-go)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Abonnement (Subscription)</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Mode de facturation</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Tu paies les Token que tu consommes</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Somme fixe payée d'avance contre un quota</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Cas d'usage</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Usage irrégulier, appels occasionnels</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Usage régulier, appels fréquents</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Avantage de prix</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Prix standard</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">20 % à 50 % moins cher qu'à l'usage</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Souplesse</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Disponible à tout moment, sans engagement</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Prépaiement requis, le quota peut expirer</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Dépassement de quota</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Facturation à l'usage automatique</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Basculer à l'usage une fois le quota dépassé</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Plateformes types</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Les plateformes API officielles de chaque modèle</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OpenAI Plus/Pro, Claude Pro, Cursor Pro</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Comparaison des deux modes de facturation</p>
+<p class="mb-2">Pour débuter, commence par le paiement à l'usage, aucun prépaiement, tu ne dépenses que ce que tu consommes. Quand ton volume mensuel se stabilise (par exemple au-delà de 50 yuans par mois), envisage de passer à l'abonnement pour un prix unitaire plus bas.</p>
+<h5 class="font-semibold mt-3 mb-1">2. Tour d'horizon des abonnements principaux</h5>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Forfait</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Tarif mensuel</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Contenu inclus</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Pour qui</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ChatGPT Free</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Gratuit</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Conversations texte illimitées avec GPT-5.6 Luna</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Découverte sans prérequis</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ChatGPT Plus</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">20 US$/mois</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GPT-5.6 Sol, génération d'images, analyse de données, accès aux plugins</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Utilisateurs réguliers</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ChatGPT Pro</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">200 US$/mois</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Tous les modèles sans limite, accès prioritaire aux nouveautés</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Professionnels intensifs</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Free</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Gratuit</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Nombre limité de conversations Claude</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Découverte sans prérequis</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Pro</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">20 US$/mois</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude sans limite, accès prioritaire aux nouveaux modèles</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Développeurs</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Cursor Free</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Gratuit</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Complétions IA et conversations en nombre limité</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Essai pour débutants</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Cursor Pro</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">20 US$/mois</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Complétion IA illimitée, 500 requêtes avancées/mois</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Développeurs du quotidien</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Cursor Business</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">40 US$/mois/personne</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Collaboration d'équipe, console d'administration, mode confidentialité</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Usage en équipe</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Abonnements des principaux outils IA (août 2026)</p>
+<p class="mb-2">Les formules des modèles chinois diffèrent un peu. DeepSeek fonctionne surtout à l'usage, sans abonnement mensuel — tu recharges ton compte et tu paies selon ta consommation réelle. Tongyi Qianwen propose sur la plateforme Bailian des packs prépayés (tu achètes un quota de Token à prix réduit). Doubao offre des formules prépayées similaires sur Volcano Engine. Pour un développeur en Chine, la combinaison la plus économique est généralement : DeepSeek à l'usage (développement quotidien) + le quota gratuit de Doubao (tests et découverte).</p>
+<h5 class="font-semibold mt-3 mb-1">3. Les plateformes d'agrégation d'API</h5>
+<p class="mb-2">Si tu as besoin d'utiliser plusieurs modèles en même temps, une plateforme d'agrégation d'API est un choix qui te simplifie la vie : une seule clé API te donne accès à des dizaines de modèles du monde entier, sans avoir à t'inscrire séparément sur chaque plateforme.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Plateforme</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Points forts</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Avantage prix</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Cas d'usage</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OpenRouter (openrouter.ai)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Agrégateur international : une seule clé API pour appeler des modèles du monde entier</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Tarifs transparents, comparaison des prix en temps réel</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pour basculer facilement entre plusieurs modèles internationaux</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">SiliconFlow (siliconflow.cn)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Agrégateur chinois : API de nombreux modèles nationaux</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">20 à 30 % moins cher que les tarifs officiels</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Développeurs en Chine, comparaison des prix entre modèles</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Azure OpenAI (revendeur Microsoft)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">API OpenAI proposée par l'intermédiaire de Microsoft Azure</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Batch API : remise de 50 %</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Appels OpenAI de niveau entreprise, tâches asynchrones en gros volumes</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Baidu Qianfan (qianfan.baidubce.com)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Plateforme cloud IA de Baidu : les modèles Wenxin (ERNIE), entre autres</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Crédits offerts aux nouveaux utilisateurs</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Utilisateurs de l'écosystème Baidu</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Principales plateformes d'agrégation d'API (août 2026)</p>
+<div class="danger-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Gare au piège : n'achète pas de « clés API partagées »</p>
+<p class="mt-1">N'achète pas les soi-disant « clés API partagées » sur Taobao, Xianyu ou d'autres plateformes du même genre : ces clés sont généralement d'origine douteuse, peuvent être bloquées à tout moment et présentent un risque de fuite de données. Obtiens toujours tes clés API sur les plateformes officielles ou via des agrégateurs sérieux.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">4. Stratégies d'optimisation des coûts</h5>
+<p class="mb-2">Choisir le bon modèle n'est que la première étape : savoir « dépenser malin » compte tout autant. Voici quelques stratégies d'optimisation des coûts éprouvées sur le terrain :</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Tire parti du cache. Beaucoup de modèles proposent une fonction de « cache » : quand ta requête contient du contenu déjà traité auparavant (comme le prompt système), cette partie est facturée à un prix très bas. Chez DeepSeek, une réponse servie depuis le cache coûte 1/60 du prix normal. Place tes prompts système fixes au début de la liste des messages pour maximiser les accès au cache.</li>
+  <li>Le routage par niveaux : un modèle pas cher pour les tâches simples, un modèle coûteux pour les tâches complexes. Par exemple, DeepSeek V4 Flash pour la classification de texte (sortie : 2 yuans / million de tokens) et Claude pour la conception d'architecture (sortie : 181 yuans / million de tokens). Dans un projet, 80 % des appels peuvent passer par un modèle économique.</li>
+  <li>Limite la longueur des réponses. L'API est facturée selon les tokens de sortie : plus c'est long, plus c'est cher. Dans les cas où tu n'as pas besoin de longs discours, fixe le paramètre max_tokens pour limiter la sortie et éviter que l'IA « parte en roue libre ».</li>
+  <li>Utilise la Batch API pour les tâches non urgentes. Si tu as beaucoup de tâches qui n'exigent pas de réponse immédiate (annotation de données en masse, résumés de documents, etc.), la Batch API te donne droit à 50 % de remise. OpenAI comme Azure la proposent.</li>
+  <li>Surveille ta consommation de tokens. La plupart des plateformes d'API offrent un tableau de bord d'utilisation. Consulte-le régulièrement, repère les appels qui consomment le plus de tokens et optimise-les en priorité. Un petit ajustement de prompt (remplacer « explique en détail » par « explique en 3 phrases », par exemple) peut économiser 50 % des tokens.</li>
+</ol>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Stratégie</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Économies</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Difficulté</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Détails</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Accès au cache</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Jusqu'à 98 %</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Faible</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Place le contenu fixe au début des messages</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Routage par niveaux</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">50%-80%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Moyen</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Modèle économique pour les tâches simples</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Limiter la longueur des réponses</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">30%-60%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Faible</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Définir le paramètre max_tokens</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Batch API</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">50%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Faible</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Traitement par lot pour les tâches non urgentes</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Optimisation des prompts</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">20%-50%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Moyen</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Alléger les prompts, réduire les redondances</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Stratégies d'optimisation des coûts et leurs effets (août 2026)</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>En pratique : intégrer l'API d'un grand modèle dans un projet</li>
+</ol>
+<p class="mb-2">Terminons ce chapitre par un exercice complet : créer un « générateur de résumés IA ». L'utilisateur saisit un long texte, on appelle l'API d'un grand modèle pour en produire un résumé. Cet exercice montre le parcours complet d'un appel d'API : configuration de l'environnement, appel, gestion des erreurs, maîtrise des coûts.</p>
+<div class="code-block">
+<div class="code-head"><span>PYTHON · ai_summarizer.py</span><span class="dots">···</span></div>
+<pre># ai_summarizer.py - générateur de résumés par IA
+import os
+from openai import OpenAI
+
+# 1. Configuration (la clé API se lit dans la variable d'environnement, jamais en dur)
+client = OpenAI(
+ api_key=os.environ.get("DEEPSEEK_API_KEY"),
+ base_url="https://api.deepseek.com"
+)
+
+def summarize(text: str, max_length: int = 200) -> dict:
+ """Génère un résumé du texte
+
+ Args:
+ text: texte source à résumer
+ max_length: longueur maximale du résumé (en tokens)
+
+ Returns:
+ dict: inclut le résumé et les infos de consommation de tokens
+ """
+ try:
+ response = client.chat.completions.create(
+ model="deepseek-chat",
+ messages=[
+ {
+ "role": "system",
+ "content": "Tu es un générateur de résumés."
+ "Résume le texte de l'utilisateur en un langage clair et concis."
+ "Le résumé ne dépasse pas 3 phrases."
+ },
+ {
+ "role": "user",
+ "content": f"Résume le texte suivant :\n\n{text}"
+ }
+ ],
+ max_tokens=max_length, # limite la longueur de la sortie
+ temperature=0.3 # température basse = plus stable
+ )
+
+ return {
+ "success": True,
+ "summary": response.choices[0].message.content,
+ "input_tokens": response.usage.prompt_tokens,
+ "output_tokens": response.usage.completion_tokens,
+ "total_tokens": response.usage.total_tokens
+ }
+
+ except Exception as e:
+ return {
+ "success": False,
+ "error": str(e)
+ }
+
+# 2. exemple d'utilisation
+if __name__ == "__main__":
+ long_text = """
+ (colle ici un long texte...)
+ """
+
+ result = summarize(long_text)
+
+ if result["success"]:
+ print(f"Résumé : {result['summary']}")
+ print(f"Tokens consommés : {result['total_tokens']}")
+ # Coût estimé : DeepSeek V4 Flash
+ cost = result['total_tokens'] * 0.000004 # ≈ 0,4 centime pour 1000 tokens
+ print(f"Coût estimé : {cost:.4f} yuan")
+ else:
+ print(f"Erreur : {result['error']}")</pre>
+</div>
+<p class="mb-2">Ce code illustre plusieurs bonnes pratiques de l'appel d'API : la clé API est lue depuis une variable d'environnement, jamais codée en dur ; la fonction est bien documentée, avec des annotations de type ; max_tokens limite la longueur de la sortie ; temperature est réglée bas (0,3) pour des réponses plus stables ; la gestion des erreurs est complète ; les informations de consommation de tokens sont renvoyées pour suivre les coûts. Quand tu demandes à l'IA d'écrire ce code, tu peux lui transmettre ces exigences: elle est tout à fait capable de les implémenter.</p>
+<div class="quote-line">La leçon finale de ce chapitre : les modèles sont les "munitions", la méthodologie est la "tactique". Bien choisir ses munitions facilite le combat, mais sans bonne tactique, les meilleures munitions ne gagnent pas la guerre. Tu connais désormais les spécificités de chaque modèle et l'usage de leur API : ton "arsenal" est complet – comment mener ce combat, c'est la méthodologie des chapitres précédents qui te le dira.</div>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Passe à l'action : réussis ton premier appel d'API</p>
+<p class="mt-1">Inscris-toi sur une plateforme de modèles nationaux (je recommande DeepSeek ou Zhipu, qui offrent des crédits aux nouveaux utilisateurs), crée ta clé API, place-la dans les variables d'environnement du système (pas dans le code !), puis exécute le code du « premier appel d'API » ci-dessus. Au moment où la réponse de l'IA s'affiche, tu auras franchi la frontière entre « utiliser l'IA » et « créer des applications d'IA ».</p>
+</div>
+<div class="chapter-summary">
+<p class="font-semibold mb-1">L'essentiel du chapitre</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Le trio international : GPT-5.6 (polyvalent et équilibré), Claude (la référence en code + seulement 1 % d'hallucinations), Gemini (le roi du multimodal + 2 millions de tokens de contexte)</li>
+  <li>Le quinté national : DeepSeek V4 (le champion du rapport qualité-prix, attention aux annonces de hausse de prix), Qwen3.7 (niveau entreprise), GLM-5.1 (n° 1 national en SWE), Kimi K3 (textes très longs), Doubao (gratuit pour débuter)</li>
+  <li>La méthode des quatre questions : où déployer ? programmation ou autre chose ? besoin d'un très long contexte ? budget sensible ?</li>
+  <li>Le token est l'unité de facturation : en chinois, un caractère fait environ 1,5 à 2 tokens ; 1 million de caractères ≈ 1,5 million de tokens</li>
+  <li>Clé API = mot de passe du portefeuille : à gérer en variable d'environnement, jamais codée en dur, jamais poussée sur Git</li>
+  <li>Les modèles nationaux sont en général compatibles avec le SDK OpenAI : changer de modèle revient à modifier les deux lignes api_key et base_url</li>
+  <li>Cinq façons d'économiser : cache, routage par niveaux, sortie limitée, Batch API, suivi de la consommation</li>
+</ul>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">Une erreur dans ce chapitre ? <a href="../../errata.html" class="text-primary hover:underline">Signalez-la sur la page des errata</a> — chemin obsolète, fait inexact, phrase confuse : tout est bienvenu. Vous pouvez aussi écrire dans le groupe QQ 1074995524.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-si-shi-yi-zhang.html" class="text-primary hover:underline">← Chapitre 41 : Panorama des outils de programmation par IA en 2026</a><span></span><a id="next-link" href="di-si-shi-san-zhang.html" class="text-primary hover:underline">Chapitre 43 : Parlez à l'IA pour qu'elle vous comprenne →</a></nav>
+ </div></main></div><!-- Outils rapides: groupe de boutons flottants --><div id="quick-tools" class="quick-tools no-print" aria-label="Outils rapides"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="Rechercher (Ctrl+K)" aria-label="Rechercher"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="Basculer sombre/clair" aria-label="Changer de thème"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="Imprimer / Exporter en PDF" aria-label="Imprimer ou exporter"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="Sommaire" aria-label="Ouvrir le sommaire"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="Lecture vocale" aria-label="Lecture vocale"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="Raccourcis clavier (?)" aria-label="Panneau des raccourcis"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="Sauvegarder/Restaurer la progression" aria-label="Sauvegarde de la progression"><span aria-hidden="true">B</span></button></div><!-- Panneau des raccourcis --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="Raccourcis clavier"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Raccourcis clavier</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Fermer">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Rechercher du contenu</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Basculer sombre/clair</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Lecture vocale : lecture/pause</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Arrêter la lecture</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Ouvrir le panneau de raccourcis</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Augmenter / réduire la taille du texte</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">Imprimer / exporter en PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- Boîte de dialogue sauvegarde/restauration --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="Sauvegarde et restauration"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Sauvegarde et restauration de la progression</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Fermer">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">La sauvegarde contient : chapitres lus, signets, position de lecture, préférence de taille de police, résultats de l'autodiagnostic santé. Les données sont stockées localement dans le navigateur : elles sont perdues si tu changes de navigateur ou vides le cache ; pense à exporter régulièrement une sauvegarde.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Exporter le fichier de sauvegarde
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Télécharger un fichier JSON et l'enregistrer dans un endroit sûr</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Importer une sauvegarde et restaurer
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Choisir un fichier de sauvegarde exporté auparavant pour restaurer la progression</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Effacer toutes les données de lecture
+ </button><p class="text-xs text-red-400 mt-1 text-center">Irrécupérable ! Exporte d'abord une sauvegarde</p></div></div></div></div><!-- Notification de jours de lecture consécutifs --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">Jour X de lecture d'affilée !</span></div><!-- Barre de commandes de lecture vocale --><div id="tts-controls" class="tts-controls" role="region" aria-label="Contrôle de la lecture vocale" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="Chapitre en cours de lecture">Pas commencé</span><button class="tts-btn" id="tts-prev" title="Paragraphe précédent" aria-label="Paragraphe précédent"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="Lecture/Pause" aria-label="Lire à voix haute"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="Paragraphe suivant" aria-label="Paragraphe suivant"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="Ralentir" aria-label="Ralentir">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="Accélérer" aria-label="Accélérer">+</button><button class="tts-btn" id="tts-stop" title="Arrêter la lecture" aria-label="Arrêter la lecture"><span aria-hidden="true">×</span></button></div><!-- Bouton «Haut de page» --><button id="back-to-top" class="opacity-0 invisible" aria-label="Retour en haut"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- Notification de restauration de la position de lecture --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">Dernière lecture : ...</span><button class="btn-restore" id="restore-btn">Annuler</button><button class="btn-dismiss" id="dismiss-btn">Ignorer</button></div><!-- Script JS -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

@@ -1,0 +1,387 @@
+ <!DOCTYPE html><html dir="rtl" lang="ar"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="درس الهاتف الذي فاتك · من البداية إلى الاحتراف، وتحكم كامل في حياتك الرقمية"><meta name="keywords" content="دليل الهاتف,كورس رقمي إلزامي,الهاتف الذكي,Android,iOS,HarmonyOS,حيل الهاتف,الحياة الرقمية,نماذج الذكاء الاصطناعي الكبيرة,برمجة الذكاء الاصطناعي,واجهات API للنماذج الكبيرة,هندسة الأوامر التوضيحية,تطوير Android,تطوير iOS,Swift,Kotlin,SwiftUI,Jetpack Compose,التصوير الحسابي,أمن المعلومات,إدارة كلمات المرور,الأتمتة,اختيار الهاتف"><meta name="author" content="مرشد الحياة الرقمية"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-shi-jiu-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="الفصل 19: الهاتف تعطّل، لا تتسرع في إصلاحه"><meta property="og:description" content="الهاتف مثل الإنسان، يمرض أحياناً. بطء، انهيار التطبيقات، شاشة سوداء، عدم الشحن…"><meta property="og:locale" content="ar_SA"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="درس الهاتف الذي فاتك"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="درس الهاتف الذي فاتك · v1.8"><meta name="twitter:description" content="من البداية إلى الاحتراف، وتحكم كامل في حياتك الرقمية"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>الفصل 19: الهاتف تعطّل، لا تتسرع في إصلاحه · درس الهاتف الذي فاتك</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-shi-jiu-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "الفصل 19: الهاتف تعطّل، لا تتسرع في إصلاحه", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-shi-jiu-zhang.html", "isPartOf": {"@type": "Book", "name": "درس الهاتف الذي فاتك", "inLanguage": "ar"}}</script>
+<link rel="prefetch" href="di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-shi-jiu-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-shi-jiu-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">الانتقال إلى المحتوى الرئيسي</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="فتح قائمة الفهرس" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="العودة إلى الصفحة الرئيسية">درس الهاتف الذي فاتك</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="الإجراء الرئيسي"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="ابدأ من الأساسيات">ابدأ التعلم</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="بحث (Ctrl+K)" aria-label="البحث في المحتوى"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="ضبط حجم الخط"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="تصغير الخط" aria-label="تصغير الخط">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="إعادة ضبط حجم الخط" aria-label="إعادة ضبط حجم الخط">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="تكبير الخط" aria-label="تكبير الخط">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="التبديل بين الوضع الداكن/الفاتح" aria-label="التبديل بين الوضع الداكن/الفاتح"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="الطباعة / تصدير PDF" aria-label="الطباعة أو تصدير PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="العودة إلى الأعلى">إلى الأعلى
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="فهرس المقال"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">الفهرس
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 فصلًا</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="تصفية الفصول..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="تصفية الفصول"></div><ul class="space-y-1 text-sm" id="toc-list"><!--الأساسيات-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">ابدأ التعلم</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起توسيع/طي قسم الأساسيات" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>الفصل 0: ثلاث حقائق نقولها قبل أن نبدأ</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>الفصل 1: تعال نتعرّف على هذا الجهاز</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>ملحق: تحليل توسيع ذاكرة هواتف Android</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>ملحق الفصل 1: موضوع نظام تشغيل HarmonyOS</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>الفصل 2: لا تجد ما تحتاجه على هاتفك، ماذا تفعل؟</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>الفصل 3: الشبكة لا تعمل، لا تستعجل إعادة التشغيل</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>الفصل 4: قبل تثبيت أي تطبيق، انظر إليه ثلاث مرات</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> ملحق: عناصر حزمة تثبيت البرنامج</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>الفصل 5: اضبط هاتفك بالطريقة التي تريحك</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>الفصل 6: ضاع الهاتف ونسيت كلمة المرور، خُذ هذه الخطوات</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>الفصل 7: شرح شامل للميزات الرائدة</a></li>
+                        </ul>
+                    </li>
+<!--البرمجيات-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">ثانيًا: قسم البرمجيات (الفصول 8-14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起توسيع/طي قسم البرمجيات" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>الفصل 8: الاتصالات: الرسائل النصية والمكالمات والشبكات الاجتماعية</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>الفصل 9: العمل والتعلم عبر الهاتف المحمول</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>الفصل 10: الدفع عبر الهاتف المحمول والخدمات الحياتية</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>الفصل 11: الصورة الجيدة أهم من كثرة الصور</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>ملحق الفصل 11: تقنيات التصوير الاحترافي</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>الفصل 12: الترفيه الصوتي والمرئي والقراءة</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>الفصل 13: أي التطبيقات تستحق التثبيت، وأيها يجب أن تتجنبه؟</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>الفصل 14: موضوع مدير كلمات المرور</a></li>
+                        </ul>
+                    </li>
+<!--المستوى المتقدم-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">ثالثًا: قسم المستوى المتقدم (الفصول 15-20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起توسيع/طي قسم المستوى المتقدم" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>الفصل 15: مرّتا شحن في اليوم، البطارية أم عاداتك؟</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> ملحق: شرح شامل لبروتوكولات الشحن السريع</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>الفصل 16: تبديل الهاتف، هذه الحسابات تُفقد وهذه لا تُفقد</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>الفصل 17: الترابط بين الهاتف والأجهزة الأخرى</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>الفصل 18: خُذ نسخة احتياطية، لا في اليوم الذي تحتاجها</a></li>
+                            <li><a href="#di-shi-jiu-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>الفصل 19: الهاتف تعطّل، لا تتسرع في إصلاحه</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>الفصل 20: وضع المطوّر والأذونات المتقدمة</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>ملحق الفصل 20</a></li>
+                        </ul>
+                    </li>
+<!--ما وراء ذلك-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">رابعًا: قسم التجاوز (الفصول 21-26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起توسيع/طي قسم التجاوز" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>الفصل 21: هل تتصل فعلاً بـ Wi-Fi العام؟</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>الفصل 22: ما الذي يفعله الذكاء الاصطناعي في هاتفك فعلاً؟</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>الفصل 23: خلّ الهاتف ينفّذ المهام المتتالية عنك</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>ملحق: دليل البدء في GitHub</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>الفصل 24: شرح معمق لصلاحيات Root وقفل BL</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>الفصل 25: قبل أن تبيع هاتفك القديم، افعل هذه الأشياء</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>الفصل 26: التقنيات الجديدة، انتظر</a></li>
+                        </ul>
+                    </li>
+<!--5,التطبيق العملي(الفصول 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">خامسًا: قسم التطبيق العملي (الفصول 27-32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起توسيع/طي قسم التطبيق العملي" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>الفصل 27: اضبط هاتف والديك</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>الفصل 28: قبل أن تشتري الهاتف، احسم هذه الثلاثة</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>الفصل 29: هل تعرف حقاً كم ساعة تقضي على هاتفك؟</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>الفصل 30: مشاركة الشاشة والعروض والتوصيل بالسيارة</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>الفصل 31: مدخل إلى تصوير الفيديوهات القصيرة وصناعة المحتوى</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>الفصل 32: من المُلح، ثلاثون ثانية لإيقاف النزيف</a></li>
+                        </ul>
+                    </li>
+<!--6,نظرة إلى المستقبل(الفصل 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">سادساً: قسم التطلعات (الفصول 33-41)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起توسيع/طي قسم التطلعات" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>الفصل 33: كيف سيبدو الهاتف بعد عشر سنوات؟</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>الفصل 34: الهاتف والسيارة، اربط بينهما بلا تعقيد</a></li>
+                        </ul>
+                    </li>
+<!--ملحق خاص: الأطفال والهواتف(الفصل 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">موضوع الأطفال والهواتف (الفصول 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起توسيع/طي موضوع الأطفال والهواتف" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>الفصل 35: تعطِ طفلك هاتفاً، ثم اتفقوا على القواعد</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>الفصل 36: الأجهزة الكثيرة في البيت، اربطها بهاتفك</a></li>
+                        </ul>
+                    </li>
+<!--البرمجة بالذكاء الاصطناعي عمليًا-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">سابعًا: قسم برمجة الذكاء الاصطناعي بالتطبيق العملي (الفصول 37-47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起توسيع/طي قسم برمجة الذكاء الاصطناعي بالتطبيق العملي" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>الفصل 37: ثورة النموذج — من كتابة الشيفرة إلى توجيه الذكاء الاصطناعي لكتابتها</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>الفصل 38: المبادئ الخمسة للتفكير في برمجة الذكاء الاصطناعي</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>الفصل 39: الذكاء الاصطناعي لم يفهم، غالباً لأنك لم تشرح</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>الفصل 40: وضّح المتطلبات أولاً، ثم شرع في التنفيذ</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>الفصل 41: مشهد أدوات برمجة الذكاء الاصطناعي في 2026</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>الفصل 42: نظرة شاملة على النماذج الكبيرة والتطبيق العملي لواجهات API</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>الفصل 43: تحدّث مع الذكاء الاصطناعي حتى يفهمك</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>الفصل 44: تطبيق عملي من 0 إلى 1 — الدورة الكاملة لمشروع متكامل</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>الفصل 45: كتب الذكاء الاصطناعي، لكن لم ينتهِ</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>الفصل 46: طريق الترقي — من مستخدم إلى مهندس بنى</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>الفصل 47: الدليل المرجعي السريع والمصادر</a></li>
+                        </ul>
+                    </li>
+<!--تطوير أندرويد عمليًا-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">ثامنًا: قسم تطوير Android بالتطبيق العملي (الفصول 48-58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起توسيع/طي قسم تطوير Android بالتطبيق العملي" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>الفصل 48: كيف تطوّر أندرويد حتى صار هكذا؟</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>الفصل 49: تهيئة بيئة التطوير — Android Studio وأول مشروع</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>الفصل 50: إتقان Kotlin بسرعة — اللغة الأولى لتطوير Android</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>الفصل 51: تطوير الواجهات — مدخل إلى Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>الفصل 52: المكونات الأربعة ودورة حياة Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>الفصل 53: تخزين البيانات وطلبات الشبكة</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>الفصل 54: المشروع الأول — دفتر حساباتي (نسخة محلية)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>الفصل 55: المشروع الثاني — تطبيق الاستعلام عن الطقس (نسخة شبكية)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>الفصل 56: تطبيقك جاهز، انشره على Google Play</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>الفصل 57: طريق الترقي — الأذونات والإشعارات والبنية الحديثة</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>الفصل 58: الدليل المرجعي السريع والمصادر</a></li>
+                        </ul>
+                    </li>
+<!--تطوير iOS عمليًا-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">تاسعًا: قسم تطوير iOS بالتطبيق العملي (الفصول 59-69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起توسيع/طي قسم تطوير iOS بالتطبيق العملي" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>الفصل 59: تعرف على iOS — منظومة Apple ومنظومة التطوير</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>الفصل 60: تهيئة بيئة التطوير — Xcode وأول مشروع</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>الفصل 61: إتقان Swift بسرعة — اللغة الأولى لتطوير Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>الفصل 62: تطوير الواجهات — مدخل إلى SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>الفصل 63: العروض والحالة والتنقل</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>الفصل 64: تخزين البيانات وطلبات الشبكة</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>الفصل 65: المشروع الأول — دفتر حساباتي (نسخة محلية)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>الفصل 66: المشروع الثاني — تطبيق الاستعلام عن الطقس (نسخة شبكية)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>الفصل 67: الصقل والنشر — الإطلاق على App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>الفصل 68: طريق الترقي — الأذونات والإشعارات والبنية الحديثة</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>الفصل 69: الدليل المرجعي السريع والمصادر</a></li>
+                        </ul>
+                    </li>
+<!--الملحق-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">عاشرًا: الملاحق</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起توسيع/طي الملاحق" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>Aالملحق أ: عملية فتح صندوق هاتف جديد</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>الملحق B: علقت في التمرين؟</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C ملحق C: جدول مصطلحات مختصر جدًا</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>Dالملحق د: أين تجد الموارد الموثوقة</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>Eالملحق هـ: الشكر والتوضيحات</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F ملحق F: موضوع شراء الهواتف القابلة للطي واستخدامها</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>خاتمة: افهم هاتفك، هذا كل ما في الأمر</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>Gالملحق ز: فهرس البحث السريع للكتاب كاملاً</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>Hالملحق ح: خارطة طريق الإصدارات</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="بحث"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="ابحث في المحتوى..." autocomplete="off" aria-label="كلمة البحث"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="إغلاق البحث">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">اكتب كلمة مفتاحية لبدء البحث</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- إلى الأعلى (مسار التنقل) --><nav class="breadcrumb no-print" aria-label="الموضع"><a href="#top">الرئيسية</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">الدورة الرقمية الأساسية · v1.8</span></nav>
+<div id="di-shi-jiu-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">الفصل 19: الهاتف تعطّل، لا تتسرع في إصلاحه</h3>
+<p class="chapter-intro mb-4">الهاتف مثل الإنسان، يمرض أحياناً. بطء، انهيار التطبيقات، شاشة سوداء، عدم الشحن... معظم هذه المشاكل ليست مخيفة كما تبدو، ويمكنك تجربة حلها بنفسك قبل إرسالها للصيانة. هذا الفصل هو "دليل الطوارئ لهاتفك", جرّب الطرق منخفضة التكلفة أولاً، وإذا لم تنجح فابحث عن طبيب محترف.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">أولاً: بطء الهاتف وارتفاع حرارته — أكثر الأسئلة شيوعاً</h4>
+<p class="mb-2">لنكن صادقين، أن يصبح الهاتف بطيئاً بعد حوالي عام من الاستخدام، هذا طبيعي جداً. السبب ليس بالضرورة عطلاً في الهاتف، بل في أغلب الأحيان "تراكم الغبار", ملفات غير ضرورية، وعمليات خلفية، ومساحة تخزين تمتلئ تدريجياً.</p>
+<h5 class="font-semibold mt-3 mb-1">قم بالتشخيص أولاً، لا تتسرع في الإصلاح:</h5>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>تحقق من مساحة التخزين</strong>: اذهب إلى الإعدادات → التخزين لرؤية المساحة المتبقية. إذا كانت أقل من 10%، سيصبح النظام بطيئاً جداً لأنه يكافح لإفساح مكان. من تجربتي: حافظ على 15%-20% على الأقل من المساحة المتبقية ليعمل الهاتف بسلاسة.</li>
+  <li><strong>تحقق من ترتيب استهلاك البطارية</strong>: اذهب إلى إعدادات البطارية لرؤية ترتيب الاستهلاك خلال 24 ساعة الماضية. إذا استحوذ تطبيق ما على النصيب الأكبر لكنك لم تستخدمه كثيراً، فهو يعمل في الخلفية. ألغِ تثبيته أو قيّد نشاطه الخلفي.</li>
+  <li><strong>استرجع ما فعلته مؤخراً</strong>: هل أصبح بطيئاً بعد ترقية النظام؟ (البطء في الأيام القليلة الأولى بعد تحديث كبير طبيعي، فالنظام يعيد بناء الفهارس في الخلفية). أم بعد تثبيت تطبيق جديد؟ (جرّب إلغاء تثبيته).</li>
+  <li><strong>انظر إلى بيئة الاستخدام</strong>: إذا تعرّض الهاتف للشمس المباشرة، أو كان في غلاف سميك أثناء الشحن ولعب الألعاب، فالحرارة حتمية. الحرارة العالية تجعل المعالج يخفّض تردده تلقائياً، فتشعر أن الهاتف أصبح بطيئاً فجأة. دعه يبرد ثم أعد المحاولة.</li>
+</ol>
+<p class="mb-2"><strong>طرق العلاج (من البسيط إلى المعقد)</strong>: أعد تشغيل الهاتف (يحل 60% من المشاكل) → نظّف مساحة التخزين (احذف التطبيقات والفيديوهات غير الضرورية) → إذا كان تطبيق ما يسبب المشكلة فامسح ذاكرة التخزين المؤقت له أو ألغِ تثبيته وأعد تثبيته → الملاذ الأخير: اعمل نسخة احتياطية للبيانات ثم أعد الضبط على المصنع.</p>
+<p class="mb-2">ثانياً: انهيار التطبيقات وعدم الاستجابة — التطبيق لم يعد يطيع</p>
+<p class="mb-2">تطبيق ما ينفتح ثم ينهار، أو يتجمد فجأة أثناء الاستخدام. عملية المعالجة مثل استقبال الطبيب، خطوة بخطوة:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>أغلقه وأعد فتحه</strong>: اسحب التطبيق من الخلفية، ثم أعد فتحه. معظم الأخطاء المؤقتة تُحل بهذه.</li>
+  <li><strong>حدّث التطبيق</strong>: اذهب إلى متجر التطبيقات لرؤية إن كان هناك تحديث. أحياناً يكون السبب أن إصدار التطبيق قديم جداً وغير متوافق مع النظام.</li>
+  <li><strong>تحقق من الصلاحيات</strong>: بعض التطبيقات تحتاج صلاحية معينة للعمل بشكل صحيح، لكنك لم تمنحها. مثلاً تطبيق الكاميرا إذا لم تُمنح صلاحية الكاميرا ينهار عند الفتح. اذهب إلى الإعدادات، ابحث عن ذلك التطبيق، وامنح جميع الصلاحيات اللازمة.</li>
+  <li><strong>امسح الذاكرة المؤقتة</strong>: اذهب إلى الإعدادات → إدارة التطبيقات → ابحث عن التطبيق → التخزين → مسح الذاكرة المؤقتة. انتبه، هو "مسح الذاكرة المؤقتة" وليس "مسح البيانات"! مسح البيانات سيحذف حالة تسجيل الدخول والإعدادات، وكأنك أعدت ضبط التطبيق على المصنع.</li>
+  <li><strong>ألغِ التثبيت وأعد التثبيت</strong>: الملاذ الأخير. قبل إلغاء التثبيت تأكد من عدم فقدان بيانات التطبيق: لـ WeChat انسخ سجل المحادثات احتياطياً أولاً، وللألعاب تأكد من ربط الحساب برقم الهاتف.</li>
+</ol>
+<h4 class="text-lg font-semibold mt-4 mb-2">ثالثاً: عدم الشحن أو الشحن البطيء — قد لا يكون ذنب البطارية</h4>
+<p class="mb-2">عدم الشحن مشكلة تسبب القلق بسهولة، لكن في كثير من الأحيان السبب في الملحقات وليس عطلاً في الهاتف.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>افحص منفذ الشحن أولاً</strong>: استخدم عود أسنان أو أداة صغيرة غير موصلة، وأزل برفق الغبار والوبر من منفذ الشحن. واجهت هذا بنفسي, سقط خيط من الجيب وسدّ منفذ الشحن، ظننت أن المشكلة في التلامس، لكن بعد إخراجه عاد للعمل.</li>
+  <li><strong>جرّب كابلاً ورأس شحن آخر</strong>: الكابلات تتلف أكثر من رؤوس الشحن، خاصة تلك التي تُلفّ كثيراً. جرّب كابلاً ورأس شحن مؤكدين الصلاحية للاختبار المتقاطع، لتحديد أي الملحقات معطل بسرعة.</li>
+  <li><strong>مشاكل الشحن اللاسلكي</strong>: إذا كنت تستخدم الشحن اللاسلكي، تحقق من سماكة غلاف الهاتف، أو وجود رقائق معدنية خلفه (مثل حامل مغناطيسي). وأيضاً، ضع الهاتف بدقة في منتصف لوح الشحن, إذا انحرف فقد لا يشحن.</li>
+  <li><strong>الشحن البطيء</strong>: تأكد من أن قدرة رأس الشحن كافية (iPhone للشحن السريع يحتاج على الأقل رأس شحن PD بقدرة 20 واط)، وأن الكابل يدعم الشحن السريع (ليس كل الكابلات تمرر أكثر من 3 أمبير)، وهل الهاتف ساخن جداً (الحرارة الشديدة تخفّض القدرة تلقائياً لحماية البطارية).</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">رابعاً: عدم الاتصال بالشبكة، انقطاع Wi-Fi المتكرر</h4>
+<p class="mb-2">خارج المنزل تعمل البيانات الخلوية بشكل جيد، لكن عند العودة لا تتصل بـ Wi-Fi؛ أو Wi-Fi متصل لكن لا توجد شبكة. افحص بهذا الترتيب:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>تشغيل/إيقاف وضع الطيران</strong>: اسحب مركز التحكم، شغّل وضع الطيران لمدة 5 ثوانٍ ثم أطفئه. هذا يجعل الهاتف يبحث عن الشبكة مرة أخرى، وهو فعال جداً.</li>
+  <li><strong>"نسيان" Wi-Fi ثم إعادة الاتصال</strong>: اذهب إلى إعدادات Wi-Fi، انقر علامة التعجب بجانب اسم الشبكة (في أندرويد الترس)، اختر "تجاهل هذه الشبكة" أو "نسيان"، ثم أعد إدخال كلمة المرور للاتصال.</li>
+  <li><strong>أعد تشغيل الموجّه</strong>: كثيرون لا يطفئون موجّه المنزل لشهور، ومع الوقت يصبح أقل استقراراً. افصل الطاقة لمدة 30 ثانية ثم أعد توصيلها، وتُحل معظم مشاكل Wi-Fi.</li>
+  <li><strong>تحقق إن كانت المشكلة في الهاتف</strong>: هل تتصل الأجهزة الأخرى بنفس Wi-Fi بشكل طبيعي؟ إذا كانت كلها طبيعية وهاتفك فقط لا يعمل، فقد يحتاج الهاتف لإعادة التشغيل أو إعادة ضبط إعدادات الشبكة (الإعدادات → عام → نقل أو إعادة ضبط → إعادة ضبط إعدادات الشبكة، لن يحذف بياناتك، لكنه سيحذف جميع كلمات مرور Wi-Fi).</li>
+</ol>
+<h4 class="text-lg font-semibold mt-4 mb-2">خامساً: مشاكل الشاشة: لمس غير حساس، وميض، آثار باقية</h4>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>اللمس غير الحساس</strong>: انزع الغلاف الزجاجي المقوّى أولاً لترى إن كان ذنبه: الغلاف الزجاجي الرخيص مع الوقت يؤثر فعلاً على اللمس. وجود ماء على الشاشة أو زيت على اليد يؤدي أيضاً إلى انحراف اللمس. إذا لم يكن أي منها، أعد التشغيل ثم حاول.</li>
+  <li><strong>آثار/صور خافتة على الشاشة (احتراق الشاشة)</strong>: عرض نفس الصورة لفترة طويلة (مثل إبقاء الشاشة مضاءة أثناء تصفح TikTok) يترك "أثراً" على شاشات OLED. هذه ليست عطلاً في الشاشة، بل مؤقت. أطفئ الشاشة لنصف ساعة وعادةً تتعافى.</li>
+  <li><strong>وميض الشاشة</strong>: إذا كان الوميض عند السطوع المنخفض، فقد يكون بسبب تعديل PWM، الشائع في شاشات OLED. اذهب إلى الإعدادات وابحث عن "تعديل DC" أو "منع الوميض"، وفعّله لتحسن كبير. ليست كل الهواتف لديها هذه الميزة.</li>
+  <li><strong>منطقة على الشاشة سوداء/مضيئة تماماً</strong>: هذا خطير، على الأرجح تلف مادي في الشاشة، يحتاج استبدال. الشاشات المستبدلة في مراكز غير رسمية، عادةً ألوانها وسطوعها أقل من الأصلية، وتؤثر على مقاومة الماء.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">سادساً: عدم الإقلاع، التعثّر عند شاشة الشعار — لا تذعر</h4>
+<p class="mb-2">هذه الحالة تسرّع ضربات القلب، لكن تمهّل، جرّب هذه أولاً:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>اشحن لمدة نصف ساعة ثم حاول</strong>: في كثير من الأحيان تكون البطارية قد نفدت تماماً. أوصل الشاحن الأصلي، انتظر 30 دقيقة على الأقل، ثم حاول التشغيل. بعض الهواتف بعد نفاد الطاقة تحتاج للوصول لمستوى معين لتستجيب.</li>
+  <li><strong>إعادة التشغيل الإجباري</strong>: لهواتف iPhone ذات الشاشة الكاملة: اضغط مرة زر رفع الصوت، مرة خفض الصوت، ثم اضغط مع الاستمرار الزر الجانبي للطاقة حتى يظهر شعار Apple (قد يستغرق 10-15 ثانية). الطريقة العامة لأندرويد: اضغط مع الاستمرار زر الطاقة لأكثر من 10 ثوانٍ حتى يهتز أو تضيء الشاشة.</li>
+  <li><strong>التعثّر في واجهة الإقلاع وإعادة التشغيل المتكرر</strong>: تسمى هذه الحالة "Apple الأبيض" (iPhone) أو "التعثّر عند الشعار" (أندرويد). إذا لم تنجح إعادة التشغيل الإجباري، قد تحتاج للدخول إلى وضع الاستعادة والإصلاح من الحاسوب. أوصل iPhone بالحاسوب وافتح iTunes/Finder، بعد الدخول لوضع الاستعادة اختر "تحديث" (وليس "استعادة")، سيعيد تثبيت النظام مع الاحتفاظ بالبيانات. أندرويد ادخل وضع Fastboot أو Recovery، اختصارات الأزرار تختلف بين العلامات، يُنصح بالبحث عن طراز هاتفك + "وضع الاستعادة".</li>
+  <li><strong>إذا فشل كل ما سبق</strong>: لا مفر من اللجوء إلى صيانة محترفة. إذا كنت قد نسخت بياناتك احتياطياً، فلا تقلق كثيراً.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">سابعاً: مشاكل الصوت: السماعة لا تعمل، صوت المكالمة منخفض</h4>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>لا صوت من السماعة</strong>: تأكد أولاً من عدم تفعيل وضع الصامت (المفتاح الجانبي في iPhone)، أو وضع عدم الإزعاج، أو خفض الصوت إلى الحد الأدنى. يبدو سخيفاً، لكن هذه الحالات تشكل 40%. ثم تحقق من اتصال Bluetooth بسماعة أو مكبر صوت.</li>
+  <li><strong>الطرف الآخر لا يسمعك في المكالمة</strong>: تحقق من انسداد فتحة الميكروفون, الفتحة الصغيرة في أسفل الهاتف يسهل انسدادها بالغبار. نظّفها بفرشاة ناعمة بلطف. لا تستخدم إبرة أو عود أسنان للدفع بقوة، فقد تتلف الشبكة الواقية من الغبار.</li>
+  <li><strong>صوت أجش/مشوّش</strong>: إذا كان بسبب دخول الماء للسماعة: لا تستخدم مجفف الشعر بالهواء الساخن! امتص الماء السطحي بمنديل ورقي، ثم اتركه يجف طبيعياً. يُقال إن تطبيقات طرد الماء بالموجات الصوتية فعالة إلى حد ما (تشغيل صوت منخفض التردد لإخراج الماء بالاهتزاز)، يمكنك تجربتها.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">ثامناً: الصيانة الرسمية، تجنّب هذه الفخاخ</h4>
+<p class="mb-2">إذا جربت كل ما سبق ولم ينفع، فلا بد من اللجوء إلى صيانة محترفة. لكن سوق الصيانة غامض، دعني أحدثك عن فخاخ وقعت فيها وتجاربي:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>ابحث عن الرسمي الحقيقي، لا "الذي يبدو رسمياً"</strong>: اذهب إلى موقع العلامة التجارية (Apple.com.cn، Huawei.com.cn إلخ) وابحث عن قائمة "مزوّدي الخدمة المعتمدين". المتاجر غير المعتمدة التي تعلق شعار Apple في الشارع قد لا تستخدم ملحقات أصلية، وبعد الإصلاح تختفي مقاومة الماء فوراً.</li>
+  <li><strong>ما يجب فعله قبل الإرسال للصيانة</strong>: انسخ جميع البيانات احتياطياً (لا تعتمد على عدم فقدان البيانات أثناء الصيانة)، سجّل الخروج من جميع الحسابات المهمة (Apple ID، WeChat، Alipay)، أوقف "العثور على هاتفي". بعض مراكز الصيانة ستطلب كلمة مرور قفل الشاشة، وهذا خطر على الخصوصية — من الأفضل أن تسجّل الخروج من حساباتك بنفسك قبل الإرسال.</li>
+  <li><strong>فخاخ استبدال الشاشة</strong>: الشاشات غير الرسمية تنقسم إلى "شاشة مضغوطة أصلية" (زجاج أصلي مستبدل)، "شاشة مضغوطة لاحقاً" (زجاج غير أصلي)، "شاشة مجمّعة" (كلها غير أصلية). الأسعار تختلف بضعفين، لكن جودة العرض والمتانة تختلف كثيراً أيضاً. إذا كان الهاتف لا يزال في فترة الضمان، التزم بالطريق الرسمي.</li>
+  <li><strong>فخاخ استبدال البطارية</strong>: البطاريات غير الأصلية قد تبالغ في سعتها المعلنة، وبعد نصف سنة تتدهور أكثر من البطارية الأصلية بعد سنتين. سعر استبدال بطارية Apple الرسمي ليس أغلى بكثير من غير الرسمي، يُنصح بالطريق الرسمي.</li>
+  <li><strong>فخاخ استرجاع البيانات</strong>: بعد تلف الهاتف بالماء/السقوط، إذا قال لك مركز الصيانة "استرجاع البيانات يتطلب رسوماً إضافية"، احذر: بعض التجار غير الشرفاء يبالغون في حجم التلف لجمع رسوم أكثر. استرجاع البيانات الرسمي يقدّم السعر أولاً ثم العمل، وإذا لم ينجح لا تُحسب رسوم.</li>
+</ul>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">الحل الأول الشامل: أعد تشغيل الهاتف</p>
+<p class="mt-1">أياً كانت المشكلة التي تواجهها: بطء، انهيار تطبيقات، عدم اتصال بالشبكة، صوت غير طبيعي, أعد تشغيل الهاتف أولاً. يبدو هذا وكأنه تجاهل، لكن من تجربتي، على الأقل 60% من المشاكل الصغيرة تُحل بإعادة التشغيل. الهاتف مثل الحاسوب، مع الاستخدام المطوّل تتراكم في الذاكرة أشياء فوضوية، وإعادة التشغيل تفرغها وتبدأ من جديد. لذلك، في المرة القادمة التي يواجه فيها هاتفك مشكلة، لا تتسرع في البحث عن "ماذا أفعل"، أعد التشغيل ثم انظر.</p>
+</div>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">احفظ الآن: هذه العمليات الإنقاذية يجب أن تعرفها جيداً</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li><strong>إعادة التشغيل الإجباري</strong>: لهواتف iPhone ذات الشاشة الكاملة: زر رفع الصوت → زر خفض الصوت → اضغط مع الاستمرار زر الطاقة حتى يظهر الشعار. أندرويد: اضغط مع الاستمرار زر الطاقة لمدة 10-15 ثانية حتى يهتز.</li>
+  <li><strong>تنظيف منفذ الشحن</strong>: ابحث عن أداة صغيرة (عود أسنان أو أداة إخراج شريحة SIM)، ونظّف برفق غبار منفذ الشحن.</li>
+  <li><strong>إعادة اتصال Wi-Fi</strong>: اذهب إلى إعدادات Wi-Fi و"انسَ" شبكتك الحالية، وأعد إدخال كلمة المرور للاتصال.</li>
+  <li><strong>تشغيل/إيقاف وضع الطيران</strong>: اسحب مركز التحكم، شغّل وضع الطيران، عُدّ 5 ثوانٍ في ذهنك، أطفئه، وانظر إن عادت الشبكة.</li>
+  <li>التقط لقطات شاشة لخطوات هذه العمليات واحفظها، أو اكتبها في الملاحظات. عند مواجهة مشكلة لا تذعر وتبحث، بل افتح الملاحظات مباشرة.</li>
+</ol>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">وجدت خطأً في هذا الفصل؟ <a href="../../errata.html" class="text-primary hover:underline">أبلغ عنه في صفحة الأخطاء</a> — مسار قديم، معلومة غير دقيقة، صياغة غامضة: كلها مقبولة. يمكنك الكتابة أيضًا في مجموعة QQ 1074995524.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-shi-ba-zhang.html" class="text-primary hover:underline">← الفصل 18: خُذ نسخة احتياطية، لا في اليوم الذي تحتاجها</a><span></span><a id="next-link" href="di-er-shi-zhang-jinjie.html" class="text-primary hover:underline">الفصل 20: وضع المطوّر والأذونات المتقدمة →</a></nav>
+ </div></main></div><!-- أدوات سريعة: مجموعة أزرار عائمة --><div id="quick-tools" class="quick-tools no-print" aria-label="أدوات سريعة"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="بحث (Ctrl+K)" aria-label="بحث"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="التبديل بين الداكن/الفاتح" aria-label="تبديل السمة"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="الطباعة / تصدير PDF" aria-label="الطباعة أو التصدير"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="الفهرس" aria-label="فتح الفهرس"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="القراءة الصوتية" aria-label="القراءة الصوتية"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="اختصارات لوحة المفاتيح (?)" aria-label="لوحة الاختصارات"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="نسخ التقدم احتياطيًا/استعادته" aria-label="النسخ الاحتياطي للتقدم"><span aria-hidden="true">B</span></button></div><!-- لوحة الاختصارات --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="اختصارات لوحة المفاتيح"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">اختصارات لوحة المفاتيح</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="إغلاق">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">البحث في المحتوى</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">التبديل بين الداكن/الفاتح</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">القراءة الصوتية: تشغيل/إيقاف مؤقت</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">إيقاف القراءة</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">فتح لوحة الاختصارات</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">تكبير / تصغير حجم الخط</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">طباعة / تصدير PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- نافذة النسخ الاحتياطي/الاستعادة --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="النسخ الاحتياطي والاستعادة"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">نسخ احتياطي واستعادة لتقدم القراءة</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="إغلاق">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">يشمل النسخ الاحتياطي: الفصول المقروءة، والإشارات المرجعية، ومواضع القراءة، وتفضيل حجم الخط، ونتائج الفحص الذاتي للصحة. تُحفظ البيانات محليًا في المتصفح وتُفقد عند تغيير المتصفح أو مسح ذاكرة التخزين المؤقت، لذا يُنصح بتصدير نسخة احتياطية بشكل دوري.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> تصدير ملف النسخ الاحتياطي
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">تنزيل ملف JSON وحفظه في مكان آمن</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> استيراد النسخة الاحتياطية والاستعادة
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">اختيار ملف نسخة احتياطية سبق تصديره لاستعادة تقدمك</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> مسح جميع بيانات القراءة
+ </button><p class="text-xs text-red-400 mt-1 text-center">لا يمكن الاستعادة! صدّر نسخة احتياطية أولًا</p></div></div></div></div><!-- تنبيه أيام القراءة المتتالية --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">اليوم X من القراءة المتواصلة!</span></div><!-- شريط أدوات القراءة الصوتية --><div id="tts-controls" class="tts-controls" role="region" aria-label="التحكم في القراءة الصوتية" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="الفصل الجاري قراءته">لم يبدأ</span><button class="tts-btn" id="tts-prev" title="الفقرة السابقة" aria-label="الفقرة السابقة"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="تشغيل/إيقاف مؤقت" aria-label="تشغيل القراءة"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="الفقرة التالية" aria-label="الفقرة التالية"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="إبطاء" aria-label="إبطاء">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="تسريع" aria-label="تسريع">+</button><button class="tts-btn" id="tts-stop" title="إيقاف القراءة الصوتية" aria-label="إيقاف القراءة الصوتية"><span aria-hidden="true">×</span></button></div><!-- زر «إلى الأعلى» --><button id="back-to-top" class="opacity-0 invisible" aria-label="العودة إلى الأعلى"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- تنبيه استعادة موضع القراءة --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">آخر قراءة: ...</span><button class="btn-restore" id="restore-btn">تراجع</button><button class="btn-dismiss" id="dismiss-btn">تجاهل</button></div><!-- سكربت JS -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

@@ -1,0 +1,531 @@
+ <!DOCTYPE html><html lang="fr"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="Le cours de smartphone qui vous manquait · De l'initiation à la maîtrise, prends en main toute ta vie numérique"><meta name="keywords" content="tutoriel téléphone,cours numérique obligatoire,smartphone,Android,iOS,HarmonyOS,astuces téléphone,vie numérique,grands modèles IA,programmation par IA,API grands modèles,ingénierie des prompts,développement Android,développement iOS,Swift,Kotlin,SwiftUI,Jetpack Compose,photographie computationnelle,sécurité informatique,gestion des mots de passe,automatisation,achat de téléphone"><meta name="author" content="Guide de la vie numérique"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-er-shi-er-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="Chapitre 22 : Que fait vraiment l&#x27;IA dans le smartphone ?"><meta property="og:description" content="Bienvenue dans le « spectacle de magie » le plus cool du smartphone, avec pour…"><meta property="og:locale" content="fr_FR"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Le cours de smartphone qui vous manquait"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Le cours de smartphone qui vous manquait · v1.8"><meta name="twitter:description" content="De l'initiation à la maîtrise, prends en main toute ta vie numérique"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>Chapitre 22 : Que fait vraiment l'IA dans le smartphone ? · Le cours de smartphone qui vous manquait</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-er-shi-er-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "Chapitre 22 : Que fait vraiment l'IA dans le smartphone ?", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-er-shi-er-zhang.html", "isPartOf": {"@type": "Book", "name": "Le cours de smartphone qui vous manquait", "inLanguage": "fr"}}</script>
+<link rel="prefetch" href="di-er-shi-san-zhang.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-er-shi-er-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">Aller au contenu principal</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="Ouvrir le menu du sommaire" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="Retour à l'accueil">Le cours de smartphone qui vous manquait</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="Action principale"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="Commencer par les bases">Commencer l'apprentissage</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Rechercher (Ctrl+K)" aria-label="Rechercher dans le contenu"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="Ajustement de la taille du texte"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="Réduire la police" aria-label="Réduire la police">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="Réinitialiser la taille" aria-label="Réinitialiser la taille">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="Agrandir la police" aria-label="Agrandir la police">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Basculer sombre/clair" aria-label="Basculer mode sombre/clair"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="Imprimer / Exporter en PDF" aria-label="Imprimer ou exporter en PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="Retour en haut">Haut de page
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="Sommaire de l'article"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">Sommaire
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 chap.</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="Filtrer les chapitres..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="Filtrer les chapitres"></div><ul class="space-y-1 text-sm" id="toc-list"><!--Les bases-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Commencer l'apprentissage</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie bases" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>Chapitre 0 : Trois petites choses à dire d'abord</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>Chapitre 1 : Apprenons d'abord à connaître votre smartphone</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Annexe : analyse de l'extension de mémoire Android</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Chapitre 1 Annexe : spécial HarmonyOS</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>Chapitre 2 : Vous ne trouvez rien sur votre smartphone ?</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>Chapitre 3 : Pas de réseau ? Ne redémarrez pas encore</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>Chapitre 4 : Avant d'installer une app, regardez-la bien</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Annexe : Composants d'un paquet d'installation logiciel</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>Chapitre 5 : Réglez votre smartphone comme il vous plaît</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>Chapitre 6 : Smartphone perdu ? Mot de passe oublié ?</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>Chapitre 7 : Décryptage complet des fonctions de pointe</a></li>
+                        </ul>
+                    </li>
+<!--Logiciels-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">II. Partie logicielle (chapitres 8-14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie logicielle" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>Chapitre 8 : Communication : SMS, appels et réseaux sociaux</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>Chapitre 9 : Travail et apprentissage mobiles</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>Chapitre 10 : Paiement mobile et services du quotidien</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>Chapitre 11 : Mieux shooter que shooter beaucoup</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Complément du chapitre 11 : techniques d'image professionnelle</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>Chapitre 12 : Loisirs, divertissement et lecture</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>Chapitre 13 : Quelles apps installer, et lesquelles éviter ?</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>Chapitre 14 : Dossier spécial gestionnaires de mots de passe</a></li>
+                        </ul>
+                    </li>
+<!--Perfectionnement-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">III. Partie avancée (chapitres 15-20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie avancée" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>Chapitre 15 : Deux recharges par jour : batterie ou usage ?</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Complément : décryptage complet des protocoles de charge rapide</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>Chapitre 16 : Changer de téléphone : quels comptes garder ?</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>Chapitre 17 : Interaction du téléphone avec les autres appareils</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>Chapitre 18 : Sauvegardez maintenant, pas quand ça compte</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>Chapitre 19 : Panne ? Ne vous précipitez pas à réparer</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>Chapitre 20 : Mode développeur et permissions avancées</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Annexe du Chapitre 20</a></li>
+                        </ul>
+                    </li>
+<!--Plus loin-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">IV. Partie Au-delà (chapitres 21-26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie Au-delà" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>Chapitre 21 : Peut-on se connecter à un Wi-Fi public ?</a></li>
+                            <li><a href="#di-er-shi-er-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>Chapitre 22 : Que fait vraiment l'IA dans le smartphone ?</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>Chapitre 23 : Que le smartphone fasse les tâches répétitives</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Annexe : Guide de démarrage avec GitHub</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>Chapitre 24 : Analyse approfondie des droits root et du verrou BL</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>Chapitre 25 : Avant de revendre : les gestes à faire d'abord</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>Chapitre 26 : Les nouvelles technologies peuvent attendre</a></li>
+                        </ul>
+                    </li>
+<!--5,Pratique(chapitres 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">V. Partie pratique (chapitres 27-32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie pratique" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>Chapitre 27 : Régler le smartphone de vos parents</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>Chapitre 28 : Avant d'acheter, clarifiez ces trois points</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>Chapitre 29 : Combien de temps l'utilisez-vous vraiment ?</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>Chapitre 30 : Projection d'écran, présentation et connectivité embarquée</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>Chapitre 31 : Initiation au tournage de vidéos courtes et à la création de contenu</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>Chapitre 32 : Problème ? 30 secondes pour limiter les dégâts</a></li>
+                        </ul>
+                    </li>
+<!--6,Perspectives(Chapitre 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VI. Section prospective (Chapitres 33-41)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie perspectives" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>Chapitre 33 : Comment sera le smartphone dans dix ans ?</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>Chapitre 34 : Téléphone et voiture : connecter sans galère</a></li>
+                        </ul>
+                    </li>
+<!--Spécial enfants et téléphones(Chapitre 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Dossier enfants et téléphone (chapitres 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier le dossier enfants et téléphone" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>Chapitre 35 : Donner un smartphone à un enfant : les règles</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>Chapitre 36 : Relier tous les appareils de la maison</a></li>
+                        </ul>
+                    </li>
+<!--Programmation par IA en pratique-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VII. Partie programmation par IA (chapitres 37-47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie programmation par IA" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>Chapitre 37 : Révolution de paradigme — d'écrire du code à diriger l'IA qui code</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>Chapitre 38 : Les cinq principes de pensée de la programmation par IA</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>Chapitre 39 : L'IA ne comprend pas : c'est mal expliqué</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>Chapitre 40 : Dites-le clairement, puis passez à l'action</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>Chapitre 41 : Panorama des outils de programmation par IA en 2026</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>Chapitre 42 : Panorama des grands modèles et pratique des API</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>Chapitre 43 : Parlez à l'IA pour qu'elle vous comprenne</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>Chapitre 44 : Pratique de zéro à un — le parcours complet d'un projet</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>Chapitre 45 : L'IA a écrit, mais ce n'est pas fini</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>Chapitre 46 : Montée en compétence — d'utilisateur à architecte</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>Chapitre 47 : Aide-mémoire et ressources</a></li>
+                        </ul>
+                    </li>
+<!--Développement Android en pratique-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VIII. Partie développement Android (chapitres 48-58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie développement Android" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>Chapitre 48 : Comment Android est devenu ce qu'il est ?</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>Chapitre 49 : Installer l'environnement de développement — Android Studio et le premier projet</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>Chapitre 50 : Prise en main rapide de Kotlin — le premier langage du développement Android</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>Chapitre 51 : Développement d'interfaces — initiation à Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>Chapitre 52 : Les quatre composants et le cycle de vie des Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>Chapitre 53 : Stockage des données et requêtes réseau</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>Chapitre 54 : Projet 1 — Mon carnet de comptes (version locale)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>Chapitre 55 : Projet 2 — App météo (version réseau)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>Chapitre 56 : Votre app est prête, mettez-la en ligne</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>Chapitre 57 : Montée en compétence — permissions, notifications et architecture moderne</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>Chapitre 58 : Aide-mémoire et ressources</a></li>
+                        </ul>
+                    </li>
+<!--Développement iOS en pratique-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">IX. Partie développement iOS (chapitres 59-69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier la partie développement iOS" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>Chapitre 59 : Découvrir iOS — écosystème Apple et écosystème de développement</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>Chapitre 60 : Installer l'environnement de développement — Xcode et le premier projet</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>Chapitre 61 : Prise en main rapide de Swift — le premier langage du développement Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>Chapitre 62 : Développement d'interfaces — initiation à SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>Chapitre 63 : Vues, états et navigation</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>Chapitre 64 : Stockage des données et requêtes réseau</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>Chapitre 65 : Projet 1 — Mon carnet de comptes (version locale)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>Chapitre 66 : Projet 2 — App météo (version réseau)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>Chapitre 67 : Peaufiner et publier — mise en ligne sur l'App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>Chapitre 68 : Montée en compétence — permissions, notifications et architecture moderne</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>Chapitre 69 : Aide-mémoire et ressources</a></li>
+                        </ul>
+                    </li>
+<!--Annexe-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">X. Annexes</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Déplier/Replier les annexes" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>AAnnexe A : Procédure de déballage d'un nouveau smartphone</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>Annexe B : Bloqué sur un exercice ?</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C Annexe C : lexique minimal des termes</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>DAnnexe D : Où trouver des ressources fiables</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>EAnnexe E : Remerciements et mentions</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F Annexe F : dossier écrans pliables — achat et utilisation</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>Conclusion : Comprendre son téléphone, c'est tout</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>GAnnexe G : Index de recherche rapide du livre</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>HAnnexe H : Feuille de route des versions</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="Rechercher"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="Rechercher dans le contenu..." autocomplete="off" aria-label="Mots-clés de recherche"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Fermer la recherche">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">Saisis un mot-clé pour lancer la recherche</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- Haut de page (fil d’Ariane) --><nav class="breadcrumb no-print" aria-label="Emplacement"><a href="#top">Accueil</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">Cours numérique essentiel · v1.8</span></nav>
+<div id="di-er-shi-er-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">Chapitre 22 : Que fait vraiment l'IA dans le smartphone ?</h3>
+<p class="chapter-intro mb-4">Bienvenue dans le « spectacle de magie » le plus cool du smartphone, avec pour vedette : l'intelligence artificielle. Les belles photos « instantanées » que vous utilisez tous les jours, l'assistant vocal qui répond du tac au tac, le clavier qui vous comprend de mieux en mieux, tous ont derrière eux ce cerveau invisible.</p>
+<p class="mb-2">I. Appareil photo IA : votre « laboratoire de post-production » déménagé dans le smartphone</p>
+<p class="mb-2">La photographie computationnelle IA d'aujourd'hui ressemble davantage à l'intégration d'une équipe de retoucheur professionnel + photographe directement dans le déclencheur. Avant que vous n'appuyiez sur le déclencheur, l'IA a déjà commencé à travailler : scanner la scène, identifier « c'est le ciel bleu », « c'est un visage », « c'est une scène de nuit ».</p>
+<p class="mb-2">II. Assistant vocal : comment votre « secrétaire vocal » vous comprend-il ?</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>Entendre clairement (reconnaissance vocale)</strong>: transformer les ondes sonores en texte.</li>
+  <li><strong>Comprendre (compréhension du langage naturel)</strong>: comprendre l'intention, extraire les entités clés.</li>
+  <li><strong>Exécuter et répondre</strong>: appeler l'application ou le service correspondant, puis « parler » via la synthèse vocale.</li>
+</ol>
+<h4 class="text-lg font-semibold mt-4 mb-2">III. IA sur appareil vs. IA dans le cloud</h4>
+<p class="mb-2">L'IA sur appareil garde les calculs dans le smartphone, rapide, haute confidentialité, peut fonctionner hors ligne. L'IA dans le cloud nécessite une connexion, mais peut traiter des tâches plus complexes.</p>
+<p class="mb-2">IV. Grands modèles d'IA et smartphone : votre assistant intelligent de poche</p>
+<p class="mb-2">En 2025-2026, l'explosion des grands modèles d'IA (tels que DeepSeek R1, ChatGPT-5, ERNIE Bot 5.0, Tongyi Qianwen 3, etc.) a profondément changé la façon d'utiliser le smartphone. Le smartphone n'est plus seulement un outil exécutant des instructions, mais un partenaire intelligent capable de comprendre, de raisonner et de créer. Les puces IA côté appareil (puissance NPU dépassant 80 TOPS) permettent pour la première fois l'inférence de grands modèles localement sur le smartphone, utilisable hors ligne.</p>
+<h5 class="font-semibold mt-3 mb-1">Qu'est-ce qu'un grand modèle d'IA ?</h5>
+<p class="mb-2">Un grand modèle d'IA (Large Language Model, LLM) est un système d'IA entraîné avec d'énormes quantités de données textuelles, capable de comprendre et de générer du langage naturel. Vous pouvez l'imaginer comme un « élève surdoué » qui a lu presque tous les textes sur Internet, capable de répondre à des questions, rédiger des articles, traduire, programmer, analyser des données.</p>
+<h5 class="font-semibold mt-3 mb-1">Applications de grands modèles d'IA sur smartphone :</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Assistant conversationnel</strong>: DeepSeek, ChatGPT, Doubao, Kimi et autres applications, peuvent répondre à des questions, traduire, rédiger des textes, résumer des articles à tout moment. Plus intelligent qu'un moteur de recherche traditionnel, il ne vous donne pas seulement des liens, il vous donne directement la réponse.</li>
+  <li><strong>Écriture et création</strong>: laissez l'IA rédiger des e-mails, résumer des comptes rendus de réunions, peaufiner des articles, générer des textes créatifs.</li>
+  <li><strong>Génération et édition d'images</strong>: l'IA efface en un clic les passants dans les photos, étend les bords d'image, conversion de style, voire génère des images à partir de descriptions textuelles.</li>
+  <li><strong>Traduction en temps réel</strong>: traduction en temps réel des appels, traduction des conversations face à face, traduction par photo, plus de barrière linguistique en voyage à l'étranger.</li>
+  <li><strong>Soutien scolaire</strong>: l'IA peut expliquer des concepts, proposer des exercices, corriger des devoirs, c'est un tuteur de poche.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Grands modèles sur appareil : le smartphone fait tourner l'IA lui-même</h5>
+<p class="mb-2">Les derniers smartphones haut de gamme peuvent déjà faire tourner localement de petits grands modèles d'IA (généralement autour de 7B paramètres), les changements apportés sont :</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Pas besoin de réseau</strong>: les fonctions IA fonctionnent même hors ligne, en avion, dans le métro.</li>
+  <li><strong>Confidentialité renforcée</strong>: vos conversations et données ne sont pas téléchargées dans le cloud, traitées entièrement localement sur le smartphone.</li>
+  <li><strong>Réponse plus rapide</strong>: sans latence réseau, la réponse de l'IA est quasi instantanée.</li>
+  <li><strong>Limites actuelles</strong>: les capacités des modèles sur appareil ne égalent pas encore celles des grands modèles dans le cloud, les tâches complexes nécessitent toujours une connexion. Mais avec l'augmentation de la puissance de calcul IA des puces, les modèles sur appareil deviendront de plus en plus puissants.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Intégration IA au niveau système :</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Apple Intelligence</strong>: système d'IA introduit dans iOS 18, intègre des outils d'écriture, baguette magique d'image, Siri amélioré, résumé de notifications, etc. Priorité au traitement sur appareil, les tâches complexes vont dans le cloud.</li>
+  <li><strong>Grand modèle Pangu de Huawei</strong>: intégré au système HarmonyOS, l'assistant Xiao Yi obtient les capacités des grands modèles, prend en charge le résumé de documents, la reconnaissance intelligente d'écran, la retouche IA, etc.</li>
+  <li><strong>Surge AI de Xiaomi</strong>: capacités IA au niveau système, prend en charge la recherche d'images IA, le résumé IA, les sous-titres en temps réel IA, le dialogue avec grand modèle sur appareil, etc.</li>
+  <li><strong>Galaxy AI de Samsung</strong>: traduction d'appel en temps réel, résumé IA des notes, génération et édition d'images, recherche par encerclement, etc.</li>
+</ul>
+<p class="mb-2">V. Quelques scénarios d'application typiques et exercices pratiques</p>
+<p class="mb-2">Pour vous faire ressentir plus intuitivement les « super-pouvoirs » de l'IA sur smartphone, voici cinq scénaires concrets qui montrent comment l'IA peut vous « sauver la mise » au quotidien :</p>
+<h5 class="font-semibold mt-3 mb-1">Scénario 1 : Traduction en temps réel — votre interprète personnel pour les voyages à l'étranger</h5>
+<p class="mb-2"><strong>Performance réelle</strong>:À Paris, vous ne parlez pas français au restaurant ? L'application « Traduction » de l'iPhone prend en charge le mode de conversation face à face, chaque partie voyant les sous-titres dans sa propre langue, avec même possibilité d'interprétation simultanée. Du côté Android, la traduction en temps réel des appels Galaxy AI de Samsung vous permet de parler en chinois au téléphone, votre interlocuteur entendant l'anglais, et vice versa.</p>
+<p class="mb-2"><strong>Principe sous-jacent</strong>:Pipeline en trois étapes : reconnaissance vocale (ASR) → traduction automatique (NMT) → synthèse vocale (TTS), avec une latence de bout en bout désormais contrôlable en moins d'une seconde.</p>
+<h5 class="font-semibold mt-3 mb-1">Scénario 2 : Effacement IA — sauver les photos de touristes « gâchées » par les passants</h5>
+<p class="mb-2"><strong>Performance réelle</strong>:Vous avez pris un selfie magnifique sur un site touristique, mais l'arrière-plan est rempli d'autres touristes ? Utilisez l'« effacement magique » pour sélectionner les passants, le smartphone les identifie et les « efface » automatiquement, puis remplit intelligemment l'arrière-plan — le résultat est souvent bluffant.</p>
+<p class="mb-2"><strong>Principe sous-jacent</strong>:Le modèle d'inpainting identifie et supprime d'abord la zone sélectionnée, puis « devine » un contenu de remplissage plausible à partir des pixels environnants et de la compréhension sémantique. Le modèle IA sous-jacent a été entraîné sur des millions d'images.</p>
+<h5 class="font-semibold mt-3 mb-1">Scénario 3 : Retouche IA — devenez un « maître de la photographie » en un clic</h5>
+<p class="mb-2"><strong>Performance réelle</strong>:Vous avez pris une photo de paysage gris par temps couvert ? Le « ciel magique » IA peut remplacer le ciel en un clic par un ciel dégagé, un coucher de soleil ou même une voûte étoilée. L'extension IA peut transformer un cadrage vertical en cadrage horizontal, le smartphone « imaginant » la scène au-delà du cadre.</p>
+<p class="mb-2"><strong>Principe sous-jacent</strong>:Basé sur le modèle de diffusion (Diffusion Model) de l'IA générative (Generative AI), il comprend le contenu sémantique de l'image puis génère de nouveaux pixels. C'est la « pointe » actuelle du traitement d'image par IA.</p>
+<h5 class="font-semibold mt-3 mb-1">Scénario 4 : Traitement de documents — le multiplicateur d'efficacité pour les professionnels</h5>
+<p class="mb-2"><strong>Performance réelle</strong>:Après une réunion, donnez l'enregistrement à l'IA : elle peut automatiquement produire un compte-rendu structuré, extraire les tâches à faire et générer un résumé. Un rapport PDF de 10 pages en anglais ? L'IA peut en extraire les conclusions clés en 10 secondes.</p>
+<p class="mb-2"><strong>Principe sous-jacent</strong>:Les grands modèles à contexte long (Long Context LLM) peuvent « lire » des documents de dizaines de milliers de caractères, effectuer des raisonnements multi-tours et extraire des informations. Apple Intelligence, Huawei Xiaoyi, WPS AI, Tencent Yuanbao possèdent tous cette capacité.</p>
+<h5 class="font-semibold mt-3 mb-1">Scénario 5 : Recherche d'images et identification d'objets par IA — votre « moteur de recherche visuel »</h5>
+<p class="mb-2"><strong>Performance réelle</strong>:Vous voyez une fleur inconnue dans la rue ? Ouvrez l’appareil photo, l’IA vous dit immédiatement « c’est un hibiscus ». Vous cherchez les photos de la mer de l’an dernier dans l’album ? Recherchez « mer » et l’IA trouve automatiquement toutes les photos contenant la mer, sans fouillage manuel.</p>
+<p class="mb-2"><strong>Principe sous-jacent</strong>:Les modèles de vision par ordinateur (CV) vectorisent le contenu des images (Embedding), puis les mettent en correspondance avec les requêtes textuelles. Cette « recherche multimodale » constitue un bond en avant pour la gestion d’album photo sur smartphone.</p>
+<p class="mb-2">VI. Optimisation des prompts : la « formule de communication » pour faire obéir l'IA</p>
+<p class="mb-2">La qualité des réponses de l'IA dépend en grande partie de la façon dont vous « posez la question ». Pour une même question, selon la formulation, les réponses de l'IA peuvent être radicalement différentes. Nous présentons ci-dessous une <strong>approche de communication « Rôle-Contexte-Tâche-Contraintes » la plus pratique et la plus accessible</strong>, accompagnée de nombreux exemples.</p>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Pourquoi a-t-on besoin d'un cadre ?</p>
+<p class="mt-1">Beaucoup de gens utilisent l’IA comme Baidu, en tapant quelques mots-clés. Mais l’IA n’est pas un moteur de recherche, c’est un modèle de langage qui « lit, comprend puis répond ».<strong>Donnez-lui plus de contexte, dites clairement ce que vous voulez, empêchez-la de s'égarer</strong>, et elle vous donnera des résultats précis. Le cadre consiste à traduire l'image du « à quoi ressemble une bonne réponse » dans votre tête en instructions compréhensibles par l'IA.</p>
+</div>
+<h5 class="font-semibold mt-4 mb-1">1. Rôle (Role) : dites à l'IA qui elle est</h5>
+<p class="mb-2">Donnez à l'IA une « identité » spécifique, et elle activera les connaissances et le style d'expression du domaine correspondant.<strong>Plus le rôle est défini précisément, plus la sortie est professionnelle</strong>.</p>
+<h5 class="font-semibold mt-3 mb-1">Exemples pratiques :</h5>
+<ul class="list-disc pl-6 mb-3 space-y-2">
+  <li>« Vous êtes un <strong>ingénieur de réparation de smartphones Xiaomi avec 10 ans d’expérience</strong>. » (Problème technique)</li>
+  <li>« Vous êtes un <strong>professeur de physique au collège qui excelle à expliquer les concepts complexes simplement</strong>. » (Vulgarisation)</li>
+  <li>« Vous êtes un <strong>éditeur de livres au bon goût, grande culture et style personnel</strong>. » (Rédaction)</li>
+  <li>« Vous êtes un <strong>blogueur culinaire qui prépare le petit-déjeuner chaque jour pour les actifs</strong>. » (Questions de vie quotidienne)</li>
+  <li>« Vous êtes un <strong>médecin traditionnel chinois patient, doux, qui ne se moque jamais des débutants</strong>. » (Questions de santé)</li>
+</ul>
+<div class="highlight-quote">
+<p class="mb-1"><strong>Pourquoi ça marche ?</strong> Le rôle définit le <strong>champ de connaissances</strong>, le <strong>style d’expression</strong> et <strong>profondeur professionnelle</strong> de l’IA. Sans rôle, l’IA est un généraliste « bon à tout, excellent à rien » ; avec un rôle, elle peut « entrer » dans cette identité et penser comme ce professionnel.</p>
+</div>
+<h5 class="font-semibold mt-4 mb-1">2. Contexte (Background) : dites à l'IA votre situation</h5>
+<p class="mb-2">Expliquez clairement à l’avance « qui vous êtes, votre situation actuelle, vos contraintes », et l’IA pourra donner des réponses <strong>véritablement adaptées à vous</strong>, au lieu de généralités.</p>
+<h5 class="font-semibold mt-3 mb-1">Exemples pratiques :</h5>
+<ul class="list-disc pl-6 mb-3 space-y-2">
+  <li>« Mon smartphone est un <strong>Xiaomi 14, acheté il y a six mois, qui chauffe beaucoup récemment en jouant</strong>. » (Situation de l’appareil)</li>
+  <li>« Je suis <strong>une retraitée de 60 ans, la vue n’est plus très bonne, je ne maîtrise pas bien le smartphone</strong>. » (Profil utilisateur)</li>
+  <li>« Je <strong>prépare l’examen d’anglais niveau 6 de juin 2026, mon niveau est moyen</strong>. » (Contexte d’apprentissage)</li>
+  <li>« J’ai <strong>ouvert un petit café dans une ville de troisième rang, chiffre d’affaires mensuel de 30 000 yuans, deux employés</strong>. » (Contexte commercial)</li>
+  <li>« Je <strong>viens d’avoir un bébé, je suis en congé maternité à la maison, manque de sommeil sévère</strong>. » (Étape de vie)</li>
+</ul>
+<div class="highlight-quote">
+<p class="mb-1"><strong>Pourquoi ça marche ?</strong> Les informations de contexte font savoir à l’IA <strong>« pour qui elle travaille »</strong> et <strong>« dans quelles conditions »</strong>. Pour un même problème, l’explication diffère pour un étudiant ou un parent ; les conseils diffèrent pour un citadin ou un rural. Sans contexte, l’IA ne peut donner que la réponse du « plus petit dénominateur commun », souvent tiède.</p>
+</div>
+<h5 class="font-semibold mt-4 mb-1">3. Tâche (Task) : dites clairement à l'IA ce qu'elle doit faire</h5>
+<p class="mb-2">Cette étape doit commencer par un <strong>verbe d’action</strong>(écrire, lister, comparer, traduire, expliquer, résumer…), en décrivant la tâche de manière <strong>précise et exécutable</strong>. Une tâche vague ne donne qu’une réponse vague.</p>
+<h5 class="font-semibold mt-3 mb-1">Exemples pratiques :</h5>
+<ul class="list-disc pl-6 mb-3 space-y-2">
+  <li>«<strong>Listez 5 permissions que je devrais désactiver immédiatement</strong>, en expliquant pourquoi. » (Action claire)</li>
+  <li>«<strong>Traduisez l’e-mail anglais suivant en chinois</strong>, en gardant un ton professionnel. » (Tâche précise)</li>
+  <li>«<strong>Comparez ces quatre smartphones dans la gamme 3 000 yuans</strong>, avec un tableau d’avantages et inconvénients. » (Format claire)</li>
+  <li>«<strong>Expliquez « qu’est-ce que la 5G » dans un langage compréhensible par un écolier</strong>. » (Style défini)</li>
+  <li>«<strong>Rédigez trois scripts de vidéos courtes pour mon petit-déjeuner</strong>, ciblant respectivement les actifs, les couples et les parents avec enfants. » (Segmentation claire)</li>
+</ul>
+<div class="highlight-quote">
+<p class="mb-1"><strong>Pourquoi ça marche ?</strong> La partie tâche est le « centre de commandement » des actions de l’IA.<strong>Plus le verbe est clair et les exigences précises, plus l’IA sait « quoi livrer »</strong>. Les formulations vagues comme « fais un truc », « arrange ça », « regarde » sont à bannir — l’IA devinera votre intention, et le résultat sera souvent à côté.</p>
+</div>
+<h5 class="font-semibold mt-4 mb-1">4. Contraintes (Constraints) : dites à l'IA ce qu'elle ne doit pas faire</h5>
+<p class="mb-2">« Contraintes » sonne comme « restriction », mais c’est en fait un outil puissant pour <strong>faire converger l’IA vers la sortie la plus adaptée à vous</strong>. Les dimensions courantes : nombre de mots, format, ton, éléments à éviter, éléments à inclure.</p>
+<h5 class="font-semibold mt-3 mb-1">Exemples pratiques :</h5>
+<ul class="list-disc pl-6 mb-3 space-y-2">
+  <li>"<strong>Maximum 200 mots, sous forme de liste à puces</strong>."(Longueur + format)</li>
+  <li>"<strong>Ton amical et naturel, comme entre amis</strong>, sans utiliser « premièrement, deuxièmement, troisièmement » style administratif." (Ton)</li>
+  <li>"<strong>Pas de jargon technique</strong>, et expliquez les termes techniques quand ils apparaissent." (Restriction lexicale)</li>
+  <li>"<strong>Maximum 3 lignes par paragraphe</strong>, pour faciliter la lecture sur smartphone." (Mise en page)</li>
+  <li>"<strong>Doit inclure : scénarios d'utilisation, avantages/inconvénients, adéquation à mon budget</strong>."(Éléments obligatoires)</li>
+  <li>"<strong>Pas de conseils d'investissement concrets</strong>, expliquez seulement les principes." (Limites)</li>
+</ul>
+<div class="highlight-quote">
+<p class="mb-1"><strong>Pourquoi ça marche ?</strong> Sans contraintes, l'IA a tendance à « partir librement » — soit trop académique, soit trop longue, soit hors sujet. Des contraintes claires = un « standard de livraison » clair, les deux parties alignent leurs attentes, et le résultat est maîtrisable.</p>
+</div>
+<h5 class="font-semibold mt-4 mb-1">5. Évaluation de la qualité des prompts : 5 caractéristiques d'un bon prompt</h5>
+<p class="mb-2">Écrire un bon Prompt n’est pas un acte unique,<strong>vérifiez d’abord ces cinq points avant de l’envoyer à l’IA</strong>:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>Concret plutôt qu’abstrait</strong>: pas « écris un article », mais « écris un guide de 800 mots, 3 sections, destiné aux jeunes mamans, pour choisir un smartphone ».</li>
+  <li><strong>Avec contexte plutôt qu’isolé</strong>: dites à l’IA « qui je suis, pourquoi je pose cette question », pour qu’elle donne une réponse « sur mesure ».</li>
+  <li><strong>Format de sortie clair</strong>: tableau, liste, paragraphes ou JSON ? Précisez-le à l’avance.</li>
+  <li><strong>Contraintes en place</strong>: nombre de mots, style, éléments à éviter, un seul des trois suffit pour une amélioration notable.</li>
+  <li><strong>Vérifiable par l’IA</strong>: après avoir posé la question, demandez à l’IA de reformuler vos exigences ; si elle n’arrive pas à les exprimer clairement, c’est que vous ne les avez pas dites clairement.</li>
+</ol>
+<h5 class="font-semibold mt-4 mb-1">6. Problèmes courants et solutions</h5>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+ <thead>
+ <tr class="bg-light dark:bg-gray-700">
+ <th class="border border-gray-300 px-3 py-2 text-left">Symptôme</th>
+ <th class="border border-gray-300 px-3 py-2 text-left">Solution</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td class="border border-gray-300 px-3 py-2">Réponse trop vague, pas pratique</td>
+ <td class="border border-gray-300 px-3 py-2">Ajoutez du contexte (qui êtes-vous / quel scénario)</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 px-3 py-2">Réponse trop académique / trop formelle</td>
+ <td class="border border-gray-300 px-3 py-2">Ajoutez des contraintes de ton + liste de « langue de bois » à refuser</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 px-3 py-2">Réponse hors sujet / ne répond pas à la question</td>
+ <td class="border border-gray-300 px-3 py-2">Reformulez la tâche avec un verbe d'action, et exigez « ne répondre qu'à ça » </td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 px-3 py-2">Réponse trop longue, impossible à lire</td>
+ <td class="border border-gray-300 px-3 py-2">Limitez strictement le nombre de mots (200 max)</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 px-3 py-2">L'IA affirme des choses fausses avec assurance</td>
+ <td class="border border-gray-300 px-3 py-2">Ajoutez « si incertain, indiquez-le » + vérification des faits importants</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 px-3 py-2">Pas satisfait de la première version</td>
+ <td class="border border-gray-300 px-3 py-2">Ne réécrivez pas, ajoutez au prompt initial « encore plus… »</td>
+ </tr>
+ </tbody>
+ </table>
+</div>
+<h5 class="font-semibold mt-4 mb-1">7. Trois exemples complets de scénarios</h5>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Scénario 1 : Assistant de vie (suggestions de petit-déjeuner)</p>
+<p class="mt-1"><strong>Prompt</strong>:</p>
+<p class="mt-1 text-sm" style="font-family: monospace; background: #f5f5f5; padding: 8px; border-radius: 4px;">Vous êtes un blogueur culinaire spécialiste en équilibre nutritionnel (<strong>Rôle</strong>). Je suis une mère active, chaque matin je n’ai que 15 minutes pour le petit-déjeuner, j’ai un enfant de 6 ans et une belle-mère de 60 ans (<strong>Contexte</strong>). Veuillez <strong>proposer 7 menus de petit-déjeuner différents pour une semaine</strong>(<strong>Tâche</strong>). Chaque menu doit : ① temps de préparation max 15 min ② équilibré (protéines + glucides + légumes) ③ adapté à tous les âges ④ ingrédients trouvables en supermarché ordinaire (<strong>Contraintes</strong>).</p>
+<p class="mt-1"><strong>Pourquoi ça marche</strong>:le rôle fixe le niveau d’expertise, le contexte donne les points communs des trois publics, la tâche précise le livrable, les 4 contraintes garantissent l’exécutabilité.</p>
+</div>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Scénario 2 : Aide à l'apprentissage (préparation à l'examen d'anglais niveau 6)</p>
+<p class="mt-1"><strong>Prompt</strong>:</p>
+<p class="mt-1 text-sm" style="font-family: monospace; background: #f5f5f5; padding: 8px; border-radius: 4px;">Vous êtes un <strong>professeur d’anglais expérimenté pour l’examen niveau 6</strong>(Rôle).Je suis un étudiant ordinaire,<strong>CET-4 : 480 pts, objectif CET-6 : 500, 3 mois restants</strong>(Contexte).Veuillez <strong>élaborer un plan de révision exécutable sur 12 semaines</strong>(Tâche).Exigences : ① répartition hebdomadaire claire écoute/parole/lecture/écriture ② orientations prioritaires mensuelles ③ recommander 3 ressources (justification en chinois) ④ sortie au format tableau (Contraintes).</p>
+<p class="mt-1"><strong>Pourquoi ça marche</strong>:le rôle fixe le contexte professionnel, le contexte donne les repères de score et de temps, la tâche précise un « plan par étapes », les contraintes exigent un « format tableau » et « exécutable ».</p>
+</div>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Scénario 3 : Efficacité au travail (mise en forme de compte-rendu de réunion)</p>
+<p class="mt-1"><strong>Prompt</strong>:</p>
+<p class="mt-1 text-sm" style="font-family: monospace; background: #f5f5f5; padding: 8px; border-radius: 4px;">Vous êtes un <strong>assistant administratif senior</strong>(Rôle). Je viens de terminer une réunion départementale d’une heure,<strong>sujet : plan marketing Q2</strong>(Contexte).<strong>Organisez le compte-rendu en procès-verbal structuré</strong>(Tâche). Exigences : ① diviser en « Décisions / Actions / Risques et objections » ② indiquer responsable et échéance (« à confirmer » si non mentionné) ③ max 600 mots ④ format markdown (Contraintes).</p>
+<p class="mt-1"><strong>Pourquoi ça marche</strong>:le rôle fixe la perspective administrative, le contexte donne le thème de la réunion, la tâche précise la sortie structurée, les 4 contraintes rendent le résultat directement réutilisable.</p>
+</div>
+<div class="success-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Usage avancé : faire de l'IA votre « assistant personnel »</p>
+<p class="mt-1">Essayez ces usages avancés pour découvrir la véritable puissance de l'IA :</p>
+<ul class="list-disc pl-6 mt-1 space-y-1">
+  <li><strong>Optimisation multi-tours</strong>:si la réponse de l’IA ne vous satisfait pas, dites « c’est trop technique, réexpliquez dans un langage compréhensible par un écolier ».</li>
+  <li><strong>Chaîne de pensée (CoT)</strong>:demandez à l’IA de « réfléchir étape par étape », la qualité de la réponse est généralement meilleure : « analysez ce problème mathématique étape par étape ».</li>
+  <li><strong>Collaboration multi-IA</strong>:utilisez A pour le brouillon, B pour la révision, C pour la traduction: la combinaison donne de meilleurs résultats.</li>
+  <li><strong>Prompt système</strong>:prédéfinissez votre identité, préférences et tabous dans les paramètres de l’IA, pour des réponses mieux adaptées à vos besoins.</li>
+</ul>
+</div>
+<p class="mb-2">VII. Les limites et défis de l'IA : garder un jugement lucide</p>
+<p class="mb-2">L'IA est puissante, mais elle n'est en aucun cas « omnipotente ». Reconnaître lucidement ses limites est la condition pour mieux l'utiliser :</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Problème d’« hallucination »</strong>:l’IA peut affirmer des choses fausses avec un aplomb trompeur (terme technique : Hallucination). Elle invente des événements historiques inexistants, des citations erronées, des statistiques fictives. Les informations importantes doivent être vérifiées manuellement.</li>
+  <li><strong>Couverture temporelle</strong>:les données d’entraînement de la plupart des IA ont une date de coupure (début 2024 par exemple), elles ne connaissent pas les événements ultérieurs.</li>
+  <li><strong>Capacité de raisonnement limitée</strong>:le raisonnement multi-étapes complexe, les preuves mathématiques et les pièges logiques restent des sources d’erreurs fréquentes pour l’IA.</li>
+  <li><strong>Risque de confidentialité</strong>:dans les services IA cloud, vos conversations peuvent être utilisées pour l’entraînement du modèle. Les informations sensibles devraient être traitées en priorité par l’IA sur appareil.</li>
+  <li><strong>Biais et valeurs</strong>:l’IA peut véhiculer les biais présents dans ses données d’entraînement, il faut garder une pensée indépendante.</li>
+</ul>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Astuces pour l'utilisation de l'IA</p>
+<ul class="list-disc pl-6 mt-1 space-y-1">
+  <li>Le contenu généré par l'IA peut être inexact (problème d'« hallucination »), les informations importantes doivent être vérifiées.</li>
+  <li>N'entrez pas d'informations personnelles privées dans l'IA (numéro de carte d'identité, mots de passe, informations bancaires, etc.).</li>
+  <li>Maîtrisez les prompts : plus la description est précise et claire, plus la qualité de la réponse de l'IA est élevée.</li>
+  <li>L'IA est un outil, pas une autorité: gardez votre pensée indépendante et votre esprit critique.</li>
+  <li>Pour les décrites critiques (médicales, juridiques, financières), consultez un professionnel plutôt que de vous fier à l'IA.</li>
+</ul>
+</div>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">À vous de jouer : trois exercices pratiques avec l'IA</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li><strong>Défi 1 : Instructions complexes</strong>:dites à l’assistant vocal « Rappelle-moi de prendre un parapluie demain matin à 7h, et déplace mon rendez-vous de 15h à 16h ». Voyez s’il peut accomplir plusieurs actions en une seule requête.</li>
+  <li><strong>Défi 2 : Retouche IA</strong>:prenez une photo de touriste avec des passants, utilisez la fonction « effacement magique » ou « gomme IA » pour les supprimer. Observez la « reconstitution » de l’arrière-plan par l’IA.</li>
+  <li><strong>Défi 3 : Optimisation de Prompt</strong>:demandez d’abord à l’IA avec un Prompt simple « écris un guide touristique », puis rédigez un Prompt détaillé avec le cadre CRISPE. Comparez la qualité des deux réponses.</li>
+</ol>
+</div>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Cas 2 : Processus complet de migration de données lors d'un changement de smartphone</p>
+<ul class="list-disc pl-6 mt-1 space-y-1">
+  <li><strong>Scénario</strong> : Changement intermarque d'iPhone 13 vers Xiaomi 15.</li>
+  <li><strong>Étapes</strong> : ① Sauvegarde de l'ancien appareil via iCloud/sauvegarde intégrée WeChat → ② Déconnexion de l'Apple ID + désactivation de « Localiser » → ③ Le nouvel appareil scanne le code QR avec l'application « Xiaomi Switch » → ④ Sélection des éléments à migrer → ⑤ WeChat utilise séparément sa « migration de l'historique des discussions » intégrée → ⑥ Vérification des données clés (contacts/album/WeChat) → ⑦ Effacement chiffré de l'ancien appareil.</li>
+  <li><strong>Résultat attendu</strong> : Aucune perte de données, l'ancien appareil peut être revendu en toute sécurité.</li>
+</ul>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">Une erreur dans ce chapitre ? <a href="../../errata.html" class="text-primary hover:underline">Signalez-la sur la page des errata</a> — chemin obsolète, fait inexact, phrase confuse : tout est bienvenu. Vous pouvez aussi écrire dans le groupe QQ 1074995524.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-er-shi-yi-zhang.html" class="text-primary hover:underline">← Chapitre 21 : Peut-on se connecter à un Wi-Fi public ?</a><span></span><a id="next-link" href="di-er-shi-san-zhang.html" class="text-primary hover:underline">Chapitre 23 : Que le smartphone fasse les tâches répétitives →</a></nav>
+ </div></main></div><!-- Outils rapides: groupe de boutons flottants --><div id="quick-tools" class="quick-tools no-print" aria-label="Outils rapides"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="Rechercher (Ctrl+K)" aria-label="Rechercher"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="Basculer sombre/clair" aria-label="Changer de thème"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="Imprimer / Exporter en PDF" aria-label="Imprimer ou exporter"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="Sommaire" aria-label="Ouvrir le sommaire"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="Lecture vocale" aria-label="Lecture vocale"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="Raccourcis clavier (?)" aria-label="Panneau des raccourcis"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="Sauvegarder/Restaurer la progression" aria-label="Sauvegarde de la progression"><span aria-hidden="true">B</span></button></div><!-- Panneau des raccourcis --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="Raccourcis clavier"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Raccourcis clavier</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Fermer">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Rechercher du contenu</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Basculer sombre/clair</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Lecture vocale : lecture/pause</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Arrêter la lecture</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Ouvrir le panneau de raccourcis</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Augmenter / réduire la taille du texte</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">Imprimer / exporter en PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- Boîte de dialogue sauvegarde/restauration --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="Sauvegarde et restauration"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Sauvegarde et restauration de la progression</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Fermer">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">La sauvegarde contient : chapitres lus, signets, position de lecture, préférence de taille de police, résultats de l'autodiagnostic santé. Les données sont stockées localement dans le navigateur : elles sont perdues si tu changes de navigateur ou vides le cache ; pense à exporter régulièrement une sauvegarde.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Exporter le fichier de sauvegarde
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Télécharger un fichier JSON et l'enregistrer dans un endroit sûr</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Importer une sauvegarde et restaurer
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Choisir un fichier de sauvegarde exporté auparavant pour restaurer la progression</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Effacer toutes les données de lecture
+ </button><p class="text-xs text-red-400 mt-1 text-center">Irrécupérable ! Exporte d'abord une sauvegarde</p></div></div></div></div><!-- Notification de jours de lecture consécutifs --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">Jour X de lecture d'affilée !</span></div><!-- Barre de commandes de lecture vocale --><div id="tts-controls" class="tts-controls" role="region" aria-label="Contrôle de la lecture vocale" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="Chapitre en cours de lecture">Pas commencé</span><button class="tts-btn" id="tts-prev" title="Paragraphe précédent" aria-label="Paragraphe précédent"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="Lecture/Pause" aria-label="Lire à voix haute"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="Paragraphe suivant" aria-label="Paragraphe suivant"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="Ralentir" aria-label="Ralentir">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="Accélérer" aria-label="Accélérer">+</button><button class="tts-btn" id="tts-stop" title="Arrêter la lecture" aria-label="Arrêter la lecture"><span aria-hidden="true">×</span></button></div><!-- Bouton «Haut de page» --><button id="back-to-top" class="opacity-0 invisible" aria-label="Retour en haut"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- Notification de restauration de la position de lecture --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">Dernière lecture : ...</span><button class="btn-restore" id="restore-btn">Annuler</button><button class="btn-dismiss" id="dismiss-btn">Ignorer</button></div><!-- Script JS -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

@@ -1,0 +1,649 @@
+ <!DOCTYPE html><html lang="id"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="Pelajaran ponsel yang Anda lewatkan · Dari dasar hingga mahir, kendalikan sepenuhnya kehidupan digitalmu"><meta name="keywords" content="tutorial ponsel,kelas wajib digital,ponsel pintar,Android,iOS,HarmonyOS,tip dan trik ponsel,kehidupan digital,model besar AI,pemrograman AI,API model besar,prompt engineering,pengembangan Android,pengembangan iOS,Swift,Kotlin,SwiftUI,Jetpack Compose,fotografi komputasi,keamanan informasi,pengelolaan kata sandi,otomatisasi,panduan membeli ponsel"><meta name="author" content="Pemandu Kehidupan Digital"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-si-shi-er-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="Bab 42: Panorama Model Besar dan Praktik API"><meta property="og:description" content="Beberapa bab sebelumnya membahas &quot;cara berkolaborasi dengan AI&quot;; bab ini menja…"><meta property="og:locale" content="id_ID"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Pelajaran ponsel yang Anda lewatkan"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Pelajaran ponsel yang Anda lewatkan · v1.8"><meta name="twitter:description" content="Dari dasar hingga mahir, kendalikan sepenuhnya kehidupan digitalmu"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>Bab 42: Panorama Model Besar dan Praktik API · Pelajaran ponsel yang Anda lewatkan</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-si-shi-er-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "Bab 42: Panorama Model Besar dan Praktik API", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-si-shi-er-zhang.html", "isPartOf": {"@type": "Book", "name": "Pelajaran ponsel yang Anda lewatkan", "inLanguage": "id"}}</script>
+<link rel="prefetch" href="di-si-shi-san-zhang.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-si-shi-er-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">Lewati ke konten utama</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="Buka menu daftar isi" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="Kembali ke beranda">Pelajaran ponsel yang Anda lewatkan</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="Aksi utama"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="Mulai dari dasar">Mulai Belajar</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Cari (Ctrl+K)" aria-label="Cari konten"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="Penyesuaian ukuran huruf"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="Perkecil huruf" aria-label="Perkecil huruf">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="Atur ulang ukuran huruf" aria-label="Atur ulang ukuran huruf">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="Perbesar huruf" aria-label="Perbesar huruf">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Beralih mode gelap/terang" aria-label="Beralih mode gelap/terang"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="Cetak / Ekspor PDF" aria-label="Cetak atau ekspor PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="Kembali ke atas">Atas
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="Daftar isi artikel"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">Daftar isi
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 bab</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="Saring bab..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="Saring bab"></div><ul class="space-y-1 text-sm" id="toc-list"><!--Bagian dasar-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Mulai Belajar</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Dasar" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>Bab 0: Tiga hal jujur sebelum kita mulai</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>Bab 1: Mari kenali dulu mesin ini</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Lampiran: Analisis ekspansi memori ponsel Android</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Lampiran Bab 1: Topik khusus sistem operasi HarmonyOS</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>Bab 2: Ada yang hilang di dalam ponsel?</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>Bab 3: Kalau jaringan putus, jangan buru-buru mulai ulang</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>Bab 4: Sebelum pasang aplikasi, lihat-lihat dulu</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Lampiran: Komponen paket instalasi perangkat lunak</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>Bab 5: Setel ponsel sesuai cara Anda pakainya</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>Bab 6: Ponsel hilang, kata sandi terlupa, lalu apa?</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>Bab 7: Bedah Tuntas Semua Fitur Terkini</a></li>
+                        </ul>
+                    </li>
+<!--Bagian perangkat lunak-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">2. Bagian Perangkat Lunak (Bab 8-14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Perangkat Lunak" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>Bab 8: Komunikasi: SMS, telepon, dan sosial</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>Bab 9: Kantor mobile dan belajar</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>Bab 10: Pembayaran mobile dan layanan kehidupan</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>Bab 11: Hasil bagus lebih penting daripada foto banyak</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Tambahan Bab 11:Teknologi Pencitraan Profesional</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>Bab 12: Hiburan audio-visual dan membaca</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>Bab 13: App mana yang layak dipasang, mana yang dilewati?</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>Bab 14: Khusus Pengelola Kata Sandi</a></li>
+                        </ul>
+                    </li>
+<!--Bagian menengah-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">3. Bagian Lanjutan (Bab 15-20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Lanjutan" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>Bab 15: Cas dua kali sehari, baterainya atau cara pakainya?</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Tambahan: Bedah Tuntas Protokol Pengisian Cepat</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>Bab 16: Ganti ponsel, akun mana yang boleh hilang?</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>Bab 17: Sinergi Ponsel dengan Perangkat Lain</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>Bab 18: Cadangkan sekarang, jangan tunggu sampai terlupa</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>Bab 19: Rusak? Jangan buru-buru bawa ke perbaikan</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>Bab 20: Mode Pengembang dan Hak Akses Tingkat Lanjut</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Bab 20 Appendix</a></li>
+                        </ul>
+                    </li>
+<!--Bagian lanjutan-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">4. Bagian Melampaui (Bab 21-26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Melampaui" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>Bab 21: Boleh konek ke Wi-Fi publik?</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>Bab 22: Sebenarnya apa yang AI lakukan di ponsel Anda?</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>Bab 23: Biarkan ponsel menangani pekerjaan yang berulang</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Lampiran: Panduan pemula GitHub</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>Bab 24: Bedah Mendalam Akses Root dan Kunci BL</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>Bab 25: Sebelum menjual ponsel lama, urus dulu ini</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>Bab 26: Teknologi baru masih bisa menunggu</a></li>
+                        </ul>
+                    </li>
+<!--5,Bagian praktik(Bab 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">5. Bagian Praktik (Bab 27-32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Praktik" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>Bab 27: Setel ponsel untuk orang tua</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>Bab 28: Sebelum beli ponsel, pikirkan tiga hal ini</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>Bab 29: Berapa lama sebenarnya Anda memakai ponsel?</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>Bab 30: Screencasting, Presentasi, dan Konektivitas Mobil</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>Bab 31:Pengenalan Syuting Video Pendek dan Pembuatan Konten</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>Bab 32: Hilang, dicuri, atau ditipu? Tiga puluh detik</a></li>
+                        </ul>
+                    </li>
+<!--6,Pandangan ke depan(Bab 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">6. Bagian Prospek (Bab 33-41)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Prospek" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>Bab 33: Seperti apa ponsel sepuluh tahun lagi?</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>Bab 34: Ponsel dan mobil, biar sambungannya mulus</a></li>
+                        </ul>
+                    </li>
+<!--Topik khusus anak dan ponsel(Bab 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Khusus Anak-anak dan Ponsel (Bab 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Khusus Anak-anak dan Ponsel" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>Bab 35: Memberi anak ponsel, aturan mainnya apa?</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>Bab 36: Semua perangkat di rumah, mau dihubungkan bagaimana?</a></li>
+                        </ul>
+                    </li>
+<!--Bagian praktik: pemrograman AI-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">7. Bagian Praktik Pemrograman AI (Bab 37-47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Praktik Pemrograman AI" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>Bab 37: Revolusi Paradigma—Dari Menulis Kode ke Mengarahkan AI Menulis Kode</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>Bab 38: Lima Prinsip Berpikir Pemrograman AI</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>Bab 39: AI tidak paham? Mungkin penjelasan Anda kurang jelas</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>Bab 40: Jelaskan dulu dengan jelas, baru mulai</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>Bab 41: Panorama Alat Pemrograman AI 2026</a></li>
+                            <li><a href="#di-si-shi-er-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>Bab 42: Panorama Model Besar dan Praktik API</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>Bab 43: Ngobrol dengan AI supaya dia ngerti</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>Bab 44: Praktik dari 0 ke 1—Alur Lengkap Proyek Utuh</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>Bab 45: Ditulis AI, belum tentu selesai</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>Bab 46: Jalan Menuju Tingkat Lanjut—Dari Pengguna ke Arsitek</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>Bab 47: Buku Panduan Cepat dan Sumber Daya</a></li>
+                        </ul>
+                    </li>
+<!--Bagian praktik: pengembangan Android-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">8. Bagian Praktik Pengembangan Android (Bab 48-58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Praktik Pengembangan Android" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>Bab 48: Bagaimana Android jadi seperti sekarang?</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>Bab 49: Menyiapkan Lingkungan Pengembangan—Android Studio dan Proyek Pertama</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>Bab 50: Kilat Kotlin—Bahasa Utama Pengembangan Android</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>Bab 51: Pengembangan Antarmuka—Pengenalan Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>Bab 52: Empat Komponen Utama dan Siklus Hidup Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>Bab 53: Penyimpanan Data dan Permintaan Jaringan</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>Bab 54: Proyek 1—Aplikasi Pembukuan Saya (Versi Lokal)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>Bab 55: Proyek 2—App Cek Cuaca (Versi Jaringan)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>Bab 56: App sudah selesai, tinggal tayang</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>Bab 57: Jalan Menuju Tingkat Lanjut—Izin, Notifikasi, dan Arsitektur Modern</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>Bab 58: Buku Panduan Cepat dan Sumber Daya</a></li>
+                        </ul>
+                    </li>
+<!--Bagian praktik: pengembangan iOS-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">9. Bagian Praktik Pengembangan iOS (Bab 59-69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Praktik Pengembangan iOS" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>Bab 59: Mengenal iOS—Ekosistem Apple dan Ekosistem Pengembangan</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>Bab 60: Menyiapkan Lingkungan Pengembangan—Xcode dan Proyek Pertama</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>Bab 61: Kilat Swift—Bahasa Utama Pengembangan Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>Bab 62: Pengembangan Antarmuka—Pengenalan SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>Bab 63: View, State, dan Navigasi</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>Bab 64: Penyimpanan Data dan Permintaan Jaringan</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>Bab 65: Proyek 1—Aplikasi Pembukuan Saya (Versi Lokal)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>Bab 66: Proyek 2—App Cek Cuaca (Versi Jaringan)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>Bab 67: Memoles dan Menerbitkan—Masuk ke App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>Bab 68: Jalan Menuju Tingkat Lanjut—Izin, Notifikasi, dan Arsitektur Modern</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>Bab 69: Buku Panduan Cepat dan Sumber Daya</a></li>
+                        </ul>
+                    </li>
+<!--Lampiran-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">10. Lampiran</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Lampiran" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>ALampiran A: Proses unboxing ponsel baru</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>Lampiran B: Macet di tengah latihan?</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C Lampiran C: Tabel Istilah Ringkas</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>DLampiran D: Di mana menemukan sumber tepercaya</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>ELampiran E: Ucapan Terima Kasih dan Penjelasan</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F Lampiran F: Khusus Memilih dan Menggunakan Layar Lipat</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>Penutup: Paham saja cara pakai ponsel, itu cukup</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>GLampiran G: Indeks Cepat Seluruh Buku</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>HLampiran H: Peta Jalan Versi</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="Cari"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="Cari konten..." autocomplete="off" aria-label="Kata kunci pencarian"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Tutup pencarian">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">Ketik kata kunci untuk mulai mencari</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- Breadcrumb atas --><nav class="breadcrumb no-print" aria-label="Posisi"><a href="#top">Beranda</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">Pelajaran Wajib Digital · v1.8</span></nav>
+<div id="di-si-shi-er-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">Bab 42: Panorama Model Besar dan Praktik API</h3>
+<p class="chapter-intro mb-4">Beberapa bab sebelumnya membahas "cara berkolaborasi dengan AI"; bab ini menjawab pertanyaan yang lebih mendasar: "AI mana yang dipakai? Bagaimana memakainya?" Lanskap model besar per Agustus 2026 sudah sangat kaya, di ranah internasional GPT, Claude, dan Gemini bersaing sebagai tiga raksasa; di Tiongkok DeepSeek, Tongyi Qianwen, GLM, Kimi, dan Doubao bermekaran. Setiap model punya karakter dan keahlian khasnya masing-masing: memilih yang tepat membuat pekerjaan jauh lebih efisien. memilih yang salah membuat pekerjaan terasa dua kali berat. Bab ini tidak hanya memperkenalkan model-model tersebut, tetapi juga mengajarkan cara menghubungkannya ke aplikasimu melalui API, serta cara memilih Token Plan (paket kuota) yang sesuai dengan kebutuhanmu.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">1. Model Besar Internasional Utama: Format Tiga Raksasa</h4>
+<p class="mb-2">Pasar model besar internasional per Agustus 2026 membentuk format tiga raksasa: OpenAI (seri GPT), Anthropic (seri Claude), dan Google (seri Gemini). Masing-masing punya karakter khas yang menonjol — mari kita kenali satu per satu.</p>
+<h5 class="font-semibold mt-3 mb-1">1. Seri OpenAI GPT-5.6: Jagoan Serba Bisa yang Seimbang</h5>
+<p class="mb-2">OpenAI adalah pembuka gelombang model besar, dan seri GPT hingga kini tetap menjadi model yang paling banyak digunakan di dunia. Seri GPT-5.6 yang dirilis Juli 2026 memakai strategi tiga segmen: varian flagship GPT-5.6 Sol untuk kebutuhan reasoning kelas atas, varian seimbang GPT-5.6 Terra untuk pengembangan harian, dan varian ringan GPT-5.6 Luna untuk skenario konkurensi tinggi dengan biaya rendah. Ketiga model berbagi jendela konteks 1,05 juta Token, dan semuanya mendukung input gambar, function calling, serta output terstruktur.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Model</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Segmen</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Input (per juta Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Output (per juta Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Jendela Konteks</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GPT-5.6 Sol</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Flagship reasoning</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$5,00 (≈36 yuan)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$30,00 (≈217 yuan)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1,05 juta Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GPT-5.6 Terra</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Seimbang untuk harian</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$2,50 (≈18 yuan)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$15,00 (≈109 yuan)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1,05 juta Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GPT-5.6 Luna</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Ringan, biaya rendah</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$1,00 (≈7 yuan)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$6,00 (≈44 yuan)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1,05 juta Token</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Harga seri OpenAI GPT-5.6 (Agustus 2026)</p>
+<p class="mb-2">Keunggulan inti seri GPT ada pada "keseimbangan" — reasoning, pemrograman, penulisan, multimodal, tidak ada kelemahan yang mencolok. Ditambah ekosistem plugin dan komunitas pengembang OpenAI yang sangat besar. dokumentasi adaptasi dan toolchain-nya paling lengkap. Untuk skenario "bingung mau pilih apa", GPT adalah jawaban default yang "dipilih sambil memejamkan mata pun tidak akan salah". Namun kelemahannya: akses dari Tiongkok membutuhkan jaringan khusus, ungkapan bahasa Tionghoanya kadang terasa "berbau terjemahan", dan harga API-nya berada di level menengah ke atas.</p>
+<div class="success-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Kabar Baik</p>
+<p class="mt-1">Pada Agustus 2026 OpenAI mengumumkan bahwa model default pengguna gratis dinaikkan menjadi GPT-5.6 Luna dan membuka obrolan teks tanpa batas. Artinya, kamu bisa merasakan kemampuan dasar GPT tanpa biaya, dan hanya perlu membayar saat butuh reasoning yang lebih kuat atau pemanggilan API.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">2. Seri Anthropic Claude: Puncak Pemrograman dan Ketelitian</h5>
+<p class="mb-2">Kalau GPT adalah pemain serba bisa, maka Claude adalah "puncaknya" bidang pemrograman. Seri Claude dari Anthropic secara konsisten memimpin dengan selisih jauh di SWE-bench (benchmark rekayasa perangkat lunak), dengan kualitas pembuatan kode dan kemampuan mewujudkan proyek tingkat engineering terbaik di industrinya. Lebih istimewa lagi, tingkat halusinasi Claude (probabilitas menghasilkan informasi palsu) adalah yang terendah di antara semua model, hanya sekitar 1%: menjadikannya sangat cocok untuk skenario berpresisi tinggi seperti akademik dan hukum.</p>
+<p class="mb-2">Jurus andalan Claude yang lain adalah konteks super panjang: mendukung jendela konteks 1 juta Token, mampu "membaca habis" kontrak setebal ratusan halaman atau satu basis kode penuh dalam sekali jalan tanpa kelewat satu pun detailnya. Hal ini nyaris tak tergantikan untuk skenario seperti refaktorasi kode dan analisis dokumen panjang. Claude Code sebagai alat pemrograman AI terminal telah mencapai pendapatan tahunan 2,5 miliar dolar AS per pertengahan 2026 — bukti paling kuat bahwa kemampuan pemrograman Claude paling diakui.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Model</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Segmen</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Input (per juta Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Output (per juta Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Jendela Konteks</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Fable 5</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Varian flagship</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$10,00 (≈72 yuan)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$50,00 (≈362 yuan)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 juta Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Opus 4.8</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Varian profesional</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$5,00 (≈36 yuan)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$25,00 (≈181 yuan)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 juta Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Sonnet 5</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Varian hemat</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$2,00 (≈14 yuan)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$10,00 (≈72 yuan)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 juta Token</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Harga seri Anthropic Claude (Agustus 2026; Sonnet 5 dengan harga promo)</p>
+<p class="mb-2">Kelemahan Claude ada pada harga: harga output Fable 5 adalah yang termahal di antara semua model, 50 dolar AS per juta Token. Kemampuan multimodalnya (pemahaman gambar dan video) juga relatif lemah. Bagi pengembang individu dengan anggaran terbatas, Sonnet 5 selama periode promo menawarkan value yang sangat menonjol.</p>
+<h5 class="font-semibold mt-3 mb-1">3. Seri Google Gemini: Raja Multimodal</h5>
+<p class="mb-2">Seri Gemini dari Google pada 2026 telah beriterasi hingga versi 3.1 Pro. Jurus andalan terbesar Gemini adalah multimodal native, analisis teks dan gambar yang presisi, pengenalan tabel OCR tanpa kesalahan, ekstraksi frame video yang efisien, ditambah dukungan analisis mendalam untuk audio dan video. Ia terikat erat dengan ekosistem Google (pencarian, surel, layanan cloud) dan menonjol dalam pencarian informasi real-time serta pemahaman lintas modal. Gemini juga mendukung input konteks super panjang hingga 2 juta Token, menjadikannya model dengan jendela konteks terbesar saat ini.</p>
+<p class="mb-2">Gemini diposisikan sebagai "pilihan utama untuk reasoning ilmiah dan skenario multimodal". Kalau proyekmu melibatkan analisis gambar dalam jumlah besar, pemahaman video, atau komputasi ilmiah, Gemini nyaris tanpa lawan. Namun dalam pembuatan kode murni teks ia sedikit kalah dari Claude, dan ungkapan bahasa Tionghoanya tidak senatural model buatan Tiongkok.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Aspek</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">GPT-5.6</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Claude Fable 5</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Gemini 3.1 Pro</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Skor Keseluruhan</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">94.8</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">95.0</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">92.1</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Kemampuan Pemrograman (SWE-bench)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">74.9%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">64.3% (Pro)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Sedang</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Jendela Konteks</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1,05 juta Token</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 juta Token</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2 juta Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Kemampuan Multimodal</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Seimbang</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Relatif lemah</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Terkuat</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Tingkat Halusinasi</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Relatif rendah</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Terendah (sekitar 1%)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Relatif rendah</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Aksesibilitas di Tiongkok</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Perlu jaringan khusus</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Perlu jaringan khusus</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Perlu jaringan khusus</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Ekosistem API</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Paling lengkap</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Sedang berkembang</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Terikat ekosistem Google</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Perbandingan horizontal tiga model internasional (Agustus 2026)</p>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Catatan: Hambatan Nyata Penggunaan di Tiongkok</p>
+<p class="mt-1">Bagi pengembang di Tiongkok, hambatan utama GPT, Claude, dan Gemini adalah akses jaringan. Meski bisa digunakan secara tidak langsung lewat proxy Azure, platform agregator API, dan cara-cara lain, stabilitas dan kepatuhan regulasinya perlu kamu nilai sendiri. Jika proyekmu menuntut keamanan data yang ketat, sebaiknya prioritaskan model buatan Tiongkok.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">2. Model Besar Utama Buatan Tiongkok: Bermekaran</h4>
+<p class="mb-2">Model besar buatan Tiongkok tahun 2026 sudah berubah dari "pengejar" menjadi "penanding", bahkan "pemimpin" di beberapa bidang. Berbeda dengan kontroversi "ganti kulit" (membungkus model luar negeri) tahun 2023, model flagship buatan Tiongkok 2026 dalam hal reasoning logis, pembuatan kode, dan pemahaman bahasa Tionghoa telah setara dengan model internasional kelas atas, dengan selisih yang menyusut hingga di bawah 5%. Lebih penting lagi, model buatan Tiongkok punya keunggulan yang tak tergantikan pada skenario bahasa Tionghoa, biaya, dan deployment yang sesuai regulasi.</p>
+<h5 class="font-semibold mt-3 mb-1">1. DeepSeek V4: Raja Value</h5>
+<p class="mb-2">DeepSeek adalah fenomena di antara model besar buatan Tiongkok. Awal 2025, DeepSeek-V3 mengguncang pasar dengan posisi "seperssepuluh harga GPT tetapi kemampuan setara", dan oleh kalangan industri dijuluki "garis penentu model AI umum": yang lebih murah tak sebagus ia, yang lebih mahal tak sekelimpahan ia. Per Agustus 2026, versi resmi DeepSeek V4-Pro dirilis: arsitektur MoE dengan 1,6 triliun parameter, sekitar 49B di antaranya aktif, mendukung konteks 1 juta tanpa kehilangan informasi, dan value-nya untuk kode secara luas dianggap puncak dunia.</p>
+<p class="mb-2">DeepSeek V4 melompat jauh dalam kemampuan Agent: benchmark DeepSWE melonjak dari 12,8 ke 62,7 (+390%), dan NL2Repo naik dari 38,5 ke 61,5. API-nya kini menambahkan dukungan dua protokol, Responses API dan Anthropic API. dan telah kompatibel dengan alat pemrograman utama seperti Codex dan Claude Code. Artinya, kamu bisa mengganti API Claude dengan API DeepSeek di dalam Claude Code: biaya turun berkali lipat, sementara pengalamannya nyaris sama.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Model</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Segmen</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Input (per juta Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Output (per juta Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Jendela Konteks</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">DeepSeek V4 Pro</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Flagship reasoning</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">3 yuan (≈US$0,43)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">6 yuan (≈US$0,87)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 juta Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">DeepSeek V4 Flash</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Ringan dan cepat</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 yuan (≈US$0,14)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2 yuan (≈US$0,28)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 juta Token</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Harga seri DeepSeek V4 (Agustus 2026; harga promo)</p>
+<p class="mb-2">Perbandingan harga: untuk input 1 juta Token + output 1 juta Token, DeepSeek V4 Flash menghabiskan sekitar 0,42 dolar AS, GPT-5.6 Sol sekitar 35 dolar AS, dan Claude Fable 5 sekitar 60 dolar AS. Selisihnya mencapai 80-140 kali lipat.</p>
+<div class="danger-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Waspada Jebakan: DeepSeek Akan Naik Harga</p>
+<p class="mt-1">Pihak resmi DeepSeek telah mengumumkan pada 6 Agustus 2026 "rencana menaikkan harga API secara besar-besaran dalam waktu dekat". Harga promonya kemungkinan tidak akan bertahan lama. Sejumlah media memberitakan kenaikannya bisa mencapai 30 kali lipat; hingga 14 Agustus pihak resmi belum mengumumkan skema harga finalnya. Selain itu, versi resmi DeepSeek V4 memperkenalkan mekanisme harga puncak-lembah, harga pemanggilan pada jam sibuk langsung menjadi dua kali lipat. Disarankan memantau pengumuman resmi untuk mendapatkan harga terbaru.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">2. Tongyi Qianwen Qwen3.7 Max: Pilihan Enterprise dari Alibaba Cloud</h5>
+<p class="mb-2">Seri Tongyi Qianwen (Qwen) dari Alibaba Cloud bertumpu pada ekosistem ,Alibaba Cloud dengan keunggulan alami dalam deployment tingkat enterprise. Qwen3.7 Max yang rilis Juli 2026 adalah flagship saat ini: model dens dengan 235B parameter, konteks native 256K, dapat diperluas hingga 1M. Keunggulan inti Qwen: ekosistem open source yang matang (seluruh seri dari 7B hingga 235B open source), pemahaman skenario bahasa Tionghoa yang presisi, serta integrasi mendalam dengan infrastruktur Alibaba Cloud.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Model</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Harga Output (per juta Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Skenario Penggunaan</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen-turbo</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">0,6 yuan</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Tanya jawab sederhana, klasifikasi teks, konkurensi tinggi</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen-long</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2,0 yuan</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pemrosesan konteks super panjang 10M</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen3.7-flash</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">7,2 yuan</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Percakapan umum, pembuatan konten</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen3.7-plus</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">12,0 yuan</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Multimodal (gambar + video), penulisan kreatif bahasa Tionghoa</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen3.7-max</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">36,0 yuan</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Kemampuan bahasa Tionghoa kelas flagship, tugas kompleks</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Harga bertingkat seri Tongyi Qianwen Qwen (Agustus 2026)</p>
+<p class="mb-2">Harga Qwen memakai strategi bertingkat, dari qwen-turbo yang sangat murah (output 0,6 yuan per juta Token) hingga flagship qwen3.7-max (output 36 yuan per juta Token), mencakup seluruh kebutuhan dari tanya jawab ringan hingga reasoning kompleks. Bagi perusahaan yang sudah memakai Alibaba Cloud, Qwen adalah pilihan integrasi yang paling praktis.</p>
+<h5 class="font-semibold mt-3 mb-1">3. Zhipu GLM-5.1: No. 1 SWE-bench Buatan Tiongkok</h5>
+<p class="mb-2">Seri GLM dari Zhipu AI berkinera cemerlang pada 2026. GLM-5.1 meraih peringkat nomor satu buatan Tiongkok di SWE-bench: arsitektur hibrida MoE-dens 744B dengan dukungan konteks 1 juta. Keunikannya adalah pemahaman semantik bahasa Tionghoa yang presisi serta dukungan deployment privat yang patuh regulasi di Tiongkok, hal yang sangat penting untuk sektor keuangan dan pemerintahan yang menuntut keamanan data tinggi. Harga GLM-5.1 adalah 6 yuan untuk input dan 24 yuan untuk output per juta Token, berada di level menengah model buatan Tiongkok.</p>
+<h5 class="font-semibold mt-3 mb-1">4. Kimi K3: Raja Teks Super Panjang</h5>
+<p class="mb-2">Seri Kimi dari Moonshot AI terkenal dengan kemampuan pemrosesan teks super panjang. Kimi K3 yang dirilis Juli 2026 memiliki 2,8 triliun parameter dan masuk jajaran teratas dunia dalam berbagai evaluasi tugas kompleks. Skenario inti Kimi adalah analisis basis kode panjang dan retrieval-augmented untuk dokumen panjang, ia mampu memproses teks satu buku penuh atau kode satu proyek utuh, serta unggul dalam tugas pencarian bergaya "mencari jarum di tumpukan jerami". Harga Kimi relatif tinggi (output sekitar 12-20 yuan per juta Token), tetapi value-nya untuk skenario teks panjang tak tertandingi.</p>
+<h5 class="font-semibold mt-3 mb-1">5. Doubao: Sang Serba Bisa dari ByteDance</h5>
+<p class="mb-2">Seri Doubao dari ByteDance tampil stabil pada 2026. Doubao Seed 2.1 Pro adalah model flagship Volcengine dengan konteks 256K, secara keseluruhan stabil dalam uji coba nyata, dengan pengalaman yang menonjol untuk skenario bahasa Tionghoa. Keunggulan Doubao: bonus Token gratis berlimpah begitu mendaftar, integrasi ekosistem Volcengine yang lengkap, dan harga yang termasuk salah satu yang termurah di Tiongkok. Bagi pemula yang ingin cepat mencoba pemrograman AI, Doubao adalah pilihan masuk tanpa hambatan.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Aspek</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">DeepSeek V4</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Qwen3.7 Max</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">GLM-5.1</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Kimi K3</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Doubao 2.1 Pro</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Skor Keseluruhan</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">87.5</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">89.7</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">90.5</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">88+</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">85+</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Kemampuan Pemrograman</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Sangat kuat</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Kuat</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">No. 1 SWE di Tiongkok</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Kuat</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Atas rata-rata</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pemahaman Bahasa Tionghoa</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Bagus</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Bagus</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Akurat</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Bagus</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Bagus</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Jendela Konteks</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 juta</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">256K-1M</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 juta</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Super panjang</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">256K</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Harga Output (yuan/M)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">6</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">36</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">24</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">12-20</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">30</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Open Source</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Lisensi MIT</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Seluruh seri open source</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Sebagian open source</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Tertutup</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Tertutup</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Deployment Privat</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Didukung</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Didukung</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Didukung</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Tidak didukung</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Tidak didukung</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Perbandingan horizontal lima model besar buatan Tiongkok (Agustus 2026)</p>
+<p class="mb-2">Satu tren penting: "kesan ketinggalan generasi" antara model buatan Tiongkok dan GPT/Claude telah lenyap. Dalam reasoning logis dan kompetisi matematika, selisih skor flagship buatan Tiongkok dengan GPT-5 umumnya hanya satu digit. Dalam berpikir arsitektur sistematis dan reasoning engineering yang kompleks, Claude masih memimpin: ia mampu memberikan solusi arsitektur yang lebih "berjiwa", sementara model buatan Tiongkok kadang tampak "kaku mengikuti aturan". Namun pada skenario bahasa Tionghoa, kendali biaya, dan deployment sesuai regulasi, model buatan Tiongkok memiliki keunggulan yang dominan.</p>
+<div class="figure">
+<svg style="max-width:100%;height:auto" width="620" height="290" viewBox="0 0 620 290" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+ <rect x="0" y="0" width="620" height="290" style="fill:var(--ink-inverse)" rx="8"/>
+ <line x1="70" y1="230" x2="590" y2="230" stroke="var(--muted)" stroke-width="1.5"/>
+ <line x1="70" y1="230" x2="70" y2="20" stroke="var(--muted)" stroke-width="1.5"/>
+ <line x1="70" y1="60" x2="590" y2="60" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+ <line x1="70" y1="116" x2="590" y2="116" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+ <line x1="70" y1="173" x2="590" y2="173" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+ <text x="62" y="234" font-size="10" fill="var(--muted-2)" text-anchor="end">0</text>
+ <text x="62" y="120" font-size="10" fill="var(--muted-2)" text-anchor="end">50</text>
+ <text x="62" y="64" font-size="10" fill="var(--muted-2)" text-anchor="end">100</text>
+ <text x="340" y="262" font-size="10.5" fill="var(--ink-2)" text-anchor="middle">Harga output (yuan/juta Token)</text>
+ <!-- bars: price -->
+ <rect x="95" y="218" width="60" height="12" fill="var(--accent-book)"/><text x="125" y="212" font-size="9" fill="var(--ink-2)" text-anchor="middle">6</text><text x="125" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">DeepSeek</text>
+ <rect x="195" y="146" width="60" height="84" fill="var(--accent-book)"/><text x="225" y="140" font-size="9" fill="var(--ink-2)" text-anchor="middle">36</text><text x="225" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">Qwen</text>
+ <rect x="295" y="182" width="60" height="48" fill="var(--accent-book)"/><text x="325" y="176" font-size="9" fill="var(--ink-2)" text-anchor="middle">24</text><text x="325" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">GLM</text>
+ <rect x="395" y="200" width="60" height="30" fill="var(--accent-book)"/><text x="425" y="194" font-size="9" fill="var(--ink-2)" text-anchor="middle">16</text><text x="425" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">Kimi</text>
+ <rect x="495" y="170" width="60" height="60" fill="var(--accent-book)"/><text x="525" y="164" font-size="9" fill="var(--ink-2)" text-anchor="middle">30</text><text x="525" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">Doubao</text>
+ <!-- scores -->
+ <circle cx="125" cy="118" r="5" fill="var(--gold)"/><text x="140" y="114" font-size="9" fill="#78350f">87.5</text>
+ <circle cx="225" cy="110" r="5" fill="var(--gold)"/><text x="240" y="106" font-size="9" fill="#78350f">89.7</text>
+ <circle cx="325" cy="105" r="5" fill="var(--gold)"/><text x="340" y="101" font-size="9" fill="#78350f">90.5</text>
+ <circle cx="425" cy="112" r="5" fill="var(--gold)"/><text x="440" y="108" font-size="9" fill="#78350f">88+</text>
+ <circle cx="525" cy="116" r="5" fill="var(--gold)"/><text x="540" y="112" font-size="9" fill="#78350f">85+</text>
+ <rect x="90" y="30" width="12" height="12" fill="var(--accent-book)"/><text x="108" y="41" font-size="9.5" fill="var(--ink-2)">Harga output (makin rendah makin baik)</text>
+ <circle cx="170" cy="36" r="5" fill="var(--gold)"/><text x="182" y="40" font-size="9.5" fill="var(--ink-2)">Skor gabungan (makin tinggi makin baik)</text>
+ </svg>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Gambar 4: Perbandingan harga dan performa lima model (semakin murah harga semakin baik, semakin tinggi skor semakin baik)</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">3. Kerangka Keputusan Memilih Model</h4>
+<p class="mb-2">Setelah mengenal karakteristik tiap model, bagaimana memilih model untuk proyekmu? Berikan padamu satu "metode keputusan empat pertanyaan": jawab empat pertanyaan, dan model yang paling cocok untukmu langsung terkunci.</p>
+<div class="figure">
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> Proyek Anda dipasang di dalam negeri (Tiongkok) atau internasional?</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">Lokal → pilih model dalam negeri</span><span class="text-gray-400 mx-1">│</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">Internasional → boleh pilih model luar</span></div>
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> Tugas utamanya coding atau lainnya?</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">Coding → Claude atau DeepSeek</span><span class="text-gray-400 mx-1">│</span> <span class="border-2 border-gray-400 bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 rounded-md px-3 py-1 text-sm text-center">Lainnya → lanjut menilai</span></div>
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> Butuh konteks super panjang (&gt;500K Token)?</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">Perlu → Gemini atau Kimi</span><span class="text-gray-400 mx-1">│</span> <span class="border-2 border-gray-400 bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 rounded-md px-3 py-1 text-sm text-center">Tidak perlu → lanjut menilai</span></div>
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> Anggaran ketat?</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">Sensitif → DeepSeek atau Qwen-turbo</span><span class="text-gray-400 mx-1">│</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">Tidak sensitif → GPT-5.6 atau Claude</span></div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Gambar 5: Metode Keputusan Empat Pertanyaan untuk Memilih Model Besar</p>
+</div>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Tips: Strategi Kombinasi</p>
+<p class="mt-1">Metode ini bukan ajaran mati, banyak skenario justru membutuhkan kombinasi beberapa model. Satu strategi kombinasi yang umum: pakai DeepSeek atau Qwen untuk pengembangan harian (biaya murah, bahasa Tionghoa bagus), Claude untuk desain arsitektur krusial (reasoning kuat, halusinasi rendah), dan Gemini untuk analisis multimodal (pemrosesan gambar dan video). Ganti model sesuai kebutuhan, jangan "satu model dipakai sampai mati".</p>
+</div>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Dasar-Dasar Panggilan API: Menghubungkan Model Besar dari Nol</li>
+</ol>
+<p class="mb-2">Banyak tutorial pemrograman AI hanya mengajarkan cara memakai antarmuka obrolan, tetapi "pemrograman AI" yang sesungguhnya — membuat aplikasimu memanggil model besar, membutuhkan API. API (Application Programming Interface, antarmuka pemrograman aplikasi) adalah protokol komunikasi antar program. Melalui API, kode kamu bisa memanggil kemampuan model besar seperti memanggil sebuah fungsi.</p>
+<h5 class="font-semibold mt-3 mb-1">1. Apa Itu Token</h5>
+<p class="mb-2">Sebelum mengenal API, kamu wajib memahami dulu konsep "Token". Token adalah satuan dasar penagihan model besar; bisa dipahami sebagai "satuan baca dan tulis AI". Satu Token kira-kira setara dengan 0.75 kata bahasa Inggris (4 karakter). atau 0,5-1 aksara Tionghoa. Satu teks Tionghoa sepanjang 1000 karakter mengonsumsi sekitar 1500-2000 Token.</p>
+<p class="mb-2">Token bukan jumlah kata dan bukan pula jumlah karakter. Model besar memakai tokenizer khusus untuk memotong teks menjadi Token. Kata yang sama bisa memiliki jumlah Token berbeda di tiap model: misalnya "kecerdasan buatan" dalam bahasa Tionghoa mungkin 3 Token di GPT tetapi 2 Token di DeepSeek. API kebanyakan model mengembalikan jumlah Token yang benar-benar terpakai, dan kamu bisa melihatnya di respons API.</p>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Perkiraan Cepat Biaya Token</p>
+<p class="mt-1">1 juta karakter teks Tionghoa kira-kira setara 1,5 juta Token. Memproses input 1 juta karakter + output 1 juta karakter dengan DeepSeek V4 Flash berbiaya sekitar 0,42 dolar AS (sekitar 3 yuan); dengan Claude Fable 5 untuk jumlah yang sama berbiaya sekitar 60 dolar AS (sekitar 434 yuan). Inilah alasan pemilihan model berdampak langsung pada biaya proyekmu.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">2. Mendapatkan API Key</h5>
+<p class="mb-2">Langkah pertama memakai API model besar adalah mendapatkan API Key, serangkaian kunci untuk autentikasi identitas. Setiap penyedia model punya platform API sendiri; kamu perlu mendaftar akun dan membuat API Key. Berikut pintu masuk platform API model-model utama beserta proses mendapatkannya:</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Model</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Platform API</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Proses Mendapatkan</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Kuota Gratis</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">DeepSeek</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">platform.deepseek.com</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Daftar → Verifikasi identitas → Buat API Key</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Kuota bonus pengguna baru</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Tongyi Qianwen</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">bailian.aliyun.com (platform Bailian)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Login akun Alibaba Cloud → Aktifkan layanan → Buat Key</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Uji coba gratis pengguna baru</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Zhipu GLM</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">open.bigmodel.cn</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Daftar → Verifikasi identitas → Buat API Key</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Kuota bonus pengguna baru</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Kimi</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">platform.moonshot.cn</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Daftar → Verifikasi identitas → Buat API Key</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Kuota gratis terbatas</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Doubao</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">volcengine.com (Volcengine)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Daftar → Aktifkan layanan Ark → Buat API Key</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Bonus Token berlimpah saat mendaftar</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OpenAI GPT</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">platform.openai.com</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Daftar → Hubungkan kartu kredit → Buat API Key</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Tanpa kuota gratis (berbayar)</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Anthropic Claude</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">console.anthropic.com</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Daftar → Hubungkan kartu → Buat API Key</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Kuota kecil untuk pengguna baru</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Platform API model utama dan cara mendapatkan Key (Agustus 2026)</p>
+<div class="danger-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Peringatan Keamanan: API Key = Kata Sandi Dompetmu</p>
+<p class="mt-1">API Key setara dengan kata sandi dompetmu — siapa pun yang mendapatkan Key bisa memakai kuotamu untuk memanggil model. Karena itu: jangan pernah menuliskan API Key di dalam kode (kelola dengan environment variable); jangan pernah meng-commit kode yang berisi Key ke repositori Git publik; jangan pernah membagikan tangkapan layar yang memuat Key di media sosial. Jika Key bocor, segera hapus di platform dan buat yang baru.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">3. Panggilan API Pertama</h5>
+<p class="mb-2">Setelah mendapatkan API Key, kamu bisa memanggil API model besar dengan bahasa pemrograman apa pun. Berikut contoh pemanggilan paling sederhana dengan Python, mengirim satu pesan ke DeepSeek dan menerima balasannya.</p>
+<div class="code-block">
+<div class="code-head"><span>PYTHON · Panggilan API pertama</span><span class="dots">···</span></div>
+<pre># Pasang SDK: pip install openai
+# DeepSeek kompatibel dengan format OpenAI SDK, bisa langsung dipakai
+from openai import OpenAI
+import os
+
+# 1. Buat client (API Key dibaca dari environment variable)
+client = OpenAI(
+ api_key=os.environ.get("DEEPSEEK_API_KEY"),
+ base_url="https://api.deepseek.com"
+)
+
+# 2. Kirim permintaan
+response = client.chat.completions.create(
+ model="deepseek-chat", # pilih model
+ messages=[
+ {"role": "system", "content": "Kamu asisten coding Python."},
+ {"role": "user", "content": "Buatkan fungsi quick sort."}
+ ]
+)
+
+# 3. Ambil balasan
+print(response.choices[0].message.content)
+
+# 4. Lihat pemakaian Token
+print(f"Token masuk: {response.usage.prompt_tokens}")
+print(f"Token keluar: {response.usage.completion_tokens}")
+print(f"Total Token: {response.usage.total_tokens}")</pre>
+</div>
+<p class="mb-2">Logika inti kode ini: buat client (membawa API Key dan alamat model) → susun daftar pesan (system menentukan peran, user adalah input pengguna) → kirim permintaan → terima balasan. Pola ini berlaku hampir untuk semua model yang kompatibel dengan format OpenAI — cukup ganti api_key dan base_url untuk beralih model. Inilah alasan banyak model buatan Tiongkok memilih kompatibel dengan format OpenAI SDK: pengembang cukup mengubah dua baris kode untuk berganti model, biaya migrasinya sangat rendah.</p>
+<p class="mb-2">Berikut perbedaan kode saat beralih ke model lain, perhatikan, hanya dua baris yang perlu diubah:</p>
+<div class="code-block">
+<div class="code-head"><span>PYTHON · Ganti model cukup ubah dua baris</span><span class="dots">···</span></div>
+<pre># DeepSeek
+client = OpenAI(
+ api_key=os.environ.get("DEEPSEEK_API_KEY"),
+ base_url="https://api.deepseek.com"
+)
+# model="deepseek-chat"
+
+# Qwen (platform Bailian)
+client = OpenAI(
+ api_key=os.environ.get("DASHSCOPE_API_KEY"),
+ base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"
+)
+# model="qwen-plus"
+
+# Zhipu GLM
+client = OpenAI(
+ api_key=os.environ.get("GLM_API_KEY"),
+ base_url="https://open.bigmodel.cn/api/paas/v4"
+)
+# model="glm-4"
+
+# OpenAI GPT
+client = OpenAI(
+ api_key=os.environ.get("OPENAI_API_KEY"),
+ # base_url cukup pakai nilai default
+)
+# model="gpt-5.6-terra"</pre>
+</div>
+<h5 class="font-semibold mt-3 mb-1">4. Menangani Respons Streaming</h5>
+<p class="mb-2">Dalam aplikasi nyata, kamu biasanya tidak ingin menunggu AI menyelesaikan seluruh isinya sebelum ditampilkan sekaligus: itu membuat pengguna menunggu terlalu lama. Respons streaming (Streaming) memungkinkanmu menampilkan teks kata demi kata bersamaan dengan proses pembuatan oleh AI, meningkatkan pengalaman pengguna secara drastis. Seperti mesin tik, huruf-huruf muncul satu per satu, dan rasanya benar-benar berbeda bagi pengguna.</p>
+<div class="code-block">
+<div class="code-head"><span>PYTHON · Respons streaming</span><span class="dots">···</span></div>
+<pre># Respons streaming: keluar per karakter
+stream = client.chat.completions.create(
+ model="deepseek-chat",
+ messages=[
+ {"role": "user", "content": "Buatkan tutorial bubble sort dengan Python"}
+ ],
+ stream=True # aktifkan streaming
+)
+
+# terima per blok lalu cetak
+for chunk in stream:
+ if chunk.choices[0].delta.content is not None:
+ print(chunk.choices[0].delta.content, end="", flush=True)
+# hasilnya muncul per karakter seperti mesin tik</pre>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">5. Panduan Membeli Token Plan</h4>
+<p class="mb-2">Sebagian besar penyedia model punya dua cara penagihan: bayar sesuai pemakaian (Pay-as-you-go) dan langganan paket (Token Plan / Subscription). Memahami perbedaan keduanya bisa membantumu menekan biaya penggunaan secara signifikan.</p>
+<h5 class="font-semibold mt-3 mb-1">1. Bayar per Pemakaian vs Langganan Paket</h5>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Aspek</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Bayar per pemakaian (Pay-as-you-go)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Langganan paket (Subscription)</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Cara Penagihan</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Bayar sesuai jumlah Token yang dipakai</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Bayar di muka dengan biaya tetap, dapatkan kuota</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Skenario yang Cocok</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pemakaian tidak stabil, pemanggilan sesekali</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pemakaian stabil, pemanggilan frekuensi tinggi</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Keunggulan Harga</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Harga standar</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">20%-50% lebih murah daripada bayar per pemakaian</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Fleksibilitas</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Bisa dipakai kapan saja, tanpa komitmen</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Perlu bayar di muka; kuota yang kedaluwarsa bisa hangus</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Penanganan Kelebihan Kuota</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Otomatis ditagih per pemakaian</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Setelah kuota habis, beralih ke bayar per pemakaian</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Contoh Platform</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Platform API resmi masing-masing model</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OpenAI Plus/Pro, Claude Pro, Cursor Pro</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Perbandingan dua cara penagihan</p>
+<p class="mb-2">Untuk pemula, sebaiknya mulai dari bayar per pemakaian, tanpa perlu bayar di muka, pakai seberapa banyak bayar seberapa banyak. Setelah volume pemakaian bulananmu stabil di satu level (misalnya di atas 50 yuan per bulan), barulah pertimbangkan beralih ke langganan paket untuk mendapatkan harga satuan yang lebih murah.</p>
+<h5 class="font-semibold mt-3 mb-1">2. Ikhtisar Paket Langganan Utama</h5>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Paket</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Biaya Bulanan</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Yang Termasuk</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Cocok Untuk</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ChatGPT Free</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Gratis</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Obrolan teks tanpa batas dengan GPT-5.6 Luna</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Mencoba dari nol</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ChatGPT Plus</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$20/bulan</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GPT-5.6 Sol, pembuatan gambar, analisis data, akses plugin</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pengguna menengah</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ChatGPT Pro</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$200/bulan</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pakai semua model tanpa batas, akses prioritas ke fitur baru</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pengguna profesional berat</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Free</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Gratis</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Obrolan Claude dengan jumlah terbatas</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Mencoba dari nol</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Pro</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$20/bulan</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pakai Claude tanpa batas, akses prioritas ke model baru</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pengembang yang coding</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Cursor Free</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Gratis</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pelengkapan dan obrolan AI dengan jumlah terbatas</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Coba-coba pemula</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Cursor Pro</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$20/bulan</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pelengkapan AI tanpa batas, 500 permintaan premium per bulan</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pengembang sehari-hari</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Cursor Business</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$40/bulan/orang</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Kolaborasi tim, panel admin, mode privasi</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Penggunaan tim</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Paket langganan alat AI utama (Agustus 2026)</p>
+<p class="mb-2">Skema langganan model dalam negeri (Tiongkok) sedikit berbeda. DeepSeek terutama memakai bayar per pemakaian tanpa paket langganan bulanan, kamu mengisi saldo dan biaya dipotong sesuai pemakaian nyata. Tongyi Qianwen menyediakan paket sumber daya prabayar di platform Bailian (membeli kuota Token tertentu dengan harga diskon). Doubao di Volcengine juga punya skema prabayar serupa. Bagi pengembang di Tiongkok, kombinasi paling hemat biasanya: DeepSeek bayar per pemakaian (pengembangan harian) + kuota gratis Doubao (uji coba).</p>
+<h5 class="font-semibold mt-3 mb-1">3. Platform Agregator API</h5>
+<p class="mb-2">Jika kamu perlu memakai beberapa model sekaligus, platform agregator API adalah pilihan yang praktis. Platform agregator memberikan satu API Key terpadu se, hingga kamu bisa memanggil puluhan model dari seluruh dunia tanpa harus mendaftar di tiap platform.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Platform</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Keunggulan</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Keunggulan Harga</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Skenario yang Cocok</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OpenRouter (openrouter.ai)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Platform agregator internasional; satu Key untuk memanggil model dari seluruh dunia</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Harga transparan, bisa membandingkan harga real-time</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Perlu beralih secara fleksibel antar banyak model luar negeri</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">SiliconFlow (siliconflow.cn)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Platform agregator Tiongkok, menyediakan API berbagai model buatan Tiongkok</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">20%-30% lebih murah daripada harga resmi</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pengembang di Tiongkok yang ingin membandingkan harga antar model</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Azure OpenAI (proxy Microsoft)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">API OpenAI via proxy Microsoft Azure</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Batch API bisa setengah harga</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Panggilan OpenAI tingkat enterprise, tugas asinkron bervolume besar</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Baidu Qianfan (qianfan.baidubce.com)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Platform AI Cloud Baidu, menyediakan model seperti Wenxin (ERNIE)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Kuota gratis untuk pengguna baru</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pengguna ekosistem Baidu</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Platform agregator API populer (Agustus 2026)</p>
+<div class="danger-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Peringatan jebakan: jangan beli "Key bersama"</p>
+<p class="mt-1">Jangan membeli yang namanya "API Key bersama" di platform seperti Taobao atau Xianyu, Key semacam ini biasanya berasal dari sumber yang tidak jelas, bisa kapan saja diblokir, dan berisiko membocorkan data. Selalu dapatkan API Key melalui platform resmi atau platform agregator yang kredibel.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">4. Strategi optimasi biaya</h5>
+<p class="mb-2">Memilih model yang tepat hanyalah langkah pertama; cara "memakainya secara hemat" sama pentingnya. Berikut beberapa strategi optimasi biaya yang sudah teruji di praktik:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Manfaatkan cache hit. Banyak model menyediakan fitur "cache":ketika permintaanmu memuat konten yang sudah pernah diproses sebelumnya (seperti system prompt), bagian itu hanya ditagih dengan harga sangat rendah. Harga cache hit DeepSeek hanya 1/60 dari harga normal. Letakkan system prompt yang tetap di awal daftar pesan agar cache hit maksimal.</li>
+  <li>Routing berjenjang, pakai model murah untuk tugas sederhana dan model mahal untuk tugas kompleks. Misalnya, pakai DeepSeek V4 Flash untuk klasifikasi teks (output 2 yuan/juta token) dan Claude untuk desain arsitektur (output 181 yuan/juta token). Sekitar 80% panggilan dalam satu proyek bisa memakai model murah.</li>
+  <li>Batasi panjang output. API ditagih berdasarkan token output; semakin panjang, semakin mahal. Pada skenario yang tidak butuh penjelasan panjang lebar, atur parameter max_tokens untuk membatasi panjang output agar AI tidak "terlalu banyak basa-basi".</li>
+  <li>Gunakan Batch API untuk tugas non-real-time. Jika kamu punya banyak tugas yang tidak butuh respons seketika (misalnya pelabelan data massal atau ringkasan dokumen), Batch API memberikan diskon 50%. OpenAI dan Azure sama-sama menyediakan fitur ini.</li>
+  <li>Pantau pemakaian token. Sebagian besar platform API menyediakan dasbor statistik pemakaian. Periksa berkala distribusi pemakaiannya, cari panggilan yang paling boros token, lalu optimalkan secara terarah. Satu penyesuaian kecil pada prompt (misalnya mengganti "jelaskan ,secara rinci" dengan "jelaskan dalam 3 kalimat") bisa menghemat 50% token.</li>
+</ol>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Strategi optimasi</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Penghematan</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Tingkat kesulitan</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Keterangan</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Cache hit</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Hingga 98%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Rendah</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Letakkan konten yang tetap di awal pesan</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Routing berjenjang</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">50%-80%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Sedang</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Model murah untuk tugas sederhana</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Batasi panjang output</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">30%-60%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Rendah</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Atur parameter max_tokens</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Batch API</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">50%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Rendah</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Batch untuk tugas non-real-time</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Optimasi prompt</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">20%-50%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Sedang</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Padatkan prompt, kurangi bagian berlebih</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Strategi optimasi biaya dan hasilnya (Agustus 2026)</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">6. Praktik: menghubungkan API model besar ke proyek</h4>
+<p class="mb-2">Mari akhiri bab ini dengan satu praktik lengkap, membuat "Generator Ringkasan AI": pengguna memasukkan sepotong teks panjang, lalu program memanggil API model besar untuk menghasilkan ringkasan. Praktik ini memperlihatkan alur lengkap pemanggilan API: konfigurasi lingkungan, pemanggilan API, penanganan error, dan kontrol biaya.</p>
+<div class="code-block">
+<div class="code-head"><span>PYTHON · ai_summarizer.py</span><span class="dots">···</span></div>
+<pre># ai_summarizer.py - peringkas teks AI
+import os
+from openai import OpenAI
+
+# 1. Konfigurasi (baca API Key dari environment variable, jangan pernah hardcode)
+client = OpenAI(
+ api_key=os.environ.get("DEEPSEEK_API_KEY"),
+ base_url="https://api.deepseek.com"
+)
+
+def summarize(text: str, max_length: int = 200) -> dict:
+ """Meringkas teks
+
+ Args:
+ text: teks asli yang akan diringkas
+ max_length: panjang ringkasan maksimum (jumlah Token)
+
+ Returns:
+ dict: berisi ringkasan dan info pemakaian Token
+ """
+ try:
+ response = client.chat.completions.create(
+ model="deepseek-chat",
+ messages=[
+ {
+ "role": "system",
+ "content": "Kamu adalah generator ringkasan."
+ "Rangkum teks yang diberikan pengguna secara ringkas."
+ "Ringkasan tidak lebih dari 3 kalimat."
+ },
+ {
+ "role": "user",
+ "content": f"Ringkas teks berikut:\n\n{text}"
+ }
+ ],
+ max_tokens=max_length, # batasi panjang keluaran
+ temperature=0.3 # suhu rendah=lebih stabil
+ )
+
+ return {
+ "success": True,
+ "summary": response.choices[0].message.content,
+ "input_tokens": response.usage.prompt_tokens,
+ "output_tokens": response.usage.completion_tokens,
+ "total_tokens": response.usage.total_tokens
+ }
+
+ except Exception as e:
+ return {
+ "success": False,
+ "error": str(e)
+ }
+
+# 2. Contoh pemakaian
+if __name__ == "__main__":
+ long_text = """
+ (tempel teks panjang di sini...)
+ """
+
+ result = summarize(long_text)
+
+ if result["success"]:
+ print(f"Ringkasan: {result['summary']}")
+ print(f"Token terpakai: {result['total_tokens']}")
+ # estimasi biaya: DeepSeek V4 Flash
+ cost = result['total_tokens'] * 0.000004 # sekitar 0.4 sen per seribu Token
+ print(f"Estimasi biaya: {cost:.4f} yuan")
+ else:
+ print(f"Terjadi kesalahan: {result['error']}")</pre>
+</div>
+<p class="mb-2">Kode ini mencerminkan beberapa praktik terbaik pemanggilan API: API Key dibaca lewat environment variable, tidak pernah ditulis langsung di dalam kode; fungsi dilengkapi dokumentasi dan type hint yang jelas; max_tokens diatur untuk membatasi panjang output; temperature diatur rendah (0.3) agar output lebih stabil; penanganan error lengkap; dan informasi konsumsi token dikembalikan untuk pelacakan biaya. Saat kamu memakai AI untuk menulis kode ini, sampaikan saja persyaratan-persyaratan tersebut, AI sepenuhnya mampu mewujudkannya untukmu.</p>
+<div class="quote-line">Pelajaran terakhir bab ini: model adalah "amunisi", metodologi adalah "taktik". Memilih amunisi yang tepat membuat pertempuran lebih lancar, tetapi tanpa taktik yang baik, amunisi sebanyak apa pun tak akan menang. Setelah mengenal karakter tiap model dan cara memakai API, Anda punya "gudang amunisi" yang cukup, tetapi bagaimana memenangkan pertempurannya tetap bergantung pada metodologi berpikir yang dipelajari di bab-bab sebelumnya.</div>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Mari praktik: buat panggilan API pertamamu berhasil</p>
+<p class="mt-1">Daftar di satu platform model dalam negeri (disarankan DeepSeek atau Zhipu, keduanya memberi kuota gratis bagi pengguna baru), buat API Key, tuliskan ke environment variable sistem (bukan ke dalam kode!), lalu jalankan kode "panggilan API pertama" di atas. Pada saat jawaban AI berhasil tercetak, kamu sudah melewati garis batas antara "memakai AI" dan "membangun aplikasi AI".</p>
+</div>
+<div class="chapter-summary">
+<p class="font-semibold mb-1">Ringkasan bab ini</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Tiga raksasa internasional: GPT-5.6 (seimbang dan serba bisa), Claude (puncak kemampuan coding + tingkat halusinasi hanya 1%), Gemini (raja multimodal + konteks 2 juta)</li>
+  <li>Lima raksasa dalam negeri: DeepSeek V4 (raja value for money, perhatikan pengumuman kenaikan harga), Qwen3.7 (kelas enterprise), GLM-5.1 (nomor satu dalam negeri untuk SWE), Kimi K3 (teks super panjang), Doubao (gratis untuk pemula)</li>
+  <li>Metode keputusan empat pertanyaan: di-deploy di mana, untuk coding atau lainnya, butuh konteks super panjang, sensitif terhadap anggaran?</li>
+  <li>Token adalah satuan penagihan: 1 karakter Mandarin sekitar 1,5-2 token; 1 juta karakter sekitar 1,5 juta token</li>
+  <li>API Key = sandi dompetmu: kelola lewat environment variable, jangan pernah ditulis langsung di kode, jangan diunggah ke Git</li>
+  <li>Model dalam negeri umumnya kompatibel dengan OpenAI SDK: mengganti model cukup dengan mengubah dua baris, api_key dan base_url</li>
+  <li>Lima cara hemat: cache hit, routing berjenjang, batasi output, Batch API, pantau pemakaian</li>
+</ul>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">Menemukan kesalahan di bab ini? <a href="../../errata.html" class="text-primary hover:underline">Laporkan di halaman koreksi</a> — jalur yang usang, fakta yang keliru, kalimat yang membingungkan: semuanya diterima. Anda juga bisa menghubungi kami di grup QQ 1074995524.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-si-shi-yi-zhang.html" class="text-primary hover:underline">← Bab 41: Panorama Alat Pemrograman AI 2026</a><span></span><a id="next-link" href="di-si-shi-san-zhang.html" class="text-primary hover:underline">Bab 43: Ngobrol dengan AI supaya dia ngerti →</a></nav>
+
+            </section>
+ </div></main></div><!-- Alat cepat: kelompok tombol melayang --><div id="quick-tools" class="quick-tools no-print" aria-label="Alat pintas"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="Cari (Ctrl+K)" aria-label="Cari"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="Beralih gelap/terang" aria-label="Ganti tema"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="Cetak / Ekspor PDF" aria-label="Cetak atau ekspor"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="Daftar isi" aria-label="Buka daftar isi"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="Bacakan suara" aria-label="Bacakan suara"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="Pintasan keyboard (?)" aria-label="Panel pintasan"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="Cadangkan/pulihkan progres" aria-label="Cadangkan progres"><span aria-hidden="true">B</span></button></div><!-- Panel pintasan --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="Pintasan keyboard"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Pintasan keyboard</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Tutup">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Cari konten</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Ganti mode gelap/terang</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Baca nyaring putar/jeda</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Berhenti membacakan</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Buka panel pintasan keyboard</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Perbesar / perkecil ukuran huruf</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">Cetak / ekspor PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- Dialog cadangan/pemulihan --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="Cadangan dan pemulihan"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Backup dan pulihkan progres baca</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Tutup">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">Cadangan mencakup: bab yang sudah dibaca, penanda, posisi baca, preferensi ukuran huruf, dan hasil seari mandiri kesehatan. Data tersimpan lokal di browser dan akan hilang jika kamu berganti browser atau membersihkan cache; disarankan mengekspor cadangan secara berkala.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Ekspor file backup
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Unduh satu file JSON dan simpan di tempat yang aman</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Impor backup untuk memulihkan
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Pilih file cadangan yang diekspor sebelumnya untuk memulihkan progres</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Hapus semua data baca
+ </button><p class="text-xs text-red-400 mt-1 text-center">Tidak dapat dipulihkan! Ekspor cadangan terlebih dahulu</p></div></div></div></div><!-- Notifikasi hari membaca berturut-turut --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">Hari ke-X membaca beruntun!</span></div><!-- Bilah kontrol baca suara --><div id="tts-controls" class="tts-controls" role="region" aria-label="Kontrol pembacaan suara" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="Bab yang sedang dibacakan">Belum mulai</span><button class="tts-btn" id="tts-prev" title="Bagian sebelumnya" aria-label="Bagian sebelumnya"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="Putar/Jeda" aria-label="Putar pembacaan"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="Bagian berikutnya" aria-label="Bagian berikutnya"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="Perlambat" aria-label="Perlambat">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="Percepat" aria-label="Percepat">+</button><button class="tts-btn" id="tts-stop" title="Hentikan pembacaan" aria-label="Hentikan pembacaan"><span aria-hidden="true">×</span></button></div><!-- Tombol kembali ke atas --><button id="back-to-top" class="opacity-0 invisible" aria-label="Kembali ke atas"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- Notifikasi pemulihan posisi membaca --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">Terakhir dibaca: ...</span><button class="btn-restore" id="restore-btn">Urungkan</button><button class="btn-dismiss" id="dismiss-btn">Abaikan</button></div><!-- Skrip JS -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

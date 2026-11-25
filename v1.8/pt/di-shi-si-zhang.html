@@ -1,0 +1,616 @@
+ <!DOCTYPE html><html lang="pt-BR"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="A aula de celular que você não teve · Do básico ao avançado, assuma o controle total da sua vida digital"><meta name="keywords" content="tutorial de celular,noções essenciais de tecnologia,smartphone,Android,iOS,HarmonyOS,dicas de celular,vida digital,grandes modelos de IA,programação com IA,API de grandes modelos,engenharia de prompts,desenvolvimento Android,desenvolvimento iOS,Swift,Kotlin,SwiftUI,Jetpack Compose,computação fotográfica,segurança da informação,gerenciamento de senhas,automação,como escolher celular"><meta name="author" content="Guia da Vida Digital"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-shi-si-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="Capítulo 14: Especial sobre gerenciadores de senhas"><meta property="og:description" content="Na era digital, a senha é a chave da porta da sua casa. Mas e quando as chaves…"><meta property="og:locale" content="pt_PT"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="A aula de celular que você não teve"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="A aula de celular que você não teve · v1.8"><meta name="twitter:description" content="Do básico ao avançado, assuma o controle total da sua vida digital"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>Capítulo 14: Especial sobre gerenciadores de senhas · A aula de celular que você não teve</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-shi-si-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "Capítulo 14: Especial sobre gerenciadores de senhas", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-shi-si-zhang.html", "isPartOf": {"@type": "Book", "name": "A aula de celular que você não teve", "inLanguage": "pt"}}</script>
+<link rel="prefetch" href="di-shi-wu-zhang.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-shi-si-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">Pular para o conteúdo principal</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="Abrir menu de conteúdo" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="Voltar à página inicial">A aula de celular que você não teve</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="Ação principal"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="Começar pelo básico">Começar a aprender</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Pesquisar (Ctrl+K)" aria-label="Pesquisar conteúdo"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="Ajustar tamanho da fonte"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="Diminuir fonte" aria-label="Diminuir fonte">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="Redefinir tamanho da fonte" aria-label="Redefinir tamanho da fonte">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="Aumentar fonte" aria-label="Aumentar fonte">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Alternar modo escuro/claro" aria-label="Alternar modo escuro/claro"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="Imprimir / Exportar PDF" aria-label="Imprimir ou exportar PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="Voltar ao topo">Topo
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="Índice do artigo"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">Sumário
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 capítulos</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="Filtrar capítulos..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="Filtrar capítulos"></div><ul class="space-y-1 text-sm" id="toc-list"><!--Fundamentos-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Começar a aprender</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expandir/recolher Parte Básica" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>Capítulo 0: Três coisas a dizer antes de começar</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>Capítulo 1: Vamos conhecer esta máquina primeiro</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Anexo: Análise de expansão de memória em telemóveis Android</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Anexo do Capítulo 1: Especial sobre o sistema HarmonyOS</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>Capítulo 2: Não achou alguma coisa no celular?</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>Capítulo 3: Sem rede? Não reinicie ainda</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>Capítulo 4: Antes de instalar um app, dê uma olhada</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Anexo: Elementos que compõem um pacote de instalação</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>Capítulo 5: Deixe o celular do seu jeito</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>Capítulo 6: Perdeu o celular? Esqueceu a senha?</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>Capítulo 7: Análise completa dos recursos de ponta</a></li>
+                        </ul>
+                    </li>
+<!--Software-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">II. Parte de Software (Capítulos 8-14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expandir/recolher Parte de Software" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>Capítulo 8: Comunicação: SMS, chamadas e redes sociais</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>Capítulo 9: Trabalho e estudo móvel</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>Capítulo 10: Pagamentos móveis e serviços diários</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>Capítulo 11: Uma foto boa vale mais que dez ruins</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Apêndice do Capítulo 11: Técnicas de imagem profissionais</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>Capítulo 12: Multimédia, entretenimento e leitura</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>Capítulo 13: Quais apps valem a pena e quais evitar</a></li>
+                            <li><a href="#di-shi-si-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>Capítulo 14: Especial sobre gerenciadores de senhas</a></li>
+                        </ul>
+                    </li>
+<!--Avançado-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">III. Parte Avançada (Capítulos 15-20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expandir/recolher Parte Avançada" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>Capítulo 15: Duas cargas por dia: é a bateria ou o uso?</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Apêndice: Análise completa dos protocolos de carregamento rápido</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>Capítulo 16: Ao trocar de celular, quais contas você perde?</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>Capítulo 17: Conexão do celular com outros dispositivos</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>Capítulo 18: Faça o backup agora, não quando precisar</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>Capítulo 19: Quebrou? Não saia consertando agora</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>Capítulo 20: Modo desenvolvedor e permissões avançadas</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Anexo: Terminal Linux portátil Termux</a></li>
+                        </ul>
+                    </li>
+<!--Além-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">IV. Parte Indo Além (Capítulos 21-26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expandir/recolher Parte Indo Além" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>Capítulo 21: Dá para se conectar ao Wi-Fi público?</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>Capítulo 22: O que a IA realmente faz no seu celular?</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>Capítulo 23: Deixe o celular cuidar do trabalho repetitivo</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Anexo: Guia de introdução ao GitHub</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>Capítulo 24: Análise profunda de root e do bloqueio de bootloader (BL)</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>Capítulo 25: Vai vender o celular usado? Faça essas coisas</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>Capítulo 26: As novas tecnologias podem esperar</a></li>
+                        </ul>
+                    </li>
+<!--5,Prática(capítulos 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">V. Parte Prática (Capítulos 27-32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expandir/recolher Parte Prática" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>Capítulo 27: Ajuste o celular para os seus pais</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>Capítulo 28: Antes de comprar, resolva estas três coisas</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>Capítulo 29: Quanto tempo você usa o celular de verdade?</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>Capítulo 30: Espelhamento de tela, apresentações e conectividade no carro</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>Capítulo 31: Introdução à gravação de vídeos curtos e à criação de conteúdo</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>Capítulo 32: Problema? Trinta segundos para conter o dano</a></li>
+                        </ul>
+                    </li>
+<!--6,Olhando para o futuro(Capítulo 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VI. Parte de Perspetivas (Capítulo 33)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expandir/recolher Parte Perspectivas" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>Capítulo 33: Como será o celular nos próximos dez anos?</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>Capítulo 34: Celular e carro: como conectar sem complicação</a></li>
+                        </ul>
+                    </li>
+<!--Especial crianças e celulares(Capítulo 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Especial Crianças e Telemóveis (Capítulos 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expandir/recolher especial Crianças e Celular" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>Capítulo 35: Um celular para o filho: como definir as regras</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>Capítulo 36: Como conectar todos os aparelhos de casa</a></li>
+                        </ul>
+                    </li>
+<!--Programação com IA na prática-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VII. Parte Prática de Programação com IA (Capítulos 37-47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expandir/recolher Parte Prática de Programação com IA" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>Capítulo 37: A revolução de paradigma — de "escrever código" a "comandar a IA a escrever"</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>Capítulo 38: Os cinco princípios de pensamento da programação com IA</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>Capítulo 39: A IA não entendeu? Talvez você não foi claro</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>Capítulo 40: Explique primeiro, depois faça</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>Capítulo 41: Panorama das ferramentas de programação com IA em 2026</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>Capítulo 42: Panorama dos grandes modelos de linguagem e prática com APIs</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>Capítulo 43: Como falar com a IA para ela entender</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>Capítulo 44: Prática do zero ao um — o fluxo completo de um projeto</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>Capítulo 45: A IA escreveu, mas não acabou</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>Capítulo 46: O caminho de aprimoramento — de usuário a arquiteto</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>Capítulo 47: Manual de consulta rápida e recursos</a></li>
+                        </ul>
+                    </li>
+<!--Desenvolvimento Android na prática-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VIII. Parte Prática de Desenvolvimento Android (Capítulos 48-58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expandir/recolher Parte Prática de Desenvolvimento Android" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>Capítulo 48: Como o Android virou o que é hoje?</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>Capítulo 49: Configurando o ambiente de desenvolvimento — Android Studio e o primeiro projeto</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>Capítulo 50: Kotlin em ritmo acelerado — a primeira linguagem do desenvolvimento Android</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>Capítulo 51: Desenvolvimento de interface — introdução ao Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>Capítulo 52: Os quatro componentes principais e o ciclo de vida da Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>Capítulo 53: Armazenamento de dados e requisições de rede</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>Capítulo 54: Projeto 1 — Meu controle financeiro (versão local)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>Capítulo 55: Projeto 2 — App de previsão do tempo (versão em rede)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>Capítulo 56: O app está pronto, agora publique</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>Capítulo 57: O caminho de aprimoramento — permissões, notificações e arquitetura moderna</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>Capítulo 58: Manual de consulta rápida e recursos</a></li>
+                        </ul>
+                    </li>
+<!--Desenvolvimento iOS na prática-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">IX. Parte Prática de Desenvolvimento iOS (Capítulos 59-69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expandir/recolher Parte Prática de Desenvolvimento iOS" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>Capítulo 59: Conhecendo o iOS — o ecossistema da Apple e o ecossistema de desenvolvimento</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>Capítulo 60: Configurando o ambiente de desenvolvimento — Xcode e o primeiro projeto</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>Capítulo 61: Swift em ritmo acelerado — a primeira linguagem do desenvolvimento Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>Capítulo 62: Desenvolvimento de interface — introdução ao SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>Capítulo 63: Views, estado e navegação</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>Capítulo 64: Armazenamento de dados e requisições de rede</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>Capítulo 65: Projeto 1 — Meu controle financeiro (versão local)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>Capítulo 66: Projeto 2 — App de previsão do tempo (versão em rede)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>Capítulo 67: Refinamento e publicação — colocando o app na App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>Capítulo 68: O caminho de aprimoramento — permissões, notificações e arquitetura moderna</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>Capítulo 69: Manual de consulta rápida e recursos</a></li>
+                        </ul>
+                    </li>
+<!--Apêndice-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">X. Apêndices</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Expandir/recolher Apêndices" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>AApêndice A: Processo de desembalagem de um celular novo</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>Apêndice B: Travou em um exercício?</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C Apêndice C: Glossário mínimo de termos</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>DApêndice D: Onde encontrar recursos fiáveis</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>EApêndice E: Agradecimentos e notas</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F Apêndice F: Especial sobre como escolher e usar celulares dobráveis</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>Conclusão: Entender o celular, é só isso</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>GApêndice G: Índice de consulta rápida do livro</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>HApêndice H: Roteiro de versões</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="Pesquisar"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="Pesquisar conteúdo..." autocomplete="off" aria-label="Palavras-chave da pesquisa"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Fechar pesquisa">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">Digite palavras-chave para começar a pesquisar</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- Topo (breadcrumbs) --><nav class="breadcrumb no-print" aria-label="Localização"><a href="#top">Início</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">Curso Essencial de Tecnologia · v1.8</span></nav>
+<div id="di-shi-si-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">Capítulo 14: Tema de Gerenciadores de Senhas</h3>
+<p class="chapter-intro mb-4">Na era digital, a senha é a chave da porta da sua casa. Mas e quando as chaves são muitas e complexas demais? O gerenciador de senhas é o seu "chaveiro mestre universal".</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">I. Por que Você Precisa de um Gerenciador de Senhas?</h4>
+<p class="mb-2">Em média, uma pessoa moderna tem dezenas ou até centenas de contas online. Se cada conta usar a mesma senha, assim que um site for invadido, todas as contas correm perigo. Se cada conta usar uma senha diferente e complexa, é simplesmente impossível decorar todas.</p>
+<p class="mb-2">O gerenciador de senhas resolve esse dilema: você só precisa memorizar uma senha mestra, e ele lembra todas as outras para você.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">II. Como Funciona um Gerenciador de Senhas</h4>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>Armazenamento criptografado</strong>: todas as senhas são armazenadas com criptografia de alto nível, e só você pode descriptografá-las.</li>
+  <li><strong>Senha mestra</strong>: você define uma senha mestra para desbloquear o cofre de senhas. A senha mestra em si não é armazenada no servidor.</li>
+  <li><strong>Preenchimento automático</strong>: na tela de login de sites ou apps, o gerenciador de senhas preenche automaticamente usuário e senha.</li>
+  <li><strong>Geração de senhas</strong>: pode gerar senhas aleatórias e complexas, aumentando a segurança.</li>
+</ol>
+<h4 class="text-lg font-semibold mt-4 mb-2">III. Introdução aos Princípios de Criptografia</h4>
+<p class="mb-2">Entender os princípios de criptografia do gerenciador de senhas ajuda a avaliar se um provedor é confiável. A seguir, explico alguns conceitos essenciais em linguagem acessível.</p>
+<h5 class="font-semibold mt-3 mb-1">1. Criptografia AES-256</h5>
+<p class="mb-2">O AES (Advanced Encryption Standard, Padrão de Criptografia Avançada) é um algoritmo de criptografia simétrica reconhecido pelo NIST (Instituto Nacional de Padrões e Tecnologia dos EUA), amplamente usado por bancos, forças armadas e governos. O "256" refere-se ao comprimento da chave, de 256 bits: teoricamente, seria necessário mais tempo do que a idade do universo para quebrá-la por força bruta. Os principais gerenciadores de senhas (1Password, Bitwarden, KeePass, etc.) usam AES-256 para criptografar seu cofre de senhas.</p>
+<h5 class="font-semibold mt-3 mb-1">2. Arquitetura de Conhecimento Zero (Zero-Knowledge Architecture)</h5>
+<p class="mb-2">"Conhecimento zero" não significa que o provedor não armazena nada, mas sim que <strong>a criptografia e a descriptografia são feitas localmente no seu dispositivo; o servidor apenas guarda o texto cifrado já criptografado</strong>. O fluxo específico:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Você digita a senha mestra no cliente.</li>
+  <li>O cliente deriva a chave de criptografia a partir da senha mestra (essa etapa é realizada no seu celular/computador).</li>
+  <li>Apenas o texto cifrado é enviado ao servidor.</li>
+  <li>No próximo login, o servidor envia o texto cifrado de volta, e o cliente descriptografa novamente com a senha mestra.</li>
+</ol>
+<p class="mb-2">Ponto-chave: <strong>a senha mestra nunca sai do seu dispositivo</strong>; ela também não está no servidor. Portanto, mesmo que o provedor seja invadido, o hacker só obtém um monte de texto cifrado indecifrável, a menos que consiga adivinhar sua senha mestra.</p>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Por que "conhecimento zero" significa que nem o provedor consegue ver suas senhas?</p>
+<p class="mt-1">Porque a chave de descriptografia é derivada da sua senha mestra, e a senha mestra só existe na sua mente e só é usada no seu dispositivo local. No servidor do provedor, não há nem a senha mestra, nem a chave de descriptografia — apenas texto cifrado. É por isso que provedores sérios como Bitwarden e 1Password declaram explicitamente que "nós também não podemos ver suas senhas". Não é que eles não queiram ver, é que tecnicamente é impossível.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">3. Funções de Derivação de Chave: PBKDF2 e Argon2</h5>
+<p class="mb-2">A senha mestra não pode ser usada diretamente como chave de criptografia, ela precisa passar por uma "função de derivação de chave". O papel dessa função é <strong>tornar o cálculo deliberadamente mais lento</strong>, elevando o custo da quebra por força bruta a um nível inviável.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>PBKDF2</strong>: padrão veterano, amplamente usado pelo iCloud Keychain, Bitwarden, LastPass e outros. Desacelera a quebra por meio de iterações repetidas de hash (geralmente acima de 100 mil vezes).</li>
+  <li><strong>Argon2</strong>: vencedor do concurso de hash de senhas de 2015, mais moderno que o PBKDF2. Além do "consumo de poder computacional", introduz também o "consumo de memória" — dificultando a aceleração da quebra até mesmo por hardware dedicado como GPU/ASIC. Bitwarden, KeePassXC e outros já oferecem suporte.</li>
+</ul>
+<p class="mb-2">Quanto maior o número de iterações, mais seguro, mas o desbloqueio também fica mais lento. Provedores sérios divulgam publicamente o algoritmo de derivação e o número de iterações que utilizam, para facilitar a auditoria pela comunidade de segurança.</p>
+<h5 class="font-semibold mt-3 mb-1">4. Alerta de Caso: O Vazamento de Dados do LastPass em 2022</h5>
+<p class="mb-2">Em agosto de 2022, o veterano gerenciador de senhas LastPass anunciou que seu ambiente de desenvolvimento havia sido invadido; em novembro do mesmo ano, divulgou ainda que os hackers haviam levado os backups dos cofres de senhas dos usuários (texto cifrado). As principais lições do incidente:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>A arquitetura de conhecimento zero segurou a linha de defesa</strong>: como o cofre em si é criptografado, os hackers obtiveram o texto cifrado, mas não conseguiram decifrá-lo, desde que a senha mestra do usuário fosse forte o suficiente.</li>
+  <li><strong>Usuários com senha mestra fraca são os mais vulneráveis</strong>: os hackers podem fazer quebra por força bruta offline das senhas mestras fracas; portanto, usuários que usam senha mestra fraca ou reutilizada correm risco real.</li>
+  <li><strong>Os metadados também vazaram</strong>: embora o conteúdo das senhas esteja criptografado, os metadados, como URLs dos sites e anotações, podem não estar criptografados, expondo quais serviços o usuário utilizava.</li>
+</ul>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">O que Aprendemos com o Caso LastPass</p>
+<p class="mt-1">Primeiro, a senha mestra deve ser longa e única (recomenda-se 16 caracteres ou mais, incluindo maiúsculas, minúsculas, números e símbolos). Segundo, prefira provedores que suportem Argon2id e com alto número de iterações. Terceiro, para contas de alto valor (banco, e-mail), ative obrigatoriamente uma segunda verificação independente; não dependa apenas do gerenciador de senhas.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">IV. Principais Gerenciadores de Senhas Recomendados</h4>
+<h5 class="font-semibold mt-3 mb-1">Nativos do sistema:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>iCloud Keychain</strong>: primeira escolha para usuários do ecossistema Apple. Integração perfeita com Safari e apps, gratuito, seguro. A desvantagem é a dificuldade de uso entre plataformas.</li>
+  <li><strong>Gerenciador de Senhas do Google</strong>: prático para usuários Android. Integrado ao Chrome e ao sistema Android, gratuito.</li>
+  <li><strong>Cofre de Senhas Huawei</strong>: nativo do HarmonyOS, adequado para usuários Huawei.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Ferramentas profissionais de terceiros:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Bitwarden</strong>: open source e gratuito, funcionalidades poderosas, suporta todas as plataformas. Altamente recomendado para usuários que valorizam a privacidade.</li>
+  <li><strong>1Password</strong>: interface elegante, funções ricas, ideal para famílias e equipes. Pago.</li>
+  <li><strong>LastPass</strong>: gerenciador de senhas veterano, versão gratuita com funções limitadas.</li>
+  <li><strong>KeePass</strong>: armazenamento totalmente local, open source e gratuito. Ideal para usuários geek.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">V. Avaliação Real da Força da Senha</h4>
+<p class="mb-2">Os gerenciadores de senha costumam exibir uma barra indicadora de "força da senha" (vermelho/amarelo/verde), mas essa avaliação geralmente considera apenas o comprimento e os tipos de caracteres, não sendo abrangente. Para julgar de verdade se uma senha é segura, é preciso considerar a "entropia" e se "já foi vazada".</p>
+<h5 class="font-semibold mt-3 mb-1">1. Entropia (Entropy): A Medida Científica da Força da Senha</h5>
+<p class="mb-2">A "entropia" mede a incerteza de uma senha, em bits. Quanto maior a entropia, maior o número de tentativas necessárias para quebrá-la por força bruta.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>"123456"</strong>: entropia extremamente baixa, quebrada instantaneamente.</li>
+  <li><strong>"P@ssw0rd"</strong>: parece complexa, mas está em todas as listas de ataque por dicionário; a entropia continua baixa.</li>
+  <li><strong>"correct horse battery staple"</strong>: quatro palavras aleatórias, entropia de cerca de 44 bits, muito mais difícil de quebrar do que "P@ssw0rd".</li>
+  <li><strong>16 caracteres aleatórios (incluindo maiúsculas/minúsculas + números + símbolos)</strong>: entropia de cerca de 100 bits, impossível de quebrar por força bruta com o poder computacional atual.</li>
+</ul>
+<p class="mb-2">Conclusão: <strong>"comprimento + aleatoriedade" é mais importante do que "símbolos complexos"</strong>. É por isso que as senhas longas e aleatórias geradas pelo gerenciador de senhas são realmente seguras.</p>
+<h5 class="font-semibold mt-3 mb-1">2. HaveIBeenPwned: Verifique se Sua Senha Já Foi Vazada</h5>
+<p class="mb-2">Mantido pelo pesquisador de segurança Troy Hunt, o <a href="https://haveibeenpwned.com" class="text-primary hover:underline" target="_blank" rel="noopener">haveibeenpwned.com</a> reúne contas e senhas que vazaram em sucessivos grandes incidentes de vazamento de dados. Você pode:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Digitar seu e-mail e verificar se sua conta foi exposta em algum vazamento.</li>
+  <li>Usar a função Pwned Passwords para consultar se uma determinada senha está na base de dados de senhas vazadas conhecidas, (os gerenciadores de senha e navegadores já têm essa consulta integrada).</li>
+</ol>
+<p class="mb-2">Se uma senha aparecer na base de dados de vazamentos, <strong>não importa o quão complexa ela pareça, deve ser trocada imediatamente</strong> — porque o ataque por dicionário tentará essas senhas conhecidas primeiro.</p>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Princípio da Consulta k-Anonymity</p>
+<p class="mt-1">Preocupado em digitar sua senha no HaveIBeenPwned e ela vazar de novo? Não precisa. As consultas modernas usam o protocolo "k-anonimato": o navegador envia apenas os 5 primeiros caracteres do hash da senha para o servidor; o servidor retorna todos os hashes que começam com esses 5 caracteres; a comparação é feita localmente. Ou seja, o servidor nunca vê o hash completo da sua senha. É assim que funciona a "detecção de senhas vazadas" do 1Password e do Bitwarden.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">3. Funções de Monitoramento Integradas dos Gerenciadores de Senhas</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>1Password Watchtower</strong>: monitora em tempo real senhas fracas, senhas repetidas, senhas vazadas, senhas expiradas e sites sem 2FA, exibindo com classificação por cores vermelho/laranja/amarelo.</li>
+  <li><strong>Bitwarden Vault Health</strong>: a versão gratuita já permite ver senhas fracas e repetidas; a versão paga detecta senhas vazadas (com base no HaveIBeenPwned).</li>
+  <li><strong>"Sugestões de Segurança" do iCloud Keychain</strong>: Ajustes do iOS → Senhas → Sugestões de Segurança, indica quais senhas aparecem em vazamentos conhecidos e quais estão sendo reutilizadas.</li>
+  <li><strong>"Verificador de Senhas" do Gerenciador de Senhas do Google</strong>: integrado ao Chrome, verifica em um toque senhas vazadas, fracas e repetidas.</li>
+</ul>
+<div class="practice-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Verifique Agora: Suas Senhas Estão Seguras?</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>Abra o haveibeenpwned.com, digite seu e-mail mais usado e veja em quais incidentes de vazamento ele aparece.</li>
+  <li>Usuários de iPhone: Ajustes → Senhas → Recomendações de segurança, trate os avisos vermelhos um por um.</li>
+  <li>Usuários de Chrome: Configurações → Senhas → Verificar senhas, modifique conforme as sugestões.</li>
+  <li>Usuários de 1Password/Bitwarden: Abra o Watchtower/Health Reports, priorize os itens "Vazados" e "Duplicados".</li>
+</ol>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">VI. Passkey: O futuro do login sem senha</h4>
+<p class="mb-2">De 2024 a 2026, a tecnologia de senhas está passando por uma revolução: o <strong>Passkey (Chave de Acesso)</strong> promete eliminar completamente as senhas tradicionais. Apple, Google e Microsoft estão impulsionando juntos, com o endosso da FIDO Alliance e do W3C (World Wide Web Consortium). Esta é a maior mudança na forma de login em décadas.</p>
+<h5 class="font-semibold mt-3 mb-1">1. O que é Passkey?</h5>
+<p class="mb-2">O Passkey é baseado no padrão FIDO2 / WebAuthn, substituindo senhas por um <strong>par de chaves no dispositivo</strong>. O princípio pode ser simplificado assim:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Seu telefone gera um par de chaves: <strong>chave pública</strong> (registrada no site) + <strong>chave privada</strong> (armazenada permanentemente no chip de segurança do seu dispositivo).</li>
+  <li>Ao fazer login, o site envia um "desafio"; seu telefone assina com a chave privada, e o site verifica com a chave pública.</li>
+  <li>Antes de assinar, você precisa confirmar sua identidade por biometria (Face ID / impressão digital) ou PIN do dispositivo.</li>
+  <li>Durante todo o processo, <strong>nenhuma senha é transmitida pela rede</strong>.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. Passkey vs Senhas tradicionais</h5>
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+ <thead>
+ <tr class="bg-light dark:bg-gray-700">
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Dimensão</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Senha tradicional</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Passkey</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">Anti-phishing</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Ruim, sites de phishing podem roubar a senha</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Naturalmente anti-phishing, a chave privada só assina para o domínio real</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">Impacto de vazamento no servidor</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">O hash da senha pode ser quebrado</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">O servidor só armazena a chave pública, vazamento sem impacto</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">Conveniência</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Precisa memorizar/digitar/gerenciar</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Login em um segundo com Face ID/impressão digital</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">Ataque de repetição</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Pode ser interceptado e repetido por atacante intermediário</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Cada assinatura é única, não pode ser repetida</td>
+ </tr>
+ </tbody>
+ </table>
+<h5 class="font-semibold mt-3 mb-1">3. Suporte nas plataformas</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Apple iCloud Keychain Passkey</strong>: Suporte nativo no iOS 16+ / macOS Ventura+. As Passkeys podem ser sincronizadas entre todos os dispositivos com o mesmo Apple ID. Ao fazer login em um novo dispositivo. Não é necessário recriar.</li>
+  <li><strong>Google Password Manager Passkey</strong>: Suporte nativo no Android + Chrome. As Passkeys ficam armazenadas na conta Google, com sincronização entre dispositivos Android. Desde 2023, as contas pessoais do Google já suportam login com Passkey.</li>
+  <li><strong>Microsoft</strong>: Windows 11 / Edge já suportam Passkey. Conta Microsoft, Outlook, Office e outros serviços estão liberando gradualmente o login por Passkey, com gerenciamento pelo Microsoft Authenticator.</li>
+  <li><strong>1Password / Bitwarden</strong>: Já suportam criação, armazenamento e sincronização multiplataforma de Passkeys, libertando você de um único ecossistema.</li>
+</ul>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">A sincronização entre dispositivos é o avanço chave</p>
+<p class="mt-1">O maior ponto fraco inicial das Passkeys era a "vinculação a um único dispositivo", trocar de telefone significava recriar tudo. A partir de 2023, Apple, Google e Microsoft implementaram a sincronização em nuvem das Passkeys: iCloud Keychain sincroniza entre dispositivos Apple, Google Password Manager sincroniza entre dispositivos Android. Soluções de terceiros como 1Password permitem a sincronização entre ecossistemas. Isso significa que as Passkeys já têm a praticidade necessária para substituir as senhas.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">4. Como criar e usar Passkey no celular</h5>
+<p class="mb-2"><strong>Caminho no iOS (iPhone):</strong></p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Na página de segurança da conta de um site compatível com Passkey (como Google, Microsoft, Amazon, eBay, PayPal), selecione "Adicionar chave de acesso / Add passkey".</li>
+  <li>O sistema exibirá a janela de verificação Face ID / Touch ID. Após a confirmação, a Passkey é gerada automaticamente e salva no iCloud Keychain.</li>
+  <li>No próximo login nesse site, digite o nome de usuário, selecione "Fazer login com iPhone" e passe o Face ID.</li>
+  <li>Entrada de gerenciamento: Ajustes → Senhas → encontre o site correspondente para ver a entrada Passkey.</li>
+</ol>
+<p class="mb-2"><strong>Caminho no Android:</strong></p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Na página de segurança da conta de um site compatível com Passkey, selecione "Adicionar chave de acesso".</li>
+  <li>O Google Password Manager exibirá um pop-up → selecione sua conta Google → verificação de bloqueio de tela (impressão digital/padrão/PIN).</li>
+  <li>A Passkey é salva automaticamente no Google Password Manager, com sincronização entre dispositivos Android da mesma conta.</li>
+  <li>No próximo login, selecione "Usar Passkey" e desbloqueie a tela.</li>
+  <li>Entrada de gerenciamento: Ajustes do Android → Senhas, chaves e preenchimento automático → Gerenciador de senhas → google.com.</li>
+</ol>
+<h5 class="font-semibold mt-3 mb-1">5. Login com Passkey entre dispositivos</h5>
+<p class="mb-2">Se você estiver fazendo login em um site no Windows, mas a Passkey estiver apenas no iPhone, pode autorizar por QR code:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Na página de login do site, selecione "Usar Passkey".</li>
+  <li>Selecione "Usar outro dispositivo".</li>
+  <li>O computador exibirá um QR code; escaneie com o iPhone.</li>
+  <li>O iPhone mostrará a verificação Face ID; após confirmar, o login no computador será concluído.</li>
+</ol>
+<p class="mb-2">Esse processo utiliza comunicação criptografada dupla via Bluetooth + Internet. A chave privada da Passkey nunca sai do seu iPhone.</p>
+<div class="practice-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Experimente agora: login sem senha</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>Faça login na conta Google → Segurança → Chaves de acesso → Adicionar chave de acesso, experimente o login com Face ID/impressão digital.</li>
+  <li>Faça login na conta Microsoft → Segurança → Opções avançadas de segurança → Adicionar chave de acesso.</li>
+  <li>Experimente em serviços que já suportam Passkey, como Taobao, JD.com, eBay, PayPal.</li>
+  <li>Mantenha a senha tradicional como backup, migrando gradualmente as contas de alto valor para Passkey.</li>
+</ol>
+</div>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Sugestões para o período de transição</p>
+<p class="mt-1">O Passkey ainda não substituiu completamente as senhas, muitos sites ainda estão na fase de coexistência "Passkey + senha". Sugestão: ative o Passkey prioritariamente para contas de alto valor, mas <strong>não exclua imediatamente a senha tradicional</strong>, mantenha como backup. Continue usando o gerenciador de senhas, pois nem todos os sites suportam Passkey. Veja o Passkey como um "complemento poderoso ao gerenciador de senhas", não como uma "substituição imediata".</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">VII. Chave de segurança por hardware</h4>
+<p class="mb-2">Se suas exigências de segurança estão acima do usuário comum: como ter muitas criptomoedas, ser executivo/jornalista/ativista, ou proteger contas corporativas essenciais, a chave de segurança por hardware é uma opção mais confiável que o código SMS.</p>
+<h5 class="font-semibold mt-3 mb-1">1. O que é uma chave de segurança por hardware?</h5>
+<p class="mb-2">Uma chave de hardware é um dispositivo físico (semelhante a um pen drive), com um chip de segurança interno que armazena sua chave privada. Requer contato físico ou NFC para concluir a verificação. Produtos representativos:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>YubiKey</strong> (empresa Yubico): A mais popular, suporta FIDO2/WebAuthn, U2F, OTP, PIV, OpenPGP, com interfaces USB-C / USB-A / NFC. Série 5: 50-70 dólares.</li>
+  <li><strong>Google Titan</strong>: Produzido pelo Google, USB-C + NFC / Bluetooth, cerca de 30-40 dólares.</li>
+  <li><strong>OnlyKey</strong>: Alternativa de código aberto, suporta vários protocolos.</li>
+  <li><strong>Alternativas nacionais</strong>: Como Feitian ePasskey, com preços mais acessíveis.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. Por que a chave de hardware é mais segura que o código SMS?</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Anti-phishing</strong>: Assim como o Passkey, a chave de hardware só responde ao domínio real. Sites de phishing não conseguem enganá-la para obter o código.</li>
+  <li><strong>Anti-SIM swap</strong>: Códigos SMS podem ser interceptados por ataques de SIM swap. A chave de hardware não precisa de número de telefone.</li>
+  <li><strong>Anti-ataque intermediário (MITM)</strong>: O protocolo FIDO2 inclui um valor de desafio em cada assinatura, impossível de repetir.</li>
+  <li><strong>Isolamento físico</strong>: A chave privada permanece sempre dentro do chip de hardware. Mesmo que um malware comprometa seu computador, não consegue lê-la.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">3. Cenários de uso</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Contas de exchanges de criptomoedas, recuperação de carteira.</li>
+  <li>SSO corporativo, VPN de trabalho remoto, login SSH em servidores.</li>
+  <li>"Contas principais" como e-mail, GitHub, redes sociais — se comprometidas, podem redefinir todas as outras contas.</li>
+  <li>Pessoas de alto risco como jornalistas, advogados, executivos.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">4. Como configurar a chave de hardware como segundo fator de autenticação</h5>
+<p class="mb-2">Exemplo com conta Google + YubiKey:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Compre uma YubiKey (recomenda-se comprar duas de uma vez: uma para uso diário, uma de backup, armazenadas em locais diferentes).</li>
+  <li>Acesse myaccount.google.com → Segurança → Verificação em duas etapas.</li>
+  <li>Selecione "Adicionar chave de segurança" → insira a YubiKey na porta USB-C ou aproxime-a da área NFC do telefone.</li>
+  <li>Toque o contato metálico da YubiKey conforme as instruções para concluir o registro.</li>
+  <li>Recomenda-se registrar uma segunda chave de backup.</li>
+  <li>Nas configurações de "Verificação em duas etapas", defina a chave de hardware como método preferencial e o código SMS como backup.</li>
+</ol>
+<p class="mb-2">Principais sites compatíveis: Google, GitHub, Microsoft, Apple ID, Facebook, Twitter, Dropbox, GitLab, AWS, Coinbase, Binance, entre outros.</p>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Estratégia de duas chaves</p>
+<p class="mt-1">O maior risco da chave de hardware é "perdê-la". Sugestões: ① Registre duas chaves diferentes ao mesmo tempo; ② Uma para carregar sempre (chaveiro), outra guardada em um cofre doméstico ou caixa de segurança bancária; ③ Alguns sites permitem imprimir o "código de recuperação de backup" para armazenamento offline. Assim, mesmo que a chave principal seja perdida, você não ficará permanentemente bloqueado fora da conta.</p>
+</div>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Cuidado com o canal de compra</p>
+<p class="mt-1">Compre sempre na loja oficial ou em revendedores autorizados. Não compre chaves de segunda mão ou de origem desconhecida: em teoria, hardware pré-configurado pode ter backdoors implantados. O firmware da YubiKey não pode ser atualizado após a fabricação, mas a Yubico publica continuamente avisos de segurança; basta acompanhar o site oficial.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">VIII. Compartilhamento de senhas em família/equipe</h4>
+<p class="mb-2">No ambiente familiar, senhas de Netflix, Wi-Fi doméstico, painel do roteador e fechadura inteligente precisam ser compartilhadas por toda a família. No ambiente de equipe, senhas de servidores, bancos de dados e contas de redes sociais precisam de colaboração entre várias pessoas. <strong>Enviar senhas pelo WeChat ou escrevê-las em documentos compartilhados são práticas de alto risco</strong>. Se o histórico de conversas ou a permissão do documento vazar, a senha também vaza.</p>
+<h5 class="font-semibold mt-3 mb-1">1. O "Cofre compartilhado" (Vault) do 1Password</h5>
+<p class="mb-2">O 1Password é o produto de referência para compartilhamento familiar e em equipe. Seu mecanismo central são <strong>múltiplos cofres</strong>:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Cofre pessoal</strong>: Só você pode ver, como contas bancárias, e-mail e outras contas privadas.</li>
+  <li><strong>Cofre compartilhado</strong>: Familiares ou membros da equipe podem ver, como Netflix, Wi-Fi doméstico, cartão de crédito compartilhado.</li>
+  <li><strong>Permissões graduadas</strong>: A versão para equipes permite definir que certos membros tenham "apenas visualização" ou "apenas visualização sem edição".</li>
+</ul>
+<p class="mb-2">Familiares ou membros da equipe não precisam compartilhar a senha mestra. Cada um faz login com sua própria conta, mas pode ver o conteúdo dos cofres compartilhados autorizados. Quando uma senha é alterada, todos os membros são sincronizados em tempo real.</p>
+<h5 class="font-semibold mt-3 mb-1">2. A função "Organização" do Bitwarden</h5>
+<p class="mb-2">A versão gratuita do Bitwarden suporta compartilhamento de senhas pessoais (compartilhamento limitado por tempo de uma única senha via função "Send"). A versão paga permite criar "Organizações". Compartilhando itens com familiares ou colegas de equipe, com permissões detalhadas. O Bitwarden também oferece opção de auto-hospedagem, adequada para empresas com altas exigências de soberania de dados.</p>
+<h5 class="font-semibold mt-3 mb-1">3. Ambiente familiar: forma segura de compartilhar senhas de Netflix, Wi-Fi etc.</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Netflix / sites de streaming</strong>: Use o "Cofre compartilhado" do 1Password Família para armazenar a senha de login. Cada membro da família faz login individualmente, sem precisar enviar no grupo.</li>
+  <li><strong>Senha do Wi-Fi doméstico</strong>: Entre dispositivos iOS, é possível compartilhar a senha do Wi-Fi diretamente via AirDrop para visitantes, sem precisar ditá-la. Android 12+ também tem a função "Compartilhar Wi-Fi por proximidade".</li>
+  <li><strong>Fechaduras inteligentes, eletrodomésticos inteligentes</strong>: Sempre que possível, use a função "Membros da família" do aplicativo do fabricante para criar contas individuais para cada pessoa, em vez de compartilhar uma conta de administrador.</li>
+  <li><strong>Painel do roteador doméstico</strong>: Armazene a senha de administrador no cofre compartilhado do 1Password. Crie um SSID separado para o Wi-Fi de convidados.</li>
+</ul>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Custo-benefício do 1Password Família</p>
+<p class="mt-1">O 1Password Families custa cerca de 4,99 USD/mês, suporta até 5 membros da família, cada um com seu próprio cofre privado + 4 cofres compartilhados. Isso dá menos de 1 USD/mês por pessoa, sendo atualmente a melhor solução de compartilhamento familiar. O Bitwarden Família custa 10 USD/ano para 6 pessoas, com custo-benefício ainda melhor, mas a experiência de interface é um pouco inferior.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">4. Ambiente de equipe: compartilhamento de senhas de servidores/banco de dados</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>1Password Teams / Business</strong>: Permite criar múltiplos cofres por departamento ou grupo de projeto, com controle granular de permissões e auditoria de todos os acessos.</li>
+  <li><strong>Bitwarden Teams / Enterprise</strong>: Solução de código aberto, com opção de auto-hospedagem. A versão Enterprise suporta integração SSO e sincronização de diretório.</li>
+  <li><strong>Princípio de separação de responsabilidades</strong>: A senha de administrador não deve ser conhecida por apenas uma pessoa, defina 2 a 3 "contatos de emergência" para garantir que o negócio não pare quando alguém essencial sair ou estiver de férias.</li>
+  <li><strong>Processo de desligamento</strong>: Ao sair de um funcionário, revogue imediatamente o acesso ao gerenciador de senhas e, se necessário, faça a rotação de todas as senhas sensíveis que ele tenha acessado.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">5. Acesso de Emergência (Emergency Access): se algo acontecer com você</h5>
+<p class="mb-2">Imagine este cenário: você gerencia sozinho todas as contas importantes da família, mas sofre um acidente e é hospitalizado ou infelizmente falece. Sua família não consegue acessar contas bancárias, e-mails ou seguros. <strong>A função "Acesso de Emergência"</strong> foi projetada exatamente para isso, autorizar um familiar/amigo de confiança a obter acesso ao seu cofre de senhas quando você não puder responder.</p>
+<p class="mb-2"><strong>Configuração do Acesso de Emergência no Bitwarden:</strong></p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Faça login no Bitwarden Web Vault → Configurações → Acesso de Emergência.</li>
+  <li>Adicione o e-mail do contato de confiança e convide-o a aceitar.</li>
+  <li>Defina o "período de espera" (recomendado 7-14 dias): a janela de tempo entre a solicitação da outra pessoa e sua confirmação.</li>
+  <li>Se você não responder durante o período de espera (recusar ou não agir), ao expirar o prazo a pessoa recebe automaticamente o acesso.</li>
+  <li>Você pode recusar manualmente a solicitação ou revogar a permissão de acesso de emergência a qualquer momento.</li>
+</ol>
+<p class="mb-2"><strong>Acesso de Emergência no 1Password:</strong></p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>O 1Password não chama diretamente de "Acesso de Emergência", mas é possível implementar pela função "Organização Família/Equipe", adicione a família à versão Família e coloque alguns itens no "Cofre compartilhado".</li>
+  <li>Para usuários da versão pessoal, recomenda-se informar a senha mestra a um familiar de alta confiança ou escrevê-la em um envelope lacrado guardado em um cofre.</li>
+  <li>O 1Password também fornece um "Código de recuperação". Ao ativar a autenticação de dois fatores, imprima e guarde-o.</li>
+</ol>
+<div class="practice-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Configure agora: deixe uma "chave reserva" para sua família</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>Escolha um familiar de confiança como "contato de emergência".</li>
+  <li>Configure o Acesso de Emergência no gerenciador de senhas (Bitwarden) ou adicione ao cofre compartilhado familiar (1Password).</li>
+  <li>Anote a senha mestra + código de recuperação em papel, lacre em um envelope e guarde no cofre doméstico ou informe a um familiar confiável.</li>
+  <li>Revise semestralmente para confirmar se o contato de emergência ainda é adequado.</li>
+</ol>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">IX. Melhores práticas no uso do gerenciador de senhas</h4>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Defina uma senha mestra forte</strong>: A senha mestra é a última linha de defesa. Defina uma senha longa e complexa e memorize-a.</li>
+  <li><strong>Ative a autenticação de dois fatores</strong>: Ative a autenticação de dois fatores para a conta do gerenciador de senhas, adicionando uma camada extra de proteção.</li>
+  <li><strong>Verifique regularmente senhas fracas</strong>: A maioria dos gerenciadores de senhas tem uma função de "auditoria de segurança" que ajuda a encontrar senhas fracas e duplicadas.</li>
+  <li><strong>Não esqueça a senha mestra</strong>: A senha mestra não pode ser recuperada. Esquecê-la significa perder todas as senhas. Recomenda-se anotá-la em papel e guardá-la em local seguro.</li>
+  <li><strong>Acesso de Emergência</strong>: Configure um contato de emergência. Se você não puder acessar, uma pessoa de confiança poderá obter suas senhas.</li>
+</ul>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Aviso importante</p>
+<p class="mt-1">Embora o gerenciador de senhas seja conveniente, ele também tem riscos: se a senha mestra vazar, todas as senhas ficam expostas. Portanto, a senha mestra nunca deve ser igual a outras senhas, nem escrita em locais fáceis de encontrar. Além disso, recomenda-se escolher um provedor com bom histórico de segurança.</p>
+</div>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Experimente agora: comece a usar o gerenciador de senhas</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>Escolha um gerenciador de senhas (recomenda-se Bitwarden ou o nativo do sistema).</li>
+  <li>Registre uma conta e defina uma senha mestra forte.</li>
+  <li>Importe as senhas existentes (se houver) ou comece a adicionar novas senhas.</li>
+  <li>Instale a extensão do navegador ou o aplicativo móvel e experimente o preenchimento automático.</li>
+  <li>Verifique o relatório de auditoria de segurança e encontre as senhas que precisam ser melhoradas.</li>
+</ol>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">Encontrou um erro neste capítulo? <a href="../../errata.html" class="text-primary hover:underline">Reporte na página de erratas</a> — caminho desatualizado, facto incorreto, frase confusa: tudo bem-vindo. Também pode escrever no grupo QQ 1074995524.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-shi-san-zhang.html" class="text-primary hover:underline">← Capítulo 13: Quais apps valem a pena e quais evitar</a><span></span><a id="next-link" href="di-shi-wu-zhang.html" class="text-primary hover:underline">Capítulo 15: Duas cargas por dia: é a bateria ou o uso? →</a></nav>
+ </div></main></div><!-- Ferramentas rápidas: grupo de botões flutuantes --><div id="quick-tools" class="quick-tools no-print" aria-label="Ferramentas rápidas"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="Pesquisar (Ctrl+K)" aria-label="Pesquisar"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="Alternar escuro/claro" aria-label="Alternar tema"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="Imprimir / Exportar PDF" aria-label="Imprimir ou exportar"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="Índice" aria-label="Abrir índice"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="Leitura em voz alta" aria-label="Leitura em voz alta"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="Atalhos de teclado (?)" aria-label="Painel de atalhos"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="Backup/restauração do progresso" aria-label="Progresso de backup"><span aria-hidden="true">B</span></button></div><!-- Painel de atalhos --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="Atalhos de teclado"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Atalhos de teclado</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Fechar">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Pesquisar conteúdo</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Alternar escuro/claro</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Leitura em voz alta: reproduzir/pausar</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Parar a leitura</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Abrir o painel de atalhos</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Fonte maior / menor</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">Imprimir / exportar PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- Diálogo de backup/restauração --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="Backup e restauração"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Backup e restauração do progresso de leitura</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Fechar">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">O backup inclui: capítulos lidos, marcadores, posição de leitura, preferência de tamanho de fonte e resultados do autoteste de saúde. Os dados ficam salvos localmente no navegador e são perdidos ao trocar de navegador ou limpar o cache; recomenda-se exportar o backup periodicamente.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Exportar arquivo de backup
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Baixar um arquivo JSON e guardá-lo em um local seguro</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Importar backup para restaurar
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Escolher um arquivo de backup exportado antes para restaurar o progresso</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Limpar todos os dados de leitura
+ </button><p class="text-xs text-red-400 mt-1 text-center">Não dá para recuperar! Exporte o backup primeiro</p></div></div></div></div><!-- Aviso de dias seguidos de leitura --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">Dia X de leitura seguida!</span></div><!-- Barra de controles de leitura em voz alta --><div id="tts-controls" class="tts-controls" role="region" aria-label="Controles da leitura em voz alta" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="Capítulo atual em leitura">Não iniciado</span><button class="tts-btn" id="tts-prev" title="Parágrafo anterior" aria-label="Parágrafo anterior"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="Reproduzir/Pausar" aria-label="Reproduzir leitura"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="Próximo parágrafo" aria-label="Próximo parágrafo"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="Reduzir velocidade" aria-label="Reduzir velocidade">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="Aumentar velocidade" aria-label="Aumentar velocidade">+</button><button class="tts-btn" id="tts-stop" title="Parar leitura" aria-label="Parar leitura"><span aria-hidden="true">×</span></button></div><!-- Botão «Topo» --><button id="back-to-top" class="opacity-0 invisible" aria-label="Voltar ao topo"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- Aviso de restauração da posição de leitura --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">Última leitura: ...</span><button class="btn-restore" id="restore-btn">Desfazer</button><button class="btn-dismiss" id="dismiss-btn">Ignorar</button></div><!-- Script JS -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

@@ -1,0 +1,531 @@
+ <!DOCTYPE html><html lang="zh-TW"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="你缺失的那門手機課 · 從入門到精通，全面掌控你的數字生活"><meta name="keywords" content="手機教學,數位必修課,智慧手機,安卓,iOS,鴻蒙,手機技巧,數字生活,AI大型語言模型,AI程式設計,大型語言模型 API,Prompt工程,安卓開發,iOS開發,Swift,Kotlin,SwiftUI,Jetpack Compose,計算攝影,資訊保安,密碼管理,自動化,手機選購"><meta name="author" content="數字生活嚮導"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-er-shi-er-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="第二十二章：AI 在你手機裡到底幹了什麼？"><meta property="og:description" content="歡迎來到手機最酷的&quot;魔術現場&quot;，主角是：人工智慧。"><meta property="og:locale" content="zh_TW"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="你缺失的那門手機課"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="你缺失的那門手機課 · v1.8"><meta name="twitter:description" content="從入門到精通，全面掌控你的數字生活"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>第二十二章：AI 在你手機裡到底幹了什麼？ · 你缺失的那門手機課</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-er-shi-er-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "第二十二章：AI 在你手機裡到底幹了什麼？", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-er-shi-er-zhang.html", "isPartOf": {"@type": "Book", "name": "你缺失的那門手機課", "inLanguage": "zh-TW"}}</script>
+<link rel="prefetch" href="di-er-shi-san-zhang.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-er-shi-er-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-er-shi-er-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">跳到主要內容</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="開啟目錄選單" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="返回首頁">你缺失的那門手機課</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="主操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="從基礎開始">開始學習</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="搜尋 (Ctrl+K)" aria-label="搜尋內容"><span aria-hidden="true">搜</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="字號調整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="縮小字型" aria-label="縮小字型">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="重置字號" aria-label="重置字號">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="放大字型" aria-label="放大字型">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="切換深色/淺色模式" aria-label="切換深色/淺色模式"><span class="dark:hidden" aria-hidden="true">夜</span><span class="hidden dark:inline" aria-hidden="true">昼</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="列印 / 匯出PDF" aria-label="列印或匯出PDF"><span aria-hidden="true">印</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="回到頂部">頂部
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="文章目錄"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">學習目錄
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 章</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="篩選章節..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="篩選章節"></div><ul class="space-y-1 text-sm" id="toc-list"><!--基礎篇-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">開始學習</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起展開/收起基礎篇" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>第零章：開始之前，先說三句實話</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>第一章：先來認識這台機器</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>附：安卓手機記憶體拓展解析</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>第一章附：鴻蒙作業系統專題</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>第二章：手機裡的東西，找不到怎麼辦？</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>第三章：連不上網，先別急著重啟</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>第四章：裝軟體之前，先看三眼</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> 附：軟體安裝包構成要素</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>第五章：把手機調成你順手的樣子</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>第六章：手機丟了、密碼忘了的那天</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>第七章：前沿功能全解析</a></li>
+                        </ul>
+                    </li>
+<!--軟體篇-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">二、軟體篇（第8-14章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起展開/收起軟體篇" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>第八章：通訊：簡訊、電話與社交</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>第九章：移動辦公與學習</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>第十章：移動支付與生活服務</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>第十一章：拍得好看，比拍得多更要緊</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>第十一章附：專業影像技術</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>第十二章：影音娛樂與閱讀</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>第十三章：哪些 App 值得裝，哪些別裝？</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>第十四章：密碼管理器專題</a></li>
+                        </ul>
+                    </li>
+<!--進階篇-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">三、進階篇（第15-20章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起展開/收起進階篇" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>第十五章：一天兩充，是電池不行還是用法不對？</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> 附：快充協議全解析</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>第十六章：換機時，哪些賬號能丟、哪些不能</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>第十七章：手機與其他裝置的聯動</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>第十八章：備份，別等到想不起來那天</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>第十九章：壞了怎麼辦：先別急著修</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>第二十章：開發者模式與進階權限</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>附：Termux行動式Linux終端</a></li>
+                        </ul>
+                    </li>
+<!--超越篇-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">四、超越篇（第21-26章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起展開/收起超越篇" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>第二十一章：公共 Wi-Fi 到底能不能連？</a></li>
+                            <li><a href="#di-er-shi-er-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>第二十二章：AI 在你手機裡到底幹了什麼？</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>第二十三章：讓手機替你做重複的事</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>附：GitHub入門指南</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>第二十四章：Root權限與BL鎖深度解析</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>第二十五章：二手手機賣出去之前，先做這幾件事</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>第二十六章：這些新技術，先等等</a></li>
+                        </ul>
+                    </li>
+<!--五、實戰篇（第27-32章）-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">五、實戰篇（第27-32章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起展開/收起實戰篇" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>第二十七章：幫爸媽調手機</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>第二十八章：買手機前，先想清楚這三件事</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>第二十九章：你知道自己用了多久手機嗎？</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>第三十章：螢幕投放、簡報與車載互聯</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>第三十一章：短影音拍攝與內容創作入門</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>第三十二章：出事怎麼辦：三十秒把損失降到最低</a></li>
+                        </ul>
+                    </li>
+<!--六、展望篇（第33章）-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">六、展望篇與車聯篇（第33-34章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起展開/收起展望篇" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>第三十三章：下一個十年，手機會變成什麼樣？</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>第三十四章：手機和車，怎麼連才順手</a></li>
+                        </ul>
+                    </li>
+<!--兒童與手機專題（第35章）-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">兒童與手機專題（第35-36章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起展開/收起兒童與手機專題" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>第三十五章：給孩子一部手機，怎麼定規矩</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>第三十六章：家裡那堆裝置，到底怎麼連</a></li>
+                        </ul>
+                    </li>
+<!--AI程式設計實戰篇-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">七、AI程式設計實戰篇（第37-47章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起展開/收起AI程式設計實戰篇" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>第三十七章：正規化革命——從寫程式碼到指揮AI寫程式碼</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>第三十八章：AI程式設計五大思維原則</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>第三十九章：AI 聽不懂你，多半是你沒說清</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>第四十章：先說清楚，再動手</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>第四十一章：2026年AI程式設計工具全景</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>第四十二章：大型語言模型全景與API實戰</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>第四十三章：跟 AI 說話，怎麼說它才聽得懂</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>第四十四章：從0到1實戰——完整專案全流程</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>第四十五章：AI 寫完不算完</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>第四十六章：進階之路——從使用者到架構師</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>第四十七章：速查手冊與資源</a></li>
+                        </ul>
+                    </li>
+<!--安卓開發實戰篇-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">八、安卓開發實戰篇（第48-58章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起展開/收起安卓開發實戰篇" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>第四十八章：安卓是怎麼長成現在這樣的？</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>第四十九章：搭建開發環境——Android Studio與第一個專案</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>第五十章：Kotlin快速上手——安卓開發的第一語言</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>第五十一章：介面開發——Jetpack Compose入門</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>第五十二章：四大元件與Activity生命週期</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>第五十三章：資料儲存與網路請求</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>第五十四章：專案一——我的記帳本（本地版）</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>第五十五章：專案二——天氣查詢App（網路版）</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>第五十六章：App 做好了，怎麼上架</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>第五十七章：進階之路——權限、通知與現代架構</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>第五十八章：速查手冊與資源</a></li>
+                        </ul>
+                    </li>
+<!--iOS開發實戰篇-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">九、iOS開發實戰篇（第59-69章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起展開/收起iOS開發實戰篇" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>第五十九章：認識iOS——蘋果生態與開發生態</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>第六十章：搭建開發環境——Xcode與第一個專案</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>第六十一章：Swift快速上手——蘋果開發的第一語言</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>第六十二章：介面開發——SwiftUI入門</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>第六十三章：檢視、狀態與導航</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>第六十四章：資料儲存與網路請求</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>第六十五章：專案一——我的記帳本（本地版）</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>第六十六章：專案二——天氣查詢App（網路版）</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>第六十七章：打磨與發佈——上架App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>第六十八章：進階之路——權限、通知與現代架構</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>第六十九章：速查手冊與資源</a></li>
+                        </ul>
+                    </li>
+<!--附錄-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十、附錄</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起展開/收起附錄" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>A附錄A：新手機開箱流程</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>附錄B：練習卡住了怎麼辦？</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C附錄C：極簡術語對照表</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>D附錄D：靠譜資源去哪裡找</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>E附錄E：感謝與說明</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F附錄F：摺疊屏選購與使用專題</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>結語：把手機用明白，就這麼點事</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>G附錄G：全書速查索引</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>H附錄H：版本路線圖</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜尋"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">搜</span><input type="text" id="search-input" placeholder="搜尋內容..." autocomplete="off" aria-label="搜尋關鍵詞"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="關閉搜尋">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">輸入關鍵字開始搜尋</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 頂部麵包屑 --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">首頁</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">數碼必修課 · v1.8</span></nav>
+<div id="di-er-shi-er-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">第二十二章：AI 在你手機裡到底幹了什麼？</h3>
+<p class="chapter-intro mb-4">歡迎來到手機最酷的"魔術現場"，主角是：人工智慧。你每天在用的"一拍即得"的美照、張口就來的語音助手、越用越懂你的輸入法，背後都站著這位隱形大腦。</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">一、AI相機：你的"後期暗房"搬進了手機</h4>
+<p class="mb-2">現在的AI計算攝影，更像是把一個專業修圖師+攝影師團隊直接塞進了快門鍵裡。在你按下快門前，AI就已經開始工作了：掃描場景，識別出"這是藍天"、"這是人臉"、"這是夜景"。</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">二、語音助手：你的"聲音秘書"如何聽懂你？</h4>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>聽清（語音識別）</strong>：將聲波轉變成文字。</li>
+  <li><strong>聽懂（自然語言理解）</strong>：理解意圖，提取關鍵實體。</li>
+  <li><strong>執行與回答</strong>：呼叫對應App或服務，再透過語音合成"說"給你聽。</li>
+</ol>
+<h4 class="text-lg font-semibold mt-4 mb-2">三、端側AI vs. 雲端AI</h4>
+<p class="mb-2">端側AI把計算留在手機裡，速度快、隱私高、可離線。雲端AI需要聯網，但能處理更復雜的任務。</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">四、AI大模型與手機：你的隨身智慧助手</h4>
+<p class="mb-2">2025-2026年，AI大模型（如DeepSeek R1、ChatGPT-5、文心一言5.0、通義千問3等）的爆發，深刻改變了手機的使用方式，手機不再只是執行指令的工具，而是能理解、推理和創作的智慧夥伴。端側AI晶片（NPU算力突破80 TOPS）讓大模型推理首次在手機本地跑通。無需聯網也能用AI。</p>
+<h5 class="font-semibold mt-3 mb-1">什麼是AI大模型？</h5>
+<p class="mb-2">AI大模型（Large Language Model，LLM）是透過很多文字資料訓練出來的AI系統，能理解和生成自然語言。你可以把它想象成一個讀過網際網路上幾乎所有文字的"超級學霸"，能回答問題、寫文章、翻譯、程式設計、分析資料。</p>
+<h5 class="font-semibold mt-3 mb-1">手機上的AI大模型應用：</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>對話助手</strong>：DeepSeek、ChatGPT、豆包、Kimi等App，可以隨時提問、翻譯、寫文案和總結文章。比傳統搜尋引擎更智慧：它不只給你連結，而是直接給你答案。</li>
+  <li><strong>寫作與創作</strong>：讓AI幫你寫郵件、總結會議紀要、潤色文章、生成創意文案。</li>
+  <li><strong>影象生成與編輯</strong>：AI一鍵消除照片中的路人、擴充圖片邊界、風格轉換、甚至根據文字描述生成圖片。</li>
+  <li><strong>實時翻譯</strong>：通話實時翻譯、面對面對話翻譯、拍照翻譯，出國旅行不再有語言障礙。</li>
+  <li><strong>學習輔導</strong>：AI可以解釋概念、出題練習、批改作業，是隨身家教。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">端側大模型：手機自己跑AI</h5>
+<p class="mb-2">最新的旗艦手機已經能在本地執行小型AI大模型（通常7B引數左右），帶來的變化是：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>不需要網路</strong>：斷網也能用AI功能，飛機上、地鐵裡都行。</li>
+  <li><strong>隱私更安全</strong>：你的對話和資料不會上傳到雲端，完全在手機本地處理。</li>
+  <li><strong>響應更快</strong>：沒有網路延遲，AI回覆幾乎是即時的。</li>
+  <li><strong>當前限制</strong>：端側模型的能力還比不上雲端大模型，複雜任務仍需聯網。但隨著晶片AI算力的提升，端側模型會越來越強。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">系統級AI整合：</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>蘋果Apple Intelligence</strong>：iOS 18引入的AI系統，整合寫作工具、影象魔法棒、Siri增強、通知摘要等功能。端側處理優先，複雜任務才上雲端。</li>
+  <li><strong>華為盤古大模型</strong>：整合到鴻蒙系統中，小藝助手獲得大模型能力，支援檔案摘要、智慧識屏、AI修圖等。</li>
+  <li><strong>小米澎湃AI</strong>：系統級AI能力，支援AI搜圖、AI摘要、AI實時字幕、端側大模型對話等。</li>
+  <li><strong>三星Galaxy AI</strong>：通話實時翻譯、筆記AI摘要、圖片生成編輯、搜尋圈選等功能。</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">五、幾個典型應用場景與實操</h4>
+<p class="mb-2">為了讓你更直觀地感受手機AI的"超能力"，下面我們用五個具體場景，展示AI是如何在日常生活中"出手相救"的：</p>
+<h5 class="font-semibold mt-3 mb-1">場景 1：實時翻譯——出國旅行的隨身翻譯官</h5>
+<p class="mb-2"><strong>實際表現</strong>：在巴黎點餐不會法語？iPhone的"翻譯"App支援面對面雙人對話模式，雙方各看自己語言的字幕，甚至可以同聲傳譯。安卓陣營的三星Galaxy AI通話實時翻譯能讓你在電話裡直接說中文，對方聽到的是英文，反之亦然。</p>
+<p class="mb-2"><strong>背後原理</strong>：語音識別（ASR）→ 機器翻譯（NMT）→ 語音合成（TTS）三步流水線，端到端延遲已可控制在1秒內。</p>
+<h5 class="font-semibold mt-3 mb-1">場景 2：AI消除——拯救被路人"毀掉"的遊客照</h5>
+<p class="mb-2"><strong>實際表現</strong>：在景點拍了一張絕美的自拍，但背景裡擠滿了其他遊客？用"魔法消除"圈選路人，手機會自動識別並把路人"塗掉"，再智慧填充背景，效果常常令人驚豔。</p>
+<p class="mb-2"><strong>背後原理</strong>：影象分割（Inpainting）模型先識別並刪除選中區域，然後根據周圍畫素和語義理解"腦補"出合理的填充內容。這背後的AI模型訓練資料量高達數百萬張圖片。</p>
+<h5 class="font-semibold mt-3 mb-1">場景 3：AI修圖——一鍵變"攝影大師"</h5>
+<p class="mb-2"><strong>實際表現</strong>：拍了一張陰天的灰濛濛風景照？AI"魔法天空"可以一鍵把天空換成晴空、晚霞甚至星空。AI擴圖可以讓豎構圖變成橫構圖，手機"腦補"出畫面外的場景。</p>
+<p class="mb-2"><strong>背後原理</strong>：基於生成式AI（Generative AI）的擴散模型（Diffusion Model），理解影象的語義內容後生成新畫素。這是當前AI影象處理的"最前沿"。</p>
+<h5 class="font-semibold mt-3 mb-1">場景 4：檔案處理——辦公族的效率倍增器</h5>
+<p class="mb-2"><strong>實際表現</strong>：會議結束後，把會議錄音丟給AI，它能自動整理出結構化的會議紀要、提取待辦事項、生成摘要。一份10頁的英文PDF報告，AI可以在10秒內給你提煉出核心結論。</p>
+<p class="mb-2"><strong>背後原理</strong>：長上下文大模型（Long Context LLM）可以"讀完"數萬字的檔案，進行多輪推理和資訊抽取。Apple Intelligence、華為小藝、WPS AI、騰訊元寶等都具備此能力。</p>
+<h5 class="font-semibold mt-3 mb-1">場景 5：AI搜圖與識物——你的"視覺搜尋引擎"</h5>
+<p class="mb-2"><strong>實際表現</strong>：在街上看到一種不認識的花，相機一開，AI立刻告訴你"這是木槿花"。相簿裡翻找去年在海邊拍的照片，搜尋"大海"，AI自動把所有含海的照片找出來，不用手動翻。</p>
+<p class="mb-2"><strong>背後原理</strong>：計算機視覺（CV）模型對圖片內容進行向量化（Embedding），再與文字查詢進行相似度匹配。這種"多模態搜尋"是手機相簿管理的一大飛躍。</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">六、提示詞最佳化：讓 AI 聽你指揮的"溝通公式"</h4>
+<p class="mb-2">AI 的回答質量，很大程度上取決於你如何"提問"。同樣一個問題，問法不同，AI 給的答案天差地別。下面我們介紹一套<strong>最實用、最容易上手的"角色-背景-任務-限制"溝通思路</strong>，並配以大量例項。</p>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">為什麼需要框架？</p>
+<p class="mt-1">很多人用 AI 像用百度一樣——敲幾個關鍵字進去。但 AI 不是搜尋引擎。它是一個"閱讀理解後回答"的語言模型。<strong>給它更多上下文、說清你要什麼、限制它別跑偏</strong>。它就能給你精準的結果。框架就是把你腦子裡的"好答案長什麼樣"翻譯成 AI 能理解的指令。</p>
+</div>
+<h5 class="font-semibold mt-4 mb-1">1. 角色（Role）：告訴 AI 它是誰</h5>
+<p class="mb-2">給 AI 一個具體的"身份"，它就會呼叫對應領域的專業知識和表達方式。<strong>角色設定得越具體，輸出越專業</strong>。</p>
+<h5 class="font-semibold mt-3 mb-1">實用示例：</h5>
+<ul class="list-disc pl-6 mb-3 space-y-2">
+  <li>"你是一位<strong>有 10 年經驗的小米手機維修工程師</strong>。"（技術問題）</li>
+  <li>"你是一位<strong>擅長把複雜概念講簡單的中學物理老師</strong>。"（科普問題）</li>
+  <li>"你是一位<strong>審美好、讀得多、有自己風格的圖書編輯</strong>。"（寫作問題）</li>
+  <li>"你是一位<strong>每天給上班族做早餐的烹飪博主</strong>。"（生活問題）</li>
+  <li>"你是一位<strong>耐心、溫和、永遠不嘲笑新手的中醫</strong>。"（健康問題）</li>
+</ul>
+<div class="highlight-quote">
+<p class="mb-1"><strong>為什麼有效？</strong>角色設定了 AI 的<strong>知識範圍</strong>、<strong>表達風格</strong>和<strong>專業深度</strong>。沒有角色的 AI 是個"全才但啥都不精"的通才；有了角色，它能"進入"那個身份，像那位專業人士一樣思考。</p>
+</div>
+<h5 class="font-semibold mt-4 mb-1">2. 背景（Background）：告訴 AI 你的情況</h5>
+<p class="mb-2">把"你是誰、你的現狀、你的約束條件"提前說清楚，AI 就能給出<strong>真正適合你</strong>的答案，而不是泛泛而談。</p>
+<h5 class="font-semibold mt-3 mb-1">實用示例：</h5>
+<ul class="list-disc pl-6 mb-3 space-y-2">
+  <li>"我的手機是<strong>小米 14，買了半年，最近玩遊戲時發燙嚴重</strong>。"（裝置情況）</li>
+  <li>"我是<strong>一個 60 歲的退休阿姨，眼睛不太好，不太會用智慧手機</strong>。"（使用者畫像）</li>
+  <li>"我正在<strong>準備 2026 年 6 月的英語六級考試，基礎一般</strong>。"（學習背景）</li>
+  <li>"我開了一家<strong>三線城市的小咖啡店，月流水 3 萬，僱了兩個員工</strong>。"（商業背景）</li>
+  <li>"我<strong>剛生完寶寶在家坐月子，睡眠嚴重不足</strong>。"（生活階段）</li>
+</ul>
+<div class="highlight-quote">
+<p class="mb-1"><strong>為什麼有效？</strong>背景資訊讓 AI 知道<strong>"為誰服務"</strong>和<strong>"在什麼條件下"</strong>。同一道題，給學生和給家長講法不同；給城裡人和給鄉鎮人建議也不同。背景缺失，AI 只能給"最大公約數"的答案，往往不痛不癢。</p>
+</div>
+<h5 class="font-semibold mt-4 mb-1">3. 任務（Task）：明確告訴 AI 做什麼</h5>
+<p class="mb-2">這一步要用<strong>動詞開頭</strong>（寫、列、對比、翻譯、解釋、總結……），把任務描述得<strong>具體、可執行</strong>。含糊的任務只會換來含糊的答案。</p>
+<h5 class="font-semibold mt-3 mb-1">實用示例：</h5>
+<ul class="list-disc pl-6 mb-3 space-y-2">
+  <li>"請<strong>列出 5 個我應該立刻關閉的權限</strong>，並說明原因。"（動作明確）</li>
+  <li>"請<strong>把下面這段英文郵件翻譯成中文</strong>，保持商務口吻。"（任務具體）</li>
+  <li>"請<strong>對比這四款 3000 元價位的手機</strong>，給出一張優缺點對比表。"（格式明確）</li>
+  <li>"請<strong>用小學生能懂的話解釋'什麼是 5G'</strong>。"（風格明確）</li>
+  <li>"請<strong>給我的早餐店寫三條短影片文案</strong>，分別針對上班族、情侶、帶孩子的家長。"（細分明確）</li>
+</ul>
+<div class="highlight-quote">
+<p class="mb-1"><strong>為什麼有效？</strong>任務部分是 AI 行動的"指令中樞"。<strong>動詞越清晰、要求越具體，AI 越知道"交付什麼"</strong>。模糊的"弄一下"、"搞個"、"看看"是 AI 大忌——它會揣測你的意思，結果常常跑偏。</p>
+</div>
+<h5 class="font-semibold mt-4 mb-1">4. 限制（Constraints）：告訴 AI 不要做什麼</h5>
+<p class="mb-2">"限制"聽起來像"約束"，其實是<strong>讓 AI 收斂到最適合你的輸出</strong>的利器。常見維度有：字數、格式、語氣、避免項、必含項。</p>
+<h5 class="font-semibold mt-3 mb-1">實用示例：</h5>
+<ul class="list-disc pl-6 mb-3 space-y-2">
+  <li>"<strong>不超過 200 字，分點列出</strong>。"（長度+格式）</li>
+  <li>"<strong>語氣要親切自然，像朋友聊天</strong>，不要用'首先、其次、再次'這種官話。"（語氣）</li>
+  <li>"<strong>不要使用專業術語</strong>，遇到專業名詞要順便解釋。"（用詞限制）</li>
+  <li>"<strong>每段不超過 3 行</strong>，方便手機閱讀。"（排版）</li>
+  <li>"<strong>必須包含：使用場景、優缺點、我的預算匹配度</strong>。"（必含項）</li>
+  <li>"<strong>不要給具體投資建議</strong>，只解釋原理。"（邊界）</li>
+</ul>
+<div class="highlight-quote">
+<p class="mb-1"><strong>為什麼有效？</strong>沒有限制，AI 容易"自由發揮"——要麼太學術、要麼太長、要麼跑題。明確的限制=明確的"交付標準"，雙方對齊預期，結果才可控。</p>
+</div>
+<h5 class="font-semibold mt-4 mb-1">5. 提示詞質量評估：好提示詞的 5 個特徵</h5>
+<p class="mb-2">寫好提示詞不是一次性的事，<strong>寫完先自查這五條</strong>，再發給 AI：</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>具體而非抽象</strong>：不是"寫篇文章"，是"寫一篇 800 字、3 個小節、面向新手媽媽的手機選購指南"。</li>
+  <li><strong>包含背景而非孤立</strong>：告訴 AI"我是誰、為什麼問這個"，它才能給出"為你定製"的答案。</li>
+  <li><strong>有明確輸出格式</strong>：是表格、列表、段落、還是 JSON？提前說。</li>
+  <li><strong>限制到位</strong>：字數、風格、避項，三選一就有明顯提升。</li>
+  <li><strong>可被 AI 驗證</strong>：問完之後，讓 AI 複述一遍你的要求；說不清楚就是沒說清楚。</li>
+</ol>
+<h5 class="font-semibold mt-4 mb-1">6. 常見問題與解法</h5>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+ <thead>
+ <tr class="bg-light dark:bg-gray-700">
+ <th class="border border-gray-300 px-3 py-2 text-left">症狀</th>
+ <th class="border border-gray-300 px-3 py-2 text-left">解法</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td class="border border-gray-300 px-3 py-2">回答太泛、不實用</td>
+ <td class="border border-gray-300 px-3 py-2">加背景（你是誰/什麼場景）</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 px-3 py-2">回答太學術/太官方</td>
+ <td class="border border-gray-300 px-3 py-2">加語氣限制 + 拒絕"官話"清單</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 px-3 py-2">回答跑題/答非所問</td>
+ <td class="border border-gray-300 px-3 py-2">把任務用動詞重新說一遍，並要求"只回答這個" </td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 px-3 py-2">回答太長看不完</td>
+ <td class="border border-gray-300 px-3 py-2">硬性限制字數（200 字內）</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 px-3 py-2">AI 一本正經胡說</td>
+ <td class="border border-gray-300 px-3 py-2">加"如不確定請標註'我不確定'" + 重要事實自查</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 px-3 py-2">第一版不滿意</td>
+ <td class="border border-gray-300 px-3 py-2">不要重寫，在原提示詞後追加"再…一些"</td>
+ </tr>
+ </tbody>
+ </table>
+</div>
+<h5 class="font-semibold mt-4 mb-1">7. 三個完整場景案例</h5>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">場景一：生活助手（早餐搭配建議）</p>
+<p class="mt-1"><strong>提示詞</strong>：</p>
+<p class="mt-1 text-sm" style="font-family: monospace; background: #f5f5f5; padding: 8px; border-radius: 4px;">你是一位擅長營養搭配的早餐博主（<strong>角色</strong>）。我是一位上班族媽媽，每天早上只有 15 分鐘做早餐，家裡有 6 歲的孩子和 60 歲的婆婆（<strong>背景</strong>）。請<strong>列出 7 天不重樣的早餐搭配</strong>（<strong>任務</strong>）。每份早餐要求：① 準備時間不超過 15 分鐘 ② 營養均衡（蛋白+碳水+蔬果）③ 老少皆宜 ④ 食材在普通超市能買到（<strong>限制</strong>）。</p>
+<p class="mt-1"><strong>為什麼有效</strong>：角色定專業度，背景給三類人共性，任務明確交付物，4 條限制確保可執行。</p>
+</div>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">場景二：學習輔助（英語六級備考）</p>
+<p class="mt-1"><strong>提示詞</strong>：</p>
+<p class="mt-1 text-sm" style="font-family: monospace; background: #f5f5f5; padding: 8px; border-radius: 4px;">你是一位<strong>經驗豐富的英語六級老師</strong>（角色）。我是一名普通本科生，<strong>四級 480 分，六級目標 500，還有 3 個月</strong>（背景）。請<strong>為我制定一份可執行的 12 周備考計劃</strong>（任務）。要求：① 每週明確聽說讀寫的時間分配；② 給出每個月的重點突破方向；③ 推薦 3 本合適的複習資料（中文說明理由）；④ 表格形式輸出（限制）。</p>
+<p class="mt-1"><strong>為什麼有效</strong>：角色定專業背景，背景給出分數和時間錨點，任務明確"分階段計劃"，限制要求"表格化"和"可執行"。</p>
+</div>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">場景三：工作效率（會議紀要整理）</p>
+<p class="mt-1"><strong>提示詞</strong>：</p>
+<p class="mt-1 text-sm" style="font-family: monospace; background: #f5f5f5; padding: 8px; border-radius: 4px;">你是一位<strong>資深行政助理</strong>（角色）。我剛開完一個 1 小時的部門會議，<strong>討論 Q2 營銷推廣方案</strong>（背景）。<strong>請把以下會議記錄整理成結構化紀要</strong>（任務）。要求：① 分"決議事項 / 待辦事項 / 風險與異議"三部分；② 待辦事項標出負責人和截止時間（如未提到則寫"待確認"）；③ 總字數控制在 600 字內；④ 用 markdown 格式輸出（限制）。</p>
+<p class="mt-1"><strong>為什麼有效</strong>：角色定行政視角，背景給會議主題，任務明確結構化輸出，4 條限制讓結果直接可複用。</p>
+</div>
+<div class="success-box rounded-lg p-4 mt-4">
+<p class="font-semibold">進階玩法：讓 AI 成為你的"私人助理"</p>
+<p class="mt-1">試試這些進階用法，體驗 AI 的真正實力：</p>
+<ul class="list-disc pl-6 mt-1 space-y-1">
+  <li><strong>多輪對話最佳化</strong>：對 AI 的回答不滿意時，可以說"這個太專業了，請用小學生能懂的話再解釋一次"。</li>
+  <li><strong>鏈式思考（CoT）</strong>：讓 AI"一步步思考"，回答質量通常更高："請一步步分析這道數學題"。</li>
+  <li><strong>多 AI 協作</strong>：用 A 寫初稿，B 潤色，C 翻譯——組合使用效果更佳。</li>
+  <li><strong>系統提示詞</strong>：在 AI 設定中預設你的身份、偏好、忌諱等，讓回答更貼合你的需求。</li>
+</ul>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">七、AI的侷限與挑戰：保持清醒的判斷力</h4>
+<p class="mb-2">AI雖然強大，但絕非"無所不能"。清醒地認識它的侷限，才能更好地使用它：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>"幻覺"問題</strong>：AI可能一本正經地胡說八道（專業術語叫Hallucination）。它會編造不存在的歷史事件、錯誤的引言、虛假的統計資料。重要資訊必須人工核實。</li>
+  <li><strong>知識截止</strong>：大多數AI的訓練資料有截止日期（如2024年初），它不知道之後發生的事。</li>
+  <li><strong>推理能力有限</strong>：複雜的多步推理、數學證明、邏輯陷阱，AI仍然容易出錯。</li>
+  <li><strong>隱私風險</strong>：在雲端AI服務中，你的對話可能被用於模型訓練。敏感資訊應優先使用端側AI。</li>
+  <li><strong>偏見與價值觀</strong>：AI可能帶有訓練資料中的偏見，需要保持獨立思考。</li>
+</ul>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">AI使用小貼士</p>
+<ul class="list-disc pl-6 mt-1 space-y-1">
+  <li>AI生成的內容可能不準確（"幻覺"問題），重要資訊務必核實。</li>
+  <li>不要向AI輸入個人隱私資訊（身份證號、密碼、銀行資訊等）。</li>
+  <li>善用提示詞（Prompt）：越具體、越清晰的描述，AI的回答質量越高。</li>
+  <li>AI是工具不是權威，保持獨立思考和判斷力。</li>
+  <li>遇到關鍵決策（醫療、法律、財務），諮詢專業人士而非依賴AI。</li>
+</ul>
+</div>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">來挑戰：三道AI實戰題</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li><strong>挑戰一：複雜指令</strong>：對語音助手說："明早7點提醒我帶傘，並把今天下午3點的日曆改到4點。" 看看它能否一次完成多步操作。</li>
+  <li><strong>挑戰二：AI修圖</strong>：拍一張有路人的遊客照，使用"魔法消除"或"AI橡皮擦"功能，把路人清除乾淨。觀察AI對背景的"腦補"效果。</li>
+  <li><strong>挑戰三：提示詞最佳化</strong>：先用簡單提示詞"寫一段旅遊攻略"問AI，再用CRISPE框架寫一個詳細提示詞。比較兩次回答的質量差異。</li>
+</ol>
+</div>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">案例 2：換機資料遷移完整流程</p>
+<ul class="list-disc pl-6 mt-1 space-y-1">
+  <li><strong>場景</strong>：iPhone 13 → 小米 15 跨品牌換機。</li>
+  <li><strong>步驟</strong>：① 舊機 iCloud/微信自帶備份。② 退出 Apple ID + 關閉"查詢"。③ 新機用"小米換機"App 掃碼。④ 選擇遷移項。⑤ 微信單獨用自帶"聊天記錄遷移"。⑥ 驗證關鍵資料（通訊錄/相簿/微信）。⑦ 舊機加密擦除。</li>
+  <li><strong>預期結果</strong>：資料零丟失，舊機可安全轉賣。</li>
+</ul>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">發現這一章有錯？到<a href="../../errata.html" class="text-primary hover:underline">勘誤頁</a>回報（路徑過時、事實有誤、說不清，都歡迎提），或加 QQ 群 1074995524。本頁路徑版本見章首錨點。</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-er-shi-yi-zhang.html" class="text-primary hover:underline">← 第二十一章：公共 Wi-Fi 到底能不能連？</a><span></span><a id="next-link" href="di-er-shi-san-zhang.html" class="text-primary hover:underline">第二十三章：讓手機替你做重複的事 →</a></nav>
+ </div></main></div><!-- 快捷工具：浮動按鈕組 --><div id="quick-tools" class="quick-tools no-print" aria-label="快捷工具"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">透</span></button><button id="quick-search" class="quick-tool-btn" title="搜尋 (Ctrl+K)" aria-label="搜尋"><span aria-hidden="true">搜</span></button><button id="quick-theme" class="quick-tool-btn" title="切換深色/淺色" aria-label="切換主題"><span aria-hidden="true">夜</span></button><button id="quick-print" class="quick-tool-btn" title="列印 / 匯出PDF" aria-label="列印或匯出"><span aria-hidden="true">印</span></button><button id="quick-toc" class="quick-tool-btn" title="目錄" aria-label="開啟目錄"><span aria-hidden="true">目</span></button><button id="quick-tts" class="quick-tool-btn" title="語音朗讀" aria-label="語音朗讀"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="鍵盤快速鍵 (?)" aria-label="快速鍵面板"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="備份/還原進度" aria-label="備份進度"><span aria-hidden="true">备</span></button></div><!-- 快捷鍵面板 --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="鍵盤快速鍵"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">鍵盤快捷鍵</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="關閉">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">搜尋內容</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">切換深色/淺色</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">語音朗讀 播放/暫停</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">停止朗讀</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">開啟快捷鍵面板</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">字號調大 / 調小</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">列印 / 匯出PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- 備份/還原彈窗 --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="備份與還原"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">閱讀進度備份與恢復</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="關閉">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">備份包含：已讀章節、書籤、閱讀位置、字號偏好、健康自檢結果。資料儲存在瀏覽器本地，更換瀏覽器或清除快取後丟失，建議定期匯出備份。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 匯出備份檔案
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">下載一個 JSON 檔案，儲存到安全位置</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 匯入備份恢復
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">選擇之前匯出的備份檔案還原進度</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 清除所有閱讀資料
+ </button><p class="text-xs text-red-400 mt-1 text-center">不可還原！請先匯出備份</p></div></div></div></div><!-- 閱讀連續天數提示 --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">連續閱讀第 X 天！</span></div><!-- 語音朗讀控制元件欄 --><div id="tts-controls" class="tts-controls" role="region" aria-label="語音朗讀控制" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="當前朗讀章節">未開始</span><button class="tts-btn" id="tts-prev" title="上一段" aria-label="上一段"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="播放/暫停" aria-label="播放朗讀"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="下一段" aria-label="下一段"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="減速" aria-label="減速">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="加速" aria-label="加速">+</button><button class="tts-btn" id="tts-stop" title="停止朗讀" aria-label="停止朗讀"><span aria-hidden="true">×</span></button></div><!-- 回到頂部按鈕 --><button id="back-to-top" class="opacity-0 invisible" aria-label="回到頂部"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- 閱讀位置還原提示 --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">上次讀到：...</span><button class="btn-restore" id="restore-btn">復原</button><button class="btn-dismiss" id="dismiss-btn">忽略</button></div><!-- JS腳本 -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

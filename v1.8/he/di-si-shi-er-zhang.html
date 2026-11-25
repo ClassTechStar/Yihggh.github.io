@@ -1,0 +1,645 @@
+ <!DOCTYPE html><html dir="rtl" lang="he"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="שיעור הסמארטפון שהחסרת · מרמת המתחילים ועד לרמת המומחים — שליטה מלאה בחיים הדיגיטליים שלכם"><meta name="keywords" content="מדריך טלפונים,קורס דיגיטלי חובה,טלפון חכם,Android,iOS,HarmonyOS,טיפים לטלפון,חיים דיגיטליים,מודלי AI גדולים,תכנות בעזרת AI,API של מודלים גדולים,הנדסת פרומפטים,פיתוח ל-Android,פיתוח ל-iOS,Swift,Kotlin,SwiftUI,Jetpack Compose,צילום חישובי,אבטחת מידע,ניהול סיסמאות,אוטומציה,בחירת טלפון"><meta name="author" content="מדריך לחיים הדיגיטליים"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-si-shi-er-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="פרק 42: פנורמת המודלים הגדולים ועבודה מעשית עם API"><meta property="og:description" content="הפרקים הקודמים עסקו ב&quot;איך משתפים פעולה עם AI&quot;; הפרק הזה פותר שאלה בסיסית יותר:…"><meta property="og:locale" content="he_IL"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="שיעור הסמארטפון שהחסרת"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="שיעור הסמארטפון שהחסרת · v1.8"><meta name="twitter:description" content="מרמת המתחילים ועד לרמת המומחים — שליטה מלאה בחיים הדיגיטליים שלכם"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>פרק 42: פנורמת המודלים הגדולים ועבודה מעשית עם API · שיעור הסמארטפון שהחסרת</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-si-shi-er-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "פרק 42: פנורמת המודלים הגדולים ועבודה מעשית עם API", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-si-shi-er-zhang.html", "isPartOf": {"@type": "Book", "name": "שיעור הסמארטפון שהחסרת", "inLanguage": "he"}}</script>
+<link rel="prefetch" href="di-si-shi-san-zhang.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-si-shi-er-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">דילוג לתוכן הראשי</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="פתיחת תפריט התוכן" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="חזרה לדף הבית">שיעור הסמארטפון שהחסרת</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="פעולה ראשית"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="מתחילים מהיסודות">התחילו ללמוד</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="חיפוש (Ctrl+K)" aria-label="חיפוש בתוכן"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="התאמת גודל הגופן"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="הקטנת הגופן" aria-label="הקטנת הגופן">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="איפוס גודל הגופן" aria-label="איפוס גודל הגופן">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="הגדלת הגופן" aria-label="הגדלת הגופן">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="החלפה בין מצב כהה לבהיר" aria-label="החלפה בין מצב כהה לבהיר"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="הדפסה / ייצוא PDF" aria-label="הדפסה או ייצוא PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="חזרה למעלה">למעלה
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="תוכן המאמר"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">תוכן העניינים
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 פרקים</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="סינון פרקים..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="סינון פרקים"></div><ul class="space-y-1 text-sm" id="toc-list"><!--יסודות-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">התחילו ללמוד</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של מדור היסודות" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>פרק 0: שלושה דברים לפני שמתחילים</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>פרק 1: בואו נכיר את המכשיר הזה</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>נספח: ניתוח הרחבת זיכרון בטלפוני Android</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>נספח לפרק 1: נושא מערכת ההפעלה HarmonyOS</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>פרק 2: מה עושים כשלא מוצאים קובץ בטלפון؟</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>פרק 3：הרשת לא עובדת, אל תאתחל מחדש כל כך מהר</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>פרק 4: לפני ההתקנה, תסתכלו על האפליקציה שלוש פעמים</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> נספח: רכיבי חבילת התקנת תוכנה</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>פרק 5: התאימו את הטלפון לעצמכם</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>פרק 6: הטלפון אבד, הסיסמה נשכחה, מה עכשיו؟</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>פרק 7: היכרות מלאה עם התכונות החדישות</a></li>
+                        </ul>
+                    </li>
+<!--תוכנה-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">2. מדור התוכנה (פרקים 8–14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של מדור התוכנה" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>. תכונות מתקדמות של אפליקציית הטלפון</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>פרק 9: עבודה ולמידה ניידת</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>. איך בדיוק לקשר כרטיס בנק?</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>פרק 11: תמונה טובה חשובה יותר מהרבה תמונות</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>נספח לפרק 11: טכניקות צילום מקצועיות</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>פרק 12: בידור אודיו-ויזואלי וקריאה</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>פרק 13: אילו אפליקציות שוות את ההתקנה, ואילו לא؟</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>פרק 14: מנהלי סיסמאות בעומק</a></li>
+                        </ul>
+                    </li>
+<!--מתקדם-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">3. המדור המתקדם (פרקים 15–20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של המדור המתקדם" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>פרק 15: טענים פעמיים ביום, הסוללה או הרגלי השימוש؟</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> נספח: פרוטוקולי טעינה מהירה – הסבר מלא</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>פרק 16: עוברים לטלפון חדש, אילו חשבונות נופלים ואילו נשארים؟</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>פרק 17: שיתוף פעולה בין הטלפון למכשירים אחרים</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>פרק 18: גיבוי עכשיו, לא ביום שבו תצטרכו אותו</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>פרק 19: כשהטלפון מקבל תקלה, אל תמהרו לתקן</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>פרק 20: מצב מפתחים והרשאות מתקדמות</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>פרק 20 נספח</a></li>
+                        </ul>
+                    </li>
+<!--מעבר-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">4. מדור מעבר ליסודות (פרקים 21–26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של מדור מעבר ליסודות" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>פרק 21: באמת כדאי להתחבר ל-Wi-Fi ציבורי؟</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>פרק 22: מה באמת עושה ה-AI בטלפון שלכם؟</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>פרק 23: תנו לטלפון לבצע משימות רציפות במקומכם</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>נספח: מדריך מתחילים ל-GitHub</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>פרק 24: הרשאות Root ונעילת ה-Bootloader לעומק</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>פרק 25: לפני מכירת הטלפון הישן, תעשו את הדברים האלה</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>פרק 26: הטכנולוגיה החדשה יכולה לחכות</a></li>
+                        </ul>
+                    </li>
+<!--5,פרקטיקה(פרקים 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">5. המדור המעשי (פרקים 27–32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של המדור המעשי" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>פרק 27: מגדירים להורים את הטלפון</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>פרק 28: לפני הקנייה, חשבו על שלושה דברים</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>פרק 29: באמת יודעים כמה זמן מסך אתם צורכים؟</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>פרק 30: הקרנה למסך, מצגות וקישוריות ברכב</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>פרק 31: מבוא לצילום סרטונים קצרים וליצירת תוכן</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>פרק 32: במקרה חירום, שלושים שניות להגביל את הנזק</a></li>
+                        </ul>
+                    </li>
+<!--6,מבט אל העתיד(פרק 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">ו. חלק סיכום ומבט קדימה (פרקים 33-41)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של מדור מבט לעתיד" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>פרק 33: איך ייראה הטלפון בעוד עשר שנים؟</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>פרק 34: הטלפון והרכב, מחברים בלי להתאמץ</a></li>
+                        </ul>
+                    </li>
+<!--נושא מיוחד: ילדים וטלפונים(פרק 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">נושא מיוחד: ילדים וטלפונים (פרקים 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של הנושא המיוחד ילדים וטלפונים" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>פרק 35: נותנים לילד טלפון, וקובעים את הכללים</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>פרק 36: כל המכשירים בבית, ומחברים ביניהם</a></li>
+                        </ul>
+                    </li>
+<!--תכנות עם AI בפועל-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">7. מדור פיתוח מעשי בעזרת AI (פרקים 37–47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של מדור פיתוח מעשי בעזרת AI" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>פרק 37: מהפכת הפרדיגמה – מכתיבת קוד לניהול AI שכותב קוד</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>פרק 38: חמשת עקרונות החשיבה של תכנות בעזרת AI</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>פרק 39: כשה-AI לא מבין, אולי פשוט לא הסברתם נכון</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>פרק 40: נוסחים את הדרישות לפני שמתחילים</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>פרק 41: התמונה המלאה של כלי תכנות ה-AI ב-2026</a></li>
+                            <li><a href="#di-si-shi-er-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>פרק 42: פנורמת המודלים הגדולים ועבודה מעשית עם API</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>פרק 43: מדברים עם AI ככה שהוא באמת מבין</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>פרק 44: מעשי מ-0 ל-1 – פרויקט שלם מקצה לקצה</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>פרק 45: ה-AI כתב, וזו רק ההתחלה</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>פרק 46: דרך ההתקדמות – ממשתמש לארכיטקט</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>פרק 47: מדריך עזר מהיר ומשאבים</a></li>
+                        </ul>
+                    </li>
+<!--פיתוח אנדרואיד בפועל-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">8. מדור פיתוח מעשי ל-Android (פרקים 48–58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של מדור פיתוח מעשי ל-Android" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>פרק 48: איך אנדרואיד הגיע להיות כזה؟</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>פרק 49: הקמת סביבת הפיתוח – Android Studio והפרויקט הראשון</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>פרק 50: Kotlin במהירות – שפת הפיתוח הראשונה של Android</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>פרק 51: פיתוח ממשק – מבוא ל-Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>פרק 52: ארבעת רכיבי היסוד ומחזור החיים של Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>פרק 53: אחסון נתונים ובקשות רשת</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>פרק 54: פרויקט 1 – אפליקציית רישום ההוצאות שלי (גרסה מקומית)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>פרק 55: פרויקט 2 – אפליקציית מזג האוויר (גרסת רשת)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>פרק 56: האפליקציה מוכנה, מעלים אותה ל-Google Play</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>פרק 57: דרך ההתקדמות – הרשאות, התראות וארכיטקטורה מודרנית</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>פרק 58: מדריך עזר מהיר ומשאבים</a></li>
+                        </ul>
+                    </li>
+<!--פיתוח iOS בפועל-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">9. מדור פיתוח מעשי ל-iOS (פרקים 59–69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של מדור פיתוח מעשי ל-iOS" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>פרק 59: מכירים את iOS – המערכת האקולוגית של Apple ושל הפיתוח</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>פרק 60: הקמת סביבת הפיתוח – Xcode והפרויקט הראשון</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>פרק 61: Swift במהירות – שפת הפיתוח הראשונה של Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>פרק 62: פיתוח ממשק – מבוא ל-SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>פרק 63: תצוגות, מצבים וניווט</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>פרק 64: אחסון נתונים ובקשות רשת</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>פרק 65: פרויקט 1 – אפליקציית רישום ההוצאות שלי (גרסה מקומית)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>פרק 66: פרויקט 2 – אפליקציית מזג האוויר (גרסת רשת)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>פרק 67: ליטוש ופרסום – עלייה ל-App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>פרק 68: דרך ההתקדמות – הרשאות, התראות וארכיטקטורה מודרנית</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>פרק 69: מדריך עזר מהיר ומשאבים</a></li>
+                        </ul>
+                    </li>
+<!--נספח-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">10. נספחים</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של הנספחים" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>Aנספח A: תהליך פתיחת אריזת טלפון חדש</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>נספח B: נתקעתם בתרגיל؟</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C נספח C: מילון מונחים מינימלי</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>Dנספח D: היכן למצוא משאבים אמינים</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>Eנספח E: תודות והערות</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F נספח F: מדריך מיוחד לבחירה ושימוש במסכים מתקפלים</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>דברי סיכום: להבין את הטלפון, זה כל מה שצריך</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>Gנספח G: מפתח חיפוש מהיר לכל הספר</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>Hנספח H: מפת דרכים של גרסאות</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="חיפוש"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="חיפוש בתוכן..." autocomplete="off" aria-label="מילות חיפוש"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="סגירת החיפוש">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">הקלד מילת חיפוש כדי להתחיל</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- למעלה (נתיב ניווט) --><nav class="breadcrumb no-print" aria-label="מיקום"><a href="#top">דף הבית</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">הקורס הדיגיטלי החובה · v1.8</span></nav>
+<div id="di-si-shi-er-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">פרק 42: התמונה המלאה של המודלים הגדולים ועבודה מעשית עם API</h3>
+<p class="chapter-intro mb-4">הפרקים הקודמים עסקו ב"איך משתפים פעולה עם AI"; הפרק הזה פותר שאלה בסיסית יותר: "איזה AI משתמשים? ואיך?". נוף המודלים הגדולים באוגוסט 2026 עשיר במיוחד, בזירה הבינלאומית מתחרים שלושת הענקים GPT, Claude ו-Gemini, ובסין שגשגים DeepSeek, Qwen (Tongyi Qianwen), GLM, Kimi ו-Doubao. לכל מודל יש אופי ונקודות חוזקה משלו: בחירה נכונה מכפילה את התפוקה, בחירה שגויה מכפילה את המאמץ. הפרק הזה לא רק מכיר לכם את המודלים, אלא גם מלמד לחבר אותם לאפליקציות שלכם דרך API, ולבחור לפי הצרכים שלכם את תוכנית ה-Token המתאימה (חבילת שימוש).</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">א. המודלים הגדולים המרכזיים בעולם: מפת שלוש הענקים</h4>
+<p class="mb-2">בשוק המודלים הגדולים הבינלאומי באוגוסט 2026 התגבשה תמונה של שלוש ענקיות: OpenAI (סדרת GPT), Anthropic (סדרת Claude) ו-Google (סדרת Gemini). לכל אחת אופי בולט משלה: נכיר אותן אחת לאחת.</p>
+<h5 class="font-semibold mt-3 mb-1">1. סדרת OpenAI GPT-5.6: כל-יכול מאוזן בכל החזיתות</h5>
+<p class="mb-2">OpenAI פתחה את גל המודלים הגדולים, וסדרת GPT נותרה עד היום המודל הנפוץ ביותר בעולם. סדרת GPT-5.6 שיצאה ביולי 2026 מאמצת אסטרטגיה של שלוש מדרגות: דגל GPT-5.6 Sol לצרכי הסקה ברמה גבוהה, המאוזנת GPT-5.6 Terra לפיתוח יומיומי, והקלילה GPT-5.6 Luna לתרחישי עומס גבוה בעלות נמוכה. שלושת המודלים חולקים חלון הקשר של 1.05 מיליון Token, ותומכים כולם בקלט תמונות, קריאת פונקציות ופלט מובנה.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">דגם</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">מדרגה</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">קלט (למיליון Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">פלט (למיליון Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">חלון הקשר</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GPT-5.6 Sol</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הדגל להסקה</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">5.00 דולר (כ-36 יואן)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">30.00 דולר (כ-217 יואן)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1.05 מיליון Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GPT-5.6 Terra</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מאוזן ליומיום</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2.50 דולר (כ-18 יואן)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">15.00 דולר (כ-109 יואן)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1.05 מיליון Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GPT-5.6 Luna</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">קליל בעלות נמוכה</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1.00 דולר (כ-7 יואן)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">6.00 דולר (כ-44 יואן)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1.05 מיליון Token</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">תמחור סדרת OpenAI GPT-5.6 (אוגוסט 2026)</p>
+<p class="mb-2">יתרון הליבה של סדרת GPT הוא "האיזון", הסקה, תכנות, כתיבה ורב-מודאליות, בלי נקודת תורפה בולטת. יחד עם אקוסיסטם התוספים העצום של OpenAI וקהילת המפתחים שלה, התיעוד ושרשרת הכלים הם המפותחים ביותר. לתרחישים של "לא יודעים מה לבחור", GPT הוא התשובה הברירת-מחדל שאי אפשר לטעות בה. אבל נקודת התורפה שלו: הגישה מסין דורשת רשת מיוחדת, הביטוי בסינית מדי פעם נושא "מבטא תרגומי", ומחירי ה-API נמצאים ברמה בינונית-גבוהה.</p>
+<div class="success-box rounded-lg p-4 mt-4">
+<p class="font-semibold">חדשות טובות</p>
+<p class="mt-1">באוגוסט 2026 הודיעה OpenAI שהמודל המוגדר כברירת מחדל למשתמשים בחינם שודרג ל-GPT-5.6 Luna, ונפתח צ'אט טקסט ללא הגבלת כמות. משמעות הדבר: אפשר לחוות את יכולות הבסיס של GPT בעלות אפס, ולשלם רק כשנדרשת הסקה חזקה יותר או קריאות API.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">2. סדרת Anthropic Claude: התקרה של התכנות והדיוק</h5>
+<p class="mb-2">אם GPT הוא הכל-יכול, הרי Claude הוא "התקרה" של עולם התכנות. סדרת Claude של Anthropic מובילה זה זמן ארוך בפער ניכר ב-SWE-bench (מבחן הבנצ'מרק להנדסת תוכנה), עם איכות חוללת קוד ויכולת הוצאה לפועל של פרויקטים ברמה הנדסית — הראשונה בתעשייה. יתרה מזאת, שיעור ההזיות של Claude (הסיכוי לייצר מידע שקרי) הוא הנמוך ביותר ברשת — כ-1% בלבד, מה שהופך אותו מתאים במיוחד לתרחישי דיוק גבוהים כמו אקדמיה ומשפטים.</p>
+<p class="mb-2">קלף המר הנוסף של Claude הוא ההקשר הענק: חלון הקשר של מיליון Token, שמאפשר "לקרוא" במכה אחת חוזים של מאות עמודים או מאגר קוד שלם בלי לפספס פרטים. בתרחישים כמו שכתוב קוד וניתוח מסמכים ארוכים זה כמעט בלתי ניתן להחלפה. Claude Code, כלי התכנות בעזרת AI לטרמינל, הגיע עד אמצע 2026 להכנסה שנתית מואצת של 2.5 מיליארד דולר — ההוכחה המובהקת ביותר להכרה ביכולת התכנות של Claude.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">דגם</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">מדרגה</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">קלט (למיליון Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">פלט (למיליון Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">חלון הקשר</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Fable 5</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">דגם הדגל</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">10.00 דולר (כ-72 יואן)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">50.00 דולר (כ-362 יואן)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 מיליון Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Opus 4.8</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">דגם מקצועי</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">5.00 דולר (כ-36 יואן)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">25.00 דולר (כ-181 יואן)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 מיליון Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Sonnet 5</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">דגם חסכוני</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2.00 דולר (כ-14 יואן)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">10.00 דולר (כ-72 יואן)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 מיליון Token</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">תמחור סדרת Anthropic Claude (אוגוסט 2026; ל-Sonnet 5 מוצג מחיר מבצע)</p>
+<p class="mb-2">נקודת התורפה של Claude היא המחיר, לפלט של Fable 5 יש את המחיר הגבוה ביותר מבין כל המודלים: 50 דולר למיליון Token. גם היכולות הרב-מודאליות (הבנת תמונות ווידאו) בינוניות יחסית. למפתחים עצמאיים בתקציב מוגבל, Sonnet 5 בתקופת המבצע מציע תמורה בולטת במיוחד.</p>
+<h5 class="font-semibold mt-3 mb-1">3. סדרת Google Gemini: מלך הרב-מודאליות</h5>
+<p class="mb-2">סדרת Gemini של Google הגיעה ב-2026 לגרסה 3.1 Pro. הקלף המר הגדול של Gemini הוא רב-מודאליות מקורית: ניתוח תמונות וטקסט מדויק, זיהוי טבלאות ב-OCR ללא שגיאות, חילוץ פריימים מווידאו ביעילות, ותמיכה גם בניתוח עמוק של אודיו ווידאו. הוא שזור עמוקות באקוסיסטם של Google (חיפוש, דואר, שירותי ענן), ובולט באחזור מידע בזמן אמת ובהבנה חוצת מודאליות. Gemini תומך גם בקלט הקשר ענק של 2 מיליון Token: חלון ההקשר הגדול ביותר בשוק כיום.</p>
+<p class="mb-2">המיקום של Gemini הוא "הבחירה הראשונה להסקה מדעית ולתרחישים רב-מודאליים". אם הפרויקט שלכם כולל ניתוח תמונות בהיקף גדול, הבנת וידאו או חישובים מדעיים — כמעט ואין ל-Gemini מתחרה. אבל בחוללת קוד טקסט טהור הוא נופל מעט מ-Claude, והביטוי בסינית פחות טבעי מהמודלים המקומיים.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">פריט השוואה</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">GPT-5.6</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Claude Fable 5</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Gemini 3.1 Pro</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ציון כולל</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">94.8</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">95.0</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">92.1</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">יכולת תכנות (SWE-bench)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">74.9%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">64.3% (Pro)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">בינוני</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">חלון הקשר</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1.05 מיליון Token</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 מיליון Token</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2 מיליון Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">יכולות מולטימודליות</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מאוזנת</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">חלשה יחסית</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">החזקה ביותר</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">שיעור הזיות</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">נמוך יחסית</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הנמוך ביותר (כ-1%)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">נמוך יחסית</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">זמינות בסין</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">דורש רשת מיוחדת</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">דורש רשת מיוחדת</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">דורש רשת מיוחדת</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">אקוסיסטם API</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">המפותח ביותר</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">בשלבי צמיחה</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">קשור לאקוסיסטם של Google</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">השוואה בין שלושת המודלים הבינלאומיים הגדולים (אוגוסט 2026)</p>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">שימו לב: המכשולים המעשיים לשימוש בסין</p>
+<p class="mt-1">עבור מפתחים בסין, המכשול המרכזי בשימוש ב-GPT, Claude ו-Gemini הוא הגישה לרשת. אמנם אפשר להשתמש בהם בעקיפין דרך פרוקסי של Azure, פלטפורמות אגרגציה של API ודרכים דומות, אבל את היציבות וההתאמה לתקנות צריך להעריך בעצמכם. אם הפרויקט שלכם מציב דרישות מחמירות לאבטחת מידע, מומלץ לתת עדיפות קודם למודלים הסיניים.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">ב. המודלים הגדולים המרכזיים בסין: פריחה מגוונת</h4>
+<p class="mb-2">ב-2026 המודלים הגדולים הסיניים כבר עברו מתפקיד ה“רודפים” לתפקיד “רצים לצד”, ובתחומים מסוימים אף הגיעו ל“הובלה”. בניגוד למחלוקת ה“מעטפות” של 2023, דגמי הדגל הסיניים של 2026 כבר שווים בהישגיהם למודלים הבינלאומיים הבכירים בהיסק לוגי, ביצירת קוד ובהבנת סינית, והפער הצטמצם לפחות מ-5%. חשוב מכך: למודלים הסיניים יתרון בלתי נפרד בתרחישים בשפה הסינית, בעלות ובפריסה תואמת רגולציה.</p>
+<h5 class="font-semibold mt-3 mb-1">1. DeepSeek V4: מלך יחס העלות-תועלת</h5>
+<p class="mb-2">חברת DeepSeek היא תופעה יוצאת דופן בקרב המודלים הגדולים הסיניים. בתחילת 2025 זעזעה DeepSeek-V3 את השוק עם המיצוב של “זולה פי עשרה מ-GPT וברמת יכולת דומה”, ובתעשייה כינו אותה “קו ההכרעה של מודלי ה-AI הכלליים”, מה שזול ממנה לא שווה לה באיכות, ומה שיקר ממנה לא מציע נפח ושפע כמוה. עד אוגוסט 2026 יצאה הגרסה הרשמית של DeepSeek V4-Pro: ארכיטקטורת MoE עם 1.6 טריליון פרמטרים, כ-49B מופעלים, תמיכה במיליון Token של הקשר ללא אובדן, ויחס העלות-תועלת שלה בקוד נחשב בעיני רבים לשיא העולמי.</p>
+<p class="mb-2">DeepSeek V4 עשתה קפיצת מדרגה גדולה ביכולות ה-Agent, הציון במדד DeepSWE קפץ מ-12.8 ל-62.7 (+390%), ו-NL2Repo עלה מ-38.5 ל-61.5. ה-API קיבל תמיכה בשני פרוטוקולים, Responses API ו-API של Anthropic, וכבר תואם לכלי תכנות מובילים כמו Codex ו-Claude Code. המשמעות: אפשר להחליף את ה-API של Claude ב-API של DeepSeek ולהשתמש בו בתוך Claude Code — העלות יורדת פי כמה, והחוויה כמעט זהה.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">דגם</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">מיצוב</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">קלט (למיליון Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">פלט (למיליון Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">חלון הקשר</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">DeepSeek V4 Pro</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">היסק ברמת דגל</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">3 יואן (כ-US$0.43)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">6 יואן (כ-US$0.87)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 מיליון Token</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">DeepSeek V4 Flash</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">קל ומהיר</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 יואן (כ-US$0.14)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2 יואן (כ-US$0.28)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 מיליון Token</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">תמחור סדרת DeepSeek V4 (אוגוסט 2026, מחירי מבצע)</p>
+<p class="mb-2">השוואת מחירים: על אותם מיליון Token קלט + מיליון Token פלט, DeepSeek V4 Flash עולה כ-0.42 דולר, GPT-5.6 Sol עולה כ-35 דולר, ו-Claude Fable 5 עולה כ-60 דולר. פער של פי 80 עד 140.</p>
+<div class="danger-box rounded-lg p-4 mt-4">
+<p class="font-semibold">אזהרה ממלכודת: DeepSeek עומדת להעלות מחירים</p>
+<p class="mt-1">ב-6 באוגוסט 2026 הודיעה DeepSeek רשמית כי היא “מתכננת להעלות בקרוב בצורה משמעותית את התמחור של ה-API”, וייתכן שמחירי המבצע לא יימשכו זמן רב. בכלי תקשורת מסוימים דובר על העלאה אפשרית של פי 30, ונכון ל-14 באוגוסט החברה טרם פרסמה את תוכנית התמחור הסופית. בנוסף, הגרסה הרשמית של DeepSeek V4 הציגה מנגנון תמחור לפי שעות שיא ושפל, בשעות השיא מחיר הקריאה מוכפל ממש. מומלץ לעקוב אחרי ההכרזות הרשמיות לקבלת התמחור העדכני.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">2. Qwen3.7 Max (Tongyi Qianwen): הבחירה הארגונית של Alibaba Cloud</h5>
+<p class="mb-2">סדרת Qwen (Tongyi Qianwen) של Alibaba Cloud נשענת על האקוסיסטם של Alibaba Cloud ומחזיקה ביתרון טבעי בפריסות ארגוניות. Qwen3.7 Max מיולי 2026 הוא דגל החברה הנוכחי: מודל Dense עם 235B פרמטרים, הקשר נייטיב של 256K שניתן להרחבה עד 1M. היתרונות המרכזיים של Qwen: אקוסיסטם קוד פתוח בשל (כל הסדרה בקוד פתוח, מ-7B ועד 235B), הבנה מדויקת של תרחישים בסינית, ואינטגרציה עמוקה עם התשתית של Alibaba Cloud.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">דגם</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">מחיר פלט (למיליון Token)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">תרחישי שימוש</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen-turbo</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">0.6 יואן</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">שאלות-תשובות פשוטות, סיווג טקסט, תעבורה גבוהה</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen-long</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2.0 יואן</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">עיבוד הקשר עצום של 10M</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen3.7-flash</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">7.2 יואן</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">שיחה כללית, יצירת תוכן</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen3.7-plus</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">12.0 יואן</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מולטימודל (תמונות + וידאו), יצירה בסינית</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen3.7-max</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">36.0 יואן</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">יכולת סינית ברמת דגל, משימות מורכבות</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">תמחור מדורג של סדרת Qwen – Tongyi Qianwen (אוגוסט 2026)</p>
+<p class="mb-2">התמחור של Qwen בנוי במדרגות, מ-qwen-turbo בעלות זעומה (0.6 יואן למיליון Token פלט) ועד דגל qwen3.7-max (36 יואן למיליון Token פלט), בכיסוי כל התרחישים, משאלות-תשובות קלות ועד היסק מורכב. לארגונים שכבר עובדים עם Alibaba Cloud, Qwen היא הבחירה הכי טבעית לשילוב.</p>
+<h5 class="font-semibold mt-3 mb-1">3. GLM-5.1 של Zhipu: המקום הראשון בסין ב-SWE-bench</h5>
+<p class="mb-2">סדרת GLM של Zhipu AI בולטת מאוד ב-2026. GLM-5.1 השיגה את המקום הראשון בסין במדד SWE-bench: ארכיטקטורה היברידית MoE-Dense עם 744B פרמטרים ותמיכה במיליון Token של הקשר. מאפייניה: הבנה מדויקת של סמנטיקה סינית ותמיכה בפריסה פרטית תואמת רגולציה בסין, קריטי לתרחישי פיננסים ומגזר ציבורי שמציבים דרישות גבוהות לאבטחת מידע. התמחור של GLM-5.1: 6 יואן למיליון Token קלט ו-24 יואן למיליון Token פלט, רמת ביניים בקרב המודלים הסיניים.</p>
+<h5 class="font-semibold mt-3 mb-1">4. Kimi K3: מלך הטקסטים הארוכים במיוחד</h5>
+<p class="mb-2">סדרת Kimi של Moonshot AI ידועה ביכולת לעבד טקסטים ארוכים במיוחד. Kimi K3, שיצאה ביולי 2026, מתהדרת ב-2.8 טריליון פרמטרים ונכנסה לצמרת העולמית במדדים רבים של משימות מורכבות. התרחיש המרכזי של Kimi הוא ניתוח מאגרי קוד ארוכים ואחזור מוגבר על מסמכים ארוכים, היא מסוגלת לעבד טקסט של ספר שלם או קוד של פרויקט שלם, ומצטיינת במיוחד במשימות אחזור מסוג “מחט בערימת שחת”. התמחור של Kimi גבוה יחסית (כ-12-20 יואן למיליון Token פלט), אבל בתרחישי טקסט ארוך אין לה מתחרים מבחינת יחס עלות-תועלת.</p>
+<h5 class="font-semibold mt-3 mb-1">5. Doubao: השחקן הרב-גוני של ByteDance</h5>
+<p class="mb-2">סדרת Doubao של ByteDance מציגה יציבות ב-2026. Doubao Seed 2.1 Pro הוא מודל הדגל של Volcano Engine, עם 256K הקשר, ביצועים יציבים במבחנים מעשיים וחוויה בולטת בתרחישים בסינית. היתרונות של Doubao: מענק גדול של Token חינמיים כבר בהרשמה, אינטגרציה מלאה עם האקוסיסטם של Volcano Engine, ותמחור בקרב הרמות הנמוכות בסין. למתחילים שרוצים להתנסות מהר בתכנות AI, Doubao היא בחירת כניסה ללא חסמים.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">פריט השוואה</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">DeepSeek V4</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Qwen3.7 Max</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">GLM-5.1</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Kimi K3</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Doubao 2.1 Pro</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ציון כללי</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">87.5</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">89.7</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">90.5</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">88+</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">85+</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">יכולת תכנות</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">עוצמתית במיוחד</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">חזק</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הראשון בסין ב-SWE</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">חזק</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">טובה מהממוצע</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הבנת סינית</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מצוינת</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מצוינת</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מדויקת</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מצוינת</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מצוינת</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">חלון הקשר</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 מיליון</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">256K-1M</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 מיליון</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ארוך במיוחד</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">256K</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מחיר פלט (יואן למיליון)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">6</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">36</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">24</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">12-20</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">30</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">קוד פתוח</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">רישיון MIT</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הסדרה כולה בקוד פתוח</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">קוד פתוח חלקית</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">קוד סגור</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">קוד סגור</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">פריסה פרטית</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">נתמך</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">נתמך</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">נתמך</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">לא נתמך</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">לא נתמך</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">השוואה בין חמשת המודלים הסיניים הגדולים (אוגוסט 2026)</p>
+<p class="mb-2">מגמה חשובה אחת: תחושת “פער הדורות” בין המודלים הסיניים לבין GPT ו-Claude נעלמה. בהיסק לוגי ובתחרויות מתמטיקה, הפער בין דגלי המודלים הסיניים ל-GPT-5 עומד בדרך כלל על ספרות בודדות. בחשיבה ארכיטקטונית שיטתית ובהיסק הנדסי מורכב, Claude עדיין מוביל, הוא מציע פתרונות ארכיטקטוניים בעלי “נשמה” יותר, בעוד שהמודלים הסיניים נראים לפעמים “דוגמטיים”. אבל בתרחישים בסינית, בשליטה בעלויות ובפריסה תואמת רגולציה, למודלים הסיניים יתרון מוחץ.</p>
+<div class="figure">
+<svg style="max-width:100%;height:auto" width="620" height="290" viewBox="0 0 620 290" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+ <rect x="0" y="0" width="620" height="290" style="fill:var(--ink-inverse)" rx="8"/>
+ <line x1="70" y1="230" x2="590" y2="230" stroke="var(--muted)" stroke-width="1.5"/>
+ <line x1="70" y1="230" x2="70" y2="20" stroke="var(--muted)" stroke-width="1.5"/>
+ <line x1="70" y1="60" x2="590" y2="60" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+ <line x1="70" y1="116" x2="590" y2="116" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+ <line x1="70" y1="173" x2="590" y2="173" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+ <text x="62" y="234" font-size="10" fill="var(--muted-2)" text-anchor="end">0</text>
+ <text x="62" y="120" font-size="10" fill="var(--muted-2)" text-anchor="end">50</text>
+ <text x="62" y="64" font-size="10" fill="var(--muted-2)" text-anchor="end">100</text>
+ <text x="340" y="262" font-size="10.5" fill="var(--ink-2)" text-anchor="middle">מחיר פלט (יואן/מיליון טוקנים)</text>
+ <!-- bars: price -->
+ <rect x="95" y="218" width="60" height="12" fill="var(--accent-book)"/><text x="125" y="212" font-size="9" fill="var(--ink-2)" text-anchor="middle">6</text><text x="125" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">DeepSeek</text>
+ <rect x="195" y="146" width="60" height="84" fill="var(--accent-book)"/><text x="225" y="140" font-size="9" fill="var(--ink-2)" text-anchor="middle">36</text><text x="225" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">Qwen</text>
+ <rect x="295" y="182" width="60" height="48" fill="var(--accent-book)"/><text x="325" y="176" font-size="9" fill="var(--ink-2)" text-anchor="middle">24</text><text x="325" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">GLM</text>
+ <rect x="395" y="200" width="60" height="30" fill="var(--accent-book)"/><text x="425" y="194" font-size="9" fill="var(--ink-2)" text-anchor="middle">16</text><text x="425" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">Kimi</text>
+ <rect x="495" y="170" width="60" height="60" fill="var(--accent-book)"/><text x="525" y="164" font-size="9" fill="var(--ink-2)" text-anchor="middle">30</text><text x="525" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">Doubao</text>
+ <!-- scores -->
+ <circle cx="125" cy="118" r="5" fill="var(--gold)"/><text x="140" y="114" font-size="9" fill="#78350f">87.5</text>
+ <circle cx="225" cy="110" r="5" fill="var(--gold)"/><text x="240" y="106" font-size="9" fill="#78350f">89.7</text>
+ <circle cx="325" cy="105" r="5" fill="var(--gold)"/><text x="340" y="101" font-size="9" fill="#78350f">90.5</text>
+ <circle cx="425" cy="112" r="5" fill="var(--gold)"/><text x="440" y="108" font-size="9" fill="#78350f">88+</text>
+ <circle cx="525" cy="116" r="5" fill="var(--gold)"/><text x="540" y="112" font-size="9" fill="#78350f">85+</text>
+ <rect x="90" y="30" width="12" height="12" fill="var(--accent-book)"/><text x="108" y="41" font-size="9.5" fill="var(--ink-2)">מחיר פלט (נמוך יותר = טוב יותר)</text>
+ <circle cx="170" cy="36" r="5" fill="var(--gold)"/><text x="182" y="40" font-size="9.5" fill="var(--ink-2)">ציון כולל (גבוה יותר = טוב יותר)</text>
+ </svg>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">איור 4: השוואת מחירים וביצועים של חמשת המודלים (ככל שהמחיר נמוך יותר, טוב יותר; ככל שהציון גבוה יותר: טוב יותר)</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">ג. מסגרת החלטות לבחירת מודל</h4>
+<p class="mb-2">אחרי שהכרתם את מאפייני המודלים — איך בוחרים מודל לפרויקט שלכם? הנה לכם “שיטת ארבע השאלות” לקבלת החלטות: עונים על ארבע שאלות, ומצליחים לנעול את המודל המתאים לכם ביותר.</p>
+<div class="figure">
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> הפרויקט שלך נפרס בסין או בינלאומי?</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">בסין → בחר מודלים מקומיים</span><span class="text-gray-400 mx-1">│</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">בינלאומי → אפשר לבחור מודלים זרים</span></div>
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> המשימה המרכזית היא תכנות או משהו אחר?</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">תכנות → Claude או DeepSeek</span><span class="text-gray-400 mx-1">│</span> <span class="border-2 border-gray-400 bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 rounded-md px-3 py-1 text-sm text-center">משהו אחר → המשך לבחון</span></div>
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> צריך הקשר ארוך מאוד (&gt;500 אלף טוקנים)?</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">כן → Gemini או Kimi</span><span class="text-gray-400 mx-1">│</span> <span class="border-2 border-gray-400 bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 rounded-md px-3 py-1 text-sm text-center">לא צריך → המשך לבחון</span></div>
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> התקציב דחוק?</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">דחוק → DeepSeek או Qwen-turbo</span><span class="text-gray-400 mx-1">│</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">לא דחוק → GPT-5.6 או Claude</span></div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">איור 5: שיטת ארבע השאלות לבחירת מודל גדול</p>
+</div>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">טיפ: אסטרטגיית שילוב</p>
+<p class="mt-1">שיטת ההחלטות הזאת איננה דוגמה, בתרחישים רבים משלבים שימוש בכמה מודלים. אסטרטגיית שילוב נפוצה: DeepSeek או Qwen לפיתוח יומיומי (עלות נמוכה, סינית טובה), Claude לעיצוב ארכיטקטוני קריטי (היסק חזק, מעט הזיות), ו-Gemini לניתוח מולטימודלי (עיבוד תמונות ווידאו). מחליפים מודל לפי הצורך, במקום “מודל אחד עד סוף החיים”.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">ד. מבוא לקריאות API: חיבור למודל גדול מאפס</h4>
+<p class="mb-2">הרבה מדריכי תכנות AI מלמדים רק איך להשתמש בממשק השיחה, אבל תכנות AI אמיתי, כלומר לגרום לאפליקציה שלכם לקרוא למודל גדול, מתבצע דרך API. API (Application Programming Interface, ממשק תכנות יישומים) הוא פרוטוקול תקשורת בין תוכניות. דרך ה-API, הקוד שלכם יכול לקרוא ליכולות של המודל הגדול כמו שקוראים לפונקציה.</p>
+<h5 class="font-semibold mt-3 mb-1">1. מה זה Token</h5>
+<p class="mb-2">לפני שמבינים API, חייבים קודם להבין את המושג “Token”. Token הוא יחידת החיוב הבסיסית של המודלים הגדולים — אפשר לחשוב עליו כעל “יחידת הקריאה והכתיבה של ה-AI”. Token אחד מקביל בערך ל-0.75 מילים באנגלית (4 תווים), ול-0.5-1 תו סיני בסינית. קטע טקסט סיני של 1000 תווים צורך כ-1500-2000 Token.</p>
+<p class="mb-2">Token אינו מספר מילים ואינו מספר תווים. המודלים הגדולים משתמשים במפרק Tokenizer ייעודי כדי לחתוך את הטקסט ל-Token. מספר ה-Token של אותה מילה עשוי להשתנות בין מודלים — למשל, המונח “בינה מלאכותית” עשוי להיות 3 Token ב-GPT ו-2 ב-DeepSeek. ה-API של רוב המודלים מחזיר את מספר ה-Token שנצרו בפועל, ואפשר לראות אותו בתשובת ה-API.</p>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">הערכה מהירה של עלות Token</p>
+<p class="mt-1">מיליון תווים בסינית שווים כ-1.5 מיליון Token. עיבוד של מיליון תווי קלט + מיליון תווי פלט עם DeepSeek V4 Flash עולה כ-0.42 דולר (כ-3 יואן); אותה כמות עם Claude Fable 5 עולה כ-60 דולר (כ-434 יואן). זו בדיוק הסיבה שבחירת המודל משפיעה ישירות על העלות של הפרויקט שלכם.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">2. השגת API Key</h5>
+<p class="mb-2">הצעד הראשון בשימוש ב-API של מודל גדול הוא השגת API Key — מחרוזת מפתח לאימות זהות. לכל ספק מודלים יש פלטפורמת API משלו, וצריך להירשם לחשבון וליצור API Key. לפניכם כניסות לפלטפורמות ה-API של המודלים המרכזיים ותהליך ההשגה:</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">מודל</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">פלטפורמת API</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">תהליך ההשגה</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">הקצבה חינמית</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">DeepSeek</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">platform.deepseek.com</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הרשמה → אימות זהות → יצירת API Key</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מענק למשתמשים חדשים</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Qwen (Tongyi Qianwen)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">bailian.aliyun.com (פלטפורמת Bailian)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">התחברות עם חשבון Alibaba Cloud → הפעלת השירות → יצירת Key</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ניסיון חינם למשתמשים חדשים</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GLM (Zhipu)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">open.bigmodel.cn</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הרשמה → אימות זהות → יצירת API Key</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מענק למשתמשים חדשים</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Kimi</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">platform.moonshot.cn</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הרשמה → אימות זהות → יצירת API Key</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הקצבה חינמית מוגבלת</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Doubao</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">volcengine.com (Volcano Engine)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הרשמה → הפעלת Ark → יצירת API Key</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Token רבים במתנה עם ההרשמה</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OpenAI GPT</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">platform.openai.com</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הרשמה → קישור כרטיס אשראי → יצירת API Key</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ללא הקצבה חינמית (נדרש תשלום)</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Anthropic Claude</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">console.anthropic.com</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הרשמה → קישור כרטיס → יצירת API Key</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הקצבה קטנה למשתמשים חדשים</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">פלטפורמות ה-API של המודלים המרכזיים ואופן השגת ה-Key (אוגוסט 2026)</p>
+<div class="danger-box rounded-lg p-4 mt-4">
+<p class="font-semibold">אזהרת אבטחה: API Key = סיסמת הארנק</p>
+<p class="mt-1">API Key שקול לסיסמת הארנק שלכם: כל מי שמשיג את ה-Key יכול לקרוא למודלים על חשבון ההקצבה שלכם. לכן: לעולם אל תכתבו API Key בתוך הקוד (נהלו אותו במשתני סביבה); לעולם אל תעלו למאגר Git ציבורי קוד שמכיל Key; לעולם אל תשתפו ברשתות החברתיות צילומי מסך שמציגים Key. אם ה-Key דלף: מחקו אותו מיד בפלטפורמה וצרו אחד חדש.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">3. הקריאה הראשונה ל-API</h5>
+<p class="mb-2">אחרי השגת ה-API Key, אפשר לקרוא ל-API של מודל גדול בכל שפת תכנות. הנה הדגמה ב-Python של הקריאה הפשוטה ביותר, שליחת הודעה אל DeepSeek וקבלת תשובה.</p>
+<div class="code-block">
+<div class="code-head"><span>PYTHON · קריאת API ראשונה</span><span class="dots">···</span></div>
+<pre># התקנת ה-SDK: pip install openai
+# DeepSeek תואם לפורמט OpenAI SDK, אפשר להשתמש ישירות
+from openai import OpenAI
+import os
+
+# 1. יצירת הקליינט (מפתח ה-API נקרא ממשתנה הסביבה)
+client = OpenAI(
+ api_key=os.environ.get("DEEPSEEK_API_KEY"),
+ base_url="https://api.deepseek.com"
+)
+
+# 2. שליחת הבקשה
+response = client.chat.completions.create(
+ model="deepseek-chat", # ציון המודל
+ messages=[
+ {"role": "system", "content": "אתה עוזר תכנות בפייתון."},
+ {"role": "user", "content": "כתוב פונקציית מיון מהיר."}
+ ]
+)
+
+# 3. קבלת התשובה
+print(response.choices[0].message.content)
+
+# 4. צפייה בצריכת הטוקנים
+print(f"טוקני קלט: {response.usage.prompt_tokens}")
+print(f"טוקני פלט: {response.usage.completion_tokens}")
+print(f"סך הטוקנים: {response.usage.total_tokens}")</pre>
+</div>
+<p class="mb-2">הלוגיקה המרכזית של הקוד: יצירת קליינט (עם ה-API Key וכתובת המודל) → בניית רשימת הודעות (system מגדיר את התפקיד, user הוא קלט המשתמש) → שליחת הבקשה → קבלת התשובה. התבנית הזאת מתאימה כמעט לכל מודל תואם OpenAI: כדי להחליף מודל מספיק להחליף את api_key ואת base_url. לכן מודלים סיניים רבים בוחרים בתאימות לפורמט OpenAI SDK: למפתח מספיק לשנות שתי שורות כדי להחליף מודל, ועלות המעבר זעומה.</p>
+<p class="mb-2">לפניכם ההבדלים בקוד כדי לעבור למודל אחר: שימו לב, צריך לשנות רק שתי שורות:</p>
+<div class="code-block">
+<div class="code-head"><span>PYTHON · החלפת מודל דורשת שתי שורות בלבד</span><span class="dots">···</span></div>
+<pre># DeepSeek
+client = OpenAI(
+ api_key=os.environ.get("DEEPSEEK_API_KEY"),
+ base_url="https://api.deepseek.com"
+)
+# model="deepseek-chat"
+
+# Qwen (פלטפורמת Bailian)
+client = OpenAI(
+ api_key=os.environ.get("DASHSCOPE_API_KEY"),
+ base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"
+)
+# model="qwen-plus"
+
+# GLM של Zhipu
+client = OpenAI(
+ api_key=os.environ.get("GLM_API_KEY"),
+ base_url="https://open.bigmodel.cn/api/paas/v4"
+)
+# model="glm-4"
+
+# OpenAI GPT
+client = OpenAI(
+ api_key=os.environ.get("OPENAI_API_KEY"),
+ # base_url ברירת המחדל מספיק
+)
+# model="gpt-5.6-terra"</pre>
+</div>
+<h5 class="font-semibold mt-3 mb-1">4. טיפול בתשובות זורמות</h5>
+<p class="mb-2">ביישומים אמיתיים בדרך כלל לא כדאי לחכות שה-AI יסיים לכתוב הכול ורק אז להציג, זה מאלץ את המשתמש לחכות יותר מדי. תשובה זורמת (Streaming) מאפשרת להציג מילה אחר מילה בזמן שה-AI מייצר את התשובה, ומשפרת מאוד את חוויית המשתמש. כמו מכונת כתיבה: האותיות קופצות אחת אחרי השנייה, והתחושה של המשתמש שונה לגמרי.</p>
+<div class="code-block">
+<div class="code-head"><span>PYTHON · תשובה בסטרימינג</span><span class="dots">···</span></div>
+<pre># תשובה בסטרימינג: פלט מילה אחר מילה
+stream = client.chat.completions.create(
+ model="deepseek-chat",
+ messages=[
+ {"role": "user", "content": "כתוב מדריך למיון בועות בפייתון"}
+ ],
+ stream=True # הפעלת סטרימינג
+)
+
+# קבלה והדפסה בבלוקים
+for chunk in stream:
+ if chunk.choices[0].delta.content is not None:
+ print(chunk.choices[0].delta.content, end="", flush=True)
+# הפלט יופיע אות אחר אות, כמו מכונת כתיבה</pre>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">ה. מדריך לרכישת Token Plan</h4>
+<p class="mb-2">לרוב ספקי המודלים יש שני אופני חיוב: תשלום לפי שימוש (Pay-as-you-go) ומנוי חבילה (Token Plan / Subscription). הבנת ההבדל בין שני האופנים יכולה להוזיל לכם משמעותית את עלויות השימוש.</p>
+<h5 class="font-semibold mt-3 mb-1">1. תשלום לפי שימוש מול מנוי חבילה</h5>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">ממד</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">תשלום לפי שימוש (Pay-as-you-go)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">מנוי חבילה (Subscription)</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">אופן החיוב</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">משלמים לפי כמות ה-Token שנצרתה</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">תשלום מראש בסכום קבוע תמורת הקצבה</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">תרחישים מתאימים</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">שימוש לא קבוע, קריאות מזדמנות</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">שימוש קבוע, קריאות בתדירות גבוהה</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">יתרון מחיר</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מחיר רגיל</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">זול ב-20%-50% מהתשלום לפי שימוש</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">גמישות</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">זמין בכל עת, ללא התחייבות</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">דורש תשלום מראש, והקצבה עשויה לפוג</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">טיפול בחריגה</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">חיוב אוטומטי לפי שימוש</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מעבר לחיוב לפי שימוש לאחר גמר ההקצבה</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">פלטפורמות מייצגות</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">פלטפורמות ה-API הרשמיות של כל מודל</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OpenAI Plus/Pro, Claude Pro, Cursor Pro</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">השוואה בין שני אופני החיוב</p>
+<p class="mb-2">למתחילים מומלץ להתחיל בתשלום לפי שימוש, אין צורך בתשלום מראש, ומשלמים רק על מה שצורכים. כשהשימוש החודשי שלכם מתייצב ברמה קבועה (למשל מעל 50 יואן לחודש), שקלו לעבור למנוי חבילה כדי לקבל מחיר יחידה נמוך יותר.</p>
+<h5 class="font-semibold mt-3 mb-1">2. סקירת חבילות המנוי המרכזיות</h5>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">חבילה</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">מחיר חודשי</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">מה כלול</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">למי מתאים</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ChatGPT Free</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">חינם</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">שיחות טקסט בלתי מוגבלות עם GPT-5.6 Luna</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">התנסות מאפס</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ChatGPT Plus</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$20 לחודש</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GPT-5.6 Sol, יצירת תמונות, ניתוח נתונים, גישה לתוספים</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">משתמשים בינוניים</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ChatGPT Pro</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$200 לחודש</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">שימוש בלתי מוגבל בכל המודלים, גישה מוקדמת לתכונות חדשות</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">משתמשים מקצועיים אינטנסיביים</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Free</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">חינם</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מספר מוגבל של שיחות Claude</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">התנסות מאפס</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Pro</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$20 לחודש</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">שימוש בלתי מוגבל ב-Claude, גישה מוקדמת למודלים חדשים</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מפתחים</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Cursor Free</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">חינם</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מספר מוגבל של השלמות ושיחות AI</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">התנסות למתחילים</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Cursor Pro</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$20 לחודש</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">השלמות AI בלתי מוגבלות, 500 בקשות מתקדמות לחודש</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מפתחים יומיומיים</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Cursor Business</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">US$40 לחודש למשתמש</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">עבודת צוות, ממשק ניהול, מצב פרטיות</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">שימוש בצוותים</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">חבילות מנוי לכלי AI מרכזיים (אוגוסט 2026)</p>
+<p class="mb-2">למודלים הסיניים יש תוכניות מנוי שונות במקצת. DeepSeek מחייבת בעיקר לפי שימוש ואין לה חבילת מנוי חודשית: מטעינים כסף לחשבון ומשלמים לפי השימוש בפועל. Qwen מציעה בפלטפורמת Bailian חבילות משאבים בתשלום מראש (קונים הקצבת Token מסוימת ונהנים ממחיר מוזל). גם ל-Doubao יש ב-Volcano Engine תוכניות דומות של תשלום מראש. למפתחים בסין, השילוב המשתלם ביותר הוא בדרך כלל: DeepSeek בתשלום לפי שימוש (פיתוח יומיומי) + ההקצבה החינמית של Doubao (התנסות ובדיקות).</p>
+<h5 class="font-semibold mt-3 mb-1">3. פלטפורמות אגרגציה של API</h5>
+<p class="mb-2">אם אתם צריכים להשתמש בכמה מודלים במקביל, פלטפורמת אגרגציה של API היא פתרון נוח שחוסך כאב ראש. פלטפורמת אגרגציה נותנת API Key אחיד אחד, ודרכו אפשר לקרוא לעשרות מודלים ברחבי העולם — בלי להירשם בנפרד בכל פלטפורמה.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">פלטפורמה</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">מאפיינים</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">יתרון מחיר</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">תרחישים מתאימים</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OpenRouter (openrouter.ai)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">פלטפורמת אגרגציה בינלאומית — Key אחד לקריאה למודלים מכל העולם</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מחירים שקופים, השוואת מחירים בזמן אמת</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">למי שצריך להחליף בגמישות בין מודלים בינלאומיים</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">SiliconFlow (siliconflow.cn)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">פלטפורמת אגרגציה סינית — מציעה API למגוון מודלים סיניים</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">זול ב-20%-30% מהרשמי</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מפתחים בסין, השוואת מחירים בין מודלים</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Azure OpenAI (פרוקסי של Microsoft)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ה-API של OpenAI בגישור של Microsoft Azure</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Batch API בהנחה של 50%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">קריאות OpenAI ברמה ארגונית, משימות אסינכרוניות בהיקף גדול</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Baidu Qianfan (qianfan.baidubce.com)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">פלטפורמת ענן ה-AI של Baidu, המציעה מודלים כמו ERNIE (Wenxin)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מענק למשתמשים חדשים</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">משתמשים באקוסיסטם של Baidu</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">פלטפורמות אגרגציה מרכזיות ל-API (אוגוסט 2026)</p>
+<div class="danger-box rounded-lg p-4 mt-4">
+<p class="font-semibold">אזהרה ממלכודת: אל תקנו “Key משותף”</p>
+<p class="mt-1">אל תקנו “API Key משותפים” בפלטפורמות כמו Taobao או Xianyu, Key כאלה בדרך כלל ממקור לא ברור, עלולים להיחסם בכל רגע, וכרוכים גם בסיכון לדליפת מידע. השיגו API Key תמיד דרך הפלטפורמות הרשמיות או פלטפורמות אגרגציה מוכרות.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">4. אסטרטגיות לאופטימיזציה של עלויות</h5>
+<p class="mb-2">בחירת המודל הנכון היא רק הצעד הראשון; גם איך “משתמשים בחוכמה” חשוב לא פחות. לפניכם כמה אסטרטגיות אופטימיזציה של עלויות שהוכחו בפועל:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>נצלו פגיעות מטמון. מודלים רבים מציעים תכונת “מטמון”, כשהבקשה שלכם כוללת תוכן שכבר עובד קודם (כמו הודעת המערכת), החלק הזה מחויב במחיר זעום. ב-DeepSeek מחיר פגיעת מטמון הוא 1/60 בלבד מהמחיר הרגיל. הציבו את הודעת המערכת הקבועה בראש רשימת ההודעות כדי למקסם פגיעות מטמון.</li>
+  <li>ניתוב מדורג, מודל זול למשימות פשוטות ומודל יקר למשימות מורכבות. למשל: DeepSeek V4 Flash לסיווג טקסט (פלט ב-2 יואן למיליון Token), ו-Claude לעיצוב ארכיטקטוני (פלט ב-181 יואן למיליון Token). בפרויקט טיפוסי 80% מהקריאות יכולות לעבוד עם המודל הזול.</li>
+  <li>הגבילו את אורך הפלט. ה-API מחויב לפי Token פלט — ככל שהפלט ארוך יותר, כך הוא יקר יותר. בתרחישים שבהם אין צורך בנאומים ארוכים, הגדירו את הפרמטר max_tokens כדי להגביל את אורך הפלט ולמנוע מה-AI “לפטפט יותר מדי”.</li>
+  <li>השתמשו ב-Batch API למשימות שאינן בזמן אמת. אם יש לכם המון משימות שלא דורשות תשובה מיידית (כמו תיוג נתונים בכמויות או סיכום מסמכים), Batch API נותן הנחה של 50%. גם OpenAI וגם Azure מציעות את התכונה הזאת.</li>
+  <li>עקבו אחרי צריכת ה-Token. לרוב פלטפורמות ה-API יש לוח בקרה עם סטטיסטיקות שימוש. בדקו מעת לעת את פילוח הצריכה, מצאו את הקריאות שצורכות הכי הרבה Token ובצעו אופטימיזציה ממוקדת. התאמה קטנה של Prompt (למשל להחליף “הסבר בהרחבה” ב“הסבר ב-3 משפטים”) יכולה לחסוך 50% מה-Token.</li>
+</ol>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">אסטרטגיה</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">היקף החיסכון</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">קושי היישום</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">הסבר</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">פגיעות מטמון</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">עד 98%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">נמוך</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">תוכן קבוע בתחילת ההודעות</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ניתוב מדורג</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">50%-80%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">בינוני</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מודל זול למשימות פשוטות</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הגבלת אורך פלט</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">30%-60%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">נמוך</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הגדרת הפרמטר max_tokens</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Batch API</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">50%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">נמוך</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">עיבוד באצווה למשימות שאינן בזמן אמת</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">אופטימיזציה של Prompt</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">20%-50%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">בינוני</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">לייעל את ה-Prompt ולהפחית מיותרים</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">אסטרטגיות אופטימיזציה של עלויות והשפעתן (אוגוסט 2026)</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">ו. התנסות מעשית: חיבור ה-API של מודל גדול בפרויקט</h4>
+<p class="mb-2">נסיים את הפרק בתרגיל מעשי מלא, יצירת “מחולל סיכומים AI”: המשתמש מזין טקסט ארוך, והתוכנה קוראת ל-API של מודל גדול ליצירת סיכום. התרגיל מציג את התהליך המלא של קריאת API: הגדרת סביבה, קריאת API, טיפול בשגיאות ושליטה בעלויות.</p>
+<div class="code-block">
+<div class="code-head"><span>PYTHON · ai_summarizer.py</span><span class="dots">···</span></div>
+<pre># ai_summarizer.py - מחולל תקצירים עם AI
+import os
+from openai import OpenAI
+
+# 1. הגדרה (מפתח ה-API נקרא ממשתנה הסביבה, לעולם לא מקודד בקוד)
+client = OpenAI(
+ api_key=os.environ.get("DEEPSEEK_API_KEY"),
+ base_url="https://api.deepseek.com"
+)
+
+def summarize(text: str, max_length: int = 200) -> dict:
+ """מייצר תקציר של הטקסט
+
+ Args:
+ text: הטקסט המקורי לתקצור
+ max_length: אורך מרבי לתקציר (מספר טוקנים)
+
+ Returns:
+ dict: כולל את התקציר ונתוני צריכת הטוקנים
+ """
+ try:
+ response = client.chat.completions.create(
+ model="deepseek-chat",
+ messages=[
+ {
+ "role": "system",
+ "content": "אתה מחולל תקצירים."
+ "סכם את הטקסט של המשתמש בשפה צלולה ותמציתית."
+ "התקציר לא עולה על 3 משפטים."
+ },
+ {
+ "role": "user",
+ "content": f"סכם את הטקסט הבא:\n\n{text}"
+ }
+ ],
+ max_tokens=max_length, # מגביל את אורך הפלט
+ temperature=0.3 # טמפרטורה נמוכה = יציב יותר
+ )
+
+ return {
+ "success": True,
+ "summary": response.choices[0].message.content,
+ "input_tokens": response.usage.prompt_tokens,
+ "output_tokens": response.usage.completion_tokens,
+ "total_tokens": response.usage.total_tokens
+ }
+
+ except Exception as e:
+ return {
+ "success": False,
+ "error": str(e)
+ }
+
+# 2. דוגמת שימוש
+if __name__ == "__main__":
+ long_text = """
+ (הדבק כאן טקסט ארוך...)
+ """
+
+ result = summarize(long_text)
+
+ if result["success"]:
+ print(f"תקציר: {result['summary']}")
+ print(f"טוקנים שנצרכו: {result['total_tokens']}")
+ # אומדן עלות: DeepSeek V4 Flash
+ cost = result['total_tokens'] * 0.000004 # ≈ 0.4 סנט לכל 1000 טוקנים
+ print(f"עלות משוערת: {cost:.4f} יואן")
+ else:
+ print(f"שגיאה: {result['error']}")</pre>
+</div>
+<p class="mb-2">הקוד הזה מדגים כמה שיטות עבודה מומלצות לקריאות API: ה-API Key נקרא ממשתני סביבה ולעולם אינו מקודד ישירות בקוד; לפונקציה תיעוד ברור ורמזי טיפוסים; הוגדר max_tokens להגבלת אורך הפלט; ה-temperature מוגדר לערך נמוך (0.3) לקבלת פלט יציב יותר; יש טיפול מלא בשגיאות; והקוד מחזיר מידע על צריכת ה-Token למעקב אחרי עלויות. כשאתם מבקשים מה-AI לכתוב את הקוד הזה, אפשר לספר לו את הדרישות האלה, הוא לגמרי מסוגל לממש אותן בשבילכם.</p>
+<div class="quote-line">המסקנה הסופית של הפרק: המודלים הם "התחמושת", המתודולוגיה היא "הטקטיקה". בחירת תחמושת נכונה מקלה על הקרב, אבל בלי טקטיקה טובה גם התחמושת הטובה ביותר לא תזכה במלחמה. עכשיו אתה מכיר את המאפיינים של כל מודל ואת השימוש ב-API – ה"מחסן" שלך מלא; איך לנהל את הקרב זה תלוי במתודולוגיית החשיבה מהפרקים הקודמים.</div>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">הידיים על המקלדת: הריצו את הקריאה הראשונה שלכם ל-API</p>
+<p class="mt-1">הירשמו לפלטפורמה של מודל סיני (מומלצות DeepSeek או Zhipu — שתיהן מעניקות הקצבה למשתמשים חדשים), צרו API Key, שימו אותו במשתני הסביבה של המערכת (ולא בקוד!), ואז הריצו את קוד “הקריאה הראשונה ל-API” שלמעלה. ברגע שתראו את תשובת ה-AI מודפסת על המסך, חציתם את הקו שבין “להשתמש ב-AI” לבין “לבנות אפליקציית AI”.</p>
+</div>
+<div class="chapter-summary">
+<p class="font-semibold mb-1">סיכום הפרק</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>שלוש המובילות הבינלאומיות: GPT-5.6 (מאוזן ורב-יכולות), Claude (פסגת התכנות + שיעור הזיות של 1% בלבד), Gemini (מלך המולטימודל + 2 מיליון הקשר)</li>
+  <li>חמש המובילות הסיניות: DeepSeek V4 (מלך יחס העלות-תועלת, שימו לב להכרזה על העלאת מחירים), Qwen3.7 (רמה ארגונית), GLM-5.1 (הראשון בסין ב-SWE), Kimi K3 (טקסטים ארוכים במיוחד), Doubao (כניסה חינמית)</li>
+  <li>שיטת ארבע השאלות: איפה מפריסים? תכנות או משהו אחר? הקשר ארוך במיוחד? רגישות לתקציב?</li>
+  <li>Token היא יחידת החיוב: תו סיני אחד שווה כ-1.5-2 Token; מיליון תווים בסינית שווים כ-1.5 מיליון Token</li>
+  <li>API Key = סיסמת הארנק: ניהול במשתני סביבה, לעולם לא מקודד בקוד ולא נשלח ל-Git</li>
+  <li>המודלים הסיניים תואמים בדרך כלל ל-OpenAI SDK: כדי להחליף מודל משנים רק את שתי השורות api_key ו-base_url</li>
+  <li>חמש דרכים לחסוך: פגיעות מטמון, ניתוב מדורג, הגבלת פלט, Batch API, מעקב אחרי שימוש</li>
+</ul>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">מצאתם שגיאה בפרק זה? <a href="../../errata.html" class="text-primary hover:underline">דיווחו בדף התיקונים</a> — נתיב לא מעודכן, עובדה שגויה, ניסוח לא ברור: הכל קבל. אפשר גם לכתוב בקבוצת QQ 1074995524.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-si-shi-yi-zhang.html" class="text-primary hover:underline">← פרק 41: התמונה המלאה של כלי תכנות ה-AI ב-2026</a><span></span><a id="next-link" href="di-si-shi-san-zhang.html" class="text-primary hover:underline">פרק 43: מדברים עם AI ככה שהוא באמת מבין →</a></nav>
+ </div></main></div><!-- כלים מהירים: קבוצת כפתורים צפים --><div id="quick-tools" class="quick-tools no-print" aria-label="כלים מהירים"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="חיפוש (Ctrl+K)" aria-label="חיפוש"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="החלפת מצב כהה/בהיר" aria-label="החלפת ערכת נושא"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="הדפסה / ייצוא PDF" aria-label="הדפסה או ייצוא"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="תוכן עניינים" aria-label="פתיחת התוכן"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="הקראה קולית" aria-label="הקראה קולית"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="קיצורי מקלדת (?)" aria-label="לוח קיצורי מקלדת"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="גיבוי/שחזור התקדמות" aria-label="גיבוי ההתקדמות"><span aria-hidden="true">B</span></button></div><!-- פאנל קיצורי דרך --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="קיצורי מקלדת"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">קיצורי מקלדת</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="סגירה">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">חיפוש תוכן</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">מעבר כהה/בהיר</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">קריאה בקול: נגן/השהה</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">עצירת הקריאה</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">פתיחת לוח הקיצורים</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">הגדלה / הקטנה של הגופן</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">הדפסה / ייצוא PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- דו-שיח גיבוי/שחזור --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="גיבוי ושחזור"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">גיבוי ושחזור של התקדמות הקריאה</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="סגירה">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">הגיבוי כולל: פרקים שנקראו, סימניות, מיקום הקריאה, העדפות גודל גופן ותוצאות בדיקת הבריאות העצמית. הנתונים נשמרים מקומית בדפדפן ויאבדו במעבר לדפדפן אחר או אחרי מחיקת מטמון, ולכן מומלץ לייצא גיבוי באופן תקופתי.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> ייצוא קובץ גיבוי
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">הורידו קובץ JSON ושמרו אותו במקום בטוח</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> ייבוא גיבוי ושחזור
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">בחרו קובץ גיבוי שיוצא קודם לכן כדי לשחזר את ההתקדמות</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> מחיקת כל נתוני הקריאה
+ </button><p class="text-xs text-red-400 mt-1 text-center">אין דרך לשחזר! ייצאו גיבוי קודם</p></div></div></div></div><!-- התראת רצף ימי קריאה --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">יום X ברצף של קריאה!</span></div><!-- סרגל בקרת קריאה בקול --><div id="tts-controls" class="tts-controls" role="region" aria-label="בקרת ההקראה הקולית" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="הפרק המוקרא כעת">טרם התחיל</span><button class="tts-btn" id="tts-prev" title="הפסקה הקודמת" aria-label="הפסקה הקודמת"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="נגינה/השהיה" aria-label="הפעלת ההקראה"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="הפסקה הבאה" aria-label="הפסקה הבאה"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="האטה" aria-label="האטה">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="האצה" aria-label="האצה">+</button><button class="tts-btn" id="tts-stop" title="עצירת ההקראה" aria-label="עצירת ההקראה"><span aria-hidden="true">×</span></button></div><!-- כפתור «למעלה» --><button id="back-to-top" class="opacity-0 invisible" aria-label="חזרה למעלה"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- התראת שחזור מיקום הקריאה --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">קריאה אחרונה: ...</span><button class="btn-restore" id="restore-btn">ביטול</button><button class="btn-dismiss" id="dismiss-btn">התעלם</button></div><!-- סקריפט JS -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

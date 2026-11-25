@@ -1,0 +1,798 @@
+ <!DOCTYPE html><html dir="rtl" lang="he"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="שיעור הסמארטפון שהחסרת · מרמת המתחילים ועד לרמת המומחים — שליטה מלאה בחיים הדיגיטליים שלכם"><meta name="keywords" content="מדריך טלפונים,קורס דיגיטלי חובה,טלפון חכם,Android,iOS,HarmonyOS,טיפים לטלפון,חיים דיגיטליים,מודלי AI גדולים,תכנות בעזרת AI,API של מודלים גדולים,הנדסת פרומפטים,פיתוח ל-Android,פיתוח ל-iOS,Swift,Kotlin,SwiftUI,Jetpack Compose,צילום חישובי,אבטחת מידע,ניהול סיסמאות,אוטומציה,בחירת טלפון"><meta name="author" content="מדריך לחיים הדיגיטליים"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-shi-san-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="פרק 13: אילו אפליקציות שוות את ההתקנה, ואילו לא؟"><meta property="og:description" content="בפרק זה בחרנו כלי פרודוקטיביות, בריאות ונסיעות, והשלמנו יכולות מערכת שימושיות …"><meta property="og:locale" content="he_IL"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="שיעור הסמארטפון שהחסרת"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="שיעור הסמארטפון שהחסרת · v1.8"><meta name="twitter:description" content="מרמת המתחילים ועד לרמת המומחים — שליטה מלאה בחיים הדיגיטליים שלכם"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>פרק 13: אילו אפליקציות שוות את ההתקנה, ואילו לא؟ · שיעור הסמארטפון שהחסרת</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-shi-san-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "פרק 13: אילו אפליקציות שוות את ההתקנה, ואילו לא؟", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-shi-san-zhang.html", "isPartOf": {"@type": "Book", "name": "שיעור הסמארטפון שהחסרת", "inLanguage": "he"}}</script>
+<link rel="prefetch" href="di-shi-si-zhang.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-shi-san-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-shi-san-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">דילוג לתוכן הראשי</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="פתיחת תפריט התוכן" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="חזרה לדף הבית">שיעור הסמארטפון שהחסרת</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="פעולה ראשית"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="מתחילים מהיסודות">התחילו ללמוד</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="חיפוש (Ctrl+K)" aria-label="חיפוש בתוכן"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="התאמת גודל הגופן"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="הקטנת הגופן" aria-label="הקטנת הגופן">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="איפוס גודל הגופן" aria-label="איפוס גודל הגופן">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="הגדלת הגופן" aria-label="הגדלת הגופן">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="החלפה בין מצב כהה לבהיר" aria-label="החלפה בין מצב כהה לבהיר"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="הדפסה / ייצוא PDF" aria-label="הדפסה או ייצוא PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="חזרה למעלה">למעלה
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="תוכן המאמר"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">תוכן העניינים
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 פרקים</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="סינון פרקים..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="סינון פרקים"></div><ul class="space-y-1 text-sm" id="toc-list"><!--יסודות-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">התחילו ללמוד</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של מדור היסודות" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>פרק 0: שלושה דברים לפני שמתחילים</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>פרק 1: בואו נכיר את המכשיר הזה</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>נספח: ניתוח הרחבת זיכרון בטלפוני Android</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>נספח לפרק 1: נושא מערכת ההפעלה HarmonyOS</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>פרק 2: מה עושים כשלא מוצאים קובץ בטלפון؟</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>פרק 3：הרשת לא עובדת, אל תאתחל מחדש כל כך מהר</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>פרק 4: לפני ההתקנה, תסתכלו על האפליקציה שלוש פעמים</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> נספח: רכיבי חבילת התקנת תוכנה</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>פרק 5: התאימו את הטלפון לעצמכם</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>פרק 6: הטלפון אבד, הסיסמה נשכחה, מה עכשיו؟</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>פרק 7: היכרות מלאה עם התכונות החדישות</a></li>
+                        </ul>
+                    </li>
+<!--תוכנה-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">2. מדור התוכנה (פרקים 8–14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של מדור התוכנה" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>. תכונות מתקדמות של אפליקציית הטלפון</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>פרק 9: עבודה ולמידה ניידת</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>. איך בדיוק לקשר כרטיס בנק?</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>פרק 11: תמונה טובה חשובה יותר מהרבה תמונות</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>נספח לפרק 11: טכניקות צילום מקצועיות</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>פרק 12: בידור אודיו-ויזואלי וקריאה</a></li>
+                            <li><a href="#di-shi-san-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>פרק 13: אילו אפליקציות שוות את ההתקנה, ואילו לא؟</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>פרק 14: מנהלי סיסמאות בעומק</a></li>
+                        </ul>
+                    </li>
+<!--מתקדם-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">3. המדור המתקדם (פרקים 15–20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של המדור המתקדם" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>פרק 15: טענים פעמיים ביום, הסוללה או הרגלי השימוש؟</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> נספח: פרוטוקולי טעינה מהירה – הסבר מלא</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>פרק 16: עוברים לטלפון חדש, אילו חשבונות נופלים ואילו נשארים؟</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>פרק 17: שיתוף פעולה בין הטלפון למכשירים אחרים</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>פרק 18: גיבוי עכשיו, לא ביום שבו תצטרכו אותו</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>פרק 19: כשהטלפון מקבל תקלה, אל תמהרו לתקן</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>פרק 20: מצב מפתחים והרשאות מתקדמות</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>פרק 20 נספח</a></li>
+                        </ul>
+                    </li>
+<!--מעבר-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">4. מדור מעבר ליסודות (פרקים 21–26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של מדור מעבר ליסודות" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>פרק 21: באמת כדאי להתחבר ל-Wi-Fi ציבורי؟</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>פרק 22: מה באמת עושה ה-AI בטלפון שלכם؟</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>פרק 23: תנו לטלפון לבצע משימות רציפות במקומכם</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>נספח: מדריך מתחילים ל-GitHub</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>פרק 24: הרשאות Root ונעילת ה-Bootloader לעומק</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>פרק 25: לפני מכירת הטלפון הישן, תעשו את הדברים האלה</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>פרק 26: הטכנולוגיה החדשה יכולה לחכות</a></li>
+                        </ul>
+                    </li>
+<!--5,פרקטיקה(פרקים 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">5. המדור המעשי (פרקים 27–32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של המדור המעשי" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>פרק 27: מגדירים להורים את הטלפון</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>פרק 28: לפני הקנייה, חשבו על שלושה דברים</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>פרק 29: באמת יודעים כמה זמן מסך אתם צורכים؟</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>פרק 30: הקרנה למסך, מצגות וקישוריות ברכב</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>פרק 31: מבוא לצילום סרטונים קצרים וליצירת תוכן</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>פרק 32: במקרה חירום, שלושים שניות להגביל את הנזק</a></li>
+                        </ul>
+                    </li>
+<!--6,מבט אל העתיד(פרק 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">ו. חלק סיכום ומבט קדימה (פרקים 33-41)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של מדור מבט לעתיד" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>פרק 33: איך ייראה הטלפון בעוד עשר שנים؟</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>פרק 34: הטלפון והרכב, מחברים בלי להתאמץ</a></li>
+                        </ul>
+                    </li>
+<!--נושא מיוחד: ילדים וטלפונים(פרק 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">נושא מיוחד: ילדים וטלפונים (פרקים 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של הנושא המיוחד ילדים וטלפונים" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>פרק 35: נותנים לילד טלפון, וקובעים את הכללים</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>פרק 36: כל המכשירים בבית, ומחברים ביניהם</a></li>
+                        </ul>
+                    </li>
+<!--תכנות עם AI בפועל-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">7. מדור פיתוח מעשי בעזרת AI (פרקים 37–47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של מדור פיתוח מעשי בעזרת AI" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>פרק 37: מהפכת הפרדיגמה – מכתיבת קוד לניהול AI שכותב קוד</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>פרק 38: חמשת עקרונות החשיבה של תכנות בעזרת AI</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>פרק 39: כשה-AI לא מבין, אולי פשוט לא הסברתם נכון</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>פרק 40: נוסחים את הדרישות לפני שמתחילים</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>פרק 41: התמונה המלאה של כלי תכנות ה-AI ב-2026</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>פרק 42: פנורמת המודלים הגדולים ועבודה מעשית עם API</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>פרק 43: מדברים עם AI ככה שהוא באמת מבין</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>פרק 44: מעשי מ-0 ל-1 – פרויקט שלם מקצה לקצה</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>פרק 45: ה-AI כתב, וזו רק ההתחלה</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>פרק 46: דרך ההתקדמות – ממשתמש לארכיטקט</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>פרק 47: מדריך עזר מהיר ומשאבים</a></li>
+                        </ul>
+                    </li>
+<!--פיתוח אנדרואיד בפועל-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">8. מדור פיתוח מעשי ל-Android (פרקים 48–58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של מדור פיתוח מעשי ל-Android" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>פרק 48: איך אנדרואיד הגיע להיות כזה؟</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>פרק 49: הקמת סביבת הפיתוח – Android Studio והפרויקט הראשון</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>פרק 50: Kotlin במהירות – שפת הפיתוח הראשונה של Android</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>פרק 51: פיתוח ממשק – מבוא ל-Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>פרק 52: ארבעת רכיבי היסוד ומחזור החיים של Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>פרק 53: אחסון נתונים ובקשות רשת</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>פרק 54: פרויקט 1 – אפליקציית רישום ההוצאות שלי (גרסה מקומית)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>פרק 55: פרויקט 2 – אפליקציית מזג האוויר (גרסת רשת)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>פרק 56: האפליקציה מוכנה, מעלים אותה ל-Google Play</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>פרק 57: דרך ההתקדמות – הרשאות, התראות וארכיטקטורה מודרנית</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>פרק 58: מדריך עזר מהיר ומשאבים</a></li>
+                        </ul>
+                    </li>
+<!--פיתוח iOS בפועל-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">9. מדור פיתוח מעשי ל-iOS (פרקים 59–69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של מדור פיתוח מעשי ל-iOS" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>פרק 59: מכירים את iOS – המערכת האקולוגית של Apple ושל הפיתוח</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>פרק 60: הקמת סביבת הפיתוח – Xcode והפרויקט הראשון</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>פרק 61: Swift במהירות – שפת הפיתוח הראשונה של Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>פרק 62: פיתוח ממשק – מבוא ל-SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>פרק 63: תצוגות, מצבים וניווט</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>פרק 64: אחסון נתונים ובקשות רשת</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>פרק 65: פרויקט 1 – אפליקציית רישום ההוצאות שלי (גרסה מקומית)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>פרק 66: פרויקט 2 – אפליקציית מזג האוויר (גרסת רשת)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>פרק 67: ליטוש ופרסום – עלייה ל-App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>פרק 68: דרך ההתקדמות – הרשאות, התראות וארכיטקטורה מודרנית</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>פרק 69: מדריך עזר מהיר ומשאבים</a></li>
+                        </ul>
+                    </li>
+<!--נספח-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">10. נספחים</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起פתיחה/סגירה של הנספחים" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>Aנספח A: תהליך פתיחת אריזת טלפון חדש</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>נספח B: נתקעתם בתרגיל؟</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C נספח C: מילון מונחים מינימלי</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>Dנספח D: היכן למצוא משאבים אמינים</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>Eנספח E: תודות והערות</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F נספח F: מדריך מיוחד לבחירה ושימוש במסכים מתקפלים</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>דברי סיכום: להבין את הטלפון, זה כל מה שצריך</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>Gנספח G: מפתח חיפוש מהיר לכל הספר</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>Hנספח H: מפת דרכים של גרסאות</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="חיפוש"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="חיפוש בתוכן..." autocomplete="off" aria-label="מילות חיפוש"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="סגירת החיפוש">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">הקלד מילת חיפוש כדי להתחיל</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- למעלה (נתיב ניווט) --><nav class="breadcrumb no-print" aria-label="מיקום"><a href="#top">דף הבית</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">הקורס הדיגיטלי החובה · v1.8</span></nav>
+<div id="di-shi-san-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">פרק 13: אילו אפליקציות שוות את ההתקנה, ואילו לא؟</h3>
+<p class="chapter-intro mb-4">בפרק זה בחרנו כלי פרודוקטיביות, בריאות ונסיעות, והשלמנו יכולות מערכת שימושיות ויכולות בין-מכשירים: ניקוי וחסימת שיחות זבל כמו Qingzhuo, מתגי חסימה מובנים בטלפון, התראות מזג אוויר ורעידות אדמה; שליטה מרחוק במחשב דרך Sunlogin/ToDesk, עבודה עם AI כמו Trae, שולחן עבודה מלאכותי, העברת קבצים מהירה ברשת מקומית כמו LocalSend, לוח-גזירים בין-מכשירים, קודי אימות דינמיים כמו Aegis/Microsoft Authenticator, לוח שנה ומשימות של TickTick וסריקת נייר.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">1. כלי פרודוקטיביות: ניהול הזמן והקשב שלך</h4>
+<p class="mb-2">כלי פרודוקטיביות הם "השלד" של החיים הדיגיטליים, הם עוזרים לארגן רעיונות, משימות וחומרים מפוזרים בצורה מסודרת. להלן המלצות לפי תרחיש.</p>
+<h5 class="font-semibold mt-3 mb-1">1. רשימת משימות (ניהול משימות)</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>TickTick, למי מתאים: למי שצריך לרכז במקום אחד את משימות העבודה, החיים והלימודים יחד עם הלוח השנה; אחת ההמלצות המרכזיות של הפרק. נקודות החוזקה העיקריות: סנכרון בין נייד, מחשב, טאבלט ו-Web; רשימות + לוח שנה + טיימר פומודורו בחבילה אחת; הזנה בשפה טבעית, "פגישה מחר ב-3 אחר הצהריים", "דוח שבועי כל יום שני": עם זיהוי אוטומטי של זמנים וכללי חזרה; תמיכה בתתי-משימות, תגיות, עדיפויות, קבצים מצורפים ורשימות שיתופיות. מתאים לניהול מאוחד של "תכנון יומן + סימון משימות + סקירה יומית".</li>
+  <li>איך להשתמש ב-TickTick בצורה חלקה יותר: תיבת איסוף: תחילה זרקו הכול ל"היום/תיבת איסוף", ובערב סיווגו לרשימות עבודה, משפחה ולימודים.</li>
+  <li>תצוגת לוח שנה: גררו פגישות ותאריכי יעד ללוח השנה כדי לראות התנגשויות: אינטואיטיבי יותר מרשימת משימות בלבד.</li>
+  <li>משימות חוזרות: תרופות, תשלומים ואימונים הוגדרו כמשימות עם כללים, לא צריך למלא מחדש בכל פעם.</li>
+  <li>טיימר פומודורו: התחילו מיקוד ישירות על משימה, וספרו כמה "באמת סיימתם" השבוע.</li>
+  <li>שילוב עם פונקציות הטלפון: העוזרת הקולית יכולה להוסיף תזכורות ב"הזכירי לי…"; לתאריכי יעד חשובים הפעילו גם לוח שנה במערכת כפול-ביטוח.</li>
+</ul>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Todoist קהל יעד: משתמשים שמחפשים מינימליזם ועבודה בין פלטפורמות. נקודות חוזק: ממשק נקי ומאופק, היררכיית פרויקטים ברורה (משימה → תת-משימה → תת-תת-משימה), נקודות karma לעידוד הרגלים.</li>
+  <li>Microsoft To Do קהל יעד: עובדי משרד ומשתמשי Outlook. נקודות חוזק: חינם לחלוטין, בלי פרסומות, "היום שלי" מתרוקן כל יום ומפחית עומס נפשי, אינטגרציה עמוקה עם מיקרוסופט.</li>
+  <li>פתקים/תזכורות במערכת קהל יעד: משתמשים קלים שלא רוצים להתקין אפליקציות צד שלישי. נקודותחוזק: חווייה מובנית, אפס עיכובים, הוספה קולית דרך Siri/XiaoAi, שילוב עם ווידג'טים של המערכת.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. טיימר פומודורו (אימון קשב)</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Forest קהל יעד: מי שלא שולט ביד וגולש בקלות בטלפון. נקודות חוזק: שותלים עץ בזמן מיקוד, אם יוצאים מוקדם העץ מת: בונים משוב חיובי דרך "חיים וירטואליים", אפשר לשתול עם חברים.</li>
+  <li>Tide, למי מתאים: למי שזקוק לרעש לבן כדי להתרכז או להירדם. נקודות החוזקה העיקריות: צלילי טבע (גשם, גלי ים, יער) + פומודורו + מדיטציה בחבילה אחת, עם ממשק מינימליסטי ומרגיע במיוחד.</li>
+  <li>עקרון: 25 דקות מיקוד קלאסיות + 5 דקות מנוחה, אפשר להתאים ל-50/10 או 90/20 לפי המצב.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">3. לוח שנה (ויזואליזציה של זמן)</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>לוח שנה של המערכת קהל יעד: כל המשתמשים. נקודותחוזק: התראות מובניות יציבות ביותר, צריכת סוללה נמוכה מאוד, הוספה דרך Siri/XiaoAi.</li>
+  <li>Google Calendar קהל יעד: משתמשים עם כמה מכשירים, ומי שצריך לשתף לוחות זמנים. נקודותחוזק: "מטרות" מתכננות אוטומטית זמן לאימון/לימוד, זיהוי חכם של אירועים מהודעות Gmail.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">4. פתקים (צבירת ידע)</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Notion, למי מתאים: למי שצריך לנהל במקום אחד פתקים, משימות, מסדי נתונים וויקי; סטודנטים, פרילנסרים וצוותים. נקודות החוזקה העיקריות: בסיס ידע כל-יכול עם עריכה מודולרית בבלוקים (Blocks), אפשרות לבנות דף בית אישי, רשימות קריאה ולוחות פרויקטים, ואקוסיסטם תבניות עשיר.</li>
+  <li>Obsidian קהל יעד: מנהלי ידע מעמיקים, חוקרים וכותבים. נקודותחוזק: אחסון Markdown מקומי, קישורים דו-כיווניים + גרף קשרים, הפתקים שלך הופכים ל"מוח שני", הנתונים שלך בלבד.</li>
+  <li>flomo קהל יעד: מי שרוצה לתעד רעיונות מזדמנים בלי לכתוב מאמרים ארוכים. נקודותחוזק: פתקי כרטיסים, כמו לפרסם Moments, תמיכה בתגיות #, חזרה לפי ציר זמן.</li>
+  <li>Apple Notes קהל יעד: משתמשי iPhone/Mac עם צורכי תיעוד קלים. נקודותחוזק: פתיחה מהירה, סריקת מסמכים/ציור ידני/רשימות/סנכרון iCloud, חינם ואינטגרציה עמוקה עם המערכת.</li>
+  <li>Evernote קהל יעד: משתמשים מתקדמים שצריכים הרבה גזירי אינטרנט וארגון חומרים. נקודותחוזק: תוסף גזירת אינטרנט חזק, OCR לזיהוי טקסט בתמונות, ותיק ויציב, אבל הגרסה המתקדמת בתשלום.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">5. כלי PDF</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>PDF Expert קהל יעד: משתמשי iPad/iPhone, אנשי עסקים שצריכים להעיר על חוזים, סטודנטים. נקודותחוזק: עורך ה-PDF החזק ביותר ב-iOS, סימון חלק, חתימות, מיזוג/פיצול, מילוי טפסים.</li>
+  <li>WPS קהל יעד: עובדי משרד שעובדים עם Word/Excel/PPT/PDF. נקודותחוזק: חבילת משרד כול-באחרת, תאימות טובה לכונני ענן בסין ולקבצי WeChat, הגרסה החינמית מספיקה ליום-יום.</li>
+  <li>Adobe Acrobat קהל יעד: מי שדורש עמידה בתקני PDF (משפט, עיצוב, הוצאה לאור). נקודותחוזק: תקן רשמי, המרה ל-PDF/A מדויקת, סנכרון בין מכשירים וחתימה אלקטרונית מקצועיים.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">6. סריקה (דיגיטציה של נייר)</h5>
+<p class="mb-2">חוזי נייר, חשבוניות, שיעורי בית, פתקי לוח, צילומי תעודות… מצלמת הטלפון כבר מחליפה את רוב הסורקים. תהליך ליבה: לצלם ברור → חיתוך ותיקון אוטומטי → ייצוא PDF/תמונה → OCR לפי בחירה.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>CamScanner קהל יעד: אנשי עסקים וסטודנטים שסורקים הרבה חוזים, קבלות ותעודות. נקודותחוזק: זיהוי קצה אוטומטי, תיקון פרספקטיבה, OCR, אפשר ליצור PDF מרובה עמודים ולסנכרן לענן.</li>
+  <li>Microsoft Lens קהל יעד: סטודנטים, מי שצריך לסרוק לוח/עמוד ספר ל-Word. נקודותחוזק: חינם בלי פרסומות, ייצוא בלחיצה ל-OneNote/Word, דיוק גבוה בזיהוי טקסט.</li>
+  <li>סריקה ב-Apple Notes קהל יעד: משתמשי iPhone, צורכי סריקה קלים. נקודותחוזק: בלי להתקין אפליקציה, לוחצים על סמל המצלמה בפתקים וסורקים, הסרת צללים אוטומטית, חתימה וסימון, חינם ונוח.</li>
+  <li>Baimiao / גרסת CamScanner באינטרנט / "סריקת מסמכים" במצלמת המותג: מצלמות המערכת של Huawei, Xiaomi, OPPO, vivo כוללות לרוב מצב "מסמך/סריקה"; ב-Android אפשר גם Google Camera או סריקת המערכת. מתאים לצילום דחוף של עמוד חוזה.</li>
+  <li>טיפים לצילום: אור אחיד, הטלפון מקביל לנייר, כוונו לארבע הפינות; קבצים מרובי עמודים צלמו לפי הסדר ואז מזגו ל-PDF; בתעודות רגישות שימו לב ל-watermark ולמיקום השמירה, ומחקו לחלוטין מ"נמחק לאחרונה" אחרי השימוש.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">2. בריאות וכושר</h4>
+<p class="mb-2">אפליקציות בריאות הן "העוזר האישי" הכי מוערך בטלפון, הן עוקבות ברצף אחרי שינה, דופק ופעילות, ומשקפות מצב ארוך-טווח טוב יותר מביקור חד-פעמי בבית חולים.</p>
+<h5 class="font-semibold mt-3 mb-1">1. כושר וספורט</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Keep קהל יעד: מתאמנים בבית, מתחילים מאפס, מי שרוצה לרדת במשקל ולחטב. נקודותחוזק: המון קורסים חינם, מ-HIIT ועד יוגה, תוכנית אימון אוטומטית מבוססת AI, קהילה חזקה.</li>
+  <li>Nike Training Club (NTC) קהל יעד: מי שמחפש הדרכת מאמן מקצועי ומערכת אימון מסודרת. נקודותחוזק: רשמי של Nike, כל הקורסים חינם, הדגמות על ידי מאמנים מקצועיים, סיווג ברור לפי קבוצות שרירים/ציוד.</li>
+  <li>Apple Fitness קהל יעד: משתמשי Apple Watch, מי שרוצה מוטיבציה דרך טבעות סגירה. נקודותחוזק: שלוש טבעות יומיות (תנועה/אימון/עמידה), מטרות ויזואליות, אינטגרציה חלקה עם נתוני דופק מהשעון.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. מעקב שינה</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>AutoSleep קהל יעד: משתמשי Apple Watch, מי שרוצה לדעת את יחס השינה העמוקה/קלה בכל לילה. נקודותחוזק: מעקב אוטומטי בשינה עם שעון, בלי הפעלה/עצירה ידנית, ציון איכות שינה והמלצות לשינה.</li>
+  <li>Sleep Cycle קהל יעד: מי שלא ישן עם שעון ורוצה לנטר מהטלפון. נקודותחוזק: ניתוח נחירות/התהפכות דרך מיקרופון, השכמה חכמה בשלב שינה קלה, קימה בלי סבל.</li>
+  <li>Mi Fitness קהל יעד: משתמשי צמיד/שעון Xiaomi. נקודותחוזק: חינם ומשלב עמוק עם צמיד Xiaomi, מעקב משולב של דופק/חמצן בדם/שינה, יחס מחיר-ביצועים מעולה.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">3. מדיטציה והרפיה</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Calm קהל יעד: עובדים תחת לחץ, מתקשים להירדם. נקודותחוזק: מדיטציה מודרכת "שלווה יומית" + סיפורי שינה (בקריאה של מפורסמים), ממשק יפה, תוכן אנגלי עשיר.</li>
+  <li>Tide, למי מתאים: למשתמשים בסינית שזקוקים לרעש לבן לריכוז או לשינה. נקודות החוזקה העיקריות: מוצר סיני משובח, צלילי טבע + קורסי מדיטציה + פומודורו, עם הדרכה בסינית שמרגישה קרובה ואישית יותר.</li>
+  <li>Xiao Sleep, למי מתאים: למי שצריך צלילים לשינה טובה ורוצה לתעד דיבור בשינה או נחירות. נקודות החוזקה העיקריות: מאגר עצום של צלילי רעש לבן שאפשר לערבב ולשלב (גשם + מאוורר + מדורה), כיבוי מתוזמן לפני השינה, והקלטת דיבור בשינה, משעשע ושימושי כאחד.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">4. בריאות האישה</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Flo קהל יעד: מי שצריכה לתעד מחזור, תכנון הריון או בריאות האישה. נקודותחוזק: חיזוי AI מדויק למחזור הבא/ביוץ, קהילה עם שאלות אנונימיות, עיצוב ממשק מוקפד.</li>
+  <li>Meiyou, למי מתאים: למשתמשות בסין ולמי שמעוניין בקהילה ובתוכן מדעי פופולרי בסינית. נקודות החוזקה העיקריות: תוכן מקומי עשיר, עם ידע מותאם לכל שלב — מחזור, ניסיון להרות, היריון או גידול ילדים.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">5. תזכורות לתרופות</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Yongyao Zhushou (עוזר תרופות) — למי מתאים: לחולים כרוניים שנוטלים תרופות לטווח ארוך, ולבני משפחה שמסדרים את התרופות של הורים מבוגרים. נקודות החוזקה העיקריות: זיהוי תרופות בסריקת ברקוד ובנייה אוטומטית של רשימת תרופות, תזכורת קופצת בזמן, ותיעוד הנטילה שאפשר לשתף עם בני המשפחה.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">6. מרכז נתונים</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Apple Health / Google Fit קהל יעד: כל משתמשי הסמארטפון. נקודותחוזק: מרכז את כל הנתונים מהטלפון, הצמיד ואפליקציות בריאות צד שלישי (צעדים, דופק, שינה, מחזור ועוד), "תיק בריאות" מאוחד.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">3. נסיעות ותנועה</h4>
+<p class="mb-2">בחוץ, כמה אפליקציות טובות חוסכות המון טעויות. להלן המלצות לפי שלבי הנסיעה.</p>
+<h5 class="font-semibold mt-3 mb-1">1. טיסות ורכבות מהירות</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Umetrip, למי מתאים: לאנשי עסקים שטסים לעיתים קרובות. נקודות החוזקה העיקריות: נתוני מנהל התעופה האזרחית הרשמיים, המקור המוסמך ביותר לסטטוס טיסות, שינויי שערים והתראות עיכוב; אפשר לבדוק גם דגם מטוס ומפת מושבים.</li>
+  <li>12306 קהל יעד: כל מי שנוסע ברכבת בסין. נקודותחוזק: ערוץ הרכישה הרשמי היחיד האמין, תמיכה ברכישת המתנה (קנייה אוטומטית כשיש ביטולים), נוח לכרטיסי סטודנט/קבוצות.</li>
+  <li>VariFlight, למי מתאים: למי שחשובה לו העמידה בזמנים של טיסות ולמי שצריך להסיע לשדה התעופה או לאסוף ממנו. נקודות החוזקה העיקריות: חיזוי עיכובי טיסות מדויק, ושיתוף המסלול עם בני משפחה שיראו בזמן אמת את מיקומך ואת שעת ההגעה.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. מפות וניווט</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Amap, למי מתאים: למשתמשים בערים בסין, לנהגים ולנוסעי מוניות. נקודות החוזקה העיקריות: תנועה בזמן אמת מדויקת ויכולת חזקה לעקוף פקקים, הזמנת מונית ונסיעה משותפת במקום אחד, ומגוון עשיר של מסלולי החלפה בתחבורה ציבורית.</li>
+  <li>Baidu Maps קהל יעד: מי שזקוק למידע על מקומות וניווט פנימי. נקודותחוזק: מפות פנורמה/ניווט AR, מפות פנים מפורטות לאטרקציות/קניונים, חבילות קול עשירות.</li>
+  <li>Google Maps קהל יעד: מטיילים בחו"ל. נקודותחוזק: הכיסוי העולמי הרחב ביותר, ביקורות מקומיות אמיתיות, Street View ומפות לא מקוונות: הצלה בארץ זרה.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">3. תרגום</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Google Translate קהל יעד: מטיילים בחו"ל, לומדי שפות. נקודותחוזק: "שיחה" עם תרגום דו-כיווני בזמן אמת, "מצלמה" לתרגום מיידי של מילים, כלי מושלם לטיול, תמיכה בחבילות שפה לא מקוונות.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">4. המרת מטבע</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>שערי חליפין מינימליים (Jijian Huilü), למי מתאים: לנוסעים לחו״ל, לקונים מחו״ל ולקניות חוצות גבולות. נקודות החוזקה העיקריות: ממשק נקי במיוחד, תמיכה ביותר מ-160 מטבעות, עדכון שערים בזמן אמת, השוואה של כמה מטבעות במקביל והמרה מהירה בלחיצה ארוכה על המספר.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">5. מזג אוויר</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>מזג אוויר של המערכת / רשת מזג האוויר הסינית קהל יעד: כולם, בחירה ראשונה לתחזית והתראות רשמיות. נקודותחוזק: אפליקציות היצרן מתחברות לערוצים רשמיים כמו "מזג האוויר של סין", התראות על גשם כבד, טייפון, חום גבוה מגיעות כבאנרים/התראות, סמכותיות גבוהה.</li>
+  <li>Caiyun Weather, למי מתאים: למי שצריך תחזית גשם מדויקת עד רמת הדקה. נקודות החוזקה העיקריות: דיוק מוביל בתעשייה בשאלה "האם ירד גשם בשעתיים הקרובות", מפה דינמית של חזית הגשם שקל להבין במבט, והתראה יזומה לפני שהגשם מתחיל.</li>
+  <li>Carrot Weather קהל יעד: חובבי מזג אוויר שמחפשים כיף וווידג'טים עשירים. נקודותחוזק: AI עם קול ציני שמשדר מזג אוויר, המון ווידג'טים מותאמים, מפת מכ"ם מקצועית, הגרסה בתשלום עשירה יותר.</li>
+  <li>עיקרי התראות: אפליקציות מזג אוויר חייבות לקבל אישור התראות כדי לקבל התראות; ההתראות בארבע רמות, כחול, צהוב, כתום, אדום, אדום הוא הסיכון הגבוה ביותר למזג אוויר אסון, יש להתאים נסיעות לפי ההנחיות. להפעלה נוספת ראו סעיף 7 בפרק "התראות מזג אוויר / אסונות טבע / רעידות אדמה".</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">6. מדריכי טיול</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Mafengwo, למי מתאים: לאוהבי תכנון מסלולים מפורט ולטיולי רכב עצמאי או טיולי עומק. נקודות החוזקה העיקריות: יומני מסע עשירים שנכתבו על ידי משתמשים, מדריכים מפורטים לפי יעד, פעילויות, מסלולים ואיך להימנע ממלכודות תיירות, ואפשרות להוריד מדריכים לשימוש לא-מקוון.</li>
+  <li>Xiaohongshu, למי מתאים: לטיילים צעירים שרוצים חוויות אותנטיות ומחפשים פינות חמד או מקומות אוכל ייחודיים. נקודות החוזקה העיקריות: תוכן ויזואלי של תמונות וסרטונים קצרים, עדכונים מהירים ועדכניים של תכנים כמו "מסלול 3 ימים בעיר X", וחוויית חיפוש מעולה.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">4. מבוא לכלי אוטומציה</h4>
+<p class="mb-2">אוטומציה הוא מנוף של "הגדר פעם אחת, חסוך לטווח ארוך", אפשר לצמצם עשרות פעולות חוזרות ביום לאפס. בפרק זה רק מבוא למושג; למשחקים מפורטים ומדריכים ראו פרק 23: חשיבה תכנותית ואוטומציה.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>"קיצורי דרך" ב-iOS: כלי אוטומציה רשמי של Apple, בלי תכנות, אפשר להשלים בלחיצה אחת רצף פעולות כמו "להגיע הביתה: הפעלת WiFi + הורדת בהירות + השמעת תחזית מזג אוויר".</li>
+  <li>אוטומציה ב-Android: קישור סצנות ברמת המערכת (כמו "משימות אוטומטיות" של Xiaomi, "חוכמה לפי מצב" של Huawei), הכי קל להתחיל; Tasker חזק אבל עקומת למידה תלולה, מתאים לגיקים.</li>
+  <li>חשיבה ליבה: קודם לזהות "פעולות שחוזרות כל יום", ואז לחשוב "האם אפשר להחליף בטריגר אחד + כמה פעולות". דוגמאות מפורטות ומשחקים מתקדמים ראו בפרק 23.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">5. דפדפנים ומנועי חיפוש: שער המידע שלך</h4>
+<p class="mb-2">הדפדפן הוא החלון שלך לאינטרנט, ומנוע החיפוש הוא המצפן שלך בים המידע. שימוש נכון בהם חוסך המון עיקופים.</p>
+<h5 class="font-semibold mt-3 mb-1">איך עובד דפדפן:</h5>
+<p class="mb-2">אחרי שאתה מזין כתובת בדפדפן:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>הדפדפן שואל שרת DNS על כתובת ה-IP של הדומיין;</li>
+  <li>שולח בקשת HTTP/HTTPS לשרת בכתובת הזו;</li>
+  <li>השרת מחזיר את קוד העמוד (HTML, CSS, JavaScript);</li>
+  <li>הדפדפן מנתח את הקוד ומציג את הדף שאתה רואה.</li>
+</ol>
+<h5 class="font-semibold mt-3 mb-1">המלצות לדפדפנים מובילים:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Microsoft Edge: מבוסס על ליבת Chromium, מהיר ותואם היטב. כולל עוזר Copilot AI שיכול לסכם עמודים, לתרגם ולשוחח. תומך בסנכרון בין מכשירים, מומלץ מאוד כדפדפן ראשי.</li>
+  <li>Safari: הדפדפן המוגדר כברירת מחדל במכשירי Apple, אינטגרציה עמוקה עם המערכת, חיסכון באנרגיה ויעיל. פרטיות טובה, אבל יש פחות תוספים.</li>
+  <li>Chrome: שיעור השימוש הגבוה ביותר בעולם, תוספים עשירים. אבל צורך הרבה זיכרון, ובמובייל צורך יותר סוללה.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">בחירת מנוע חיפוש:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Bing: מנוע החיפוש של Microsoft, אינטגרציה עמוקה עם Edge. תקציר AI נותן תשובה ישירות ולא רק קישורים, יעילות חיפוש גבוהה. חוויית חיפוש תמונות גם טובה.</li>
+  <li>Yandex: מנוע החיפוש הגדול ברוסיה, יכולת חזקה בחיפוש תמונות וחיפוש תמונה הפוך. שימושי מאוד למציאת תמונות דומות וזיהוי עצמים.</li>
+  <li>Baidu: הכלי המרכזי לחיפוש מידע בסין, אבל יש הרבה פרסומות, צריך יכולת הבחנה.</li>
+  <li>Google: מנוע החיפוש המדויק ביותר בעולם, אבל בסין צריך רשת מיוחדת כדי להשתמש בו.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">מדריך לאחזור מידע יעיל:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>נצלו חיפוש AI: תקציר AI של Bing ו-Copilot של Edge עונים ישירות על שאלות ומחלצים מידע מרכזי מתוך המון תוצאות, יעיל הרבה יותר מלחיצה על קישור אחר קישור.</li>
+  <li>זיהוי מידע כוזב ופרסומות: פריטים שמסומנים "פרסומת" או "ממומן" בתוצאות החיפוש הם קידום בתשלום, לא תוצאות אורגניות. שימו לב לסמכות המקור — העדיפו אתרים רשמיים ומדיה מוכרת.</li>
+  <li>הורדת אפליקציות נכון: הקלידו "שם האפליקציה + אתר רשמי", לדוגמה "WeChat אתר רשמי", והעדיפו תוצאה עם דומיין רשמי. אל תתקינו מאתרי הורדות צד שלישי, לעתים קרובות הם מצרפים תוכנות לא רצויות.</li>
+  <li>איך לזהות אתר רשמי: להורדת Windows 11 גשו ל-microsoft.com, להורדת Chrome ל-google.com. לבדוק שהדומיין תואם למותג, זו שיטת הזיהוי הבסיסית ביותר.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">ידע על דומיינים:</h5>
+<p class="mb-2">הדומיין הוא "מספר הבית" של האתר — הבנה שלו עוזרת לשפוט את אופי האתר ומקורו:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>משמעויות סיומות נפוצות: .com, ארגון מסחרי, הנפוץ ביותר</li>
+  <li>.cn: דומיין לאומי של סין</li>
+  <li>.org — ארגון ללא מטרות רווח</li>
+  <li>.net — ארגון שירותי רשת</li>
+  <li>.edu — מוסד חינוכי</li>
+  <li>.gov: מוסד ממשלתי</li>
+  <li>.xyz/.tech/.info: דומיינים כלליים חדשים, סף כניסה נמוך, יש להיזהר</li>
+</ul>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>דומיינים לאומיים/אזוריים: .jp: יפן</li>
+  <li>.kr, קוריאה</li>
+  <li>.uk, בריטניה</li>
+  <li>.de, גרמניה</li>
+  <li>.tw, טאיוואן</li>
+  <li>.hk, הונג קונג</li>
+  <li>אבטחה: אתרים עם סיומת .gov ו-.edu אמינים יותר בדרך כלל, כי סף הבקשה גבוה. דומיינים זולים כמו .xyz ו-.top קלים לניצול על ידי אתרי פישינג: יש להיזהר בגלישה</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">חסימת פרסומות:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>AdGuard קהל יעד: כל מי שסובל מחלונות קופצים, פרסומות וידאו ופרסומות בתוך אפליקציות. נקודות חוזק: חסימת פרסומות ברמת המערכת (לא רק בדפדפן), סינון באנרים ומעקב באפליקציות, חיסכון בתעבורה והאצת טעינה; הגרסה בתשלום תומכת בכל המכשירים.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">דפדפני פרטיות:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Brave קהל יעד: גולשים ששמים דגש על פרטיות ולא רוצים מעקב פרסומי. נקודות חוזק: מבוסס Chromium, חוסם פרסומות ועוקבים כברירת מחדל, מצב Tor מובנה, מהיר יותר מ-Chrome עם פחות זיכרון.</li>
+  <li>DuckDuckGo קהל יעד: מי שרוצה "לחפש מילה אחת בלי שכל הרשת תרדוף אחריו עם פרסומות". נקודותחוזק: מנוע חיפוש מובנה באותו שם (שומר היסטוריית חיפוש), ניקוי כל העקבות בלחיצה אחת ("כפתור השריפה"), חווייה אחידה בין פלטפורמות.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">השוואת דפדפנים:</h5>
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+ <thead>
+ <tr class="bg-light dark:bg-gray-700">
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">דפדפן</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">נקודות חוזק</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">קהל יעד</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Microsoft Edge</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ליבת Chromium + Copilot AI מובנה, מסכם עמודים/מתרגם/משוחח</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">עובדי משרד שמחפשים יעילות, משתמשי AI כבדים (מומלץ כראשי)</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Safari</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">אינטגרציה עמוקה עם Apple, חיסכון באנרגיה, פרטיות חזקה</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">משתמשי iPhone/Mac, שמים דגש על סוללה וקישוריות מערכת</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Chrome</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">שיעור השימוש הגבוה ביותר בעולם, מערכת התוספים העשירה ביותר</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">משתמשים מתקדמים שצריכים הרבה תוספים, אוהבי סנכרון בין מכשירים</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Brave</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">חוסם פרסומות ועוקבים כברירת מחדל, מהיר יותר</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מי ששם דגש על פרטיות ורוצה לחסום פרסומות בלי התקנת תוספים</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">DuckDuckGo</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מנוע חיפוש מובנה לא שומר היסטוריה, ניקוי עקבות בלחיצה אחת</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">משתמשים רגישים לפרטיות שלא רוצים מעקב מותאם אישית</td>
+ </tr>
+ </tbody>
+ </table>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">נסו ליצור תהליך אוטומציה "הירגעות לפני שינה"</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>יצירת טריגר: שעה מסוימת (למשל 22:30).</li>
+  <li>הוספת פעולות: הורדת עוצמת שמע > הפעלת מצב "לא להפריע" > השמעת רשימת הירגעות > הורדת בהירות.</li>
+  <li>שמרו ובדקו.</li>
+</ol>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">6. כלי מערכת שימושיים: ניקוי, חסימת שיחות זבל ואבטחה</h4>
+<p class="mb-2">בנוסף לאפליקציות פרודוקטיביות ובריאות, מה שבאמת משפיע על החווייה היומיומית הם שלושה דברים: "פחות הפרעות, מספיק אחסון, נוכלים לא נכנסים". בסעיף זה נסקור תוכנות שימושיות נפוצות, ואז נרחיב בנפרד על חסימת שיחות הזבל המובנית בטלפון, אנשים רבים קנו טלפון לפני שנים ומעולם לא פתחו את המתגים האלה.</p>
+<h5 class="font-semibold mt-3 mb-1">1. ניקוי מערכת ואופטימיזציית אחסון</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Qingzhuo, למי מתאים: למשתמשי Android שרוצים לנקות בקלילות מטמון, קבצים שנשארו ותיקיות ריקות, בלי להיגרר לחבילות "מנהל הטלפון" המסחריות. נקודות החוזקה העיקריות: נפח קטן ואפס פרסומות, סריקה עמוקה של שאריות אפליקציות, איתור קבצים גדולים וניתוח ניצול האחסון; מרוסן יותר מאפליקציות "האצה בלחיצה אחת" המסחריות, ומתאים למשתמשים מיומנים לתחזוקה תקופתית. שימו לב: לפני הניקוי ודאו את הנתיבים: אל תסמנו באופן עיוור את הכול בתיקיות של WeChat, אלבום התמונות והמסמכים; לניקוי מטמון ברמת המערכת עדיף להשתמש קודם כל בכלי הניקוי המובנה של היצרן, וכלים של צד שלישי רק כתוספת.</li>
+  <li>ניקוי אחסון מובנה במערכת קהל יעד: כולם, במיוחד קשישים ומי שמפחד מתקלות. נקודותחוזק: Android [הגדרות] > [אחסון] > [ניקוי והאצה]; iOS [הגדרות] > [כללי] > [אחסון iPhone]. המערכת מכירה את מבנה המטמון של האפליקציות שלה, סיכון המחיקה בשוגג הנמוך ביותר, וצריכה להיות הבחירה הראשונה.</li>
+  <li>ניהול אחסון מובנה ב-WeChat/QQ קהל יעד: משתמשים עם הרבה צ'אטים. נקודותחוזק: WeChat [אני] > [הגדרות] > [כללי] > [שטח אחסון], אפשר לנקות לפי צ'אט וסוג קובץ; בטוח יותר מכלי צד שלישי ל"ניקוי WeChat".</li>
+  <li>עקרון: מה שיש במערכת/באפליקציה, לא צריך צד שלישי; מה שאפשר לסמן לפי נתיב/סוג, אל תבחרו "ניקוי כולל בלחיצה אחת". מטרת הניקוי היא לשחרר מקום, לא למחוק יחד נתונים חשובים.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. תוכנות שימושיות לחסימה ואבטחה</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>המרכז הלאומי נגד הונאות קהל יעד: כולם, במיוחד קשישים, עובדי כספים, מי שקונה הרבה ברשת/עונה לשיחות לא מזוהות. נקודותחוזק: רשמי, מאפשר התראות שיחה, אזהרות סיכון SMS, זיהוי כתובות חשודות; מקושר למאגר המאבק בהונאות של המשטרה, החוליה הרשמית החזקה ביותר ב"שלוש שכבות ההגנה".</li>
+  <li>מרכז אבטחה / מנהל טלפון של המותג קהל יעד: משתמשי המותג המתאים. נקודותחוזק: Huawei Phone Manager, Xiaomi Security Center, OPPO Phone Manager, vivo Phone Manager ועוד, משלבים חסימת שיחות, סריקת וירוסים, ניהול הרשאות והגנת תשלומים, לרוב חינם ומשתפים פעולה טוב יותר עם ליבת המערכת. לא מומלץ להתקין ערכת אבטחה מסחרית נוספת, זה יוצר התנגשויות הרשאות.</li>
+  <li>שירות חסימת שיחות של הספק קהל יעד: משתמשים שמותקפים בשיחות תדירות גבוהה וקולות AI. נקודותחוזק: ב-China Mobile שולחים KTFSR ל-10086; ב-Telecom יעקבו אחרי "Tianyi Anti-Harassment"; ב-Unicom מגדירים ב-"Unicom Mobile Manager". החסימה מתרחשת בצד הספק, הטלפון לא מצלצל ועדיין נחסמות שיחות זבל.</li>
+  <li>AdGuard קהל יעד: כל מי שסובל מחלונות קופצים, פרסומות וידאו ופרסומות בתוך אפליקציות. נקודותחוזק: חסימת פרסומות ברמת המערכת (לא רק בדפדפן), סינון באנרים ומעקב באפליקציות, חיסכון בתעבורה והאצת טעינה; הגרסה בתשלום תומכת בכל המכשירים.</li>
+  <li>היזהרו מהתקנת חבילות "ניקוי/חסימה": חלק מכלי הצד השלישי יושבים ברקע ומבקשים שוב ושוב גישה לאנשי קשר ולהודעות, יכולת החסימה לא תמיד טובה יותר מהמערכת, אבל מוסיפה צריכת סוללה וסיכוני פרטיות. קודם פתחו את הפונקציות המובנות, ואז שקלו אפליקציית מאבק רשמית.</li>
+</ul>
+<div class="success-box rounded-lg p-4 mt-3">
+<p class="font-semibold">עקרונות בחירת תוכנות שימושיות</p>
+<ul class="list-disc pl-6 mt-1 space-y-1 text-sm">
+  <li>מערכת קודם: חסימה, ניקוי, ניהול הרשאות: קודם פתחו את המתגים המובנים בטלפון.</li>
+  <li>השלמה רשמית: המרכז הלאומי נגד הונאות ושירותי הספק הם ערוצים רשמיים, אפשר להוסיף.</li>
+  <li>מתינות בצד שלישי: מספיק להתקין אחד מאותו סוג — להימנע מהתנגשויות הרשאות ומריבוי תהליכים ברקע.</li>
+  <li>פחות זה יותר: ככל שמותקנות יותר אפליקציות, כך גדלים ההתראות וההרשאות, והסיכוי להפרעה "מהכלי עצמו" גבוה יותר.</li>
+</ul>
+</div>
+<h5 class="font-semibold mt-3 mb-1">3. חסימת שיחות זבל מובנית בטלפון: איך מפעילים לפי מותג</h5>
+<p class="mb-2">להלן כניסות לפי מותג. השמות עשויים להשתנות מעט בין גרסאות, אפשר לחפש בהגדרות "שיחות זבל", "חסימה", "שיחות לא מזוהות". משלים לפרק 8 "טיפול בשיחות זבל": כאן הדגש על מיקום המתגים, שם על סימון מספרים וערעורים.</p>
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+ <thead>
+ <tr class="bg-light dark:bg-gray-700">
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">פלטפורמה</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">נתיב כניסה</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">מומלץ להפעיל</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">iPhone / iOS</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">[הגדרות] > [טלפון] / [הודעות]</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">השתקת שיחות לא מזוהות; אנשי קשר חסומים; "סינון שולחים לא מזוהים" בהודעות</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Xiaomi / Redmi</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">אפליקציית טלפון > הגדרות > חסימת שיחות; או מרכז אבטחה</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">חסימה חכמה, ניתוק שיחה אחת ממספר לא מזוהה, סינון SMS לפי מילות מפתח</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Huawei / Honor</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">טלפון > חסימת שיחות; מנהל טלפון > חסימת שיחות</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">זיהוי מתקשר, רשימה שחורה, חסימת SMS חכמה</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OPPO / realme / OnePlus</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">אפליקציית טלפון > חסימת שיחות; או מכשיר זה > חסימת שיחות</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">חסימת שיחות, זיהוי שיחות הונאה, כללי חסימת SMS</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">vivo / iQOO</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">טלפון > חסימת שיחות זבל; iManager</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">חסימת שיחות, אזהרת שיחות הונאה, סינון הודעות</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Samsung</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">טלפון > הגדרות > חסימת מספרים / זיהוי מתקשר ושיחות זבל</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">חסימת מספרים לא מזוהים, זיהוי שיחות זבל (תמיכה משתנה לפי אזור)</td>
+ </tr>
+ </tbody>
+ </table>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">המלצה לשילוב שלוש שכבות הגנה</p>
+<p class="mt-1">ליום-יום מומלץ "חסימת מערכת + חסימת ספק + המרכז הלאומי נגד הונאות": המערכת מטפלת בסימון וברשימה שחורה, הספק חוסם שיחות תדירות ברשת, והמרכז מוסיף התראות רשמיות. לא צריך להפעיל הכול ברמה המחמירה ביותר, כדי לא לחסום בטעות שליחויות, משלוחי אוכל ורופאים: אפשר לאשר לאנשי קשר ולאנשי קשר אחרונים.</p>
+</div>
+<div class="practice-box rounded-lg p-4 mt-3">
+<p class="font-semibold">תרגול מעשי: הפעילו חסימת שיחות זבל עוד היום</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>פתחו הגדרות של אפליקציית הטלפון, מצאו "חסימת שיחות / השתקת שיחות לא מזוהות", והפעילו חסימה חכמה.</li>
+  <li>בדקו גם בטלפון של ההורים: אותו נתיב + הפעלת חסימת הספק (ב-China Mobile אפשר לשלוח KTFSR ל-10086).</li>
+  <li>התקינו מחנות האפליקציות "המרכז הלאומי נגד הונאות", הירשמו והפעילו התראות שיחה.</li>
+  <li>נסו להתקשר למספר בדיקה שסומן (או צפו ברשימת החסומים) כדי לוודא שהפונקציה עובדת.</li>
+</ol>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">7. התראות מזג אוויר, אסונות טבע ורעידות אדמה</h4>
+<p class="mb-2">חסימת שיחות זבל עוצרת "הונאות טלפון", והתראות עוצרות "אסונות טבע ומזג אוויר קיצוני". אנשים רבים מתקינים אפליקציית מזג אוויר רק לראות טמפרטורה, אבל לא פותחים התראות ולא מפעילים התראת רעידות אדמה, בשניות עד עשרות שניות לפני גשם כבד, טייפון או רעידת אדמה, הטלפון יכול להשיג לך זמן יקר להצלה.</p>
+<h5 class="font-semibold mt-3 mb-1">1. התראות מזג אוויר: איך מקבלים על גשם כבד, טייפון וחום</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>ערוצים רשמיים קודם: ההתראות של לשכת המטאורולוגיה הסינית / התחזית המרכזית / לשכות המחוזיות — הכי סמכותיות. אפשר לעקוב אחרי חשבון WeChat "מזג האוויר של סין", Weibo, או להוריד אפליקציות רשמיות כמו "מזג האוויר של סין".</li>
+  <li>אפליקציית מזג אוויר של המערכת: Huawei Weather, Xiaomi Weather, OPPO Weather, vivo Weather, "מזג אוויר" של Apple ועוד, רובן דוחפות התראות של לשכת המטאורולוגיה המקומית; היכנסו להגדרות האפליקציה ואשרו שהתראות "מזג אוויר / מזג אוויר אסון" מופעלות.</li>
+  <li>Caiyun Weather ותחזיות גשם ברמת דקות: מתאים לפני נסיעה לעבודה או איסוף ילדים, "לקחת מטריה בחצי שעה הקרובה?"; יכולת ההתראה נשארת לפי לשכת המטאורולוגיה הרשמית.</li>
+  <li>משמעות צבעי התראה (כללי): כחול: לשים לב, בדרך כלל לצאת כרגיל ולעקוב אחרי עדכונים.</li>
+  <li>צהוב: לחזק זהירות, לצמצם פעילות חוץ מיותרת.</li>
+  <li>כתום: חמור, להישאר בפנים ככל האפשר, להתרחק מאזורי סיכון.</li>
+  <li>אדום: חמור במיוחד, לפעול לפי הנחיות ביטול לימודים/עבודה ופינוי, לא להיכנס לכבישים מוצפים, שטפונות או רוחות חזקות.</li>
+</ul>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>סוגי התראות נפוצים: גשם כבד, שלג כבד, טייפון, חום גבוה, גל קור, רוחות חזקות, ברד, קרח בכביש, ערפל כבד, בצורת, סיכון אסון גיאולוגי.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. התראות אסונות טבע: לא רק "גשם"</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>מי מפרסם: לשכת המטאורולוגיה אחראית למזג אוויר; אסונות גיאולוגיים ושטפונות מפורסמים לרוב בשיתוף גופי משאבי טבע, מים וחירום; גם ממשלות מקומיות מפרסמות דרך רדיו חירום, SMS, 12379 ועוד.</li>
+  <li>איך לקבל מכמה ערוצים: התראות מערכת + התראות באפליקציית מזג אוויר.</li>
+  <li>עקבו ב-WeChat אחרי חשבונות רשמיים של "מנהל החירום" ו"לשכת המטאורולוגיה" המקומית.</li>
+  <li>ערוצים של 12379 להתראות לאומיות (SMS/שירות, לפי פתיחת אזור).</li>
+  <li>טלוויזיה, רדיו חירום, רמקולים בכפר/בקהילה, בהרים ובעונת הגשמים אל תסתמכו רק על הטלפון.</li>
+</ul>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>תזכורות חוץ ונסיעות: ביום טייפון לא להיצמד לשלטי חוצות ולא ללכת תחת עצים; בגשם כבד לא להיכנס לחניונים תת-קרקעיים, מנהרות וגשרים; בטיול בהרים עם התראת "סיכון אסון גיאולוגי", לצאת מיד ממדרונות ועמקים.</li>
+  <li>שילוב עם מדריך עזרה ראשונה: אחרי אסון, ניתוק קשר, סוללה ריקה או צורך במיקום לעזרה, ראו פרק 32 רעידות אדמה/אסונות, ופרק 7 תקשורת לווינית ורשת ללא קליטה.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">3. התראת רעידות אדמה: לא אותו דבר כמו "חיזוי רעידת אדמה"</h5>
+<p class="mb-2">התראת רעידת אדמה (EEW) שולחת אזהרה לאזור שעלול להיפגע לפני שגלי הרעידה (בעיקר גל ה-S ההרסני) מגיעים, בזכות כך שגלים אלקטרומגנטיים מהירים יותר מגלי רעידה, ותחנות מזהות את גל ה-P מוקדם יותר. היא לא מנבאת אם תהיה רעידה, אבל משיגה חלון של שניות עד עשרות שניות "להתגונן במקום, לכבות אש, לצאת מהמעלית". ככל שקרובים יותר למוקד, זמן ההתראה קצר יותר, ולפעמים לא מספיק.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>פתרונות רשמיים ומקצועיים: בסין נפוצים שירותי התראה מרשת ההתראות הסינית, וממכון צ'נגדו להפחתת אסונות; חלק מהיצרנים מתקינים מראש או מאפשרים קבלת התראות דרך רשת.</li>
+  <li>אפליקציות צד שלישי: חפשו בחנות האפליקציות "התראת רעידות אדמה" וכו' (לפני ההתקנה בדקו את המפתח, הימנעו מאפליקציות מזויפות שמבקשות המון הרשאות לא רלוונטיות).</li>
+  <li>מה לעשות אחרי קבלת אזהרה: בבית להתגונן במקום קרוב (מתחת לשולחן, פינת קיר נושא, ליד רהיט יציב), להגן על הראש והצוואר; להתרחק מחלונות, קירות חיצוניים ורהיטים גבוהים; לא לרוץ במדרגות/לקפוץ; במעלית לרדת מיד בקומה הקרובה; בחוץ לשטח פתוח, להתרחק מקווי חשמל, שלטי חוצות ומבנים מסוכנים. אחרי הרעידה לבדוק גז וחשמל, לשים לב לרעידות משנה.</li>
+  <li>לא לשתוק: התראת רעידת אדמה צריכה לצלצל "דרך השתקה/לא להפריע"; לפני שינה שימו את הטלפון בהישג יד, ואל תכוונו צליל ל-0.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">4. התראת רעידות אדמה מובנית: איך מפעילים לפי מותג</h5>
+<p class="mb-2">להלן כניסות עשויות להשתנות מעט לפי גרסה, אפשר לחפש בהגדרות "רעידת אדמה", "התראה", "התראת ביטחון". ב-iOS התמיכה בהתראות רעידה בסין מוגבלת בדרך כלל: צריך להתקין אפליקציית התראה אמינה, ולאשר מיקום והתראות.</p>
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+ <thead>
+ <tr class="bg-light dark:bg-gray-700">
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">פלטפורמה</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">כניסה נפוצה</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">הערה</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Xiaomi / Redmi</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">מנהל טלפון / מרכז אבטחה > התראת רעידות אדמה; או חיפוש "רעידת אדמה" בהגדרות</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">בחלק מהגרסאות שירות התראה מובנה, דורש חיבור רשת והפעלת מיקום</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Huawei / Honor</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הגדרות > אבטחה > התראת חירום / התראת רעידות אדמה</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">השם עשוי להיות "התראת חירום", כולל רעידות אדמה</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OPPO / realme / OnePlus</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הגדרות > אבטחה (SOS) > התראת רעידות אדמה</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">תלוי בדגם ובכיסוי השירות באזור</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">vivo / iQOO</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">אפליקציית מזג אוויר או הגדרות > אבטחה/עוד > התראת רעידות אדמה</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">לפי תפריט גרסת המערכת בפועל</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">iPhone / iOS</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">בדרך כלל אין מתג מובנה מלא; התקינו אפליקציית התראה אמינה ואשרו התראות</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">האפליקציה צריכה לפעול ברקע והרשאות מיקום; אל תחסמו את ההתראות שלה ב"לא להפריע"</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Samsung ועוד</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">הגדרות > אבטחה וחירום / התראות חירום אלחוטיות</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">כיסוי "התראות חירום" משתנה לפי אזור וספק</td>
+ </tr>
+ </tbody>
+ </table>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">טעויות נפוצות על התראת רעידות אדמה</p>
+<ul class="list-disc pl-6 mt-1 space-y-1 text-sm">
+  <li>התראה ≠ תחזית: היא לא אומרת "האם תהיה רעידה מחר": רק כשכבר קרתה והגלים עדיין לא הגיעו.</li>
+  <li>לא בכל מקום יש הרבה שניות מראש: סמוך למוקד יכולות להיות רק שניות בודדות, ההתראה מועילה בעיקר לאזורים סביב.</li>
+  <li>כיבוי התראות = כאילו לא מותקן: גם התראה טובה לא מגיעה אם מושתקים, הורגים תהליכים ברקע, או לא מאשרים מיקום.</li>
+  <li>אפליקציות מזויפות: היזהרו מתוכנות "חיזוי רעידות" שמבקשות גישה לאנשי קשר והודעות, העדיפו מובנה במערכת או פתרון רשמי.</li>
+</ul>
+</div>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">איך לשלב יכולות התראה</p>
+<p class="mt-1">המלצה ליומיום: "התראות מזג אוויר של המערכת + ערוצים רשמיים/חירום + התראת רעידות אדמה (מערכת או אפליקציה רשמית)". כמו בחסימה — לא צריך הרבה תוכנות מאותו סוג; המפתח הוא אישור התראות, מיקום, ויכולת לחדור "לא להפריע". אחרי שחסימת השיחות מופעלת בטלפון של ההורים, בדקו גם התראות מזג אוויר ורעידות אדמה.</p>
+</div>
+<div class="practice-box rounded-lg p-4 mt-3">
+<p class="font-semibold">תרגול מעשי: בדיקת הגדרות התראה ב-10 דקות</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>פתחו אפליקציית מזג אוויר של המערכת, היכנסו להגדרות, הפעילו התראות "מזג אוויר / מזג אוויר אסון".</li>
+  <li>בהגדרות המערכת חפשו "רעידת אדמה" או "התראה" והפעילו התראת רעידות/חירום (Android); ב-iPhone התקינו אפליקציית התראה רשמית ואשרו התראות.</li>
+  <li>עקבו אחרי החשבון הרשמי של לשכת המטאורולוגיה/החירום המקומית ואשרו דחיפה.</li>
+  <li>ודאו שצליל ההתראה לא מושתק לחלוטין ב"לא להפריע"; בדקו אותו דבר בטלפון של ההורים.</li>
+</ol>
+</div>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>שיתוף בין מכשירים: שליטה מרחוק, העברת קבצים ואבטחת חשבונות</li>
+</ol>
+<p class="mb-2">טלפון שעובד חלק לרוב "עובד בצוות" עם מחשב וטאבלט. בסעיף זה נוסיף כלים שימושיים בתדירות גבוהה: שליטה מהטלפון במחשב, עבודה עם AI ושיתוף מרחוק, טפטים חיים, העברת קבצים ברשת מקומית, לוח-גזירים בין מכשירים, אסימוני 2FA, וחיבור סריקת נייר ללוחות זמנים ומשימות. לשילוב מכשירים שיטתי יותר ראו פרק 17.</p>
+<h5 class="font-semibold mt-3 mb-1">1. שליטה מהטלפון במחשב: Sunlogin / ToDesk</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Sunlogin Remote Control קהל יעד: מי שצריך לתפעל Windows או Mac בבית/בעבודה כשלא נמצא; גם נפוץ לתיקון מרחוק של טלפונים להורים (ראו פרק 27). נקודותחוזק: אקוסיסטם סיני בוגר, אפליקציית טלפון שולטת בשולחן העבודה, מעבירה קבצים, מדליקה/מכבה (חלק דורש חומרה); הגרסה החינמית מספיקה לרוב השימוש האישי.</li>
+  <li>ToDesk קהל יעד: מי שמחפש חיבור יציב וזמן השהיה נמוך לעבודה/תחזוקה מרחוק. נקודותחוזק: חיבור עם קוד מכשיר + סיסמה, שליטה מהטלפון במחשב, מהמחשב בטלפון (לפי גרסה), העברת קבצים והחלפת מסכים מרובים, חוויית צמתים בסין לרוב טובה.</li>
+  <li>שימוש בסיסי: התקינו לקוח במחשב והתחברו/הישארו מחוברים → התקינו אפליקציה בטלפון → התחברו עם מזהה מכשיר + סיסמת חיבור (או אותו חשבון) → תפעלו את שולחן העבודה עם משטח מגע/מחוות.</li>
+  <li>קווים אדומים לאבטחה (חובה לזכור): זר שמציג עצמו כ"שירות/רשויות/ספק" ומבקש שתתקינו Sunlogin/ToDesk ושליטה מרחוק, דחו תמיד, זו הונאה טיפוסית (ראו פרק 27).</li>
+  <li>בשימוש עצמי: הפעילו אימות דו-שלבי, שנו סיסמת ברירת מחדל, התנתקו או כבו גישה ללא השגחה כשלא בשימוש; במחשב עבודה הקפידו על כללי האבטחה של הארגון.</li>
+  <li>במקום ציבורי בעבודה מרחוק, שימו לב אם מישהו מציץ במסך או בסיסמה.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. תוכנות משרד AI: Trae / WorkBuddy / Dumate</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Trae קהל יעד: משתמשי תכנות ושיתוף מסמכים, ידידותי לסביבה סינית. נקודותחוזק: IDE/עוזר תכנות AI מבית ByteDance, מצב SOLO יוצר פרויקט במשפט אחד; יעיל לכתיבת קוד ועריכת מסמכים. אם רץ על מחשב, אפשר דרך שליטה מרחוק או יכולות רשמיות לעקוב במכשיר. ראו פרק 41 נוף כלי תכנות AI.</li>
+  <li>WorkBuddy קהל יעד: עובדי משרד שרוצים AI לסדר סיכומי פגישות, מיילים, דוחות ומסמכים. נקודותחוזק: עוזר AI לתרחישי משרד, מתאים ל"טיוטה — ליטוש, סיכום"; חלק מזרימות העבודה אפשר להתחיל בטלפון, והעבודה הכבדה במחשב.</li>
+  <li>Dumate, למי מתאים: לצוותים וליחידים שזקוקים לשיתוף פעולה רב-משתתפים ולניהול משולב של מסמכים וידע. נקודות החוזקה העיקריות: כלי עבודה משרדי בגישת AI, עם דגש על ריכוז חומרים ועריכה משותפת; בנייד אפשר לצפות ולבצע עריכה קלה, ועימוד מורכב עדיף לעשות על המסך הגדול של המחשב.</li>
+  <li>איך להבין "שליטה מהטלפון במחשב": הרבה יכולות משרד AI רצות על מחשב/דפדפן; בטלפון דרך Sunlogin/ToDesk מתחברים למחשב, או משתמשים באפליקציה/אתר של המוצר, וכך "משדרים" משימות AI בנסיעה. עיקרון: חישוב כבד ומסמכים ארוכים במחשב; צפייה בסטטוס ועריכות קצרות בטלפון.</li>
+  <li>תזכורת פרטיות: לפני העלאת חוזים, תעודות זהות ונתוני לקוחות: קראו את מדיניות הפרטיות ודרישות התאימות; לחומרי עבודה העדיפו את הכלי שהארגון מגדיר.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">3. שולחן עבודה מלאכותי: טפטים חיים של miHoYo (טלפון + PC)</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Artificial Desktop קהל יעד: אוהבי דמויות miHoYo שרוצים טפטים חיים חינם. נקודותחוזק: אפליקציית טפטים חיים חינם מבית miHoYo, תומכת בטלפון ו-PC; דמויות Live2D/הופעות חיות יכולות לשמש כשולחן עבודה, בחלק מהמכשירים/המערכות אפשר להגדיר כמסך נעילה או טפט.</li>
+  <li>סוללה וביצועים: טפט חי צורך יותר סוללה ו-GPU מתמונה סטטית; בסוללה חלשה או מכשיר ישן אפשר להשתמש רק בטעינה, או להוריד קצב פריימים (אם האפליקציה מציעה).</li>
+  <li>מקורות התקנה: העדיפו את האתר הרשמי או חנויות אפליקציות מוכרות, והימנעו מ"גרסאות פרוצות" של צד שלישי המגיעות עם סוסים טרויאניים; בגרסת המחשב שימו לב לנתיב ההתקנה ולשאלה אם בכלל צריך הפעלה אוטומטית עם אתחול המחשב.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">4. העברת קבצים ברשת מקומית: LocalSend / Feige / AirDrop</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>LocalSend קהל יעד: מי שמערב Android/Windows/iOS/Mac/Linux ורוצה העברה בין פלטפורמות בלי ענן ציבורי. נקודותחוזק: קוד פתוח, חיבור ישיר ברשת מקומית, העברת תמונות ווידאו ומסמכים באותו Wi-Fi, בלי כבל ולא דרך שרתי יצרן: המהירות תלויה בנתב.</li>
+  <li>Feige, למי מתאים: לרשתות של מחשבי Windows במשרד ולסביבות עבודה על רשת מקומית ותיקה. נקודות החוזקה העיקריות: כלי ותיק להעברת קבצים וצ'אט ברשת מקומית, מתאים להעברת קבצים גדולים בתוך הרשת הפנימית; הורידו רק מערוץ רשמי, וברשת הארגונית פעלו לפי מדיניות ה-IT.</li>
+  <li>AirDrop קהל יעד: משתמשי iPhone, iPad, Mac. נקודותחוזק: שיתוף בלחיצה אחת ב-Apple, גילוי Bluetooth + Wi-Fi ישיר, בלי תעבורה; אפשר להגדיר "אנשי קשר בלבד" כדי להפחית הטרדות.</li>
+  <li>תוספות: Xiaomi Share, Huawei Share, vivo Share ועוד פתרונות מותג, מהירים בין מכשירים מאותו מותג; "מסייע העברת קבצים" ב-WeChat נוח אבל מוגבל בגודל קובץ ומכשירים — לקבצים גדולים העדיפו LocalSend/AirDrop.</li>
+  <li>טיפים: שני הצדדים לאותו Wi-Fi; רשת Wi-Fi ציבורית להעברת קבצים רגישים מסוכנת, העדיפו נקודה אישית; אחרי ההעברה ודאו בצד המקבל שהקובץ שלם.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">5. סנכרון לוח-גזירים בין מכשירים: KDE Connect / שיתוף טלפון-מחשב</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>"לוח גזירים אוניברסלי" של Apple קהל יעד: משתמשי iPhone + Mac. נקודותחוזק: אחרי התחברות לאותו Apple ID והפעלת Handoff, מעתיקים בטלפון → מדביקים ב-Mac (ולהפך), טקסט וחלק מהקבצים.</li>
+  <li>KDE Connect קהל יעד: Android + Windows/Linux/Mac, מי שרוצה סנכרון לוח-גזירים בקוד פתוח, שיקוף התראות וקלט מרחוק. נקודותחוזק: אחרי צימוד ברשת מקומית, סנכרון לוח-גזירים, דחיפת התראות מהטלפון למחשב, שימוש בטלפון כשלט/משטח מגע; הנתונים לא עוברים בחשבון צד שלישי.</li>
+  <li>"שיתוף טלפון-מחשב" של מותגים: Huawei Multi-Screen Collaboration, Xiaomi MiMo, vivo Share, OPPO Connect, Honor Connect ועוד: לרוב עם לוח-גזירים וגרירת קבצים בין מסכים, חווייה מיטבית באותו מותג.</li>
+  <li>ערוצים רשמיים של Windows + Android: "Phone Link / Link to Windows" (התפתחות של Your Phone) — במחשב רואים התראות ותמונות מהטלפון, ותומך בהעתקה-הדבקה בתרחישים נתמכים; ב-Samsung האינטגרציה עמוקה יותר.</li>
+  <li>תזכורת אבטחה: לוח-גזירים עלול להכיל סיסמאות וקודי אימות; במחשב משותף היזהרו מסנכרון גלובלי, והימנעו מהדבקה חוזרת בשדה סיסמה; חלק ממקלדות גם קוראות לוח-גזירים, שימו לב להרשאות.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">6. אסימוני 2FA: Aegis / Microsoft Authenticator</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>למה להשתמש במאשר ולא ב-SMS: קוד SMS עלול להיחטף בהחלפת SIM; אסימון TOTP נוצר מקומית לפי אלגוריתם זמן, בלי תלות בסלולר, עמיד יותר להונאה וליירוט (עדיין צריך להיזהר מסוסים טרויאניים וצילומי מסך).</li>
+  <li>Aegis Authenticator קהל יעד: משתמשי Android שמעדיפים קוד פתוח ושליטה מקומית. נקודותחוזק: חינם וקוד פתוח, גיבוי מוצפן וייבוא/ייצוא, ממשק נקי, נעילת רשימת אסימונים עם טביעת אצבע/פנים.</li>
+  <li>Microsoft Authenticator קהל יעד: משתמשי חשבון Microsoft, Office 365/חשבונות ארגוניים; עובד בין iOS/Android. נקודותחוזק: אישור כניסה בדחיפה, ניטור סיסמאות וגיבוי חשבון (לפי גרסת מוצר), אינטגרציה הדוקה עם Windows/זהות ארגונית.</li>
+  <li>Google Authenticator / 2FAS ועוד: נפוצים גם בתוך האקוסיסטם; העיקר שיש גיבוי מוצפן, במעבר מכשיר לא מאבדים אסימונים.</li>
+  <li>חובה במעבר מכשיר: העברה מהמכשיר הישן או שימוש ב"קודי גיבוי/מפתח שחזור" מהשירות; הדפיסו קודי גיבוי על נייר ושמרו בשני מקומות, לא רק באותו טלפון.</li>
+  <li>עם מנהל סיסמאות: חלק מכספות הסיסמאות גם מאחסנות TOTP, נוח אבל מרוכז סיכון; לחשבונות בעלי ערך מומלץ "מנהל סיסמאות + מאשר עצמאי". ראו פרק 14.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">7. שילוב מומלץ: איך מחברים יום שלם</h5>
+<div class="success-box rounded-lg p-4 mt-3">
+<p class="font-semibold">דוגמת זרימת עבודה שימושית</p>
+<ul class="list-disc pl-6 mt-1 space-y-1 text-sm">
+  <li>בוקר: TickTick ללוח הזמנים של היום → מבט על מזג אוויר/התראות → פותחים Trae/מסמכים במחשב, הטלפון בצד.</li>
+  <li>יום: חומרי נייר סורקים ל-PDF, שולחים למחשב דרך LocalSend/AirDrop; מסמכים ארוכים מנסחים במחשב עם כלי משרד AI.</li>
+  <li>בחוץ: מתחברים חזרה למחשב דרך ToDesk/Sunlogin וממשיכים במשימה; כניסה לחשבונות חשובים עם אסימון דינמי של Aegis/Microsoft Authenticator.</li>
+  <li>ערב: מסמנים ביצועים ב-TickTick; אם צריך, מחליפים טפט ב-Artificial Desktop להירגעות.</li>
+</ul>
+</div>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">כללי אצבע לשליטה מרחוק ואבטחת חשבונות</p>
+<ul class="list-disc pl-6 mt-1 space-y-1 text-sm">
+  <li>מישהו מבקש שתתקינו תוכנת שליטה מרחוק → ניתוק שיחה, התקשרו בעצמכם לשירות הרשמי.</li>
+  <li>קודי אימות ואסימונים דינמיים לא נמסרים לאף אחד, כולל "שליח" ו"שירות לקוחות".</li>
+  <li>לפני שליטה מרחוק במחשב עבודה או התקנת תוכנת AI — שאלו את ה-IT אם מותר.</li>
+  <li>ברשת ציבורית, זהירות יתרה בהעברת קבצים וכניסה מרחוק.</li>
+</ul>
+</div>
+<div class="practice-box rounded-lg p-4 mt-3">
+<p class="font-semibold">תרגול מעשי: הפעילו את שרשרת "בין מכשירים" פעם אחת</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>חברו טלפון ומחשב לאותו Wi-Fi, העבירו תמונה עם LocalSend (או AirDrop).</li>
+  <li>בנו משימה ב-TickTick "היום 20:00: לארגן סריקות" וודאו שרואים גם בטלפון וגם במחשב.</li>
+  <li>הפעילו 2FA למייל או ל-WeChat (אם נתמך), קשרו עם Aegis או Microsoft Authenticator, ושמרו קודי גיבוי.</li>
+  <li>התקינו Sunlogin או ToDesk במחשב שלכם, התחברו פעם אחת מהטלפון, ואז התנתקו או חיזקו סיסמה: להכיר את התהליך בלי להשאיר דלת אחורית.</li>
+</ol>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">מצאתם שגיאה בפרק זה? <a href="../../errata.html" class="text-primary hover:underline">דיווחו בדף התיקונים</a> — נתיב לא מעודכן, עובדה שגויה, ניסוח לא ברור: הכל קבל. אפשר גם לכתוב בקבוצת QQ 1074995524.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-shi-er-zhang.html" class="text-primary hover:underline">← פרק 12: בידור אודיו-ויזואלי וקריאה</a><span></span><a id="next-link" href="di-shi-si-zhang.html" class="text-primary hover:underline">פרק 14: מנהלי סיסמאות בעומק →</a></nav>
+ </div></main></div><!-- כלים מהירים: קבוצת כפתורים צפים --><div id="quick-tools" class="quick-tools no-print" aria-label="כלים מהירים"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="חיפוש (Ctrl+K)" aria-label="חיפוש"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="החלפת מצב כהה/בהיר" aria-label="החלפת ערכת נושא"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="הדפסה / ייצוא PDF" aria-label="הדפסה או ייצוא"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="תוכן עניינים" aria-label="פתיחת התוכן"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="הקראה קולית" aria-label="הקראה קולית"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="קיצורי מקלדת (?)" aria-label="לוח קיצורי מקלדת"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="גיבוי/שחזור התקדמות" aria-label="גיבוי ההתקדמות"><span aria-hidden="true">B</span></button></div><!-- פאנל קיצורי דרך --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="קיצורי מקלדת"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">קיצורי מקלדת</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="סגירה">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">חיפוש תוכן</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">מעבר כהה/בהיר</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">קריאה בקול: נגן/השהה</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">עצירת הקריאה</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">פתיחת לוח הקיצורים</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">הגדלה / הקטנה של הגופן</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">הדפסה / ייצוא PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- דו-שיח גיבוי/שחזור --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="גיבוי ושחזור"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">גיבוי ושחזור של התקדמות הקריאה</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="סגירה">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">הגיבוי כולל: פרקים שנקראו, סימניות, מיקום הקריאה, העדפות גודל גופן ותוצאות בדיקת הבריאות העצמית. הנתונים נשמרים מקומית בדפדפן ויאבדו במעבר לדפדפן אחר או אחרי מחיקת מטמון, ולכן מומלץ לייצא גיבוי באופן תקופתי.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> ייצוא קובץ גיבוי
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">הורידו קובץ JSON ושמרו אותו במקום בטוח</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> ייבוא גיבוי ושחזור
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">בחרו קובץ גיבוי שיוצא קודם לכן כדי לשחזר את ההתקדמות</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> מחיקת כל נתוני הקריאה
+ </button><p class="text-xs text-red-400 mt-1 text-center">אין דרך לשחזר! ייצאו גיבוי קודם</p></div></div></div></div><!-- התראת רצף ימי קריאה --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">יום X ברצף של קריאה!</span></div><!-- סרגל בקרת קריאה בקול --><div id="tts-controls" class="tts-controls" role="region" aria-label="בקרת ההקראה הקולית" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="הפרק המוקרא כעת">טרם התחיל</span><button class="tts-btn" id="tts-prev" title="הפסקה הקודמת" aria-label="הפסקה הקודמת"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="נגינה/השהיה" aria-label="הפעלת ההקראה"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="הפסקה הבאה" aria-label="הפסקה הבאה"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="האטה" aria-label="האטה">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="האצה" aria-label="האצה">+</button><button class="tts-btn" id="tts-stop" title="עצירת ההקראה" aria-label="עצירת ההקראה"><span aria-hidden="true">×</span></button></div><!-- כפתור «למעלה» --><button id="back-to-top" class="opacity-0 invisible" aria-label="חזרה למעלה"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- התראת שחזור מיקום הקריאה --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">קריאה אחרונה: ...</span><button class="btn-restore" id="restore-btn">ביטול</button><button class="btn-dismiss" id="dismiss-btn">התעלם</button></div><!-- סקריפט JS -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

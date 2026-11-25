@@ -1,0 +1,478 @@
+ <!DOCTYPE html><html lang="th"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="คาบเรียนมือถือที่คุณขาดไป · จากเริ่มต้นสู่ระดับเชี่ยวชาญ ควบคุมชีวิตดิจิทัลของคุณได้อย่างเบ็ดเสร็จ"><meta name="keywords" content="บทเรียนมือถือ,วิชาพื้นฐานดิจิทัล,สมาร์ตโฟน,Android,iOS,HarmonyOS,เทคนิคมือถือ,ชีวิตดิจิทัล,โมเดล AI ขนาดใหญ่,เขียนโปรแกรมด้วย AI,API โมเดลขนาดใหญ่,Prompt Engineering,พัฒนา Android,พัฒนา iOS,Swift,Kotlin,SwiftUI,Jetpack Compose,การถ่ายภาพเชิงคำนวณ,ความปลอดภัยสารสนเทศ,การจัดการรหัสผ่าน,ระบบอัตโนมัติ,การเลือกซื้อมือถือ"><meta name="author" content="ผู้นำทางชีวิตดิจิทัล"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-er-shi-zhang-jinjie.html"><meta property="og:type" content="article"><meta property="og:title" content="บทที่ 20: โหมดนักพัฒนาและสิทธิ์ระดับสูง"><meta property="og:description" content="บทนี้เขียนไว้สำหรับคนที่อยากเจาะลึก &quot;ฟังก์ชันที่ซ่อนอยู่&quot; ของมือถือ โหมดนักพัฒ…"><meta property="og:locale" content="th_TH"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="คาบเรียนมือถือที่คุณขาดไป"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="คาบเรียนมือถือที่คุณขาดไป · v1.8"><meta name="twitter:description" content="จากเริ่มต้นสู่ระดับเชี่ยวชาญ ควบคุมชีวิตดิจิทัลของคุณได้อย่างเบ็ดเสร็จ"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>บทที่ 20: โหมดนักพัฒนาและสิทธิ์ระดับสูง · คาบเรียนมือถือที่คุณขาดไป</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-er-shi-zhang-jinjie.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "บทที่ 20: โหมดนักพัฒนาและสิทธิ์ระดับสูง", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-er-shi-zhang-jinjie.html", "isPartOf": {"@type": "Book", "name": "คาบเรียนมือถือที่คุณขาดไป", "inLanguage": "th"}}</script>
+<link rel="prefetch" href="di-er-shi-zhang-termux.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-er-shi-zhang-jinjie.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">ข้ามไปที่เนื้อหาหลัก</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="เปิดเมนูสารบัญ" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="กลับหน้าแรก">คาบเรียนมือถือที่คุณขาดไป</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="การทำงานหลัก"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="เริ่มจากพื้นฐาน">เริ่มเรียน</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="ค้นหา (Ctrl+K)" aria-label="ค้นหาเนื้อหา"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="ปรับขนาดตัวอักษร"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="ย่อตัวอักษร" aria-label="ย่อตัวอักษร">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="รีเซ็ตขนาดตัวอักษร" aria-label="รีเซ็ตขนาดตัวอักษร">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="ขยายตัวอักษร" aria-label="ขยายตัวอักษร">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="สลับโหมดมืด/สว่าง" aria-label="สลับโหมดมืด/สว่าง"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="พิมพ์ / ส่งออก PDF" aria-label="พิมพ์หรือส่งออก PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="กลับขึ้นด้านบน">ด้านบน
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="สารบัญบทความ"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">สารบัญ
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 บท</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="กรองบท..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="กรองบท"></div><ul class="space-y-1 text-sm" id="toc-list"><!--ภาคพื้นฐาน-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">เริ่มเรียน</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคพื้นฐาน" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>บทที่ 0: สามเรื่องที่ต้องพูดก่อนเริ่ม</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>บทที่ 1: มาทำความรู้จักเครื่องนี้กัน</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>ภาคผนวก: การวิเคราะห์การขยายหน่วยความจำมือถือแอนดรอยด์</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>บทที่ 1 ภาคผนวก: หัวข้อพิเศษระบบปฏิบัติการฮาร์โมนีโอเอส</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>บทที่ 2: หาไฟล์ในโทรศัพท์ไม่เจอ จะทำอย่างไร？</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>บทที่ 3: ต่อเน็ตไม่ได้ อย่าเพิ่งรีบูต</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>บทที่ 4: ก่อนติดตั้งแอป ลองมองให้ดีสักสามครั้ง</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> ภาคผนวก: องค์ประกอบของแพ็กเกจติดตั้งซอฟต์แวร์</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>บทที่ 5: ปรับโทรศัพท์ให้เข้ากับมือคุณ</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>บทที่ 6: โทรศัพท์หาย รหัสผ่านลืม จะช่วยตัวเองยังไง</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>บทที่ 7: ถอดรหัสฟีเจอร์ล้ำสมัยทั้งหมด</a></li>
+                        </ul>
+                    </li>
+<!--ภาคซอฟต์แวร์-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">2. ภาคซอฟต์แวร์ (บทที่ 8-14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคซอฟต์แวร์" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>หลักการ</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>บทที่ 9: การทำงานและการเรียนรู้บนมือถือ</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>บทที่ 10: การชำระเงินมือถือและบริการในชีวิตประจำวัน</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>บทที่ 11: ถ่ายดีสำคัญกว่าถ่ายเยอะ</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>บทที่ 11 ภาคผนวก: เทคโนโลยีภาพระดับมืออาชีพ</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>ไม่กี่ฟังเพลงเล็กทักษะช่างฝีมือ</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>บทที่ 13: แอปไหนควรลง อันไหนไม่ต้องลง？</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>บทที่ 14: โฟกัสพิเศษเรื่องตัวจัดการรหัสผ่าน</a></li>
+                        </ul>
+                    </li>
+<!--ภาคระดับกลาง-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">3. ภาคระดับกลาง (บทที่ 15-20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคระดับกลาง" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>บทที่ 15: ชาร์จวันละสองครั้ง เป็นเรื่องแบตหรือวิธีใช้？</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> ภาคผนวก: ถอดรหัสโปรโตคอลชาร์จเร็วทั้งหมด</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>บทที่ 16: เปลี่ยนเครื่องใหม่ บัญชีไหนทิ้งได้ อันไหนต้องเก็บ</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>บทที่ 17: การเชื่อมโยงมือถือกับอุปกรณ์อื่น</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>บทที่ 18: สำรองข้อมูลตั้งแต่วันนี้ อย่ารอจนต้องใช้</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>บทที่ 19: เครื่องมีปัญหา อย่าเพิ่งรีบซ่อม</a></li>
+                            <li><a href="#di-er-shi-zhang-jinjie" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>บทที่ 20: โหมดนักพัฒนาและสิทธิ์ระดับสูง</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>บทที่ 20 ภาคผนวก</a></li>
+                        </ul>
+                    </li>
+<!--ภาคก้าวไกล-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">4. ภาคก้าวไกล (บทที่ 21-26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคก้าวไกล" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>บทที่ 21: ควรต่อ Wi-Fi สาธารณะจริงหรือเปล่า？</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>บทที่ 22: AI ในโทรศัพท์ทำอะไรกันแน่？</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>บทที่ 23: ให้โทรศัพท์ทำงานต่อเนื่องแทนเรา</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>ภาคผนวก: คู่มือเริ่มต้น GitHub</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>บทที่ 24: เจาะลึกสิทธิ์ Root และ BL Lock</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>บทที่ 25: ก่อนขายมือถือเก่า ต้องทำสิ่งเหล่านี้</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>บทที่ 26:เทคโนโลยีใหม่ ค่อยรอก่อน</a></li>
+                        </ul>
+                    </li>
+<!--5,ภาคลงมือปฏิบัติ(บทที่ 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">5. ภาคใช้งานจริง (บทที่ 27-32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคใช้งานจริง" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>บทที่ 27: ปรับมือถือให้พ่อแม่ใช้</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>บทที่ 28:ก่อนซื้อ คิดให้ชัดเรื่องสามข้อ</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>บทที่ 29:คุณรู้จริงไหมว่าใช้เวลาหน้าจอมานานแค่ไหน</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>บทที่ 30: การฉายจอ การนำเสนอ และการเชื่อมต่อในรถยนต์</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>บทที่ 31: เริ่มต้นถ่ายคลิปสั้นและสร้างคอนเทนต์</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>บทที่ 32: เกิดเรื่อง หยุดความเสียหายในสามสิบวินาที</a></li>
+                        </ul>
+                    </li>
+<!--6,มองไปข้างหน้า(บทที่ 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">6. บทมองการณ์ไกล (บทที่ 33-41)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคมองอนาคต" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>บทที่ 33:อีกสิบปีข้างหน้า โทรศัพท์จะเป็นแบบไหน？</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>บทที่ 34:โทรศัพท์กับรถยนต์ เชื่อมต่อให้ลื่นไหล</a></li>
+                        </ul>
+                    </li>
+<!--หัวข้อพิเศษ เด็กกับโทรศัพท์(บทที่ 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">โฟกัสพิเศษเด็กกับมือถือ (บทที่ 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบโฟกัสพิเศษเด็กกับมือถือ" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>บทที่ 35:ให้ลูกมีมือถือแล้วตั้งกฎยังไง</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>บทที่ 36: อุปกรณ์ในบ้านทั้งหมด เชื่อมกันยังไง</a></li>
+                        </ul>
+                    </li>
+<!--ภาคปฏิบัติ: เขียนโค้ดด้วย AI-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">7. ภาคปฏิบัติการเขียนโปรแกรมด้วย AI (บทที่ 37-47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคปฏิบัติการเขียนโปรแกรมด้วย AI" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>บทที่ 37: การปฏิวัติกระบวนทัศน์ — จากการเขียนโค้ดเองสู่การสั่ง AI เขียนโค้ด</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>บทที่ 38: หลักคิด 5 ข้อของการเขียนโปรแกรมด้วย AI</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>บทที่ 39: AI ไม่เข้าใจ ส่วนใหญ่เพราะเราพูดไม่ชัด</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>บทที่ 40: บอกความต้องการให้ชัดก่อน แล้วค่อยลงมือ</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>บทที่ 41: ภูมิทัศน์เครื่องมือเขียนโปรแกรมด้วย AI ปี 2026</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>บทที่ 42: ภูมิทัศน์โมเดลขนาดใหญ่และการใช้ API จริง</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>บทที่ 43: คุยกับ AI ยังไงให้มันเข้าใจ</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>บทที่ 44: ลงมือทำจาก 0 ถึง 1 — ขั้นตอนครบวงจรของโปรเจกต์เต็ม</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>บทที่ 45: AI เขียนแล้ว ยังไม่เสร็จ</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>บทที่ 46: เส้นทางระดับสูง — จากผู้ใช้สู่สถาปนิกระบบ</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>บทที่ 47: คู่มือเปิดค้นด่วนและแหล่งข้อมูล</a></li>
+                        </ul>
+                    </li>
+<!--ภาคปฏิบัติ: พัฒนาแอนดรอยด์-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">8. ภาคปฏิบัติการพัฒนา Android (บทที่ 48-58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคปฏิบัติการพัฒนา Android" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>บทที่ 48: แอนดרอยด์โตมาแบบไหนมาถึงจุดนี้？</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>บทที่ 49: ตั้งค่าสภาพแวดล้อมการพัฒนา — Android Studio กับโปรเจกต์แรก</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>บทที่ 50: เริ่มต้น Kotlin อย่างรวดเร็ว — ภาษาหลักของการพัฒนา Android</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>บทที่ 51: การพัฒนาหน้าจอ — เริ่มต้น Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>บทที่ 52: องค์ประกอบหลัก 4 ตัวและวงจรชีวิตของ Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>บทที่ 53: การจัดเก็บข้อมูลและการร้องขอผ่านเครือข่าย</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>บทที่ 54: โปรเจกต์ 1 — สมุดบัญชีรายรับรายจ่ายของฉัน (เวอร์ชันในเครื่อง)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>บทที่ 55: โปรเจกต์ 2 — แอปดูอากาศ (เวอร์ชันออนไลน์)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>บทที่ 56: แอปทำเสร็จแล้ว เอาขึ้น Google Play</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>บทที่ 57: เส้นทางระดับสูง — สิทธิ์การเข้าถึง การแจ้งเตือน และสถาปัตยกรรมสมัยใหม่</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>บทที่ 58: คู่มือเปิดค้นด่วนและแหล่งข้อมูล</a></li>
+                        </ul>
+                    </li>
+<!--ภาคปฏิบัติ: พัฒนา iOS-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">9. ภาคปฏิบัติการพัฒนา iOS (บทที่ 59-69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคปฏิบัติการพัฒนา iOS" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>บทที่ 59: รู้จัก iOS — ระบบนิเวศ Apple และระบบนิเวศการพัฒนา</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>บทที่ 60: ตั้งค่าสภาพแวดล้อมการพัฒนา — Xcode กับโปรเจกต์แรก</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>บทที่ 61: เริ่มต้น Swift อย่างรวดเร็ว — ภาษาหลักของการพัฒนาบน Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>บทที่ 62: การพัฒนาหน้าจอ — เริ่มต้น SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>บทที่ 63: วิว สถานะ และการนำทาง</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>บทที่ 64: การจัดเก็บข้อมูลและการร้องขอผ่านเครือข่าย</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>บทที่ 65: โปรเจกต์ 1 — สมุดบัญชีรายรับรายจ่ายของฉัน (เวอร์ชันในเครื่อง)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>บทที่ 66: โปรเจกต์ 2 — แอปดูอากาศ (เวอร์ชันออนไลน์)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>บทที่ 67: ขัดเกลาและเผยแพร่ — ขึ้น App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>บทที่ 68: เส้นทางระดับสูง — สิทธิ์การเข้าถึง การแจ้งเตือน และสถาปัตยกรรมสมัยใหม่</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>บทที่ 69: คู่มือเปิดค้นด่วนและแหล่งข้อมูล</a></li>
+                        </ul>
+                    </li>
+<!--ภาคผนวก-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">10. ภาคผนวก</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ขยาย/ยุบภาคผนวก" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>Aภาคผนวก A: ขั้นตอนเปิดกล่องโทรศัพท์ใหม่</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>ภาคผนวก B: ทำแบบฝึกหัดแล้วติด จะทำอย่างไร？</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C ภาคผนวก C: ตารางศัพท์ฉบับย่อที่สุด</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>Dภาคผนวก D: หาแหล่งข้อมูลที่น่าเชื่อถือได้ที่ไหน</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>Eที่210บทแนบ:</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F ภาคผนวก F: โฟกัสพิเศษการเลือกซื้อและใช้งานมือถือจอพับ</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>บทส่งท้าย: ใช้โทรศัพท์ให้เป็น แค่นี้ก็พอ</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>Gภาคผนวก G：ดัชนีค้นหาด่วนทั้งเล่ม</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>Hภาคผนวก H：แผนงานเวอร์ชัน</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="ค้นหา"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="ค้นหาเนื้อหา..." autocomplete="off" aria-label="คำค้นหา"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="ปิดการค้นหา">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">พิมพ์คำค้นเพื่อเริ่มค้นหา</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- Breadcrumb ด้านบน --><nav class="breadcrumb no-print" aria-label="ตำแหน่ง"><a href="#top">หน้าแรก</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">วิชาพื้นฐานดิจิทัล · v1.8</span></nav>
+<div id="di-er-shi-zhang-jinjie" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">บทที่ 20: โหมดนักพัฒนาและสิทธิ์ระดับสูง</h3>
+<p class="chapter-intro mb-4">บทนี้เขียนไว้สำหรับคนที่อยากเจาะลึก "ฟังก์ชันที่ซ่อนอยู่" ของมือถือ โหมดนักพัฒนา สิทธิ์ Root กุญแจ BL ... แนวคิดพวกนี้ฟังดูเหมือนของสายเกจ แต่แท้จริงไม่ได้ห่างจากผู้ใช้ทั่วไปเลย</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">หนึ่ง โหมดนักพัฒนา: ปลดล็อกการตั้งค่าที่ซ่อนอยู่</h4>
+<p class="mb-2">โหมดนักพัฒนาคือเมนูลับที่มากับระบบมือถือ ข้างในเต็มไปด้วยฟังก์ชันที่ผู้ใช้ทั่วไปไม่ค่อยได้ใช้ แต่นักพัฒนาจำเป็นต้องใช้</p>
+<h5 class="font-semibold mt-3 mb-1">วิธีเปิด:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Android</strong>: เข้า การตั้งค่า > เกี่ยวกับโทรศัพท์ > กด "หมายเลขรุ่น" ต่อเนื่อง 7 ครั้ง จนขึ้นข้อความว่า "คุณอยู่ในโหมดนักพัฒนาแล้ว"</li>
+  <li><strong>ฮาร์โมนีโอเอส</strong>: การตั้งค่า > เกี่ยวกับโทรศัพท์ > กด "เวอร์ชัน HarmonyOS" ต่อเนื่อง 7 ครั้ง</li>
+  <li><strong>iOS</strong>: ผู้ใช้ทั่วไปเปิดโหมดนักพัฒนาแบบเต็มรูปแบบไม่ได้ ต้องมีบัญชี Apple Developer แบบเสียเงิน</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">รวมฟังก์ชันที่ใช้บ่อย:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>การดีบัก USB (USB Debugging)</strong>:สวิตช์ที่ต้องเปิดสำหรับเชื่อมต่อคอมพิวเตอร์เพื่อทำงานขั้นสูง (เช่น การแฟลชรอม, กู้คืนข้อมูล, คำสั่ง ADB) ดูรายละเอียดเพิ่มเติมได้ในส่วน "คำสั่ง ADB ที่ใช้งานได้จริง" ของบทนี้</li>
+  <li><strong>แสดงการสัมผัสหน้าจอ (Show Taps)</strong>:แสดงจุดสัมผัสบนหน้าจอ (จุดกลมเล็กๆ ตามนิ้ว) เหมาะสำหรับบันทึกหรือสาธิตวิธีการใช้งาน</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">ที่เกี่ยวข้องกับประสิทธิภาพและความลื่นไหล:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>ปรับความเร็วแอนิเมชัน (สเกลแอนิเมชันหน้าต่าง / สเกลแอนิเมชันการเปลี่ยนผ่าน / สเกลระยะเวลาแอนิเมชันโปรแกรม)</strong>:ตัวเลือกทั้งสามนี้ควบคุมระยะเวลาแอนิเมชันตอนเปิด App หรือสลับหน้าจอ ค่าเริ่มต้นคือ 1x ปรับเป็น 0.5x จะทำให้โทรศัพท์ "ดูเหมือน" เร็วขึ้น (ความเร็วการทำงานจริงของโปรแกรมไม่เปลี่ยน เป็นแค่แอนิเมชันที่เร็วขึ้น) หากตั้งเป็นปิดจะข้ามไปยังหน้าจอใหม่ทันทีโดยไม่มีแอนิเมชัน ส่วนใหญ่ผู้ที่ชื่นชอบเทคโนโลยีมักจะตั้งไว้ที่ 0.5x เพื่อให้ยังคงความรู้สึกตอนเปลี่ยนหน้าจอแต่ดูเร็วขึ้น การปิดทั้งหมดจะทำให้การใช้งานดูไม่ลื่นไหล และอาจทำให้มองข้ามอาการกระตุกจริงของโปรแกรม จนทำให้คุณเข้าใจผิดว่า "ลื่นไหลมาก"</li>
+  <li><strong>บังคับ GPU เรนเดอร์ (Force GPU Rendering)</strong>:บังคับให้กราฟิก 2D ทั้งหมดประมวลผลผ่าน GPU แทน CPU ช่วยเพิ่มความลื่นไหลตอนเลื่อนหน้าจอในเครื่องรุ่นเก่าหรือบาง App ที่ปรับแต่งไม่ดี แต่ก็เพิ่มภาระให้ GPU และกินไฟมากขึ้น โทรศัพท์รุ่นใหม่ใช้ GPU เรนเดอร์เป็นค่าเริ่มต้นอยู่แล้ว สวิตช์นี้จึงมีผลจำกัดกับเครื่องรุ่นกลางถึงระดับเรือธง ถือเป็นตัวเลือกที่เหลือมาจากอดีต ผู้ใช้ทั่วไปแค่ตั้งค่าเริ่มต้นไว้ก็พอ</li>
+  <li><strong>แสดงการวิเคราะห์โหมดการเรนเดอร์ GPU (Profile GPU Rendering)</strong>:แสดงเวลาที่ใช้ในการเรนเดอร์แต่ละเฟรมแบบเรียลไทม์บนหน้าจอเป็นกราฟแท่ง เส้นสีเขียวแนวนอนแทน 16.6ms (ค่าเกณฑ์เวลาเฟรมที่ 60fps) หากแท่งกราฟเกินเส้นสีเขียวแสดงว่ามีอาการดรอปเฟรม นี่เป็นเครื่องมือสำหรับนักพัฒนาเพื่อไล่หาสาเหตุ App กระตุก ผู้ใช้ทั่วไปก็สามารถใช้เปรียบเทียบได้ว่า App ไหนปรับแต่งได้ไม่ดี, เช่น ถ้า App ใด App หนึ่งตอนเลื่อนหน้าจอกราฟมักจะพุ่งสูงกว่าเส้นแดงเสมอ ก็แทบจะสรุปได้ว่าเป็นความผิดของ App นั้น</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">ที่เกี่ยวข้องกับการทำงานเบื้องหลังและแบตเตอรี่:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>จำกัดโปรเซสเบื้องหลัง</strong>:สามารถตั้งค่าเป็น "จำกัดมาตรฐาน" "สูงสุด 1 โปรเซส" "สูงสุด 2 โปรเซส" เป็นต้น ดูเผินๆ การจำกัดโปรเซสเบื้องหลังจะช่วยประหยัดแบตเตอรี่ แต่จริงๆ แล้วระบบจัดการเบื้องหลังของ Android ทำมาได้ดีแล้ว การบังคับจำกัดอาจทำ, ให้ App ต้องโหลดใหม่บ่อยๆ (การเริ่มต้นเย็นกลับกลายเป็นการกินไฟมากกว่าและประสบการณ์การใช้งานก็แย่ลง) ตัวเลือกนี้เหมาะกับการดีบักมากกว่า ไม่แนะนำให้ผู้ใช้ทั่วไปเปิดใช้งานระยะยาว ตั้งค่าเป็น "จำกัดมาตรฐาน" ไว้ก็พอ</li>
+  <li><strong>ไม่เก็บกิจกรรม</strong>:ทันทีที่ออกจากหน้าจอใดๆ จะทำลายมันทิ้งเลย ไม่แนะนำอย่างยิ่ง เพราะจะทำให้ App ค้างจอขาวและโหลดใหม่บ่อยๆ ใช้สำหรับทดสอบตรรกะการกู้คืนของ App เท่านั้น</li>
+</ul>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">ข้อควรระวัง</p>
+<p class="mt-1">การตั้งค่าในโหมดนักพัฒนาอาจกระทบความเสถียรของระบบ อย่าแก้ตัวเลือกที่ไม่เข้าใจ หลังเปิด USB Debugging ตอนต่อคอมพิวเตอร์ต้องระวัง อย่าเชื่อมต่อกับคอมที่ไม่น่าเชื่อถือ</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">2. ปลดล็อก OEM: "สวิตช์สำหรับแฟลชรอม" ในตัวเลือกนักพัฒนา</h4>
+<p class="mb-2">ในตัวเลือกนักพัฒนามีสวิตช์ที่ไม่ค่อยสะดุดตาแต่สำคัญมาก — "ปลดล็อก OEM" (บางแบรนด์เรียก "อนุญาตการปลดล็อก OEM" หรือ "ปลดล็อกอุปกรณ์") สวิตช์นี้เองไม่ได้ปลดล็อก BL ให้โดยตรง แต่มันคือ "ใบอนุญาตเบื้องต้น": ต้องเปิดมันก่อน ผู้ผลิตถึงจะอนุญาตให้คุณปลดล็อก BL ผ่านคำสั่ง fastboot หรือเครื่องมือของแบรนด์ได้</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>หน้าที่ของสวิตช์</strong>:เทียบเท่ากับการประกาศต่อผู้ผลิตว่า "ฉันยอมสละสิทธิ์การรับประกัน และยอมรับความเสี่ยงเอง โปรดอนุญาตให้ฉันปลดล็อก BL" หากสวิตช์นี้ปิดอยู่ คำสั่งปลดล็อก BL ใดๆ ก็จะถูกปฏิเสธทันที</li>
+  <li><strong>ความสัมพันธ์กับ BL Lock</strong>:ปลดล็อก OEM คือ "การขอสิทธิ์" ส่วนการปลดล็อก BL คือ "การดำเนินการจริง" อันแรกทำได้แค่แตะในการตั้งค่าของโทรศัพท์ ส่วนอันหลังต้องไปขอรหัสปลดล็อกจากเว็บไซต์ผู้ผลิต แล้วใช้คอมพิวเตอร์รันคำสั่ง fastboot (เช่น <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">fastboot flashing unlock</code>)ทั้งสองอย่างนี้ขาดไม่ได้</li>
+  <li><strong>การรีเซ็ตเป็นค่าจากโรงงานจะรีเซ็ตหรือไม่</strong>:จะรีเซ็ต สวิตช์ "ปลดล็อก OEM" จะกลับไปอยู่ในสถานะปิดหลังจากรีเซ็ตเป็นค่าจากโรงงาน แต่สถานะการปลดล็อก BL นั้นเป็นการเปลี่ยนแปลงในระดับฮาร์ดแวร์ เมื่อปลดล็อกแล้วจะไม่ล็อกกลับแม้จะรีเซ็ตเป็นค่าจากโรงงาน: ต้องสั่ง <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">fastboot flashing lock</code> ด้วยตนเองเท่านั้นถึงจะล็อกกลับได้</li>
+  <li><strong>เมื่อไรควรเปิด</strong>:เว้นแต่คุณแน่ใจว่าจะแฟลชรอมหรือ Root ไม่เช่นนั้นให้ปิดไว้ มันเป็นสวิตช์ที่แยกจากกันกับ "USB Debugging" ตอนแฟลชรอมมักจะต้องเปิดทั้งสองตัวพร้อมกัน</li>
+</ul>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">เกร็ดความรู้: ทำไมผู้ผลิตถึงตั้งสวิตช์นี้ไว้</p>
+<p class="mt-1">ในยุคแรกของ Android ไม่มีสวิตช์นี้ มัลแวร์สามารถแอบแฟลชระบบได้เพียงแค่ได้สิทธิ์เข้าถึง Google จึงกำหนดให้ผู้ผลิต Android ทุกรายต้องใส่สวิตช์ "ปลดล็อก OEM" ในตัวเลือกนักพัฒนา เพื่อเป็นการยืนยัน "ความยินยอมโดยรู้ตัวของผู้ใช้" นี่คือเหตุผลที่แม้คุณจะปลดล็อก BL แล้ว แต่ถ้าสวิตช์ปลดล็อก OEM ถูกปิด การแฟลชรอมใหม่ก็จะล้มเหลว</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">3. BL Lock (Bootloader Lock): ประตูบานแรกของการแฟลชรอม</h4>
+<p class="mb-2">Bootloader คือโปรแกรมที่โหลดระบบปฏิบัติการขึ้นมาตอนมือถือเปิดเครื่อง BL Lock คือกลอนที่ผู้ผลิตใส่ไว้เพื่อความปลอดภัย กันผู้ใช้แฟลชระบบที่ไม่ใช่ของทางการ</p>
+<h5 class="font-semibold mt-3 mb-1">หน้าที่ของ BL Lock:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>การปกป้องความปลอดภัย</strong>: ป้องกันมัลแวร์แอบแฟลชเข้าระบบ</li>
+  <li><strong>การกันขโมย</strong>: แม้มือถือจะถูกแฟลชรอม ถ้าไม่มีรหัสผ่านบัญชีเดิมก็ใช้ไม่ได้</li>
+  <li><strong>ข้อจำกัดการรับประกัน</strong>: ปลดล็อก BL แล้วมักแปลว่าเสียการรับประกันจากทางการ</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">นโยบาย BL Lock ของแต่ละแบรนด์:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Xiaomi</strong>: ปลดล็อกได้ ต้องผูกบัญชีรอช่วงเวลา (7-30 วัน)</li>
+  <li><strong>Huawei</strong>: หลังปี 2018 หยุดแจกจ่ายรหัสปลดล็อก แทบไม่มีทางปลดล็อกอย่างเป็นทางการ</li>
+  <li><strong>OnePlus</strong>: ปลดล็อกได้ ค่อนข้างหลวม</li>
+  <li><strong>OPPO/vivo</strong>: บางรุ่นปลดล็อกได้ ต้องยื่นสมัคร</li>
+  <li><strong>Samsung</strong>: ปลดล็อกได้ แต่จะทริกเกอร์ Knox ตัดสลัก เสียฟังก์ชันระดับสูงอย่าง Samsung Pay</li>
+  <li><strong>Apple</strong>: อุปกรณ์ iOS ไม่มีแนวคิด BL Lock แบบดั้งเดิม แต่มีกลไกความปลอดภัยที่คล้ายกัน</li>
+</ul>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>คำสั่ง ADB ที่ใช้งานได้จริง: ควบคุมโทรศัพท์ผ่านคอมพิวเตอร์</li>
+</ol>
+<p class="mb-2">ADB ย่อมาจาก Android Debug Bridge เป็นเครื่องมือคอมมานด์ไลน์ที่ Google จัดทำอย่างเป็นทางการ ช่วยให้คอมพิวเตอร์สื่อสารกับโทรศัพท์ Android ผ่าน USB หรือ Wi-Fi ได้ ตัวมันเองไม่ต้องใช้ Root ขอแค่เปิด "USB Debugging" ในโทรศัพท์ก็ใช้งานได้แล้ว สามารถเข้าใจได้ว่ามันคือ "รีโมตควบคุมที่ใช้คอมพิวเตอร์สั่งงานโทรศัพท์": ไม่ว่าจะแฟลชรอม ติดตั้ง App ส่งไฟล์ หรือเช็ค Log ก็ต้องพึ่งมันทั้งนั้น</p>
+<h5 class="font-semibold mt-3 mb-1">วิธีเชื่อมต่อผ่าน USB:</h5>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>ฝั่งโทรศัพท์: เข้าไปที่ตัวเลือกนักพัฒนา → เปิด "USB Debugging"</li>
+  <li>ฝั่งคอมพิวเตอร์: ดาวน์โหลด Platform Tools จากเว็บไซต์ทางการของ Google (รวม <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb</code> และ <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">fastboot</code> ไฟล์ปฏิบัติการสองไฟล์) แตกไฟล์ไปยังโฟลเดอร์ใดก็ได้</li>
+  <li>เชื่อมต่อมือถือกับคอมพิวเตอร์ด้วยสายเคเบิล บนมือถือจะมีหน้าต่างป๊อปอัป "อนุญาต USB debugging หรือไม่" ให้ติ๊ก "อนุญาตเสมอ" แล้วกดตกลง</li>
+  <li>ใน Command Line ของคอมพิวเตอร์ (PowerShell หรือ cmd ของ Windows) ให้รัน <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb devices</code>ถ้าผลลัพธ์ขึ้นประมาณ <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">List of devices attached / xxxxxxxx device</code>ก็แปลว่าเชื่อมต่อสำเร็จแล้ว</li>
+</ol>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">อย่ามองข้ามไดรเวอร์และหน้าต่างป๊อปอัปการอนุญาต</p>
+<p class="mt-1">ผู้ใช้ Windows ถ้า <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb devices</code> ขึ้นว่า "unauthorized" หรือไม่แสดงรายการอุปกรณ์เลย ส่วนใหญ่เป็นเพราะติดตั้งไดรเวอร์ไม่ดีหรือลืมกด "อนุญาต" บนมือถือ แบรนด์อย่าง Samsung/ Xiaomi สามารถติดตั้ง "USB ไดรเวอร์" หรือ "โปรแกรมช่วยเหลือมือถือ" ของ, แต่ละแบรนด์เพื่อเติมไดรเวอร์ให้ครบได้ ส่วน Mac และ Linux มักจะไม่ต้องติดตั้งไดรเวอร์ ถ้าหน้าต่างป๊อปอัปบนมือถือถูกปิดไปโดยไม่ได้ตั้งใจ แค่ถอดเสียบสายเคเบิลใหม่ก็จะขึ้นมาอีกครั้ง</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">คำสั่ง ADB ที่ใช้บ่อย:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb install app.apk</code>:ติดตั้ง APK จากคอมพิวเตอร์ลงมือถือ (<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">-r</code> หมายถึงติดตั้งทับและเก็บข้อมูลเดิมไว้; ติดตั้ง<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">-s</code> ลง SD card)</li>
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb uninstall com.xxx.xxx</code>:ถอนการติดตั้ง App ตามชื่อแพ็กเกจ</li>
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb push พาธคอมพิวเตอร์ /sdcard/พาธปลายทาง</code>:ส่งไฟล์จากคอมพิวเตอร์ไปยังมือถือ</li>
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb pull /sdcard/ไฟล์ พาธคอมพิวเตอร์</code>:ดึงไฟล์จากมือถือมายังคอมพิวเตอร์ (เร็วกว่าส่งให้ตัวเองบน WeChat แล้วค่อยดาวน์โหลดเยอะ)</li>
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb shell</code>:เข้าสู่ Linux Shell ของมือถือ สามารถรันคำสั่ง <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">ls</code>, <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">pm</code>, <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">am</code> และอื่นๆ ได้โดยตรง</li>
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb reboot bootloader</code>:รีสตาร์ทมือถือเข้าสู่โหมด Fastboot (ทางเข้าสำหรับการแฟลชรอม)</li>
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb reboot recovery</code>:รีสตาร์ทเข้าสู่โหมด Recovery</li>
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb shell pm list packages</code>:แสดงรายการชื่อแพ็กเกจของแอปที่ติดตั้งไว้ทั้งหมดบนมือถือ (สิ่งจำเป็นสำหรับการหาชื่อแพ็กเกจ) ใส่ <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">-s</code> เพื่อดูเฉพาะแอประบบ ใส่ <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">-3</code> เพื่อดูเฉพาะแอปของบุคคลที่สาม</li>
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb shell pm uninstall --user 0 ชื่อแพ็กเกจ</code>:ถอนการติดตั้งแอปที่ติดมากับเครื่องสำหรับผู้ใช้ปัจจุบัน โดยไม่ต้อง Root ดูรายละเอียดเพิ่มเติมได้ในส่วนปฏิบัติจริงด้านล่าง</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">การถอนการติดตั้งแอปที่ติดมากับเครื่องโดยไม่ต้อง Root ตามจริง:</h5>
+<p class="mb-2">นี่เป็นหนึ่งในฟังก์ชันที่ใช้งานได้จริงที่สุดของ ADB: การใช้คำสั่ง <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">pm uninstall --user 0</code> สามารถถอนการติดตั้งแอปที่ติดมากับเครื่องสำหรับ "ผู้ใช้ปัจจุบัน" ได้โดยไม่ต้อง Root และไม่กระทบพาร์ติชันระบบ แอปที่ถอนการติดตั้งไปจะ "หายไป" จากระบบ แต่จริงๆ แล้วยังอยู่ในพาร์ติชันระบบ เมื่อรีเซ็ตเป็นค่าโรงงานจะกลับมาอีกครั้ง</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>ก่อนอื่นใช้ <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb shell pm list packages -s</code> เพื่อแสดงรายการแอประบบทั้งหมด แล้วหาชื่อแพ็กเกจของแอปที่คุณต้องการถอนการติดตั้ง ตัวอย่างเช่น เบราว์เซอร์ของ Xiaomi คือ <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">com.android.browser</code>ส่วน App Store ของ Huawei คือ <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">com.vmall.client</code></li>
+  <li>ไม่แน่ใจว่าชื่อแพ็กเกจไหนคือแอปไหน? สามารถใช้คอมพิวเตอร์รัน <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb shell pm list packages | findstr คำค้นหา</code> เพื่อค้นหา หรือติดตั้งแอปของบุคคลที่สามอย่าง "Package Viewer" เพื่อดูชื่อแพ็กเกจของแต่ละแอปได้โดยตรงบนมือถือ</li>
+  <li>รันการถอนการติดตั้ง:<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb shell pm uninstall --user 0 ชื่อแพ็กเกจ</code>เช่น <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb shell pm uninstall --user 0 com.android.browser</code>ถ้าส่งค่ากลับมาเป็น <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">Success</code> ก็แปลว่าสำเร็จ</li>
+  <li>อยากกู้คืนต้องทำยังไง? มี 2 วิธี: ① รีเซ็ตเป็นค่าโรงงาน (ทำลายล้างที่สุดแต่ยุ่งยาก); ② ติดตั้งใหม่:<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb shell cmd package install-existing ชื่อแพ็กเกจ</code></li>
+</ol>
+<div class="danger-box rounded-lg p-4 mt-4">
+<p class="font-semibold">อย่าลบแพ็กเกจหลักของระบบแบบสุ่มสี่สุ่มห้า</p>
+<p class="mt-1">แม้ว่า "pm uninstall --user 0" จะเป็นวิธีที่ปลอดภัยโดยไม่ต้อง Root แต่การลบแอประบบที่สำคัญแบบสุ่มสี่สุ่มห้า (เช่น <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">com.android.systemui</code> แถบสถานะ, <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">com.android.phone</code> โทรศัพท์, <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">com.android.settings</code> การตั้งค่า) อาจทำให้ระบบพัง หน้าจอดำ เปิดเครื่องไม่ติด และปัญหาร้ายแรงอื่นๆ ก่อนลบควร Google ดูก่อนว่า "ชื่อแพ็กเกจนี้ลบได้ไหม" ลบน้อยกว่าที่ควรลบยังดีกว่าลบผิด แนะนำให้ลบทีละหนึ่งหรือสองแอป แล้วยืนยันว่าไม่มีปัญหาก่อนค่อยดำเนินการต่อ</p>
+</div>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">เกร็ดความรู้เล็กๆ: --user 0 หมายถึงอะไร</p>
+<p class="mt-1">หลังจาก Android 4.2 รองรับการใช้งานหลายผู้ใช้ โดยผู้ใช้แต่ละคนจะมี ID แยกจากกัน (เจ้าของเครื่องคือ 0 ผู้ใช้เพิ่มเติมจะเริ่มจาก 10 เป็นต้นไป)<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">--user 0</code> หมายถึง "ถอนการติดตั้งสำหรับเจ้าของเครื่องปัจจุบันเท่านั้น" ไฟล์ APK ในพาร์ติชันระบบยังคงอยู่เหมือนเดิม เพียง, แต่ไม่แสดงให้เจ้าของเครื่องเห็น นี่คือเหตุผลที่มันไม่ต้องใช้ Root เพราะไม่ได้แตะไฟล์ระบบ เพียงแค่เปลี่ยน "การกำหนดค่าผู้ใช้" นี่คือความแตกต่างที่ใหญ่ที่สุดระหว่างวิธีนี้กับการถอนการติดตั้งหลังจาก Root: การถอนการติดตั้งด้วย Root คือการลบออกจากระบบอย่างแท้จริง ผู้ใช้ทุกคนจะไม่มีแอปนั้นอีกต่อไป ส่วนการถอนการติดตั้งด้วย ADB เป็นเพียงการ "ซ่อนจากผู้ใช้ปัจจุบัน"</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">5. สิทธิ์ Root: "ผู้ดูแลระบบสูงสุด" ของ Android</h4>
+<p class="mb-2">สิทธิ์ Root เทียบเท่ากับ Super User ใน Linux (มีสิทธิ์ควบคุมเต็มรูปแบบเหนือไดเรกทอรี / สามารถอ่านเขียนไฟล์ใดก็ได้) ถือเป็นสิทธิ์สูงสุดของระบบ Android ซึ่งมีความแตกต่างอย่างชัดเจนจาก Administrator ของ Windows: Windows ด้วยเหตุผลด้านความปลอดภัยได้จำกัดสิทธิ์ผู้ดูแลระบบไว้หลายประการ (สิทธิ์สูงสุดที่แท้จริงคือ TrustedInstaller) ดังนั้นแม้แต่ Administrator ก็ไม่สามารถเรียกใช้งานโดยตรงเหมือน Linux root ได้ <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">sudo rm -rf /*</code>หลังจากได้รับสิทธิ์ Root แล้ว คุณสามารถแก้ไขไฟล์ระบบ ถอนการติดตั้งแอปที่มาพร้อมเครื่อง และใช้งานแอปขั้นสูงที่ต้องการ Root ได้</p>
+<h5 class="font-semibold mt-3 mb-1">ข้อดีของ Root:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>: ถอนการติดตั้งแอปที่มาพร้อมเครื่องซึ่งปกติถอนไม่ได้</li>
+  <li>: ใช้แอปฟังก์ชันขั้นสูง (เช่น Titanium Backup, Greenify)</li>
+  <li>: แก้ไขอินเทอร์เฟซและฟังก์ชันของระบบ</li>
+  <li>: ติดตั้ง Recovery บุคคลที่สามและ ROM กำหนดเอง</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">ความเสี่ยงของ Root:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>เสียการรับประกัน</strong>: ผู้ผลิตส่วนใหญ่ไม่รับประกันมือถือที่ผ่านการ Root</li>
+  <li><strong>ความเสี่ยงด้านความปลอดภัย</strong>: แอปที่ประสงค์ร้ายอาจได้สิทธิ์ Root ก่อผลเสียรุนแรง</li>
+  <li><strong>ระบบไม่เสถียร</strong>: ผิดพลาดเล็กน้อยอาจทำให้ระบบพัง</li>
+  <li><strong>แอปธนาคารใช้ไม่ได้</strong>: แอปธนาคารและแอปชำระเงินจำนวนมากตรวจพบ Root จะปฏิเสธการทำงานทันที</li>
+  <li><strong>อัปเดต OTA ล้มเหลว</strong>: อาจรับอัปเดตระบบอย่างเป็นทางการได้ไม่ปกติ</li>
+</ul>
+<div class="danger-box rounded-lg p-4 mt-4">
+<p class="font-semibold">คำเตือนร้ายแรง</p>
+<p class="mt-1">การ Root มีความเสี่ยง อาจทำให้มือถือกลายเป็นอิฐ (เปิดเครื่องไม่ได้) ถ้าคุณเป็นมือใหม่ แนะนำให้ศึกษาข้อมูลให้รอบคอบก่อน และมั่นใจว่าสำรองข้อมูลครบถ้วน ก่อนลงมืออ่านบทเรียนอย่างละเอียด ยืนยันรุ่นเครื่องและเวอร์ชันระบบของคุณ</p>
+</div>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>การรับรอง SafetyNet และ Play Integrity: ทำไมแอปธนาคารถึงใช้ไม่ได้หลังจาก Root</li>
+</ol>
+<p class="mb-2">ผู้ใช้ Root หลายคนเคยประสบกับช่วงเวลาสะดุดต่อไปนี้: หลังจาก Root แล้วตื่นเต้นที่จะติดตั้งโมดูลมากมาย แต่ผลคือเปิดแอปธนาคาร,"อุปกรณ์ของคุณไม่ปลอดภัย ไม่สามารถใช้งานได้" Google Pay ก็ใช้ไม่ได้ แม้แต่ Netflix ก็ปฏิเสธการเล่นวิดีโอความคมชัดสูง เบื้องหลังนี้คือกลไกการรับรองความสมบูรณ์ของอุปกรณ์ 2 ชุดของ Google: คือ SafetyNet รุ่นเก่าและ Play Integrity API รุ่นใหม่</p>
+<h5 class="font-semibold mt-3 mb-1">SafetyNet / Play Integrity คืออะไร:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>SafetyNet Attestation (รุ่นเก่า, เริ่มใช้งานปี 2017)</strong>: API ตรวจสอบความสมบูรณ์ของอุปกรณ์ที่ Google เปิดตัวในช่วงแรก แอปจะใช้มันในการสอบถามไปยังเซิร์ฟเวอร์ของ Google ว่า "อุปกรณ์นี้ผ่านการทดสอบความเข้ากันได้แบบ CTS หรือไม่ และอยู่ในสถานะทางการที่ไม่ถูกดัดแปลง, หรือไม่" ผลลัพธ์ที่ส่งกลับมาแบ่งเป็น Basic Attestation (การตรวจสอบพื้นฐาน) และ Strong Attestation (การตรวจสอบขั้นเข้มงวด ซึ่งต้องอาศัยคีย์ฮาร์ดแวร์) Google ได้ประกาศแล้วว่า SafetyNet จะค่อยๆ ยกเลิกการใช้งานหลังปี 2024</li>
+  <li><strong>Play Integrity API (รุ่นใหม่, เริ่มใช้งานปี 2022)</strong>: ทางเลือกที่ Google เปิดตัวขึ้นมาทดแทน ซึ่งเข้มงวดและครอบคลุมมากกว่า SafetyNet นอกเหนือจากความสมบูรณ์ของอุปกรณ์แล้ว ยังรวมถึง "ความสมบูรณ์ของแอป" (แอปถูกดัดแปลงหรือไม่) และ "ความสมบูรณ์ของบัญชี/การอนุญาต" (บัญชีผู้ใช้ได้รับความไว้วางใจจาก Google หรือไม่) แอปใหม่ควรย้ายไปใช้ Play Integrity</li>
+  <li><strong>ใครใช้งานบ้าง</strong>: แอปธนาคาร การเงิน การชำระเงิน (เช่น Google Pay, ธนาคารออนไลน์ต่างๆ, Alipay/WeChat Pay ในบางสถานการณ์), สตรีมมิ่งมีเดีย (การปกป้องลิขสิทธิ์ความคมชัดสูงของ Netflix), ระบบป้องกันการโกงในบางเกม (เช่นเกมบางส่วนของ Tencent/NetEase), แอปออฟฟิศขององค์กร (การตรวจสอบความสอดคล้องของอุปกรณ์ MDM)</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">ผลการรับรอง Play Integrity 3 ระดับ:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>MEETS_DEVICE_INTEGRITY (ผ่านการตรวจสอบความสมบูรณ์ของอุปกรณ์)</strong>: อุปกรณ์ทำงานบนระบบ Android แท้, Bootloader ไม่ได้ปลดล็อก, ไม่มีการ Root, ผ่านการทดสอบความเข้ากันได้ CTS สามารถใช้งานแอปธนาคารและแอปการชำระเงินได้ตามปกติ</li>
+  <li><strong>MEETS_BASIC_INTEGRITY (ผ่านการตรวจสอบความสมบูรณ์พื้นฐาน)</strong>: อุปกรณ์น่าเชื่อถือในระดับพื้นฐาน แต่อาจมีความผิดปกติเล็กน้อย แอปบางตัวอาจให้ใช้งานแบบลดทอนฟังก์ชัน (เช่น Netflix ยังเล่นได้แต่จำกัดความคมชัด) ในขณะที่แอปธนาคารที่เข้มงวดบางแอปจะปฏิเสธโดยตรง</li>
+  <li><strong>MEETS_STRONG_INTEGRITY (ผ่านการตรวจสอบความสมบูรณ์ระดับเข้มงวด)</strong>: ระดับสูงสุด ต้องมีการรับรองด้วยคีย์ฮาร์ดแวร์ (เช่น ชิป Titan M ในซีรีส์ Google Pixel) อุปกรณ์จากแบรนด์อื่นส่วนใหญ่แม้ไม่ได้ Root ก็ไม่สามารถทำระดับนี้ได้</li>
+  <li><strong>ไม่มีป้ายกำกับใดๆ (NO_INTEGRITY)</strong>: อุปกรณ์ถูก Root, ปลดล็อก BL แล้ว, แฟลช ROM ของบุคคลที่สาม หรือถูกตรวจจับว่าเป็นโปรแกรมจำลอง แอปการชำระเงิน/ธนาคารส่วนใหญ่จะปฏิเสธการทำงานโดยตรง</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">ทำไมแอปเหล่านี้ถึงใช้งานไม่ได้หลังจาก Root:</h5>
+<p class="mb-2">แอปจะส่งคำขอรับรองไปยังเซิร์ฟเวอร์ของ Google ผ่าน Play Integrity API จากนั้น Google จะตรวจสอบตัวชี้วัดหลายอย่างของอุปกรณ์,สถานะการล็อก Bootloader, พาร์ติชันระบบถูกแก้ไขหรือไม่, มีไฟล์ไบนารี su อยู่หรือไม่, SELinux อยู่ในโหมด permissive หรือไม่ เป็นต้น หากมีความผิดปกติแม้เพียงอย่างเดียว จะทำให้ระดับการรับรองที่ส่งกลับมาลดลงหรือว่างเปล่า เมื่อแอปธนาคารเห็นว่า "อุปกรณ์ไม่ปลอดภัย" ก็จะปฏิเสธการให้บริการตามธรรมชาติ</p>
+<h5 class="font-semibold mt-3 mb-1">วิธีการซ่อนสมัยใหม่: Magisk Hide / Shamiko / Zygisk:</h5>
+<p class="mb-2">เพื่อให้สามารถใช้งานแอปธนาคารไปพร้อมกับเพลิดเพลินกับความสะดวกสบายของ Root ชุมชนนักพัฒนาได้สร้างชุดวิธีการ "ซ่อนสถานะ Root" ขึ้นมาหลายวิธี แนวคิดหลักคือ: ทำให้โปรแกรมตรวจสอบเห็นว่าไม่ใช่ระบบที่ถูกดัดแปลง แต่เป็นอุปกรณ์ที่ "ดูเหมือนปกติ"</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>รีเฟรชเครื่องมีความเสี่ยง, ดำเนินการต้องการระมัดระวัง อาจทำให้:</strong>: วิธีการ Systemless Root หลักในปัจจุบัน: ไม่แก้ไขพาร์ติชันระบบ แต่ใช้วิธีการ mount เพื่อทำ Root ข้อดีของการออกแบบแบบนี้คือโอกาสที่ OTA จะอัปเดตล้มเหลวน้อย และการถอนการติดตั้งค่อนข้างสะอาด ถือเป็นพื้นฐานของวิธีการซ่อนทั้งหมดในภายหลัง แต่การใช้งาน Magisk ก็ยังคงต้องปลดล็อก BL อยู่ดี</li>
+  <li><strong>Magisk Hide (หยุดพัฒนาแล้ว)</strong>: โมดูลซ่อนที่มาพร้อมกับ Magisk ในช่วงแรก สามารถซ่อน Root จากแอปที่กำหนดได้ แต่ตั้งแต่ปี 2021 เป็นต้นมา ถูกลบออกจาก Magisk อย่างเป็นทางการแล้ว เนื่องจาก Google พัฒนาวิธีการตรวจจับอย่างต่อเนื่อง ทั้งสองฝ่ายจึงตกอยู่ในสถานการณ์ "เกมแมวจับหนู"</li>
+  <li><strong>Zygisk</strong>: กลไกใหม่ที่แนะนำใน Magisk 24.0+ คล้ายกับ Riru โดยทำการโหลดโมดูลผ่านการแทรกเข้าไปในโปรเซส Zygote ซึ่งซ่อนเร้นกว่าการแก้ไขระบบโดยตรง การเปิดใช้งาน Zygisk ถือเป็นข้อกำหนดเบื้องต้นสำหรับการใช้วิธีการซ่อนสมัยใหม่</li>
+  <li><strong>Shamiko</strong>: โมดูลซ่อนหลักในปัจจุบัน ทำงานร่วมกับ Zygisk สามารถซ่อน Root จากแอปที่กำหนด (โหมด "รายชื่อขาวแบบย้อนกลับ") ซ่อน Magisk ตัวมันเอง และปลอมแปลงสถานะการล็อก Bootloader โดย Shamiko จะถูกแจกจ่ายผ่านร้าน LSPosed หรือ GitHub</li>
+  <li><strong>Play Integrity Fix(osm0sis)</strong>: โมดูล Magisk ที่เจาะจงสำหรับการตรวจจับ Google Play Integrity โดยจะแก้ไขลายนิ้วมือของอุปกรณ์ (fingerprint) เพื่อให้ Google เข้าใจว่าอุปกรณ์ของคุณคือรุ่นทางการที่ไม่ได้ Root รุ่นใดรุ่นหนึ่ง</li>
+</ul>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">เกมแมวจับหนูจะไม่มีวันจบสิ้น</p>
+<p class="mt-1">Google จะอัปเดตกฎการตรวจจับเป็นระยะๆ และผู้ผลิตแอปก็จะตามไปอัปเกรดการตรวจสอบ Play Integrity เช่นกัน วิธีการซ่อนที่ใช้ได้ในวันนี้ อาจถูกตรวจจับในวันพรุ่งนี้ หากคุณพึ่งพาแอปธนาคาร/การชำระเงินอย่างเต็มที่ (เช่น โอนเงินประจำวัน, สแกนจ่ายเงิน) ทางเลือกที่ปลอดภัยที่สุดก็ยังคงเป็น: ไม่ต้อง Root, ไม่ต้องปลดล็อก BL วิธีการซ่อนเหมาะสำหรับผู้เล่นที่มีการตั้งค่า "เครื่องหลักไม่ Root + เครื่องสำรองเล่น Root" มากกว่า</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">7. คำแนะนำสำหรับผู้ใช้ทั่วไป</h4>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>โหมดนักพัฒนา</strong>: สามารถเปิดใช้งานเพื่อทดลองฟังก์ชันต่างๆ เช่น การเร่งความเร็วแอนิเมชัน, การวิเคราะห์การเรนเดอร์ GPU แต่ห้ามไปแก้ตัวเลือกอื่นๆ ที่ไม่เข้าใจโดยเด็ดขาด</li>
+  <li><strong>การปลดล็อก OEM และ BL Lock</strong>: หากคุณไม่ได้วางแผนจะแฟลชรอมหรือ Root ปล่อยให้สวิตช์ทั้งสองอยู่ในสถานะเริ่มต้น (ปิดอยู่) จะปลอดภัยที่สุด</li>
+  <li><strong>ADB</strong>: เครื่องมืออันทรงพลังที่ไม่ต้องใช้ Root ซึ่งคนทั่วไปก็ใช้ได้—เช่น ใช้ <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">pm uninstall --user 0</code> เพื่อถอนการติดตั้งแอปที่มาพร้อมเครื่อง แต่ก่อนลบต้องตรวจสอบให้แน่ใจก่อนว่าชื่อแพ็กเกจนั้นๆ สามารถลบได้หรือไม่</li>
+  <li><strong>eSIM</strong>: ไม่แนะนำให้ผู้ใช้ทั่วไปทำ Root เพราะความเสี่ยงมีมากกว่าผลตอบแทน หากต้องการใช้งานฟังก์ชันบางอย่างจริงๆ ควรตรวจสอบก่อนว่ามีทางเลือกที่ไม่ต้องใช้ Root หรือไม่ (เช่น ใช้ ADB ในการถอนการติดตั้งแอปที่มาพร้อมเครื่อง, หรือใช้ Shizuku แทนฟังก์ชัน Root บางส่วน)</li>
+</ul>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">ลงมือทำ: เปิดโหมดนักพัฒนาและปรับความเร็วแอนิเมชัน</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>: เข้าไปที่ การตั้งค่า > เกี่ยวกับโทรศัพท์</li>
+  <li>: กด "หมายเลขรุ่น" ต่อเนื่อง 7 ครั้ง จนขึ้นข้อความว่าเปิดโหมดนักพัฒนาแล้ว</li>
+  <li>: กลับไปที่การตั้งค่า หา "ตัวเลือกนักพัฒนา" (ปกติอยู่ท้ายการตั้งค่าหรือในหมวด "ระบบ")</li>
+  <li>: หา "การปรับขนาดแอนิเมชันหน้าต่าง" "การปรับขนาดแอนิเมชันการเปลี่ยนผ่าน" "การปรับระยะเวลาแอนิเมชันโปรแกรม" แล้วตั้งเป็น 0.5x หรือปิดเสีย</li>
+  <li>: ลองสัมผัสดูว่ามือถือเร็วขึ้นหรือไม่</li>
+</ol>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">พบข้อผิดพลาดในบทนี้หรือไม่? <a href="../../errata.html" class="text-primary hover:underline">แจ้งได้ที่หน้าแก้ไข</a> — เส้นทางล้าสมัย ข้อเท็จจริงไม่ถูกต้อง ถ้อยคำกำกวม: ทั้งหมดยินดีรับ. แจ้งผ่านกลุ่ม QQ 1074995524 ก็ได้.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-shi-jiu-zhang.html" class="text-primary hover:underline">← บทที่ 19: เครื่องมีปัญหา อย่าเพิ่งรีบซ่อม</a><span></span><a id="next-link" href="di-er-shi-zhang-termux.html" class="text-primary hover:underline">บทที่ 20 ภาคผนวก →</a></nav>
+ </div></main></div><!-- เครื่องมือด่วน: กลุ่มปุ่มลอย --><div id="quick-tools" class="quick-tools no-print" aria-label="เครื่องมือลัด"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="ค้นหา (Ctrl+K)" aria-label="ค้นหา"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="สลับมืด/สว่าง" aria-label="สลับธีม"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="พิมพ์ / ส่งออก PDF" aria-label="พิมพ์หรือส่งออก"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="สารบัญ" aria-label="เปิดสารบัญ"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="อ่านออกเสียง" aria-label="อ่านออกเสียง"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="คีย์ลัดคีย์บอร์ด (?)" aria-label="แผงคีย์ลัด"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="สำรอง/กู้คืนความคืบหน้า" aria-label="สำรองความคืบหน้า"><span aria-hidden="true">B</span></button></div><!-- แผงปุ่มลัด --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="คีย์ลัดคีย์บอร์ด"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">คีย์ลัด</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="ปิด">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">ค้นหาเนื้อหา</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">สลับโหมดมืด/สว่าง</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">อ่านออกเสียง เล่น/พัก</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">หยุดอ่านออกเสียง</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">เปิดแผงคีย์ลัด</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">ขยาย / ย่อขนาดตัวอักษร</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">พิมพ์ / ส่งออก PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- กล่องโต้ตอบสำรอง/กู้คืน --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="สำรองและกู้คืน"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">สำรองและกู้คืนความคืบหน้าการอ่าน</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="ปิด">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">ข้อมูลสำรองประกอบด้วย: บทที่อ่านแล้ว ที่คั่น ตำแหน่งการอ่าน ค่าที่ตั้งขนาดตัวอักษร และผลตรวจสุขภาพมือถือ ข้อมูลเก็บไว้ในเบราว์เซอร์ภายในเครื่อง หากเปลี่ยนเบราว์เซอร์หรือล้างแคชจะสูญหาย แนะนำให้ส่งออกข้อมูลสำรองเป็นระยะ</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> ส่งออกไฟล์สำรอง
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">ดาวน์โหลดไฟล์ JSON หนึ่งไฟล์ แล้วบันทึกไว้ในที่ปลอดภัย</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> นำเข้าไฟล์สำรองเพื่อกู้คืน
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">เลือกไฟล์สำรองที่เคยส่งออกไว้ก่อนหน้าเพื่อกู้คืนความคืบหน้า</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> ล้างข้อมูลการอ่านทั้งหมด
+ </button><p class="text-xs text-red-400 mt-1 text-center">กู้คืนไม่ได้! กรุณาส่งออกข้อมูลสำรองก่อน</p></div></div></div></div><!-- การแจ้งเตือนวันอ่านต่อเนื่อง --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">อ่านต่อเนื่องวันที่ X แล้ว!</span></div><!-- แถบควบคุมการอ่านออกเสียง --><div id="tts-controls" class="tts-controls" role="region" aria-label="ตัวควบคุมการอ่านออกเสียง" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="บทที่กำลังอ่านออกเสียง">ยังไม่เริ่ม</span><button class="tts-btn" id="tts-prev" title="ย่อหน้าก่อนหน้า" aria-label="ย่อหน้าก่อนหน้า"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="เล่น/พัก" aria-label="เล่นการอ่านออกเสียง"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="ย่อหน้าถัดไป" aria-label="ย่อหน้าถัดไป"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="ช้าลง" aria-label="ช้าลง">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="เร็วขึ้น" aria-label="เร็วขึ้น">+</button><button class="tts-btn" id="tts-stop" title="หยุดการอ่านออกเสียง" aria-label="หยุดการอ่านออกเสียง"><span aria-hidden="true">×</span></button></div><!-- ปุ่มกลับขึ้นด้านบน --><button id="back-to-top" class="opacity-0 invisible" aria-label="กลับขึ้นด้านบน"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- การแจ้งเตือนกู้คืนตำแหน่งการอ่าน --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">อ่านครั้งล่าสุดถึง: ...</span><button class="btn-restore" id="restore-btn">เลิกทำ</button><button class="btn-dismiss" id="dismiss-btn">ข้าม</button></div><!-- สคริปต์ JS -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

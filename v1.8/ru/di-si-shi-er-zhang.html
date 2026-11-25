@@ -1,0 +1,645 @@
+ <!DOCTYPE html><html lang="ru"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="Урок смартфона, который вы пропустили · От новичка до мастера — полный контроль над вашей цифровой жизнью"><meta name="keywords" content="уроки по смартфону, цифровая грамотность, смартфон, Android, iOS, HarmonyOS, советы по телефону, цифровая жизнь, большие языковые модели, программирование с ИИ, API больших моделей, инженерия промптов, разработка под Android, разработка под iOS, Swift, Kotlin, SwiftUI, Jetpack Compose, вычислительная фотография, информационная безопасность, менеджер паролей, автоматизация, выбор смартфона"><meta name="author" content="Проводник в цифровую жизнь"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-si-shi-er-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="Глава 42: Панорама больших моделей и практика API"><meta property="og:description" content="В предыдущих главах говорилось о том, «как сотрудничать с AI». Эта глава отвеч…"><meta property="og:locale" content="ru_RU"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Урок смартфона, который вы пропустили"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Урок смартфона, который вы пропустили · v1.8"><meta name="twitter:description" content="От новичка до мастера — полный контроль над вашей цифровой жизнью"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>Глава 42: Панорама больших моделей и практика API · Урок смартфона, который вы пропустили</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-si-shi-er-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "Глава 42: Панорама больших моделей и практика API", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-si-shi-er-zhang.html", "isPartOf": {"@type": "Book", "name": "Урок смартфона, который вы пропустили", "inLanguage": "ru"}}</script>
+<link rel="prefetch" href="di-si-shi-san-zhang.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-si-shi-er-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-si-shi-er-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">Перейти к основному содержимому</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="Открыть меню оглавления" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="На главную страницу">Урок смартфона, который вы пропустили</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="Основное действие"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="Начать с основ">Начать обучение</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Поиск (Ctrl+K)" aria-label="Поиск по содержанию"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="Настройка размера шрифта"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="Уменьшить шрифт" aria-label="Уменьшить шрифт">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="Сбросить размер шрифта" aria-label="Сбросить размер шрифта">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="Увеличить шрифт" aria-label="Увеличить шрифт">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Переключить тёмную/светлую тему" aria-label="Переключить тёмную/светлую тему"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="Печать / экспорт в PDF" aria-label="Печать или экспорт в PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="Наверх">Наверх
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="Оглавление статьи"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">Оглавление
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 глав</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="Фильтр глав..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="Фильтр глав"></div><ul class="space-y-1 text-sm" id="toc-list"><!--Основы-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Начать обучение</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел основ" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>Глава 0: Три честных слова перед стартом</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>Глава 1: Сначала познакомимся с этой машиной</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Прил.: Разбор расширения памяти на Android</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Прил. к главе 1: Спецтема — ОС Harmony</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>Глава 2: Не можете найти нужное на телефоне?</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>Глава 3: Нет сети? Не спешите перезагружать</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>Глава 4: Перед установкой приложений посмотрите поближе</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Прил.: Состав пакета установки ПО</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>Глава 5: Настройте телефон под себя</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>Глава 6: Потеряли телефон? Забыли пароль?</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>Глава 7: Полный разбор передовых функций</a></li>
+                        </ul>
+                    </li>
+<!--Программы-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">II. Программы (главы 8–14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел о программах" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>Глава 8: Связь: SMS, звонки и соцсети</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>Глава 9: Мобильная работа и обучение</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>Глава 10: Мобильные платежи и бытовые сервисы</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>Глава 11: Лучше снять хорошо, чем снять больше</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Дополнение к главе 11: Профессиональные техники съёмки</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>Глава 12: Аудио, видео, развлечения и чтение</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>Глава 13: Какие приложения ставить, а какие лучше не ставить</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>Глава 14: Специально о менеджерах паролей</a></li>
+                        </ul>
+                    </li>
+<!--Продвинутый уровень-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">III. Продвинутый уровень (главы 15–20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть продвинутый раздел" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>Глава 15: Два заряда в день: батарея или привычки?</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Дополнение: все протоколы быстрой зарядки</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>Глава 16: Смена телефона: какие учётные записи можно потерять?</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>Глава 17: Связка телефона с другими устройствами</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>Глава 18: Сделайте копию, пока не забыли</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>Глава 19: Сломалось? Не спешите чинить</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>Глава 20: Режим разработчика и продвинутые права</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Прил.: Портативный Linux-терминал Termux</a></li>
+                        </ul>
+                    </li>
+<!--За пределами основ-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">IV. За рамки основ (главы 21–26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел «За рамки основ»" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>Глава 21: Можно ли подключаться к публичному Wi-Fi?</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>Глава 22: Что AI на самом деле делает в вашем телефоне?</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>Глава 23: Пусть телефон возьмёт на себя повторяющуюся работу</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Прил.: Руководство по GitHub для начинающих</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>Глава 24: Root-права и блокировка загрузчика (BL) — глубокий разбор</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>Глава 25: Продаёте старый телефон? Начните с этих шагов</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>Глава 26: Новые технологии могут подождать</a></li>
+                        </ul>
+                    </li>
+<!--5,Практика(главы 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">V. Практика (главы 27–32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел практики" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>Глава 27: Настройте телефон для родителей</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>Глава 28: Покупая телефон, сначала решите вот эти три вещи</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>Глава 29: Сколько времени вы правда проводите с телефоном?</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>Глава 30: Трансляция экрана, презентации и связь с автомобилем</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>Глава 31: Введение в съёмку коротких видео и создание контента</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>Глава 32: Проблемы? Тридцать секунд, чтобы ограничить ущерб</a></li>
+                        </ul>
+                    </li>
+<!--6,Взгляд в будущее(Глава 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VI. Перспективы (глава 33)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел «Перспективы»" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>Глава 33: Каким будет телефон в следующем десятилетии?</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>Глава 34: Телефон и автомобиль: соединяем без лишних хлопот</a></li>
+                        </ul>
+                    </li>
+<!--Спецтема: дети и телефоны(Глава 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Тема: Дети и телефон (главы 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть спецтему «Дети и смартфон»" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>Глава 35: Детям телефон: как установить правила</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>Глава 36: Как соединить все устройства дома</a></li>
+                        </ul>
+                    </li>
+<!--Программирование с ИИ на практике-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VII. Программирование с ИИ на практике (главы 37–47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел практики ИИ-программирования" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>Глава 37: Парадигмальная революция — от написания кода к руководству ИИ</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>Глава 38: Пять принципов мышления в программировании с ИИ</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>Глава 39. ИИ не понял? Скорее всего, вы сказали неясно</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>Глава 40. Сначала скажите всё как есть, потом действуйте</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>Глава 41: Панорама инструментов ИИ-программирования 2026 года</a></li>
+                            <li><a href="#di-si-shi-er-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>Глава 42: Панорама больших моделей и практика API</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>Глава 43: Как говорить с AI, чтобы он понимал</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>Глава 44: Практика от 0 до 1 — полный цикл проекта</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>Глава 45: ИИ написал, но это ещё не конец</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>Глава 46: Путь к мастерству — от пользователя до архитектора</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>Глава 47: Справочник и ресурсы</a></li>
+                        </ul>
+                    </li>
+<!--Разработка под Android на практике-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VIII. Разработка под Android на практике (главы 48–58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел практики разработки под Android" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>Глава 48: Как Android стал таким, какой он есть?</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>Глава 49: Настройка окружения — Android Studio и первый проект</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>Глава 50: Быстрый старт с Kotlin — первый язык Android-разработки</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>Глава 51: Разработка интерфейсов — введение в Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>Глава 52: Четыре основных компонента и жизненный цикл Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>Глава 53: Хранение данных и сетевые запросы</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>Глава 54: Проект 1 — мой учёт расходов (локальная версия)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>Глава 55: Проект 2 — приложение погоды (сетевая версия)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>Глава 56. Приложение готово? Выпустите его в Google Play</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>Глава 57: Путь к мастерству — разрешения, уведомления и современная архитектура</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>Глава 58: Справочник и ресурсы</a></li>
+                        </ul>
+                    </li>
+<!--Разработка под iOS на практике-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">IX. Разработка под iOS на практике (главы 59–69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел практики разработки под iOS" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>Глава 59: Знакомство с iOS — экосистема Apple и экосистема разработки</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>Глава 60: Настройка окружения — Xcode и первый проект</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>Глава 61: Быстрый старт со Swift — первый язык разработки под Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>Глава 62: Разработка интерфейсов — введение в SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>Глава 63: Виды, состояние и навигация</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>Глава 64: Хранение данных и сетевые запросы</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>Глава 65: Проект 1 — мой учёт расходов (локальная версия)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>Глава 66: Проект 2 — приложение погоды (сетевая версия)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>Глава 67: Шлифовка и публикация — выпуск в App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>Глава 68: Путь к мастерству — разрешения, уведомления и современная архитектура</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>Глава 69: Справочник и ресурсы</a></li>
+                        </ul>
+                    </li>
+<!--Приложение-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">X. Приложения</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть приложения" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>A Приложение A: Процедура распаковки нового телефона</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>Приложение B: Застряли на упражнении?</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>Приложение C: Мини-глоссарий терминов</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>D Приложение D: Где искать надёжные ресурсы</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>E Приложение E: Благодарности и пояснения</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>Приложение F: Спецтема — выбор и использование складного смартфона</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>Заключение: Разберитесь в телефоне, и этого хватит</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>G Приложение G: Быстрый указатель по всей книге</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>H Приложение H: Дорожная карта версий</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="Поиск"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="Поиск по содержанию..." autocomplete="off" aria-label="Поисковый запрос"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Закрыть поиск">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">Введите ключевое слово для поиска</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- Наверх (навигационная цепочка) --><nav class="breadcrumb no-print" aria-label="Расположение"><a href="#top">Главная</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">Курс цифровой грамотности · v1.8</span></nav>
+<div id="di-si-shi-er-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">Глава 42: Панорама больших моделей и практика работы с API</h3>
+<p class="chapter-intro mb-4">В предыдущих главах говорилось о том, «как сотрудничать с AI». Эта глава отвечает на более базовый вопрос: «Каким AI пользоваться? Как именно?» К августу 2026 года ландшафт больших моделей стал чрезвычайно богатым: на международной арене соперничают три лидера, GPT, Claude и Gemini, а в Китае пышным цветом расцвели DeepSeek, Tongyi Qianwen, GLM, Kimi и Doubao. У каждой модели свой характер и свои сильные стороны: удачный выбор удваивает результат при тех же усилиях, неудачный, наоборот. В этой главе вы не только познакомитесь с этими моделями, но и научитесь подключать их к своим приложениям через API, а также подбирать подходящий пакет лимитов (Token Plan) под свои задачи.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">1. Ведущие международные модели: расстановка трёх лидеров</h4>
+<p class="mb-2">К августу 2026 года на международном рынке больших моделей сложился «триумвират»: OpenAI (серия GPT), Anthropic (серия Claude) и Google (серия Gemini). У каждой компании яркий собственный почерк, познакомимся с ними по очереди.</p>
+<h5 class="font-semibold mt-3 mb-1">1. Серия OpenAI GPT-5.6: универсальный «шестигранный боец»</h5>
+<p class="mb-2">OpenAI стояла у истоков волны больших моделей, и серия GPT до сих пор остаётся самой востребованной в мире. Вышедшая в июле 2026 года серия GPT-5.6 использует стратегию трёх уровней: флагман GPT-5.6 Sol рассчитан на задачи с требовательными рассуждениями, сбалансированный GPT-5.6 Terra — на повседневную разработку, а лёгкий GPT-5.6 Luna, на сценарии с высокой нагрузкой и низкой стоимостью. У всех трёх моделей контекстное окно в 1,05 млн токенов; все они поддерживают ввод изображений, вызов функций и структурированный вывод.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Модель</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Позиционирование</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Ввод (за 1 млн токенов)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Вывод (за 1 млн токенов)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Контекстное окно</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GPT-5.6 Sol</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Флагманские рассуждения</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">5,00 долл. (около 36 юаней)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">30,00 долл. (около 217 юаней)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1,05 млн токенов</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GPT-5.6 Terra</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Сбалансированные повседневные задачи</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2,50 долл. (около 18 юаней)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">15,00 долл. (около 109 юаней)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1,05 млн токенов</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GPT-5.6 Luna</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Лёгкий, дешёвый</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1,00 долл. (около 7 юаней)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">6,00 долл. (около 44 юаней)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1,05 млн токенов</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Цены серии OpenAI GPT-5.6 (август 2026 г.)</p>
+<p class="mb-2">Ключевое преимущество серии GPT: сбалансированность — рассуждения, программирование, письмо, мультимодальность, без заметных слабых мест. Добавьте огромную экосистему плагинов и сообщество разработчиков OpenAI, самая проработанная документация и цепочки инструментов. Когда вы «не знаете, что выбрать», GPT — ответ по умолчанию, «который не подведёт даже с закрытыми глазами». Но есть минусы: доступ из Китая требует особых сетевых средств, по-китайски модель иногда звучит с «переводным акцентом», а цены API, выше среднего.</p>
+<div class="success-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Хорошая новость</p>
+<p class="mt-1">В августе 2026 года OpenAI объявила, что моделью по умолчанию для бесплатных пользователей стала GPT-5.6 Luna, а текстовый чат открыт без лимитов. Это значит, что базовые возможности GPT вы можете опробовать бесплатно, платить придётся только если нужны более мощные рассуждения или вызовы API.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">2. Серия Anthropic Claude: эталон программирования и строгости</h5>
+<p class="mb-2">Если GPT, универсальный игрок, то Claude, «потолок» в программировании. Серия Claude от Anthropic долго время с большим отрывом лидирует в SWE-bench (бенчмарке программной инженерии); качество генерации кода и способность доводить проекты до промышленного уровня, первые в отрасли. Что ещё ценнее, у Claude самый низкий в сети уровень галлюцинаций (вероятности выдачи ложной информации), всего около 1%. Поэтому он особенно подходит для высокоточных сценариев: наука, юриспруденция и т. п.</p>
+<p class="mb-2">Ещё один козырь Claude — сверхдлинный контекст: контекстное окно в 1 млн токенов позволяет за один раз «прочитать» контракт на сотни страниц или целую кодовую базу, ничего не упустив. В задачах вроде рефакторинга кода и анализа длинных документов он практически незаменим. Claude Code как инструмент AI-программирования в терминале к середине 2026 года достиг годовой выручки в 2,5 млрд долларов, лучшее подтверждение признания способностей Claude к программированию.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Модель</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Позиционирование</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Ввод (за 1 млн токенов)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Вывод (за 1 млн токенов)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Контекстное окно</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Fable 5</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Флагман</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">10,00 долл. (около 72 юаней)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">50,00 долл. (около 362 юаней)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 млн токенов</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Opus 4.8</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Профессиональный</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">5,00 долл. (около 36 юаней)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">25,00 долл. (около 181 юаня)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 млн токенов</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Sonnet 5</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Оптимум по цене и качеству</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2,00 долл. (около 14 юаней)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">10,00 долл. (около 72 юаней)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 млн токенов</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Цены серии Anthropic Claude (август 2026 г.; Sonnet 5: по льготной цене)</p>
+<p class="mb-2">Слабое место Claude: цена: у Fable 5 самая высокая цена вывода среди всех моделей — 50 долларов за миллион токенов. Мультимодальные возможности (понимание изображений и видео) тоже сравнительно слабее. Для индивидуальных разработчиков с ограниченным бюджетом Sonnet 5 в льготный период даёт особенно выгодное соотношение цены и качества.</p>
+<h5 class="font-semibold mt-3 mb-1">3. Серия Google Gemini: король мультимодальности</h5>
+<p class="mb-2">Серия Gemini от Google к 2026 году доросла до версии 3.1 Pro. Главный козырь Gemini: нативная мультимодальность: точный разбор текста и изображений, безошибочное распознавание таблиц через OCR, эффективное извлечение кадров видео, плюс глубокий разбор аудио и видео. Модель глубоко интегрирована с экосистемой Google (поиск, почта, облачные сервисы) и блестяще справляется с поиском информации в реальном времени и межмодальным пониманием. Gemini также поддерживает сверхдлинный контекст ввода в 2 млн токенов — это самое большое контекстное окно среди существующих моделей.</p>
+<p class="mb-2">Gemini позиционируется как «выбор номер один для научных рассуждений и мультимодальных задач». Если ваш проект связан с анализом большого числа изображений, пониманием видео или научными вычислениями, у Gemini почти нет конкурентов. Но в генерации кода по чистому тексту он немного уступает Claude, а по-китайски выражается менее естественно, чем китайские модели.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Параметр сравнения</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">GPT-5.6</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Claude Fable 5</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Gemini 3.1 Pro</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Общий балл</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">94.8</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">95.0</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">92.1</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Навыки программирования (SWE-bench)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">74.9%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">64.3% (Pro)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Средний</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Контекстное окно</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1,05 млн токенов</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 млн токенов</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2 млн токенов</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Мультимодальность</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Сбалансированная</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Слабая</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Самая сильная</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Уровень галлюцинаций</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Низкий</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Самый низкий (около 1%)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Низкий</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Доступность в Китае</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Требует особой сети</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Требует особой сети</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Требует особой сети</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">API-экосистема</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Самая развитая</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">В развитии</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Привязка к экосистеме Google</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Сравнение трёх международных моделей (август 2026 г.)</p>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Внимание: реальные барьеры при использовании в Китае</p>
+<p class="mt-1">Для китайских разработчиков главное препятствие для GPT, Claude и Gemini, сетевой доступ. Пользоваться ими можно опосредованно, через прокси Azure, платформы-агрегаторы API и т. п., — но стабильность и легальность нужно оценивать самостоятельно. Если ваш проект предъявляет строгие требования к безопасности данных, лучше в первую очередь рассмотреть китайские модели.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">2. Ведущие китайские модели: богатое разнообразие</h4>
+<p class="mb-2">В 2026 году китайские большие модели перестали быть «догоняющими» и бегут наравне с лидерами, а в некоторых областях даже вырвались вперёд. В отличие от споров 2023 года о «моделях-обёртках», китайские флагманы 2026 года уже на равных с передовыми международными моделями в логических рассуждениях, генерации кода и понимании китайского языка, разрыв сократился до 5% и меньше. Что ещё важнее, у китайских моделей есть незаменимые преимущества в китайскоязычных сценариях, стоимости и развёртывании с соблюдением норм.</p>
+<h5 class="font-semibold mt-3 mb-1">1. DeepSeek V4: король цены и качества</h5>
+<p class="mb-2">DeepSeek, феномен среди китайских больших моделей. В начале 2025 года DeepSeek-V3 потряс рынок позицией «в десять раз дешевле GPT при равных возможностях» , и получил в отрасли имя «линия уничтожения универсальных AI-моделей»: те, что дешевле, не так удобны, а те, что дороже, не дают такого объёма и щедрости. К августу 2026 года вышел официальный релиз DeepSeek V4-Pro: MoE-архитектура на 1,6 трлн параметров с активацией около 49 млрд, поддержка контекста в 1 млн токенов без потерь; соотношение цены и качества в коде считается общемировым потолком.</p>
+<p class="mb-2">В DeepSeek V4 резко выросли агентные способности: бенчмарк DeepSWE подскочил с 12,8 до 62,7 (+390%), а NL2Repo. С 38,5 до 61,5. API получил поддержку сразу двух протоколов, Responses API и Anthropic API — и уже совместим с популярными инструментами программирования вроде Codex и Claude Code. Это значит, что вы можете использовать API DeepSeek вместо API Claude прямо в Claude Code: затраты падают в несколько раз, а впечатления почти идентичны.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Модель</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Позиционирование</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Ввод (за 1 млн токенов)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Вывод (за 1 млн токенов)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Контекстное окно</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">DeepSeek V4 Pro</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Флагманские рассуждения</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">3 юаня (около 0,43 долл.)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">6 юаней (около 0,87 долл.)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 млн токенов</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">DeepSeek V4 Flash</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Лёгкий и быстрый</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 юань (около 0,14 долл.)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2 юаня (около 0,28 долл.)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 млн токенов</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Цены серии DeepSeek V4 (август 2026 г., акционные)</p>
+<p class="mb-2">Сравнение цен: за 1 млн токенов ввода плюс 1 млн токенов вывода DeepSeek V4 Flash стоит около 0,42 доллара, GPT-5.6 Sol, около 35 долларов, а Claude Fable 5, около 60 долларов. Разница достигает 80–140 раз.</p>
+<div class="danger-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Осторожно: DeepSeek готовится поднять цены</p>
+<p class="mt-1">Официально DeepSeek 6 августа 2026 года объявил о «плане в ближайшее время заметно поднять цены на API». Акционные цены могут долго не продержаться. По слухам в СМИ, подорожание может достигнуть 30 раз; по состоянию на 14 августа окончательная схема цен не опубликована. Кроме того, официальный релиз DeepSeek V4 ввёл тарифы «пик–непик»: в часы пик вызовы стоят вдвое дороже. Следите за официальными объявлениями, чтобы знать актуальные цены.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">2. Tongyi Qianwen Qwen3.7 Max: корпоративный выбор Alibaba Cloud</h5>
+<p class="mb-2">Серия Tongyi Qianwen (Qwen) от Alibaba Cloud, опираясь на экосистему Alibaba Cloud, имеет естественные преимущества в корпоративном развёртывании. Флагман июля 2026 года, Qwen3.7 Max: плотная модель на 235 млрд параметров с нативным контекстом 256K, расширяемым до 1 млн. Ключевые преимущества Qwen: зрелая open-source-экосистема (открыта вся линейка от 7B до 235B), точное понимание китайскоязычных сценариев и глубокая интеграция с инфраструктурой Alibaba Cloud.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Модель</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Цена вывода (за 1 млн токенов)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Сценарии применения</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen-turbo</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">0,6 юаня</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Простые вопросы-ответы, классификация текста, высокая нагрузка</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen-long</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">2,0 юаня</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Обработка сверхдлинного контекста (10 млн)</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen3.7-flash</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">7,2 юаня</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Обычные диалоги, генерация контента</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen3.7-plus</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">12,0 юаня</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Мультимодальность (изображения и видео), тексты на китайском</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">qwen3.7-max</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">36,0 юаней</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Флагманские возможности для китайского языка, сложные задачи</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Ступенчатые цены серии Tongyi Qianwen Qwen (август 2026 г.)</p>
+<p class="mb-2">Цены Qwen выстроены ступенями — от сверхдешёвого qwen-turbo (вывод 0,6 юаня за миллион токенов) до флагмана qwen3.7-max (вывод 36 юаней за миллион токенов), покрывая все сценарии: от простых вопросов-ответов до сложных рассуждений. Для компаний, уже работающих с Alibaba Cloud, Qwen, самый удобный вариант интеграции.</p>
+<h5 class="font-semibold mt-3 mb-1">3. Zhipu GLM-5.1: первое место среди китайских моделей в SWE-bench</h5>
+<p class="mb-2">Серия GLM от Zhipu AI в 2026 году выглядела блестяще. GLM-5.1 занял первое место среди китайских моделей в SWE-bench: гибридная MoE-архитектура на 744 млрд параметров, поддержка контекста в 1 млн токенов. Его отличают точное понимание китайской семантики и поддержка легального частного развёртывания в Китае, это очень важно для финансов и госсектора, где требования к безопасности данных высоки. Цены GLM-5.1: ввод 6 юаней, вывод 24 юаня за миллион токенов: середина среди китайских моделей.</p>
+<h5 class="font-semibold mt-3 mb-1">4. Kimi K3: король сверхдлинных текстов</h5>
+<p class="mb-2">Серия Kimi от компании Moonshot AI славится обработкой сверхдлинных текстов. Вышедший в июле 2026 года Kimi K3 имеет 2,8 трлн параметров и в ряде оценок сложных задач входит в мировой первый эшелон. Главные сценарии Kimi, анализ длинных кодовых баз и расширенный поиск по длинным документам: он может обработать текст целой книги или код целого проекта и блестяще справляется с задачами поиска «иголки в стоге сена». Цены у Kimi сравнительно высокие (вывод около 12–20 юаней за миллион токенов), но по цене и качеству в сценариях с длинными текстами ему нет равных.</p>
+<h5 class="font-semibold mt-3 mb-1">5. Doubao: универсальный игрок ByteDance</h5>
+<p class="mb-2">Серия Doubao от ByteDance в 2026 году показывает стабильные результаты. Doubao Seed 2.1 Pro: флагманская модель Volcano Engine с контекстом 256K: в реальных тестах она работает стабильно, а в китайскоязычных сценариях особенно приятна. Преимущества Doubao: большие бесплатные пакеты токенов сразу после регистрации, хорошо проработанная интеграция с экосистемой Volcano Engine и одни из самых низких цен в Китае. Для новичков, которые хотят быстро попробовать AI-программирование, Doubao, вход без порога.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Параметр сравнения</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">DeepSeek V4</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Qwen3.7 Max</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">GLM-5.1</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Kimi K3</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Doubao 2.1 Pro</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Общий балл</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">87.5</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">89.7</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">90.5</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">88+</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">85+</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Навыки программирования</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Очень сильные</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Сильная</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">№1 в SWE среди китайских моделей</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Сильная</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Выше среднего</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Понимание китайского языка</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Отлично</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Отлично</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Точно</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Отлично</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Отлично</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Контекстное окно</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 млн</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">256K-1M</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">1 млн</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Сверхдлинное</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">256K</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Цена вывода (юаней за 1 млн)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">6</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">36</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">24</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">12-20</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">30</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Открытый код</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Лицензия MIT</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Вся линейка открыта</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Частично открыт</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Закрытый</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Закрытый</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Частное развёртывание</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Да</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Да</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Да</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Нет</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Нет</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Сравнение пяти ведущих китайских моделей (август 2026 г.)</p>
+<p class="mb-2">Важный тренд: ощущение «поколенческого разрыва» между китайскими моделями и GPT/Claude исчезло. В логических рассуждениях и математических олимпиадах отрыв китайских флагманов от GPT-5: обычно однозначные числа. В системном архитектурном мышлении и сложных инженерных рассуждениях Claude всё ещё впереди: он предлагает более «вдохновлённые» архитектурные решения, тогда как китайские модели порой выглядят «догматично». Но в китайскоязычных сценариях, контроле затрат и легальном развёртывании у китайских моделей подавляющее преимущество.</p>
+<div class="figure">
+<svg style="max-width:100%;height:auto" width="620" height="290" viewBox="0 0 620 290" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+ <rect x="0" y="0" width="620" height="290" style="fill:var(--ink-inverse)" rx="8"/>
+ <line x1="70" y1="230" x2="590" y2="230" stroke="var(--muted)" stroke-width="1.5"/>
+ <line x1="70" y1="230" x2="70" y2="20" stroke="var(--muted)" stroke-width="1.5"/>
+ <line x1="70" y1="60" x2="590" y2="60" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+ <line x1="70" y1="116" x2="590" y2="116" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+ <line x1="70" y1="173" x2="590" y2="173" stroke="var(--line)" stroke-width="1" stroke-dasharray="4,4"/>
+ <text x="62" y="234" font-size="10" fill="var(--muted-2)" text-anchor="end">0</text>
+ <text x="62" y="120" font-size="10" fill="var(--muted-2)" text-anchor="end">50</text>
+ <text x="62" y="64" font-size="10" fill="var(--muted-2)" text-anchor="end">100</text>
+ <text x="340" y="262" font-size="10.5" fill="var(--ink-2)" text-anchor="middle">Цена вывода (юаней/млн токенов)</text>
+ <!-- bars: price -->
+ <rect x="95" y="218" width="60" height="12" fill="var(--accent-book)"/><text x="125" y="212" font-size="9" fill="var(--ink-2)" text-anchor="middle">6</text><text x="125" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">DeepSeek</text>
+ <rect x="195" y="146" width="60" height="84" fill="var(--accent-book)"/><text x="225" y="140" font-size="9" fill="var(--ink-2)" text-anchor="middle">36</text><text x="225" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">Qwen</text>
+ <rect x="295" y="182" width="60" height="48" fill="var(--accent-book)"/><text x="325" y="176" font-size="9" fill="var(--ink-2)" text-anchor="middle">24</text><text x="325" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">GLM</text>
+ <rect x="395" y="200" width="60" height="30" fill="var(--accent-book)"/><text x="425" y="194" font-size="9" fill="var(--ink-2)" text-anchor="middle">16</text><text x="425" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">Kimi</text>
+ <rect x="495" y="170" width="60" height="60" fill="var(--accent-book)"/><text x="525" y="164" font-size="9" fill="var(--ink-2)" text-anchor="middle">30</text><text x="525" y="248" font-size="9.5" fill="var(--ink-2)" text-anchor="middle">Доубао</text>
+ <!-- scores -->
+ <circle cx="125" cy="118" r="5" fill="var(--gold)"/><text x="140" y="114" font-size="9" fill="#78350f">87.5</text>
+ <circle cx="225" cy="110" r="5" fill="var(--gold)"/><text x="240" y="106" font-size="9" fill="#78350f">89.7</text>
+ <circle cx="325" cy="105" r="5" fill="var(--gold)"/><text x="340" y="101" font-size="9" fill="#78350f">90.5</text>
+ <circle cx="425" cy="112" r="5" fill="var(--gold)"/><text x="440" y="108" font-size="9" fill="#78350f">88+</text>
+ <circle cx="525" cy="116" r="5" fill="var(--gold)"/><text x="540" y="112" font-size="9" fill="#78350f">85+</text>
+ <rect x="90" y="30" width="12" height="12" fill="var(--accent-book)"/><text x="108" y="41" font-size="9.5" fill="var(--ink-2)">Цена вывода (ниже — лучше)</text>
+ <circle cx="170" cy="36" r="5" fill="var(--gold)"/><text x="182" y="40" font-size="9.5" fill="var(--ink-2)">Общий балл (выше — лучше)</text>
+ </svg>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Рисунок 4: сравнение пяти моделей по цене и производительности (чем ниже цена и выше балл, тем лучше)</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">3. Каркас принятия решения при выборе модели</h4>
+<p class="mb-2">Узнав особенности моделей, как выбрать модель для своего проекта? Дарим вам «метод четырёх вопросов», ответьте на четыре вопроса, и вы определите самую подходящую модель.</p>
+<div class="figure">
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> Проект разворачивается в Китае или за рубежом?</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">Китай → выбирайте китайскую модель</span><span class="text-gray-400 mx-1">│</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">Международный → доступны зарубежные модели</span></div>
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> Основная задача — программирование или что-то другое?</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">Программирование → Claude или DeepSeek</span><span class="text-gray-400 mx-1">│</span> <span class="border-2 border-gray-400 bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 rounded-md px-3 py-1 text-sm text-center">Другое → продолжаем выбор</span></div>
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> Нужен сверхдлинный контекст (&gt;500 тыс. токенов)?</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">Да → Gemini или Kimi</span><span class="text-gray-400 mx-1">│</span> <span class="border-2 border-gray-400 bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 rounded-md px-3 py-1 text-sm text-center">Нет → продолжаем выбор</span></div>
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> Бюджет ограничен?</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">Да → DeepSeek или Qwen-turbo</span><span class="text-gray-400 mx-1">│</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center">Нет → GPT-5.6 или Claude</span></div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Рисунок 5: метод четырёх вопросов для выбора большой модели</p>
+</div>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Совет: комбинированная стратегия</p>
+<p class="mt-1">Этот метод, не догма: во многих случаях полезно комбинировать несколько моделей. Распространённая стратегия: DeepSeek или Qwen для повседневной разработки (дёшево, хорошо на китайском), Claude для ключевых архитектурных решений (сильные рассуждения, мало галлюцинаций), Gemini для мультимодального анализа (работа с изображениями и видео). Переключайте модели по необходимости, а не «используйте одну до конца».</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">4. Первые шаги с API: подключаем большую модель с нуля</h4>
+<p class="mb-2">Многие учебники по AI-программированию учат только работе с чат-интерфейсом, но настоящее «AI-программирование», когда ваше приложение само вызывает большую модель: идёт через API. API (Application Programming Interface, программный интерфейс приложения), это протокол общения между программами. Через API ваш код может задействовать возможности большой модели так же просто, как вызывает обычную функцию.</p>
+<h5 class="font-semibold mt-3 mb-1">1. Что такое токен</h5>
+<p class="mb-2">Прежде чем разбираться с API, нужно понять понятие «токен». Токен, базовая единица тарификации больших моделей; её можно назвать «единицей чтения и письма AI». Один токен примерно соответствует 0,75 английского слова (4 символам) или 0,5–1 китайскому иероглифу. Китайский текст в 1000 знаков потребляет примерно 1500–2000 токенов.</p>
+<p class="mb-2">Токен, это не количество слов и не количество символов. Большая модель с помощью специального токенизатора (Tokenizer) разбивает текст на токены. Одно и то же слово в разных моделях может занимать разное число токенов: например, «искусственный интеллект» по-китайски: 3 токена в GPT и, возможно, 2 в DeepSeek. API большинства моделей возвращает фактическое число израсходованных токенов, его можно посмотреть в ответе API.</p>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Быстрая оценка стоимости в токенах</p>
+<p class="mt-1">1 миллион китайских знаков, это примерно 1,5 млн токенов. Обработать 1 млн знаков ввода плюс 1 млн знаков вывода с DeepSeek V4 Flash стоит около 0,42 доллара (примерно 3 юаня); с Claude Fable 5 тот же объём, около 60 долларов (примерно 434 юаня). Вот почему выбор модели напрямую влияет на стоимость вашего проекта.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">2. Получение API-ключа</h5>
+<p class="mb-2">Первый шаг к работе с API больших моделей, получить API-ключ (API Key), то есть строку-ключ для подтверждения личности. У каждого провайдера моделей своя API-платформа: нужно зарегистрировать аккаунт и создать API-ключ. Ниже: входы на API-платформы основных моделей и порядок получения ключа:</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Модель</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">API-платформа</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Порядок получения</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Бесплатный лимит</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">DeepSeek</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">platform.deepseek.com</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Регистрация → верификация личности → создание API-ключа</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Бесплатный лимит для новых пользователей</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Tongyi Qianwen</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">bailian.aliyun.com (платформа Bailian)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Вход с аккаунтом Alibaba Cloud → включение сервиса → создание ключа</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Бесплатный пробный период для новых пользователей</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Zhipu GLM</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">open.bigmodel.cn</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Регистрация → верификация личности → создание API-ключа</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Бесплатный лимит для новых пользователей</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Kimi</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">platform.moonshot.cn</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Регистрация → верификация личности → создание API-ключа</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Ограниченный бесплатный лимит</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Doubao</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">volcengine.com (Volcano Engine)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Регистрация → включение Ark → создание API-ключа</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Много токенов в подарок за регистрацию</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OpenAI GPT</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">platform.openai.com</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Регистрация → привязка кредитной карты → создание API-ключа</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Без бесплатного лимита (платно)</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Anthropic Claude</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">console.anthropic.com</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Регистрация → привязка карты → создание API-ключа</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Небольшой лимит для новых пользователей</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">API-платформы основных моделей и способы получения ключа (август 2026 г.)</p>
+<div class="danger-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Безопасность: API-ключ = пароль от кошелька</p>
+<p class="mt-1">API-ключ равнозначен паролю от вашего кошелька: любой, кто получит ключ, сможет вызывать модели за ваш счёт. Поэтому: никогда не пишите API-ключ прямо в коде (храните его в переменных окружения); никогда не отправляйте код с ключом в публичный Git-репозиторий; никогда не публикуйте в соцсетях скриншоты с ключом. Если ключ утёк, немедленно удалите его на платформе и создайте новый.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">3. Первый вызов API</h5>
+<p class="mb-2">Получив API-ключ, вы можете вызывать API больших моделей на любом языке программирования. Ниже — простейший вызов на Python: отправляем DeepSeek сообщение и получаем ответ.</p>
+<div class="code-block">
+<div class="code-head"><span>PYTHON · Первый вызов API</span><span class="dots">···</span></div>
+<pre># Установите SDK: pip install openai
+# DeepSeek совместим с форматом OpenAI SDK — можно использовать напрямую
+from openai import OpenAI
+import os
+
+# 1. Создаём клиент (API-ключ читается из переменной окружения)
+client = OpenAI(
+ api_key=os.environ.get("DEEPSEEK_API_KEY"),
+ base_url="https://api.deepseek.com"
+)
+
+# 2. Отправляем запрос
+response = client.chat.completions.create(
+ model="deepseek-chat", # указываем модель
+ messages=[
+ {"role": "system", "content": "Ты — ассистент по программированию на Python."},
+ {"role": "user", "content": "Напиши функцию быстрой сортировки."}
+ ]
+)
+
+# 3. Получаем ответ
+print(response.choices[0].message.content)
+
+# 4. Смотрим расход токенов
+print(f"Входные токены: {response.usage.prompt_tokens}")
+print(f"Выходные токены: {response.usage.completion_tokens}")
+print(f"Всего токенов: {response.usage.total_tokens}")</pre>
+</div>
+<p class="mb-2">Ключевая логика этого кода: создаём клиент (с API-ключом и адресом модели) → формируем список сообщений (system задаёт роль, user — ввод пользователя) → отправляем запрос → получаем ответ. Этот шаблон подходит почти для всех моделей, совместимых с форматом OpenAI: чтобы сменить модель, достаточно поменять api_key и base_url. Именно поэтому многие китайские модели сделали совместимость с форматом OpenAI SDK: разработчику хватает двух строк кода, чтобы переключить модель, — затраты на мигрение минимальны.</p>
+<p class="mb-2">Ниже, различия в коде при переключении на другие модели. Обратите внимание: меняются всего две строки:</p>
+<div class="code-block">
+<div class="code-head"><span>PYTHON · Смена модели — всего две строки</span><span class="dots">···</span></div>
+<pre># DeepSeek
+client = OpenAI(
+ api_key=os.environ.get("DEEPSEEK_API_KEY"),
+ base_url="https://api.deepseek.com"
+)
+# model="deepseek-chat"
+
+# Tongyi Qianwen (платформа Bailian)
+client = OpenAI(
+ api_key=os.environ.get("DASHSCOPE_API_KEY"),
+ base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"
+)
+# model="qwen-plus"
+
+# Zhipu GLM
+client = OpenAI(
+ api_key=os.environ.get("GLM_API_KEY"),
+ base_url="https://open.bigmodel.cn/api/paas/v4"
+)
+# model="glm-4"
+
+# OpenAI GPT
+client = OpenAI(
+ api_key=os.environ.get("OPENAI_API_KEY"),
+ # base_url можно оставить по умолчанию
+)
+# model="gpt-5.6-terra"</pre>
+</div>
+<h5 class="font-semibold mt-3 mb-1">4. Потоковые ответы (Streaming)</h5>
+<p class="mb-2">В реальных приложениях обычно не хочется ждать, пока AI допишет всё до конца, чтобы показать текст одним куском, — пользователю пришлось бы ждать слишком долго. Потоковый ответ (Streaming) позволяет показывать текст слово за словом по мере генерации, заметно улучшая впечатление от работы. Как на печатной машинке: буквы выпрыгивают одна за другой: ощущения совсем другие.</p>
+<div class="code-block">
+<div class="code-head"><span>PYTHON · Потоковый ответ</span><span class="dots">···</span></div>
+<pre># Потоковый ответ: вывод по символам
+stream = client.chat.completions.create(
+ model="deepseek-chat",
+ messages=[
+ {"role": "user", "content": "Напиши туториал по пузырьковой сортировке на Python"}
+ ],
+ stream=True # включаем потоковый режим
+)
+
+# Получаем по кускам и печатаем
+for chunk in stream:
+ if chunk.choices[0].delta.content is not None:
+ print(chunk.choices[0].delta.content, end="", flush=True)
+# Вывод появится посимвольно, как на печатной машинке</pre>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">5. Руководство по покупке Token Plan</h4>
+<p class="mb-2">У большинства провайдеров моделей два способа тарификации: оплата по мере использования (Pay-as-you-go) и подписочный план (Token Plan / Subscription). Понимание разницы между ними поможет заметно снизить ваши затраты.</p>
+<h5 class="font-semibold mt-3 mb-1">1. Оплата по использованию или подписка</h5>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Критерий</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Оплата по использованию (Pay-as-you-go)</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Подписка (Subscription)</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Способ оплаты</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Платите за фактически израсходованные токены</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Фиксированная предоплата за лимит</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Подходит для</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Нестабильное потребление, редкие вызовы</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Стабильное потребление, частые вызовы</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Ценовое преимущество</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Стандартная цена</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">На 20–50% ниже оплаты по использованию</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Гибкость</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Доступно в любой момент, без обязательств</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Нужна предоплата; лимит может сгореть</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Превышение лимита</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Автоматический переход к оплате по использованию</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">После исчерпания лимита — оплата по использованию</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Типичные платформы</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Официальные API-платформы каждой модели</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OpenAI Plus/Pro, Claude Pro, Cursor Pro</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Сравнение двух способов оплаты</p>
+<p class="mb-2">Новичкам советуем начинать с оплаты по использованию: без предоплаты, платите ровно за то, что потратили. Когда месячное потребление стабилизируется (например, превысит 50 юаней в месяц), подумайте о переходе на подписку ради более низкой цены за единицу.</p>
+<h5 class="font-semibold mt-3 mb-1">2. Обзор популярных подписок</h5>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">План</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Цена в месяц</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Что входит</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Кому подходит</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ChatGPT Free</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Бесплатно</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Безлимитный текстовый чат с GPT-5.6 Luna</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Проба для новичков с нуля</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ChatGPT Plus</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">20 долл./мес</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">GPT-5.6 Sol, генерация изображений, анализ данных, доступ к плагинам</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Умеренно активные пользователи</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">ChatGPT Pro</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">200 долл./мес</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Безлимитный доступ ко всем моделям, приоритетный доступ к новинкам</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Профессионалы с высокой нагрузкой</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Free</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Бесплатно</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Ограниченное число диалогов с Claude</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Проба для новичков с нуля</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Claude Pro</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">20 долл./мес</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Безлимитное использование Claude, приоритетный доступ к новым моделям</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Разработчики</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Cursor Free</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Бесплатно</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Ограниченное число AI-дополнений и диалогов</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Проба для начинающих</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Cursor Pro</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">20 долл./мес</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Безлимитные AI-дополнения, 500 премиум-запросов в месяц</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Разработчики на каждый день</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Cursor Business</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">40 долл./мес за человека</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Командная работа, панель администратора, режим приватности</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Команды</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Подписки популярных AI-инструментов (август 2026 г.)</p>
+<p class="mb-2">У китайских моделей подписочные схемы немного другие. DeepSeek работает в основном по оплате за использование, месячных подписок нет: вы пополняете счёт и платите по факту. Tongyi Qianwen на платформе Bailian предлагает предоплаченные пакеты ресурсов (покупаете определённый объём токенов со скидкой). У Doubao на Volcano Engine есть похожие предоплаченные схемы. Для китайских разработчиков самая экономная комбинация обычно такая: DeepSeek с оплатой по использованию (повседневная разработка) + бесплатные лимиты Doubao (пробы и тесты).</p>
+<h5 class="font-semibold mt-3 mb-1">3. Платформы-агрегаторы API</h5>
+<p class="mb-2">Если нужно пользоваться сразу несколькими моделями, платформа-агрегатор API, беспроблемный выбор. Агрегатор даёт один общий API-ключ, с которым доступны десятки моделей по всему миру,: регистрироваться отдельно на каждой платформе не придётся.</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Платформа</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Особенности</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Ценовое преимущество</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Подходит для</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">OpenRouter (openrouter.ai)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Международный агрегатор: один ключ открывает модели всего мира</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Прозрачные цены, сравнение в реальном времени</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Тем, кто гибко переключается между зарубежными моделями</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">SiliconFlow (siliconflow.cn)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Китайский агрегатор: API множества китайских моделей</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">На 20–30% ниже официальных цен</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Китайские разработчики, сравнение цен между моделями</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Azure OpenAI (прокси Microsoft)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">API OpenAI через прокси Microsoft Azure</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Batch API даёт скидку 50%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Корпоративные вызовы OpenAI, крупные асинхронные задачи</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Baidu Qianfan (qianfan.baidubce.com)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Облачная AI-платформа Baidu: модели ERNIE (Wenxin) и другие</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Бесплатный лимит для новых пользователей</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Пользователи экосистемы Baidu</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Популярные агрегаторы API (август 2026 г.)</p>
+<div class="danger-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Осторожно: не покупайте «общие ключи»</p>
+<p class="mt-1">Не покупайте так называемые «общие API-ключи» на Taobao, Xianyu и подобных площадках: происхождение таких ключей неизвестно, аккаунт могут заблокировать в любой момент, плюс есть риск утечки данных. Получайте API-ключи только через официальные или проверенные платформы-агрегаторы.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">4. Стратегии экономии</h5>
+<p class="mb-2">Правильно выбранная модель: только первый шаг; не менее важно «пользоваться экономно». Вот несколько проверенных на практике стратегий снижения затрат:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Используйте попадания в кэш. У многих моделей есть «кэширование»: если в запросе есть уже обработанное ранее содержимое (например, системный промпт), эта часть тарифицируется по очень низкой цене. У DeepSeek попадание в кэш стоит всего 1/60 обычной цены. Ставьте фиксированный системный промпт в начало списка сообщений: так вы максимизируете попадания в кэш.</li>
+  <li>Многоуровневая маршрутизация: простые задачи: дешёвой модели, сложные, дорогой. Например, DeepSeek V4 Flash для классификации текстов (вывод 2 юаня за миллион токенов), а Claude, для архитектурного проектирования (вывод 181 юань за миллион токенов). В проекте около 80% вызовов можно отдать дешёвой модели.</li>
+  <li>Ограничивайте длину вывода. API тарифицируется по токенам вывода: чем длиннее вывод, тем дороже. Если пространные рассуждения не нужны, задайте параметр max_tokens, чтобы ограничить длину ответа и не дать AI «лить воду».</li>
+  <li>Используйте Batch API для задач без реального времени. Если у вас много задач, не требующих мгновенного ответа (массовая разметка данных, сводки документов и т. п.), Batch API даёт скидку 50%. Эту функцию предлагают и OpenAI, и Azure.</li>
+  <li>Следите за расходом токенов. Большинство API-платформ предлагают панели статистики. Регулярно смотрите распределение расходов, находите самые «токенозатратные» вызовы и точечно их оптимизируйте. Маленькая правка промпта (например, заменить «объясните подробно» на «объясните в трёх предложениях») может сэкономить до 50% токенов.</li>
+</ol>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Стратегия оптимизации</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Экономия</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Сложность внедрения</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Пояснение</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Попадания в кэш</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">До 98%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Низкая</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Фиксированное содержимое — в начало сообщений</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Многоуровневая маршрутизация</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">50%-80%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Средняя</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Простые задачи — дешёвой модели</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Ограничение длины вывода</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">30%-60%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Низкая</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Задайте параметр max_tokens</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Batch API</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">50%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Низкая</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Пакетная обработка отложенных задач</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Оптимизация промптов</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">20%-50%</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Средняя</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Сокращайте промпты, убирайте избыточность</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Стратегии экономии и их эффект (август 2026 г.)</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">6. Практика: подключаем API большой модели в проекте</h4>
+<p class="mb-2">Завершим главу полноценной практикой — создадим «генератор резюме на AI»: пользователь вводит длинный текст, а мы вызываем API большой модели и получаем выжимку. Эта практика покажет полный цикл работы с API: настройку окружения, вызов API, обработку ошибок и контроль затрат.</p>
+<div class="code-block">
+<div class="code-head"><span>PYTHON · ai_summarizer.py</span><span class="dots">···</span></div>
+<pre># ai_summarizer.py - ИИ-суммаризатор
+import os
+from openai import OpenAI
+
+# 1. Настройка (API-ключ читается из переменной окружения — никогда не вшивайте его в код)
+client = OpenAI(
+ api_key=os.environ.get("DEEPSEEK_API_KEY"),
+ base_url="https://api.deepseek.com"
+)
+
+def summarize(text: str, max_length: int = 200) -> dict:
+ """Суммаризация текста
+
+ Args:
+ text: исходный текст для суммаризации
+ max_length: максимальная длина резюме (в токенах)
+
+ Returns:
+ dict: резюме и сведения о расходе токенов
+ """
+ try:
+ response = client.chat.completions.create(
+ model="deepseek-chat",
+ messages=[
+ {
+ "role": "system",
+ "content": "Ты — генератор резюме."
+ "Кратко резюмируй предоставленный пользователем текст."
+ "Резюме — не длиннее 3 предложений."
+ },
+ {
+ "role": "user",
+ "content": f"Суммаризируй следующий текст:\n\n{text}"
+ }
+ ],
+ max_tokens=max_length, # ограничиваем длину вывода
+ temperature=0.3 # низкая температура = стабильнее
+ )
+
+ return {
+ "success": True,
+ "summary": response.choices[0].message.content,
+ "input_tokens": response.usage.prompt_tokens,
+ "output_tokens": response.usage.completion_tokens,
+ "total_tokens": response.usage.total_tokens
+ }
+
+ except Exception as e:
+ return {
+ "success": False,
+ "error": str(e)
+ }
+
+# 2. Пример использования
+if __name__ == "__main__":
+ long_text = """
+ (вставьте сюда длинный текст…)
+ """
+
+ result = summarize(long_text)
+
+ if result["success"]:
+ print(f"Резюме: {result['summary']}")
+ print(f"Потрачено токенов: {result['total_tokens']}")
+ # оцениваем стоимость: DeepSeek V4 Flash
+ cost = result['total_tokens'] * 0.000004 # ≈0,4 фэня за 1 000 токенов
+ print(f"Ожидаемая стоимость: {cost:.4f} юаня")
+ else:
+ print(f"Ошибка: {result['error']}")</pre>
+</div>
+<p class="mb-2">Этот код воплощает несколько лучших практик работы с API: API-ключ читается из переменных окружения и никогда не зашивается в код; у функции понятная документация и подсказки типов; параметр max_tokens ограничивает длину вывода; temperature задан низким (0.3) для более стабильного вывода; есть полноценная обработка ошибок; возвращается информация о расходе токенов для контроля затрат. Когда поручите этот код AI, просто перечислите ему эти требования — он вполне способен их реализовать.</p>
+<div class="quote-line">Главный итог главы: модели: это «боеприпасы», методология — «тактика». Правильные боеприпасы облегчают бой, но без хорошей тактики даже лучшие патроны войну не выиграют. Теперь вы знаете особенности моделей и умеете работать с API, ваш «арсенал» полон, но как вести этот бой, решают методы мышления из предыдущих глав.</div>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Попробуйте сами: добейтесь первого успешного вызова API</p>
+<p class="mt-1">Зарегистрируйтесь на платформе китайской модели (рекомендуем DeepSeek или Zhipu, оба дарят лимиты новым пользователям), создайте API-ключ, запишите его в переменные окружения системы (не в код!), затем запустите код из раздела «Первый вызов API». В тот момент, когда вы увидите напечатанный ответ AI, вы перейдёте границу между «пользоваться AI» и «создавать AI-приложения».</p>
+</div>
+<div class="chapter-summary">
+<p class="font-semibold mb-1">Итоги главы</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Международная тройка лидеров: GPT-5.6 (сбалансированный универсал), Claude (эталон программирования + всего 1% галлюцинаций), Gemini (король мультимодальности + контекст 2 млн)</li>
+  <li>Китайская пятёрка: DeepSeek V4 (король цены и качества; следите за анонсом повышения цен), Qwen3.7 (корпоративный уровень), GLM-5.1 (№1 в SWE среди китайских моделей), Kimi K3 (сверхдлинные тексты), Doubao (бесплатный старт)</li>
+  <li>Метод четырёх вопросов: где развёртывание? программирование или другое? нужен сверхдлинный контекст? важен бюджет?</li>
+  <li>Токен — единица тарификации: 1 китайский знак, примерно 1,5–2 токена; 1 млн знаков, примерно 1,5 млн токенов</li>
+  <li>API-ключ = пароль от кошелька: храните в переменных окружения, никогда не зашивайте в код и не отправляйте в Git</li>
+  <li>Китайские модели обычно совместимы с OpenAI SDK: для смены модели достаточно поменять две строки, api_key и base_url</li>
+  <li>Пять приёмов экономии: попадания в кэш, многоуровневая маршрутизация, ограничение вывода, Batch API, контроль расхода</li>
+</ul>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">Нашли ошибку в этой главе? <a href="../../errata.html" class="text-primary hover:underline">Сообщите на странице исправлений</a> — устаревший путь, неверный факт, непонятная формулировка: всё приветствуется. Можно написать и в QQ-группу 1074995524.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-si-shi-yi-zhang.html" class="text-primary hover:underline">← Глава 41: Панорама инструментов ИИ-программирования 2026 года</a><span></span><a id="next-link" href="di-si-shi-san-zhang.html" class="text-primary hover:underline">Глава 43: Как говорить с AI, чтобы он понимал →</a></nav>
+ </div></main></div><!-- Быстрые инструменты: плавающая группа кнопок --><div id="quick-tools" class="quick-tools no-print" aria-label="Быстрые инструменты"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="Поиск (Ctrl+K)" aria-label="Поиск"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="Переключить тёмную/светлую тему" aria-label="Переключить тему"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="Печать / экспорт в PDF" aria-label="Печать или экспорт"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="Оглавление" aria-label="Открыть оглавление"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="Озвучивание вслух" aria-label="Озвучивание вслух"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="Горячие клавиши (?)" aria-label="Панель горячих клавиш"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="Резервная копия / восстановление прогресса" aria-label="Резервная копия прогресса"><span aria-hidden="true">B</span></button></div><!-- Панель горячих клавиш --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="Горячие клавиши"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Сочетания клавиш</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Закрыть">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Поиск по содержимому</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Тёмная/светлая тема</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Чтение вслух: воспроизведение/пауза</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Остановить чтение</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Открыть панель горячих клавиш</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Шрифт крупнее / мельче</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">Печать / экспорт PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- Диалог резервного копирования/восстановления --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="Резервное копирование и восстановление"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Резервная копия и восстановление прогресса чтения</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Закрыть">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">Резервная копия включает: прочитанные главы, закладки, позицию чтения, предпочитаемый размер шрифта и результаты самопроверки здоровья. Данные хранятся локально в браузере и теряются при смене браузера или очистке кэша — рекомендуем регулярно экспортировать резервную копию.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Экспортировать файл резервной копии
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Скачать JSON-файл и сохранить его в надёжном месте</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Импортировать резервную копию
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Выбрать ранее экспортированный файл резервной копии и восстановить прогресс</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Очистить все данные о чтении
+ </button><p class="text-xs text-red-400 mt-1 text-center">Восстановление невозможно! Сначала экспортируйте резервную копию</p></div></div></div></div><!-- Уведомление о днях чтения подряд --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">День X чтения подряд!</span></div><!-- Панель управления озвучкой --><div id="tts-controls" class="tts-controls" role="region" aria-label="Управление озвучиванием" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="Текущая озвучиваемая глава">Не начато</span><button class="tts-btn" id="tts-prev" title="Предыдущий абзац" aria-label="Предыдущий абзац"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="Воспроизведение / пауза" aria-label="Воспроизвести озвучку"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="Следующий абзац" aria-label="Следующий абзац"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="Медленнее" aria-label="Медленнее">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="Быстрее" aria-label="Быстрее">+</button><button class="tts-btn" id="tts-stop" title="Остановить озвучивание" aria-label="Остановить озвучивание"><span aria-hidden="true">×</span></button></div><!-- Кнопка «Наверх» --><button id="back-to-top" class="opacity-0 invisible" aria-label="Наверх"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- Уведомление о восстановлении позиции чтения --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">Прочитано в последний раз: ...</span><button class="btn-restore" id="restore-btn">Отменить</button><button class="btn-dismiss" id="dismiss-btn">Пропустить</button></div><!-- JS-скрипт -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

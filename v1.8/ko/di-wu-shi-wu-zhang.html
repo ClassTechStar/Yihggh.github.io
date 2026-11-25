@@ -1,0 +1,436 @@
+ <!DOCTYPE html><html lang="ko"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="당신이 놓친 스마트폰 수업 · 입문부터 마스터까지, 당신의 디지털 라이프를 온전히 주도하세요"><meta name="keywords" content="스마트폰 튜토리얼,디지털 필수 교양,스마트폰 기초,안드로이드,iOS,하모니OS,스마트폰 팁,디지털 라이프,AI 대형 언어 모델,AI 코딩,대형 언어 모델 API,프롬프트 엔지니어링,안드로이드 개발,iOS 개발,Swift,Kotlin,SwiftUI,Jetpack Compose,컴퓨테이셔널 포토그래피,정보 보안,비밀번호 관리,자동화,스마트폰 구매"><meta name="author" content="디지털 라이프 가이드"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-wu-shi-wu-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="제55장: 프로젝트 2 — 날씨 조회 앱(네트워크 버전)"><meta property="og:description" content="가계부가 &quot;내공 연습&quot;이라면 날씨 앱은 &quot;세상 구경&quot;이에요. 인터넷과 손을 잡아야 하거든요. 이 프로젝트에서 여러분은 무료 API 신청하기,…"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="당신이 놓친 스마트폰 수업"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="당신이 놓친 스마트폰 수업 · v1.8"><meta name="twitter:description" content="입문부터 마스터까지, 당신의 디지털 라이프를 온전히 주도하세요"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>제55장: 프로젝트 2 — 날씨 조회 앱(네트워크 버전) · 당신이 놓친 스마트폰 수업</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-wu-shi-wu-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "제55장: 프로젝트 2 — 날씨 조회 앱(네트워크 버전)", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-wu-shi-wu-zhang.html", "isPartOf": {"@type": "Book", "name": "당신이 놓친 스마트폰 수업", "inLanguage": "ko"}}</script>
+<link rel="prefetch" href="di-wu-shi-liu-zhang.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-wu-shi-wu-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-wu-shi-wu-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">본문으로 건너뛰기</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="목차 메뉴 열기" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="홈으로 돌아가기">당신이 놓친 스마트폰 수업</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="주요 작업"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="기초부터 시작">학습 시작</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="검색 (Ctrl+K)" aria-label="내용 검색"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="글자 크기 조절"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="글자 크기 줄이기" aria-label="글자 크기 줄이기">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="글자 크기 초기화" aria-label="글자 크기 초기화">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="글자 크기 키우기" aria-label="글자 크기 키우기">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="다크/라이트 모드 전환" aria-label="다크/라이트 모드 전환"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="인쇄 / PDF 내보내기" aria-label="인쇄 또는 PDF 내보내기"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="맨 위로">맨 위로
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="본문 목차"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">학습 목차
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38장</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="챕터 필터..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="챕터 필터"></div><ul class="space-y-1 text-sm" id="toc-list"><!--기초편-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">학습 시작</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起기초 편 펼치기/접기" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>제0장: 시작 전에 할 세 가지 솔직한 말</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>제1장: 이 기기를 먼저 알아보기</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>부록: 안드로이드 스마트폰 메모리 확장 분석</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>제1장 부록: HarmonyOS 운영체제 특집</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>제2장: 스마트폰에서 찾지 못하면?</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>제3장: 연결이 안 되면, 재부팅부터 하지 마세요</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>제4장: 앱을 설치하기 전에, 먼저 한 번 살펴보기</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> 부록: 소프트웨어 설치 패키지 구성 요소</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>제5장: 쓰기 편한대로 스마트폰 설정하기</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>제6장: 기기를 잃고, 비밀번호를 잊었을 때</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>제7장: 최신 기능 완전 해설</a></li>
+                        </ul>
+                    </li>
+<!--소프트웨어편-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">2. 소프트웨어 편(제8~14장)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起소프트웨어 편 펼치기/접기" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>제8장: 커뮤니케이션: 문자, 전화, 소셜</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>제9장: 모바일 오피스 및 학습</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>제10장: 모바일 결제 및 생활 서비스</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>제11장: 많이 찍는 것보다, 잘 찍는 것이 중요</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>제11장 부록: 전문 이미지 기술</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>제12장: 영상/음악 오락 및 독서</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>제13장: 어떤 앱을 설치하고, 어떤 앱은 피할까</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>제14장: 비밀번호 관리자 특집</a></li>
+                        </ul>
+                    </li>
+<!--심화편-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">3. 심화 편(제15~20장)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起심화 편 펼치기/접기" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>제15장: 하루 두 번 충전, 배터리인가 사용법인가</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> 부록: 빠른 충전 규격 완전 해설</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>제16장: 기기를 바꿀 때, 어떤 계정을 지워도 되는가</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>제17장: 스마트폰과 다른 기기의 연동</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>제18장: 백업은 잊어버리는 날까지 기다리지 마세요</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>제19장: 고장 났다면? 먼저 고장부터 살피세요</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>제20장: 개발자 모드와 고급 권한</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>부록: Termux 휴대용 Linux 터미널</a></li>
+                        </ul>
+                    </li>
+<!--초월편-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">4. 넘어서기 편(제21~26장)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起넘어서기 편 펼치기/접기" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>제21장: 공용 Wi-Fi, 정말 연결해도 될까?</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>제22장: AI는 스마트폰에서 실제로 뭘 하는가</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>제23장: 반복되는 일은 스마트폰에 맡기기</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>부록: GitHub 입문 가이드</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>제24장: 루트 권한과 BL 잠금 심층 해부</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>제25장: 중고폰을 넘기기 전에, 끝내야 할 것들</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>제26장: 새로운 기술은 기다리면 된다</a></li>
+                        </ul>
+                    </li>
+<!--5. 실전편(제27-32장)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">5. 실전 편(제27~32장)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起실전 편 펼치기/접기" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>제27장: 부모님 스마트폰 설정하기</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>제28장: 구매 전에, 먼저 정해둘 세 가지</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>제29장: 스마트폰을 얼마나 쓰는지, 사실 모릅니다</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>제30장: 스크린 미러링, 발표와 차량 연동</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>제31장: 숏폼 촬영과 콘텐츠 제작 입문</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>제32장: 문제가 생기면, 30초 만에 손실 막기</a></li>
+                        </ul>
+                    </li>
+<!--6. 전망편(제33장)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">6. 전망편 (제33장)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起전망 편 펼치기/접기" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>제33장: 다음 10년, 스마트폰은 어떻게 될까</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>제34장: 스마트폰과 자동차, 자연스럽게 연결하기</a></li>
+                        </ul>
+                    </li>
+<!--아동과 휴대폰 특집(제35장)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">아동과 스마트폰 특집 (제35-36장)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起아이와 스마트폰 특집 펼치기/접기" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>제35장: 아이에게 스마트폰을 줄 때의 규칙</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>제36장: 집에 있는 기기들, 하나로 연결하는 법</a></li>
+                        </ul>
+                    </li>
+<!--AI 코딩 실전편-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">7. AI 코딩 실전 편(제37~47장)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起AI 코딩 실전 편 펼치기/접기" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>제37장: 패러다임 혁명 — 코드 작성에서 AI에게 코드 작성 지휘하기까지</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>제38장: AI 코딩의 다섯 가지 사고 원칙</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>제39장: AI가 알아듣지 못한다면, 내가 설명이 부족했나</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>제40장: 시작하기 전에, 먼저 명확히 말하기</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>제41장: 2026년 AI 코딩 도구의 전체 지도</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>제42장: 대형 언어 모델 총정리와 API 실전</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>제43장: AI가 알아듣도록 말하는 법</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>제44장: 0에서 1까지 실전 — 완성 프로젝트 전 과정</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>제45장: AI가 쓴 코드는 끝이 아니다</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>제46장: 고급 성장 경로 — 사용자에서 아키텍트로</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>제47장: 빠른 참조 매뉴얼과 리소스</a></li>
+                        </ul>
+                    </li>
+<!--안드로이드 개발 실전편-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">8. 안드로이드 개발 실전 편(제48~58장)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起안드로이드 개발 실전 편 펼치기/접기" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>제48장: Android는 어떻게 자꾸 여기까지 왔나</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>제49장: 개발 환경 구축 — Android Studio와 첫 번째 프로젝트</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>제50장: Kotlin 빠르게 익히기 — 안드로이드 개발의 첫 번째 언어</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>제51장: UI 개발 — Jetpack Compose 입문</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>제52장: 4대 컴포넌트와 Activity 생명주기</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>제53장: 데이터 저장과 네트워크 요청</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>제54장: 프로젝트 1 — 나의 가계부(로컬 버전)</a></li>
+                            <li><a href="#di-wu-shi-wu-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>제55장: 프로젝트 2 — 날씨 조회 앱(네트워크 버전)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>제56장: 앱을 만들었다면, 이제 출시까지</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>제57장: 고급 성장 경로 — 권한, 알림과 최신 아키텍처</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>제58장: 빠른 참조 매뉴얼과 리소스</a></li>
+                        </ul>
+                    </li>
+<!--iOS 개발 실전편-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">9. iOS 개발 실전 편(제59~69장)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起iOS 개발 실전 편 펼치기/접기" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>제59장: iOS 이해하기 — 애플 생태계와 개발 생태계</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>제60장: 개발 환경 구축 — Xcode와 첫 번째 프로젝트</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>제61장: Swift 빠르게 익히기 — 애플 개발의 첫 번째 언어</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>제62장: UI 개발 — SwiftUI 입문</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>제63장: 뷰, 상태와 내비게이션</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>제64장: 데이터 저장과 네트워크 요청</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>제65장: 프로젝트 1 — 나의 가계부(로컬 버전)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>제66장: 프로젝트 2 — 날씨 조회 앱(네트워크 버전)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>제67장: 다듬고 출시하기 — App Store 등록</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>제68장: 고급 성장 경로 — 권한, 알림과 최신 아키텍처</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>제69장: 빠른 참조 매뉴얼과 리소스</a></li>
+                        </ul>
+                    </li>
+<!--부록-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">10. 부록</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起부록 펼치기/접기" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>A부록 A: 새 스마트폰 개봉 절차</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>부록 B: 연습이 막혔을 때, 어떻게 할까</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C부록C: 핵심 용어 대조표</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>D부록 D：믿을 수 있는 리소스 찾기</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>E부록 E：감사 인사 및 설명</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F부록F: 폴더블폰 구매와 사용 특집</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>맺음말: 스마트폰을 이해하면, 거기서 끝입니다</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>G부록 G：전체 빠른 검색 색인</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>H부록 H：버전 로드맵</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="검색"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="내용 검색..." autocomplete="off" aria-label="검색어"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="검색 닫기">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">검색어를 입력하면 검색이 시작돼요</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 맨 위로 브레드크럼 --><nav class="breadcrumb no-print" aria-label="위치"><a href="#top">홈</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">디지털 필수 교양 · v1.8</span></nav>
+<div id="di-wu-shi-wu-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">제55장: 프로젝트 2 — 날씨 조회 앱(네트워크 버전)</h3>
+<p class="chapter-intro mb-4">가계부가 "내공 연습"이라면 날씨 앱은 "세상 구경"이에요. 인터넷과 손을 잡아야 하거든요. 이 프로젝트에서 여러분은 무료 API 신청하기, JSON 파싱하기, "로딩 중/성공/실패" 세 가지 화면 상태 다루기, 그리고 API 키를 잘 숨기는 법을 배워요. 다 만들면 어떤 "네트워크 앱"이든 만들 능력이 생겨요. 뉴스, 환율, 번역, 요령은 똑같으니까요.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">1. 무료 날씨 API 신청하기</h4>
+<p class="mb-2">개인 연습용으로는 OpenWeatherMap이나 중국의 QWeather(허펑 날씨)를 추천해요. 둘 다 무료 한도가 있고 가입하면 바로 쓸 수 있죠. OpenWeatherMap을 예로 들게요:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>계정 가입 → API keys 페이지에서 키(apikey)를 하나 생성;</li>
+  <li>무료 버전에서는 Current Weather(현재 날씨) 엔드포인트를 호출할 수 있어요: api.openweathermap.org/data/2.5/weather? q=beijing&appid=발급받은키&units=metric;</li>
+  <li>브라우저에서 먼저 한 번 시험해 보고 돌아오는 JSON이 어떻게 생겼는지 확인하세요. 어떤 API든 붙이기 전에 꼭 하는 "예습"이에요</li>
+</ol>
+<div class="danger-box rounded-lg p-4 mt-4">
+<p class="font-semibold">주의: 키는 절대 코드에 박아 두지 않기</p>
+<p class="mt-1">API 키는 "지갑 비밀번호"와 같아서, 코드에 넣어 GitHub에 올리면 몇 시간 안에 크롤러가 긁어가 도용해요. 올바른 방법: local.properties에 넣고(이 파일은 gitignore가 이미 무시해요) Gradle의 buildConfig로 코드에 읽어 들이세요. "Android API 키 숨기기 모범 사례"를 검색해서 그대로 따라 하면 돼요.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">2. 네트워크 계층: Retrofit + JSON 파싱</h4>
+<p class="mb-2">먼저 API가 돌려주는 JSON을 보고 "데이터 모델"을 정의하세요. 맞지 않는 필드는 모두 무시하면 돼요:</p>
+<div class="code-block">
+<div class="code-head"><span>KOTLIN · 데이터 모델 + 인터페이스</span><span class="dots">···</span></div>
+<pre>// JSON: {"weather":[{"description":"맑음"}],"main":{"temp":26.5,"humidity":40},"name":"베이징"}
+data class WeatherResponse(
+ val weather: List&lt;Weather&gt;,
+ val main: Main,
+ val name: String
+)
+data class Weather(val description: String)
+data class Main(val temp: Double, val humidity: Int)
+
+interface WeatherApi {
+ @GET("data/2.5/weather")
+ suspend fun getWeather(
+ @Query("q") city: String,
+ @Query("appid") key: String,
+ @Query("units") metric: String = "metric",
+ @Query("lang") lang: String = "ko"
+ ): WeatherResponse
+}</pre>
+</div>
+<p class="mb-2">Gson이 JSON을 이 data class들에 자동으로 채워 넣어요. 필드 이름만 일치하면 마법이 저절로 일어나죠.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">3. 세 가지 화면 상태: 로딩 중 / 성공 / 실패</h4>
+<p class="mb-2">네트워크 앱의 영혼은 "상태 관리"에 있어요. 네트워크가 느리거나, 끊기거나, 도시 이름을 잘못 입력하거나…… 모든 상황에서 화면은 사용자에게 보고해야 해요. sealed class(봉인 클래스) 하나로 우아하게 표현해 봐요:</p>
+<div class="code-block">
+<div class="code-head"><span>KOTLIN · 화면 상태</span><span class="dots">···</span></div>
+<pre>sealed class UiState {
+ object Loading : UiState() // 로딩 표시
+ data class Success(val data: WeatherResponse) : UiState() // 성공
+ data class Error(val message: String) : UiState() // 실패
+}
+
+// ViewModel 안에서:
+fun search(city: String) {
+ viewModelScope.launch {
+ _state.value = UiState.Loading
+ _state.value = try {
+ UiState.Success(api.getWeather(city))
+ } catch (e: Exception) {
+ UiState.Error("그 도시를 찾을 수 없어요. 다른 이름으로 시도해 볼까요?")
+ }
+ }
+}
+
+// 화면 안에서:
+when (val s = state) {
+ is UiState.Loading -&gt; CircularProgressIndicator() // 로딩
+ is UiState.Success -&gt; WeatherContent(s.data) // 표시
+ is UiState.Error -&gt; Text(s.message) // 오류
+}</pre>
+</div>
+<p class="mb-2">이 Loading/Success/Error 3단 구성은 네트워크 화면의 "만능 템플릿"이에요. 먼저 외워 두고, 이후 모든 네트워크 앱에서 그대로 본떠 쓰세요.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">4. 실전 화면 코드: 날씨 그려 내기</h4>
+<p class="mb-2">상태가 준비됐으면 화면은 이렇게 생겼어요(핵심 부분):</p>
+<div class="code-block">
+<div class="code-head"><span>KOTLIN · 날씨 화면(핵심 발췌)</span><span class="dots">···</span></div>
+<pre>@Composable
+fun WeatherContent(data: WeatherResponse) {
+ Column(
+ Modifier.fillMaxSize().padding(24.dp),
+ horizontalAlignment = Alignment.CenterHorizontally
+ ) {
+ Text(data.name, fontSize = 28.sp, fontWeight = FontWeight.Bold)
+ Text(
+ "${data.main.temp}°C",
+ fontSize = 72.sp,
+ fontWeight = FontWeight.Light
+ )
+ Text(
+ data.weather.firstOrNull()?.description ?: "알 수 없음",
+ fontSize = 20.sp,
+ color = Color.Gray
+ )
+ Spacer(Modifier.height(16.dp))
+ Row {
+ Text("💧 습도 ${data.main.humidity}%")
+ Spacer(Modifier.width(24.dp))
+ Text("🌡️ 체감 ${data.main.temp}°C")
+ }
+ }
+}</pre>
+</div>
+<p class="mb-2">배울 만한 디테일 몇 가지: firstOrNull()은 첫 번째 요소를 안전하게 꺼내요(리스트가 비어 있을 수 있으니까요), ?: "알 수 없음"이 기본 문구를 채워 줘요. null 안전 원칙은 화면에서도 그대로 통하죠. 온도는 72.sp의 큰 글자로 위용을 세우고, "가는" 글꼴 두께(Light)가 숫자를 우아하게 보이게 해요. 날씨 앱의 고전 레시피예요.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">5. 화면과 인터랙션 디테일</h4>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>검색창: 상단에 TextField를 두고 도시 이름을 입력한 뒤 검색(키보드에 "검색" 동작을 설정하면 엔터로 바로 검색);</li>
+  <li>날씨 카드: 큰 글자 온도(26.5°), 날씨 설명(맑음), 습도, 도시 이름;</li>
+  <li>즐겨찾는 도시: 자주 보는 도시를 DataStore에 저장해 다음에 열 때 자동으로 조회, 덤으로 6장 복습;</li>
+  <li>당겨서 새로 고침: Compose에서는 PullToRefreshBox(Material 3 제공)를 쓰세요. 손맛이 곧바로 "프로"급이 돼요</li>
+</ul>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">팁: 이미지가 화면에 생기를 불어넣어요</p>
+<p class="mt-1">날씨 종류마다 이모지나 아이콘(☀️🌧️❄️)을 하나씩 매기고 when(description)으로 연결하세요. 세 줄 코드로 화면의 온기가 두 배가 돼요. 서드파티 날씨 아이콘 라이브러리를 쓸 수도 있지만, 연습 단계에서는 이모지면 충분해요.</p>
+</div>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">직접 해 보기: 날씨 앱 검수 체크리스트</p>
+<ol class="mt-1">
+  <li>정상적으로 검색해 날씨가 나오는가;</li>
+  <li>네트워크를 끊어도 앱이 우아하게 오류를 알리고 크래시되지 않는가(비행기 모드를 켜서 테스트!);</li>
+  <li>존재하지 않는 도시를 입력했을 때 친절하게 안내하는가;</li>
+  <li>도시 두 개를 즐겨찾기하고 앱을 재시작해도 남아 있는가;</li>
+  <li>화면을 돌려도 상태가 사라지지 않는가.</li>
+</ol>
+<p class="mb-2">다섯 항목을 모두 통과해야 이 프로젝트는 졸업이에요.</p>
+</div>
+<div class="chapter-summary">
+<p class="font-semibold mb-1">이번 장 정리</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>먼저 브라우저로 API를 시험하고 JSON을 이해한 뒤 코드 작성, "예습"은 언제나 이득</li>
+  <li>API 키는 local.properties에 숨기고 절대 코드 저장소에 넣지 않기</li>
+  <li>Retrofit 인터페이스 + data class: 필드만 맞으면 JSON이 자동으로 파싱돼요</li>
+  <li>Loading/Success/Error 3단 상태는 네트워크 화면의 만능 해법</li>
+  <li>끊긴 네트워크, 빈 입력, 없는 도시: 오류 처리는 네트워크 앱의 합격선</li>
+</ul>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">이 장에 오류가 있으면 <a href="../../errata.html" class="text-primary hover:underline">오류 신고 페이지</a>로 알려 주세요(오래된 경로, 잘못된 사실, 이해하기 어려운 설명 — 모두 환영). QQ 그룹 1074995524 로도 됩니다.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-wu-shi-si-zhang.html" class="text-primary hover:underline">← 제54장: 프로젝트 1 — 나의 가계부(로컬 버전)</a><span></span><a id="next-link" href="di-wu-shi-liu-zhang.html" class="text-primary hover:underline">제56장: 앱을 만들었다면, 이제 출시까지 →</a></nav>
+ </div></main></div><!-- 빠른 도구: 플로팅 버튼 그룹 --><div id="quick-tools" class="quick-tools no-print" aria-label="빠른 도구"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="검색 (Ctrl+K)" aria-label="검색"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="다크/라이트 전환" aria-label="테마 전환"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="인쇄 / PDF 내보내기" aria-label="인쇄 또는 내보내기"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="목차" aria-label="목차 열기"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="음성 낭독" aria-label="음성 낭독"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="키보드 단축키 (?)" aria-label="단축키 패널"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="진행 상황 백업/복구" aria-label="진행 상황 백업"><span aria-hidden="true">B</span></button></div><!-- 단축키 패널 --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="키보드 단축키"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">키보드 단축키</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="닫기">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">내용 검색</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">다크/라이트 전환</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">음성 낭독 재생/일시정지</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">낭독 중지</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">단축키 패널 열기</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">글자 크게 / 작게</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">인쇄 / PDF 내보내기</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- 백업/복원 팝업 --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="백업과 복구"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">독서 진행 백업과 복원</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="닫기">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">백업 항목: 읽은 챕터, 책갈피, 읽던 위치, 글자 크기 설정, 건강 자가 진단 결과. 데이터는 브라우저 로컬에 저장되며, 브라우저를 바꾸거나 캐시를 지우면 사라져요. 주기적으로 백업을 내보내 두길 권해요.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 백업 파일 내보내기
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">JSON 파일 하나를 내려받아 안전한 곳에 보관해요</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 백업 가져와 복원
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">이전에 내보낸 백업 파일을 선택해 진행 상황을 복원해요</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 모든 독서 데이터 지우기
+ </button><p class="text-xs text-red-400 mt-1 text-center">복구할 수 없어요! 먼저 백업을 내보내 주세요</p></div></div></div></div><!-- 연속 독서 일수 알림 --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">연속 독서 X일째!</span></div><!-- 음성 읽기 컨트롤 바 --><div id="tts-controls" class="tts-controls" role="region" aria-label="음성 낭독 제어" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="현재 낭독 중인 챕터">시작 전</span><button class="tts-btn" id="tts-prev" title="이전 단락" aria-label="이전 단락"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="재생/일시정지" aria-label="낭독 재생"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="다음 단락" aria-label="다음 단락"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="속도 늦추기" aria-label="속도 늦추기">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="속도 높이기" aria-label="속도 높이기">+</button><button class="tts-btn" id="tts-stop" title="낭독 중지" aria-label="낭독 중지"><span aria-hidden="true">×</span></button></div><!-- 맨 위로 버튼 --><button id="back-to-top" class="opacity-0 invisible" aria-label="맨 위로"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- 읽던 위치 복원 알림 --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">마지막으로 읽은 장: ...</span><button class="btn-restore" id="restore-btn">실행 취소</button><button class="btn-dismiss" id="dismiss-btn">닫기</button></div><!-- JS 스크립트 -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

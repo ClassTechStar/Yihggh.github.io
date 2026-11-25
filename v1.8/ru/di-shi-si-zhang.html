@@ -1,0 +1,616 @@
+ <!DOCTYPE html><html lang="ru"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="Урок смартфона, который вы пропустили · От новичка до мастера — полный контроль над вашей цифровой жизнью"><meta name="keywords" content="уроки по смартфону, цифровая грамотность, смартфон, Android, iOS, HarmonyOS, советы по телефону, цифровая жизнь, большие языковые модели, программирование с ИИ, API больших моделей, инженерия промптов, разработка под Android, разработка под iOS, Swift, Kotlin, SwiftUI, Jetpack Compose, вычислительная фотография, информационная безопасность, менеджер паролей, автоматизация, выбор смартфона"><meta name="author" content="Проводник в цифровую жизнь"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-shi-si-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="Глава 14: Специально о менеджерах паролей"><meta property="og:description" content="В цифровую эпоху пароль, это ключ от вашего дома. Но что делать, если ключей с…"><meta property="og:locale" content="ru_RU"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Урок смартфона, который вы пропустили"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Урок смартфона, который вы пропустили · v1.8"><meta name="twitter:description" content="От новичка до мастера — полный контроль над вашей цифровой жизнью"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>Глава 14: Специально о менеджерах паролей · Урок смартфона, который вы пропустили</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-shi-si-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "Глава 14: Специально о менеджерах паролей", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-shi-si-zhang.html", "isPartOf": {"@type": "Book", "name": "Урок смартфона, который вы пропустили", "inLanguage": "ru"}}</script>
+<link rel="prefetch" href="di-shi-wu-zhang.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-shi-si-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-shi-si-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">Перейти к основному содержимому</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="Открыть меню оглавления" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="На главную страницу">Урок смартфона, который вы пропустили</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="Основное действие"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="Начать с основ">Начать обучение</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Поиск (Ctrl+K)" aria-label="Поиск по содержанию"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="Настройка размера шрифта"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="Уменьшить шрифт" aria-label="Уменьшить шрифт">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="Сбросить размер шрифта" aria-label="Сбросить размер шрифта">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="Увеличить шрифт" aria-label="Увеличить шрифт">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Переключить тёмную/светлую тему" aria-label="Переключить тёмную/светлую тему"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="Печать / экспорт в PDF" aria-label="Печать или экспорт в PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="Наверх">Наверх
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="Оглавление статьи"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">Оглавление
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 глав</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="Фильтр глав..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="Фильтр глав"></div><ul class="space-y-1 text-sm" id="toc-list"><!--Основы-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Начать обучение</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел основ" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>Глава 0: Три честных слова перед стартом</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>Глава 1: Сначала познакомимся с этой машиной</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Прил.: Разбор расширения памяти на Android</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Прил. к главе 1: Спецтема — ОС Harmony</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>Глава 2: Не можете найти нужное на телефоне?</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>Глава 3: Нет сети? Не спешите перезагружать</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>Глава 4: Перед установкой приложений посмотрите поближе</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Прил.: Состав пакета установки ПО</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>Глава 5: Настройте телефон под себя</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>Глава 6: Потеряли телефон? Забыли пароль?</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>Глава 7: Полный разбор передовых функций</a></li>
+                        </ul>
+                    </li>
+<!--Программы-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">II. Программы (главы 8–14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел о программах" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>Глава 8: Связь: SMS, звонки и соцсети</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>Глава 9: Мобильная работа и обучение</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>Глава 10: Мобильные платежи и бытовые сервисы</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>Глава 11: Лучше снять хорошо, чем снять больше</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Дополнение к главе 11: Профессиональные техники съёмки</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>Глава 12: Аудио, видео, развлечения и чтение</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>Глава 13: Какие приложения ставить, а какие лучше не ставить</a></li>
+                            <li><a href="#di-shi-si-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>Глава 14: Специально о менеджерах паролей</a></li>
+                        </ul>
+                    </li>
+<!--Продвинутый уровень-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">III. Продвинутый уровень (главы 15–20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть продвинутый раздел" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>Глава 15: Два заряда в день: батарея или привычки?</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Дополнение: все протоколы быстрой зарядки</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>Глава 16: Смена телефона: какие учётные записи можно потерять?</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>Глава 17: Связка телефона с другими устройствами</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>Глава 18: Сделайте копию, пока не забыли</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>Глава 19: Сломалось? Не спешите чинить</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>Глава 20: Режим разработчика и продвинутые права</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Прил.: Портативный Linux-терминал Termux</a></li>
+                        </ul>
+                    </li>
+<!--За пределами основ-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">IV. За рамки основ (главы 21–26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел «За рамки основ»" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>Глава 21: Можно ли подключаться к публичному Wi-Fi?</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>Глава 22: Что AI на самом деле делает в вашем телефоне?</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>Глава 23: Пусть телефон возьмёт на себя повторяющуюся работу</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Прил.: Руководство по GitHub для начинающих</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>Глава 24: Root-права и блокировка загрузчика (BL) — глубокий разбор</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>Глава 25: Продаёте старый телефон? Начните с этих шагов</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>Глава 26: Новые технологии могут подождать</a></li>
+                        </ul>
+                    </li>
+<!--5,Практика(главы 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">V. Практика (главы 27–32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел практики" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>Глава 27: Настройте телефон для родителей</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>Глава 28: Покупая телефон, сначала решите вот эти три вещи</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>Глава 29: Сколько времени вы правда проводите с телефоном?</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>Глава 30: Трансляция экрана, презентации и связь с автомобилем</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>Глава 31: Введение в съёмку коротких видео и создание контента</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>Глава 32: Проблемы? Тридцать секунд, чтобы ограничить ущерб</a></li>
+                        </ul>
+                    </li>
+<!--6,Взгляд в будущее(Глава 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VI. Перспективы (глава 33)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел «Перспективы»" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>Глава 33: Каким будет телефон в следующем десятилетии?</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>Глава 34: Телефон и автомобиль: соединяем без лишних хлопот</a></li>
+                        </ul>
+                    </li>
+<!--Спецтема: дети и телефоны(Глава 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Тема: Дети и телефон (главы 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть спецтему «Дети и смартфон»" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>Глава 35: Детям телефон: как установить правила</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>Глава 36: Как соединить все устройства дома</a></li>
+                        </ul>
+                    </li>
+<!--Программирование с ИИ на практике-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VII. Программирование с ИИ на практике (главы 37–47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел практики ИИ-программирования" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>Глава 37: Парадигмальная революция — от написания кода к руководству ИИ</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>Глава 38: Пять принципов мышления в программировании с ИИ</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>Глава 39. ИИ не понял? Скорее всего, вы сказали неясно</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>Глава 40. Сначала скажите всё как есть, потом действуйте</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>Глава 41: Панорама инструментов ИИ-программирования 2026 года</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>Глава 42: Панорама больших моделей и практика API</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>Глава 43: Как говорить с AI, чтобы он понимал</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>Глава 44: Практика от 0 до 1 — полный цикл проекта</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>Глава 45: ИИ написал, но это ещё не конец</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>Глава 46: Путь к мастерству — от пользователя до архитектора</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>Глава 47: Справочник и ресурсы</a></li>
+                        </ul>
+                    </li>
+<!--Разработка под Android на практике-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VIII. Разработка под Android на практике (главы 48–58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел практики разработки под Android" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>Глава 48: Как Android стал таким, какой он есть?</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>Глава 49: Настройка окружения — Android Studio и первый проект</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>Глава 50: Быстрый старт с Kotlin — первый язык Android-разработки</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>Глава 51: Разработка интерфейсов — введение в Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>Глава 52: Четыре основных компонента и жизненный цикл Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>Глава 53: Хранение данных и сетевые запросы</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>Глава 54: Проект 1 — мой учёт расходов (локальная версия)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>Глава 55: Проект 2 — приложение погоды (сетевая версия)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>Глава 56. Приложение готово? Выпустите его в Google Play</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>Глава 57: Путь к мастерству — разрешения, уведомления и современная архитектура</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>Глава 58: Справочник и ресурсы</a></li>
+                        </ul>
+                    </li>
+<!--Разработка под iOS на практике-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">IX. Разработка под iOS на практике (главы 59–69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел практики разработки под iOS" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>Глава 59: Знакомство с iOS — экосистема Apple и экосистема разработки</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>Глава 60: Настройка окружения — Xcode и первый проект</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>Глава 61: Быстрый старт со Swift — первый язык разработки под Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>Глава 62: Разработка интерфейсов — введение в SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>Глава 63: Виды, состояние и навигация</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>Глава 64: Хранение данных и сетевые запросы</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>Глава 65: Проект 1 — мой учёт расходов (локальная версия)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>Глава 66: Проект 2 — приложение погоды (сетевая версия)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>Глава 67: Шлифовка и публикация — выпуск в App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>Глава 68: Путь к мастерству — разрешения, уведомления и современная архитектура</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>Глава 69: Справочник и ресурсы</a></li>
+                        </ul>
+                    </li>
+<!--Приложение-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">X. Приложения</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть приложения" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>A Приложение A: Процедура распаковки нового телефона</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>Приложение B: Застряли на упражнении?</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>Приложение C: Мини-глоссарий терминов</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>D Приложение D: Где искать надёжные ресурсы</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>E Приложение E: Благодарности и пояснения</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>Приложение F: Спецтема — выбор и использование складного смартфона</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>Заключение: Разберитесь в телефоне, и этого хватит</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>G Приложение G: Быстрый указатель по всей книге</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>H Приложение H: Дорожная карта версий</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="Поиск"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="Поиск по содержанию..." autocomplete="off" aria-label="Поисковый запрос"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Закрыть поиск">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">Введите ключевое слово для поиска</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- Наверх (навигационная цепочка) --><nav class="breadcrumb no-print" aria-label="Расположение"><a href="#top">Главная</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">Курс цифровой грамотности · v1.8</span></nav>
+<div id="di-shi-si-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">Глава 14: Менеджеры паролей — специальная тема</h3>
+<p class="chapter-intro mb-4">В цифровую эпоху пароль, это ключ от вашего дома. Но что делать, если ключей слишком много и они слишком сложные? Менеджер паролей, это ваш «универсальный хранитель ключей».</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">1. Зачем вам нужен менеджер паролей?</h4>
+<p class="mb-2">У современного человека в среднем десятки, а то и сотни учётных записей в интернете. Если использовать один и тот же пароль для всех аккаунтов, то как только один сайт будет взломан, под угрозой окажутся все. Если использовать разные сложные пароли для каждого аккаунта — их просто невозможно запомнить.</p>
+<p class="mb-2">Менеджер паролей решает эту дилемму: вам нужно запомнить только один мастер-пароль, а он запомнит все остальные.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">2. Как работает менеджер паролей</h4>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>Шифрованное хранение</strong>: все пароли хранятся в зашифрованном виде с использованием стойкого шифрования, и только вы можете их расшифровать.</li>
+  <li><strong>Мастер-пароль</strong>: вы задаёте один мастер-пароль для разблокировки хранилища паролей. Сам мастер-пароль не хранится на сервере.</li>
+  <li><strong>Автозаполнение</strong>: на странице входа на сайт или в приложение менеджер паролей автоматически подставляет логин и пароль.</li>
+  <li><strong>Генерация паролей</strong>: может создавать случайные, сложные пароли для повышения безопасности.</li>
+</ol>
+<h4 class="text-lg font-semibold mt-4 mb-2">3. Введение в принципы шифрования</h4>
+<p class="mb-2">Понимание принципов шифрования, лежащих в основе менеджеров паролей, поможет вам оценить, заслуживает ли сервис доверия. Ниже: объяснение ключевых концепций простым языком.</p>
+<h5 class="font-semibold mt-3 mb-1">1. Шифрование AES-256</h5>
+<p class="mb-2">AES (Advanced Encryption Standard) — симметричный алгоритм шифрования, одобренный Национальным институтом стандартов и технологий США (NIST), широко используется банками, военными и правительственными структурами. «256» означает длину ключа в 256 бит — теоретически для взлома методом перебора потребуется время, превышающее возраст Вселенной. Все основные менеджеры паролей (1Password, Bitwarden, KeePass и др.) используют AES-256 для шифрования вашего хранилища паролей.</p>
+<h5 class="font-semibold mt-3 mb-1">2. Архитектура нулевого знания (Zero-Knowledge Architecture)</h5>
+<p class="mb-2">«Нулевое знание» не означает, что сервис ничего не хранит,, это означает, что <strong>шифрование и расшифровка происходят локально на вашем устройстве, а сервер хранит только зашифрованный текст</strong>. Конкретный процесс:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Вы вводите мастер-пароль в клиенте.</li>
+  <li>Клиент извлекает ключ шифрования из мастер-пароля (это происходит на вашем телефоне/компьютере).</li>
+  <li>На сервер загружается только зашифрованный текст.</li>
+  <li>При следующем входе сервер отправляет зашифрованный текст обратно, и клиент снова расшифровывает его с помощью мастер-пароля.</li>
+</ol>
+<p class="mb-2">Ключевой момент: <strong>сам мастер-пароль никогда не покидает ваше устройство</strong>, и на сервере его тоже нет. Поэтому даже если сервис будет взломан, хакер получит лишь стопку нечитаемого шифротекста, если только он не сможет угадать ваш мастер-пароль.</p>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Почему «нулевое знание» означает, что сервис тоже не видит ваши пароли?</p>
+<p class="mt-1">Потому что ключ расшифровки извлекается из вашего мастер-пароля, а мастер-пароль существует только в вашей голове и используется только на вашем локальном устройстве. На серверах провайдера нет ни мастер-пароля, ни ключа расшифровки: только шифротекст. Именно поэтому такие надёжные сервисы, как Bitwarden и 1Password, прямо заявляют: «Мы тоже не можем видеть ваши пароли», не потому, что не хотят, а потому, что технически не могут.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">3. Функции формирования ключа: PBKDF2 и Argon2</h5>
+<p class="mb-2">Мастер-пароль нельзя использовать напрямую как ключ шифрования, он должен пройти через «функцию формирования ключа». Эта функция <strong>намеренно замедляет вычисления</strong>, делая стоимость brute-force атаки непомерно высокой.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>PBKDF2</strong>: проверенный временем стандарт, широко используется в iCloud Keychain, Bitwarden, LastPass и других. Замедляет взлом за счёт многократного итерированного хеширования (обычно 100 000+ итераций).</li>
+  <li><strong>Argon2</strong>: победитель конкурса хеш-функций для паролей 2015 года, более современный, чем PBKDF2. Помимо «вычислительной сложности» вводит «потребление памяти» — что затрудняет ускорение взлома даже на специализированном оборудовании, таком как GPU/ASIC. Уже поддерживается в Bitwarden, KeePassXC и других.</li>
+</ul>
+<p class="mb-2">Чем больше итераций, тем выше безопасность, но и разблокировка будет медленнее. Надёжные сервисы открыто публикуют используемые алгоритмы формирования ключа и количество итераций для аудита сообществом безопасности.</p>
+<h5 class="font-semibold mt-3 mb-1">4. Предостерегающий пример: утечка данных LastPass в 2022 году</h5>
+<p class="mb-2">В августе 2022 года ветеран среди менеджеров паролей LastPass сообщил о взломе своей среды разработки; в ноябре того же года было дополнительно раскрыто, что хакеры получили резервные копии пользовательских хранилищ паролей (в зашифрованном виде). Ключевые уроки этого инцидента:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Архитектура нулевого знания устояла</strong>: поскольку само хранилище паролей зашифровано, хакеры получили шифротекст, но не смогли его расшифровать, при условии, что мастер-пароль пользователя был достаточно надёжным.</li>
+  <li><strong>Пользователи со слабыми мастер-паролями — в наибольшей опасности</strong>: хакеры могут офлайн перебирать слабые мастер-пароли, поэтому пользователи со слабыми или повторно используемыми мастер-паролями подвергаются реальному риску.</li>
+  <li><strong>Метаданные тоже утекают</strong>: хотя содержимое паролей зашифровано, метаданные, такие как URL-адреса сайтов и заметки, могут быть не зашифрованы, что раскрывает, какие сервисы использует пользователь.</li>
+</ul>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Чему нас учит инцидент с LastPass</p>
+<p class="mt-1">Во-первых, мастер-пароль должен быть длинным и уникальным (рекомендуется не менее 16 символов, включая заглавные и строчные буквы, цифры и символы). Во-вторых, отдавайте предпочтение сервисам, поддерживающим Argon2id с высоким числом итераций. В-третьих, для наиболее ценных учётных записей (банк, почта) обязательно включите отдельную двухфакторную аутентификацию, не полагайтесь только на менеджер паролей.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">4. Рекомендации популярных менеджеров паролей</h4>
+<h5 class="font-semibold mt-3 mb-1">Встроенные в систему:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>iCloud Keychain (Связка ключей iCloud)</strong>: лучший выбор для пользователей экосистемы Apple. Бесшовная интеграция с Safari и приложениями, бесплатно, безопасно. Недостаток: неудобство кросс-платформенного использования.</li>
+  <li><strong>Google Password Manager</strong>: удобно для пользователей Android. Интеграция с Chrome и системой Android, бесплатно.</li>
+  <li><strong>Huawei Password Vault</strong>: встроено в HarmonyOS, подходит для пользователей Huawei.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Сторонние профессиональные инструменты:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Bitwarden</strong>: с открытым исходным кодом, бесплатный, мощный, поддерживает все платформы. Настоятельно рекомендуется пользователям, ценящим приватность.</li>
+  <li><strong>1Password</strong>: красивый интерфейс, богатый функционал, подходит для семей и команд. Платный.</li>
+  <li><strong>LastPass</strong>: ветеран среди менеджеров паролей, функционал бесплатной версии ограничен.</li>
+  <li><strong>KeePass</strong>: полностью локальное хранение, с открытым исходным кодом, бесплатный. Подходит для гиков.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">5. Реальная оценка надёжности паролей</h4>
+<p class="mb-2">Менеджеры паролей обычно показывают индикатор «надёжности пароля» (красный/жёлтый/зелёный), но эта оценка часто учитывает только длину и типы символов и не является всесторонней. Чтобы действительно определить, безопасен ли пароль, нужно учитывать «энтропию» и то, был ли он уже скомпрометирован.</p>
+<h5 class="font-semibold mt-3 mb-1">1. Энтропия: научная мера надёжности пароля</h5>
+<p class="mb-2">«Энтропия» измеряет неопределённость пароля, единица измерения: биты. Чем выше энтропия, тем больше попыток потребуется для brute-force атаки.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>«123456»</strong>: крайне низкая энтропия, взламывается мгновенно.</li>
+  <li><strong>«P@ssw0rd»</strong>: выглядит сложным, но присутствует во всех списках словарных атак, энтропия всё ещё низкая.</li>
+  <li><strong>«correct horse battery staple»</strong>: четыре случайных слова, энтропия около 44 бит, сложность взлома намного выше, чем у «P@ssw0rd».</li>
+  <li><strong>16 случайных символов (заглавные + строчные + цифры + символы)</strong>: энтропия около 100 бит, при текущих вычислительных мощностях brute-force атака невозможна.</li>
+</ul>
+<p class="mb-2">Вывод: <strong>«длина + случайность» важнее «сложных символов»</strong>. Именно поэтому случайные длинные пароли, генерируемые менеджером паролей, действительно безопасны.</p>
+<h5 class="font-semibold mt-3 mb-1">2. HaveIBeenPwned: проверьте, не утёк ли ваш пароль</h5>
+<p class="mb-2">Исследователь безопасности Трой Хант поддерживает сайт <a href="https://haveibeenpwned.com" class="text-primary hover:underline" target="_blank" rel="noopener">haveibeenpwned.com</a>, который собирает учётные записи и пароли, утёкшие в ходе крупных утечек данных. Вы можете:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Ввести email, чтобы проверить, был ли ваш аккаунт раскрыт в какой-либо утечке.</li>
+  <li>Использовать функцию Pwned Passwords для проверки, есть ли конкретный пароль в известных базах утёкших паролей (менеджеры паролей и браузеры уже встроили эту проверку).</li>
+</ol>
+<p class="mb-2">Если пароль найден в базе утёкших, <strong>каким бы сложным он ни выглядел, его необходимо немедленно заменить</strong> — потому что словарные атаки в первую очередь пробуют эти известные пароли.</p>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Принцип запроса k-Anonymity</p>
+<p class="mt-1">Беспокоитесь, что ввод пароля на HaveIBeenPwned может снова привести к утечке? Не стоит. Современные запросы используют протокол «k-анонимности»: браузер отправляет на сервер только первые 5 символов хеша пароля, сервер возвращает список всех хешей, начинающихся с этих 5 символов, а сравнение происходит локально. То есть сервер никогда не видит полный хеш вашего пароля. Именно так работают функции «обнаружения утёкших паролей» в 1Password и Bitwarden.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">3. Встроенные функции мониторинга в менеджерах паролей</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>1Password Watchtower</strong>: в реальном времени отслеживает слабые пароли, повторяющиеся пароли, утёкшие пароли, просроченные пароли, сайты без 2FA и отображает их с цветовой кодировкой (красный/оранжевый/жёлтый).</li>
+  <li><strong>Bitwarden Vault Health</strong>: бесплатная версия показывает слабые и повторяющиеся пароли; платная версия обнаруживает утёкшие пароли (на основе HaveIBeenPwned).</li>
+  <li><strong>«Рекомендации по безопасности» Связки ключей iCloud</strong>: Настройки iOS → Пароли → Рекомендации по безопасности, покажет, какие пароли найдены в известных утечках и какие используются повторно.</li>
+  <li><strong>«Проверка паролей» Google Password Manager</strong>: встроена в Chrome, позволяет одним кликом проверить утёкшие, слабые и повторяющиеся пароли.</li>
+</ul>
+<div class="practice-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Проверьте прямо сейчас: безопасны ли ваши пароли</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>Откройте haveibeenpwned.com, введите ваш основной email и посмотрите, в каких утечках он фигурирует.</li>
+  <li>Пользователи iPhone: Настройки → Пароли → Рекомендации по безопасности, обработайте по очереди все красные предупреждения.</li>
+  <li>Пользователи Chrome: Настройки → Пароли → Проверить пароли, измените согласно рекомендациям.</li>
+  <li>Пользователи 1Password/Bitwarden: откройте Watchtower/Health Reports, в первую очередь обработайте пункты «Утёкшие» и «Повторяющиеся».</li>
+</ol>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">6. Passkey: будущее беспарольного входа</h4>
+<p class="mb-2">В 2024–2026 годах технологии паролей переживают революцию <strong>Passkey (ключ доступа)</strong> обещает полностью вытеснить традиционные пароли. Apple, Google и Microsoft совместно продвигают эту технологию при поддержке альянса FIDO и Консорциума Всемирной паутины (W3C), это крупнейшая реформа способов входа за последние десятилетия.</p>
+<h5 class="font-semibold mt-3 mb-1">1. Что такое Passkey?</h5>
+<p class="mb-2">Passkey основан на стандартах FIDO2 / WebAuthn и заменяет пароли <strong>парой ключей на устройстве</strong>. Принцип можно упрощённо представить так:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Ваш телефон генерирует пару ключей: <strong>открытый ключ</strong> (регистрируется на сайте) + <strong>закрытый ключ</strong> (навсегда остаётся в защищённом чипе вашего устройства).</li>
+  <li>При входе сайт отправляет «вызов», ваш телефон подписывает его закрытым ключом, а сайт проверяет подпись открытым ключом.</li>
+  <li>Перед подписанием требуется подтверждение личности через биометрию (Face ID / отпечаток пальца) или PIN-код устройства.</li>
+  <li>В течение всего процесса <strong>ни один пароль не передаётся по сети</strong>.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. Passkey vs традиционные пароли</h5>
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3">
+ <thead>
+ <tr class="bg-light dark:bg-gray-700">
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Аспект</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Традиционные пароли</th>
+ <th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Passkey</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">Защита от фишинга</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Слабая, фишинговые сайты могут украсть пароль</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Врождённая защита от фишинга, закрытый ключ подписывает только для подлинного домена</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">Влияние утечки на сервере</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Хеш пароля может быть взломан</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Сервер хранит только открытый ключ, утечка не наносит вреда</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">Удобство</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Нужно запоминать/вводить/управлять</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Вход за секунду по Face ID/отпечатку пальца</td>
+ </tr>
+ <tr>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2 font-semibold">Атаки повторного воспроизведения</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Могут быть перехвачены и воспроизведены</td>
+ <td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Каждая подпись одноразовая, невозможно воспроизвести</td>
+ </tr>
+ </tbody>
+ </table>
+<h5 class="font-semibold mt-3 mb-1">3. Поддержка на разных платформах</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Apple iCloud Keychain Passkey</strong>: нативная поддержка в iOS 16+ / macOS Ventura+, Passkey синхронизируются между всеми устройствами с одним Apple ID, при входе на сайт с нового устройства не нужно создавать заново.</li>
+  <li><strong>Google Password Manager Passkey</strong>: нативная поддержка в Android + Chrome, Passkey хранятся в аккаунте Google и синхронизируются между устройствами Android; с 2023 года личные аккаунты Google поддерживают вход по Passkey.</li>
+  <li><strong>Microsoft</strong>: Windows 11 / Edge уже поддерживают Passkey; сервисы Microsoft (учётная запись, Outlook, Office и др.) постепенно открывают вход по Passkey, управление доступно в Microsoft Authenticator.</li>
+  <li><strong>1Password / Bitwarden</strong>: уже поддерживают создание, хранение и кросс-платформенную синхронизацию Passkey, позволяя не ограничиваться одной экосистемой.</li>
+</ul>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Кросс-платформенная синхронизация — ключевой прорыв</p>
+<p class="mt-1">Главной проблемой ранних Passkey была «привязка к одному устройству», при смене телефона приходилось создавать всё заново. С 2023 года Apple, Google и Microsoft реализовали облачную синхронизацию Passkey: Связка ключей iCloud синхронизирует между устройствами Apple, Google Password Manager, между устройствами Android. Сторонние решения, такие как 1Password, обеспечивают кросс-экосистемную синхронизацию. Это означает, что Passkey уже пригодны для практической замены паролей.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">4. Как создать и использовать Passkey на телефоне</h5>
+<p class="mb-2"><strong>Для iOS (iPhone):</strong></p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>На странице безопасности аккаунта сайта, поддерживающего Passkey (например, Google, Microsoft, Amazon, eBay, PayPal), выберите «Добавить ключ доступа / Add passkey».</li>
+  <li>Система покажет окно проверки Face ID / Touch ID, после подтверждения Passkey автоматически создаётся и сохраняется в Связку ключей iCloud.</li>
+  <li>При следующем входе на этот сайт введите имя пользователя, выберите «Войти с помощью iPhone», проведите Face ID, и готово.</li>
+  <li>Управление: Настройки → Пароли → найдите нужный сайт, там будет запись Passkey.</li>
+</ol>
+<p class="mb-2"><strong>Для Android:</strong></p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>На странице безопасности аккаунта сайта, поддерживающего Passkey, выберите «Добавить ключ доступа».</li>
+  <li>Всплывёт окно Google Password Manager → выберите ваш аккаунт Google → подтвердите блокировкой экрана (отпечаток/графический ключ/PIN).</li>
+  <li>Passkey автоматически сохраняется в Google Password Manager и синхронизируется между устройствами Android с тем же аккаунтом.</li>
+  <li>При следующем входе выберите «Использовать Passkey», разблокируйте экран, и готово.</li>
+  <li>Управление: Настройки Android → Пароли, ключи и автозаполнение → Менеджер паролей → google.com.</li>
+</ol>
+<h5 class="font-semibold mt-3 mb-1">5. Кросс-платформенный вход с Passkey</h5>
+<p class="mb-2">Если вы входите на сайте на компьютере с Windows, а Passkey есть только на iPhone, можно авторизоваться через QR-код:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>На странице входа выберите «Использовать Passkey».</li>
+  <li>Выберите «Использовать другое устройство».</li>
+  <li>Компьютер покажет QR-код, отсканируйте его iPhone.</li>
+  <li>iPhone запросит Face ID, после подтверждения вход на сайте будет выполнен на компьютере.</li>
+</ol>
+<p class="mb-2">Этот процесс использует двойное шифрование через Bluetooth + интернет, закрытый ключ Passkey не покидает ваш iPhone.</p>
+<div class="practice-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Попробуйте прямо сейчас: испытайте беспарольный вход</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>Войдите в аккаунт Google → Безопасность → Ключи доступа → Добавить ключ доступа, испытайте вход по Face ID/отпечатку пальца.</li>
+  <li>Войдите в аккаунт Microsoft → Безопасность → Дополнительные параметры безопасности → Добавить ключ доступа.</li>
+  <li>Попробуйте Passkey на сервисах, уже поддерживающих эту функцию: Taobao, JD.com, eBay, PayPal и др.</li>
+  <li>Сохраните традиционный пароль как резервный и постепенно переводите наиболее ценные учётные записи на Passkey.</li>
+</ol>
+</div>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Рекомендации на переходный период</p>
+<p class="mt-1">Passkey ещё не полностью заменил пароли: многие сайты находятся в стадии «Passkey + пароль». Рекомендация: для наиболее ценных учётных записей включайте Passkey в первую очередь, но <strong>не удаляйте сразу традиционный пароль</strong> — оставьте его как резервный; продолжайте использовать менеджер паролей, так как не все сайты поддерживают Passkey. Рассматривайте Passkey как «мощное дополнение к менеджеру паролей», а не как «немедленную замену».</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">7. Аппаратные ключи безопасности</h4>
+<p class="mb-2">Если ваши требования к безопасности выше, чем у обычного пользователя — например, вы владеете большим количеством криптовалюты, являетесь руководителем/журналистом/активистом или защищаете ключевые корпоративные учётные записи. Аппаратный ключ безопасности является более надёжным выбором, чем SMS-коды подтверждения.</p>
+<h5 class="font-semibold mt-3 mb-1">1. Что такое аппаратный ключ безопасности?</h5>
+<p class="mb-2">Аппаратный ключ, это физическое устройство (похожее на USB-флешку), внутри которого защищённый чип хранит ваш закрытый ключ. Для проверки требуется физический контакт или NFC. Представительные продукты:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>YubiKey</strong> (компания Yubico): самый популярный, поддерживает FIDO2/WebAuthn, U2F, OTP, PIV, OpenPGP, интерфейсы USB-C / USB-A / NFC и другие. Серия 5 стоит 50–70 долларов.</li>
+  <li><strong>Google Titan</strong>: собственный продукт Google, USB-C + NFC / Bluetooth, около 30–40 долларов.</li>
+  <li><strong>OnlyKey</strong>: альтернатива с открытым исходным кодом, поддерживает несколько протоколов.</li>
+  <li><strong>Китайские аналоги</strong>: например, Feitian ePasskey, более доступная цена.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">2. Почему аппаратные ключи безопаснее SMS-кодов?</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Защита от фишинга</strong>: как и Passkey, аппаратный ключ отвечает только на подлинный домен, фишинговые сайты не могут выманить код подтверждения.</li>
+  <li><strong>Защита от SIM-подмены</strong>: SMS-коды могут быть перехвачены атакой SIM-swap, аппаратному ключу не нужен номер телефона.</li>
+  <li><strong>Защита от атак «человек посередине»</strong>: протокол FIDO2 включает значение вызова в каждую подпись, что делает невозможным повторное воспроизведение.</li>
+  <li><strong>Физическая изоляция</strong>: закрытый ключ навсегда остаётся внутри аппаратного чипа, вредоносное ПО не может его прочитать, даже если ваш компьютер взломан.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">3. Сценарии применения</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Аккаунты на криптовалютных биржах, восстановление кошельков.</li>
+  <li>Корпоративный SSO, удалённый доступ VPN, SSH-вход на серверы.</li>
+  <li>«Основные учётные записи», почта, GitHub, социальные сети: взлом которых позволяет сбросить все остальные аккаунты.</li>
+  <li>Лица с высокой чувствительностью: журналисты, юристы, руководители.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">4. Как настроить аппаратный ключ как второй фактор</h5>
+<p class="mb-2">На примере аккаунта Google + YubiKey:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Купите YubiKey (рекомендуется сразу две штуки: одну для повседневного использования, другую как резервную, хранить в разных местах).</li>
+  <li>Войдите на myaccount.google.com → Безопасность → Двухэтапная аутентификация.</li>
+  <li>Выберите «Добавить ключ безопасности» → вставьте YubiKey в USB-C порт или поднесите к NFC-зоне телефона.</li>
+  <li>Следуя подсказкам, коснитесь металлического контакта YubiKey для завершения регистрации.</li>
+  <li>Рекомендуется зарегистрировать второй резервный ключ.</li>
+  <li>В настройках «Двухэтапной аутентификации» установите аппаратный ключ как предпочтительный способ проверки, SMS-коды, как резервный.</li>
+</ol>
+<p class="mb-2">Основные поддерживаемые сайты: Google, GitHub, Microsoft, Apple ID, Facebook, Twitter, Dropbox, GitLab, AWS, Coinbase, Binance и др.</p>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Стратегия двух ключей</p>
+<p class="mt-1">Самый большой риск аппаратного ключа, «потеря». Рекомендация: ① зарегистрируйте два разных ключа одновременно; ② один носите с собой (на брелоке), другой храните в домашнем сейфе или банковской ячейке; ③ некоторые сайты позволяют распечатать «резервные коды восстановления» и хранить их офлайн. Так вы не будете навсегда заблокированы вне аккаунта, даже если потеряете основной ключ.</p>
+</div>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Будьте осторожны с каналом покупки</p>
+<p class="mt-1">Обязательно покупайте в официальном магазине или у авторизованного дилера, не покупайте подержанные ключи или ключи неизвестного происхождения: теоретически предварительно настроенное оборудование может содержать бэкдор. Прошивку YubiKey нельзя обновить после выпуска, но Yubico постоянно публикует бюллетени безопасности, следите за их официальным сайтом.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">8. Совместное использование паролей в семье и команде</h4>
+<p class="mb-2">В семейном сценарии пароли от Netflix, домашнего Wi-Fi, роутера и умного замка должны использоваться всей семьёй; в командном сценарии серверы, базы данных и аккаунты в соцсетях требуют совместной работы нескольких человек. <strong>Отправлять пароли через WeChat или записывать их в общих документах — крайне опасная практика</strong>: как только история чата или права доступа к документу будут скомпрометированы, пароль окажется раскрыт.</p>
+<h5 class="font-semibold mt-3 mb-1">1. «Общие хранилища» (Vault) в 1Password</h5>
+<p class="mb-2">1Password, эталонный продукт для семейного и командного обмена. Его ключевой механизм <strong>несколько хранилищ</strong>:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Личное хранилище</strong>: только вы можете видеть, например, банковские и почтовые учётные записи.</li>
+  <li><strong>Общее хранилище</strong>: могут видеть члены семьи или команды, например, Netflix, домашний Wi-Fi, общие кредитные карты.</li>
+  <li><strong>Разграничение прав</strong>: в командной версии можно настроить для некоторых участников «только просмотр» или «только просмотр без редактирования».</li>
+</ul>
+<p class="mb-2">Членам семьи или команды не нужно делиться мастер-паролем, каждый входит под своей учётной записью, но может видеть содержимое авторизованных общих хранилищ. При изменении пароля все участники получают обновление в реальном времени.</p>
+<h5 class="font-semibold mt-3 mb-1">2. Функция «Организации» в Bitwarden</h5>
+<p class="mb-2">Бесплатная версия Bitwarden поддерживает личный обмен паролями (через функцию «Send», ограниченное по времени предоставление одной записи); платная версия позволяет создавать «Организации» для совместного доступа к определённым записям с членами семьи , или коллегами с детальным разграничением прав. Bitwarden также предлагает вариант самостоятельного хостинга, подходящий для предприятий с высокими требованиями к суверенитету данных.</p>
+<h5 class="font-semibold mt-3 mb-1">3. Семейный сценарий: безопасный способ делиться паролями Netflix, Wi-Fi и т.д.</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Netflix / видеосервисы</strong>: храните пароль для входа в «Общем хранилище» семейной версии 1Password, каждый член семьи входит самостоятельно, не нужно отправлять в чат.</li>
+  <li><strong>Пароль домашнего Wi-Fi</strong>: между устройствами iOS можно напрямую поделиться паролем Wi-Fi через AirDrop с гостем, не произнося его вслух; Android 12+ также имеет функцию «Поделиться Wi-Fi поблизости».</li>
+  <li><strong>Умные замки и умная бытовая техника</strong>: по возможности используйте функцию «Члены семьи» в приложении производителя для создания отдельного аккаунта для каждого человека, а не используйте общий административный аккаунт.</li>
+  <li><strong>Панель управления домашним роутером</strong>: пароль администратора храните в общем хранилище 1Password, для гостей создайте отдельный SSID гостевого Wi-Fi.</li>
+</ul>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Соотношение цены и качества семейной версии 1Password</p>
+<p class="mt-1">1Password Families стоит около 4,99 доллара в месяц и поддерживает до 5 членов семьи, каждый имеет независимое личное хранилище + 4 общих хранилища. В пересчёте на человека это менее 1 доллара в месяц — лучший вариант для семейного обмена. Семейная версия Bitwarden стоит 10 долларов в год на 6 человек, ещё выгоднее, но интерфейс немного уступает.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">4. Командный сценарий: обмен паролями серверов и баз данных</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>1Password Teams / Business</strong>: можно создавать несколько хранилищ по отделам и проектным группам, детальный контроль прав доступа, все действия подлежат аудиту.</li>
+  <li><strong>Bitwarden Teams / Enterprise</strong>: решение с открытым исходным кодом, возможность самостоятельного хостинга, корпоративная версия поддерживает интеграцию SSO и синхронизацию каталогов.</li>
+  <li><strong>Принцип разделения обязанностей</strong>: пароль администратора не должен быть известен только одному человеку — назначьте 2–3 «экстренных контакта», чтобы обеспечить непрерывность работы при увольнении или отпуске ключевого сотрудника.</li>
+  <li><strong>Процедура при увольнении</strong>: при увольнении сотрудника немедленно отзовите его доступ к менеджеру паролей и при необходимости смените все высокочувствительные пароли, к которым у него был доступ.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">5. Экстренный доступ (Emergency Access): на случай непредвиденных обстоятельств</h5>
+<p class="mb-2">Представьте сценарий: вы единолично управляете всеми важными аккаунтами семьи, но попадаете в больницу или, к несчастью, умираете: и семья не может войти в банковские, почтовые и страховые учётные записи. <strong>Функция «Экстренный доступ»</strong> создана именно для этого, она позволяет доверенному члену семьи или другу получить доступ к вашему хранилищу паролей, если вы не можете ответить.</p>
+<p class="mb-2"><strong>Настройка экстренного доступа в Bitwarden:</strong></p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Войдите в Bitwarden Web Vault → Настройки → Экстренный доступ.</li>
+  <li>Добавьте email доверенного контакта и пригласите его принять.</li>
+  <li>Установите «период ожидания» (рекомендуется 7–14 дней): временной интервал от запроса доступа до вашего подтверждения.</li>
+  <li>Если вы не ответите в течение периода ожидания (отказ или бездействие), по истечении срока контакт автоматически получит доступ.</li>
+  <li>Вы в любое время можете вручную отклонить запрос или отозвать право экстренного доступа.</li>
+</ol>
+<p class="mb-2"><strong>Экстренный доступ в 1Password:</strong></p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>1Password не называет это «экстренным доступом» напрямую, но это реализуется через функцию «Семейная/командная организация». Добавьте семью в семейную версию и поместите часть записей в «Общее хранилище».</li>
+  <li>Для пользователей персональной версии рекомендуется сообщить мастер-пароль высокодоверенному члену семьи , или записать его в запечатанный конверт и хранить в сейфе.</li>
+  <li>1Password также предоставляет «Код восстановления», обязательно распечатайте и сохраните его при включении двухфакторной аутентификации.</li>
+</ol>
+<div class="practice-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Настройте прямо сейчас: оставьте семье «запасной ключ»</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>Выберите доверенного члена семьи в качестве «экстренного контакта».</li>
+  <li>Настройте экстренный доступ в менеджере паролей (Bitwarden) или добавьте в семейное общее хранилище (1Password).</li>
+  <li>Запишите мастер-пароль + код восстановления на бумаге, запечатайте в конверт и храните в домашнем сейфе или передайте доверенному члену семьи.</li>
+  <li>Раз в полгода пересматривайте, остаётся ли экстренный контакт подходящим.</li>
+</ol>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">9. Лучшие практики использования менеджера паролей</h4>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Установите надёжный мастер-пароль</strong>: мастер-пароль, это последняя линия обороны; обязательно задайте длинный и сложный пароль и запомните его.</li>
+  <li><strong>Включите двухфакторную аутентификацию</strong>: включите 2FA для аккаунта менеджера паролей, чтобы добавить дополнительный уровень защиты.</li>
+  <li><strong>Регулярно проверяйте слабые пароли</strong>: большинство менеджеров паролей имеют функцию «аудита безопасности», которая помогает найти слабые и повторяющиеся пароли.</li>
+  <li><strong>Не забывайте мастер-пароль</strong>: мастер-пароль невозможно восстановить; забыть его: значит потерять все пароли. Рекомендуется записать его на бумаге и хранить в безопасном месте.</li>
+  <li><strong>Экстренный доступ</strong>: настройте экстренного контакта, чтобы в случае вашей недоступности доверенное лицо могло получить доступ к вашим паролям.</li>
+</ul>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Важное напоминание</p>
+<p class="mt-1">Менеджер паролей удобен, но несёт и риски: если мастер-пароль будет раскрыт, все пароли окажутся под угрозой. Поэтому мастер-пароль ни в коем случае не должен совпадать с другими паролями и не должен быть записан в легкодоступном месте. Кроме того, рекомендуется выбирать сервис с хорошей репутацией в области безопасности.</p>
+</div>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Попробуйте прямо сейчас: начните использовать менеджер паролей</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>Выберите менеджер паролей (рекомендуется Bitwarden или встроенный в систему).</li>
+  <li>Зарегистрируйте аккаунт и задайте надёжный мастер-пароль.</li>
+  <li>Импортируйте существующие пароли (если есть) или начните добавлять новые.</li>
+  <li>Установите расширение для браузера или мобильное приложение, чтобы испытать функцию автозаполнения.</li>
+  <li>Проверьте отчёт аудита безопасности и найдите пароли, которые нужно улучшить.</li>
+</ol>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">Нашли ошибку в этой главе? <a href="../../errata.html" class="text-primary hover:underline">Сообщите на странице исправлений</a> — устаревший путь, неверный факт, непонятная формулировка: всё приветствуется. Можно написать и в QQ-группу 1074995524.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-shi-san-zhang.html" class="text-primary hover:underline">← Глава 13: Какие приложения ставить, а какие лучше не ставить</a><span></span><a id="next-link" href="di-shi-wu-zhang.html" class="text-primary hover:underline">Глава 15: Два заряда в день: батарея или привычки? →</a></nav>
+ </div></main></div><!-- Быстрые инструменты: плавающая группа кнопок --><div id="quick-tools" class="quick-tools no-print" aria-label="Быстрые инструменты"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="Поиск (Ctrl+K)" aria-label="Поиск"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="Переключить тёмную/светлую тему" aria-label="Переключить тему"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="Печать / экспорт в PDF" aria-label="Печать или экспорт"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="Оглавление" aria-label="Открыть оглавление"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="Озвучивание вслух" aria-label="Озвучивание вслух"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="Горячие клавиши (?)" aria-label="Панель горячих клавиш"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="Резервная копия / восстановление прогресса" aria-label="Резервная копия прогресса"><span aria-hidden="true">B</span></button></div><!-- Панель горячих клавиш --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="Горячие клавиши"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Сочетания клавиш</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Закрыть">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Поиск по содержимому</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Тёмная/светлая тема</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Чтение вслух: воспроизведение/пауза</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Остановить чтение</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Открыть панель горячих клавиш</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Шрифт крупнее / мельче</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">Печать / экспорт PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- Диалог резервного копирования/восстановления --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="Резервное копирование и восстановление"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Резервная копия и восстановление прогресса чтения</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Закрыть">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">Резервная копия включает: прочитанные главы, закладки, позицию чтения, предпочитаемый размер шрифта и результаты самопроверки здоровья. Данные хранятся локально в браузере и теряются при смене браузера или очистке кэша — рекомендуем регулярно экспортировать резервную копию.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Экспортировать файл резервной копии
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Скачать JSON-файл и сохранить его в надёжном месте</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Импортировать резервную копию
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Выбрать ранее экспортированный файл резервной копии и восстановить прогресс</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Очистить все данные о чтении
+ </button><p class="text-xs text-red-400 mt-1 text-center">Восстановление невозможно! Сначала экспортируйте резервную копию</p></div></div></div></div><!-- Уведомление о днях чтения подряд --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">День X чтения подряд!</span></div><!-- Панель управления озвучкой --><div id="tts-controls" class="tts-controls" role="region" aria-label="Управление озвучиванием" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="Текущая озвучиваемая глава">Не начато</span><button class="tts-btn" id="tts-prev" title="Предыдущий абзац" aria-label="Предыдущий абзац"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="Воспроизведение / пауза" aria-label="Воспроизвести озвучку"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="Следующий абзац" aria-label="Следующий абзац"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="Медленнее" aria-label="Медленнее">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="Быстрее" aria-label="Быстрее">+</button><button class="tts-btn" id="tts-stop" title="Остановить озвучивание" aria-label="Остановить озвучивание"><span aria-hidden="true">×</span></button></div><!-- Кнопка «Наверх» --><button id="back-to-top" class="opacity-0 invisible" aria-label="Наверх"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- Уведомление о восстановлении позиции чтения --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">Прочитано в последний раз: ...</span><button class="btn-restore" id="restore-btn">Отменить</button><button class="btn-dismiss" id="dismiss-btn">Пропустить</button></div><!-- JS-скрипт -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

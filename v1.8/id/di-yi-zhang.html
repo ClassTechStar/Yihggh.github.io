@@ -1,0 +1,568 @@
+ <!DOCTYPE html><html lang="id"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="Pelajaran ponsel yang Anda lewatkan · Dari dasar hingga mahir, kendalikan sepenuhnya kehidupan digitalmu"><meta name="keywords" content="tutorial ponsel,kelas wajib digital,ponsel pintar,Android,iOS,HarmonyOS,tip dan trik ponsel,kehidupan digital,model besar AI,pemrograman AI,API model besar,prompt engineering,pengembangan Android,pengembangan iOS,Swift,Kotlin,SwiftUI,Jetpack Compose,fotografi komputasi,keamanan informasi,pengelolaan kata sandi,otomatisasi,panduan membeli ponsel"><meta name="author" content="Pemandu Kehidupan Digital"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-yi-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="Bab 1: Mari kenali dulu mesin ini"><meta property="og:description" content="Ponsel Anda sebenarnya adalah superkomputer pribadi di saku Anda. Ia jutaan ka…"><meta property="og:locale" content="id_ID"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Pelajaran ponsel yang Anda lewatkan"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Pelajaran ponsel yang Anda lewatkan · v1.8"><meta name="twitter:description" content="Dari dasar hingga mahir, kendalikan sepenuhnya kehidupan digitalmu"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>Bab 1: Mari kenali dulu mesin ini · Pelajaran ponsel yang Anda lewatkan</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-yi-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "Bab 1: Mari kenali dulu mesin ini", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-yi-zhang.html", "isPartOf": {"@type": "Book", "name": "Pelajaran ponsel yang Anda lewatkan", "inLanguage": "id"}}</script>
+<link rel="prefetch" href="di-yi-zhang-memory.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-yi-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-yi-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-yi-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-yi-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-yi-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-yi-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-yi-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-yi-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-yi-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-yi-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-yi-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-yi-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-yi-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-yi-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-yi-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-yi-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-yi-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-yi-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-yi-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-yi-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">Lewati ke konten utama</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="Buka menu daftar isi" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="Kembali ke beranda">Pelajaran ponsel yang Anda lewatkan</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="Aksi utama"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="Mulai dari dasar">Mulai Belajar</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Cari (Ctrl+K)" aria-label="Cari konten"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="Penyesuaian ukuran huruf"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="Perkecil huruf" aria-label="Perkecil huruf">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="Atur ulang ukuran huruf" aria-label="Atur ulang ukuran huruf">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="Perbesar huruf" aria-label="Perbesar huruf">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Beralih mode gelap/terang" aria-label="Beralih mode gelap/terang"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="Cetak / Ekspor PDF" aria-label="Cetak atau ekspor PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="Kembali ke atas">Atas
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="Daftar isi artikel"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">Daftar isi
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 bab</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="Saring bab..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="Saring bab"></div><ul class="space-y-1 text-sm" id="toc-list"><!--Bagian dasar-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Mulai Belajar</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Dasar" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>Bab 0: Tiga hal jujur sebelum kita mulai</a></li>
+                            <li><a href="#di-yi-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>Bab 1: Mari kenali dulu mesin ini</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Lampiran: Analisis ekspansi memori ponsel Android</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Lampiran Bab 1: Topik khusus sistem operasi HarmonyOS</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>Bab 2: Ada yang hilang di dalam ponsel?</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>Bab 3: Kalau jaringan putus, jangan buru-buru mulai ulang</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>Bab 4: Sebelum pasang aplikasi, lihat-lihat dulu</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Lampiran: Komponen paket instalasi perangkat lunak</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>Bab 5: Setel ponsel sesuai cara Anda pakainya</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>Bab 6: Ponsel hilang, kata sandi terlupa, lalu apa?</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>Bab 7: Bedah Tuntas Semua Fitur Terkini</a></li>
+                        </ul>
+                    </li>
+<!--Bagian perangkat lunak-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">2. Bagian Perangkat Lunak (Bab 8-14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Perangkat Lunak" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>Bab 8: Komunikasi: SMS, telepon, dan sosial</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>Bab 9: Kantor mobile dan belajar</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>Bab 10: Pembayaran mobile dan layanan kehidupan</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>Bab 11: Hasil bagus lebih penting daripada foto banyak</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Tambahan Bab 11:Teknologi Pencitraan Profesional</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>Bab 12: Hiburan audio-visual dan membaca</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>Bab 13: App mana yang layak dipasang, mana yang dilewati?</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>Bab 14: Khusus Pengelola Kata Sandi</a></li>
+                        </ul>
+                    </li>
+<!--Bagian menengah-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">3. Bagian Lanjutan (Bab 15-20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Lanjutan" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>Bab 15: Cas dua kali sehari, baterainya atau cara pakainya?</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Tambahan: Bedah Tuntas Protokol Pengisian Cepat</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>Bab 16: Ganti ponsel, akun mana yang boleh hilang?</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>Bab 17: Sinergi Ponsel dengan Perangkat Lain</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>Bab 18: Cadangkan sekarang, jangan tunggu sampai terlupa</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>Bab 19: Rusak? Jangan buru-buru bawa ke perbaikan</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>Bab 20: Mode Pengembang dan Hak Akses Tingkat Lanjut</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Bab 20 Appendix</a></li>
+                        </ul>
+                    </li>
+<!--Bagian lanjutan-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">4. Bagian Melampaui (Bab 21-26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Melampaui" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>Bab 21: Boleh konek ke Wi-Fi publik?</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>Bab 22: Sebenarnya apa yang AI lakukan di ponsel Anda?</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>Bab 23: Biarkan ponsel menangani pekerjaan yang berulang</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Lampiran: Panduan pemula GitHub</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>Bab 24: Bedah Mendalam Akses Root dan Kunci BL</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>Bab 25: Sebelum menjual ponsel lama, urus dulu ini</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>Bab 26: Teknologi baru masih bisa menunggu</a></li>
+                        </ul>
+                    </li>
+<!--5,Bagian praktik(Bab 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">5. Bagian Praktik (Bab 27-32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Praktik" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>Bab 27: Setel ponsel untuk orang tua</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>Bab 28: Sebelum beli ponsel, pikirkan tiga hal ini</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>Bab 29: Berapa lama sebenarnya Anda memakai ponsel?</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>Bab 30: Screencasting, Presentasi, dan Konektivitas Mobil</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>Bab 31:Pengenalan Syuting Video Pendek dan Pembuatan Konten</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>Bab 32: Hilang, dicuri, atau ditipu? Tiga puluh detik</a></li>
+                        </ul>
+                    </li>
+<!--6,Pandangan ke depan(Bab 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">6. Bagian Prospek (Bab 33-41)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Prospek" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>Bab 33: Seperti apa ponsel sepuluh tahun lagi?</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>Bab 34: Ponsel dan mobil, biar sambungannya mulus</a></li>
+                        </ul>
+                    </li>
+<!--Topik khusus anak dan ponsel(Bab 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Khusus Anak-anak dan Ponsel (Bab 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Khusus Anak-anak dan Ponsel" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>Bab 35: Memberi anak ponsel, aturan mainnya apa?</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>Bab 36: Semua perangkat di rumah, mau dihubungkan bagaimana?</a></li>
+                        </ul>
+                    </li>
+<!--Bagian praktik: pemrograman AI-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">7. Bagian Praktik Pemrograman AI (Bab 37-47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Praktik Pemrograman AI" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>Bab 37: Revolusi Paradigma—Dari Menulis Kode ke Mengarahkan AI Menulis Kode</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>Bab 38: Lima Prinsip Berpikir Pemrograman AI</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>Bab 39: AI tidak paham? Mungkin penjelasan Anda kurang jelas</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>Bab 40: Jelaskan dulu dengan jelas, baru mulai</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>Bab 41: Panorama Alat Pemrograman AI 2026</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>Bab 42: Panorama Model Besar dan Praktik API</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>Bab 43: Ngobrol dengan AI supaya dia ngerti</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>Bab 44: Praktik dari 0 ke 1—Alur Lengkap Proyek Utuh</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>Bab 45: Ditulis AI, belum tentu selesai</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>Bab 46: Jalan Menuju Tingkat Lanjut—Dari Pengguna ke Arsitek</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>Bab 47: Buku Panduan Cepat dan Sumber Daya</a></li>
+                        </ul>
+                    </li>
+<!--Bagian praktik: pengembangan Android-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">8. Bagian Praktik Pengembangan Android (Bab 48-58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Praktik Pengembangan Android" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>Bab 48: Bagaimana Android jadi seperti sekarang?</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>Bab 49: Menyiapkan Lingkungan Pengembangan—Android Studio dan Proyek Pertama</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>Bab 50: Kilat Kotlin—Bahasa Utama Pengembangan Android</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>Bab 51: Pengembangan Antarmuka—Pengenalan Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>Bab 52: Empat Komponen Utama dan Siklus Hidup Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>Bab 53: Penyimpanan Data dan Permintaan Jaringan</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>Bab 54: Proyek 1—Aplikasi Pembukuan Saya (Versi Lokal)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>Bab 55: Proyek 2—App Cek Cuaca (Versi Jaringan)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>Bab 56: App sudah selesai, tinggal tayang</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>Bab 57: Jalan Menuju Tingkat Lanjut—Izin, Notifikasi, dan Arsitektur Modern</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>Bab 58: Buku Panduan Cepat dan Sumber Daya</a></li>
+                        </ul>
+                    </li>
+<!--Bagian praktik: pengembangan iOS-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">9. Bagian Praktik Pengembangan iOS (Bab 59-69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Bagian Praktik Pengembangan iOS" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>Bab 59: Mengenal iOS—Ekosistem Apple dan Ekosistem Pengembangan</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>Bab 60: Menyiapkan Lingkungan Pengembangan—Xcode dan Proyek Pertama</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>Bab 61: Kilat Swift—Bahasa Utama Pengembangan Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>Bab 62: Pengembangan Antarmuka—Pengenalan SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>Bab 63: View, State, dan Navigasi</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>Bab 64: Penyimpanan Data dan Permintaan Jaringan</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>Bab 65: Proyek 1—Aplikasi Pembukuan Saya (Versi Lokal)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>Bab 66: Proyek 2—App Cek Cuaca (Versi Jaringan)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>Bab 67: Memoles dan Menerbitkan—Masuk ke App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>Bab 68: Jalan Menuju Tingkat Lanjut—Izin, Notifikasi, dan Arsitektur Modern</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>Bab 69: Buku Panduan Cepat dan Sumber Daya</a></li>
+                        </ul>
+                    </li>
+<!--Lampiran-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">10. Lampiran</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Buka/tutup Lampiran" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>ALampiran A: Proses unboxing ponsel baru</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>Lampiran B: Macet di tengah latihan?</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C Lampiran C: Tabel Istilah Ringkas</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>DLampiran D: Di mana menemukan sumber tepercaya</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>ELampiran E: Ucapan Terima Kasih dan Penjelasan</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F Lampiran F: Khusus Memilih dan Menggunakan Layar Lipat</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>Penutup: Paham saja cara pakai ponsel, itu cukup</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>GLampiran G: Indeks Cepat Seluruh Buku</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>HLampiran H: Peta Jalan Versi</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="Cari"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="Cari konten..." autocomplete="off" aria-label="Kata kunci pencarian"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Tutup pencarian">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">Ketik kata kunci untuk mulai mencari</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- Breadcrumb atas --><nav class="breadcrumb no-print" aria-label="Posisi"><a href="#top">Beranda</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">Pelajaran Wajib Digital · v1.8</span></nav>
+<div id="di-yi-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">Bab 1: Mari kenali dulu mesin ini</h3>
+<p class="chapter-intro mb-4">Ponsel Anda sebenarnya adalah superkomputer pribadi di saku Anda. Ia jutaan kali lebih kuat dari komputer yang dulu mendaratkan manusia di bulan, namun dengan tenang berbaring di telapak tangan Anda. Hari ini, mari kita kenali "raksasa yang diam" ini dengan baik.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">1. Perangkat keras ponsel "organ dalam": Analisis mendalam</h4>
+<p class="mb-2">Ponsel kecil tapi lengkap. Mari kita kenali komponen-komponen presisi ini satu per satu seperti di kelas anatomi.</p>
+<h5 class="font-semibold mt-3 mb-1">1. SoC (System on Chip): "Otak + jantung" ponsel</h5>
+<p class="mb-2">SoC kepanjangan dari System on Chip, diterjemahkan menjadi "memasukkan seluruh sistem ke dalam satu chip". Ia bukan hanya CPU (Central Processing Unit), tapi mengintegrasikan CPU, GPU (Graphics Processing Unit), NPU (Neural Processing Unit), ISP (Image Signal Processor), baseband (bertanggung jawab untuk komunikasi), dan lainnya semuanya dalam satu chip.</p>
+<p class="mb-2">Ini seperti membangun gedung pemerintahan kota, pembangkit listrik, pusat komunikasi, dan kantor polisi semua dalam satu gedung, efisiensinya sangat tinggi.</p>
+<h5 class="font-semibold mt-3 mb-1">CPU: Inti komputasi umum</h5>
+<p class="mb-2">CPU adalah komponen paling inti dalam SoC, bertanggung jawab menangani sebagian besar tugas komputasi. CPU ponsel menggunakan arsitektur ARM, berbeda dengan arsitektur x86 komputer, arsitektur ARM menggunakan set instruksi sederhana (RISC) sebagai ciri khasnya, konsumsi daya lebih rendah, lebih cocok untuk perangkat mobile.</p>
+<p class="mb-2"><strong>Desain CPU big.LITTLE</strong>: CPU ponsel modern umumnya menggunakan arsitektur "big.LITTLE" (teknologi big.LITTLE ARM), membagi core menjadi tingkat performa yang berbeda:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Super core/Big core</strong>: Performa terkuat, menangani tugas berat. Seperti loading game, peluncuran aplikasi. komputasi kompleks. Frekuensi tertinggi (3GHz+), tapi konsumsi daya juga terbesar.</li>
+  <li><strong>Medium core</strong>: Seimbang antara performa dan konsumsi daya, menangani tugas beban menengah sehari-hari. Men-scroll Weibo, menonton video, multi-tasking utamanya mengandalkan ini.</li>
+  <li><strong>Small core/Efficiency core</strong>: Konsumsi daya terendah, menangani tugas latar belakang ringan. Mode standby, mendengarkan musik, menerima pesan, hampir tidak boros listrik.</li>
+</ul>
+<p class="mb-2">Tiga tingkat core bekerja sama: scheduler sistem mengalokasikan secara otomatis berdasarkan beban tugas, tugas ringan diserahkan ke small core untuk hemat daya, pekerjaan berat diserahkan ke big core untuk bekerja keras, setelah selesai kembali ke small core. Inilah sebabnya ponsel bisa bermain game dengan lancar sekaligus standby seharian.</p>
+<p class="mb-2"><strong>Karakteristik arsitektur tiap merek</strong>:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Qualcomm Snapdragon 8 Elite</strong>: Menggunakan arsitektur CPU Oryon self-developed (berasal dari akuisisi Nuvia), 2 super core (4.32GHz) + 6 performance core (3.53GHz), semuanya berdasarkan proses 3nm generasi kedua TSMC. Sepenuhnya meninggalkan arsitektur ARM public, performa single-core dan multi-core keduanya meningkat melompat. GPU Adreno 830, menggunakan arsitektur slice, performa grafis meningkat 40%, Hexagon NPU computing power sekitar 45 TOPS, performa inferensi AI meningkat 45%. (Catatan: Versi kustom Samsung Galaxy memiliki frekuensi lebih tinggi, super core mencapai 4.47GHz.).</li>
+  <li><strong>MediaTek Dimensity 9400</strong>: 1 super core (Cortex-X925, 3.62GHz) + 3 performance core (Cortex-X4, 3.3GHz) + 4 efficiency core (Cortex-A720, 2.4GHz), arsitektur all-big-core dilanjutkan, proses 3nm generasi kedua TSMC. GPU Immortalis-G925 (12 core), performa puncak meningkat 41%, performa ray tracing meningkat 40%. AI processor generasi kedelapan NPU 890, mendukung on-device large model, on-device LoRA training dan on-device video generation.</li>
+  <li><strong>Apple A18 Pro</strong>: 2 performance core (sekitar 4.04GHz) + 4 efficiency core (sekitar 2.4GHz), proses 3nm generasi kedua TSMC. 6-core GPU mendukung hardware ray tracing, 16-core NPU (sekitar 35 TOPS) memberikan computing power kuat untuk on-device AI dan Apple Intelligence. Arsitektur self-developed Apple masih memimpin dalam performa single-core dan efisiensi daya, arsitektur unified memory memberikan keunggulan bandwidth tinggi untuk inferensi AI.</li>
+  <li><strong>HiSilicon Kirin 9020 Huawei</strong>: Hadir di seri Mate 70, menggunakan arsitektur CPU Taishan self-developed, kemampuan NPU dan ISP terus diperkuat, mendukung 5.5G dan komunikasi satelit, mewakili terobosan terbaru chip domestik.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">GPU: Mesin rendering grafis</h5>
+<p class="mb-2">GPU (Graphics Processing Unit) khusus menangani tugas grafis dan komputasi paralel. Jumlah core-nya jauh lebih banyak dari CPU (sering ratusan hingga ribuan core), tapi fungsi setiap core relatif sederhana, cocok untuk menangani banyak perhitungan serupa secara bersamaan.</p>
+<p class="mb-2"><strong>Alur rendering grafis</strong>:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>Vertex processing</strong>: Menghitung koordinat posisi setiap vertex dalam model 3D.</li>
+  <li><strong>Rasterization</strong>: Mengubah grafis 3D menjadi piksel di layar 2D.</li>
+  <li><strong>Pixel shading</strong>: Menghitung warna, tekstur, efek pencahayaan untuk setiap piksel.</li>
+  <li><strong>Output composition</strong>: Menggabungkan semua layer menjadi gambar akhir, dikirim ke layar untuk ditampilkan.</li>
+</ol>
+<p class="mb-2"><strong>Pengaruh GPU pada penggunaan sehari-hari</strong>: Bukan hanya game! Scroll antarmuka, efek animasi, pemutaran video, filter foto, aplikasi AR semua bergantung pada GPU. Ponsel dengan GPU lemah, scroll antarmuka mungkin drop frame, game bahkan langsung lag.</p>
+<p class="mb-2"><strong>GPU tiap merek</strong>: Qualcomm menggunakan GPU Adreno self-developed; MediaTek menggunakan GPU ARM Mali; Apple menggunakan GPU self-developed, performa dan efisiensi daya keduanya benchmark industri.</p>
+<h5 class="font-semibold mt-3 mb-1">NPU: Mesin akselerasi AI</h5>
+<p class="mb-2">NPU (Neural Processing Unit) adalah prosesor yang dirancang khusus untuk komputasi neural network. Dibandingkan CPU dan GPU, NPU lebih efisien dan konsumsi daya lebih rendah saat menangani tugas AI.</p>
+<p class="mb-2"><strong>Cara komputasi neural network</strong>: Komputasi inti NPU adalah perkalian matriks dan konvolusi—ini adalah komputasi paling dasar dan paling sering dalam neural network. NPU melalui optimisasi hardware-level, bisa memproses banyak komputasi matriks secara paralel, kecepatannya puluhan kali lebih cepat dari CPU, tapi konsumsi daya jauh lebih rendah.</p>
+<p class="mb-2"><strong>Alur pemrosesan AI</strong>:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>Input data</strong>: Gambar kamera, audio mikrofon, data sensor, dll.</li>
+  <li><strong>Preprocessing</strong>: Menyesuaikan format dan ukuran data, menyesuaikan dengan persyaratan input neural network.</li>
+  <li><strong>Inferensi komputasi</strong>: NPU memuat model yang sudah dilatih, melakukan forward computation pada data input, menghasilkan output.</li>
+  <li><strong>Post-processing</strong>: Mengubah output AI menjadi hasil yang bisa digunakan, seperti koordinat wajah, konten teks, label scene.</li>
+</ol>
+<p class="mb-2"><strong>Skenario aplikasi aktual</strong>:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Fotografi komputasional</strong>: Synthesis malam hari, bokeh portrait, pemrosesan HDR, AI beauty.</li>
+  <li><strong>Asisten suara</strong>: Pengenalan suara, pemahaman bahasa alami, sintesis suara.</li>
+  <li><strong>Terjemahan real-time</strong>: Subtitle AI, terjemahan percakapan.</li>
+  <li><strong>Pengenalan cerdas</strong>: Pengenalan teks (OCR), pengenalan objek, pengenalan scene.</li>
+  <li><strong>On-device large model</strong>: Chip flagship terbaru sudah mendukung menjalankan small AI large model (level parameter 7B) di perangkat ponsel, mewujudkan dialog AI offline, ringkasan dokumen, penulisan cerdas, dll. Hexagon NPU Snapdragon 8 Elite computing power sekitar 45 TOPS, NPU 890 Dimensity 9400 juga mendukung on-device large model (kecepatan inferensi LLM meningkat 80%), 16-core NPU Apple A18 Pro memberikan computing power sekitar 35 TOPS.</li>
+  <li><strong>Pemrosesan gambar AI</strong>: AI removal (hapus orang dalam foto dengan satu klik), AI outpainting (perluas batas gambar), AI style transfer, text-to-image, dll.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">ISP: Image Signal Processor</h5>
+<p class="mb-2">ISP memproses data mentah dari kamera, mengubah sinyal cahaya menjadi foto yang bagus.</p>
+<p class="mb-2"><strong>Bagaimana menilai performa?</strong> Lihat modelnya! Apple A18 Pro, Qualcomm Snapdragon 8 Elite, MediaTek Dimensity 9400, HiSilicon Kirin 9020 Huawei semua kelas flagship. Kelas mid-range lihat Snapdragon 8s Gen3/7+ Gen3, Dimensity 8400. Jangan hanya lihat jumlah core, arsitektur dan proses (nomor nanometer) lebih penting. Proses 3nm adalah yang paling canggih saat ini, efisiensi daya jauh lebih baik dari 5nm dan 4nm.</p>
+<h5 class="font-semibold mt-3 mb-1">2. RAM (memori operasi): Meja kerja sementara</h5>
+<p class="mb-2">RAM seperti meja kerja Anda, semakin besar, semakin banyak file yang bisa dibuka bersamaan. 12GB adalah mainstream sekarang, 16GB cocok untuk pengguna berat, 24GB ke atas adalah pilihan gamer dan geek.</p>
+<p class="mb-2">Tipe RAM juga penting: LPDDR5 lebih cepat dan lebih hemat daya dibanding LPDDR4X. Meskipun RAM Apple tidak besar, tapi optimisasi sistem bagus, jadi terlihat "cukup".</p>
+<p class="mb-2"><strong>Bagaimana jika RAM tidak cukup?</strong> Aplikasi akan dimatikan dari latar belakang oleh sistem, perlu reload saat switch. Inilah sebabnya kadang setelah switch ke WeChat sebentar, game sudah hilang.</p>
+<h5 class="font-semibold mt-3 mb-1">3. Penyimpanan (ROM/flash memory): Gudang jangka panjang</h5>
+<p class="mb-2">Penyimpanan seperti rak buku Anda, tempat menyimpan semua foto, video, aplikasi. Mainstream sekarang adalah UFS 3.1 atau UFS 4.0, kecepatannya beberapa kali lebih cepat dari eMMC lawas.</p>
+<p class="mb-2"><strong>Mengapa kecepatan penyimpanan penting?</strong> Ini menentukan kecepatan buka aplikasi, kecepatan loading game, kecepatan simpan foto. Setelah dipakai lama, penyimpanan yang lambat akan membuat ponsel semakin lag.</p>
+<h5 class="font-semibold mt-3 mb-1">4. Layar: Mata Anda</h5>
+<p class="mb-2">Layar adalah jendela utama interaksi Anda dengan ponsel, kualitasnya langsung mempengaruhi pengalaman.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Material</strong>: OLED warna cerah, kontras tinggi, lebih hemat daya (saat menampilkan hitam piksel tidak menyala), tapi pada brightness rendah mungkin ada flicker yang menyakiti mata; LCD lebih ramah mata, biaya rendah, tapi kontras dan warna tidak sebaik OLED.</li>
+  <li><strong>Resolusi</strong>: 1080P adalah mainstream, 2K lebih jernih tapi lebih boros daya. Konsep "Retina display" Apple adalah: pada jarak tertentu, mata manusia tidak bisa membedakan titik piksel.</li>
+  <li><strong>Refresh rate</strong>: 60Hz adalah standar, 90Hz/120Hz lebih lancar, scroll terasa halus seperti sutra. Refresh rate tinggi akan boros daya, jadi banyak ponsel mendukung adaptive refresh rate (LTPO), menyesuaikan secara dinamis sesuai konten.</li>
+  <li><strong>Touch sampling rate</strong>: Mempengaruhi kecepatan respons touch, gamer perlu memperhatikan, semakin tinggi semakin responsif.</li>
+  <li><strong>Metode dimming</strong>: DC dimming lebih ramah mata daripada PWM dimming, pada brightness rendah tidak mudah membuat mata lelah. Sekarang banyak ponsel mendukung high-frequency PWM dimming, juga untuk melindungi mata.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Teknologi HDR layar</h5>
+<p class="mb-2">HDR (High Dynamic Range) membuat layar menampilkan bagian terang yang lebih terang dan bagian gelap yang lebih gelap secara bersamaan, sense of depth gambar meningkat signifikan.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Prinsip implementasi</strong>: Rentang brightness layar biasa terbatas (SDR), perbedaan antara yang paling terang dan paling gelap tidak cukup besar. Layar HDR memiliki peak brightness lebih tinggi (biasanya di atas 1000 nit), kontras lebih besar, color gamut lebih luas, bisa menampilkan lebih banyak detail.</li>
+  <li><strong>Standar mainstream</strong>: HDR10 (paling dasar, gratis open source), HDR10+ (didorong Samsung, metadata dinamis), Dolby Vision (kualitas gambar terbaik tapi butuh lisensi). Ponsel mendukung standar mana tergantung pada hardware layar dan lisensi sistem.</li>
+  <li><strong>Efek aktual</strong>: Saat menonton video HDR, sinar matahari lebih menyilaukan, bayangan lebih dalam, warna lebih kaya. Prasyaratnya video itu sendiri dibuat dengan HDR, dan layar juga mendukung tampilan HDR.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Teknologi HDR imaging</h5>
+<p class="mb-2">HDR saat foto dan HDR layar adalah dua hal berbeda. HDR imaging adalah menyelesaikan masalah "bagian terang overexposed, bagian gelap pitch black" melalui algoritma.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Prinsip algoritma</strong>: Saat menekan shutter, ponsel sebenarnya mengambil beberapa foto dengan exposure berbeda (underexposed untuk retain detail bagian terang, overexposed untuk retain detail bagian gelap, normal exposure untuk retain midtone), lalu menggabungkannya menjadi satu foto high dynamic range.</li>
+  <li><strong>Alur pemrosesan</strong>: Multi-frame capture → alignment compensation (anti-handshake) → exposure fusion/tone mapping → color correction → output foto akhir.</li>
+  <li><strong>Optimisasi efek</strong>: Sekarang ponsel sudah bisa melakukan "real-time HDR",gambar yang terlihat di viewfinder adalah efek setelah pemrosesan HDR, what you see is what you get. Smart HDR Apple dan auto HDR Android sudah sangat matang.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">5. Baterai dan pengisian daya: Sumber energi</h5>
+<p class="mb-2">Baterai adalah komponen ponsel yang paling "berumur pendek", dipakai dua-tiga tahun akan mengalami penuaan yang jelas. Kapasitas mainstream sekarang 5500-7500mAh.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Daya pengisian</strong>: Kubu Android sudah berebut hingga 100W bahkan 200W, penuh dalam belasan menit; Apple masih berkutat di 20-30W. Apakah fast charge merusak baterai? Gunakan aksesori original tidak masalah besar, ponsel memiliki perlindungan suhu.</li>
+  <li><strong>Wireless charging</strong>: Praktis tapi efisiensi rendah, panas berlebih. Cocok untuk charging santai di kantor, tidak cocok saat buru-buru keluar.</li>
+  <li><strong>Reverse charging</strong>: Ponsel menjadi power bank, mengisi daya earphone, jam tangan, untuk darurat.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">6. Kamera: Magisnya cahaya dan bayangan</h5>
+<p class="mb-2">Sekarang kamera ponsel sering tiga-empat, masing-masing dengan pembagian tugas:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Kamera utama</strong>: Paling sering digunakan, sensor terbesar, kualitas gambar terbaik.</li>
+  <li><strong>Ultra wide angle</strong>: Memotret pemandangan, arsitektur, bidang pandang lebih luas.</li>
+  <li><strong>Telephoto</strong>: Memotret jarak jauh, ada optical zoom dan digital zoom.</li>
+  <li><strong>Makro</strong>: Memotret benda kecil dari jarak sangat dekat.</li>
+</ul>
+<p class="mb-2"><strong>Jumlah piksel bukan segalanya!</strong> Ukuran sensor (sensor besar satu level menekan sensor kecil), ukuran aperture (f/1.8 lebih besar dari f/2.4), image stabilization (OIS optical image stabilization sangat penting) semua mempengaruhi kualitas gambar. Computational photography (algoritma AI) sekarang semakin penting, bisa menggabungkan beberapa foto menjadi satu foto bagus.</p>
+<h5 class="font-semibold mt-3 mb-1">Lensa telephoto periskop</h5>
+<p class="mb-2">Lensa telephoto tradisional membutuhkan jalur optik yang panjang, akan membuat ponsel sangat tebal. Telephoto periskop melalui prisma 90 derajat membelokkan cahaya, membuat jalur cahaya berkembang horizontal di dalam ponsel, sehingga sambil menjaga ponsel tetap tipis bisa mewujudkan optical zoom 5x bahkan 10x.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Prinsip struktur</strong>: Cahaya masuk dari lensa → prisma membelokkan 90 derajat → melewati lens group sepanjang arah lebar ponsel → mencapai sensor. Setara dengan menelentangkan teleskop yang berdiri.</li>
+  <li><strong>Karakteristik optik</strong>: Multiplier optical zoom tinggi (5x-10x), kualitas gambar jauh melampaui digital zoom. Tapi ukuran sensor biasanya lebih kecil dari kamera utama, performa low light biasa-biasa saja.</li>
+  <li><strong>Keunggulan imaging</strong>: Memotret bulan, memotret bangunan jauh, memotret close-up panggung, adalah yang tidak bisa dicapai ponsel biasa.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">OIS optical image stabilization vs EIS electronic image stabilization</h5>
+<p class="mb-2">Image stabilization adalah teknologi kunci yang mempengaruhi kualitas gambar foto dan video, prinsip kedua cara sepenuhnya berbeda:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>OIS (optical image stabilization)</strong>: Mengimbangi tangan gemetar dengan menggerakkan lensa atau sensor secara fisik. Di dalam lensa ada gyroscope mikro untuk mendeteksi arah dan amplitudo gemetar, lalu menggerakkan motor untuk memindahkan lens group ke arah berlawanan. Kelebihannya tidak mengurangi kualitas gambar, kekurangannya biaya tinggi, menempati ruang.</li>
+  <li><strong>EIS (electronic image stabilization)</strong>: Mengimbangi gemetar melalui algoritma software dengan cropping dan offset gambar. Ponsel merekam rentang gambar yang sedikit lebih besar. lalu sesuai data gyroscope cropping area yang stabil. Kelebihannya tidak butuh hardware tambahan, kekurangannya akan cropping gambar (bidang pandang mengecil), low light mungkin blur.</li>
+  <li><strong>Pilihan aktual</strong>: Foto utama lihat OIS, video kombinasi keduanya efek terbaik. Sekarang banyak ponsel flagship mendukung "Sensor-Shift" sensor shift image stabilization, efek lebih baik dari traditional lens image stabilization.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Optical zoom vs Digital zoom</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Optical zoom</strong>: Mengubah focal length dengan memindahkan lens group secara fisik, kualitas gambar tidak hilang. Optical zoom di ponsel biasanya hanya multiplier tetap (seperti 2x, 3x, 5x, 10x), tidak bisa zoom kontinu seperti kamera.</li>
+  <li><strong>Digital zoom</strong>: Memperbesar area tengah gambar, pada dasarnya cropping + interpolation upscale. Semakin banyak diperbesar, semakin buruk kualitas gambar. 100x digital zoom terlihat keren, tapi kualitas gambar aktual sudah sangat blur.</li>
+  <li><strong>Hybrid zoom</strong>: Menggabungkan optical dan digital, mengisi kehilangan kualitas gambar dengan algoritma multi-frame synthesis di antara multiplier optical zoom. Efek lebih baik dari pure digital, tapi masih kalah dari optical.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Audio: Speaker dan chip display terpisah</h5>
+<p class="mb-2"><strong>Single speaker vs Dual speaker</strong>:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Single speaker</strong>: Hanya satu unit suara di bagian bawah, suara condong ke satu sisi, tidak ada sense of stereo. Umum di ponsel mid-low end.</li>
+  <li><strong>Dual speaker (stereo)</strong>: Speaker di bagian atas dan bawah masing-masing satu, membentuk sound field stereo. Saat menonton video, mendengarkan musik, left dan right channel jelas, sense of immersion jauh lebih kuat. Earpiece yang juga berfungsi sebagai speaker atas adalah solusi umum.</li>
+  <li><strong>Perbedaan kualitas suara</strong>: Dual speaker bukan hanya "suara lebih besar", kuncinya sense of space dan sense of layer. Menonton film dengan single speaker, selalu merasa kurang sesuatu.</li>
+</ul>
+<p class="mb-2"><strong>Chip display terpisah ponsel gaming</strong>:</p>
+<p class="mb-2">Sebagian ponsel gaming dan ponsel performa dilengkapi chip pemrosesan display terpisah, fungsinya adalah:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Frame interpolation</strong>: Meng-interpolasi gambar game 30fps menjadi 60fps atau 120fps melalui algoritma, gambar lebih lancar. Proses ini selesai di chip display terpisah, tidak membebani GPU SoC.</li>
+  <li><strong>Super resolution</strong>: Meningkatkan gambar resolusi rendah ke resolusi tinggi melalui algoritma AI, kualitas gambar lebih jernih.</li>
+  <li><strong>Mengurangi konsumsi daya</strong>: Karena frame interpolation dan super resolution ditangani chip display terpisah, beban SoC berkurang, panas dan konsumsi daya keduanya berkurang, game lebih stabil.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">GPS positioning: Single frequency dan dual frequency</h5>
+<p class="mb-2">Positioning ponsel utamanya bergantung pada sistem navigasi satelit seperti GPS.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Single frequency GPS</strong>: Hanya menerima sinyal band L1, akurasi positioning sekitar 3-5 meter. Cukup di area terbuka, tapi di urban canyon dengan gedung tinggi rapat, refleksi sinyal menyebabkan offset positioning cukup besar.</li>
+  <li><strong>Dual frequency GPS</strong>: Secara bersamaan menerima sinyal dua band L1 dan L5. Band L5 panjang gelombang lebih panjang, kemampuan anti-interferensi lebih kuat, joint solution dual frequency bisa menghilangkan sebagian besar error ionosfer, akurasi positioning bisa mencapai 1-3 meter. Keunggulan jelas saat navigasi di kota, positioning taksi.</li>
+  <li><strong>Multi-constellation support</strong>: Ponsel modern tidak hanya mendukung GPS, juga mendukung BeiDou (Tiongkok), GLONASS (Rusia), Galileo (Eropa), dan beberapa sistem satelit lainnya. Semakin banyak satelit yang terhubung secara bersamaan, semakin cepat dan akurat positioning.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">7. Sensor: Antena kecil ponsel</h5>
+<p class="mb-2">Di dalam ponsel tersembunyi belasan sensor, bekerja diam-diam:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Akselerometer + gyroscope</strong>: Mendeteksi orientasi ponsel, belok saat bermain game, auto-rotate layar.</li>
+  <li><strong>Sensor cahaya</strong>: Otomatis mengatur brightness layar.</li>
+  <li><strong>Sensor jarak</strong>: Saat menelepon ponsel menempel ke telinga otomatis mati layar.</li>
+  <li><strong>Sensor sidik jari</strong>: Mainstream sekarang adalah optical under-display atau ultrasonic fingerprint.</li>
+  <li><strong>Pengenalan wajah</strong>: Face ID Apple adalah 3D structured light, level keamanan tinggi; banyak Android adalah pengenalan foto 2D, keamanan biasa-biasa saja.</li>
+  <li><strong>NFC</strong>: Near field communication, tap kartu bus, kartu akses, kartu bank.</li>
+  <li><strong>Barometer</strong>: Mengukur ketinggian, mendaki tangga juga bisa terdeteksi.</li>
+  <li><strong>Hall sensor</strong>: Mendeteksi buka-tutup case magnetik.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">2. Sistem operasi: Android VS iOS VS HarmonyOS</h4>
+<p class="mb-2">Hardware adalah tubuh, sistem operasi adalah jiwa. Tiga sistem besar masing-masing memiliki karakteristik:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Android</strong>: Seperti komunitas open source, produsen ponsel bisa customisasi mendalam, pilihan banyak. Anda bisa ganti tema, instal toko aplikasi pihak ketiga. utak-atik berbagai cara. Tapi juga karena keterbukaan, fragmentasi serius, perbedaan pengalaman antar merek besar.</li>
+  <li><strong>: Pengguna biasa tidak dapat mengaktifkan mode pengembang lengkap, membutuhkan akun Apple Developer berbayar.</strong>: Seperti taman yang dirawat dengan baik, Apple menguasai hardware dan software, pengalaman unified dan lancar. Kualitas aplikasi tinggi, perlindungan privasi baik, tapi freedom rendah, banyak hal harus mengikuti aturan Apple.</li>
+  <li><strong>HarmonyOS</strong>: Spesies baru Huawei, fokus pada kemampuan distributed, bisa membuat perangkat berbeda berkolaborasi seamlessly. Akan kita bahas khusus nanti.</li>
+</ul>
+<p class="mb-2">Ekosistem ketiganya semua sangat kaya, pilih gaya hidup yang Anda suka. Tidak ada yang mutlak baik atau buruk, hanya cocok atau tidak.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">3. Analisis lengkap interface ponsel</h4>
+<p class="mb-2">Interface ponsel adalah jembatan yang menghubungkan ke dunia luar, perbedaan interface berbeda jauh:</p>
+<h5 class="font-semibold mt-3 mb-1">Micro USB</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Karakteristik fisik</strong>: Interface trapesium pipih, dibedakan sisi depan dan belakang (terbalik tidak bisa masuk). Pada dasarnya sudah dieliminasi di ponsel, tapi sebagian perangkat low-end dan perangkat lama masih menggunakan.</li>
+  <li><strong>Batasan transmisi</strong>: Hanya mendukung standar USB 2.0, kecepatan transmisi tertinggi 480Mbps, daya pengisian biasanya tidak melebihi 10W.</li>
+  <li><strong>Kekurangan</strong>: Sisi depan dan belakang tidak universal, umur insert pendek, kecepatan transmisi lambat, daya pengisian rendah.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Lightning (interface kilat Apple, sudah dieliminasi)</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Karakteristik fisik</strong>: Interface 8-pin self-developed Apple, depan dan belakang bisa dimasukkan. iPhone 14 dan model sebelumnya menggunakan, sekarang sudah sepenuhnya dieliminasi.</li>
+  <li><strong>Batasan transmisi</strong>: Interface Lightning secara fisik hanya mendukung standar USB 2.0, kecepatan transmisi tertinggi 480Mbps. Bahkan menggunakan kabel USB-C to Lightning, kecepatan transmisi juga terbatas oleh interface Lightning itu sendiri.</li>
+  <li><strong>Alasan eliminasi</strong>: Uni Eropa melalui regulasi mewajibkan mulai 2024 semua ponsel menggunakan interface USB-C yang unified, Apple mulai seri iPhone 15 sepenuhnya beralih ke Type-C. Interface Lightning resmi keluar dari panggung sejarah.</li>
+  <li><strong>Catatan</strong>: Kabel data bersertifikat Apple MFi mengandung chip sertifikasi, kabel non-sertifikasi mungkin tidak bisa mengisi daya atau transfer data dengan normal. Jika Anda masih menggunakan iPhone lama, disarankan menyiapkan kabel data Lightning.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">USB Type-C</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Karakteristik fisik</strong>: Interface oval 24-pin, depan dan belakang bisa dimasukkan. Sudah menjadi standar interface ponsel dan sebagian besar perangkat elektronik. Uni Eropa sudah legislasikan mewajibkan mulai 2024 semua ponsel, tablet, earphone dan perangkat portable lainnya menggunakan interface USB-C yang unified, wilayah lain di dunia juga mengikuti.</li>
+  <li><strong>Protokol transmisi</strong>: Type-C hanya bentuk interface, kemampuan transmisi aktual tergantung pada protokol internal. Mendukung USB 2.0 (480Mbps), USB 3.0/3.1/3.2 (5-20Gbps) bahkan USB4 (40Gbps).</li>
+  <li><strong>Pembedaan penting</strong>: Tidak semua port Type-C mendukung USB 3.0! Banyak ponsel memakai port Type-C, tetapi internalnya hanya terhubung ke pin USB 2.0, kecepatan transfer sama lambatnya dengan port lama. iPhone 16/17 standar hanya mendukung kecepatan USB 2.0, versi Pro baru mendukung USB 3.0 (perlu kabel USB-C to USB-C).</li>
+  <li><strong>Kemampuan pengisian</strong>: Mendukung protokol fast charge seperti USB PD, tertinggi bisa mendukung pengisian 240W.</li>
+  <li><strong>Output video</strong>: Mendukung DisplayPort Alt Mode, bisa output video ke monitor melalui kabel adapter.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">3.5mm interface audio</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Karakteristik fisik</strong>: Jack bulat 3 segmen atau 4 segmen, 3 segmen mentransmisikan audio channel kiri dan kanan, 4 segmen lebih satu channel mikrofon.</li>
+  <li><strong>Karakteristik</strong>: Transmisi sinyal analog, plug and play, tidak butuh driver atau konversi. Kualitas suara stabil, latency nol.</li>
+  <li><strong>Status saat ini</strong>: Sebagian besar ponsel flagship sudah menghapus interface 3.5mm, butuh kabel adapter Type-C atau menggunakan earphone Bluetooth. Sebagian ponsel mid-range dan ponsel gaming masih mempertahankan.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">4. Sistem produk ponsel dan aturan penamaan</h4>
+<p class="mb-2">Menghadapi berbagai product line merek yang membingungkan, memahami aturan penamaan bisa membantu Anda cepat menemukan model yang cocok.</p>
+<h5 class="font-semibold mt-3 mb-1">Seri produk merek mainstream:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Apple</strong>: iPhone (versi standar) / iPhone Plus (versi layar besar) / iPhone Pro (versi profesional) / iPhone ,Pro Max (versi profesional layar besar) / iPhone SE (versi ekonomis) / iPhone 16e (versi AI ekonomis, dengan chip A18 dan modem C1 buatan Apple). Pada 2026, seri iPhone 17 sepenuhnya menggunakan chip A19 Pro, kemampuan AI semakin ditingkatkan</li>
+  <li><strong>Huawei</strong>: Seri Mate (business flagship) / Seri P/Pura (imaging flagship) / Seri Mate ,X (foldable flagship) / Seri nova (young mid-range) / Seri Enjoy (entry)</li>
+  <li><strong>Xiaomi</strong>: Seri angka Xiaomi (flagship) / Xiaomi MIX (exploration flagship/foldable) / Redmi ,Seri K (performance flagship) / Redmi Seri Note (mid-range) / Redmi seri angka (entry)</li>
+  <li><strong>OPPO</strong>: Seri Find X (flagship) / Seri Reno (mid-range) / Seri A (entry) / Seri angka OnePlus (performance flagship)</li>
+  <li><strong>vivo</strong>: Seri X (imaging flagship) / Seri angka iQOO (performance flagship) / Seri S (selfie mid-range) / Seri Y (entry)</li>
+  <li><strong>Samsung</strong>: Galaxy Seri S (flagship) / Galaxy Z Fold/Flip (foldable flagship) / Galaxy Seri A (mid-range)</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Arti suffix umum:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Pro</strong>: Singkatan dari Professional, versi profesional. Biasanya upgrade kamera, layar, prosesor dan konfigurasi inti lainnya berdasarkan versi standar.</li>
+  <li><strong>Max</strong>: Versi terbesar. Layar terbesar, baterai terbesar, tapi konfigurasi belum tentu lebih tinggi dari Pro.</li>
+  <li><strong>Ultra</strong>: Versi ultimate. Biasanya mewakili konfigurasi tertinggi seri tersebut, material paling banyak, harga juga tertinggi. Seperti Samsung S24 Ultra, Xiaomi 14 Ultra.</li>
+  <li><strong>SE</strong>: Special Edition special edition, aktualnya kebanyakan versi affordable. Konfigurasi dikurangi, harga diturunkan. Seperti iPhone SE.</li>
+  <li><strong>Plus</strong>: Versi diperbesar. Layar lebih besar dari versi standar, baterai juga besar, tapi konfigurasi dasarnya sama.</li>
+  <li><strong>Lite/Youth Edition</strong>: Versi ringan. Konfigurasi disederhanakan, harga lebih rendah.</li>
+  <li><strong>Note</strong>: Awalnya merujuk ponsel layar besar, sekarang penggunaan tiap merek berbeda. Redmi Note adalah seri mid-range.</li>
+  <li><strong>Neo</strong>: Versi baru. Biasanya merujuk model mid-range berorientasi performa.</li>
+</ul>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Baseband dan antena: Pahlawan di balik layar komunikasi ponsel</li>
+</ol>
+<p class="mb-2">Ponsel bisa menelepon dan online, bergantung pada pasangan chip baseband dan antena.</p>
+<h5 class="font-semibold mt-3 mb-1">Chip baseband:</h5>
+<p class="mb-2">Baseband adalah prosesor di ponsel yang bertanggung jawab untuk komunikasi nirkabel, ia memodulasi sinyal digital menjadi gelombang radio untuk dikirim, juga mendemodulasi gelombang radio yang diterima menjadi sinyal digital. Performa baseband langsung mempengaruhi kualitas panggilan, kecepatan internet dan stabilitas sinyal. Qualcomm adalah pemasok baseband ponsel terbesar, MediaTek dan Samsung juga memiliki baseband self-developed. Apple mulai iPhone 16e membawa chip baseband C1 self-developed, menandai Apple resmi memasuki era baseband self-developed, baseband C1 menggunakan proses 4nm, performa konsumsi daya sangat baik; iPhone 16/16 Plus/16 Pro/16 Pro Max masih menggunakan baseband Qualcomm (Snapdragon X75 5G), diperkirakan model selanjutnya akan bertahap transisi ke baseband self-developed. Lebih awal seri iPhone XS/11 menggunakan baseband Intel saat performa sinyal kurang baik, adalah pain point banyak pengguna.</p>
+<h5 class="font-semibold mt-3 mb-1">Desain antena:</h5>
+<p class="mb-2">Antena ponsel tersembunyi di dalam bodi, biasanya dipasang mengelilingi bingkai. Desain antena langsung mempengaruhi performa penerimaan sinyal:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Teknologi MIMO</strong>: Multiple input multiple output, menggunakan beberapa antena untuk mengirim dan menerima data secara bersamaan, meningkatkan kecepatan dan stabilitas. 4×4 MIMO lebih cepat dari 2×2 MIMO.</li>
+  <li><strong>Jumlah antena</strong>: Ponsel flagship biasanya memiliki belasan antena (seluler, Wi-Fi, Bluetooth, NFC, GPS masing-masing butuh antena independen).</li>
+  <li><strong>Pengaruh bodi logam</strong>: Logam akan menahan sinyal, jadi ponsel bodi logam perlu desain antenna band (strip plastik di bingkai). Bodi kaca dan plastik pengaruhnya kecil pada sinyal.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Evolusi teknologi jaringan:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>4G LTE</strong>: Kecepatan puncak teoretis downlink 1Gbps/uplink 500Mbps (Cat.18), pengalaman aktual biasanya 50-150Mbps. Coverage terluas, cukup digunakan.</li>
+  <li><strong>5G NR</strong>: Kecepatan puncak teoretis downlink 10Gbps+. Band Sub-6GHz coverage cukup baik, mmWave millimeter wave kecepatan sangat cepat tapi coverage sangat kecil.</li>
+  <li><strong>5G-A (5G Advanced)</strong>: Versi enhanced dari 5G, juga disebut 5.5G. Kecepatan download bisa mencapai 10Gbps, upload 1Gbps, densitas koneksi dan akurasi posisi meningkat drastis. Sejak 2024, China Mobile, China Telecom, dan China Unicom mulai menyebarkan jaringan 5G-A di kota-kota utama, seri Huawei Mate 70/80, seri Xiaomi 15/16, dan ponsel flagship lain sudah mendukung 5G-A. 5G-A juga membawa kemampuan "integrasi komunikasi dan sensing", base station dapat sekaligus berkomunikasi dan merasakan lingkungan, menyediakan infrastruktur untuk ekonomi altitud rendah (pengiriman drone) dan kendaraan terhubung.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Klasifikasi band jaringan:</h5>
+<p class="mb-2">Band jaringan yang didukung ponsel menentukan di negara mana dan jaringan operator mana bisa digunakan:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>FDD-LTE Band (seri B)</strong>: Seperti B1, B3, B5, dll, band 4G. Negara berbeda menggunakan band berbeda, Tiongkok utamanya menggunakan B1/B3/B5/B8/B34/B38/B39/B40/B41.</li>
+  <li><strong>TDD-LTE Band</strong>: Standar lain 4G, Tiongkok banyak menggunakan B38/B39/B40/B41.</li>
+  <li><strong>5G NR Band (seri N)</strong>: Seperti n1, n3, n28, n41, n78, n79, dll. n78 (3.5GHz) adalah band utama 5G Tiongkok, n41 (2.5GHz) lebih banyak digunakan China Mobile.</li>
+  <li><strong>Saran pembelian</strong>: Jika butuh digunakan ke luar negeri, sebelum membeli konfirmasi apakah ponsel mendukung band negara tujuan. Ponsel versi Tiongkok biasanya paling lengkap mendukung band Tiongkok, tapi mungkin kurang sebagian band luar negeri.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">6. Ponsel Anda, sebenarnya memainkan berapa banyak peran?</h4>
+<p class="mb-2">Ia sudah lama bukan sekadar telepon:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>Alat komunikasi</strong>: Telepon, SMS, WeChat, email...</li>
+  <li><strong>Kamera cerdas</strong>: Foto, video, scan dokumen...</li>
+  <li><strong>Dompet</strong>: Pembayaran, kartu bus, kartu bank, kartu member...</li>
+  <li><strong>Portal informasi</strong>: Berita, cuaca, saham, pengetahuan...</li>
+  <li><strong>Konsol game</strong>: Dari match-3 hingga AAA title...</li>
+  <li><strong>Kantor mobile</strong>: Dokumen, spreadsheet, meeting, kolaborasi...</li>
+  <li><strong>Asisten kesehatan</strong>: Step counter, heart rate, sleep, olahraga...</li>
+  <li><strong>Remote smart home</strong>: Mengontrol lampu, AC, TV, robot vacuum...</li>
+  <li><strong>ID digital</strong>: KTP elektronik, SIM elektronik, health code...</li>
+  <li><strong>Pusat hiburan</strong>: Musik, video, e-book, podcast...</li>
+</ol>
+<p class="mb-2">Pikirkan, perangkat kecil ini, menanggung berapa banyak kehidupan! Jadi, belajar menggunakan dengan baik, adalah belajar hidup lebih baik.</p>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Praktik: Pahami konfigurasi hardware</p>
+<p class="mt-1">Di [Pengaturan], lihat apakah bisa menemukan model prosesor, ukuran spesifik RAM dan ROM. Punya gambaran tentang kemampuan ponsel Anda. Pengguna Android bisa download "AnTuTu" atau "DevCheck" untuk melihat informasi hardware detail.</p>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">Menemukan kesalahan di bab ini? <a href="../../errata.html" class="text-primary hover:underline">Laporkan di halaman koreksi</a> — jalur yang usang, fakta yang keliru, kalimat yang membingungkan: semuanya diterima. Anda juga bisa menghubungi kami di grup QQ 1074995524.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-ling-zhang.html" class="text-primary hover:underline">← Bab 0: Tiga hal jujur sebelum kita mulai</a><span></span><a id="next-link" href="di-yi-zhang-memory.html" class="text-primary hover:underline">Lampiran: Analisis ekspansi memori ponsel Android →</a></nav>
+
+            </section>
+ </div></main></div><!-- Alat cepat: kelompok tombol melayang --><div id="quick-tools" class="quick-tools no-print" aria-label="Alat pintas"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="Cari (Ctrl+K)" aria-label="Cari"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="Beralih gelap/terang" aria-label="Ganti tema"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="Cetak / Ekspor PDF" aria-label="Cetak atau ekspor"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="Daftar isi" aria-label="Buka daftar isi"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="Bacakan suara" aria-label="Bacakan suara"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="Pintasan keyboard (?)" aria-label="Panel pintasan"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="Cadangkan/pulihkan progres" aria-label="Cadangkan progres"><span aria-hidden="true">B</span></button></div><!-- Panel pintasan --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="Pintasan keyboard"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Pintasan keyboard</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Tutup">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Cari konten</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Ganti mode gelap/terang</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Baca nyaring putar/jeda</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Berhenti membacakan</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Buka panel pintasan keyboard</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Perbesar / perkecil ukuran huruf</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">Cetak / ekspor PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- Dialog cadangan/pemulihan --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="Cadangan dan pemulihan"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Backup dan pulihkan progres baca</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Tutup">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">Cadangan mencakup: bab yang sudah dibaca, penanda, posisi baca, preferensi ukuran huruf, dan hasil seari mandiri kesehatan. Data tersimpan lokal di browser dan akan hilang jika kamu berganti browser atau membersihkan cache; disarankan mengekspor cadangan secara berkala.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Ekspor file backup
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Unduh satu file JSON dan simpan di tempat yang aman</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Impor backup untuk memulihkan
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Pilih file cadangan yang diekspor sebelumnya untuk memulihkan progres</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Hapus semua data baca
+ </button><p class="text-xs text-red-400 mt-1 text-center">Tidak dapat dipulihkan! Ekspor cadangan terlebih dahulu</p></div></div></div></div><!-- Notifikasi hari membaca berturut-turut --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">Hari ke-X membaca beruntun!</span></div><!-- Bilah kontrol baca suara --><div id="tts-controls" class="tts-controls" role="region" aria-label="Kontrol pembacaan suara" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="Bab yang sedang dibacakan">Belum mulai</span><button class="tts-btn" id="tts-prev" title="Bagian sebelumnya" aria-label="Bagian sebelumnya"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="Putar/Jeda" aria-label="Putar pembacaan"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="Bagian berikutnya" aria-label="Bagian berikutnya"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="Perlambat" aria-label="Perlambat">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="Percepat" aria-label="Percepat">+</button><button class="tts-btn" id="tts-stop" title="Hentikan pembacaan" aria-label="Hentikan pembacaan"><span aria-hidden="true">×</span></button></div><!-- Tombol kembali ke atas --><button id="back-to-top" class="opacity-0 invisible" aria-label="Kembali ke atas"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- Notifikasi pemulihan posisi membaca --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">Terakhir dibaca: ...</span><button class="btn-restore" id="restore-btn">Urungkan</button><button class="btn-dismiss" id="dismiss-btn">Abaikan</button></div><!-- Skrip JS -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

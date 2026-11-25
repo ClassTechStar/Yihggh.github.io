@@ -1,0 +1,472 @@
+ <!DOCTYPE html><html lang="ru"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="Урок смартфона, который вы пропустили · От новичка до мастера — полный контроль над вашей цифровой жизнью"><meta name="keywords" content="уроки по смартфону, цифровая грамотность, смартфон, Android, iOS, HarmonyOS, советы по телефону, цифровая жизнь, большие языковые модели, программирование с ИИ, API больших моделей, инженерия промптов, разработка под Android, разработка под iOS, Swift, Kotlin, SwiftUI, Jetpack Compose, вычислительная фотография, информационная безопасность, менеджер паролей, автоматизация, выбор смартфона"><meta name="author" content="Проводник в цифровую жизнь"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-wu-shi-yi-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="Глава 51: Разработка интерфейсов — введение в Jetpack Compose"><meta property="og:description" content="Интерфейс, всё, что видит пользователь. До появления Compose интерфейсы Androi…"><meta property="og:locale" content="ru_RU"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Урок смартфона, который вы пропустили"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Урок смартфона, который вы пропустили · v1.8"><meta name="twitter:description" content="От новичка до мастера — полный контроль над вашей цифровой жизнью"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>Глава 51: Разработка интерфейсов — введение в Jetpack Compose · Урок смартфона, который вы пропустили</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-wu-shi-yi-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "Глава 51: Разработка интерфейсов — введение в Jetpack Compose", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-wu-shi-yi-zhang.html", "isPartOf": {"@type": "Book", "name": "Урок смартфона, который вы пропустили", "inLanguage": "ru"}}</script>
+<link rel="prefetch" href="di-wu-shi-er-zhang.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-wu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-wu-shi-yi-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">Перейти к основному содержимому</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="Открыть меню оглавления" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="На главную страницу">Урок смартфона, который вы пропустили</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="Основное действие"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="Начать с основ">Начать обучение</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Поиск (Ctrl+K)" aria-label="Поиск по содержанию"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="Настройка размера шрифта"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="Уменьшить шрифт" aria-label="Уменьшить шрифт">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="Сбросить размер шрифта" aria-label="Сбросить размер шрифта">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="Увеличить шрифт" aria-label="Увеличить шрифт">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Переключить тёмную/светлую тему" aria-label="Переключить тёмную/светлую тему"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="Печать / экспорт в PDF" aria-label="Печать или экспорт в PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="Наверх">Наверх
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="Оглавление статьи"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">Оглавление
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 глав</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="Фильтр глав..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="Фильтр глав"></div><ul class="space-y-1 text-sm" id="toc-list"><!--Основы-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Начать обучение</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел основ" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>Глава 0: Три честных слова перед стартом</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>Глава 1: Сначала познакомимся с этой машиной</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Прил.: Разбор расширения памяти на Android</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Прил. к главе 1: Спецтема — ОС Harmony</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>Глава 2: Не можете найти нужное на телефоне?</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>Глава 3: Нет сети? Не спешите перезагружать</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>Глава 4: Перед установкой приложений посмотрите поближе</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Прил.: Состав пакета установки ПО</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>Глава 5: Настройте телефон под себя</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>Глава 6: Потеряли телефон? Забыли пароль?</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>Глава 7: Полный разбор передовых функций</a></li>
+                        </ul>
+                    </li>
+<!--Программы-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">II. Программы (главы 8–14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел о программах" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>Глава 8: Связь: SMS, звонки и соцсети</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>Глава 9: Мобильная работа и обучение</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>Глава 10: Мобильные платежи и бытовые сервисы</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>Глава 11: Лучше снять хорошо, чем снять больше</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Дополнение к главе 11: Профессиональные техники съёмки</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>Глава 12: Аудио, видео, развлечения и чтение</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>Глава 13: Какие приложения ставить, а какие лучше не ставить</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>Глава 14: Специально о менеджерах паролей</a></li>
+                        </ul>
+                    </li>
+<!--Продвинутый уровень-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">III. Продвинутый уровень (главы 15–20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть продвинутый раздел" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>Глава 15: Два заряда в день: батарея или привычки?</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Дополнение: все протоколы быстрой зарядки</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>Глава 16: Смена телефона: какие учётные записи можно потерять?</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>Глава 17: Связка телефона с другими устройствами</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>Глава 18: Сделайте копию, пока не забыли</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>Глава 19: Сломалось? Не спешите чинить</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>Глава 20: Режим разработчика и продвинутые права</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Прил.: Портативный Linux-терминал Termux</a></li>
+                        </ul>
+                    </li>
+<!--За пределами основ-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">IV. За рамки основ (главы 21–26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел «За рамки основ»" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>Глава 21: Можно ли подключаться к публичному Wi-Fi?</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>Глава 22: Что AI на самом деле делает в вашем телефоне?</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>Глава 23: Пусть телефон возьмёт на себя повторяющуюся работу</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Прил.: Руководство по GitHub для начинающих</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>Глава 24: Root-права и блокировка загрузчика (BL) — глубокий разбор</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>Глава 25: Продаёте старый телефон? Начните с этих шагов</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>Глава 26: Новые технологии могут подождать</a></li>
+                        </ul>
+                    </li>
+<!--5,Практика(главы 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">V. Практика (главы 27–32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел практики" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>Глава 27: Настройте телефон для родителей</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>Глава 28: Покупая телефон, сначала решите вот эти три вещи</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>Глава 29: Сколько времени вы правда проводите с телефоном?</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>Глава 30: Трансляция экрана, презентации и связь с автомобилем</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>Глава 31: Введение в съёмку коротких видео и создание контента</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>Глава 32: Проблемы? Тридцать секунд, чтобы ограничить ущерб</a></li>
+                        </ul>
+                    </li>
+<!--6,Взгляд в будущее(Глава 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VI. Перспективы (глава 33)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел «Перспективы»" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>Глава 33: Каким будет телефон в следующем десятилетии?</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>Глава 34: Телефон и автомобиль: соединяем без лишних хлопот</a></li>
+                        </ul>
+                    </li>
+<!--Спецтема: дети и телефоны(Глава 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Тема: Дети и телефон (главы 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть спецтему «Дети и смартфон»" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>Глава 35: Детям телефон: как установить правила</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>Глава 36: Как соединить все устройства дома</a></li>
+                        </ul>
+                    </li>
+<!--Программирование с ИИ на практике-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VII. Программирование с ИИ на практике (главы 37–47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел практики ИИ-программирования" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>Глава 37: Парадигмальная революция — от написания кода к руководству ИИ</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>Глава 38: Пять принципов мышления в программировании с ИИ</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>Глава 39. ИИ не понял? Скорее всего, вы сказали неясно</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>Глава 40. Сначала скажите всё как есть, потом действуйте</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>Глава 41: Панорама инструментов ИИ-программирования 2026 года</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>Глава 42: Панорама больших моделей и практика API</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>Глава 43: Как говорить с AI, чтобы он понимал</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>Глава 44: Практика от 0 до 1 — полный цикл проекта</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>Глава 45: ИИ написал, но это ещё не конец</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>Глава 46: Путь к мастерству — от пользователя до архитектора</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>Глава 47: Справочник и ресурсы</a></li>
+                        </ul>
+                    </li>
+<!--Разработка под Android на практике-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VIII. Разработка под Android на практике (главы 48–58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел практики разработки под Android" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>Глава 48: Как Android стал таким, какой он есть?</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>Глава 49: Настройка окружения — Android Studio и первый проект</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>Глава 50: Быстрый старт с Kotlin — первый язык Android-разработки</a></li>
+                            <li><a href="#di-wu-shi-yi-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>Глава 51: Разработка интерфейсов — введение в Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>Глава 52: Четыре основных компонента и жизненный цикл Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>Глава 53: Хранение данных и сетевые запросы</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>Глава 54: Проект 1 — мой учёт расходов (локальная версия)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>Глава 55: Проект 2 — приложение погоды (сетевая версия)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>Глава 56. Приложение готово? Выпустите его в Google Play</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>Глава 57: Путь к мастерству — разрешения, уведомления и современная архитектура</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>Глава 58: Справочник и ресурсы</a></li>
+                        </ul>
+                    </li>
+<!--Разработка под iOS на практике-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">IX. Разработка под iOS на практике (главы 59–69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть раздел практики разработки под iOS" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>Глава 59: Знакомство с iOS — экосистема Apple и экосистема разработки</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>Глава 60: Настройка окружения — Xcode и первый проект</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>Глава 61: Быстрый старт со Swift — первый язык разработки под Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>Глава 62: Разработка интерфейсов — введение в SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>Глава 63: Виды, состояние и навигация</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>Глава 64: Хранение данных и сетевые запросы</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>Глава 65: Проект 1 — мой учёт расходов (локальная версия)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>Глава 66: Проект 2 — приложение погоды (сетевая версия)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>Глава 67: Шлифовка и публикация — выпуск в App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>Глава 68: Путь к мастерству — разрешения, уведомления и современная архитектура</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>Глава 69: Справочник и ресурсы</a></li>
+                        </ul>
+                    </li>
+<!--Приложение-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">X. Приложения</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Развернуть/свернуть приложения" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>A Приложение A: Процедура распаковки нового телефона</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>Приложение B: Застряли на упражнении?</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>Приложение C: Мини-глоссарий терминов</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>D Приложение D: Где искать надёжные ресурсы</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>E Приложение E: Благодарности и пояснения</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>Приложение F: Спецтема — выбор и использование складного смартфона</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>Заключение: Разберитесь в телефоне, и этого хватит</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>G Приложение G: Быстрый указатель по всей книге</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>H Приложение H: Дорожная карта версий</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="Поиск"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="Поиск по содержанию..." autocomplete="off" aria-label="Поисковый запрос"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Закрыть поиск">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">Введите ключевое слово для поиска</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- Наверх (навигационная цепочка) --><nav class="breadcrumb no-print" aria-label="Расположение"><a href="#top">Главная</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">Курс цифровой грамотности · v1.8</span></nav>
+<div id="di-wu-shi-yi-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">Глава 51. Разработка интерфейса — знакомство с Jetpack Compose</h3>
+<p class="chapter-intro mb-4">Интерфейс, всё, что видит пользователь. До появления Compose интерфейсы Android писали на XML — муторно, как заполнять пропуски в упражнениях. В 2021 году Google выпустила Jetpack Compose: интерфейс «рисуют» прямо кодом на Kotlin, и результат виден сразу, поменялась строка кода, предпросмотр мгновенно обновился. К 2026 году Compose стал безоговорочным мейнстримом для новых проектов. В этой главе мы научимся «рисовать».</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">1. Идея Compose: интерфейс — это функция</h4>
+<p class="mb-2">Ядро идеи Compose, одна фраза: интерфейс = функция. Всё, что может появиться на экране (текст, кнопка, картинка),: «композируемая функция» (Composable), помеченная @Composable. Вложите их друг в друга, словно кубики, — вот вам и интерфейс.</p>
+<div class="code-block">
+<div class="code-head"><span>KOTLIN · Первый экран в Compose</span><span class="dots">···</span></div>
+<pre>@Composable
+fun Greeting(name: String) {
+ Text(text = "Привет, $name!") // «кирпичик текста»
+}
+
+// Вложенная компоновка: большие блоки содержат маленькие
+@Composable
+fun HomeScreen() {
+ Column { // вертикально
+ Greeting(name = Иван)
+ Greeting(name = Мария)
+ Button(onClick = { /* что делать по нажатию */ }) {
+ Text("Нажми")
+ }
+ }
+}</pre>
+</div>
+<p class="mb-2">Обратите внимание на «шляпу» @Composable — она говорит компилятору: «это кубик интерфейса». Кубики можно вкладывать без ограничений — в этом весь секрет Compose.</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Базовые компоненты: текст, кнопка, поле ввода, изображение</li>
+</ol>
+<p class="mb-2">Компоненты Compose — те же «кубики». Вот четыре самых ходовых:</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Компонент</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Что делает</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Обязательные параметры</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Text</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Показывает текст</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">text (текст для показа)</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Button</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Кнопка</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">onClick (колбэк нажатия)</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">TextField</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Поле ввода</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">value, onValueChange (колбэк изменения ввода)</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Image</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Показывает изображение</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">painter (графический ресурс)</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Четыре базовых компонента Compose</p>
+<div class="code-block">
+<div class="code-head"><span>KOTLIN · Пример базовых виджетов</span><span class="dots">···</span></div>
+<pre>@Composable
+fun BasicWidgets() {
+ Column {
+ Text(text = "Это какой-то текст")
+ Button(onClick = { println("Нажато") }) {
+ Text("Кнопка")
+ }
+ var input by remember { mutableStateOf("") }
+ TextField(
+ value = input,
+ onValueChange = { input = it },
+ label = { Text("Введите что-нибудь") }
+ )
+ }
+}</pre>
+</div>
+<p class="mb-2">В двух строках про поле ввода мелькнуло remember { mutableStateOf("") }, это «магия состояния» Compose; подробно разберём в пятом разделе главы. Пока просто запомните её в лицо.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">3. Трио раскладок: Column, Row, Box</h4>
+<p class="mb-2">Компоненты есть — как их расставить? Запомните три «коробки»:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Column: ставит элементы столбиком (как очередь за обедом);</li>
+  <li>Row: выстраивает элементы в ряд (как сидящие рядом);</li>
+  <li>Box: кладёт элементы стопкой (как колода карт; удобно для бейджей и наложений)</li>
+</ul>
+<div class="code-block">
+<div class="code-head"><span>KOTLIN · Три базовых раскладки</span><span class="dots">···</span></div>
+<pre>Column {
+ Text("Первая строка")
+ Row {
+ Text("Слева")
+ Text("Справа")
+ }
+ Box {
+ Text("Нижний слой")
+ Text("Бейдж поверх")
+ }
+}</pre>
+</div>
+<p class="mb-2">Хотите, чтобы раскладка выглядела лучше? Добавьте компонентам Modifier (модификатор), он словно «накладывает грим» на кубики:</p>
+<div class="code-block">
+<div class="code-head"><span>KOTLIN · Полезные приёмы Modifier</span><span class="dots">···</span></div>
+<pre>Text(
+ text = "Красивый текст",
+ modifier = Modifier
+ .padding(16.dp) // отступы со всех сторон
+ .fillMaxWidth() // занять всю ширину
+ .background(Color.Blue) // цвет фона
+ .clickable { /* нажатие */ }// кликабельно
+)
+// Цепочки вызовов: одна за другой, порядок важен (сначала padding, потом фон — фон не включает отступы)</pre>
+</div>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Внимание: порядок в Modifier имеет значение</p>
+<p class="mt-1">padding(16.dp).background(Blue) и background(Blue).padding(16.dp) дают разный результат: первый: «сначала отступ, потом заливка» (фон не захватывает отступы), второй, «сначала заливка, потом отступ» (фон включает отступы). Новички чаще всего рисуют здесь «загадочные белые поля». Сомневаетесь: поменяйте порядок, и предпросмотр тут же даст ответ.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">4. Состояние: оживляем интерфейс</h4>
+<p class="mb-2">Статичный интерфейс, скучное зрелище. Чтобы после нажатия кнопки число росло на 1, а в поле ввода можно было печатать, нужно состояние (State). Правило Compose: интерфейс всегда верно отражает состояние; состояние изменилось, интерфейс сам перерисовался.</p>
+<div class="code-block">
+<div class="code-head"><span>KOTLIN · Состояние: счётчик нажатий</span><span class="dots">···</span></div>
+<pre>@Composable
+fun Counter() {
+ // remember + mutableStateOf: запоминаем меняющееся значение
+ var count by remember { mutableStateOf(0) }
+
+ Column {
+ Text(text = "Вы нажали $count раз")
+ Button(onClick = { count++ }) { // меняем состояние
+ Text("Нажми +1") // интерфейс обновится сам
+ }
+ }
+}</pre>
+</div>
+<p class="mb-2">Три строки кода: и живой счётчик. Вот чем Compose приятнее старых подходов: не нужно вручную «обновлять интерфейс», достаточно поменять данные. Запомните две ключевые функции: remember (не даёт значению обнулиться при рекомпозиции интерфейса) и mutableStateOf (сообщает Compose: «это значение изменилось, надо перерисовать»).</p>
+<div class="figure">
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> Пользователь нажимает</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-primary bg-indigo-50 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-200 rounded-md px-3 py-1 text-sm text-center"> Состояние меняется (count++)</span></div>
+<div class="flex flex-wrap items-center justify-center gap-2 my-2"><span class="border-2 border-amber-500 bg-amber-50 text-amber-900 dark:bg-amber-950 dark:text-amber-200 rounded-md px-3 py-1 text-sm text-center"> Compose замечает изменение</span><span class="text-gray-400 mx-1">➜</span> <span class="border-2 border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-200 rounded-md px-3 py-1 text-sm text-center"> Интерфейс перерисовывается сам (рекомпозиция)</span></div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Рисунок 3. Однонаправленный поток данных «состояние → интерфейс» в Compose</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">5. Тема и тёмный режим: настроил один раз — работает везде</h4>
+<p class="mb-2">MyFirstAppTheme { ... } из шаблонного проекта, это и есть тема. Она построена на дизайн-системе Material 3 и помогает единообразно управлять цветами, шрифтами и формами. Поддержка тёмного режима — всего три шага:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>определите в теме две палитры — светлую и тёмную (шаблон уже генерирует ColorScheme автоматически);</li>
+  <li>когда система переходит в тёмный режим, isSystemInDarkTheme() определяет это автоматически;</li>
+  <li>берите цвета из темы (например, MaterialTheme.colorScheme.primary), а не вписывайте значения напрямую</li>
+</ol>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Совет: динамические цвета Material 3</p>
+<p class="mt-1">Начиная с Android 12 «Material You» позволяет приложению брать цвета из ваших обоев. Шаблон Compose поддерживает это из коробки (dynamicColor). Ваше приложение будет «переодеваться» на телефонах разных пользователей — вот она, романтика современного Android.</p>
+</div>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Предпросмотр, анимации и живое редактирование: «читы» Compose</li>
+</ol>
+<p class="mb-2">Три «чита» Compose для удобства разработки: попробуешь, назад дороги нет:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Предпросмотр @Preview: добавьте Composable аннотацию @Preview — и Android Studio мгновенно отрисует интерфейс справа: правите код и сразу видите результат, без установки на телефон каждый раз;</li>
+  <li>Живое редактирование (Live Edit): Android Studio 2026 года умеет «горячо» применять часть правок на эмуляторе или реальном устройстве. Мелкие изменения вроде цвета текста появляются на устройстве за секунды;</li>
+  <li>API анимаций: animateFloatAsState и AnimatedVisibility позволяют парой строк добиться плавных переходов элементов, до ощущения «дорогого» продукта часто не хватает именно этих нескольких десятков строк</li>
+</ul>
+<div class="code-block">
+<div class="code-head"><span>KOTLIN · Анимация за десять минут</span><span class="dots">···</span></div>
+<pre>@Composable
+fun AnimatedBox() {
+ var big by remember { mutableStateOf(false) }
+ // при изменении значения плавно переходит к целевому
+ val size by animateDpAsState(if (big) 120.dp else 60.dp)
+
+ Box(Modifier
+ .size(size)
+ .background(MaterialTheme.colorScheme.primary)
+ .clickable { big = !big }
+ )
+}</pre>
+</div>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Совет: сперва функциональность, потом анимация</p>
+<p class="mt-1">Типичная болезнь новичков, «интерфейс ещё не сделан, а человек уже мучается с анимациями». Сначала добейтесь, чтобы всё работало, а затем разом добавьте анимацию — это и есть принцип «простота превыше всего»: анимация — украшение, а функциональность — спасение.</p>
+</div>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Практика: сделайте «кнопку настроения»</p>
+<p class="mt-1">Превратите шаблонный проект в переключатель настроения: одна кнопка; каждое нажатие двигает настроение по кругу 😀 радость → 😢 грусть → 😡 злость, а текст и цвет фона меняются вслед за ним. Подсказка: выбирайте текст и цвет через when по состоянию. Готовым приложением поделитесь с друзьями, и соберёте первый урожай «Вау, ты уже умеешь делать приложения!».</p>
+</div>
+<div class="chapter-summary">
+<p class="font-semibold mb-1">Коротко о главном</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Идея Compose: интерфейс = функции @Composable, вложенные как кубики</li>
+  <li>Четыре главных компонента: Text / Button / TextField / Image</li>
+  <li>Трио раскладок: Column — столбиком, Row, в ряд, Box, стопкой</li>
+  <li>Modifier «накладывает грим» цепочкой: padding, fillMaxWidth, background, clickable, порядок важен</li>
+  <li>Состояние, душа интерфейса: remember + mutableStateOf; поменял данные, интерфейс перерисовался сам</li>
+  <li>Тема: Material 3 + динамические цвета; тёмный режим настраивается один раз и работает везде</li>
+</ul>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">Нашли ошибку в этой главе? <a href="../../errata.html" class="text-primary hover:underline">Сообщите на странице исправлений</a> — устаревший путь, неверный факт, непонятная формулировка: всё приветствуется. Можно написать и в QQ-группу 1074995524.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-wu-shi-zhang.html" class="text-primary hover:underline">← Глава 50: Быстрый старт с Kotlin — первый язык Android-разработки</a><span></span><a id="next-link" href="di-wu-shi-er-zhang.html" class="text-primary hover:underline">Глава 52: Четыре основных компонента и жизненный цикл Activity →</a></nav>
+ </div></main></div><!-- Быстрые инструменты: плавающая группа кнопок --><div id="quick-tools" class="quick-tools no-print" aria-label="Быстрые инструменты"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="Поиск (Ctrl+K)" aria-label="Поиск"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="Переключить тёмную/светлую тему" aria-label="Переключить тему"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="Печать / экспорт в PDF" aria-label="Печать или экспорт"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="Оглавление" aria-label="Открыть оглавление"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="Озвучивание вслух" aria-label="Озвучивание вслух"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="Горячие клавиши (?)" aria-label="Панель горячих клавиш"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="Резервная копия / восстановление прогресса" aria-label="Резервная копия прогресса"><span aria-hidden="true">B</span></button></div><!-- Панель горячих клавиш --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="Горячие клавиши"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Сочетания клавиш</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Закрыть">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Поиск по содержимому</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Тёмная/светлая тема</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Чтение вслух: воспроизведение/пауза</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Остановить чтение</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Открыть панель горячих клавиш</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Шрифт крупнее / мельче</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">Печать / экспорт PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- Диалог резервного копирования/восстановления --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="Резервное копирование и восстановление"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Резервная копия и восстановление прогресса чтения</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Закрыть">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">Резервная копия включает: прочитанные главы, закладки, позицию чтения, предпочитаемый размер шрифта и результаты самопроверки здоровья. Данные хранятся локально в браузере и теряются при смене браузера или очистке кэша — рекомендуем регулярно экспортировать резервную копию.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Экспортировать файл резервной копии
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Скачать JSON-файл и сохранить его в надёжном месте</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Импортировать резервную копию
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Выбрать ранее экспортированный файл резервной копии и восстановить прогресс</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Очистить все данные о чтении
+ </button><p class="text-xs text-red-400 mt-1 text-center">Восстановление невозможно! Сначала экспортируйте резервную копию</p></div></div></div></div><!-- Уведомление о днях чтения подряд --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">День X чтения подряд!</span></div><!-- Панель управления озвучкой --><div id="tts-controls" class="tts-controls" role="region" aria-label="Управление озвучиванием" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="Текущая озвучиваемая глава">Не начато</span><button class="tts-btn" id="tts-prev" title="Предыдущий абзац" aria-label="Предыдущий абзац"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="Воспроизведение / пауза" aria-label="Воспроизвести озвучку"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="Следующий абзац" aria-label="Следующий абзац"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="Медленнее" aria-label="Медленнее">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="Быстрее" aria-label="Быстрее">+</button><button class="tts-btn" id="tts-stop" title="Остановить озвучивание" aria-label="Остановить озвучивание"><span aria-hidden="true">×</span></button></div><!-- Кнопка «Наверх» --><button id="back-to-top" class="opacity-0 invisible" aria-label="Наверх"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- Уведомление о восстановлении позиции чтения --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">Прочитано в последний раз: ...</span><button class="btn-restore" id="restore-btn">Отменить</button><button class="btn-dismiss" id="dismiss-btn">Пропустить</button></div><!-- JS-скрипт -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

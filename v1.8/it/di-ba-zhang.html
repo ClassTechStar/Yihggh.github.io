@@ -1,0 +1,473 @@
+ <!DOCTYPE html><html lang="it"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="La lezione di smartphone che ti è mancata · Da principiante a esperto, prendi il pieno controllo della tua vita digitale"><meta name="keywords" content="tutorial smartphone, corso di base sul digitale, smartphone, Android, iOS, HarmonyOS, trucchi per smartphone, vita digitale, modelli AI, programmazione con l'AI, API dei modelli AI, prompt engineering, sviluppo Android, sviluppo iOS, Swift, Kotlin, SwiftUI, Jetpack Compose, fotografia computazionale, sicurezza informatica, gestione delle password, automazione, guida all'acquisto smartphone"><meta name="author" content="Guida alla vita digitale"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-ba-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="Capitolo 8: Comunicazione: SMS, chiamate e social"><meta property="og:description" content="La comunicazione è la missione più antica e centrale del telefono. Oggi si è t…"><meta property="og:locale" content="it_IT"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="La lezione di smartphone che ti è mancata"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="La lezione di smartphone che ti è mancata · v1.8"><meta name="twitter:description" content="Da principiante a esperto, prendi il pieno controllo della tua vita digitale"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>Capitolo 8: Comunicazione: SMS, chiamate e social · La lezione di smartphone che ti è mancata</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-ba-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "Capitolo 8: Comunicazione: SMS, chiamate e social", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-ba-zhang.html", "isPartOf": {"@type": "Book", "name": "La lezione di smartphone che ti è mancata", "inLanguage": "it"}}</script>
+<link rel="prefetch" href="di-jiu-zhang.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-ba-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-ba-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-ba-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-ba-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-ba-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-ba-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-ba-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-ba-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-ba-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-ba-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-ba-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-ba-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-ba-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-ba-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-ba-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-ba-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-ba-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-ba-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-ba-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-ba-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">Vai al contenuto principale</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="Apri il menu dell'indice" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="Torna alla home">La lezione di smartphone che ti è mancata</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="Azione principale"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="Parti dalle basi">Inizia a imparare</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Cerca (Ctrl+K)" aria-label="Cerca nel contenuto"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="Regola la dimensione del testo"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="Riduci il testo" aria-label="Riduci il testo">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="Reimposta la dimensione del testo" aria-label="Reimposta la dimensione del testo">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="Ingrandisci il testo" aria-label="Ingrandisci il testo">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Attiva/disattiva modalità scura/chiaro" aria-label="Attiva/disattiva la modalità scura/chiaro"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="Stampa / Esporta in PDF" aria-label="Stampa o esporta in PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="Torna all'inizio">Torna su
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="Indice dell'articolo"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">Indice
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 capitoli</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="Filtra i capitoli..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="Filtra i capitoli"></div><ul class="space-y-1 text-sm" id="toc-list"><!--Fondamenti-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Inizia a imparare</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione basi" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>Capitolo 0: Tre cose da dire prima di cominciare</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>Capitolo 1: Conosciamo prima questa macchina</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Appendice: Analisi dell'espansione memoria su Android</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Appendice al Capitolo 1: Speciale sistema operativo HarmonyOS</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>Capitolo 2: Non trovi qualcosa sul telefono?</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>Capitolo 3: Niente rete? Non riavviare subito</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>Capitolo 4: Prima di installare un'app, date un'occhiata</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Appendice: Elementi del pacchetto di installazione</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>Capitolo 5: Regolate il telefono come preferite</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>Capitolo 6: Telefono perso? Password dimenticata?</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>Capitolo 7: Tutte le funzioni più avanzate spiegate bene</a></li>
+                        </ul>
+                    </li>
+<!--Software-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">2. Sezione software (Capitoli 8-14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione software" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="#di-ba-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>Capitolo 8: Comunicazione: SMS, chiamate e social</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>Capitolo 9: Ufficio mobile e apprendimento</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>Capitolo 10: Pagamenti mobili e servizi di vita</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>Capitolo 11: Meglio una foto bella che dieci brutte</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Appendice al Capitolo 11: Tecniche fotografiche professionali</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>Capitolo 12: Intrattenimento audio-video e lettura</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>Capitolo 13: Quali app vale la pena installare e quali no</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>Capitolo 14: Focus sui gestori di password</a></li>
+                        </ul>
+                    </li>
+<!--Avanzato-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">3. Sezione avanzata (Capitoli 15-20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione avanzata" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>Capitolo 15: Due ricariche al giorno: batteria o abitudini?</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Appendice: tutti i protocolli di ricarica rapida spiegati</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>Capitolo 16: Cambiando telefono: quali account puoi perdere?</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>Capitolo 17: Il telefono insieme agli altri dispositivi</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>Capitolo 18: Fai il backup adesso, non quando servirà</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>Capitolo 19: Rotto? Non affrettarti a riparare</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>Capitolo 20: Modalità sviluppatore e permessi avanzati</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Appendice: Termux terminale Linux portatile</a></li>
+                        </ul>
+                    </li>
+<!--Oltre-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">4. Sezione oltre le basi (Capitoli 21-26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione oltre le basi" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>Capitolo 21: Si può collegare al Wi-Fi pubblico?</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>Capitolo 22: Cosa fa davvero l'IA nel tuo telefono?</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>Capitolo 23: Lascia al telefono i compiti ripetitivi</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Appendice: Guida per principianti a GitHub</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>Capitolo 24: Permessi di root e blocco BL spiegati a fondo</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>Capitolo 25: Vendi il vecchio telefono? Fai prima queste cose</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>Capitolo 26: Le nuove tecnologie possono aspettare</a></li>
+                        </ul>
+                    </li>
+<!--5,Pratica(capitoli 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">5. Sezione pratica (Capitoli 27-32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione pratica" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>Capitolo 27: Configura il telefono per i tuoi genitori</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>Capitolo 28: Prima di comprare, chiarisci queste tre cose</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>Capitolo 29: Quanto tempo usi davvero il telefono?</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>Capitolo 30: Screen mirroring, presentazioni e connettività in auto</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>Capitolo 31: Introduzione alle riprese e alla creazione di contenuti in video brevi</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>Capitolo 32: Problemi? Trenta secondi per limitare i danni</a></li>
+                        </ul>
+                    </li>
+<!--6,Prospettive(Capitolo 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">6. Prospettive (Capitolo 33)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione prospettive" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>Capitolo 33: Come sarà il telefono tra dieci anni?</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>Capitolo 34: Telefono e auto: collegarli senza complicazioni</a></li>
+                        </ul>
+                    </li>
+<!--Speciale bambini e telefoni(Capitolo 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Speciale bambini e cellulare (Capitoli 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi l'approfondimento Bambini e smartphone" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>Capitolo 35: Dai il telefono a tuo figlio: poni le regole</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>Capitolo 36: Come collegare tutti i dispositivi di casa</a></li>
+                        </ul>
+                    </li>
+<!--Programmazione con l'IA in pratica-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">7. Programmazione con l'AI in pratica (Capitoli 37-47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione Programmazione con l'AI in pratica" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>Capitolo 37: La rivoluzione di paradigma — Dal scrivere codice al dirigere l'AI che scrive codice</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>Capitolo 38: I cinque principi di pensiero della programmazione con l'AI</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>Capitolo 39: L'AI non capisce? Forse non hai detto bene</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>Capitolo 40: Prima dillo chiaro, poi agisci</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>Capitolo 41: Panorama degli strumenti di programmazione AI nel 2026</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>Capitolo 42: Panorama dei modelli di grandi dimensioni e pratica con le API</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>Capitolo 43: Come parlare all'AI perché ti capisca</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>Capitolo 44: Pratica dal 0 all'1 — Il percorso completo di un progetto</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>Capitolo 45: L'AI ha scritto, ma il lavoro non è finito</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>Capitolo 46: Il percorso di crescita — Da utente ad architetto</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>Capitolo 47: Manuale di consultazione rapida e risorse</a></li>
+                        </ul>
+                    </li>
+<!--Sviluppo Android in pratica-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">8. Sviluppo Android in pratica (Capitoli 48-58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione Sviluppo Android in pratica" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>Capitolo 48: Come è diventato Android quello che è oggi?</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>Capitolo 49: Preparare l'ambiente di sviluppo — Android Studio e il primo progetto</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>Capitolo 50: Kotlin al volo — Il primo linguaggio dello sviluppo Android</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>Capitolo 51: Sviluppare l'interfaccia — Introduzione a Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>Capitolo 52: I quattro componenti fondamentali e il ciclo di vita delle Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>Capitolo 53: Archiviazione dei dati e richieste di rete</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>Capitolo 54: Progetto 1 — Il mio registro delle spese (versione locale)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>Capitolo 55: Progetto 2 — App meteo (versione in rete)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>Capitolo 56: La tua app è pronta, ora pubblicala</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>Capitolo 57: Il percorso di crescita — Permessi, notifiche e architettura moderna</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>Capitolo 58: Manuale di consultazione rapida e risorse</a></li>
+                        </ul>
+                    </li>
+<!--Sviluppo iOS in pratica-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">9. Sviluppo iOS in pratica (Capitoli 59-69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi la sezione Sviluppo iOS in pratica" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>Capitolo 59: Conoscere iOS — L'ecosistema Apple e quello dello sviluppo</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>Capitolo 60: Preparare l'ambiente di sviluppo — Xcode e il primo progetto</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>Capitolo 61: Swift al volo — Il primo linguaggio dello sviluppo Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>Capitolo 62: Sviluppare l'interfaccia — Introduzione a SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>Capitolo 63: View, stato e navigazione</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>Capitolo 64: Archiviazione dei dati e richieste di rete</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>Capitolo 65: Progetto 1 — Il mio registro delle spese (versione locale)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>Capitolo 66: Progetto 2 — App meteo (versione in rete)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>Capitolo 67: Rifinire e pubblicare — Pubblicare sull'App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>Capitolo 68: Il percorso di crescita — Permessi, notifiche e architettura moderna</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>Capitolo 69: Manuale di consultazione rapida e risorse</a></li>
+                        </ul>
+                    </li>
+<!--Appendice-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">10. Appendici</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Espandi/comprimi le appendici" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>AAppendice A: Procedura di unboxing del nuovo cellulare</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>Appendice B: Ti sei bloccato su un esercizio?</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C Appendice C: Glossario essenziale dei termini</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>DAppendice D: Dove trovare risorse affidabili</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>EAppendice E: Ringraziamenti e note</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F Appendice F: Approfondimento su acquisto e uso degli schermi pieghevoli</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>Conclusione: Capire il telefono, tutto qui</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>GAppendice G: Indice di consultazione rapida del libro</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>HAppendice H: Roadmap delle versioni</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="Cerca"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="Cerca nel contenuto..." autocomplete="off" aria-label="Parole chiave della ricerca"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Chiudi la ricerca">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">Digita una parola chiave per iniziare la ricerca</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- Torna su (breadcrumb) --><nav class="breadcrumb no-print" aria-label="Posizione"><a href="#top">Home</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">Corso di base sul digitale · v1.8</span></nav>
+<div id="di-ba-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">Capitolo 8: Comunicazione: SMS, chiamate e social</h3>
+<p class="chapter-intro mb-4">La comunicazione è la missione più antica e centrale del telefono. Oggi si è trasformata da semplici chiamate e SMS in un ecosistema complesso che include messaggistica istantanea, social network ed email.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">1. Funzioni avanzate dell'app Telefono</h4>
+<p class="mb-2">L'app Telefono dei moderni smartphone è molto più di un semplice tastierino: integra strumenti potenti come registrazione delle chiamate, blocco delle chiamate indesiderate e riconoscimento intelligente.</p>
+<h5 class="font-semibold mt-3 mb-1">Registrazione delle chiamate (attenzione alla conformità legale):</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>A cosa serve: registrare il contenuto di chiamate importanti per verbali di lavoro, interviste, promesse dei clienti o come prova in caso di controversie.</li>
+  <li>Nota legale: in Cina, per usare la registrazione di una chiamata come prova è necessario il consenso dell'altra parte, oppure che serva a tutelare i propri diritti legittimi.</li>
+  <li>Registrazione unilaterale vs consenso reciproco: sul piano giuridico, una registrazione ottenuta «senza il consenso dell'altra parte» non è automaticamente invalida. Secondo le interpretazioni giudiziarie della Corte Suprema Popolare, purché il metodo di acquisizione non violi gravemente i diritti legittimi altrui, non contravvenga a divieti di legge e non contrasti con l'ordine pubblico e il buon costume, la registrazione può comunque essere presentata come prova. Alcuni tribunali provinciali, però, applicano criteri più severi nelle cause civili per le «registrazioni segrete»; nei processi penali la revisione di legalità è di solito più rigorosa.</li>
+  <li>Differenze locali: i tribunali di Pechino, Shanghai, Guangdong e altre zone sono relativamente tolleranti verso la registrazione unilaterale come prova civile; le registrazioni che coinvolgono segreti commerciali o privacy personale richiedono invece particolare prudenza ovunque , e possono essere escluse per violazione della privacy.</li>
+  <li>Come si fa: su Android di solito c'è un pulsante «Registra» chiaro nella schermata di chiamata; iOS non offre la registrazione nativa delle chiamate e serve un'app di terze parti o un auricolare Bluetooth con funzione di registrazione.</li>
+</ul>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Limiti d'uso delle registrazioni</p>
+<ul class="list-disc pl-6 mt-1 space-y-1">
+  <li>Non usare le registrazioni per estorcere denaro, diffonderle o insultare pubblicamente qualcuno.</li>
+  <li>I contenuti che coinvolgono la privacy di terzi (ad esempio conversazioni altrui registrate per caso) non devono essere diffusi a cuor leggero.</li>
+  <li>Nelle situazioni importanti conviene dichiarare a voce all'inizio della chiamata «questa chiamata verrà registrata»: è più corretto e la prova ha più valore.</li>
+</ul>
+</div>
+<h5 class="font-semibold mt-3 mb-1">Gestione approfondita delle chiamate indesiderate:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Come funziona: l'app Telefono interroga online un vasto database di numeri e mostra «chiamata indesiderata», «chiamata truffa» o il nome dell'azienda durante la chiamata in arrivo.</li>
+  <li>Come attivarlo: su Android vai in Telefono > Impostazioni > Blocco chiamate indesiderate; su iOS vai in Impostazioni > Telefono > Blocca e identifica chiamate. Per i percorsi dettagliati di ogni marca e le opzioni consigliate, vedi la tabella comparativa nel Capitolo 13 «Strumenti di sistema utili».</li>
+  <li>Principali piattaforme di segnalazione: in Cina la marcatura dei numeri è gestita soprattutto da tre fornitori di dati, Tencent Mobile Manager, 360 Mobile Guard e Dianhua Bang (Tapir). Anche gli operatori (China Mobile/Unicom/Telecom) usano spesso questi dati per mostrare il «nome del titolare» e per il blocco delle chiamate indesiderate. I database dei produttori di smartphone (Huawei, Xiaomi, OPPO, vivo) collaborano in gran parte con questi fornitori.</li>
+  <li>Cosa fare se il tuo numero è stato segnalato per errore: se il tuo numero di lavoro è stato marcato erroneamente come «consegna cibo» «corriere» «chiamata indesiderata», puoi presentare ricorso tramite questi canali: Dianhua Bang: visita la piattaforma di ricorso numeri (haoma.tk.cn) e invia un documento d'identità.</li>
+  <li>360: invia il ricorso tramite la funzione «Ricorso numero» nell'app 360 Mobile Guard.</li>
+  <li>Tencent: invia tramite la pagina «Ricorso numero» della mini-app «Tencent Mobile Manager».</li>
+  <li>I tre grandi operatori: gli utenti China Mobile possono inviare l'SMS «KTFSR» al 10086 per attivare l'anti-spam; gli utenti Telecom seguano l'account ufficiale «Tianyi Anti-Spam»; gli utenti Unicom impostano tutto in «Unicom Mobile Manager».</li>
+</ul>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Anti-spam avanzato: attivando il «blocco chiamate ad alta frequenza» dell'operatore (ad es. il limite chiamate ad alta frequenza di China Mobile) si possono bloccare automaticamente le chiamate vocali AI.</li>
+  <li>Funzioni di blocco integrate nel telefono: Riconoscimento chiamate / blocco intelligente: marca e blocca automaticamente chiamate indesiderate, truffe e pubblicità in base al database numeri.</li>
+  <li>Lista nera / lista bianca: metti in blacklist i numeri indesiderati noti; aggiungi a whitelist i contatti e i numeri di corrieri/food delivery per evitare falsi positivi.</li>
+  <li>Filtro parole chiave SMS: gli SMS che contengono parole come «premio» «prestito» «clicca sul link» finiscono automaticamente nella cartella bloccati.</li>
+  <li>Silenzia chiamate sconosciute su iOS: le chiamate non in rubrica vengono solo silenziate e inviate alla segreteria, senza disturbarti; utile se ricevi molti spam, ma attento a non perdere chiamate importanti di numeri nuovi.</li>
+  <li>Integrazione con Non disturbare: di notte o durante le riunioni consenti solo le chiamate dei contatti; con l'attivazione programmata la qualità del sonno migliora subito.</li>
+  <li>Come integrare i software utili: usa prima il blocco integrato del sistema, poi aggiungi l'app National Anti-Fraud Center e l'anti-spam dell'operatore; per la pulizia puoi scegliere strumenti leggeri come Qingzhuo, ma basta una sola app di sicurezza/pulizia della stessa categoria, vedi Capitolo 13.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Che cos'è VoLTE/VoNR e come attivarlo:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>VoLTE (Voice over LTE): tecnologia di chiamata vocale sulla rete 4G; durante la chiamata non si torna più a 2G/3G, puoi navigare mentre parli, l'audio è più nitido e la connessione più rapida.</li>
+  <li>VoNR (Voice over NR): chiamata vocale su 5G. L'evoluzione di VoLTE. Latenza inferiore, qualità audio migliore e supporto per videochiamate HD. Serve uno smartphone 5G + un piano 5G + copertura 5G locale.</li>
+  <li>Come attivarlo: su iOS in Impostazioni > Rete cellulare > Opzioni dati cellulari > Voce e dati attiva «VoLTE»; su Android cerca l'interruttore «VoLTE chiamate HD» in Impostazioni > Rete mobile > Dati mobile > Avanzate. Di solito l'operatore lo attiva in modo predefinito; se durante una chiamata la rete si disconnette e non navighi, quasi sempre VoLTE non è attivo.</li>
+</ul>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Lo sapevi?</p>
+<p class="mt-1">Se durante una chiamata la navigazione rallenta o si interrompe, quasi sempre VoLTE/VoNR non è attivo e il telefono è tornato su 2G/3G. Attivandolo puoi «parlare e guardare video» contemporaneamente.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">2. SMS e iMessage/RCS</h4>
+<p class="mb-2">Gli SMS tradizionali non sono scomparsi: restano un canale affidabile per ricevere codici di verifica, avvisi bancari e comunicazioni ufficiali.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>iMessage: messaggi inviati via internet tra dispositivi Apple, con bolle blu. Supporta foto e video di alta qualità, conferme di lettura e altro, completamente gratuito e con crittografia end-to-end.</li>
+  <li>RCS: protocollo di comunicazione di nuova generazione spinto da operatori globali e Google. Funziona in modo simile a iMessage o WeChat, ma basato sul numero di telefono.</li>
+  <li>Interoperabilità tra iMessage e RCS: da iOS 18 Apple supporta lo standard RCS: iPhone e Android possono scambiarsi immagini HD, conferme di lettura e indicatori di digitazione, superando il divario delle «bolle verdi». Serve però che entrambi gli operatori abbiano RCS attivo e che il sistema sia abbastanza aggiornato.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Situazione di RCS in Cina:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>China Mobile: ha implementato RCS per prima; in alcune province il servizio «5G Message» supporta messaggi multimediali e schede interattive. Serve un telefono compatibile e l'attivazione in filiale.</li>
+  <li>China Telecom: offre il servizio tramite «Telecom 5G Message»; alcuni piani lo includono di default, i vecchi utenti devono inviare un SMS di attivazione specifico.</li>
+  <li>China Unicom: ha distribuito 5G Message nelle principali città, ma la copertura dei dispositivi è irregolare; molti Android devono ancora attivare manualmente «Messaggi avanzati» o «5G Message» nell'app Messaggi.</li>
+  <li>Esperienza reale: in Cina la diffusione di RCS è più lenta del previsto, soprattutto per la forza dell'ecosistema WeChat e la non uniformità dei dispositivi. La comunicazione quotidiana resta dominata da WeChat; RCS svolge più un ruolo di «canale ufficiale» (avvisi bancari, messaggi della pubblica amministrazione).</li>
+</ul>
+<div class="warning-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Sicurezza dei codici di verifica</p>
+<ul class="list-disc pl-6 mt-1 space-y-1">
+  <li>Non inoltrare mai i codici di verifica: chi ti chiede di «leggere il codice» o «inoltrare l'SMS» può essere un truffatore, anche se si spaccia per «assistenza clienti» «corriere» o «forze dell'ordine». Il codice di verifica = i tuoi soldi.</li>
+  <li>Anti-phishing SMS: diffida dei link in messaggi come «carta ETC scaduta» «tessera sanitaria bloccata» «rimborso per pacco smarrito»; le istituzioni legittime non chiedono numero di carta o password via link SMS.</li>
+  <li>Riconoscimento del numero: gli SMS ufficiali delle banche arrivano di solito da numeri brevi che iniziano con 95 o da 1069 + firma aziendale; qualsiasi «avviso bancario» da un normale cellulare a 11 cifre è quasi sempre una truffa.</li>
+  <li>Backup a due fattori: non cambiare a cuor leggero il numero legato ai conti importanti; se devi cambiarlo, prima scollega tutti i conti chiave, altrimenti il nuovo titolare potrebbe reimpostare le tue password via SMS.</li>
+</ul>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">3. WeChat/QQ: gestione delle super-app social</h4>
+<p class="mb-2">WeChat e QQ sono andati oltre la semplice messaggistica e sono diventati «super-app» che uniscono social, pagamenti e informazioni.</p>
+<h5 class="font-semibold mt-3 mb-1">Backup e migrazione della cronologia chat:</h5>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Accedi a WeChat per PC o Mac sul computer.</li>
+  <li>Clicca sul menu in basso a sinistra > [Migrazione e backup] > [Backup e ripristino].</li>
+  <li>Scegli «Esegui backup della cronologia chat sul computer» e seleziona sul telefono le chat da salvare.</li>
+  <li>Migrazione su un telefono nuovo: sul vecchio telefono WeChat [Io] > [Impostazioni] > [Generali] > [Migrazione e backup cronologia chat] > [Migra] > [Migra su telefono/tablet], inquadra il codice QR e il gioco è fatto.</li>
+</ol>
+<h5 class="font-semibold mt-3 mb-1">Metodi avanzati per liberare spazio:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Percorso standard: WeChat [Io] > [Impostazioni] > [Generali] > [Spazio di archiviazione]; puoi cancellare la cache e la cronologia chat in modo mirato per data e tipo di file.</li>
+  <li>Pulizia dall'interno di una chat: apri una chat > «…» in alto a destra > [Cronologia chat] > [Gestisci spazio]; puoi eliminare immagini, video e file di quella chat mantenendo i testi.</li>
+  <li>Pulizia di foto/video originali: i file HD originali ricevuti nei gruppi occupano più spazio; in [Gestisci spazio] puoi selezionare «Originali» e cancellarli in blocco.</li>
+  <li>Disattiva il download automatico: [Impostazioni] > [Generali] > [Foto, video, file e chiamate], spegni «Download automatico» per evitare che su Wi-Fi vengano scaricati silenziosamente molti file di gruppo.</li>
+  <li>Cache delle mini-app: in [Scopri] > [Mini-app] tieni premuto sulle mini-app poco usate e eliminali per liberare la cache locale.</li>
+  <li>Backup compresso della cronologia: quando esegui il backup da WeChat per PC, spunta «Comprimi» per ridurre alcuni GB di chat al 30%-50% della dimensione originale.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Trucchi di gestione dei gruppi:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Annuncio del gruppo: il proprietario/gli amministratori lo pubblicano da «…» in alto a destra > [Annuncio del gruppo]; tutti ricevono un avviso prioritario, ideale per comunicazioni importanti. Compare automaticamente ai nuovi membri.</li>
+  <li>Da fare del gruppo: il proprietario può trasformare un messaggio in evidenza in «Da fare del gruppo»; a tutti i membri appare un indicatore rosso che sparisce al completamento. Utile per iscrizioni a eventi e raccolta di compiti.</li>
+  <li>Catene di gruppo: digita “#catena” nella casella di input per avviare una catena, ideale per ordinare cibo o raccogliere adesioni. I risultati della catena vengono riassunti automaticamente in cima alla chat di gruppo, evitando che i messaggi inondino la conversazione.</li>
+  <li>Live del gruppo: «+» in alto a destra > [Live del gruppo]; puoi avviare una diretta visibile solo ai membri del gruppo, utile per formazione aziendale, riunioni di famiglia o beta test di prodotti.</li>
+  <li>Comprimi la chat del gruppo: nella lista gruppi scorri il nome verso sinistra > [Comprimi]; i gruppi poco importanti finiscono in «Gruppi compressi» e ti avvisano solo quando ti citano.</li>
+  <li>Solo proprietario/amministratori possono @tutti: nei gruppi con più di 500 membri i membri normali non possono menzionare tutti, per evitare disturbi.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Gestione fine dei permessi di WeChat Moments:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Visibilità per gruppi: quando pubblichi, clicca «Chi può vedere» e scegli «Solo alcuni» o «Escludi qualcuno», basandoti sulle etichette preimpostate («colleghi» «famiglia» «clienti») per condividere in modo mirato.</li>
+  <li>Intervallo di visualizzazione per gli amici: [Io] > [Impostazioni] > [Permessi amici] > [Moments] > [Intervallo di visualizzazione per gli amici], puoi scegliere «ultimi tre giorni/un mese/sei mesi/tutto»; consigliamo «sei mesi» per bilanciare privacy e socialità.</li>
+  <li>Nascondere un singolo post: tieni premuto su un aggiornamento > [Non vedere i suoi Moments] o [Non seguire più]; l'altra persona non lo saprà.</li>
+  <li>Gestione della pubblicità in Moments: [Io] > [Impostazioni] > [Info su WeChat] > [Informazioni personali e permessi] > [Gestione pubblicità personalizzata]; puoi disattivare le raccomandazioni basate sul comportamento.</li>
+  <li>Dieci post per gli estranei: [Permessi amici] > [Moments] > [Consenti agli estranei di vedere dieci Moments]; disattivandolo gli sconosciuti non possono sfogliare i tuoi vecchi post.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">4. Confronto tra videochiamate</h4>
+<p class="mb-2">Ogni strumento di videochiamata ha i suoi punti di forza: scegliere quello giusto per la situazione rende la comunicazione più fluida.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Videochiamate WeChat: copertura capillare, adatto a tutte le età. Ideale per contatti quotidiani con amici e parenti. Fino a 20 persone in video (serve la mini-app «Video di gruppo»); difetto: la qualità cala molto se la rete è scarsa.</li>
+  <li>FaceTime: esclusivo dell'ecosistema Apple, qualità eccellente e crittografia end-to-end. Da iOS 15 si può invitare utenti Android/Web tramite link, ma l'host deve usare un dispositivo Apple. Ideale per famiglie con dispositivi misti.</li>
+  <li>Zoom: prima scelta per riunioni internazionali, supporta riunioni gratuite fino a 100 persone per 40 minuti. Funzioni complete: condivisione schermo, sfondo virtuale, sale breakout, adatto a collaborazioni internazionali/da remoto.</li>
+  <li>Tencent Meeting: prima scelta per l'ufficio in Cina, integrazione profonda con WeChat, si entra scansionando un QR. Fino a 300 partecipanti (versione a pagamento), registrazione su cloud, sottotitoli in tempo reale e verbali automatici; ideale per formazione aziendale e grandi riunioni.</li>
+  <li>Consigli d'uso: per le conversazioni 1:1 usa WeChat; tra utenti Apple usa FaceTime; per riunioni di lavoro formali usa Zoom o Tencent Meeting (in Cina Tencent, oltre confine Zoom).</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Requisiti di banda e consumo di dati:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Videochiamata WeChat: circa 500 Kbps-1 Mbps di banda; in qualità standard consuma 3-5 MB al minuto, in HD 8-12 MB.</li>
+  <li>FaceTime: SD circa 1 Mbps, 720p circa 2 Mbps, 1080p oltre 4 Mbps. Circa 5-15 MB al minuto.</li>
+  <li>Zoom/Tencent Meeting: 720p circa 1,5-3 Mbps, 1080p 3-5 Mbps. Circa 300-800 MB all'ora; l'host di riunioni molte persone consuma di più.</li>
+  <li>Consiglio: per le videochiamate lunghe usa il Wi-Fi quando possibile; sulla rete mobile abbassa la qualità (disattiva «Video HD» nelle impostazioni dell'app) per risparmiare dati.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Trucchi per migliorare la qualità delle videochiamate:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Illuminazione: non metterti controfinestra, guarda la sorgente di luce (luce naturale preferibile) per evitare di apparire in controluce.</li>
+  <li>Inquadratura: tieni la fotocamera leggermente più in alto degli occhi per evitare il doppio mento; in orizzontale reggi il telefono con entrambe le mani per maggiore stabilità.</li>
+  <li>Audio: usa le cuffie per evitare eco e ronzii; in ambienti silenziosi non attivare l'altoparlante.</li>
+  <li>Rete: preferisci il Wi-Fi; su 4G/5G avvicinati alla finestra per evitare attenuazione del segnale; nelle riunioni con molte persone puoi spegnere le altre video e lasciare solo chi parla.</li>
+  <li>Sfondo sfocato: Tencent Meeting e Zoom supportano la sfocatura AI per nascondere ambienti disordinati. Attento a indossare tinte unite, evita colori simili allo sfondo per non sembrare davvero a un green screen.</li>
+</ul>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Suggerimento</p>
+<p class="mt-1">Se la rete va a scatti, spegni prima il video e tieni l'audio: è più educato che riagganciare. Prima di riunioni importanti puoi usare «Test rete» di Tencent Meeting per verificare la banda.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">5. Email: configurazione e uso sul telefono</h4>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Aggiungere un account email: su iOS Impostazioni > Mail > Account > Aggiungi account; su Android di solito c'è l'app «Email».</li>
+  <li>Suggerimenti: imposta notifiche diverse per ogni account email; usa i gesti scorrevoli per archiviare, eliminare o contrassegnare rapidamente i messaggi.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Differenze tra i protocolli IMAP, POP3 ed Exchange:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>POP3: dopo aver scaricato la posta dal server l'originale viene eliminato per impostazione predefinita e resta solo in locale. Adatto se usi un solo dispositivo e vuoi leggere offline. Difetto: cambiando dispositivo non vedi la cronologia; non è più consigliato.</li>
+  <li>IMAP: la posta resta sempre sul server e in locale c'è solo la cache. Più dispositivi (telefono/pc/tablet) restano sincronizzati: letto da un lato, letto ovunque. È il protocollo consigliato oggi.</li>
+  <li>Exchange (incluso ActiveSync): protocollo Microsoft che sincronizza oltre alla posta anche calendario, contatti e attività. Prima scelta per la posta aziendale. Supportato da Outlook, NetEase Enterprise Mail e Tencent Enterprise Mail.</li>
+  <li>Cosa scegliere: per la posta personale usa IMAP; per quella aziendale preferisci Exchange, poi IMAP; evita POP3 salvo esigenze di archiviazione particolari.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Come configurare la posta aziendale:</h5>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>iOS: [Impostazioni] > [Mail] > [Account] > [Aggiungi account] > scegli «Microsoft Exchange» o «Altro».</li>
+  <li>Android: nell'app «Email» integrata o in Outlook scegli «Aggiungi account» e inserisci indirizzo email completo e password.</li>
+  <li>Dati del server (esempio Exchange): l'indirizzo del server è di solito «mail.dominioazienda.com» o «outlook.office365.com»; nel campo dominio inserisci la sigla dell'azienda.</li>
+  <li>Se compare «Impossibile verificare il server», inserisci manualmente: server in entrata (IMAP) porta 993, crittografia SSL; server in uscita (SMTP) porta 465 o 587, crittografia TLS.</li>
+  <li>Dopo l'accesso attiva «Push» in [Impostazioni account] per ricevere la posta in tempo reale , e disattiva «Anteprima messaggio» per proteggere i segreti commerciali.</li>
+</ol>
+<div class="info-box rounded-lg p-4 mt-3">
+<p class="font-semibold">Suggerimento</p>
+<p class="mt-1">La posta aziendale di solito richiede che l'amministratore attivi una «password di autorizzazione client» o un «codice di autorizzazione IMAP/SMTP»: non puoi usare la password di accesso web. Se l'accesso fallisce, genera prima il codice di autorizzazione nelle impostazioni webmail e poi inseriscilo sul telefono.</p>
+</div>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Pratica: esegui un backup della cronologia chat di WeChat sul computer</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>Avvia il backup dal computer: apri WeChat per PC > menu in basso a sinistra > [Migrazione e backup] > [Backup e ripristino].</li>
+  <li>Scegli il backup sul computer: clicca «Esegui backup della cronologia chat sul computer».</li>
+  <li>Seleziona sul telefono il contenuto del backup e attendi il completamento.</li>
+</ol>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">Trovato un errore in questo capitolo? <a href="../../errata.html" class="text-primary hover:underline">Segnalalo sulla pagina delle correzioni</a> — percorso superato, fatto impreciso, frase poco chiara: tutto benvenuto. Puoi anche scrivere nel gruppo QQ 1074995524.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-qi-zhang-jichu.html" class="text-primary hover:underline">← Capitolo 7: Tutte le funzioni più avanzate spiegate bene</a><span></span><a id="next-link" href="di-jiu-zhang.html" class="text-primary hover:underline">Capitolo 9: Ufficio mobile e apprendimento →</a></nav>
+ </div></main></div><!-- Strumenti rapidi: gruppo di pulsanti flottanti --><div id="quick-tools" class="quick-tools no-print" aria-label="Strumenti rapidi"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="Cerca (Ctrl+K)" aria-label="Cerca"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="Attiva/disattiva scuro/chiaro" aria-label="Cambia tema"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="Stampa / Esporta in PDF" aria-label="Stampa o esporta"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="Indice" aria-label="Apri l'indice"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="Lettura vocale" aria-label="Lettura vocale"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="Scorciatoie da tastiera (?)" aria-label="Pannello delle scorciatoie"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="Backup/ripristino dei progressi" aria-label="Backup dei progressi"><span aria-hidden="true">B</span></button></div><!-- Pannello scorciatoie --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="Scorciatoie da tastiera"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Scorciatoie da tastiera</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Chiudi">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Cerca nel contenuto</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Tema scuro/chiaro</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Lettura vocale: play/pausa</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Ferma la lettura</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Apri il pannello delle scorciatoie</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Testo più grande / più piccolo</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">Stampa / esporta PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- Finestra backup/ripristino --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="Backup e ripristino"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Backup e ripristino dell'avanzamento lettura</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Chiudi">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">Il backup include: capitoli letti, segnalibri, posizione di lettura, preferenze sulla dimensione del testo ed esiti dell'autocontrollo. I dati restano nel browser in locale e si perdono cambiando browser o svuotando la cache: ti consigliamo di esportare il backup di tanto in tanto.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Esporta file di backup
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Scarica un file JSON e salvalo in un posto sicuro</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Importa backup per ripristinare
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Seleziona un file di backup esportato in precedenza per ripristinare i progressi</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Cancella tutti i dati di lettura
+ </button><p class="text-xs text-red-400 mt-1 text-center">Non recuperabile! Esporta prima il backup</p></div></div></div></div><!-- Avviso giorni di lettura consecutivi --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">Giorno X di lettura di fila!</span></div><!-- Barra dei controlli di lettura vocale --><div id="tts-controls" class="tts-controls" role="region" aria-label="Comandi della lettura vocale" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="Capitolo in lettura">Non iniziato</span><button class="tts-btn" id="tts-prev" title="Paragrafo precedente" aria-label="Paragrafo precedente"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="Riproduci/Pausa" aria-label="Riproduci la lettura"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="Paragrafo successivo" aria-label="Paragrafo successivo"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="Rallenta" aria-label="Rallenta">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="Accelera" aria-label="Accelera">+</button><button class="tts-btn" id="tts-stop" title="Interrompi la lettura" aria-label="Interrompi la lettura"><span aria-hidden="true">×</span></button></div><!-- Pulsante «Torna su» --><button id="back-to-top" class="opacity-0 invisible" aria-label="Torna all'inizio"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- Avviso ripristino posizione di lettura --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">Ultima lettura: ...</span><button class="btn-restore" id="restore-btn">Annulla</button><button class="btn-dismiss" id="dismiss-btn">Ignora</button></div><!-- Script JS -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

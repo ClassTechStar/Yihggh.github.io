@@ -1,0 +1,564 @@
+ <!DOCTYPE html><html lang="el"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="Το μάθημα κινητού που σου έλειψε · Από αρχάριος σε εξπέρ, πάρε τον πλήρη έλεγχο της ψηφιακής σου ζωής"><meta name="keywords" content="μαθήματα κινητού, ψηφιακές δεξιότητες, έξυπνο κινητό, Android, iOS, HarmonyOS, κόλπα για κινητό, ψηφιακή ζωή, μεγάλα μοντέλα AI, προγραμματισμός με AI, API μεγάλων μοντέλων, μηχανική prompts, ανάπτυξη Android, ανάπτυξη iOS, Swift, Kotlin, SwiftUI, Jetpack Compose, υπολογιστική φωτογραφία, ασφάλεια πληροφοριών, διαχείριση κωδικών, αυτοματοποίηση, επιλογή κινητού"><meta name="author" content="Ο οδηγός σου για την ψηφιακή ζωή"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-yi-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="Κεφάλαιο 1: Ας γνωρίσουμε τον σιωπηλό γίγαντα"><meta property="og:description" content="Το κινητό σας είναι στην πραγματικότητα ο πιο προσωπικός υπερυπολογιστής στην …"><meta property="og:locale" content="el_GR"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Το μάθημα κινητού που σου έλειψε"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Το μάθημα κινητού που σου έλειψε · v1.8"><meta name="twitter:description" content="Από αρχάριος σε εξπέρ, πάρε τον πλήρη έλεγχο της ψηφιακής σου ζωής"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>Κεφάλαιο 1: Ας γνωρίσουμε τον σιωπηλό γίγαντα · Το μάθημα κινητού που σου έλειψε</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-yi-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "Κεφάλαιο 1: Ας γνωρίσουμε τον σιωπηλό γίγαντα", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-yi-zhang.html", "isPartOf": {"@type": "Book", "name": "Το μάθημα κινητού που σου έλειψε", "inLanguage": "el"}}</script>
+<link rel="prefetch" href="di-yi-zhang-memory.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-yi-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-yi-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-yi-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-yi-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-yi-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-yi-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-yi-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-yi-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-yi-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-yi-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-yi-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-yi-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-yi-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-yi-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-yi-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-yi-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-yi-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-yi-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-yi-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-yi-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">Μετάβαση στο κύριο περιεχόμενο</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="Άνοιγμα του μενού περιεχομένων" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="Επιστροφή στην αρχική σελίδα">Το μάθημα κινητού που σου έλειψε</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="Κύρια ενέργεια"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="Ξεκίνα από τα βασικά">Ξεκίνα την εκμάθηση</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Αναζήτηση (Ctrl+K)" aria-label="Αναζήτηση στο περιεχόμενο"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="Ρύθμιση μεγέθους γραμματοσειράς"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="Μικρότερη γραμματοσειρά" aria-label="Μικρότερη γραμματοσειρά">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="Επαναφορά μεγέθους γραμματοσειράς" aria-label="Επαναφορά μεγέθους γραμματοσειράς">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="Μεγαλύτερη γραμματοσειρά" aria-label="Μεγαλύτερη γραμματοσειρά">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Εναλλαγή σκούρας/φωτεινής λειτουργίας" aria-label="Εναλλαγή σκούρας/φωτεινής λειτουργίας"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="Εκτύπωση / εξαγωγή σε PDF" aria-label="Εκτύπωση ή εξαγωγή σε PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="Επιστροφή στην κορυφή">Επάνω
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="Περιεχόμενα άρθρου"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">Πίνακας περιεχομένων
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 κεφάλαια</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="Φιλτράρισμα κεφαλαίων..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="Φιλτράρισμα κεφαλαίων"></div><ul class="space-y-1 text-sm" id="toc-list"><!--Μέρος: βασικά-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Ξεκίνα την εκμάθηση</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Βασικά»" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>Κεφάλαιο 0: Τρεις ειλικρινείς λέξεις πριν ξεκινήσουμε</a></li>
+                            <li><a href="#di-yi-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>Κεφάλαιο 1: Ας γνωρίσουμε τον σιωπηλό γίγαντα</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Παράρτημα: Ανάλυση επέκτασης μνήμης σε Android κινητά</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Κεφάλαιο 1 Παράρτημα: Ειδικό θέμα λειτουργικού συστήματος HarmonyOS</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>Κεφάλαιο 2: Δεν βρίσκετε κάτι στο κινητό σας;</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>Κεφάλαιο 3: Χωρίς δίκτυο, μην βιάζεστε να επανεκκινήσετε</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>Κεφάλαιο 4: Πριν εγκαταστήσετε εφαρμογή, δείτε την πρώτα</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Παράρτημα: Στοιχεία σύνθεσης πακέτου εγκατάστασης λογισμικού</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>Κεφάλαιο 5: Ρυθμίστε το κινητό όπως σας βολεύει</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>Κεφάλαιο 6: Χάσατε το κινητό ή ξεχάσατε τον κωδικό;</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>Κεφάλαιο 7: Πλήρης οδηγός για τις πιο σύγχρονες λειτουργίες</a></li>
+                        </ul>
+                    </li>
+<!--Μέρος: λογισμικό-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">2. Λογισμικό (Κεφάλαια 8-14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Λογισμικό»" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>Κεφάλαιο 8: Επικοινωνία: SMS, τηλέφωνο και κοινωνικά δίκτυα</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>Κεφάλαιο 9: Κινηνό γραφείο και εκπαίδευση</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>Κεφάλαιο 10: Κινητές πληρωμές και υπηρεσίες καθημερινότητας</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>Κεφάλαιο 11: Μια καλή φωτογραφία αξίζει περισσότερο</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Συμπλήρωμα στο Κεφάλαιο 11: Επαγγελματικές τεχνικές απεικόνισης</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>Κεφάλαιο 12: Ήχος, εικόνα, ψυχαγωγία και ανάγνωση</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>Κεφάλαιο 13: Ποιες εφαρμογές αξίζουν και ποιες όχι;</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>Κεφάλαιο 14: Ειδικό θέμα — διαχειριστές κωδικών πρόσβασης</a></li>
+                        </ul>
+                    </li>
+<!--Μέρος: μεσαίο επίπεδο-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">3. Προχωρημένα (Κεφάλαια 15-20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Προχωρημένα»" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>Κεφάλαιο 15: Δύο φορτίσεις την ημέρα, μπαταρία ή χρήση;</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Παράρτημα: Πλήρης ανάλυση των πρωτοκόλλων γρήγορης φόρτισης</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>Κεφάλαιο 16: Αλλάζετε κινητό, ποιοι λογαριασμοί χάνονται;</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>Κεφάλαιο 17: Πώς το κινητό συνεργάζεται με τις υπόλοιπες συσκευές σου</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>Κεφάλαιο 18: Μην περιμένεις τη μέρα που θα το θυμηθείς</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>Κεφάλαιο 19: Χαλάει; Μην βιάσεστε να το φτιάξετε</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>Κεφάλαιο 20: Λειτουργία προγραμματιστή και προχωρημένα δι και ώματα</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Κεφάλαιο 20</a></li>
+                        </ul>
+                    </li>
+<!--Μέρος: πέρα από-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">4. Πέρα από τα βασικά (Κεφάλαια 21-26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Πέρα από τα βασικά»" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>Κεφάλαιο 21: Να συνδεθείτε σε δημόσιο Wi-Fi;</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>Κεφάλαιο 22: Τι κάνει η AI μέσα στο κινητό σου;</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>Κεφάλαιο 23: Άσε το κινητό να χειρίζεται τις επαναλήψεις</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Παράρτημα: Εισαγωγικός οδηγός GitHub</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>Κεφάλαιο 24: Δικαιώματα Root και BL lock σε βάθος</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>Κεφάλαιο 25: Πριν πουλήσεις το παλιό κινητό, κάνε πρώτα αυτά</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>Κεφάλαιο 26: Οι νέες τεχνολογίες περιμένουν</a></li>
+                        </ul>
+                    </li>
+<!--5,Μέρος: εξάσκηση(Κεφάλαια 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">5. Στην πράξη (Κεφάλαια 27-32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Στην πράξη»" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>Κεφάλαιο 27: Ρυθμίστε το κινητό των γονέων σας</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>Κεφάλαιο 28: Πριν αγοράσετε, αποφασίστε πρώτα αυτά τα τρία</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>Κεφάλαιο 29: Πόση ώρα τελικά χρησιμοποιείτε το κινητό;</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>Κεφάλαιο 30: Απεικόνιση σε οθόνη, παρουσιάσεις και σύνδεση με το αυτοκίνητο</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>Κεφάλαιο 31: Πρώτα βήματα στη λήψη σύντομων βίντεο και στη δημιουργία περιεχομένου</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>Κεφάλαιο 32: Χάθηκε ή κλάπηκε; 30 δευτερόλεπτα για τη ζημιά</a></li>
+                        </ul>
+                    </li>
+<!--6,Το μέλλον(Κεφάλαιο 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VI. Ενότητα Προοπτικής (Κεφάλαια 33-41)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Ορίζοντας»" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>Κεφάλαιο 33: Πώς θα είναι το κινητό σε δέκα χρόνια;</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>Κεφάλαιο 34: Κινητό και αυτοκίνητο, πώς τα συνδέεις</a></li>
+                        </ul>
+                    </li>
+<!--Ειδικό θέμα: παιδιά και κινητά(Κεφάλαιο 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Ειδικό θέμα: Παιδιά και κινητό (Κεφάλαια 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο του ειδικού θέματος «Παιδιά και κινητό»" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>Κεφάλαιο 35: Ένα κινητό για το παιδί, κανόνες από την αρχή</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>Κεφάλαιο 36: Όλες οι συσκευές στο σπίτι, πώς τις συνδέεις;</a></li>
+                        </ul>
+                    </li>
+<!--Μέρος εξάσκησης: προγραμματισμός με AI-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">7. Προγραμματισμός με AI στην πράξη (Κεφάλαια 37-47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Προγραμματισμός με AI στην πράξη»" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>Κεφάλαιο 37: Επανάσταση του παραδείγματος — από το να γράφεις κώδικα στο να καθοδηγείς την AI να γράφει</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>Κεφάλαιο 38: Πέντε βασικές αρχές σκέψης για τον προγραμματισμό με AI</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>Κεφάλαιο 39: Δεν καταλαβαίνει η AI; Μήπως δεν είπες καθαρά</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>Κεφάλαιο 40: Εξήγησε πρώτα καθαρά, μετά ξεκίνα</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>Κεφάλαιο 41: Το πανόραμα των εργαλείων προγραμματισμού με AI το 2026</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>Κεφάλαιο 42: Πανόραμα των μεγάλων μοντέλων και πρακτική χρήση API</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>Κεφάλαιο 43: Μίλα με την AI ώστε να σε καταλάβει</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>Κεφάλαιο 44: Από το 0 στο 1 στην πράξη — όλη η πορεία ενός ολοκληρωμένου έργου</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>Κεφάλαιο 45: Η AI έγραψε, δεν τελείωσε</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>Κεφάλαιο 46: Ο δρόμος της προόδου — από χρήστης σε αρχιτέκτονας</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>Κεφάλαιο 47: Γρήγορος οδηγός αναφοράς και πόροι</a></li>
+                        </ul>
+                    </li>
+<!--Μέρος εξάσκησης: ανάπτυξη Android-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">8. Ανάπτυξη Android στην πράξη (Κεφάλαια 48-58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Ανάπτυξη Android στην πράξη»" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>Κεφάλαιο 48: Πώς έγινε το Android να είναι όπως είναι;</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>Κεφάλαιο 49: Στήσε το περιβάλλον ανάπτυξης — Android Studio και το πρώτο σου έργο</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>Κεφάλαιο 50: Kotlin σε γρήγορους ρυθμούς — η πρώτη γλώσσα για ανάπτυξη σε Android</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>Κεφάλαιο 51: Ανάπτυξη διεπαφών — πρώτα βήματα με Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>Κεφάλαιο 52: Τα τέσσερα βασικά στοιχεία και ο κύκλος ζωής του Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>Κεφάλαιο 53: Αποθήκευση δεδομένων και αιτήματα δικτύου</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>Κεφάλαιο 54: Έργο 1 — Το βιβλίο εξόδων μου (τοπική έκδοση)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>Κεφάλαιο 55: Έργο 2 — Εφαρμογή αναζήτησης καιρού (δικτυακή έκδοση)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>Κεφάλαιο 56: Έφτιαξες την εφαρμογή, τώρα δημοσίευσέ την</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>Κεφάλαιο 57: Ο δρόμος της προόδου — δι και ώματα, ειδοποιήσεις και σύγχρονη αρχιτεκτονική</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>Κεφάλαιο 58: Γρήγορος οδηγός αναφοράς και πόροι</a></li>
+                        </ul>
+                    </li>
+<!--Μέρος εξάσκησης: ανάπτυξη iOS-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">9. Ανάπτυξη iOS στην πράξη (Κεφάλαια 59-69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Ανάπτυξη iOS στην πράξη»" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>Κεφάλαιο 59: Γνώρισε το iOS — το οικοσύστημα της Apple και το οικοσύστημα ανάπτυξης</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>Κεφάλαιο 60: Στήσε το περιβάλλον ανάπτυξης — Xcode και το πρώτο σου έργο</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>Κεφάλαιο 61: Swift σε γρήγορους ρυθμούς — η πρώτη γλώσσα για ανάπτυξη στην Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>Κεφάλαιο 62: Ανάπτυξη διεπαφών — πρώτα βήματα με SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>Κεφάλαιο 63: Προβολές, κατάσταση και πλοήγηση</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>Κεφάλαιο 64: Αποθήκευση δεδομένων και αιτήματα δικτύου</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>Κεφάλαιο 65: Έργο 1 — Το βιβλίο εξόδων μου (τοπική έκδοση)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>Κεφάλαιο 66: Έργο 2 — Εφαρμογή αναζήτησης καιρού (δικτυακή έκδοση)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>Κεφάλαιο 67: Φινίρισμα και δημοσίευση — ανέβασε την εφαρμογή στο App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>Κεφάλαιο 68: Ο δρόμος της προόδου — δι και ώματα, ειδοποιήσεις και σύγχρονη αρχιτεκτονική</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>Κεφάλαιο 69: Γρήγορος οδηγός αναφοράς και πόροι</a></li>
+                        </ul>
+                    </li>
+<!--Παράρτημα-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">10. Παράρτημα</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο των Παραρτημάτων" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>A Παράρτημα A: Διαδικασία αποσυσκευασίας νέου κινητού</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>Παράρτημα B: Κολλήσατε σε μια άσκηση;</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C Παράρτημα C: Το πιο σύντομο γλωσσάρι όρων</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>D Παράρτημα D: Πού να βρείτε αξιόπιστες πηγές</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>E Παράρτημα E: Ευχαριστίες και σημειώσεις</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F Παράρτημα F: Ειδικό θέμα για τα αναδιπλούμενα κινητά — επιλογή και χρήση</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>Επίλογος: Να καταλάβετε το κινητό σας, μόνο αυτό</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>G Παράρτημα G: Γρήγορο ευρετήριο βιβλίου</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>H Παράρτημα H: Χάρτης πορείας εκδόσεων</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="Αναζήτηση"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="Αναζήτηση στο περιεχόμενο..." autocomplete="off" aria-label="Λέξεις-κλειδιά αναζήτησης"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Κλείσιμο αναζήτησης">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">Γράψε λέξη-κλειδί για αναζήτηση</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- Πάνω διαδρομή πλοήγησης --><nav class="breadcrumb no-print" aria-label="Τοποθεσία"><a href="#top">Αρχική</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">Μάθημα ψηφιακής αλφαβητοποίησης · v1.8</span></nav>
+<div id="di-yi-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">Κεφάλαιο 1: Ας γνωρίσουμε τον σιωπηλό γίγαντα</h3>
+<p class="chapter-intro mb-4">Το κινητό σας είναι στην πραγματικότητα ο πιο προσωπικός υπερυπολογιστής στην τσέπη σας. Είναι αναρίθμητα φορές πιο ισχυρός από τους υπολογιστές που έστειλαν τον άνθρωπο στη Σελήνη, yet κείται αθόρυβα στην παλάμη σας. Σήμερα, ας γνωρίσουμε καλύτερα αυτόν τον «σιωπηλό γίγαντα».</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">I. Το «εσωτερικό» του κινητού: βαθιά ανάλυση</h4>
+<p class="mb-2">Το κινητό αν και μικρό, έχει τα πάντα. Ας γνωρίσουμε ένα-ένα αυτά τα ακριβή εξαρτήματα, σαν σε μάθημα ανατομίας.</p>
+<h5 class="font-semibold mt-3 mb-1">1. SoC (System on Chip): ο «εγκέφαλος + καρδιά» του κινητού</h5>
+<p class="mb-2">Το SoC (System on Chip) σημαίνει «όλο το σύστημα σε ένα chip». Δεν είναι μόνο CPU (Κεντρική Μονάδα Επεξεργασίας), αλλά ενσωματώνει CPU, GPU (Μονάδα Επεξεργασίας Γραφικών), NPU (Μονάδα Επεξεργασίας Νευρωνικών Δικτύων), ISP (Επεξεργαστής Σήματος Εικόνας), baseband (υπεύθυνο για επικοινωνία) κ.ά. όλα μαζί.</p>
+<p class="mb-2">Είναι σαν να χτίζεις το δημαρχείο, το εργοστάσιο ρεύματος, το κέντρο επικοινωνιών και την αστυνομία μιας πόλης όλα σε ένα κτίριο, εξαιρετικά αποδοτικό.</p>
+<h5 class="font-semibold mt-3 mb-1">CPU: ο πυρήνας γενικής επεξεργασίας</h5>
+<p class="mb-2">Η CPU είναι το πιο κεντρικό εξάρτημα του SoC, υπεύθυνη για την επεξεργασία των περισσότερων υπολογιστικών εργασιών. Οι CPU των κινητών υιοθετούν την αρχιτεκτονική ARM, η οποία διαφέρει από την αρχιτεκτονική x86 των υπολογιστών· η αρχιτεκτονική ARM χαρακτηρίζεται από απλοποιημένο σύνολο εντολών (RISC), με χαμηλότερη κατανάλωση ενέργειας, πιο κατάλληλη για φορητές συσκευές.</p>
+<p class="mb-2"><strong>Σχεδιασμός μεγάλων/μικρών πυρήνων CPU</strong>: Οι σύγχρονες CPU κινητών τηλεφώνων υιοθετούν γενικά αρχιτεκτονική "big.LITTLE" (τεχνολογία ARM), χωρίζοντας τους πυρήνες σε διαφορετικά επίπεδα απόδοσης:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Πολύ μεγάλος πυρήνας / μεγάλος πυρήνας</strong>: Η ισχυρότερη απόδοση, χειρίζεται απαιτητικές εργασίες, όπως φόρτωση παιχνιδιών, εκκίνηση εφαρμογών, πολύπλοκους υπολογισμούς. Η υψηλότερη συχνότητα (3 GHz+), αλλά και η μεγαλύτερη κατανάλωση.</li>
+  <li><strong>Μεσαίος πυρήνας</strong>: Ισορροπία απόδοσης και κατανάλωσης, χειρίζεται μεσαίου φορτίου καθημερινές εργασίες. Αναζήτηση στο Weibo, παρακολούθηση βίντεο, πολλαπλές εργασίες εξαρτώνται κυρίως από αυτήν.</li>
+  <li><strong>Μικρός πυρήνας/πυρήνας ενεργειακής απόδοσης</strong>: Η χαμηλότερη κατανάλωση, χειρίζεται ελαφριές εργασίες παρασκηνίου. Αναμονή, μουσική, λήψη μηνυμάτων, σχεδόν μηδενική κατανάλωση.</li>
+</ul>
+<p class="mb-2">Οι τρεις βαθμίδες πυρήνων συνεργάζονται: ο προγραμματιστής του συστήματος κατανέμει αυτόματα βάσει του φόρτου εργασίας, οι ελαφριές εργασίες ανατίθενται στους μικρούς πυρήνες για εξοικονόμηση ενέργειας, οι βαριές δουλειές στους μεγάλους πυρήνες για μέγιστη απόδοση, και μετά επιστρέφουν στους μικρούς. Γι' αυτό το κινητό μπορεί να τρέχει ομαλά παιχνίδια και να παραμένει σε αναμονή όλη μέρα.</p>
+<p class="mb-2"><strong>Χαρακτηριστικά αρχιτεκτονικής ανά επωνυμία</strong>:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Qualcomm Snapdragon 8 Elite</strong>: υιοθετεί αυτοανεπτυγμένη αρχιτεκτονική CPU Oryon (από την εξαγορά της Nuvia), 2 super cores (4.32GHz) + 6 performance cores (3.53GHz), όλα βασισμένα στη 2 η γενιά 3nm της TSMC. Εγκαταλείπει οριστικά τη δημόσια αρχιτεκτονική ARM, με άλμα απόδοσης single και multi core. GPU: Adreno 830, αρχιτεκτονική slices, +40% απόδοση γραφικών, Hexagon NPU ~45 TOPS, +45% AI inference. (Σημείωση: η custom έκδοση Galaxy της Samsung έχει υψηλότερη συχνότητα, super core έως 4.47GHz.).</li>
+  <li><strong>MediaTek Dimensity 9400</strong>: 1 super core (Cortex-X925, 3.62GHz) + 3 performance cores (Cortex-X4, 3.3GHz) + 4 efficiency cores (Cortex-A720, 2.4GHz), αρχιτεκτονική all-big-core, 2 η γενιά 3nm της TSMC. GPU: Immortalis-G925 (12 πυρήνες), +41% peak απόδοση, +40% ray tracing. Επεξεργαστής AI: 8 ης γενιάς NPU 890, υποστηρίζει on-device LLM, LoRA training και video generation.</li>
+  <li><strong>Apple A18 Pro</strong>: 2 πυρήνες απόδοσης (περίπου 4.04GHz) + 4 πυρήνες ενεργειακής απόδοσης (περίπου 2.4GHz), δεύτερης γενιάς διαδικασία 3nm της TSMC. 6-πύρηνη GPU υποστηρίζει hardware ray tracing, 16-πύρηνη NPU (περίπου 35 TOPS) παρέχει ισχυρή υπολογιστική ισχύ για AI στη συσκευή και Apple Intelligence. Η αυτοανεπτυγμένη αρχιτεκτονική της Apple παραμένει ηγέτης σε μονοπύρηνη απόδοση και ενεργειακή απόδοση, η ενοποιημένη αρχιτεκτονική μνήμης παρέχει πλεονέκτημα υψηλού εύρους ζώνης για AI inference.</li>
+  <li><strong>Huawei Kirin 9020</strong>: ενσωματωμένο στη σειρά Mate 70, υιοθετεί την αυτοανεπτυγμένη αρχιτεκτονική CPU Taishan, οι δυνατότητες NPU και ISP συνεχώς ενισχύονται, υποστηρίζει 5.5G και δορυφορική επικοινωνία, αντιπροσωπεύοντας την τελευταία καινοτομία των εγχώριων τσιπ.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">GPU: Μηχανή απόδοσης γραφικών</h5>
+<p class="mb-2">Η GPU (Graphics Processing Unit) είναι ειδικά υπεύθυνη για εργασίες γραφικών και παράλληλου υπολογισμού. Ο αριθμός των πυρήνων της είναι πολύ μεγαλύτερος από την CPU (συχνά εκατοντάδες ή χιλιάδες πυρήνες), αλλά κάθε πυρήνας έχει σχετικά απλή λειτουργικότητα, κατάλληλη για ταυτόχρονους υπολογισμούς μεγάλου όγκου παρόμοιων δεδομένων.</p>
+<p class="mb-2"><strong>Διαδικασία απόδοσης γραφικών</strong>:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>Επεξεργασία κορυφών</strong>: υπολογισμός των συντεταγμένων θέσης κάθε κορυφής σε 3D μοντέλα.</li>
+  <li><strong>Ραστροποίηση</strong>: μετατρέπει 3D γραφικά σε εικονοστοιχεία 2D οθόνης.</li>
+  <li><strong>Χρωματισμός εικονοστοιχείων</strong>: υπολογίζει για κάθε εικονοστοιχείο χρώμα, υφή, εφέ φωτισμού.</li>
+  <li><strong>Σύνθεση εξόδου</strong>: σύνθεση όλων των στρώσεων σε τελική εικόνα και αποστολή στην οθόνη.</li>
+</ol>
+<p class="mb-2"><strong>Επίδραση της GPU στην καθημερινή χρήση</strong>: δεν είναι μόνο τα παιχνίδια! Η ολίσθηση διεπαφής, τα εφέ κίνησης, η αναπαραγωγή βίντεο, τα φίλτρα φωτογραφιών, οι εφαρμογές AR εξαρτώνται από τη GPU. Αδύναμη GPU σημαίνει ολίσθηση με κολλήματα, παιχνίδια με σοβαρά lag.</p>
+<p class="mb-2"><strong>GPU ανά επωνυμία</strong>: η Qualcomm χρησιμοποιεί την αυτοανεπτυγμένη Adreno GPU· η MediaTek χρησιμοποιεί ARM Mali GPU· η Apple χρησιμοποιεί αυτοανεπτυγμένη GPU, με απόδοση και ενεργειακή απόδοση που αποτελούν πρότυπο κλάδου.</p>
+<h5 class="font-semibold mt-3 mb-1">NPU: Μηχανή επιτάχυνσης AI</h5>
+<p class="mb-2">Η NPU (Neural Processing Unit) είναι επεξεργαστής σχεδιασμένος ειδικά για λειτουργίες νευρωνικών δικτύων. Σε σύγκριση με CPU και GPU, η NPU έχει υψηλότερη απόδοση και χαμηλότερη κατανάλωση ενέργειας κατά την επεξεργασία εργασιών AI.</p>
+<p class="mb-2"><strong>Τρόπος λειτουργίας νευρωνικού δικτύου</strong>: η βασική λειτουργία της NPU είναι ο πολλαπλασιασμός πινάκων και οι συνελιξιακοί υπολογισμοί — αυτές είναι οι πιο θεμελιώδεις και συχνές πράξεις στα νευρωνικά δίκτυα. Η NPU μέσω βελτιστοποίησης σε επίπεδο υλικού, μπορεί να επεξεργαστεί παράλληλα μεγάλο όγκο πράξεων πινάκων, δεκάδες φορές πιο γρήγορα από την CPU, με πολύ χαμηλότερη κατανάλωση.</p>
+<p class="mb-2"><strong>Διαδικασία επεξεργασίας AI</strong>:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>Εισαγωγή δεδομένων</strong>: εικόνα κάμερας, ήχος μικροφώνου, δεδομένα αισθητήρων κ.ά.</li>
+  <li><strong>Προεπεξεργασία</strong>: προσαρμογή μορφής και μεγέθους δεδομένων στις απαιτήσεις εισόδου του νευρωνικού δικτύου.</li>
+  <li><strong>Υπολογισμός συμπερασμού</strong>: Η NPU φορτώνει το εκπαιδευμένο μοντέλο και εκτελεί forward pass στα δεδομένα εισόδου, παράγοντας αποτελέσματα.</li>
+  <li><strong>Μετεπεξεργασία</strong>: μετατροπή της εξόδου AI σε χρησιμοποιήσιμα αποτελέσματα, όπως συντεταγμένες προσώπου, περιεχόμενο κειμένου, ετικέτες σκηνής.</li>
+</ol>
+<p class="mb-2"><strong>Πραγματικά σενάρια εφαρμογής</strong>:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Υπολογιστική φωτογραφία</strong>: σύνθεση νυχτερινής σκηνής, θόλωση πορτρέτου, επεξεργασία HDR, AI ομορφιά.</li>
+  <li><strong>Φωνητικός βοηθός</strong>: αναγνώριση ομιλίας, κατανόηση φυσικής γλώσσας, σύνθεση ομιλίας.</li>
+  <li><strong>Ζωντανή μετάφραση</strong>: AI υπότιτλοι, μετάφραση συνομιλίας.</li>
+  <li><strong>Έξυπνη αναγνώριση</strong>: αναγνώριση κειμένου (OCR), αναγνώριση αντικειμένων, αναγνώριση σκηνής.</li>
+  <li><strong>Μεγάλα μοντέλα στην άκρη της συσκευής</strong>: τα κορυφαία chips υποστηρίζουν πλέον μικρά AI μοντέλα (7B παραμέτρων) στο κινητό, για offline AI διάλογο, περιλήψεις εγγράφων, έξυπνη συγγραφή κ.ά. Snapdragon 8 Elite Hexagon NPU: ~45 TOPS, Dimensity 9400 NPU 890: επίσης on-device LLM (80% ταχύτερο inference), Apple A18 Pro 16-core NPU: ~35 TOPS.</li>
+  <li><strong>Επεξεργασία εικόνας AI</strong>: AI αφαίρεση (με ένα κλικ αφαιρεί περαστικούς από τη φωτογραφία), AI επέκταση εικόνας (επέκταση ορίων εικόνας), AI μετατροπή στυλ, παραγωγή εικόνας από κείμενο κ.ά.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">ISP: Επεξεργαστής σήματος εικόνας</h5>
+<p class="mb-2">Η ISP επεξεργάζεται τα ακατέργαστα δεδομένα από την κάμερα, μετατρέποντας το σήμα φωτός σε όμορφες φωτογραφίες.</p>
+<p class="mb-2"><strong>Πώς να κρίνετε την απόδοση;</strong> Κοιτάξτε το μοντέλο! Apple A18 Pro, Qualcomm Snapdragon 8 Elite, MediaTek Dimensity 9400 και Huawei Kirin 9020 είναι όλες επιπέδου ναυαρχίδας. Στη μεσαία κατηγορία: Snapdragon 8s Gen3/7+ Gen3, Dimensity 8400. Μην κοιτάτε μόνο τον αριθμό πυρήνων — η αρχιτεκτονική και η διαδικασία κατασκευής (σε nm) είναι πιο σημαντικές. Η διαδικασία 3nm είναι η πιο προηγμένη σήμερα, με ενεργειακή απόδοση πολύ ανώτερη από 5nm και 4nm.</p>
+<h5 class="font-semibold mt-3 mb-1">2. RAM: ο προσωρινός χώρος εργασίας</h5>
+<p class="mb-2">Η RAM είναι σαν το γραφείο σας: όσο μεγαλύτερη, τόσα περισσότερα αρχεία μπορείτε να ανοίξετε ταυτόχρονα. Τα 12GB είναι σήμερα ο κανόνας, τα 16GB για έντονους χρήστες, και πάνω από 24GB για gamers και geeks.</p>
+<p class="mb-2">Ο τύπος RAM είναι επίσης σημαντικός: η LPDDR5 είναι πιο γρήγορη και πιο αποδοτική από την LPDDR4X. Αν και η Apple έχει μικρή RAM, η βελτιστοποίηση του συστήματος είναι καλή, οπότε φαίνεται «επαρκής».</p>
+<p class="mb-2"><strong>Τι γίνεται αν η RAM δεν επαρκεί;</strong> Οι App θα τερματιστούν στο παρασκήνιο από το σύστημα, και κατά την εναλλαγή θα χρειαστεί να φορτώσουν ξανά. Γι' αυτό μερικές φορές όταν αλλάζετε στο WeChat και επιστρέφετε, το παιχνίδι έχει κλείσει.</p>
+<h5 class="font-semibold mt-3 mb-1">3. Αποθήκευση (ROM/Flash): ο μακροπρόθεσμος αποθηκευτικός χώρος</h5>
+<p class="mb-2">Ο αποθηκευτικός χώρος είναι σαν τη βιβλιοθήκη σας — ο χώρος που περιέχει όλες τις φωτογραφίες, βίντεο και App. Σήμερα κυριαρχούν τα UFS 3.1 ή UFS 4.0, αρκετές φορές πιο γρήγορα από τα παλιά eMMC.</p>
+<p class="mb-2"><strong>Γιατί είναι σημαντική η ταχύτητα αποθήκευσης;</strong> Καθορίζει την ταχύτητα ανοίγματος των App, τη φόρτωση παιχνιδιών και την αποθήκευση φωτογραφιών. Μετά από παρατεταμένη χρήση, η αργή αποθήκευση κάνει το κινητό όλο και πιο αργό.</p>
+<h5 class="font-semibold mt-3 mb-1">4. Οθόνη: τα μάτια σας</h5>
+<p class="mb-2">Η οθόνη είναι το κύριο παράθυρο αλληλεπίδρασης με το κινητό· η ποιότητά της επηρεάζει άμεσα την εμπειρία.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Υλικό</strong>: OLED: έντονα χρώματα, υψηλή αντίθεση, πιο οικονομικό σε ενέργεια (στα μαύρα τα pixels δεν εκπέμπουν φως), αλλά σε χαμηλή φωτεινότητα μπορεί να έχει τρεμοπαίγμα που κουράζει τα μάτια· LCD: πιο φιλικό στα μάτια, χαμηλότερο κόστος, αλλά η αντίθεση και τα χρώματα δεν είναι τόσο καλά όσο OLED.</li>
+  <li><strong>Ανάλυση</strong>: Το 1080P είναι το πρότυπο, το 2K είναι πιο ευκρινές αλλά καταναλώνει περισσότερη ενέργεια. Η έννοια της Apple "Retina Display": σε μια ορισμένη απόσταση, το ανθρώπινο μάτι δεν μπορεί να διακρίνει τα pixel.</li>
+  <li><strong>Ρυθμός ανανέωσης</strong>: 60Hz είναι το πρότυπο, 90Hz/120Hz πιο ομαλά, η ολίσθηση είναι μεταξωτά. Οι υψηλοί ρυθμοί ανανέωσης καταναλώνουν ρεύμα, γι' αυτό πολλά κινητά υποστηρίζουν προσαρμοστικό ρυθμό ανανέωσης (LTPO), που προσαρμόζεται δυναμικά ανάλογα με το περιεχόμενο.</li>
+  <li><strong>Ρυθμός δειγματοληψίας αφής</strong>: επηρεάζει την ταχύτητα απόκρισης αφής, σημαντικό για gamers, όσο υψηλότερο τόσο πιο responsive.</li>
+  <li><strong>Τρόπος διαμόρφωσης φωτεινότητας</strong>: Η ρύθμιση φωτεινότητας DC είναι πιο φιλική προς τα μάτια από την PWM, προκαλεί λιγότερη κόπωση σε χαμηλή φωτεινότητα. Πολλά σύγχρονα τηλέφωνα υποστηρίζουν PWM υψηλής συχνότητας, επίσης για την προστασία των ματιών.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Τεχνολογία HDR οθόνης</h5>
+<p class="mb-2">Το HDR (High Dynamic Range) επιτρέπει στην οθόνη να εμφανίσει ταυτόχρονα πιο φωτεινά τα φωτεινά σημεία και πιο σκοτεινά τα σκοτεινά, αυξάνοντας σημαντικά την αίσθηση βάθους της εικόνας.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Αρχή υλοποίησης</strong>: οι κοινές οθόνες έχουν περιορισμένο εύρος φωτεινότητας (SDR), με ανεπαρκή διαφορά μεταξύ του πιο φωτεινού και του πιο σκοτεινού. Οι HDR οθόνες έχουν υψηλότερη μέγιστη φωτεινότητα (συνήθως άνω των 1000 nits), μεγαλύτερη αντίθεση, ευρύτερο χρωματικό εύρος και εμφανίζουν περισσότερες λεπτομέρειες.</li>
+  <li><strong>Κύρια πρότυπα</strong>: HDR10 (το πιο βασικό, δωρεάν ανοιχτού κώδικα), HDR10+ (προωθούμενο από Samsung, δυναμικά μεταδεδομένα), Dolby Vision (η καλύτερη ποιότητα αλλά απαιτεί άδεια). Ποιο πρότυπο υποστηρίζει το κινητό εξαρτάται από το υλικό της οθόνης και την άδεια συστήματος.</li>
+  <li><strong>Πραγματικό αποτέλεσμα</strong>: όταν βλέπετε HDR βίντεο, ο ήλιος είναι πιο εκτυφλωτικός, οι σκιές πιο βαθιές, τα χρώματα πιο πλούσια. Προϋπόθεση είναι το βίντεο να είναι HDR παραγωγής και η οθόνη να υποστηρίζει HDR εμφάνιση.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Τεχνολογία HDR εικόνας</h5>
+<p class="mb-2">Το HDR στη φωτογραφία και το HDR οθόνης είναι δύο διαφορετικά πράγματα. Το HDR εικόνας λύνει με αλγόριθμους το πρόβλημα «υπερέκθεση στα φωτεινά, νεκρό μαύρο στα σκοτεινά».</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Αρχή αλγορίθμου</strong>: όταν πατάτε το κλείστρο, το κινητό τραβά πολλές φωτογραφίες με διαφορετική έκθεση (υποεκτεθειμένη για λαμπρά, υπερεκτεθειμένη για σκοτεινά, κανονική για μεσαία), και τις συνδυάζει σε μία υψηλού δυναμικού εύρους.</li>
+  <li><strong>Διαδικασία επεξεργασίας</strong>: Σύλληψη πολλαπλών καρέ → στοίχιση (απόσβεση κουνήματος) → συγχώνευση έκθεσης / tone mapping → διόρθωση χρωμάτων → τελική φωτογραφία.</li>
+  <li><strong>Βελτιστοποίηση αποτελέσματος</strong>: τα σημερινά κινητά κάνουν «real-time HDR», αυτό που βλέπετε στο σκόπευτρο είναι το HDR αποτέλεσμα, ό, τι βλέπετε αυτό παίρνετε. Το Smart HDR της Apple και το Auto HDR του Android είναι πολύ ώριμα.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">5. Μπαταρία και φόρτιση: η πηγή ενέργειας</h5>
+<p class="mb-2">Η μπαταρία είναι το πιο «βραχύβιο» εξάρτημα του κινητού· μετά από 2-3 χρόνια χρήσης φαίνεται προφανής γήρανση. Σημερινή κύρια χωρητικότητα: 5500-7500mAh.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Ισχύς φόρτισης</strong>: το στρατόπεδο Android έχει φτάσει σε 100W ή και 200W, γεμίζει σε περίπου δέκα λεπτά· η Apple παραμένει στα 20-30W. Η γρήγορη φόρτιση βλάπτει την μπαταρία; Με γνήσια αξεσουάρ δεν υπάρχει μεγάλο πρόβλημα, το κινητό έχει προστασία θερμοκρασίας.</li>
+  <li><strong>Ασύρματη φόρτιση</strong>: βολικό αλλά χαμηλής απόδοσης, παράγει πολλή θερμότητα. Κατάλληλο για περιστασιακή φόρτιση στο γραφείο, όχι όταν βιάζεστε να βγείτε.</li>
+  <li><strong>Αντίστροφη φόρτιση</strong>: το κινητό γίνεται power bank, φορτίζει ακουστικά, ρολόγια, για έκτακτη χρήση.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">6. Κάμερα: η μαγεία του φωτός και της σκιάς</h5>
+<p class="mb-2">Σήμερα οι κάμερες των κινητών είναι συχνά τρεις-τέσσερις, με καταμερισμό εργασίας:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Κύρια κάμερα</strong>: Η πιο χρησιμοποιούμενη, ο μεγαλύτερος αισθητήρας, η καλύτερη ποιότητα εικόνας.</li>
+  <li><strong>Υπερευρυγώνια</strong>: φωτογράφιση τοπίων, κτιρίων, ευρύτερο οπτικό πεδίο.</li>
+  <li><strong>Τηλεφακός</strong>: Για μακρινές λήψεις, υπάρχει οπτικό και ψηφιακό zoom.</li>
+  <li><strong>Μακρο φωτογραφία</strong>: φωτογράφιση μικρών αντικειμένων από πολύ κοντινή απόσταση.</li>
+</ul>
+<p class="mb-2"><strong>Ο αριθμός pixels δεν είναι τα πάντα!</strong> Μέγεθος αισθητήρα (μεγαλύτερος αισθητήρας = καλύτερο), μέγεθος διαφράγματος (f/1.8 είναι μεγαλύτερο από f/2.4), σταθεροποίηση (το OIS οπτικής σταθεροποίησης είναι σημαντικό) — όλα επηρεάζουν την ποιότητα. Η υπολογιστική φωτογραφία (AI αλγόριθμοι) γίνεται όλο και πιο σημαντική, μπορεί να συνθέσει πολλές φωτογραφίες σε μία καλή.</p>
+<h5 class="font-semibold mt-3 mb-1">Περισκοπικός τηλεφακός</h5>
+<p class="mb-2">Οι παραδοσιακοί τηλεφακοί απαιτούν μεγάλη οπτική διαδρομή, καθιστώντας το κινητό πολύ παχύ. Ο περισκοπικός τηλεφακός χρησιμοποιεί ένα πρίσμα 90 μοιρών για να διαθλάσει το φως, επιτρέποντας στην οπτική διαδρομή να αναπτυχθεί οριζόντια μέσα στο κινητό, πετυχαίνοντας 5x ή και 10x οπτικό ζουμ διατηρώντας το κινητό λεπτό.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Δομική αρχή</strong>: Το φως εισέρχεται από τον φακό → διαθλάται 90° στο πρίσμα → διέρχεται από την ομάδα φακών κατά μήκος του πλάτους του τηλεφώνου → φτάνει στον αισθητήρα. Είναι σαν να τοποθετείτε ένα κάθετο τηλεσκόπιο οριζόντια.</li>
+  <li><strong>Οπτικά χαρακτηριστικά</strong>: Υψηλό optical zoom (5x-10x), πολύ καλύτερη ποιότητα εικόνας από το ψηφιακό zoom. Ωστόσο, ο αισθητήρας είναι συνήθως μικρότερος από την κύρια κάμερα, η απόδοση σε χαμηλό φως είναι μέτρια.</li>
+  <li><strong>Πλεονέκτημα απεικόνισης</strong>: φωτογράφιση σελήνης, μακρινών κτιρίων, κοντινών πλάνων σκηνής, πέρα από τις δυνατότητες ενός κανονικού κινητού.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">OIS οπτική σταθεροποίηση vs EIS ηλεκτρονική σταθεροποίηση</h5>
+<p class="mb-2">Η σταθεροποίηση είναι βασική τεχνολογία που επηρεάζει την ποιότητα φωτογραφίας και βίντεο· οι δύο μέθοδοι έχουν εντελώς διαφορετική αρχή:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>OIS (Οπτική σταθεροποίηση)</strong>: αντισταθμίζει το κούνημα του χεριού μετακινώντας φυσικά τον φακό ή τον αισθητήρα. Μικροσκοπικά γυροσκόπια μέσα στον φακό ανιχνεύουν την κατεύθυνση και το μέγεθος του κουνήματος και οδηγούν τον κινητήρα να μετακινήσει την ομάδα φακών αντίθετα. Το πλεονέκτημα είναι ότι δεν χάνεται ποιότητα εικόνας, το μειονέκτημα είναι το υψηλό κόστος και η κατανάλωση χώρου.</li>
+  <li><strong>EIS (Ηλεκτρονική σταθεροποίηση)</strong>: μέσω λογισμικού, περικόπτει και μετατοπίζει την εικόνα για να αντισταθμίσει το τρέμουλο. Το κινητό εγγράφει ελαφρώς μεγαλύτερη περιοχή, μετά κόβει σταθερή περιοχή βάσει γυροσκοπίου. Πλεονέκτημα: δεν χρειάζεται επιπλέον υλικό. Μειονέκτημα: κόβει εικόνα (μικρότερο οπτικό πεδίο), σε χαμηλό φως μπορεί να θολώσει.</li>
+  <li><strong>Πρακτική επιλογή</strong>: για φωτογραφία προτεραιότητα στο OIS, για βίντεο ο συνδυασμός και των δύο είναι καλύτερος. Πολλά κορυφαία κινητά υποστηρίζουν «Sensor-Shift», αντιστάθμιση μετατόπισης αισθητήρα, αποτελεσματικότερη από την παραδοσιακή αντιστάθμιση φακού.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Οπτικό ζουμ vs ψηφιακό ζουμ</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Οπτικό ζουμ</strong>: αλλάζει την εστιακή απόσταση μετακινώντας φυσικά την ομάδα φακών, χωρίς απώλεια ποιότητας. Το οπτικό ζουμ στο κινητό έχει συνήθως μόνο σταθερές μεγεθύνσεις (όπως 2x, 3x, 5x, 10x), δεν μπορεί να κάνει συνεχές ζουμ όπως οι φωτογραφικές μηχανές.</li>
+  <li><strong>Ψηφιακό ζουμ</strong>: μεγέθυνση της κεντρικής περιοχής της εικόνας, ουσιαστικά είναι περικοπή + παρεμβολή. Όσο περισσότερο μεγεθύνετε, τόσο χειρότερη η ποιότητα. Το 100x ψηφιακό ζουμ φαίνεται εντυπωσιακό, αλλά η πραγματική ποιότητα είναι ήδη πολύ θολή.</li>
+  <li><strong>Υβριδικό ζουμ</strong>: συνδυάζει οπτικό και ψηφιακό, χρησιμοποιεί αλγόριθμους σύνθεσης πολλαπλών καρέ μεταξύ των επιπέδων οπτικού ζουμ για να αντισταθμίσει την απώλεια ποιότητας. Το αποτέλεσμα είναι καλύτερο από το καθαρά ψηφιακό, αλλά ακόμα κατώτερο από το οπτικό.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Ήχος: Ηχεία και ειδικό chip γραφικών</h5>
+<p class="mb-2"><strong>Μονό ηχείο vs στερεόηχα</strong>:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Μονό ηχείο</strong>: Μόνο μία μονάδα ήχου στο κάτω μέρος, ο ήχος έρχεται από τη μία πλευρά, χωρίς στερεοφωνική αίσθηση. Συνηθισμένο σε μεσαία και οικονομικά τηλέφωνα.</li>
+  <li><strong>Στερεόηχα (Stereo)</strong>: ένα ηχείο πάνω και ένα κάτω, δημιουργούν στερεοφωνικό πεδίο. Κατά την παρακολούθηση βίντεο και ακρόαση μουσικής, το αριστερό και δεξί κανάλι διακρίνονται καθαρά, πολύ μεγαλύτερη αίσθηση εμβύθισης. Το ακουστικό που χρησιμεύει και ως πάνω ηχείο είναι συνηθισμένη λύση.</li>
+  <li><strong>Διαφορά ποιότητας ήχου</strong>: Τα διπλά ηχεία δεν σημαίνουν απλώς "δυνατότερος ήχος", το κλειδί είναι η αίσθηση χώρου και τα επίπεδα. Με ένα μόνο ηχείο, οι ταινίες δεν ακούγονται το ίδιο.</li>
+</ul>
+<p class="mb-2"><strong>Ειδικό chip γραφικών σε gaming κινητά</strong>:</p>
+<p class="mb-2">Μερικά gaming και high-performance κινητά διαθέτουν ανεξάρτητο chip επεξεργασίας εικόνας, με λειτουργίες:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Εισαγωγή καρέ (frame interpolation)</strong>: παρεμβολή 30fps εικόνας παιχνιδιού σε 60fps ή 120fps μέσω αλγορίθμου, πιο ομαλή εικόνα. Η διαδικασία γίνεται στο ανεξάρτητο chip γραφικών, δεν καταναλώνει πόρους της GPU του SoC.</li>
+  <li><strong>Υπερανάλυση</strong>: αναβαθμίζει εικόνα χαμηλής ανάλυσης σε υψηλή μέσω AI αλγορίθμων, πιο καθαρή ποιότητα.</li>
+  <li><strong>Μείωση κατανάλωσης</strong>: επειδή η παρεμβολή καρέ και η υπερ-ανάλυση αναλαμβάνονται από το ανεξάρτητο τσιπ γραφικών, το φορτίο του SoC μειώνεται, η θερμότητα και η κατανάλωση μειώνονται, το παιχνίδι είναι πιο σταθερό.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">GPS εντοπισμός: μονή και διπλή συχνότητα</h5>
+<p class="mb-2">Ο εντοπισμός του κινητού βασίζεται κυρίως σε δορυφορικά συστήματα πλοήγησης όπως το GPS.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Μονή συχνότητα GPS</strong>: Λαμβάνει μόνο σήμα ζώνης L1, ακρίβεια εντοπισμού περίπου 3-5 μέτρα. Αρκετή σε ανοιχτές περιοχές, αλλά σε πυκνοκατοικημένες αστικές περιοχές, οι ανακλάσεις σήματος προκαλούν σημαντικές αποκλίσεις.</li>
+  <li><strong>Διπλή συχνότητα GPS</strong>: ταυτόχρονη λήψη L1 και L5. Το L5 έχει μεγαλύτερο μήκος κύματος, ισχυρότερη αντίσταση σε παρεμβολές, ο συνδυαστικός υπολογισμός εξαλείφει τα περισσότερα σφάλματα ιονόσφαιρας, ακρίβεια 1-3 μέτρα. Πλεονέκτημα σε πλοήγηση πόλης και εντοπισμό ταξί.</li>
+  <li><strong>Υποστήριξη πολλαπλών αστερισμών</strong>: τα σύγχρονα κινητά υποστηρίζουν όχι μόνο GPS αλλά και BeiDou (Κίνα), GLONASS (Ρωσία), Galileo (Ευρώπη) κ.ά. Όσο περισσότεροι δορυφόροι συνδέονται, τόσο πιο γρήγορη και ακριβής η τοποθεσία.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">7. Αισθητήρες: οι μικρές κεραίες του κινητού</h5>
+<p class="mb-2">Κρυμμένα μέσα στο κινητό υπάρχουν δεκάδες αισθητήρες που λειτουργούν αθόρυβα:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Επιταχυνσιόμετρο + γυροσκόπιο</strong>: ανιχνεύει τη στάση του κινητού, περιστροφή σε παιχνίδια, αυτόματη περιστροφή οθόνης.</li>
+  <li><strong>Αισθητήρας φωτός</strong>: αυτόματη ρύθμιση φωτεινότητας οθόνης.</li>
+  <li><strong>Αισθητήρας απόστασης</strong>: κατά την κλήση, η οθόνη σβήνει αυτόματα όταν το κινητό πλησιάσει το αυτί.</li>
+  <li><strong>Αισθητήρας δακτυλικού αποτυπώματος</strong>: σήμερα το κυρίαρχο είναι οπτικό κάτω από την οθόνη ή υπερηχητικό δακτυλικό αποτύπωμα.</li>
+  <li><strong>Αναγνώριση προσώπου</strong>: Το Face ID της Apple χρησιμοποιεί 3D δομημένο φως, υψηλό επίπεδο ασφαλείας· πολλά Android χρησιμοποιούν αναγνώριση 2D φωτογραφιών, μέτρια ασφάλεια.</li>
+  <li><strong>NFC</strong>: επικοινωνία κοντινού πεδίου, χρησιμοποιείται για κάρτες λεωφορείου, κάρτες πρόσβασης, τραπεζικές κάρτες.</li>
+  <li><strong>Βαρόμετρο</strong>: μετράει το υψόμετρο, ανιχνεύει ακόμα και τις σκάλες.</li>
+  <li><strong>Αισθητήρας Hall</strong>: ανιχνεύει το άνοιγμα/κλείσιμο μαγνητικής θήκης.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">II. Λειτουργικό σύστημα: Android VS iOS VS HarmonyOS</h4>
+<p class="mb-2">Το υλικό είναι το σώμα, το λειτουργικό σύστημα είναι η ψυχή. Τα τρία συστήματα έχουν το καθένα τα χαρακτηριστικά του:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Android</strong>: όπως η κοινότητα ανοιχτού κώδικα, οι κατασκευαστές κινητών μπορούν να προσαρμόσουν σε βάθος, με πολλές επιλογές. Μπορείτε να αλλάξετε θέμα, να εγκαταστήσετε καταστήματα εφαρμογών τρίτων, να πειραματιστείτε με διάφορους τρόπους. Αλλά λόγω της ανοιχτότητας, ο κατακερματισμός είναι σοβαρός, η εμπειρία διαφέρει πολύ μεταξύ επωνυμιών.</li>
+  <li><strong>iOS</strong>: σαν προσεκτικά περιποιημένος κήπος, η Apple ελέγχει λογισμικό και υλικό μαζί, η εμπειρία είναι ενιαία και ομαλή. Οι εφαρμογές είναι υψηλής ποιότητας, το απόρρητο προστατεύεται καλά, αλλά η ελευθερία είναι χαμηλή, πολλά πράγματα πρέπει να γίνουν σύμφωνα με τους κανόνες της Apple.</li>
+  <li><strong>HarmonyOS</strong>: το νέο είδος της Huawei, επικεντρώνεται σε κατανεμημένες δυνατότητες, επιτρέπει σε διαφορετικές συσκευές να συνεργάζονται απρόσκοπτα. Θα το εξετάσουμε ειδικά παρακάτω.</li>
+</ul>
+<p class="mb-2">Και τα τρία οικοσυστήματα είναι εξαιρετικά πλούσια, επιλέξτε αυτό που ταιριάζει στον τρόπο ζωής σας. Δεν υπάρχει απόλυτο καλό-κακό, μόνο κατάλληλο ή όχι.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">III. Πλήρης ανάλυση διεπαφών κινητού</h4>
+<p class="mb-2">Οι διεπαφές του κινητού είναι οι γέφυρες σύνδεσης με τον εξωτερικό κόσμο, οι διαφορές μεταξύ τους είναι μεγάλες:</p>
+<h5 class="font-semibold mt-3 mb-1">Micro USB</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Φυσικά χαρακτηριστικά</strong>: επίπεδη τραπεζοειδής υποδοχή, έχει πάνω και κάτω πλευρά (δεν μπαίνει ανάποδα). Έχει βασικά καταργηθεί στα κινητά, αλλά ορισμένες συσκευές χαμηλού κόστους και παλιές συσκευές τη χρησιμοποιούν ακόμα.</li>
+  <li><strong>Περιορισμοί μεταφοράς</strong>: Υποστηρίζει μόνο USB 2.0, μέγιστη ταχύτητα 480 Mbps, ισχύς φόρτισης συνήθως όχι πάνω από 10 W.</li>
+  <li><strong>Μειονεκτήματα</strong>: μη αναστρέψιμη, μικρή διάρκεια ζωής συνδέσεων, αργή ταχύτητα μεταφοράς, χαμηλή ισχύς φόρτισης.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Lightning (διεπαφή Apple, αποσυρμένη)</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Φυσικά χαρακτηριστικά</strong>: αυτοανεπτυγμένη 8-pin θύρα της Apple, αναστρέψιμη. Χρησιμοποιήθηκε σε iPhone 14 και παλαιότερα, πλέον πλήρως καταργημένη.</li>
+  <li><strong>Περιορισμοί μεταφοράς</strong>: το Lightning υποστηρίζει φυσικά μόνο USB 2.0, μέγιστη ταχύτητα 480Mbps. Ακόμα και με καλώδιο USB-C σε Lightning, η ταχύτητα περιορίζεται από το ίδιο το Lightning.</li>
+  <li><strong>Λόγος απόσυρσης</strong>: η ΕΕ μέσω κανονισμών απαιτεί από το 2024 όλα τα κινητά να χρησιμοποιούν ενιαία υποδοχή USB-C, η Apple από τη σειρά iPhone 15 άρχισε να χρησιμοποιεί πλήρως Type-C. Η υποδοχή Lightning αποχωρεί επίσημα από την ιστορική σκηνή.</li>
+  <li><strong>Σημείωση</strong>: τα πιστοποιημένα καλώδια MFi της Apple έχουν τσιπ πιστοποίησης, τα μη πιστοποιημένα μπορεί να μην φορτίζουν ή να μην μεταφέρουν δεδομένα. Αν ακόμα χρησιμοποιείτε παλαιότερο iPhone, κρατήστε καλώδιο Lightning.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">USB Type-C</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Φυσικά χαρακτηριστικά</strong>: ελλειπτική υποδοχή 24 ακίδων, μπορεί να συνδεθεί και από τις δύο πλευρές. Έχει γίνει η τυπική υποδοχή για κινητά και τις περισσότερες ηλεκτρονικές συσκευές. Η ΕΕ έχει νομοθετήσει ότι από το 2024 όλα τα κινητά, tablet, ακουστικά και άλλες φορητές συσκευές πρέπει να χρησιμοποιούν ενιαία υποδοχή USB-C, και άλλες περιοχές παγκοσμίως ακολουθούν.</li>
+  <li><strong>Πρωτόκολλο μεταφοράς</strong>: το Type-C είναι μόνο η μορφή της θύρας, η πραγματική ταχύτητα εξαρτάται από το εσωτερικό πρωτόκολλο. Υποστηρίζει USB 2.0 (480Mbps), USB 3.0/3.1/3.2 (5-20Gbps) ακόμα και USB4 (40Gbps).</li>
+  <li><strong>Σημαντική διάκριση</strong>:Όχι όλες οι θύρες Type-C υποστηρίζουν USB 3.0! Πολλά κινητά αν και χρησιμοποιούν θύρα Type-C, εσωτερικά συνδέουν μόνο τα pins του USB 2.0, οπότε η ταχύτητα μεταφοράς είναι το ίδιο αργή με τις παλιές θύρες. Τα iPhone 16/17 τυπικής έκδοσης υποστηρίζουν μόνο ταχύτητα USB 2.0, ενώ η έκδοση Pro υποστηρίζει USB 3.0 (απαιτεί καλώδιο USB-C to USB-C).</li>
+  <li><strong>Ικανότητα φόρτισης</strong>: Υποστηρίζει πρωτόκολλα γρήγορης φόρτισης όπως USB PD, μέγιστη ισχύς 240W.</li>
+  <li><strong>Έξοδος βίντεο</strong>: υποστηρίζει DisplayPort Alt Mode, μπορεί να εξάγει βίντεο σε οθόνη μέσω καλωδίου μετατροπέα.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">3.5mm ακουστικό</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Φυσικά χαρακτηριστικά</strong>: στρογγυλή υποδοχή 3 ή 4 τμημάτων, 3 τμήματα μεταδίδουν ήχο αριστερού/δεξιού καναλιού, 4 τμήματα έχουν ένα επιπλέον κανάλι μικροφώνου.</li>
+  <li><strong>Χαρακτηριστικά</strong>: Αναλογική μετάδοση σήματος, plug-and-play, δεν χρειάζεται driver ή μετατροπέα. Σταθερός ήχος, μηδενική καθυστέρηση.</li>
+  <li><strong>Τρέχουσα κατάσταση</strong>: οι περισσότερες ναυαρχίδες έχουν καταργήσει την υποδοχή 3.5mm, χρειάζεται καλώδιο μετατροπέα Type-C ή χρήση ακουστικών Bluetooth. Ορισμένα μεσαία κινητά και gaming κινητά τη διατηρούν ακόμα.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">IV. Σύστημα προϊόντων κινητών και κανόνες ονοματοθεσίας</h4>
+<p class="mb-2">Μπροστά στις εκθαμβωτικές σειρές προϊόντωνκάθε επωνυμία, η κατανόηση των κανόνων ονοματοθεσίας βοηθά στην ταχεία εύρεση του κατάλληλου μοντέλου.</p>
+<h5 class="font-semibold mt-3 mb-1">Σειρές προϊόντων κύριων επωνυμιών:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Apple</strong>:iPhone (τυπική έκδοση) / iPhone Plus (μεγάλη οθόνη) / iPhone Pro (επαγγελματική έκδοση) / iPhone Pro Max (μεγάλη επαγγελματική οθόνη) / iPhone SE (οικονομική έκδοση) / iPhone 16e (οικονομική έκδοση AI, με επεξεργαστή A18 και το δικό τους modem C1). Το 2026 η σειρά iPhone 17 εξοπλίζεται πλήρως με επεξεργαστή A19 Pro, με περαιτέρω βελτίωση των δυνατοτήτων AI</li>
+  <li><strong>Huawei</strong>: Σειρά Mate (επαγγελματική ναυαρχίδα) / Σειρά P/Pura (ναυαρχίδα εικόνας) / Σειρά Mate X (αναδιπλούμενη ναυαρχίδα) / Σειρά nova (νεανική μεσαία) / Σειρά Enjoy (εισαγωγική)</li>
+  <li><strong>Xiaomi</strong>: Σειρά Xiaomi (ναυαρχίδα) / Xiaomi MIX (εξερευνητική ναυαρχίδα/αναδιπλούμενη) / Σειρά Redmi K (ναυαρχίδα απόδοσης) / Σειρά Redmi Note (μεσαία) / Σειρά Redmi (εισαγωγική)</li>
+  <li><strong>OPPO</strong>: Σειρά Find X (ναυαρχίδα) / Σειρά Reno (μεσαία κατηγορία) / Σειρά A (entry-level) / Σειρά αριθμών OnePlus (ναυαρχίδα απόδοσης)</li>
+  <li><strong>vivo</strong>: Σειρά X (ναυαρχίδα εικόνας) / Σειρά iQOO (ναυαρχίδα απόδοσης) / Σειρά S (μεσαία selfie) / Σειρά Y (εισαγωγική)</li>
+  <li><strong>Samsung</strong>: Σειρά Galaxy S (ναυαρχίδα) / Galaxy Z Fold/Flip (αναδιπλούμενη ναυαρχίδα) / Σειρά Galaxy A (μεσαία)</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Σημασία συνηθισμένων καταλήξεων:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Pro</strong>: Συντομογραφία του Professional — επαγγελματική έκδοση. Συνήθως αναβαθμίζει την κάμερα, την οθόνη και τον επεξεργαστή σε σχέση με την κανονική έκδοση.</li>
+  <li><strong>Max</strong>: η μεγαλύτερη έκδοση. Η μεγαλύτερη οθόνη, η μεγαλύτερη μπαταρία, αλλά οι προδιαγραφές δεν είναι απαραίτητα ανώτερες του Pro.</li>
+  <li><strong>Ultra</strong>: έκδοση Ultimate. Συνήθως αντιπροσωπεύει την υψηλότερη διαμόρφωση της σειράς, με τα περισσότερα χαρακτηριστικά και την υψηλότερη τιμή. Όπως Samsung S24 Ultra, Xiaomi 14 Ultra.</li>
+  <li><strong>SE</strong>: Special Edition: ειδική έκδοση, συχνά στην πραγματικότητα οικονομική έκδοση. Μειωμένα χαρακτηριστικά, χαμηλότερη τιμή, π.χ. iPhone SE.</li>
+  <li><strong>Plus</strong>: Plus, μεγαλύτερη έκδοση. Μεγαλύτερη οθόνη και μπαταρία, αλλά τα υπόλοιπα χαρακτηριστικά παρόμοια.</li>
+  <li><strong>Lite/Νεανική έκδοση</strong>: έκδοση Lite. Απλοποιημένη διαμόρφωση, χαμηλότερη τιμή.</li>
+  <li><strong>Note</strong>: αρχικά αναφερόταν σε κινητά μεγάλης οθόνης, τώρα κάθε επωνυμία το χρησιμοποιεί διαφορετικά. Το Redmi Note είναι σειρά μεσαίας κατηγορίας.</li>
+  <li><strong>Neo</strong>: Neo, μοντέρνα έκδοση. Συνήθως μεσαία μοντέλα με έμφαση στην απόδοση.</li>
+</ul>
+<p class="mb-2">V. Baseband και κεραίες: οι ήρωες πίσω από τις επικοινωνίες του κινητού</p>
+<p class="mb-2">Το κινητό μπορεί να καλεί και να συνδέεται στο διαδίκτυο χάρη στο δίδυμο baseband chip και κεραία.</p>
+<h5 class="font-semibold mt-3 mb-1">Baseband chip:</h5>
+<p class="mb-2">Το baseband είναι ο επεξεργαστής του κινητού υπεύθυνος για την ασύρματη επικοινωνία: διαμορφώνει τα ψηφιακά σήματα σε ραδιοκύματα για αποστολή και αποδιαμορφώνει τα εισερχόμενα ραδιοκύματα σε ψηφιακά σήματα. Η απόδοση του baseband επηρεάζει άμεσα την ποιότητα κλήσης, την ταχύτητα δικτύου και τη σταθερότητα σήματος. Η Qualcomm είναι ο μεγαλύτερος προμηθευτής του baseband, η MediaTek και η Samsung έχουν αυτοανεπτυγμένο. Η Apple από το iPhone 16e φέρει το αυτοανεπτυγμένο baseband C1, σηματοδοτώντας την είσοδο της Apple στην εποχή του αυτοανεπτυγμένου baseband. Το C1 υιοθετεί 4nm διαδικασία, εξαιρετική κατανάλωση· τα iPhone 16/16 Plus/16 Pro/16 Pro Max χρησιμοποιούν ακόμα Qualcomm baseband (Snapdragon X75 5G), αναμένεται σταδιακή μετάβαση σε αυτοανεπτυγμένο baseband. Τα παλαιότερα iPhone XS/11 σειρά με Intel baseband είχαν κακή απόδοση σήματος, πρόβλημα πολλών χρηστών.</p>
+<h5 class="font-semibold mt-3 mb-1">Σχεδιασμός κεραίας:</h5>
+<p class="mb-2">Οι κεραίες του κινητού είναι κρυμμένες στο εσωτερικό, συνήθως γύρω από το πλαίσιο. Ο σχεδιασμός επηρεάζει άμεσα την απόδοση λήψης σήματος:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Τεχνολογία MIMO</strong>: Multiple Input Multiple Output, χρησιμοποιεί πολλαπλές κεραίες για ταυτόχρονη αποστολή και λήψη δεδομένων, βελτιώνοντας ταχύτητα και σταθερότητα. Το 4×4 MIMO είναι ταχύτερο από το 2×2 MIMO.</li>
+  <li><strong>Αριθμός κεραιών</strong>: οι ναυαρχίδες συνήθως έχουν πάνω από δέκα κεραίες (κυψέλη, Wi-Fi, Bluetooth, NFC, GPS το καθένα χρειάζεται ανεξάρτητη κεραία).</li>
+  <li><strong>Επίδραση μεταλλικού σώματος</strong>: το μέταλλο θωρακίζει το σήμα, γι' αυτό τα κινητά με μεταλλικό σώμα χρειάζονται ζώνες κεραίας (πλαστικές λωρίδες στο πλαίσιο). Το γυαλί και το πλαστικό σώμα έχουν μικρότερη επίδραση στο σήμα.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Εξέλιξη τεχνολογίας δικτύου:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>4G LTE</strong>: Θεωρητική μέγιστη ταχύτητα 1 Gbps downlink / 500 Mbps uplink (Cat.18), η πραγματική εμπειρία είναι συνήθως 50-150 Mbps. Η ευρύτερη κάλυψη, αρκετή.</li>
+  <li><strong>5G NR</strong>: Θεωρητική μέγιστη ταχύτητα downlink 10 Gbps+. Η ζώνη Sub-6 GHz έχει καλή κάλυψη, τα mmWave είναι εξαιρετικά γρήγορα αλλά με πολύ μικρή κάλυψη.</li>
+  <li><strong>5G-A (5G Advanced)</strong>:Η ενισχυμένη έκδοση του 5G, γνωστή και ως 5.5G. Η ταχύτητα λήψης φτάνει τα 10Gbps και η ταχύτητα αποστολής τα 1Gbps, με σημαντική βελτίωση στην πυκνότητα συνδέσεων και την ακρίβεια εντοπισμού. Από το 2024, China Mobile, China Telecom και China Unicom άρχισαν να αναπτύσσουν δίκτυα 5G-A σε βασικές πόλεις. Τηλέφωνα όπως Huawei Mate 70/80 και Xiaomi 15/16 υποστηρίζουν ήδη 5G-A. Το 5G-A φέρνει επίσης δυνατότητα «ενσωμάτωσης επικοινωνίας και αισθητήρων», επιτρέποντας στους σταθμούς βάσης να επικοινωνούν και να αντιλαμβάνονται το περιβάλλον ταυτόχρονα, παρέχοντας υποδομή για την οικονομία χαμηλού ύψους (παραδόσεις με drones) και τα συνδεδεμένα οχήματα.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Κατηγορία ζωνών δικτύου:</h5>
+<p class="mb-2">Οι ζώνες δικτύου που υποστηρίζει το κινητό καθορίζουν σε ποιες χώρες και ποιους πάροχος μπορεί να χρησιμοποιηθεί:</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>FDD-LTE Band (σσειρά B)</strong>: όπως B1, B3, B5 κ.λπ., ζώνες 4G. Διαφορετικές χώρες χρησιμοποιούν διαφορετικές ζώνες, η Κίνα χρησιμοποιεί κυρίως B1/B3/B5/B8/B34/B38/B39/B40/B41.</li>
+  <li><strong>TDD-LTE Band</strong>: Άλλο πρότυπο 4G, στην Κίνα χρησιμοποιείται ευρέως το B38/B39/B40/B41.</li>
+  <li><strong>5G NR Band (σσειρά N)</strong>: όπως n1, n3, n28, n41, n78, n79 κ.λπ. Το n78 (3.5GHz) είναι η κύρια ζώνη 5G στην Κίνα, το n41 (2.5GHz) χρησιμοποιείται περισσότερο από την China Mobile.</li>
+  <li><strong>Συμβουλή αγοράς</strong>: Εάν σκοπεύετε να το χρησιμοποιήσετε στο εξωτερικό, επιβεβαιώστε πριν από την αγορά ότι το τηλέφωνο υποστηρίζει τις ζώνες συχνοτήτων της χώρας προορισμού. Τα κινεζικά μοντέλα συνήθως υποστηρίζουν πλήρως τις κινεζικές ζώνες, αλλά μπορεί να λείπουν ορισμένες ξένες.</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">VI. Πόσους ρόλους παίζει πραγματικά το κινητό σας;</h4>
+<p class="mb-2">Δεν είναι πλέον απλώς τηλέφωνο:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>Εργαλείο επικοινωνίας</strong>: τηλέφωνο, SMS, WeChat, email…</li>
+  <li><strong>Έξυπνη κάμερα</strong>: Φωτογραφία, βίντεο, σάρωση εγγράφων…</li>
+  <li><strong>Πορτοφόλι</strong>: πληρωμές, κάρτες λεωφορείου, τραπεζικές κάρτες, κάρτες μέλους…</li>
+  <li><strong>Πύλη πληροφοριών</strong>: ειδήσεις, καιρός, μετοχές, γνώσεις..</li>
+  <li><strong>Κονσόλα παιχνιδιών</strong>: Από match-3 παιχνίδια μέχρι 3 Α τίτλους…</li>
+  <li><strong>Κινητό γραφείο</strong>: Έγγραφα, υπολογιστικά φύλλα, συσκέψεις, συνεργασία…</li>
+  <li><strong>Βοηθός υγείας</strong>: Βήματα, καρδιακός ρυθμός, ύπνος, άσκηση…</li>
+  <li><strong>Τηλεχειριστήριο έξυπνο σπίτι</strong>: έλεγχος φώτων, κλιματιστικού, τηλεόρασης, ρομπότ σκούπας..</li>
+  <li><strong>Ψηφιακή ταυτότητα</strong>: ηλεκτρονική ταυτότητα, ηλεκτρονική άδεια οδήγησης, κωδικός υγείας…</li>
+  <li><strong>Κέντρο ψυχαγωγίας</strong>: μουσική, βίντεο, e-books, podcasts..</li>
+</ol>
+<p class="mb-2">Σκεφτείτε: μια μικρή συσκευή, πόση ζωή κουβαλά! Γι' αυτό, το να μάθετε να τη χρησιμοποιείτε καλά, είναι να μάθετε να ζείτε καλύτερα.</p>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Πρακτική: Κατανοήστε τις προδιαγραφές υλικού</p>
+<p class="mt-1">Στις [Ρυθμίσεις], δείτε αν μπορείτε να βρείτε το μοντέλο επεξεργαστή, το μέγεθος RAM και ROM. Να έχετε μια εικόνα των δυνατοτήτων του κινητού σας. Οι χρήστες Android μπορούν να κατεβάσουν το «AnTuTu» ή το «DevCheck» για λεπτομερείς πληροφορίες υλικού.</p>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">Βρήκατε λάθος σε αυτό το κεφάλαιο; <a href="../../errata.html" class="text-primary hover:underline">Αναφέρετέ το στη σελίδα διορθώσεων</a> — παλιός δρόμος, λανθασμένο γεγονός, ασαφής πρόταση: όλα ευπρόσδεκτα. Μπορείτε επίσης να γράψετε στην ομάδα QQ 1074995524.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-ling-zhang.html" class="text-primary hover:underline">← Κεφάλαιο 0: Τρεις ειλικρινείς λέξεις πριν ξεκινήσουμε</a><span></span><a id="next-link" href="di-yi-zhang-memory.html" class="text-primary hover:underline">Παράρτημα: Ανάλυση επέκτασης μνήμης σε Android κινητά →</a></nav>
+ </div></main></div><!-- Γρήγορα εργαλεία: ομάδα πλωτών κουμπιών --><div id="quick-tools" class="quick-tools no-print" aria-label="Γρήγορα εργαλεία"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="Αναζήτηση (Ctrl+K)" aria-label="Αναζήτηση"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="Εναλλαγή σκούρου/φωτεινού" aria-label="Εναλλαγή θέματος"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="Εκτύπωση / εξαγωγή σε PDF" aria-label="Εκτύπωση ή εξαγωγή"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="Περιεχόμενα" aria-label="Άνοιγμα περιεχομένων"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="Φωνητική ανάγνωση" aria-label="Φωνητική ανάγνωση"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="Συντομεύσεις πληκτρολογίου (?)" aria-label="Πάνελ συντομεύσεων"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="Αντίγραφο ασφαλείας / επαναφορά προόδου" aria-label="Αντίγραφο ασφαλείας προόδου"><span aria-hidden="true">B</span></button></div><!-- Πάνελ συντομεύσεων --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="Συντομεύσεις πληκτρολογίου"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Συντομεύσεις πληκτρολογίου</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Κλείσιμο">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Αναζήτηση περιεχομένου</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Αλλαγή σκούρου/ανοιχτού</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Φωνητική ανάγνωση αναπαραγωγή/παύση</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Διακοπή ανάγνωσης</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Άνοιγμα πίνακα συντομεύσεων</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Μεγαλύτερη / μικρότερη γραμματοσειρά</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">Εκτύπωση / εξαγωγή PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- Παράθυρο αντιγράφων ασφαλείας/επαναφοράς --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="Αντίγραφο ασφαλείας και επαναφορά"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Αντίγραφο και ανάκτηση προόδου ανάγνωσης</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Κλείσιμο">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">Το αντίγραφο ασφαλείας περιλαμβάνει: διαβασμένα κεφάλαια, σελιδοδείκτες, σημείο ανάγνωσης, προτιμήσεις μεγέθους γραμματοσειράς και αποτελέσματα αυτοδιαγνωστικού ελέγχου υγείας. Τα δεδομένα αποθηκεύονται τοπικά στον browser και χάνονται αν αλλάξεις browser ή καθαρίσεις την cache — καλό είναι να κάνεις τακτικά εξαγωγή αντιγράφου ασφαλείας.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Εξαγωγή αρχείου αντιγράφου
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Κατέβασε ένα αρχείο JSON και αποθήκευσέ το σε ασφαλές σημείο</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Εισαγωγή αντιγράφου για ανάκτηση
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Διάλεξε ένα προηγουμένως εξαγόμενο αρχείο αντιγράφου ασφαλείας για να επαναφέρεις την πρόοδό σου</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Διαγραφή όλων των δεδομένων ανάγνωσης
+ </button><p class="text-xs text-red-400 mt-1 text-center">Δεν υπάρχει επιστροφή! Κάνε πρώτα εξαγωγή αντιγράφου ασφαλείας</p></div></div></div></div><!-- Ειδοποίηση συνεχόμενων ημερών ανάγνωσης --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">Ημέρα X συνεχόμενης ανάγνωσης!</span></div><!-- Γραμμή ελέγχου φωνητικής ανάγνωσης --><div id="tts-controls" class="tts-controls" role="region" aria-label="Έλεγχος φωνητικής ανάγνωσης" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="Τρέχον κεφάλαιο ανάγνωσης">Δεν ξεκίνησε</span><button class="tts-btn" id="tts-prev" title="Προηγούμενη παράγραφος" aria-label="Προηγούμενη παράγραφος"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="Αναπαραγωγή/παύση" aria-label="Αναπαραγωγή ανάγνωσης"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="Επόμενη παράγραφος" aria-label="Επόμενη παράγραφος"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="Πιο αργά" aria-label="Πιο αργά">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="Πιο γρήγορα" aria-label="Πιο γρήγορα">+</button><button class="tts-btn" id="tts-stop" title="Διακοπή ανάγνωσης" aria-label="Διακοπή ανάγνωσης"><span aria-hidden="true">×</span></button></div><!-- Κουμπί επιστροφής στην κορυφή --><button id="back-to-top" class="opacity-0 invisible" aria-label="Επιστροφή στην κορυφή"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- Ειδοποίηση επαναφοράς θέσης ανάγνωσης --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">Τελευταίο σημείο ανάγνωσης: ...</span><button class="btn-restore" id="restore-btn">Αναίρεση</button><button class="btn-dismiss" id="dismiss-btn">Αγνόηση</button></div><!-- Σενάριο JS -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

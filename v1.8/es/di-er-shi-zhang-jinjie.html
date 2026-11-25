@@ -1,0 +1,480 @@
+ <!DOCTYPE html><html lang="es"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="La clase de móvil que te faltaba · De la iniciación al dominio total: toma las riendas de tu vida digital"><meta name="keywords" content="tutorial de móvil, curso digital básico, smartphone, Android, iOS, HarmonyOS, trucos de móvil, vida digital, grandes modelos de IA, programación con IA, API de grandes modelos, ingeniería de prompts, desarrollo Android, desarrollo iOS, Swift, Kotlin, SwiftUI, Jetpack Compose, fotografía computacional, seguridad de la información, gestión de contraseñas, automatización, compra de móvil"><meta name="author" content="Guía de vida digital"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-er-shi-zhang-jinjie.html"><meta property="og:type" content="article"><meta property="og:title" content="Capítulo 20:Modo de desarrollador y permisos avanzados"><meta property="og:description" content="Inestabilidad del sistema"><meta property="og:locale" content="es_ES"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="La clase de móvil que te faltaba"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="La clase de móvil que te faltaba · v1.8"><meta name="twitter:description" content="De la iniciación al dominio total: toma las riendas de tu vida digital"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>Capítulo 20:Modo de desarrollador y permisos avanzados · La clase de móvil que te faltaba</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-er-shi-zhang-jinjie.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "Capítulo 20:Modo de desarrollador y permisos avanzados", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-er-shi-zhang-jinjie.html", "isPartOf": {"@type": "Book", "name": "La clase de móvil que te faltaba", "inLanguage": "es"}}</script>
+<link rel="prefetch" href="di-er-shi-zhang-termux.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-er-shi-zhang-jinjie.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-er-shi-zhang-jinjie.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">Saltar al contenido principal</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="Abrir el menú de contenidos" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="Volver al inicio">La clase de móvil que te faltaba</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="Acción principal"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="Empezar por lo básico">Empieza a aprender</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Buscar (Ctrl+K)" aria-label="Buscar en el contenido"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="Ajustar el tamaño de letra"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="Reducir la letra" aria-label="Reducir la letra">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="Restablecer el tamaño de letra" aria-label="Restablecer el tamaño de letra">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="Aumentar la letra" aria-label="Aumentar la letra">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Cambiar entre modo oscuro y claro" aria-label="Cambiar entre modo oscuro y claro"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="Imprimir / exportar a PDF" aria-label="Imprimir o exportar a PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="Volver arriba">Arriba
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="Índice del artículo"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">Índice
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 cap.</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="Filtrar capítulos..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="Filtrar capítulos"></div><ul class="space-y-1 text-sm" id="toc-list"><!--Fundamentos-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Empieza a aprender</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Desplegar/plegar la parte básica" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>Capítulo 0: Tres verdades antes de empezar</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>Capítulo 1: Conozcamos primero tu móvil</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Anexo: Análisis de expansión de memoria en móviles Android</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Anexo del Capítulo 1: Tema especial del sistema operativo HarmonyOS</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>Capítulo 2: ¿No encuentras algo en tu teléfono?</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>Capítulo 3: Sin conexión, no reinicies todavía</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>Capítulo 4: Antes de instalar una App, mírala bien</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Anexo: Componentes de un paquete de instalación</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>Capítulo 5: Ajusta el teléfono a tu gusto</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>Capítulo 6: ¿Teléfono perdido? ¿Contraseña olvidada?</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>Capítulo 7: Todas las funciones de vanguardia, explicadas</a></li>
+                        </ul>
+                    </li>
+<!--Software-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">2. Parte de software (capítulos 8 a 14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Desplegar/plegar la parte de software" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>Capítulo 8: Comunicación: SMS, llamadas y redes sociales</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>Capítulo 9: Ofimática y estudio en movilidad</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>Capítulo 10: Pagos móviles y servicios cotidianos</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>Capítulo 11: Mejor una foto que cien</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Anexo del Capítulo 11: Técnicas de imagen profesionales</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>Capítulo 12: Entretenimiento audiovisual y lectura</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>Capítulo 13: ¿Qué Apps instalar y cuáles evitar?</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>Capítulo 14: Especial en gestores de contraseñas</a></li>
+                        </ul>
+                    </li>
+<!--Avanzado-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">3. Parte avanzada (capítulos 15 a 20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Desplegar/plegar la parte avanzada" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>Capítulo 15: ¿Dos cargas al día: batería o mal uso?</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Anexo: todos los protocolos de carga rápida, explicados</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>Capítulo 16: Cambias de móvil: ¿qué cuentas pierdes?</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>Capítulo 17: Cómo se conecta el móvil con otros dispositivos</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>Capítulo 18: Haz la copia de seguridad ahora, no después</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>Capítulo 19: ¿Está roto? No lo repares todavía</a></li>
+                            <li><a href="#di-er-shi-zhang-jinjie" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>Capítulo 20:Modo de desarrollador y permisos avanzados</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Usa el emisor infrarrojo como mando a distancia</a></li>
+                        </ul>
+                    </li>
+<!--Más allá-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">4. Parte de maestría (capítulos 21 a 26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Desplegar/plegar la parte de maestría" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>Capítulo 21: ¿Se puede conectar al Wi-Fi público?</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>Capítulo 22: ¿Qué hace realmente la IA en tu móvil?</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>Capítulo 23: Que el móvil se ocupe de lo repetitivo</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Anexo: Guía de introducción a GitHub</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>Capítulo 24: Permisos root y bloqueo BL a fondo</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>Capítulo 25: Vender un teléfono viejo: borra tus datos</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>Capítulo 26: Las nuevas tecnologías pueden esperar</a></li>
+                        </ul>
+                    </li>
+<!--5,Práctica(capítulos 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">5. Parte práctica (capítulos 27 a 32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Desplegar/plegar la parte práctica" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>Capítulo 27: Ajusta el teléfono de tus padres</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>Capítulo 28: Antes de comprar, aclara estas tres cosas</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>Capítulo 29: ¿Cuánto tiempo usas realmente el teléfono?</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>Capítulo 30: Duplicado de pantalla, presentaciones e interconexión en el coche</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>Capítulo 31: Iniciación al rodaje de vídeos cortos y a la creación de contenido</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>Capítulo 32: ¿Problema? Treinta segundos para acotar el daño</a></li>
+                        </ul>
+                    </li>
+<!--6,Mirando al futuro(Capítulo 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VI. Parte de perspectivas (Capítulos 33-41)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Desplegar/plegar la parte de perspectivas" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>Capítulo 33: ¿Cómo será el móvil dentro de diez años?</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>Capítulo 34: Teléfono y coche: conectar sin líos</a></li>
+                        </ul>
+                    </li>
+<!--Especial niños y móviles(Capítulo 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Especial niños y móvil (capítulos 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Desplegar/plegar el especial niños y móvil" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>Capítulo 35: Dale un teléfono a tu hijo: ponle las reglas</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>Capítulo 36: Cómo conectar todos los dispositivos de casa</a></li>
+                        </ul>
+                    </li>
+<!--Programación con IA en la práctica-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">7. Programación con IA en la práctica (capítulos 37 a 47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Desplegar/plegar la parte de programación con IA" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>Capítulo 37: La revolución de paradigma — de «escribir código» a «dirigir a la IA que escribe código»</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>Capítulo 38: Los cinco principios de pensamiento de la programación con IA</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>Capítulo 39: La IA no te entiende: no fuiste claro</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>Capítulo 40: Explícalo primero, y luego a la acción</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>Capítulo 41: Panorama de las herramientas de programación con IA en 2026</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>Capítulo 42: Panorama de los grandes modelos y práctica con la API</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>Capítulo 43: Habla con la IA como para que te entienda</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>Capítulo 44: De 0 a 1 en la práctica — el flujo completo de un proyecto</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>Capítulo 45: La IA escribe, pero el trabajo no acaba</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>Capítulo 46: El camino de avance — de usuario a arquitecto</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>Capítulo 47: Manual de consulta rápida y recursos</a></li>
+                        </ul>
+                    </li>
+<!--Desarrollo Android en la práctica-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">8. Desarrollo Android en la práctica (capítulos 48 a 58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Desplegar/plegar la parte de desarrollo Android" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>Capítulo 48: ¿Cómo llegó Android a ser lo que es hoy?</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>Capítulo 49: Preparar el entorno de desarrollo: Android Studio y el primer proyecto</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>Capítulo 50: Kotlin de arranque rápido: el primer lenguaje del desarrollo Android</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>Capítulo 51: Desarrollo de interfaces: primeros pasos con Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>Capítulo 52: Los cuatro componentes y el ciclo de vida de la Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>Capítulo 53: Guardar datos y pedir cosas a la red</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>Capítulo 54: Proyecto 1: mi app de gastos (versión local)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>Capítulo 55: Proyecto 2: app del tiempo (versión en red)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>Capítulo 56: Tu App está lista, ahora publícala</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>Capítulo 57: El camino avanzado: permisos, notificaciones y arquitectura moderna</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>Capítulo 58: Guía de referencia rápida y recursos</a></li>
+                        </ul>
+                    </li>
+<!--Desarrollo iOS en la práctica-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">9. Desarrollo iOS en la práctica (capítulos 59 a 69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Desplegar/plegar la parte de desarrollo iOS" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>Capítulo 59: Conocer iOS: el ecosistema de Apple y el de desarrollo</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>Capítulo 60: Preparar el entorno de desarrollo: Xcode y el primer proyecto</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>Capítulo 61: Iniciación rápida a Swift: el lenguaje principal del desarrollo Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>Capítulo 62: Desarrollo de interfaces — introducción a SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>Capítulo 63: Vistas, estado y navegación</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>Capítulo 64: Almacenamiento de datos y peticiones de red</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>Capítulo 65: Proyecto 1 — mi libreta de cuentas (versión local)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>Capítulo 66: Proyecto 2 — app del tiempo (versión conectada)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>Capítulo 67: Pulir y publicar — pruebas, depuración y salir en el App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>Capítulo 68: El camino avanzado — permisos, notificaciones y arquitectura moderna</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>Capítulo 69: Guía de referencia rápida y recursos</a></li>
+                        </ul>
+                    </li>
+<!--Apéndice-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">10. Apéndices</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Desplegar/plegar los apéndices" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>AApéndice A: Proceso de desempaquetado de un móvil nuevo</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>Apéndice B: ¿Te has quedado atascado con un ejercicio?</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C Apéndice C: Glosario ultrabreve de términos</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>DApéndice D: Dónde encontrar recursos confiables</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>EApéndice E: Agradecimientos y notas</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F Apéndice F: Especial en pantallas plegables: compra y uso</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>Epílogo: Entender el teléfono, eso es todo</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>GApéndice G: Índice rápido de todo el libro</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>HApéndice H: Hoja de ruta de versiones</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="Buscar"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="Buscar en el contenido..." autocomplete="off" aria-label="Palabras de búsqueda"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Cerrar la búsqueda">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">Escribe palabras clave para empezar a buscar</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- Arriba (migas de pan) --><nav class="breadcrumb no-print" aria-label="Ubicación"><a href="#top">Inicio</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">Curso digital esencial · v1.8</span></nav>
+<div id="di-er-shi-zhang-jinjie" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">Capítulo 20:Modo desarrollador y permisos avanzados</h3>
+<p class="chapter-intro mb-4">Inestabilidad del sistema</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">I. Modo desarrollador: desbloquear ajustes ocultos</h4>
+<p class="mb-2">Apps bancarias inútilizables</p>
+<h5 class="font-semibold mt-3 mb-1">: muchas Apps bancarias y de pago detectan Root y se niegan a ejecutarse.</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Android</strong>: es posible que no puedas recibir normalmente las actualizaciones oficiales del sistema.</li>
+  <li><strong>HarmonyOS</strong> Las operaciones de Root conllevan ciertos riesgos y podrían dejar el móvil "brickeado" (no arranca). Si eres principiante, te recomiendo informarte bien primero y asegúrate de tener una copia de seguridad completa. Antes de operar, lee cuidadosamente el tutoríal y confirma tu modelo y versión del sistema.</li>
+  <li><strong>iOS</strong> Modo desarrollador.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Lista de funciones habituales:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Bloqueo BL</strong>: Interruptor necesario para conectar el telefono al ordenador y hacer operaciones avanzadas (flashear, recuperar datos, comandos ADB); ver la seccion "Comandos ADB utiles" de este capitulo.</li>
+  <li><strong>Dato: Magisk</strong>: Muestra el punto de toque en la pantalla (un pequeno circulo sigue el dedo); util para grabar tutoriales o demostraciones.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Rendimiento y fluidez:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Ajuste de velocidad de animacion (escala de animacion de ventana / transicion / duracion de animacion)</strong>: Estas tres opciones controlan la duracion de las animaciones al abrir apps o cambiar de pagina. Por defecto 1x; en 0.5x el telefono "parece" mas rapido (la app no va mas rapida, solo la animacion). Si se desactivan, los cambios son instantaneos. Los geeks suelen poner 0.5x para mantener la transicion pero dar sensacion de rapidez; desactivarlas hace la interaccion brusca y puede enmascarar bloqueos reales.</li>
+  <li><strong>Forzar renderizado GPU (Force GPU Rendering)</strong>: Fuerza que todo el dibujo 2D lo haga la GPU en vez de la CPU. En moviles antiguos o apps mal optimizadas mejora el desplazamiento, pero aumenta la carga de la GPU y el consumo. Los moviles modernos ya usan la GPU por defecto; esta opcion tiene poco impacto en gamas medias y altas y queda como vestigio; el usuario normal debe dejarla por defecto.</li>
+  <li><strong>Analisis de presentacion GPU (Profile GPU Rendering)</strong>: Muestra en pantalla un grafico de barras con el tiempo de renderizado de cada fotograma; la linea verde marca 16,6 ms (el umbral de 60 fps). Si la barra supera la linea, hay caida de fotogramas. Es la herramienta de los desarrolladores para diagnosticar bloqueos; el usuario tambien puede comparar que app esta peor optimizada.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Segundo plano y autonomia:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Practica: activa el modo desarrollador y ajusta velocidad de animación</strong>: Permite establecer "limite estandar", "maximo 1 proceso" o "maximo 2 procesos". Parece que limitar procesos ahorra bateria, pero Android ya gestiona bien el segundo plano; forzar el limite provoca recargas frecuentes (el arranque en frio consume mas y la experiencia empeora). Es mas propio de depuracion; el usuario normal debe dejar "limite estandar".</li>
+  <li><strong>No conservar actividades</strong>: Destruye la actividad al salir de cada pantalla. Muy poco recomendable; provoca pantallas en blanco y recargas frecuentes; solo sirve para probar la logica de recuperacion de una app.</li>
+</ul>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Precauciones</p>
+<p class="mt-1">Siente si el móvil se volvio más rápido.</p>
+</div>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Desbloqueo OEM: el "interruptor de flasheo" en opciones de desarrollador</li>
+</ol>
+<p class="mb-2">En las opciones de desarrollador hay un interruptor discreto pero importante: "Desbloqueo OEM" (algunas marcas lo llaman "Permitir desbloqueo OEM" o "Desbloqueo de dispositivo"). No desbloquea el BL por si mismo, sino que concede el "permiso previo": solo al activarlo el fabricante permite desbloquear el BL mediante fastboot o su herramienta.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Funcion del interruptor</strong>: Equivale a declarar al fabricante que "acepto perder la garantia y asumo el riesgo; permitidme desbloquear el BL". Si esta apagado, cualquier comando de desbloqueo se rechaza.</li>
+  <li><strong>Relacion con el bloqueo BL</strong>: El desbloqueo OEM es la "solicitud de cualificacion"; el desbloqueo BL es la "operacion real". El primero se activa en los ajustes del telefono; el segundo requiere pedir el codigo de desbloqueo en la web del fabricante y ejecutar fastboot desde el ordenador (por ejemplo <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">fastboot flashing unlock</code>); ambos son imprescindibles.</li>
+  <li><strong>Se reinicia al restaurar de fabrica?</strong>: Si. El interruptor "Desbloqueo OEM" vuelve a estar apagado tras la restauracion, pero el BL, una vez desbloqueado, es un estado fisico que no se vuelve a bloquear por restaurar; hay que ejecutar manualmente <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">fastboot flashing lock</code> para volver a bloquearlo.</li>
+  <li><strong>Cuando activarlo</strong>: Salvo que vayas a flashear o a hacer Root, mantenlo apagado. Es independiente de "Depuracion USB"; al flashear suelen hacer falta ambos activados.</li>
+</ul>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Curiosidad: por que el fabricante anade este interruptor</p>
+<p class="mt-1">Antes no existia este interruptor y el malware con permisos podia flashear el sistema a escondidas. Google obligo despues a todos los fabricantes a incluir "Desbloqueo OEM" en las opciones de desarrollador como confirmacion del "consentimiento del usuario". Por eso, aunque el BL este desbloqueado, si el OEM esta apagado, el flasheo falla.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">3. Bloqueo BL (Bootloader): la primera puerta del flasheo</h4>
+<p class="mb-2">Si crees que el modo desarrollador no es suficientemente "hardcore" y quieres experimentar con una linea de comandos Linux completa en tu móvil, Termux es para ti. No necesita permisos Root y puede convertir un Android común en una estacion de trabajo Linux portátil; es una herramienta poderosa para usuarios intermedios que exploran desarrollo y operaciones móviles.</p>
+<h5 class="font-semibold mt-3 mb-1">I. Que es Termux</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Termux es un emulador de terminal y entorno Linux de código abierto disenado para Android. No necesita permisos Root para ofrecer una experiencia completa de shell Linux en el móvil. Como App ligera (unos 30 MB), Termux soporta un rico ecosistema de software via gestor de paquetes APT, permitiendo ejecutar Python, Node.js, Git, SSH e incluso montar servidores o hacer pruebas de penetracion.</strong> La ventaja principal de Termux es su ligereza y alta escalabilidad, adecuada para desarrollo, aprendizaje y administración de sistemas. Combina paquetes estándar con emulación de terminal precisa en una solución de código abierto</li>
+  <li><strong>II. Funciones principales y carácterísticas</strong> Entorno Linux completo</li>
+  <li><strong>Termux incluye Bash, Zsh, fish y otros entornos Shell; soporta Vim, Nano, Emacs y más editores; ofrece una experiencia de línea de comandos cercana a la nativa. Los usuarios pueden instalar 2000+ paquetes con "pkg install", incluyendo GCC, OpenSSH, SQLMap y otras herramientas de desarrollo y seguridad.</strong> Gestor de paquetes potente</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Usa el gestor de paquetes APT (similar a Debian/Ubuntu) para instalar miles de paquetes Linux: herramientas de desarrollo, red, etc. Soporta Python, Ruby, Node.js, Go, Rust, Swift y más.</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Xiaomi</strong> Conexión SSH remota</li>
+  <li><strong>Huawei</strong> Herramientas de cifrado</li>
+  <li><strong>: proporciona herramientas como OpenSSL; soporta cifrado de datos y comunicaciones seguras.</strong> Configuración de servidores</li>
+  <li><strong>: puedes configurar Nginx o Apache para montar servidores web estáticos.</strong> Integración del sistema y extensiones</li>
+  <li><strong>Samsung</strong> Llamar a sensores, cámara y otras funciones hardware de Android mediante el plugin Termux:API</li>
+  <li><strong>Apple</strong> III. Ecosistema de plugins</li>
+</ul>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Comandos ADB utiles: controlar el telefono desde el ordenador</li>
+</ol>
+<p class="mb-2">ADB (Android Debug Bridge) es una herramienta de linea de comandos oficial de Google que permite al ordenador comunicarse con el telefono por USB o Wi-Fi. No requiere Root; basta con activar "Depuracion USB". Es como un mando a distancia para dar ordenes al telefono: flashear, instalar apps, pasar archivos o ver registros.</p>
+<h5 class="font-semibold mt-3 mb-1">Como conectar por USB:</h5>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>En el telefono: entra en opciones de desarrollador y activa "Depuracion USB".</li>
+  <li>En el ordenador: descarga Platform Tools de Google (incluye <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb</code> Incluir contexto en vez de aislarlo <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">fastboot</code> dos ejecutables) y descomprime en cualquier carpeta.</li>
+  <li>Conecta el telefono por cable; aparecera "Permitir depuracion USB", marca "Permitir siempre" y acepta.</li>
+  <li>En la linea de comandos del ordenador (PowerShell o cmd en Windows) ejecuta <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb devices</code>; si la respuesta es algo como <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">List of devices attached / xxxxxxxx device</code> esta conectado.</li>
+</ol>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">No ignores los drivers ni el cuadro de autorizacion</p>
+<p class="mt-1">Si los usuarios de Windows ven <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb devices</code> muestra "unauthorized" o no lista el dispositivo, suele ser por falta de driver o por no haber pulsado "Permitir" en el telefono. Samsung/Xiaomi y otras marcas tienen sus "drivers USB" o "asistentes" para completarlos; en Mac y Linux no suele hacer falta. Si descartas el cuadro por error, vuelve a conectar el cable y volvera a aparecer.</p>
+</div>
+<h5 class="font-semibold mt-3 mb-1">Comandos ADB habituales:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb install app.apk</code>: Instala un APK del ordenador en el telefono (<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">-r</code> reinstala conservando datos;<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">-s</code> instala en la tarjeta SD).</li>
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb uninstall com.xxx.xxx</code>: Desinstala una app por nombre de paquete.</li>
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb push ruta_del_ordenador /sdcard/ruta_destino</code>: Envia un archivo del ordenador al telefono.</li>
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb pull /sdcard/archivo ruta_del_ordenador</code>: Trae un archivo del telefono al ordenador (mas rapido que enviartelo por WeChat y descargarlo).</li>
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb shell</code>: Entra en la shell de Linux del telefono; puedes ejecutar directamente <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">ls</code>, <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">pm</code>, <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">am</code> y otros comandos.</li>
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb reboot bootloader</code>: Reinicia el telefono en modo Fastboot (entrada para flashear).</li>
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb reboot recovery</code>: Reinicia en modo Recovery.</li>
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb shell pm list packages</code>: Lista los nombres de paquete de todas las apps instaladas (imprescindible para encontrarlos). Anadiendo <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">-s</code> solo apps del sistema; anadiendo <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">-3</code> solo apps de terceros.</li>
+  <li><code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb shell pm uninstall --user 0 nombre_paquete</code>: Desinstala una app preinstalada para el usuario actual sin Root; ver la practica mas abajo.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Practica: desinstalar apps preinstaladas sin Root:</h5>
+<p class="mb-2">Es una de las funciones mas utiles de ADB: con <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">pm uninstall --user 0</code> puedes desinstalar apps preinstaladas para el "usuario actual" sin Root ni alterar la particion del sistema. La app "desaparece" del sistema pero sigue en la particion; al restaurar de fabrica vuelve.</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Primero usa <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb shell pm list packages -s</code> para listar las apps del sistema y encontrar el nombre del paquete. Por ejemplo, el navegador de Xiaomi es <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">com.android.browser</code>, la tienda de Huawei es <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">com.vmall.client</code>.</li>
+  <li>No sabes que paquete es cada app? En el ordenador usa <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb shell pm list packages | findstr palabra_clave</code> para buscar, o instala una app de terceros como "Package Viewer" para ver el paquete de cada app en el telefono.</li>
+  <li>Ejecuta la desinstalacion:<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb shell pm uninstall --user 0 nombre_paquete</code>, por ejemplo <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb shell pm uninstall --user 0 com.android.browser</code>. Si devuelve <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">Success</code> ha tenido exito.</li>
+  <li>Como restaurar? Dos metodos: 1) restaurar de fabrica (mas completo pero engorroso); 2) reinstalar con<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">adb shell cmd package install-existing nombre_paquete</code>.</li>
+</ol>
+<div class="danger-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Nunca borres paquetes basicos del sistema</p>
+<p class="mt-1">"pm uninstall --user 0" es un metodo seguro sin Root, pero borrar apps criticas del sistema (como <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">com.android.systemui</code> la barra de estado,<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">com.android.phone</code> el telefono,<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">com.android.settings</code> los ajustes) puede provocar cuelgues, pantalla negra o imposibilidad de encender. Antes de borrar, busca en Google "se puede borrar este paquete". Borra pocos cada vez y comprueba que todo va bien.</p>
+</div>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Curiosidad: que significa --user 0</p>
+<p class="mt-1">Desde Android 4.2 se soportan varios usuarios; cada uno tiene un ID (el propietario es 0 y los invitados empiezan en 10).<code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">--user 0</code> significa "desinstalar solo para el propietario"; el APK sigue en la particion del sistema pero no se muestra. Por eso no necesita Root: no toca los archivos del sistema, solo cambia la configuracion del usuario. Se diferencia del Root en que este borra de verdad para todos los usuarios; ADB solo "oculta al usuario actual".</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">5. Permisos Root: el "superadministrador" de Android</h4>
+<p class="mb-2">El permiso Root equivale al superusuario de Linux (control total sobre / y lectura/escritura de cualquier archivo); es el nivel mas alto de Android. Se diferencia del Administrador de Windows, que por motivos de seguridad tiene muchas restricciones (el verdadero maximo es TrustedInstaller); ni siquiera el Administrador puede ejecutar directamente como root de Linux <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">sudo rm -rf /*</code>. Al obtener Root puedes modificar archivos del sistema, desinstalar apps preinstaladas y usar apps avanzadas que lo requieren.</p>
+<h5 class="font-semibold mt-3 mb-1">Descripcion de función</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Termux:API</li>
+  <li>Expone funciones de API de Android a programas de linea de comandos</li>
+  <li>Termux:Boot</li>
+  <li>Permite ejecutar scripts al iniciar el dispositivo</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Termux:Float</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Móviles plegables</strong> Termux:Styling</li>
+  <li><strong>Habilita esquemas de color y personalizacion de fuentes para la terminal</strong> Termux:Tasker</li>
+  <li><strong>Integra scripts de Termux con la App de automatización Tasker</strong> Termux:Widget</li>
+  <li><strong>Permite ejecutar scripts desde widgets de la pantalla principal</strong> Nota importante</li>
+  <li><strong>Termux y sus plugins deben instalarse desde la misma fuente porque comparten el mismo sharedUserId. Mezclar fuentes (F-Droid y GitHub) causará errores de instalación.</strong> IV. Guia de instalación y configuración</li>
+</ul>
+<div class="danger-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Pasos de instalación</p>
+<p class="mt-1">Descargar App</p>
+</div>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>SafetyNet y Play Integrity: por que las apps de banco no funcionan tras hacer Root</li>
+</ol>
+<p class="mb-2">Muchos usuarios Root han vivido este momento: tras instalar modulos, abren la app del banco y ven "Su dispositivo no es seguro, no se puede usar"; Google Pay tampoco funciona y Netflix se niega a reproducir en HD. Detras estan los dos mecanismos de integridad de Google: el antiguo SafetyNet y el nuevo Play Integrity API.</p>
+<h5 class="font-semibold mt-3 mb-1">Que son SafetyNet y Play Integrity:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>SafetyNet Attestation (antiguo, desde 2017)</strong>: API de comprobacion de integridad lanzado por Google; la app consulta al servidor "este dispositivo ha pasado el CTS y esta sin modificar". Devuelve Basic Attestation (basica) y Strong Attestation (fuerte, con clave de hardware). Google anunciara su desuso progresivo a partir de 2024.</li>
+  <li><strong>Play Integrity API (nuevo, desde 2022)</strong>: La alternativa de Google, mas estricta y completa. Ademas de la integridad del dispositivo, incluye la integridad de la app (si ha sido manipulada) y la de la cuenta o autorizacion (si Google confia en el usuario). Las apps nuevas deberian migrar a Play Integrity.</li>
+  <li><strong>Quienes lo usan</strong>: Apps de banca, finanzas y pagos (Google Pay, banca online, Alipay/WeChat Pay en ciertos casos), streaming (Netflix para proteger HD), algunos juegos anti-trampas (Tencent, NetEase) y apps empresariales (MDM de cumplimiento de dispositivos).</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Tres niveles de Play Integrity:</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>MEETS_DEVICE_INTEGRITY (integridad del dispositivo)</strong>: El dispositivo tiene Android oficial, Bootloader bloqueado, sin Root y supera el CTS. Permite usar apps de banco y pago.</li>
+  <li><strong>MEETS_BASIC_INTEGRITY (integridad basica)</strong>: El dispositivo es basicamente fiable, pero puede tener anomalias leves. Algunas apps bajan su nivel (Netflix puede reproducir pero limita la resolucion) y las mas estrictas rechazan el acceso.</li>
+  <li><strong>MEETS_STRONG_INTEGRITY (integridad fuerte)</strong>: El nivel mas alto; requiere respaldo de clave de hardware (como Titan M en Google Pixel); la mayoria de marcas no lo alcanza ni sin Root.</li>
+  <li><strong>Sin etiqueta (NO_INTEGRITY)</strong>: El dispositivo esta rooteado, BL desbloqueado, con ROM de terceros o detectado como emulador; casi todas las apps de banco y pago se niegan a funcionar.</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Por que estas apps fallan tras el Root:</h5>
+<p class="mb-2">La app pide a Play Integrity la certificacion al servidor de Google, que revisa varios indicadores (Bootloader bloqueado, particion del sistema modificada, binario su, SELinux en modo permisivo...). Cualquier anomalia reduce el nivel o lo deja vacio; la app del banco ve "dispositivo no seguro" y rechaza el servicio.</p>
+<h5 class="font-semibold mt-3 mb-1">Soluciones de ocultacion modernas: Magisk Hide / Shamiko / Zygisk:</h5>
+<p class="mb-2">Para poder usar apps bancarias sin perder las ventajas del Root, la comunidad ha desarrollado una serie de métodos para "ocultar el estado de Root". La idea central es hacer que el programa de detección vea un dispositivo "con apariencia normal" en lugar de un sistema modificado.</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Respaldo manual</strong>: El método de Root sin sistema más popular actualmente; no modifica la partición del sistema, sino que implementa el Root mediante montaje. La ventaja es menor probabilidad de fallo en actualizaciones OTA y una desinstalación más limpia, siendo la base de todos los métodos de ocultación posteriores. Sin embargo, usar Magisk sigue requiriendo desbloquear el bootloader.</li>
+  <li><strong>Magisk Hide (descontinuado)</strong>: Un módulo de ocultación integrado en Magisk que podía ocultar el Root a apps específicas. Sin embargo, fue eliminado oficialmente en 2021 debido a que Google mejoró continuamente sus métodos de detección, creando un "juego del gato y el ratón".</li>
+  <li><strong>Zygisk</strong>: Un nuevo mecanismo introducido en Magisk 24.0+, similar a Riru, que carga los módulos inyectándose en el proceso Zygote, siendo más discreto que la modificación directa del sistema. Activar Zygisk es un requisito previo para usar los métodos modernos de ocultación.</li>
+  <li><strong>Shamiko</strong>: El módulo de ocultación más popular actualmente, que funciona junto con Zygisk para ocultar el Root, ocultar el propio Magisk y falsificar el estado del bootloader a apps específicas (modo "lista blanca inversa"). Shamiko se distribuye a través del repositorio LSPosed o GitHub.</li>
+  <li><strong>Play Integrity Fix(osm0sis)</strong>: Un módulo de Magisk diseñado específicamente contra la detección de Google Play Integrity, que modifica la huella digital del dispositivo para que Google crea que tu dispositivo es un modelo oficial sin Root.</li>
+</ul>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">El juego del gato y el ratón nunca terminará</p>
+<p class="mt-1">Google actualiza periódicamente las reglas de detección y los desarrolladores de apps también mejoran la verificación de Play Integrity. Los métodos de ocultación que funcionan hoy pueden ser detectados mañana. Si dependes completamente de apps bancarias o de pago (como transferencias diarias, pagos con código QR), la opción más segura sigue siendo: no hacer Root, no desbloquear el bootloader. Los métodos de ocultación son más adecuados para una configuración de "teléfono principal sin Root + teléfono de respaldo con Root".</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">VII. Recomendaciones para usuarios comunes</h4>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Inicializar sistema</strong>: Puedes activarlos para probar aceleración de animaciones, análisis de renderizado GPU, etc., pero no cambies otras opciones que no entiendas.</li>
+  <li><strong>Desbloqueo OEM y bloqueo del bootloader</strong>: Si no planeas flashear ROMs ni hacer Root, mantén ambos interruptores en su estado predeterminado (apagado) por seguridad.</li>
+  <li><strong>ADB</strong>: Herramientas potentes sin Root que incluso los usuarios comunes pueden usar, como usar <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">pm uninstall --user 0</code> para desinstalar apps preinstaladas. Pero asegúrate de verificar si el nombre del paquete se puede eliminar antes de borrarlo.</li>
+  <li><strong>Gracias por leer hasta el final este "curso de móviles"! Durante la escritura consultamos amplios manuales oficiales de fabricantes, guías de usuario y artículos de divulgacion técnica publicos para garantizar la exactitud de la información.</strong>: No se recomienda hacer Root para usuarios comunes; los riesgos superan a los beneficios. Si necesitas ciertas funciones, primero investiga si hay alternativas que no requieran Root (como desinstalar apps preinstaladas con ADB o usar Shizuku para reemplazar algunas funciones de Root).</li>
+</ul>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">pkg update &amp;&amp; pkg upgrade</p>
+<ol class="list-decimal pl-6 mt-1 space-y-1">
+  <li>para actualizar la lista de paquetes</li>
+  <li>Optimizacion básica</li>
+  <li>Cambiar repositorio espejo</li>
+  <li>:usa el comando</li>
+  <li>termux-change-repo</li>
+</ol>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">¿Has encontrado un error en este capítulo? <a href="../../errata.html" class="text-primary hover:underline">Repórtalo en la página de erratas</a> — ruta obsoleta, dato incorrecto, frase confusa: todo bienvenido. También puedes escribir en el grupo QQ 1074995524.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-shi-jiu-zhang.html" class="text-primary hover:underline">← Capítulo 19: ¿Está roto? No lo repares todavía</a><span></span><a id="next-link" href="di-er-shi-zhang-termux.html" class="text-primary hover:underline">Usa el emisor infrarrojo como mando a distancia →</a></nav>
+ </div></main></div><!-- Herramientas rápidas: grupo de botones flotantes --><div id="quick-tools" class="quick-tools no-print" aria-label="Herramientas rápidas"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="Buscar (Ctrl+K)" aria-label="Buscar"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="Cambiar entre oscuro/claro" aria-label="Cambiar de tema"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="Imprimir / exportar a PDF" aria-label="Imprimir o exportar"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="Índice" aria-label="Abrir el índice"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="Leer en voz alta" aria-label="Leer en voz alta"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="Atajos de teclado (?)" aria-label="Panel de atajos"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="Copiar/restaurar progreso" aria-label="Copia de seguridad del progreso"><span aria-hidden="true">B</span></button></div><!-- Panel de atajos --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="Atajos de teclado"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Atajos de teclado</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Cerrar">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Buscar contenido</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Cambiar oscuro/claro</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Lectura en voz alta: reproducir/pausar</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Detener la lectura</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Abrir el panel de atajos</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Aumentar / reducir el tamaño de letra</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">Imprimir / exportar a PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- Diálogo de copia de seguridad/restauración --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="Copia de seguridad y restauración"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Copia de seguridad y restauración del progreso</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Cerrar">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">La copia incluye: capítulos leídos, marcadores, posición de lectura, preferencia de tamaño de letra y resultados del autodiagnóstico de salud. Los datos se guardan en el propio navegador y se pierden al cambiar de navegador o al borrar la caché; conviene exportar copias con regularidad.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Exportar archivo de copia
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Descarga un archivo JSON y guárdalo en un lugar seguro</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Importar copia y restaurar
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Elige un archivo de copia exportado antes para restaurar tu progreso</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Borrar todos los datos de lectura
+ </button><p class="text-xs text-red-400 mt-1 text-center">¡Imposible de recuperar! Exporta antes una copia</p></div></div></div></div><!-- Aviso de días seguidos de lectura --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">¡Día X seguido de lectura!</span></div><!-- Barra de controles de lectura en voz alta --><div id="tts-controls" class="tts-controls" role="region" aria-label="Control de lectura en voz alta" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="Capítulo que se está leyendo">Sin empezar</span><button class="tts-btn" id="tts-prev" title="Párrafo anterior" aria-label="Párrafo anterior"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="Reproducir/Pausar" aria-label="Reproducir lectura"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="Párrafo siguiente" aria-label="Párrafo siguiente"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="Reducir velocidad" aria-label="Reducir velocidad">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="Aumentar velocidad" aria-label="Aumentar velocidad">+</button><button class="tts-btn" id="tts-stop" title="Detener lectura" aria-label="Detener lectura"><span aria-hidden="true">×</span></button></div><!-- Botón «Arriba» --><button id="back-to-top" class="opacity-0 invisible" aria-label="Volver arriba"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- Aviso de restauración de la posición de lectura --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">Última lectura: ...</span><button class="btn-restore" id="restore-btn">Deshacer</button><button class="btn-dismiss" id="dismiss-btn">Ignorar</button></div><!-- Script JS -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

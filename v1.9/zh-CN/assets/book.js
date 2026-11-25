@@ -244,22 +244,32 @@
  // ===== 阅读位置记忆 =====
  const POSITION_KEY = 'phoneCourse_scrollPos';
  const POSITION_CHAPTER_KEY = 'phoneCourse_lastChapter';
+ const POSITION_SECTION_KEY = 'phoneCourse_lastSection';
+ const POSITION_OFFSET_KEY = 'phoneCourse_lastOffset';
  let savePosTimer = null;
  function saveReadingPosition() {
  const scrollY = window.scrollY;
  if (scrollY < 200) return; // 太靠前不保存
  localStorage.setItem(POSITION_KEY, scrollY.toString());
- // 找到当前章节名
+ // 找到当前章节名、章 id 与章内偏移（恢复时按 id 定位，避免占位高度漂移）
  let currentChapter = '';
+ let currentSectionId = '';
+ let currentOffset = 0;
  const viewportTop = scrollY + 100;
  for (let i = sections.length - 1; i >= 0; i--) {
  if (sections[i].offsetTop <= viewportTop) {
  const h3 = sections[i].querySelector('h3');
  if (h3) currentChapter = h3.textContent;
+ currentSectionId = sections[i].getAttribute('id') || '';
+ currentOffset = Math.max(0, scrollY - sections[i].offsetTop);
  break;
  }
  }
  if (currentChapter) localStorage.setItem(POSITION_CHAPTER_KEY, currentChapter);
+ if (currentSectionId) {
+ localStorage.setItem(POSITION_SECTION_KEY, currentSectionId);
+ localStorage.setItem(POSITION_OFFSET_KEY, String(currentOffset));
+ }
  }
  window.addEventListener('scroll', () => {
  clearTimeout(savePosTimer);
@@ -270,7 +280,20 @@
  function tryRestorePosition() {
  const savedPos = parseInt(localStorage.getItem(POSITION_KEY) || '0', 10);
  const savedChapter = localStorage.getItem(POSITION_CHAPTER_KEY) || '';
+ const savedSectionId = localStorage.getItem(POSITION_SECTION_KEY) || '';
+ const savedOffset = parseInt(localStorage.getItem(POSITION_OFFSET_KEY) || '0', 10);
  if (savedPos > 500 && savedChapter && restoreToast && restoreToastText) {
+ // 方案 W5：默认直达上次位置。优先按章节 id 定位：content-visibility 下
+ // 直接跳 scrollY 会因未渲染章节的占位高度而漂移；先强制渲染该章再补章内偏移。
+ const sectionEl = savedSectionId ? document.getElementById(savedSectionId) : null;
+ if (sectionEl) {
+ sectionEl.scrollIntoView({ behavior: 'instant', block: 'start' });
+ requestAnimationFrame(() => {
+ window.scrollTo({ top: sectionEl.offsetTop + savedOffset, behavior: 'auto' });
+ });
+ } else {
+ window.scrollTo({ top: savedPos, behavior: 'auto' });
+ }
  restoreToastText.textContent = `上次读到：${savedChapter}`;
  setTimeout(() => restoreToast.classList.add('show'), 800);
  // 10秒后自动隐藏
@@ -278,11 +301,9 @@
  }
  }
  if (restoreBtn) {
+ // 位置已自动恢复：按钮改为「撤销」，把读者送回本次打开时的位置（顶部）
  restoreBtn.addEventListener('click', () => {
- const savedPos = parseInt(localStorage.getItem(POSITION_KEY) || '0', 10);
- if (savedPos > 0) {
- window.scrollTo({ top: savedPos, behavior: 'smooth' });
- }
+ window.scrollTo({ top: 0, behavior: 'smooth' });
  if (restoreToast) restoreToast.classList.remove('show');
  });
  }
@@ -587,20 +608,11 @@
  }
 
  // ===== 搜索（增强：键盘导航 + 结果计数） =====
- let searchData = null;
  let searchSelectedIdx = -1;
  let searchResultItems = [];
 
- function buildSearchIndex() {
- if (searchData) return;
- searchData = sections.map(section => {
- const id = section.getAttribute('id');
- const h3 = section.querySelector('h3');
- const title = h3 ? h3.textContent : '';
- const text = section.textContent;
- return { id, title, text };
- });
- }
+ // 方案 W5：不再预建全书索引。120 章 × textContent 全量拷进 JS 数组会让
+ // 低端安卓首次搜索内存峰值翻倍；改为 runSearch 逐章扫描、只保留命中章。
 
  function renderSearchPlaceholder(message) {
  if (searchResults) {
@@ -608,7 +620,6 @@
  }
  }
  function runSearch(query) {
- buildSearchIndex();
  const normalizedQuery = (query || '').trim().toLowerCase();
  if (!normalizedQuery) {
  renderSearchPlaceholder('输入关键词开始搜索');
@@ -616,9 +627,18 @@
  searchResultItems = [];
  return;
  }
- const results = searchData.filter(item =>
- item.title.toLowerCase().includes(normalizedQuery) || item.text.toLowerCase().includes(normalizedQuery)
- ).slice(0, 20);
+ const results = [];
+ // 逐章读取 textContent：只保留命中的前 20 章，扫完一章即释放上一章
+ for (const section of sections) {
+ const id = section.getAttribute('id');
+ const h3 = section.querySelector('h3');
+ const title = h3 ? h3.textContent : '';
+ const text = section.textContent;
+ if (!title.toLowerCase().includes(normalizedQuery) &&
+ !text.toLowerCase().includes(normalizedQuery)) continue;
+ results.push({ id, title, text });
+ if (results.length >= 20) break;
+ }
 
  if (results.length === 0) {
  renderSearchPlaceholder('未找到相关内容');
@@ -657,7 +677,6 @@
  }
  function openSearch() {
  if (!searchOverlay) return;
- buildSearchIndex();
  searchOverlay.classList.add('active');
  searchOverlay.setAttribute('aria-hidden', 'false');
  if (searchInput) {

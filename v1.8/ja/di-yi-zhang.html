@@ -1,0 +1,566 @@
+ <!DOCTYPE html><html lang="ja"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="あなたに足りなかったスマホの授業 · 入門からマスターまで、あなたのデジタルライフをまるごとコントロール"><meta name="keywords" content="スマホ講座,デジタル必修講座,スマートフォン,Android,iOS,HarmonyOS,スマホテクニック,デジタルライフ,AI大規模言語モデル,AIプログラミング,大規模モデルAPI,Promptエンジニアリング,Android開発,iOS開発,Swift,Kotlin,SwiftUI,Jetpack Compose,計算写真,情報セキュリティ,パスワード管理,自動化,スマホ選び"><meta name="author" content="デジタルライフガイド"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-yi-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="第一章：まず、このマシンを知ろう"><meta property="og:description" content="あなたのスマホは、実はポケットの中で最もパーソナルなスーパーコンピューターだ。"><meta property="og:locale" content="ja_JP"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="あなたに足りなかったスマホの授業"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="あなたに足りなかったスマホの授業 · v1.8"><meta name="twitter:description" content="入門からマスターまで、あなたのデジタルライフをまるごとコントロール"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>第一章：まず、このマシンを知ろう · あなたに足りなかったスマホの授業</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-yi-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "第一章：まず、このマシンを知ろう", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-yi-zhang.html", "isPartOf": {"@type": "Book", "name": "あなたに足りなかったスマホの授業", "inLanguage": "ja"}}</script>
+<link rel="prefetch" href="di-yi-zhang-memory.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-yi-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-yi-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-yi-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-yi-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-yi-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-yi-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-yi-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-yi-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-yi-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-yi-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-yi-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-yi-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-yi-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-yi-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-yi-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-yi-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-yi-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-yi-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-yi-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-yi-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">本文へスキップ</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="目次メニューを開く" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="ホームに戻る">あなたに足りなかったスマホの授業</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="メイン操作"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="基礎から始める">学習を始める</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="検索 (Ctrl+K)" aria-label="本文を検索"><span aria-hidden="true">搜</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="文字サイズの調整"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="文字を縮小" aria-label="文字を縮小">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="文字サイズをリセット" aria-label="文字サイズをリセット">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="文字を拡大" aria-label="文字を拡大">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="ダーク/ライトモードの切り替え" aria-label="ダーク/ライトモードの切り替え"><span class="dark:hidden" aria-hidden="true">夜</span><span class="hidden dark:inline" aria-hidden="true">昼</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="印刷 / PDF書き出し" aria-label="印刷またはPDF書き出し"><span aria-hidden="true">印</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="先頭へ戻る">先頭へ
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="このページの目次"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">目次
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38章</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="章を絞り込み..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="章を絞り込む"></div><ul class="space-y-1 text-sm" id="toc-list"><!--基礎編-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">学習を始める</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起基礎編を開く/閉じる" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>第零章：始める前に、三つだけ本音で</a></li>
+                            <li><a href="#di-yi-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>第一章：まず、このマシンを知ろう</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>付録：Androidスマートフォンメモリ拡張解析</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>第一章付録：HarmonyOSオペレーティングシステム特集</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>第二章：スマホ内のもの、見つからないときは？</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>第三章：ネットにつながらない、再起動はあとで</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>第四章：アプリを入れる前に、ひととおり見よう</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> 附：ソフトウェアインストールパッケージの構成要素</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>第五章：スマホをいつもの使い方に合わせて設定</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>第六章：スマホをなくした日、パスワードを忘れた日</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>第七章：最先端機能をまるごと解説</a></li>
+                        </ul>
+                    </li>
+<!--ソフトウェア編-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">二、ソフトウェア編（第8〜14章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起ソフト編を開く/閉じる" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>役割</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>第九章：モバイルオフィスと学習</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>第十章：モバイル決済と生活サービス</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>第十一章：多く撮るより、上手に撮るほうが大事</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>第十一章付録：プロ級の撮影テクニック</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>第十二章：映像・音楽の楽しみと読書</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>第十三章：入れるべきAppと、避けるべきApp</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>第十四章：パスワードマネージャー特集</a></li>
+                        </ul>
+                    </li>
+<!--応用編-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">三、ステップアップ編（第15〜20章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起発展編を開く/閉じる" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>第十五章：一日二度充電、電池か使い方のどっち？</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> 附：急速充電規格の徹底解説</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>第十六章：機種変更、なくしてもいいアカウントはどれ？</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>第十七章：スマホとほかのデバイスの連携</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>第十八章：バックアップは「忘れた日」にしないで</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>第十九章：壊れた？まず焦らず、原因を探る</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>第二十章：開発者モードと高度な権限</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>第二十章付録</a></li>
+                        </ul>
+                    </li>
+<!--発展編-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">四、超越編（第21-26章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起超越編を開く/閉じる" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>第二十一章：公共Wi-Fi、接続していいのか？</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>第二十二章：AIがスマホで実際に何をしているのか？</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>第二十三章：同じ作業はスマホに任せる</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>附：GitHub入門ガイド</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>第二十四章：Root権限とBLロック徹底解説</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>第二十五章：中古スマホを売る前に、済ませておくこと</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>第二十六章：新しい技術は待ち</a></li>
+                        </ul>
+                    </li>
+<!--五、実戦編（第27〜32章）-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">五、実践編（第27-32章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起実践編を開く/閉じる" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>第二十七章：両親のスマホを整える</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>第二十八章：買う前に、決めておく三つのこと</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>第二十九章：スマホを何時間使っているか、自分でも知らない</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>第三十章：画面ミラーリング、プレゼン、車載連携</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>第三十一章：ショート動画の撮影とコンテンツ制作入門</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>第三十二章：異変が起きたら、30秒で被害を止める</a></li>
+                        </ul>
+                    </li>
+<!--六、展望編（第三十三章）-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">六、展望編（第33-41章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起展望編を開く/閉じる" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>第三十三章：次の10年、スマホはどう変わる？</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>第三十四章：スマホと車、手軽につなぐには</a></li>
+                        </ul>
+                    </li>
+<!--子どもとスマホ特集（第三十五章）-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">子どもとスマホ特集（第三十五・三十六章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起子どもとスマホ特集を開く/閉じる" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>第三十五章：子どもにスマホを渡すときのルール</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>第三十六章：家中のデバイス、まとめてつなぐ</a></li>
+                        </ul>
+                    </li>
+<!--AIプログラミング実戦編-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">七、AIプログラミング実践編（第37-47章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起AIプログラミング実践編を開く/閉じる" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>第三十七章：パラダイム革命——コードを書く時代からAIに書かせる時代へ</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>第三十八章：AIプログラミングの5つの思考原則</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>第三十九章：AIに伝わらないのは、言い方のせいかも</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>第四十章：動かす前に、はっきり伝える</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>第四十一章：2026年AIプログラミングツールの全体像</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>第四十二章：大規模言語モデルの全体像とAPI実践</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>第四十三章：AIに話して伝わる話し方</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>第四十四章：0から1への実践——プロジェクトの全工程</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>第四十五章：AIが書いただけでは完成じゃない</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>第四十六章：上達への道——使い手からアーキテクトへ</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>第四十七章：クイックリファレンスとリソース</a></li>
+                        </ul>
+                    </li>
+<!--Android開発実戦編-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">八、Android開発実践編（第48-58章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Android開発実践編を開く/閉じる" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>第四十八章：Androidはどうやって今の形になったのか</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>第四十九章：開発環境の構築——Android Studioと最初のプロジェクト</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>第五十章：Kotlinにすばやく入門——Android開発の第一言語</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>第五十一章：UI開発——Jetpack Compose入門</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>第五十二章：4大コンポーネントとActivityのライフサイクル</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>第五十三章：データ保存とネットワーク通信</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>第五十四章：プロジェクト1——家計簿アプリ（ローカル版）</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>第五十五章：プロジェクト2——天気チェックアプリ（ネットワーク版）</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>第五十六章：Appをストアに出すまで</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>第五十七章：上達への道——権限、通知、モダンアーキテクチャ</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>第五十八章：クイックリファレンスとリソース</a></li>
+                        </ul>
+                    </li>
+<!--iOS開発実戦編-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">九、iOS開発実践編（第59-69章）</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起iOS開発実践編を開く/閉じる" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>第五十九章：iOSを知る——Appleのエコシステムと開発エコシステム</a></li>
+                            <li><a href="di-liu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>第六十章：開発環境の構築——Xcodeと最初のプロジェクト</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>第六十一章：Swiftにすばやく入門——Apple開発の第一言語</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>第六十二章：UI開発——SwiftUI入門</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>第六十三章：ビュー、ステート、ナビゲーション</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>第六十四章：データ保存とネットワーク通信</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>第六十五章：プロジェクト1——家計簿アプリ（ローカル版）</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>第六十六章：プロジェクト2——天気チェックアプリ（ネットワーク版）</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>第六十七章：仕上げとリリース——App Storeへの公開</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>第六十八章：上達への道——権限、通知、モダンアーキテクチャ</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>第六十九章：クイックリファレンスとリソース</a></li>
+                        </ul>
+                    </li>
+<!--付録-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">十、付録</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起付録を開く/閉じる" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>A付録A：新規スマホの開封手順</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>付録B：実践で詰まったらどうする？</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C付録C：かんたん用語対照表</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>D付録D：信頼できるリソースの探し方</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>E付録E：謝辞と説明</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F付録F：折りたたみスマホの選び方と使い方特集</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>おわりに：スマホを理解すれば、それだけだ</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>G付録G：全書早見インデックス</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>H付録H：バージョンロードマップ</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="検索"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">搜</span><input type="text" id="search-input" placeholder="本文を検索..." autocomplete="off" aria-label="検索キーワード"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="検索を閉じる">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">キーワードを入力して検索</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- 上部パンくずリスト --><nav class="breadcrumb no-print" aria-label="位置"><a href="#top">ホーム</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">デジタル必修講座 · v1.8</span></nav>
+<div id="di-yi-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">第一章：まず、このマシンを知ろう</h3>
+<p class="chapter-intro mb-4">あなたのスマホは、実はポケットの中で最もパーソナルなスーパーコンピューターだ。かつて人類を月に送ったコンピューターより何倍も強力なのに、静かにあなたの手のひらに収まっている。今日は、この「沈黙の巨人」をしっかり知ろう。</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">一、スマホハードウェアの「五臓六腑」：深度解析</h4>
+<p class="mb-2">スマホは小さいが五臓は揃っている。解剖の授業のように、これらの精密なコンポーネントを一つずつ知ろう。</p>
+<h5 class="font-semibold mt-3 mb-1">1. SoC（システムレベルチップ）：スマホの「脳＋心臓」</h5>
+<p class="mb-2">SoCの正式名称はSystem on Chip、訳すと「システム全体を1つのチップに詰め込む」という意味だ。CPU（中央演算処理装置）だけでなく、CPU、GPU（グラフィックス処理装置）、NPU（ニューラルネットワーク処理装置）、ISP（画像信号処理装置）、ベースバンド（通信を担当）などがすべて統合されている。</p>
+<p class="mb-2">これはまるで、都市の政府庁舎、発電所、通信センター、警察署をすべて1つのビルに建てるようなもので、効率が極めて高い。</p>
+<h5 class="font-semibold mt-3 mb-1">CPU：汎用計算の核心</h5>
+<p class="mb-2">CPUはSoCの中で最も核心的なコンポーネントで、大多数の計算タスクの処理を担当する。スマホのCPUはARMアーキテクチャを採用し。パソコンのx86アーキテクチャとは異なる。ARMアーキテクチャは縮小命令セット（RISC）を特色とし、消費電力が低く、モバイルデバイスに適している。</p>
+<p class="mb-2"><strong>CPUの大小コア設計</strong>：現代のスマホCPUは普遍的に「大小コア」アーキテクチャ（ARMのbig.LITTLE技術）を採用し、コアを異なる性能レベルに分ける：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>超大コア/大コア</strong>：性能が最も強く、重度のタスクを担当。ゲームのロード、アプリの起動、複雑な計算など。周波数が最も高い（3GHz+）が、消費電力も最大。</li>
+  <li><strong>中コア</strong>：性能と消費電力のバランスが取れ、日常の中程度の負荷タスクを処理。Weiboの閲覧、動画視聴、マルチタスクの切り替えは主にこれに頼る。</li>
+  <li><strong>小コア/効率コア</strong>：消費電力が最も低く、軽量なバックグラウンドタスクを処理。待機、音楽鑑賞、メッセージ受信など、ほとんど電力を消費しない。</li>
+</ul>
+<p class="mb-2">3つのレベルのコアが協調して動作する：システムスケジューラーがタスク負荷に応じて自動、的に割り当てる――軽量タスクは小コアに任せて省電力、重い作業は大コアが強力に処理し、終わったら小コアに戻す。これがスマホがスムーズにゲームを遊べるだけでなく、一日中待機できる理由だ。</p>
+<p class="mb-2"><strong>各ブランドのアーキテクチャ特徴</strong>：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Qualcomm Snapdragon 8 Elite</strong>：Oryon自社開発CPUアーキテクチャ（Nuvia買収由来）を採用、2つのスーパーコア（4.32GHz）+ 6つの性能コア（3.53GHz）、すべてTSMC第2世代3nmプロセスベース。ARM公開版アーキテクチャに完全に別れを告げ。シングルコアとマルチコア性能がともに飛躍的に向上。GPUはAdreno 830でスライスアーキテクチャを採用し、グラフィック性能が40%向上、Hexagon NPUの演算力は約45 TOPS、AI推論性能が45%向上。（注：Samsung Galaxyカスタム版は周波数がより高く、スーパーコアは4.47GHzに達する。）。</li>
+  <li><strong>MediaTek Dimensity 9400</strong>：1つの超大コア（Cortex-X925、3.62GHz）+ 3つの性能コア（Cortex-X4、3.3GHz）+ 4つの効率コア（Cortex-A720、2.4GHz）、全大コアアーキテクチャを継続、TSMC第2世代3nmプロセス。GPUはImmortalis-G925（12コア）、ピーク性能が41%向上、レイトレーシング性能が40%向上。AIプロセッサーは第8世代NPU 890で、エッジ大モデルの実行、エッジLoRAトレーニング、エッジ動画生成をサポート。</li>
+  <li><strong>Apple A18 Pro</strong>：2つの性能コア（約4.04GHz）+ 4つの効率コア（約2.4GHz）、TSMC第2世代3nmプロセス。6コアGPUがハードウェアレベルのレイトレーシングをサポート、16コアNPU（約35 TOPS）がエッジAIとApple Intelligenceに強力な演算力を提供。Apple自社開発アーキテクチャはシングルコア性能と電力効率で依然としてリードし、統合メモリアーキテクチャがAI推論に高帯域幅の優位性を提供。</li>
+  <li><strong>Huawei Kirin 9020</strong>：Mate 70シリーズに搭載、自社開発Taishan CPUアーキテクチャを採用、NPUとISP能力を継続的に強化、5.5Gと衛星通信をサポート、国産チップの最新ブレイクスルーを代表。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">GPU：グラフィックレンダリングエンジン</h5>
+<p class="mb-2">GPU（Graphics Processing Unit）はグラフィックと並列計算タスクを専門に担当する。コア数はCPUよりはるかに多く（軽く数百から数千コア）、ただし各コアの機能は比較的シンプルで、大量の類似計算を同時に処理するのに適している。</p>
+<p class="mb-2"><strong>グラフィックレンダリングフロー</strong>：</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>頂点処理</strong>：3Dモデル内の各頂点の位置座標を計算。</li>
+  <li><strong>ラスタライズ</strong>：3Dグラフィックを2D画面上のピクセル点に変換。</li>
+  <li><strong>ピクセルシェーディング</strong>：各ピクセルの色、テクスチャ、光照効果を計算。</li>
+  <li><strong>出力合成</strong>：すべてのレイヤーを合成して最終画面とし、画面に送って表示。</li>
+</ol>
+<p class="mb-2"><strong>日常使用へのGPUの影響</strong>：ゲームだけではない！インターフェースのスクロール、アニメーション効果、動画再生、写真フィルター、ARアプリはすべてGPUに依存。GPU性能が低いスマホは、インターフェースのスクロールでフレーム落ちが発生する可能性があり、ゲームでは直接カクつく。</p>
+<p class="mb-2"><strong>各ブランドのGPU</strong>：Qualcommは自社開発Adreno GPUを使用；MediaTekはARM Mali GPUを使用；Appleは自社開発GPUを使用し、性能と電力効率はともに業界のベンチマーク。</p>
+<h5 class="font-semibold mt-3 mb-1">NPU：AIアクセラレーションエンジン</h5>
+<p class="mb-2">NPU（Neural Processing Unit）はニューラルネットワーク演算のために特別に設計されたプロセッサーだ。CPUやGPUに比べ、NPUはAIタスクの処理時に効率が高く、消費電力が低い。</p>
+<p class="mb-2"><strong>ニューラルネットワーク演算方式</strong>：NPUの核心演算は行列乗算と畳み込み演算――これらはニューラルネットワークで最も基礎的で最も頻繁な計算だ。NPUはハードウェアレベルの最適化により、大量の行列演算を並列処理でき、速度はCPUより数十倍速いが、消費電力ははるかに低い。</p>
+<p class="mb-2"><strong>AI処理フロー</strong>：</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>データ入力</strong>：カメラ画像、マイク音声、センサーデータなど。</li>
+  <li><strong>前処理</strong>：データのフォーマットとサイズを調整し、ニューラルネットワークの入力要件に適合させる。</li>
+  <li><strong>推論計算</strong>：NPUが訓練済みモデルを読み込み、入力データに対して前方計算を行い、結果を出力する。</li>
+  <li><strong>後処理</strong>：AIの出力を利用可能な結果に変換する。例えば顔の座標、文字の内容、シーンのタグなど。</li>
+</ol>
+<p class="mb-2"><strong>実際の応用シーン</strong>：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>コンピュテーショナルフォトグラフィ</strong>：夜景合成、ポートレートボケ、HDR処理、AIビューティー。</li>
+  <li><strong>音声アシスタント</strong>：音声認識、自然言語理解、音声合成。</li>
+  <li><strong>リアルタイム翻訳</strong>：AI字幕、会話翻訳。</li>
+  <li><strong>スマート認識</strong>：文字認識（OCR）、物体認識、シーン認識。</li>
+  <li><strong>オンデバイス大模型</strong>：最新のフラッグシップチップはスマートフォン端末で小、型AI大模型（7Bパラメータクラス）の実行をサポートし、オフラインAI対話、ドキュメント要約、スマートライティングなどの機能を実現している。Snapdragon 8 EliteのHexagon NPUの演算力は約45 TOPS、Dimensity 9400のNPU 890もオンデバイス大モデルをサポートし（LLM推論速度が80%向上）、Apple A18 Proの16コアNPUは約35 TOPSの演算力を提供する。</li>
+  <li><strong>AI画像処理</strong>：AI消去（写真内の通行人をワンクリックで削除）、AI画像拡張（画像の境界を拡張）、AIスタイル変換、テキストからの画像生成など。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">ISP：イメージングシグナルプロセッサ</h5>
+<p class="mb-2">ISPはカメラから伝えられる生データを処理し、光信号を美しい写真に変換する。</p>
+<p class="mb-2"><strong>性能の見方は？</strong>型番を見る！Apple A18 Pro、Qualcomm Snapdragon 8 Elite、MediaTek Dimensity 9400、Huawei Kirin 9020はいずれもフラッグシップ級。ミドルレンジはSnapdragon 8s Gen3/7+ Gen3、Dimensity 8400を見る。コア数だけを見ず、アーキテクチャとプロセス（ナノ数値）の方がより重要。3nmプロセスは現在最も先進的で、電力効率は5nmや4nmをはるかに上回る。</p>
+<h5 class="font-semibold mt-3 mb-1">2. RAM（メモリ）：臨時の作業台</h5>
+<p class="mb-2">RAMはあなたのデスクのようなもので、大きいほど同時に広げられるファイルが多くなる。12GBが現在の主流で、16GBはヘビーユーザー向け、24GB以上はゲーマーやギークの選択だ。</p>
+<p class="mb-2">RAMのタイプも重要：LPDDR5はLPDDR4Xより速く省電力。AppleはRAM容量が大きくないが、システム最適化が優れているため「十分」に見える。</p>
+<p class="mb-2"><strong>RAMが不足するとどうなる？</strong>アプリはシステムにバックグラウンドでキルされ、切り替え時に再読み込みが必要になる。WeChatから戻ったらゲームが消えていた、というのはこのためだ。</p>
+<h5 class="font-semibold mt-3 mb-1">3. ストレージ（ROM/フラッシュメモリ）：長期倉庫</h5>
+<p class="mb-2">ストレージは本棚のようなもので、すべての写真、動画、アプリが保存される場所。現在の主流はUFS 3.1またはUFS 4.0で、速度は古いeMMCより数倍速い。</p>
+<p class="mb-2"><strong>なぜストレージ速度が重要？</strong>アプリの起動速度、ゲームのロード速度、写真の保存速度を決定する。長く使うと、低速ストレージはスマートフォンをどんどん重くさせる。</p>
+<h5 class="font-semibold mt-3 mb-1">4. 画面：あなたの目</h5>
+<p class="mb-2">画面はスマートフォンとやり取りする主要な窓口であり、良し悪しが体験に直接影響する。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>素材</strong>：OLEDは色彩が鮮やかでコントラストが高く省電力（黒を表示する時は画素が発光しない）だが、低輝度ではフリッカーが目に悪い可能性がある。LCDは目に優しくコストが低いが、コントラストと色彩はOLEDに劣る。</li>
+  <li><strong>解像度</strong>：1080Pが主流で、2Kはより鮮明だが消費電力が多い。Appleの「Retinaディスプレイ」の概念は、一定の距離では肉眼で画素を見分けられないということ。</li>
+  <li><strong>リフレッシュレート</strong>：60Hzが標準、90Hz/120Hzはより滑らかで、スクロール時の滑らかさが際立つ。高リフレッシュレートは電力を消費するため、多くのスマートフォンはコンテンツに応じて動的に調整、する可変リフレッシュレート（LTPO）をサポートしている。</li>
+  <li><strong>タッチサンプリングレート</strong>：タッチの応答速度に影響。ゲーマーは要チェック、高いほど指に追従する。</li>
+  <li><strong>調光方式</strong>：DC調光はPWM調光より目に優しく、低輝度でも目が疲れにくい。現在多くのスマートフォンは高周波PWM調光をサポートしており、これも目の保護のため。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">画面HDR技術</h5>
+<p class="mb-2">HDR（High Dynamic Range）は画面に明るい部分と暗い部分を同時に表示し、画面の階調感を大幅に向上させる。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>実現原理</strong>：通常の画面の輝度範囲は限られており（SDR）、最も明るい部分と最も暗い部分の差が十分でない。HDR画面のピーク輝度はより高く（通常1000ニット以上）、コントラストが大きく、色域が広く、より多くのディテールを表示できる。</li>
+  <li><strong>主流規格</strong>：HDR10（最も基本的で無料オープンソース）、HDR10+（Samsung推進、動的メタデータ）、Dolby Vision（最高画質だがライセンスが必要）。スマートフォンがどの規格をサポートするかは画面ハードウェアとシステムライセンスによる。</li>
+  <li><strong>実際の効果</strong>：HDR動画を視聴する際、太陽光がよりまぶしく、影がより深く、色彩がより豊かになる。前提は動画自体がHDR制作され、画面もHDR表示をサポートしていること。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">イメージングHDR技術</h5>
+<p class="mb-2">撮影時のHDRと画面のHDRは別物。イメージングHDRはアルゴリズムで「明るい部分の露出オーバー、暗い部分の真っ黒」問題を解決する。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>アルゴリズム原理</strong>：スマートフォンはシャッターを押す際、実際には異なる露出の複数の写真を撮影し（露出不足で明部ディテールを保持、露出オーバーで暗部ディテールを保持、正常露出で中間調を保持）、それらを1枚のハイダイナミックレンジの写真に合成する。</li>
+  <li><strong>処理フロー</strong>：マルチフレームキャプチャ。アライメント補正（手ブレ防止）。露出融合/トーンマッピング。色補正。最終写真を出力。</li>
+  <li><strong>効果最適化</strong>：現在のスマートフォンは「リアルタイムHDR」を実現しており、ファインダーで見た画面がHDR処理後の効果そのもので、WYSIWYG。AppleのSmart HDRとAndroidの自動HDRはどちらも非常に成熟している。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">5. バッテリーと充電：エネルギーの源</h5>
+<p class="mb-2">バッテリーはスマートフォンで最も「短命」の部品で、2〜3年使うと明らかに劣化する。現在の主流容量は5500-7500mAh。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>充電功率</strong>：Android陣営はすでに100Wさらには200Wまで競争し、10数分で満充電。Appleはまだ20-30Wで停滞。急速充電はバッテリーを傷めるか？純正アクセサリを使えば問題ない。スマートフォンには温度制御保護がある。</li>
+  <li><strong>ワイヤレス充電</strong>：便利だが効率が低く発熱が大きい。オフィスでの手軽な充電に適し、急いで出かける時には不向き。</li>
+  <li><strong>リバース充電</strong>：スマートフォンがモバイルバッテリーになり、イヤホンや時計に充電する。緊急用。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">6. カメラ：光と影の魔法</h5>
+<p class="mb-2">現在のスマートフォンのカメラは3〜4つが当たり前で、それぞれ役割がある：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>メインカメラ</strong>：最も頻繁に使用する。センサーが最も大きく、画質が最も良い。</li>
+  <li><strong>超広角</strong>：風景、建物を撮影。視野がより広い。</li>
+  <li><strong>望遠</strong>：遠くを撮影。光学ズームとデジタルズームの区別がある。</li>
+  <li><strong>マクロ</strong>：極めて近い距離の小さなものを撮影。</li>
+</ul>
+<p class="mb-2"><strong>画素数がすべてではない！</strong>センサーサイズ（大きいほど有利）、絞りサイズ（f/1.8はf/2.4より大きい）、手ブレ補正（OIS光学手ブレ補正が重要）はすべて画質に影響する。コンピュテーショナルフォトグラフィ（AIアルゴリズム）はますます重要になり、複数の写真を1枚の良い写真に合成できる。</p>
+<h5 class="font-semibold mt-3 mb-1">ペリスコープ式望遠レンズ</h5>
+<p class="mb-2">従来の望遠レンズは長い光路が必要で、スマートフォンが厚くなる。ペリスコープ式望遠は90度のプリズムで光を屈折させ、スマートフォン内部で光路を横方向に展開することで、スマートフォンの薄さを保ちながら5倍さらには10倍の光学ズームを実現する。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>構造原理</strong>：光がレンズから入る。プリズムで90度屈折。スマートフォンの幅方向に沿ってレンズ群を通過。センサーに到達。縦置きの望遠鏡を横置きにするようなもの。</li>
+  <li><strong>光学的特性</strong>：光学ズーム倍数が高く（5x-10x）、画質はデジタルズームをはるかに上回る。ただしセンサーサイズは通常メインカメラより小さく、暗所での表現は一般的。</li>
+  <li><strong>撮像優位性</strong>：月を撮る、遠くの建物を撮る、ステージのクローズアップを撮るなど、一般のスマートフォンでは到達できない。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">OIS光学手ブレ補正 vs EIS電子手ブレ補正</h5>
+<p class="mb-2">手ブレ補正は撮影と録画の画質に影響する重要技術で、2つの方式は原理が全く異なる：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>OIS（光学手ブレ補正）</strong>：レンズまたはセンサーを物理的に移動させて手ブレを相殺する。レンズ内部にマイクロジャイロスコープがあり、ブレの方向と振幅を検出してモーターで鏡片群を逆方向に移動させる。長所は画質を損なわないこと、短所はコストが高くスペースを取ること。</li>
+  <li><strong>EIS（電子手ブレ補正）</strong>：ソフトウェアアルゴリズムで画面をクロップおよびオフセットしてブレを相殺する。スマートフォンはやや広い範囲の画面を録画し。ジャイロスコープデータに基づいて安定した領域をクロップする。長所は追加ハードウェアが不要なこと、短所は画面がクロップされる（視野が狭くなる）ことと、暗所でブレる可能性があること。</li>
+  <li><strong>実際の選択</strong>：撮影ではOISを優先し、録画では両者を組み合わせるのが最も効果的。現在多くのフラッグシップスマートフォンは「Sensor-Shift」センサーシフト手ブレ補正をサポートし、従来のレンズ手ブレ補正より効果が良い。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">光学ズーム vs デジタルズーム</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>光学ズーム</strong>：鏡片群を物理的に移動させて焦点距離を変更し、画質を損なわない。スマートフォン上の光学ズームは通常固定倍数のみ（2x、3x、5x、10xなど）で、カメラのように連続ズームはできない。</li>
+  <li><strong>デジタルズーム</strong>：画面の中央領域を拡大し、本質はクロップ＋補間拡大。拡大するほど画質が劣化する。100倍デジタルズームは見た目はかっこいいが、実際の画質はかなりぼやけている。</li>
+  <li><strong>ハイブリッドズーム</strong>：光学とデジタルを組み合わせ、光学ズーム倍数の間をマルチフレーム合成アルゴリズムで補完する。純デジタルより効果は良いが、光学には及ばない。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">オーディオ：スピーカーと独立グラフィックチップ</h5>
+<p class="mb-2"><strong>モノラルスピーカー vs デュアルスピーカー</strong>：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>モノラルスピーカー</strong>：底部に1つの発音ユニットのみで、音が片側に偏り立体感がない。中低価格帯のスマートフォンでよく見られる。</li>
+  <li><strong>デュアルスピーカー（ステレオ）</strong>：上部と下部に1つずつのスピーカーで、ステレオ音場を形成。動画視聴や音楽鑑賞時に左右のチャンネルがはっきり分かれ、没入感が大幅に向上。受話器を上部スピーカーとして兼用するのが一般的な方式。</li>
+  <li><strong>音質の違い</strong>：デュアルスピーカーは単に「音が大きい」だけでなく、空間感と階調感が鍵。モノラルスピーカーで映画を見ると、何かが足りないと感じる。</li>
+</ul>
+<p class="mb-2"><strong>ゲーミングスマートフォンの独立グラフィックチップ</strong>：</p>
+<p class="mb-2">一部のゲーミングスマートフォンとハイパフォーマンスス、マートフォンには独立した表示処理チップが搭載されており、その役割は：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>フレーム補間</strong>：30fpsのゲーム画面をアルゴリズムで60fpsや120fpsに補間し、画面をより滑らかにする。この処理は独立グラフィックチップ上で行われ、SoCのGPUリソースを消費しない。</li>
+  <li><strong>超解像度</strong>：低解像度画面をAIアルゴリズムで高解像度に引き上げ、画質をより鮮明にする。</li>
+  <li><strong>消費電力削減</strong>：フレーム補間と超解像度は独立グラフィックチップが担当するため、SoCの負荷が下がり、発熱と消費電力が減少し、ゲームがより安定する。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">GPS測位：シングル周波数とデュアル周波数</h5>
+<p class="mb-2">スマートフォンの測位は主にGPSなどの衛星ナビゲーションシステムに依存している。</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>シングル周波数GPS</strong>：L1周波数帯の信号のみを受信し、測位精度は約3-5メートル。開けた場所では十分だが、高層ビルが密集する都市の峡谷では、信号の反射により測位のズレが大きくなる。</li>
+  <li><strong>デュアル周波数GPS</strong>：L1とL5の2つの周波数帯の信号を同時に受信。L5周波数帯は波長がより長く、耐干渉能力がより強い。デュアル周波数の連合計算で電離層誤差の大部分を除去でき、測位精度は1-3メートルに達する。都市でのナビゲーション、配車アプリの測位で優位性が顕著。</li>
+  <li><strong>マルチコンステレーションサポート</strong>：現代のスマートフォンはGPSだけでなく、北斗（中国）、GLONASS（ロシア）、Galileo（ヨーロッパ）など複数の衛星システムをサポート。同時に接続する衛星が多いほど、測位が速く正確になる。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">7. センサー：スマートフォンの小さな触角</h5>
+<p class="mb-2">スマートフォンの中には十数個のセンサーが隠れて、黙々と働いている：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>加速度計＋ジャイロスコープ</strong>：スマートフォンの姿勢を感知し、ゲームでの方向転換や画面の自動回転を行う。</li>
+  <li><strong>光センサー</strong>：画面の明るさを自動調整。</li>
+  <li><strong>近接センサー</strong>：通話時にスマートフォンが耳に近づくと自動で画面を消灯。</li>
+  <li><strong>指紋センサー</strong>：現在の主流は画面下光学式または超音波式指紋。</li>
+  <li><strong>顔認識</strong>：AppleのFace IDは3D構造光でセキュリティレベルが高い。多くのAndroidは2D写真認識で、セキュリティは一般的水準。</li>
+  <li><strong>画面の2種類の素材</strong>：近距離無線通信。交通カード、ドアカード、銀行カードをかざす。</li>
+  <li><strong>気圧計</strong>：海抜高度を測定。階段を登るのも検出できる。</li>
+  <li><strong>ホールセンサー</strong>：マグネットケースの開閉を検出。</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">二、オペレーティングシステム：Android VS iOS VS HarmonyOS</h4>
+<p class="mb-2">ハードウェアは体、オペレーティングシステムは魂。3つのシステムはそれぞれ特色がある：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Android</strong>：オープンソースコミュニティのようで、スマートフォンメーカーが深くカスタマイズでき、選択肢が多い。テーマの変更、サードパーティアプリストアのインストール。各種遊び方を試せる。しかしオープンゆえにフラグメンテーションが深刻で、ブランドごとに体験の差が大きい。</li>
+  <li><strong>iOS</strong>：手入れされた庭のようで、Appleがハードウェアとソフトウェアを一手に握り、体験が統一され滑らか。アプリの品質が高く、プライバシー保護も良いが、自由度が低く、多くのことはAppleのルールに従う必要がある。</li>
+  <li><strong>HarmonyOS</strong>：Huaweiの新種で、分散能力を主打し、異なるデバイスをシームレスに連携できる。後で専用に解説する。</li>
+</ul>
+<p class="mb-2">3つのエコシステムはいずれも極めて豊富で、好きなライフスタイルを選べばよい。絶対的な善し悪しはなく、適しているかどうかだけだ。</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">三、スマートフォン端子の全解析</h4>
+<p class="mb-2">スマートフォン端子は外部世界とつなぐ橋で、端子により差が大きい：</p>
+<h5 class="font-semibold mt-3 mb-1">Micro USB</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>物理的特性</strong>：平らな台形の端子で、表裏の区別がある（逆挿しすると入らない）。スマートフォンでは基本的に廃止されたが、一部のローエンド機器や旧機器ではまだ使用されている。</li>
+  <li><strong>転送制限</strong>：USB 2.0規格のみサポート、最高転送速度480Mbps、充電功率は通常10Wを超えない。</li>
+  <li><strong>欠点</strong>：表裏が汎用でない、抜き差し寿命が短い、転送速度が遅い、充電功率が低い。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">Lightning（Apple Lightning端子、廃止済み）</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>物理的特性</strong>：Apple自社開発の8ピン端子で、表裏どちらでも挿入可能。iPhone 14およびそれ以前の機種で使用され、現在は全面廃止。</li>
+  <li><strong>転送制限</strong>：Lightning端子は物理的にUSB 2.0規格のみサポートし、最高転送速度480Mbps。USB-C to Lightningケーブルを使用しても、転送速度はLightning端子自体に制限される。</li>
+  <li><strong>廃止理由</strong>：EUが2024年からすべてのスマートフォンにUSB-C端子の統一使用を法規で要求し、AppleはiPhone 15シリーズから全面的にType-Cに移行。Lightning端子は歴史の舞台から正式に退場。</li>
+  <li><strong>注意</strong>：AppleのMFi認証ケーブルには認証チップが内蔵されており、非認証ケーブルは正常に充電やデータ転送ができない場合がある。旧型iPhoneをまだ使用している場合は、Lightningケーブルを用意しておくことをお勧めする。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">USB Type-C</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>物理的特性</strong>：24ピンの楕円形端子で、表裏どちらでも挿入可能。スマートフォンと多くの電子機器の標準端子になった。EUは2024年からすべてのスマートフォン、タブレット、イヤホンなどの携帯機器にUSB-C端子の統一使用を立法で要求し、世界の他の地域も追随している。</li>
+  <li><strong>転送プロトコル</strong>：Type-Cは端子形状にすぎず、実際の転送能力は内部プロトコルによる。USB 2.0（480Mbps）、USB 3.0/3.1/3.2（5-20Gbps）、さらにはUSB4（40Gbps）をサポート。</li>
+  <li><strong>重要な区別</strong>：すべてのUSB-CポートがUSB 3.0に対応しているわけではありません！多くのスマホはUSB-Cポートを採用していても、内部はUSB 2.0のピンしか接続されておらず、転送速度は旧ポートと同じくらい遅いです。iPhone 16/17標準版はUSB 2.0速度のみ対応、Pro版のみUSB 3.0に対応（USB-C to USB-Cケーブルが必要）です。</li>
+  <li><strong>充電能力</strong>：USB PDなどの急速充電プロトコルをサポートし、最大240W充電をサポート可能。</li>
+  <li><strong>ビデオ出力</strong>：DisplayPort Alt Modeをサポートし、変換ケーブルでモニターにビデオを出力できる。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">3.5mmオーディオ端子</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>物理的特性</strong>：円形の3極または4極ジャックで、3極は左右チャンネルのオーディオを転送し、4極はマイクチャンネルが1つ追加。</li>
+  <li><strong>特徴</strong>：アナログ信号転送で、プラグアンドプレイ、ドライバーや変換が不要。音質が安定し、遅延ゼロ。</li>
+  <li><strong>現状</strong>：大部分のフラッグシップスマートフォンは3.5mm端子を廃止し、Type-C変換ケーブルまたはBluetoothイヤホンが必要。一部のミドルレンジ機やゲーミングスマートフォンはまだ保持している。</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">四、スマートフォン製品体系と命名ルール</h4>
+<p class="mb-2">各ブランドの目まぐるしい製品ラインに対し、命名ルールを理解すれば自分に合った機種を素早く見つけられる。</p>
+<h5 class="font-semibold mt-3 mb-1">主流ブランドの製品シリーズ：</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Apple</strong>：iPhone（標準版）/ iPhone Plus（大画面版）/ iPhone Pro（プロ版）/ iPhone Pro Max（大画面プロ版）/ iPhone SE（低価格版）/ iPhone 16e（低価格AI版、A18チップとApple自社開発C1ベースバンド搭載）。2026年iPhone 17シリーズは全面的にA19 Proチップを搭載し、AI能力がさらに向上しています</li>
+  <li><strong>Huawei</strong>：Mateシリーズ（ビジネスフラッグシップ）/ P/Puraシリーズ（イメージングフラッグシップ）/ 、Mate Xシリーズ（折りたたみフラッグシップ）/ novaシリーズ（若者向けミドルレンジ）/ Enjoyシリーズ（エントリー）</li>
+  <li><strong>Xiaomi</strong>：Xiaomi数字シリーズ（フラッグシップ）/ Xiaomi MIX（探求フラッグシップ/折りたたみ）/ 、Redmi Kシリーズ（ハイパフォーマンスフラッグシップ）/ Redmi Noteシリーズ（ミドルレンジ）/ Redmi数字シリーズ（エントリー）</li>
+  <li><strong>OPPO</strong>：Find Xシリーズ（フラッグシップ）/ Renoシリーズ（ミドルレンジ）/ Aシリーズ（エントリー）/ 、OnePlus数字シリーズ（ハイパフォーマンスフラッグシップ）</li>
+  <li><strong>vivo</strong>：Xシリーズ（イメージングフラッグシップ）/ iQOO数字シリーズ（ハイパフォーマンスフラッグシップ）/ 、Sシリーズ（セルフィーミドルレンジ）/ Yシリーズ（エントリー）</li>
+  <li><strong>Samsung</strong>：Galaxy Sシリーズ（フラッグシップ）/ Galaxy Z Fold/Flip（折りたたみフラッグシップ）/ Galaxy Aシリーズ（ミドルレンジ）</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">一般的なサフィックスの意味：</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>Pro</strong>：Professionalの略で、プロ版。通常標準版をベースにカメラ、画面、プロセッサなどのコア構成をアップグレード。</li>
+  <li><strong>Max</strong>：最大版。画面が最大、バッテリーも最大だが、構成は必ずしもProより高いとは限らない。</li>
+  <li><strong>Ultra</strong>：究極版。通常そのシリーズの最高構成を代表し、スペックが最も豪華で、価格も最高。Samsung S24 Ultra、Xiaomi 14 Ultraなど。</li>
+  <li><strong>SE</strong>：Special Editionの特別版で、実際には低価格版が多い。構成を削減し、価格を下げる。iPhone SEなど。</li>
+  <li><strong>Plus</strong>：拡大版。画面は標準版より大きく、バッテリーも大きいが、構成は基本的に同じ。</li>
+  <li><strong>Lite/青春版</strong>：軽量版。構成を簡素化し、価格をより低く。</li>
+  <li><strong>Note</strong>：元々は大画面スマートフォンを指したが、現在は各ブランドで用法が異なる。Redmi Noteはミドルレンジシリーズ。</li>
+  <li><strong>Neo</strong>：新鋭版。通常はパフォーマンス志向のミドルレンジ機種を指す。</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">五、ベースバンドとアンテナ：スマートフォン通信の縁の下の力持ち</h4>
+<p class="mb-2">スマートフォンが通話やインターネット接続ができるのは、ベースバンドチップとアンテナのペアのおかげ。</p>
+<h5 class="font-semibold mt-3 mb-1">ベースバンドチップ：</h5>
+<p class="mb-2">ベースバンドはスマートフォンで無線通信を担当するプロセッサで、デジタル信号を無線電波に変調して送信し、受信した無線電波を復調してデジタル信号にする。ベースバンドの性能は通話品質、インターネット速度、信号の安定性に直接影響する。Qualcommが最大のスマートフォンベースバンドサプライヤーで、MediaTek、Samsungも自社開発ベースバンドを持つ。AppleはiPhone 16eから自社開発のC1ベースバンドチップを搭載し、Appleが正式に自社開発ベースバンド時代に突入したことを示している。C1ベースバンドは4nmプロセスを採用し、消費電力性能に優れる。iPhone 16/16 Plus/16 Pro/16 Pro Maxは引き続きQualcommベースバンド（Snapdragon X75 5G）を使用し、後続機種は段階的に自社開発ベースバンドに移行すると予想される。より早期のiPhone XS/11シリーズがIntelベースバンドを使用していた時は信号性能が悪く、多くのユーザーの悩みの種だった。</p>
+<h5 class="font-semibold mt-3 mb-1">アンテナ設計：</h5>
+<p class="mb-2">スマートフォンのアンテナは本体内部に隠され、通常はフレーム周りに配置される。アンテナ設計は信号受信性能に直接影響する：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>MIMO技術</strong>：マルチプルインプットマルチプルアウトプットで、複数のアンテナを使用して同時にデータを送受信し、速度と安定性を向上。4×4 MIMOは2×2 MIMOより速い。</li>
+  <li><strong>アンテナ数</strong>：フラッグシップ機は通常十数個のアンテナを持つ（セルラー、Wi-Fi、Bluetooth、NFC、GPSそれぞれ独立したアンテナが必要）。</li>
+  <li><strong>金属ボディの影響</strong>：金属は信号を遮蔽するため、金属ボディのスマートフォンはアンテナ帯（フレーム上のプラスチックの帯）を設計する必要がある。ガラスとプラスチックのボディは信号への影響が小さい。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">ネットワーク技術の進化：</h5>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>：現在カバレッジが最も広く、速度も十分（理論上最高100Mbps+）、消費電力が比較的低い。</strong>：理論ピーク速度は下り1Gbps/上り500Mbps（Cat.18）、実際の体験は通常50-150Mbps。カバレッジが最も広く、十分に使える。</li>
+  <li><strong>5G NR</strong>：理論ピーク速度は下り10Gbps+。Sub-6GHz周波数帯はカバレッジが比較的良い。mmWaveミリ波は速度が極めて速いがカバレッジが極めて小さい。</li>
+  <li><strong>5G-A（5G Advanced）</strong>：5Gの拡張版で、5.5Gとも呼ばれます。下り速度は最大10Gbps、上り1Gbpsに達し、接続数密度と測位精度が大幅に向上します。2024年から中国移動、中国電信、中国聯通が主要都市で5G-Aネットワークの展開を開始し、Huawei Mate 70/80シリーズ、Xiaomi 15/16シリーズなどのフラッグシップ機が5G-Aに対応しています。5G-Aはまた「通信と感知の統合」能力をもたらし、基地局が同時に通信と環境感知を行うことで、低空経済（ドローン配送）や車載IoT向けのインフラを提供します。</li>
+</ul>
+<h5 class="font-semibold mt-3 mb-1">ネットワーク周波数帯の分類：</h5>
+<p class="mb-2">スマートフォンがサポートするネットワーク周波数帯は、どの国、どのキャリアのネットワークで使用できるかを決定する：</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li><strong>FDD-LTE Band（Bシリーズ）</strong>：B1、B3、B5など、4G周波数帯。国により使用周波数帯が異なり、中国は主にB1/B3/B5/B8/B34/B38/B39/B40/B41を使用。</li>
+  <li><strong>TDD-LTE Band</strong>：4Gのもう一つの方式で、中国はB38/B39/B40/B41を大量に使用。</li>
+  <li><strong>5G NR Band（Nシリーズ）</strong>：n1、n3、n28、n41、n78、n79など。n78（3.5GHz）は中国5Gの主力周波数帯で、n41（2.5GHz）はChina Mobileが多く使用。</li>
+  <li><strong>購入アドバイス</strong>：海外で使用する必要がある場合、購入前にスマートフォンが対象国の周波数帯をサポートしているか確認すること。中国国内版スマートフォンは通常中国の周波数帯のサポートが最も充実しているが、一部の海外周波数帯が欠けている場合がある。</li>
+</ul>
+<h4 class="text-lg font-semibold mt-4 mb-2">六、あなたのスマートフォンは、一体いくつの役割を演じている？</h4>
+<p class="mb-2">それはもはや電話ではない：</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li><strong>通信ツール</strong>：電話、SMS、WeChat、メール……</li>
+  <li><strong>スマートカメラ</strong>：撮影、録画、ドキュメントスキャン……</li>
+  <li><strong>財布</strong>：支払い、交通カード、銀行カード、会員カード……</li>
+  <li><strong>情報ポータル</strong>：ニュース、天気、株価、知識……</li>
+  <li><strong>ゲーム機</strong>：パズルゲームから3Aタイトルまで……</li>
+  <li><strong>モバイルオフィス</strong>：ドキュメント、スプレッドシート、会議、コラボレーション……</li>
+  <li><strong>ヘルスアシスタント</strong>：歩数計、心拍数、睡眠、運動……</li>
+  <li><strong>スマートホームリモコン</strong>：照明、エアコン、テレビ、ロボット掃除機の制御……</li>
+  <li><strong>デジタル身分証</strong>：電子身分証、電子運転免許、健康コード……</li>
+  <li><strong>エンターテインメントセンター</strong>：音楽、動画、電子書籍、ポッドキャスト……</li>
+</ol>
+<p class="mb-2">考えてみてほしい、小さな一台のデバイスが、どれほどの生活を担っているか！だから、それを使いこなすことを学ぶことは、より良い生活を学ぶことなのだ。</p>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">実践してみよう：ハードウェア構成を理解する</p>
+<p class="mt-1">[設定]で、プロセッサの型番、RAM、ストレージ（ROM）の具体的な容量を見つけられるか試してみよう。スマートフォンの能力を把握しておく。Androidユーザーは「安兔兔」や「DevCheck」をダウンロードして詳細なハードウェア情報を確認できる。</p>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">この章に誤りがありましたら、<a href="../../errata.html" class="text-primary hover:underline">勘誤ページ</a>へ（古いパス、違う事実、読みにくい表現、すべて歓迎）。QQ グループ 1074995524 でも報告できます。</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-ling-zhang.html" class="text-primary hover:underline">← 第零章：始める前に、三つだけ本音で</a><span></span><a id="next-link" href="di-yi-zhang-memory.html" class="text-primary hover:underline">付録：Androidスマートフォンメモリ拡張解析 →</a></nav>
+
+            </section>
+ </div></main></div><!-- クイックツール：フローティングボタングループ --><div id="quick-tools" class="quick-tools no-print" aria-label="クイックツール"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">透</span></button><button id="quick-search" class="quick-tool-btn" title="検索 (Ctrl+K)" aria-label="検索"><span aria-hidden="true">搜</span></button><button id="quick-theme" class="quick-tool-btn" title="ダーク/ライトの切り替え" aria-label="テーマの切り替え"><span aria-hidden="true">夜</span></button><button id="quick-print" class="quick-tool-btn" title="印刷 / PDF書き出し" aria-label="印刷または書き出し"><span aria-hidden="true">印</span></button><button id="quick-toc" class="quick-tool-btn" title="目次" aria-label="目次を開く"><span aria-hidden="true">目</span></button><button id="quick-tts" class="quick-tool-btn" title="音声読み上げ" aria-label="音声読み上げ"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="キーボードショートカット (?)" aria-label="ショートカット一覧"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="バックアップ/復元の進行状況" aria-label="バックアップの進行状況"><span aria-hidden="true">備</span></button></div><!-- ショートカットパネル --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="キーボードショートカット"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">キーボードショートカット</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="閉じる">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">コンテンツを検索</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">ダーク/ライト切替</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">読み上げ 再生/一時停止</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">読み上げを停止</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">ショートカットパネルを開く</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">文字サイズを大きく / 小さく</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">印刷 / PDF書き出し</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- バックアップ/復元モーダル --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="バックアップと復元"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">読書の進捗バックアップと復元</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="閉じる">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">バックアップの内容：既読の章、しおり、読書位置、文字サイズの設定、健康セルフチェックの結果。データはブラウザのローカルに保存されるため、ブラウザを変えたりキャッシュを消したりすると失われます。定期的にバックアップを書き出すことをおすすめします。</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> バックアップファイルを書き出す
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">JSON ファイルをダウンロードし、安全な場所に保存します</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> バックアップを読み込んで復元
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">以前書き出したバックアップファイルを選んで進捗を復元します</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> 読書データをすべて消去
+ </button><p class="text-xs text-red-400 mt-1 text-center">復元できません！先にバックアップを書き出してください</p></div></div></div></div><!-- 連続読書日数トースト --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">連続X日読書！</span></div><!-- 音声読み上げコントロールバー --><div id="tts-controls" class="tts-controls" role="region" aria-label="音声読み上げコントロール" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="現在読み上げ中の章">未開始</span><button class="tts-btn" id="tts-prev" title="前の段落へ" aria-label="前の段落へ"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="再生/一時停止" aria-label="読み上げを再生"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="次の段落へ" aria-label="次の段落へ"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="速度を下げる" aria-label="速度を下げる">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="速度を上げる" aria-label="速度を上げる">+</button><button class="tts-btn" id="tts-stop" title="読み上げを停止" aria-label="読み上げを停止"><span aria-hidden="true">×</span></button></div><!-- トップへ戻るボタン --><button id="back-to-top" class="opacity-0 invisible" aria-label="先頭へ戻る"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- 読書位置復元トースト --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">前回読んだ位置：...</span><button class="btn-restore" id="restore-btn">元に戻す</button><button class="btn-dismiss" id="dismiss-btn">無視</button></div><!-- JSスクリプト -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>

@@ -1,0 +1,408 @@
+ <!DOCTYPE html><html lang="el"><head>
+ <script>document.documentElement.classList.remove("no-js");document.documentElement.classList.add("js");</script>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="description" content="Το μάθημα κινητού που σου έλειψε · Από αρχάριος σε εξπέρ, πάρε τον πλήρη έλεγχο της ψηφιακής σου ζωής"><meta name="keywords" content="μαθήματα κινητού, ψηφιακές δεξιότητες, έξυπνο κινητό, Android, iOS, HarmonyOS, κόλπα για κινητό, ψηφιακή ζωή, μεγάλα μοντέλα AI, προγραμματισμός με AI, API μεγάλων μοντέλων, μηχανική prompts, ανάπτυξη Android, ανάπτυξη iOS, Swift, Kotlin, SwiftUI, Jetpack Compose, υπολογιστική φωτογραφία, ασφάλεια πληροφοριών, διαχείριση κωδικών, αυτοματοποίηση, επιλογή κινητού"><meta name="author" content="Ο οδηγός σου για την ψηφιακή ζωή"><meta name="theme-color" content="var(--accent-book)" media="(prefers-color-scheme: light)"><meta name="theme-color" content="var(--accent-deep)" media="(prefers-color-scheme: dark)"><meta name="robots" content="index, follow"><meta name="format-detection" content="telephone=no"><meta property="og:url" content="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-liu-shi-zhang.html"><meta property="og:type" content="article"><meta property="og:title" content="Κεφάλαιο 60: Στήσε το περιβάλλον ανάπτυξης — Xcode και το πρώτο σου έργο"><meta property="og:description" content="Για να κάνεις καλή δουλειά, πρέπει πρώτα να ακονίσεις τα εργαλεία σου. Σε αυτό…"><meta property="og:locale" content="el_GR"><meta property="og:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Το μάθημα κινητού που σου έλειψε"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Το μάθημα κινητού που σου έλειψε · v1.8"><meta name="twitter:description" content="Από αρχάριος σε εξπέρ, πάρε τον πλήρη έλεγχο της ψηφιακής σου ζωής"><meta name="twitter:image" content="https://classtechstar.github.io/Yihggh.github.io/cover-og.png"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230074d9'/%3E%3Crect x='20' y='10' width='24' height='44' rx='4' fill='%23ffffff'/%3E%3Crect x='24' y='16' width='16' height='28' rx='2' fill='%230074d9'/%3E%3Ccircle cx='32' cy='49' r='2' fill='%230074d9'/%3E%3C/svg%3E"><link rel="apple-touch-icon" href="../../icons/icon-192.png"><link rel="manifest" href="../../manifest.webmanifest"><title>Κεφάλαιο 60: Στήσε το περιβάλλον ανάπτυξης — Xcode και το πρώτο σου έργο · Το μάθημα κινητού που σου έλειψε</title>
+ 
+
+
+
+ <script id="liquid-glass-bundle">
+ /* ═══ Liquid Glass（P3：借鉴 liquid-glass-js / callstack liquid-glass / Kyant0 backdrop）═══
+ * 特性检测 → html.lg-ready；用户偏好 rp:liquidGlass → html.lg-off；
+ * Chromium 增强 → html.lg-adv（backdrop-filter 引用 #lg-displace SVG 折射滤镜）。
+ * 幂等标记 window.__liquidGlass；safe 模式不启用。 */
+ (function () {
+ if (window.__liquidGlass) return;
+ window.__liquidGlass = true;
+ if (window.__SAFE) return;
+ var ok = window.CSS && CSS.supports && CSS.supports('backdrop-filter', 'blur(4px)');
+ var reduce = window.matchMedia &&
+ window.matchMedia('(prefers-reduced-transparency: reduce)').matches;
+ if (!ok || reduce) return;
+ var root = document.documentElement;
+ root.classList.add('lg-ready');
+ if (window.RS && RS.get('liquidGlass', true) === false) root.classList.add('lg-off');
+ window.__lgToggle = function (v) {
+ var off = (v === undefined) ? !root.classList.contains('lg-off') : !v;
+ root.classList.toggle('lg-off', off);
+ if (window.RS) RS.set('liquidGlass', !off);
+ return !off;
+ };
+ var btn = document.getElementById('quick-glass');
+ var sync = function () {
+ var off = root.classList.contains('lg-off');
+ if (btn) {
+ btn.classList.toggle('lg-btn-off', off);
+ btn.setAttribute('aria-pressed', String(!off));
+ var ic = btn.querySelector('span');
+ if (ic) ic.textContent = off ? '暗' : '透';
+ }
+ };
+ if (btn) btn.addEventListener('click', function () { window.__lgToggle(); sync(); });
+ sync();
+ try {
+ if (CSS.supports('backdrop-filter', 'url(#lg-displace)')) root.classList.add('lg-adv');
+ } catch (e) { /* 增强层不可用则停留在毛玻璃 */ }
+ })();
+ </script>
+ 
+
+<!-- v19-first-chapter-visibility-fix --><link rel="preload" href="fonts/MiSans-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-liu-shi-zhang.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Chapter", "name": "Κεφάλαιο 60: Στήσε το περιβάλλον ανάπτυξης — Xcode και το πρώτο σου έργο", "url": "https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-liu-shi-zhang.html", "isPartOf": {"@type": "Book", "name": "Το μάθημα κινητού που σου έλειψε", "inLanguage": "el"}}</script>
+<link rel="prefetch" href="di-liu-shi-yi-zhang.html">
+<link rel="alternate" hreflang="zh-CN" href="https://classtechstar.github.io/Yihggh.github.io/v1.9/zh-CN/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="zh-TW" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/zh-TW/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="yue" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/yue/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="en" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/en/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="ko" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ko/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="ja" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ja/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="ru" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ru/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="it" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/it/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="pt-BR" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/pt/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="es" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/es/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="fr" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/fr/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="de" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/de/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="ar" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ar/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="he" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/he/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="th" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/th/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="id" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/id/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="ms" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/ms/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="el" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="lzh" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/lzh/di-liu-shi-zhang.html">
+<link rel="alternate" hreflang="x-default" href="https://classtechstar.github.io/Yihggh.github.io/v1.8/el/di-liu-shi-zhang.html">
+<link rel="stylesheet" href="assets/book.css">
+</head><body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200"><a class="skip-link focus-ring" href="index.html#content">Μετάβαση στο κύριο περιεχόμενο</a><div id="reading-progress" style="width:0%" aria-hidden="true"></div><header id="navbar" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-sm z-50 transition-colors duration-300" role="banner"><div class="container mx-auto px-4 h-16 flex items-center justify-between"><div class="flex items-center gap-3 min-w-0"><button id="menu-toggle" class="lg:hidden text-dark dark:text-gray-200 text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 focus-ring" aria-label="Άνοιγμα του μενού περιεχομένων" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><a href="#top" class="flex items-center gap-2 min-w-0" aria-label="Επιστροφή στην αρχική σελίδα">Το μάθημα κινητού που σου έλειψε</a></div><nav class="flex items-center gap-1 md:gap-2" aria-label="Κύρια ενέργεια"><a href="di-ling-zhang.html" class="hidden md:inline-flex items-center gap-1 text-sm text-secondary dark:text-gray-400 hover:text-primary px-2 py-1 rounded-md transition-colors focus-ring" title="Ξεκίνα από τα βασικά">Ξεκίνα την εκμάθηση</a><button id="search-toggle" class="text-lg p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Αναζήτηση (Ctrl+K)" aria-label="Αναζήτηση στο περιεχόμενο"><span aria-hidden="true">S</span></button><div class="hidden md:flex items-center border border-gray-200 dark:border-gray-600 rounded-md overflow-hidden" role="group" aria-label="Ρύθμιση μεγέθους γραμματοσειράς"><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="decrease" title="Μικρότερη γραμματοσειρά" aria-label="Μικρότερη γραμματοσειρά">A-</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="reset" title="Επαναφορά μεγέθους γραμματοσειράς" aria-label="Επαναφορά μεγέθους γραμματοσειράς">A</button><button class="font-size-btn text-gray-600 dark:text-gray-300 focus-ring" data-action="increase" title="Μεγαλύτερη γραμματοσειρά" aria-label="Μεγαλύτερη γραμματοσειρά">A+</button></div><button id="theme-toggle" class="theme-toggle text-xl p-2 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 focus-ring" title="Εναλλαγή σκούρας/φωτεινής λειτουργίας" aria-label="Εναλλαγή σκούρας/φωτεινής λειτουργίας"><span class="dark:hidden" aria-hidden="true">N</span><span class="hidden dark:inline" aria-hidden="true">D</span></button><button id="print-btn" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary p-2 rounded-md transition-colors focus-ring" title="Εκτύπωση / εξαγωγή σε PDF" aria-label="Εκτύπωση ή εξαγωγή σε PDF"><span aria-hidden="true">P</span></button><a href="#top" class="hidden md:flex items-center text-sm text-secondary dark:text-gray-400 hover:text-primary transition-colors focus-ring px-2 py-1 rounded-md" aria-label="Επιστροφή στην κορυφή">Επάνω
+ </a></nav></div></header><div class="flex min-h-screen pt-16 relative"><aside id="sidebar" class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto scrollbar-hide transition-transform duration-300 z-40 -translate-x-full lg:translate-x-0" role="navigation" aria-label="Περιεχόμενα άρθρου"><nav class="p-4"><div class="mb-4 pb-3 border-b border-gray-200 dark:border-gray-700"><h2 class="text-base font-bold text-dark dark:text-gray-200 mb-1 flex items-center gap-2">Πίνακας περιεχομένων
+ </h2><div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-1"><span id="reading-progress-text">0 / 38 κεφάλαια</span><span id="reading-percent" class="font-semibold text-primary">0%</span></div><div class="toc-progress-bar mt-1.5" id="toc-progress-bar" style="transform: scaleX(0);" aria-hidden="true"></div></div><div class="mb-3 px-1"><input type="text" id="toc-filter" placeholder="Φιλτράρισμα κεφαλαίων..." class="w-full text-sm px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:border-primary" aria-label="Φιλτράρισμα κεφαλαίων"></div><ul class="space-y-1 text-sm" id="toc-list"><!--Μέρος: βασικά-->
+                    <li class="toc-parent" data-group="ji-chu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ling-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Ξεκίνα την εκμάθηση</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Βασικά»" data-target="child-ji-chu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ji-chu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ling-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">00</span>Κεφάλαιο 0: Τρεις ειλικρινείς λέξεις πριν ξεκινήσουμε</a></li>
+                            <li><a href="di-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">01</span>Κεφάλαιο 1: Ας γνωρίσουμε τον σιωπηλό γίγαντα</a></li>
+                            <li><a href="di-yi-zhang-memory.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Παράρτημα: Ανάλυση επέκτασης μνήμης σε Android κινητά</a></li>
+                            <li><a href="di-yi-zhang-harmony.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Κεφάλαιο 1 Παράρτημα: Ειδικό θέμα λειτουργικού συστήματος HarmonyOS</a></li>
+                            <li><a href="di-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">02</span>Κεφάλαιο 2: Δεν βρίσκετε κάτι στο κινητό σας;</a></li>
+                            <li><a href="di-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">03</span>Κεφάλαιο 3: Χωρίς δίκτυο, μην βιάζεστε να επανεκκινήσετε</a></li>
+                            <li><a href="di-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">04</span>Κεφάλαιο 4: Πριν εγκαταστήσετε εφαρμογή, δείτε την πρώτα</a></li>
+                            <li><a href="di-si-zhang.html#di-si-zhang-apk" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Παράρτημα: Στοιχεία σύνθεσης πακέτου εγκατάστασης λογισμικού</a></li>
+                            <li><a href="di-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">05</span>Κεφάλαιο 5: Ρυθμίστε το κινητό όπως σας βολεύει</a></li>
+                            <li><a href="di-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">06</span>Κεφάλαιο 6: Χάσατε το κινητό ή ξεχάσατε τον κωδικό;</a></li>
+                            <li><a href="di-qi-zhang-jichu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">07</span>Κεφάλαιο 7: Πλήρης οδηγός για τις πιο σύγχρονες λειτουργίες</a></li>
+                        </ul>
+                    </li>
+<!--Μέρος: λογισμικό-->
+                    <li class="toc-parent" data-group="ruan-jian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">2. Λογισμικό (Κεφάλαια 8-14)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Λογισμικό»" data-target="child-ruan-jian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ruan-jian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">08</span>Κεφάλαιο 8: Επικοινωνία: SMS, τηλέφωνο και κοινωνικά δίκτυα</a></li>
+                            <li><a href="di-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">09</span>Κεφάλαιο 9: Κινηνό γραφείο και εκπαίδευση</a></li>
+                            <li><a href="di-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">10</span>Κεφάλαιο 10: Κινητές πληρωμές και υπηρεσίες καθημερινότητας</a></li>
+                            <li><a href="di-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">11</span>Κεφάλαιο 11: Μια καλή φωτογραφία αξίζει περισσότερο</a></li>
+                            <li><a href="di-shi-yi-zhang-advanced.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono"></span>Συμπλήρωμα στο Κεφάλαιο 11: Επαγγελματικές τεχνικές απεικόνισης</a></li>
+                            <li><a href="di-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">12</span>Κεφάλαιο 12: Ήχος, εικόνα, ψυχαγωγία και ανάγνωση</a></li>
+                            <li><a href="di-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">13</span>Κεφάλαιο 13: Ποιες εφαρμογές αξίζουν και ποιες όχι;</a></li>
+                            <li><a href="di-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">14</span>Κεφάλαιο 14: Ειδικό θέμα — διαχειριστές κωδικών πρόσβασης</a></li>
+                        </ul>
+                    </li>
+<!--Μέρος: μεσαίο επίπεδο-->
+                    <li class="toc-parent" data-group="jin-jie">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">3. Προχωρημένα (Κεφάλαια 15-20)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Προχωρημένα»" data-target="child-jin-jie">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-jin-jie" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">15</span>Κεφάλαιο 15: Δύο φορτίσεις την ημέρα, μπαταρία ή χρήση;</a></li>
+                            <li><a href="di-shi-wu-zhang.html#di-shi-wu-zhang-kuichong" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span> Παράρτημα: Πλήρης ανάλυση των πρωτοκόλλων γρήγορης φόρτισης</a></li>
+                            <li><a href="di-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">16</span>Κεφάλαιο 16: Αλλάζετε κινητό, ποιοι λογαριασμοί χάνονται;</a></li>
+                            <li><a href="di-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">17</span>Κεφάλαιο 17: Πώς το κινητό συνεργάζεται με τις υπόλοιπες συσκευές σου</a></li>
+                            <li><a href="di-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">18</span>Κεφάλαιο 18: Μην περιμένεις τη μέρα που θα το θυμηθείς</a></li>
+                            <li><a href="di-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">19</span>Κεφάλαιο 19: Χαλάει; Μην βιάσεστε να το φτιάξετε</a></li>
+                            <li><a href="di-er-shi-zhang-jinjie.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">20</span>Κεφάλαιο 20: Λειτουργία προγραμματιστή και προχωρημένα δι και ώματα</a></li>
+                            <li><a href="di-er-shi-zhang-termux.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Κεφάλαιο 20</a></li>
+                        </ul>
+                    </li>
+<!--Μέρος: πέρα από-->
+                    <li class="toc-parent" data-group="chao-yue">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-yi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">4. Πέρα από τα βασικά (Κεφάλαια 21-26)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Πέρα από τα βασικά»" data-target="child-chao-yue">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-chao-yue" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">21</span>Κεφάλαιο 21: Να συνδεθείτε σε δημόσιο Wi-Fi;</a></li>
+                            <li><a href="di-er-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">22</span>Κεφάλαιο 22: Τι κάνει η AI μέσα στο κινητό σου;</a></li>
+                            <li><a href="di-er-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">23</span>Κεφάλαιο 23: Άσε το κινητό να χειρίζεται τις επαναλήψεις</a></li>
+                            <li><a href="di-er-shi-san-zhang-github.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-500 dark:text-gray-500 pl-6 text-xs"><span class="mr-1.5 text-xs text-gray-300 font-mono"></span>Παράρτημα: Εισαγωγικός οδηγός GitHub</a></li>
+                            <li><a href="di-er-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">24</span>Κεφάλαιο 24: Δικαιώματα Root και BL lock σε βάθος</a></li>
+                            <li><a href="di-er-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">25</span>Κεφάλαιο 25: Πριν πουλήσεις το παλιό κινητό, κάνε πρώτα αυτά</a></li>
+                            <li><a href="di-er-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">26</span>Κεφάλαιο 26: Οι νέες τεχνολογίες περιμένουν</a></li>
+                        </ul>
+                    </li>
+<!--5,Μέρος: εξάσκηση(Κεφάλαια 27-32)-->
+                    <li class="toc-parent" data-group="shi-zhan">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-er-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">5. Στην πράξη (Κεφάλαια 27-32)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Στην πράξη»" data-target="child-shi-zhan">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-shi-zhan" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-er-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">27</span>Κεφάλαιο 27: Ρυθμίστε το κινητό των γονέων σας</a></li>
+                            <li><a href="di-er-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">28</span>Κεφάλαιο 28: Πριν αγοράσετε, αποφασίστε πρώτα αυτά τα τρία</a></li>
+                            <li><a href="di-er-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">29</span>Κεφάλαιο 29: Πόση ώρα τελικά χρησιμοποιείτε το κινητό;</a></li>
+                            <li><a href="di-san-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">30</span>Κεφάλαιο 30: Απεικόνιση σε οθόνη, παρουσιάσεις και σύνδεση με το αυτοκίνητο</a></li>
+                            <li><a href="di-san-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">31</span>Κεφάλαιο 31: Πρώτα βήματα στη λήψη σύντομων βίντεο και στη δημιουργία περιεχομένου</a></li>
+                            <li><a href="di-san-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">32</span>Κεφάλαιο 32: Χάθηκε ή κλάπηκε; 30 δευτερόλεπτα για τη ζημιά</a></li>
+                        </ul>
+                    </li>
+<!--6,Το μέλλον(Κεφάλαιο 33)-->
+                    <li class="toc-parent" data-group="zhan-wang">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-san-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">VI. Ενότητα Προοπτικής (Κεφάλαια 33-41)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Ορίζοντας»" data-target="child-zhan-wang">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-zhan-wang" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">33</span>Κεφάλαιο 33: Πώς θα είναι το κινητό σε δέκα χρόνια;</a></li>
+                            <li><a href="di-san-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">34</span>Κεφάλαιο 34: Κινητό και αυτοκίνητο, πώς τα συνδέεις</a></li>
+                        </ul>
+                    </li>
+<!--Ειδικό θέμα: παιδιά και κινητά(Κεφάλαιο 35)-->
+                    <li class="toc-parent" data-group="er-tong-pian">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-wu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">Ειδικό θέμα: Παιδιά και κινητό (Κεφάλαια 35-36)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο του ειδικού θέματος «Παιδιά και κινητό»" data-target="child-er-tong-pian">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-er-tong-pian" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">35</span>Κεφάλαιο 35: Ένα κινητό για το παιδί, κανόνες από την αρχή</a></li>
+                            <li><a href="di-san-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">36</span>Κεφάλαιο 36: Όλες οι συσκευές στο σπίτι, πώς τις συνδέεις;</a></li>
+                        </ul>
+                    </li>
+<!--Μέρος εξάσκησης: προγραμματισμός με AI-->
+                    <li class="toc-parent" data-group="ai-biancheng">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-san-shi-qi-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">7. Προγραμματισμός με AI στην πράξη (Κεφάλαια 37-47)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Προγραμματισμός με AI στην πράξη»" data-target="child-ai-biancheng">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ai-biancheng" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-san-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">37</span>Κεφάλαιο 37: Επανάσταση του παραδείγματος — από το να γράφεις κώδικα στο να καθοδηγείς την AI να γράφει</a></li>
+                            <li><a href="di-san-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">38</span>Κεφάλαιο 38: Πέντε βασικές αρχές σκέψης για τον προγραμματισμό με AI</a></li>
+                            <li><a href="di-san-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">39</span>Κεφάλαιο 39: Δεν καταλαβαίνει η AI; Μήπως δεν είπες καθαρά</a></li>
+                            <li><a href="di-si-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">40</span>Κεφάλαιο 40: Εξήγησε πρώτα καθαρά, μετά ξεκίνα</a></li>
+                            <li><a href="di-si-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">41</span>Κεφάλαιο 41: Το πανόραμα των εργαλείων προγραμματισμού με AI το 2026</a></li>
+                            <li><a href="di-si-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">42</span>Κεφάλαιο 42: Πανόραμα των μεγάλων μοντέλων και πρακτική χρήση API</a></li>
+                            <li><a href="di-si-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">43</span>Κεφάλαιο 43: Μίλα με την AI ώστε να σε καταλάβει</a></li>
+                            <li><a href="di-si-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">44</span>Κεφάλαιο 44: Από το 0 στο 1 στην πράξη — όλη η πορεία ενός ολοκληρωμένου έργου</a></li>
+                            <li><a href="di-si-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">45</span>Κεφάλαιο 45: Η AI έγραψε, δεν τελείωσε</a></li>
+                            <li><a href="di-si-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">46</span>Κεφάλαιο 46: Ο δρόμος της προόδου — από χρήστης σε αρχιτέκτονας</a></li>
+                            <li><a href="di-si-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">47</span>Κεφάλαιο 47: Γρήγορος οδηγός αναφοράς και πόροι</a></li>
+                        </ul>
+                    </li>
+<!--Μέρος εξάσκησης: ανάπτυξη Android-->
+                    <li class="toc-parent" data-group="an-zhuo-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-si-shi-ba-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">8. Ανάπτυξη Android στην πράξη (Κεφάλαια 48-58)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Ανάπτυξη Android στην πράξη»" data-target="child-an-zhuo-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-an-zhuo-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-si-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">48</span>Κεφάλαιο 48: Πώς έγινε το Android να είναι όπως είναι;</a></li>
+                            <li><a href="di-si-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">49</span>Κεφάλαιο 49: Στήσε το περιβάλλον ανάπτυξης — Android Studio και το πρώτο σου έργο</a></li>
+                            <li><a href="di-wu-shi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">50</span>Κεφάλαιο 50: Kotlin σε γρήγορους ρυθμούς — η πρώτη γλώσσα για ανάπτυξη σε Android</a></li>
+                            <li><a href="di-wu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">51</span>Κεφάλαιο 51: Ανάπτυξη διεπαφών — πρώτα βήματα με Jetpack Compose</a></li>
+                            <li><a href="di-wu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">52</span>Κεφάλαιο 52: Τα τέσσερα βασικά στοιχεία και ο κύκλος ζωής του Activity</a></li>
+                            <li><a href="di-wu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">53</span>Κεφάλαιο 53: Αποθήκευση δεδομένων και αιτήματα δικτύου</a></li>
+                            <li><a href="di-wu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">54</span>Κεφάλαιο 54: Έργο 1 — Το βιβλίο εξόδων μου (τοπική έκδοση)</a></li>
+                            <li><a href="di-wu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">55</span>Κεφάλαιο 55: Έργο 2 — Εφαρμογή αναζήτησης καιρού (δικτυακή έκδοση)</a></li>
+                            <li><a href="di-wu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">56</span>Κεφάλαιο 56: Έφτιαξες την εφαρμογή, τώρα δημοσίευσέ την</a></li>
+                            <li><a href="di-wu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">57</span>Κεφάλαιο 57: Ο δρόμος της προόδου — δι και ώματα, ειδοποιήσεις και σύγχρονη αρχιτεκτονική</a></li>
+                            <li><a href="di-wu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">58</span>Κεφάλαιο 58: Γρήγορος οδηγός αναφοράς και πόροι</a></li>
+                        </ul>
+                    </li>
+<!--Μέρος εξάσκησης: ανάπτυξη iOS-->
+                    <li class="toc-parent" data-group="ios-kai-fa">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="di-wu-shi-jiu-zhang.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">9. Ανάπτυξη iOS στην πράξη (Κεφάλαια 59-69)</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο της ενότητας «Ανάπτυξη iOS στην πράξη»" data-target="child-ios-kai-fa">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-ios-kai-fa" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="di-wu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">59</span>Κεφάλαιο 59: Γνώρισε το iOS — το οικοσύστημα της Apple και το οικοσύστημα ανάπτυξης</a></li>
+                            <li><a href="#di-liu-shi-zhang" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">60</span>Κεφάλαιο 60: Στήσε το περιβάλλον ανάπτυξης — Xcode και το πρώτο σου έργο</a></li>
+                            <li><a href="di-liu-shi-yi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">61</span>Κεφάλαιο 61: Swift σε γρήγορους ρυθμούς — η πρώτη γλώσσα για ανάπτυξη στην Apple</a></li>
+                            <li><a href="di-liu-shi-er-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">62</span>Κεφάλαιο 62: Ανάπτυξη διεπαφών — πρώτα βήματα με SwiftUI</a></li>
+                            <li><a href="di-liu-shi-san-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">63</span>Κεφάλαιο 63: Προβολές, κατάσταση και πλοήγηση</a></li>
+                            <li><a href="di-liu-shi-si-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">64</span>Κεφάλαιο 64: Αποθήκευση δεδομένων και αιτήματα δικτύου</a></li>
+                            <li><a href="di-liu-shi-wu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">65</span>Κεφάλαιο 65: Έργο 1 — Το βιβλίο εξόδων μου (τοπική έκδοση)</a></li>
+                            <li><a href="di-liu-shi-liu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">66</span>Κεφάλαιο 66: Έργο 2 — Εφαρμογή αναζήτησης καιρού (δικτυακή έκδοση)</a></li>
+                            <li><a href="di-liu-shi-qi-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">67</span>Κεφάλαιο 67: Φινίρισμα και δημοσίευση — ανέβασε την εφαρμογή στο App Store</a></li>
+                            <li><a href="di-liu-shi-ba-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">68</span>Κεφάλαιο 68: Ο δρόμος της προόδου — δι και ώματα, ειδοποιήσεις και σύγχρονη αρχιτεκτονική</a></li>
+                            <li><a href="di-liu-shi-jiu-zhang.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">69</span>Κεφάλαιο 69: Γρήγορος οδηγός αναφοράς και πόροι</a></li>
+                        </ul>
+                    </li>
+<!--Παράρτημα-->
+                    <li class="toc-parent" data-group="fu-lu">
+                        <div class="flex items-center justify-between w-full px-3 py-2 rounded-md group/toc">
+                            <a href="fu-lu-a.html" class="flex-1 text-gray-700 dark:text-gray-300 font-medium group-hover/toc:text-primary transition-colors">10. Παράρτημα</a>
+                            <button class="toc-toggle-btn" type="button" aria-label="展开/收起Άνοιγμα/κλείσιμο των Παραρτημάτων" data-target="child-fu-lu">
+                                <span class="toc-toggle-icon fa-chevron-down text-xs inline-block transition-transform duration-300" aria-hidden="true">▾</span>
+                            </button>
+                        </div>
+                        <ul id="child-fu-lu" class="toc-child open pl-4 space-y-0.5 mt-1">
+                            <li><a href="fu-lu-a.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">A</span>A Παράρτημα A: Διαδικασία αποσυσκευασίας νέου κινητού</a></li>
+                            <li><a href="fu-lu-b.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">B</span>Παράρτημα B: Κολλήσατε σε μια άσκηση;</a></li>
+                            <li><a href="fu-lu-c.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">C</span>C Παράρτημα C: Το πιο σύντομο γλωσσάρι όρων</a></li>
+                            <li><a href="fu-lu-d.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">D</span>D Παράρτημα D: Πού να βρείτε αξιόπιστες πηγές</a></li>
+                            <li><a href="fu-lu-e.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">E</span>E Παράρτημα E: Ευχαριστίες και σημειώσεις</a></li>
+                            <li><a href="fu-lu-f.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">F</span>F Παράρτημα F: Ειδικό θέμα για τα αναδιπλούμενα κινητά — επιλογή και χρήση</a></li>
+                            <li><a href="jie-yu.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">i</span>Επίλογος: Να καταλάβετε το κινητό σας, μόνο αυτό</a></li>
+                            <li><a href="fu-lu-g.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">G</span>G Παράρτημα G: Γρήγορο ευρετήριο βιβλίου</a></li>
+                            <li><a href="fu-lu-h.html" class="toc-item block px-3 py-1.5 rounded-md hover:bg-light dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"><span class="mr-1.5 text-xs text-gray-400 font-mono">H</span>H Παράρτημα H: Χάρτης πορείας εκδόσεων</a></li>
+                        </ul>
+                    </li>
+</ul></nav></aside><div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div><div id="search-overlay" class="search-overlay" role="dialog" aria-label="Αναζήτηση"><div class="search-panel"><div class="search-input-wrapper"><span class="text-gray-400" aria-hidden="true">S</span><input type="text" id="search-input" placeholder="Αναζήτηση στο περιεχόμενο..." autocomplete="off" aria-label="Λέξεις-κλειδιά αναζήτησης"><button id="search-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Κλείσιμο αναζήτησης">ESC</button></div><div id="search-results" class="search-results scrollbar-hide"><div class="p-4 text-center text-gray-400 text-sm">Γράψε λέξη-κλειδί για αναζήτηση</div></div></div></div><main id="content" class="w-full lg:ml-72 px-5 md:px-10 py-8 bg-white dark:bg-gray-800 min-h-screen"><div class="content-col"><a id="top"></a><!-- Πάνω διαδρομή πλοήγησης --><nav class="breadcrumb no-print" aria-label="Τοποθεσία"><a href="#top">Αρχική</a><span class="sep" aria-hidden="true">›</span><span class="text-gray-700 dark:text-gray-300">Μάθημα ψηφιακής αλφαβητοποίησης · v1.8</span></nav>
+<div id="di-liu-shi-zhang" class="mb-10 content-section">
+<h3 class="text-xl font-bold text-dark dark:text-gray-200 mb-4">Κεφάλαιο 60: Στήσιμο περιβάλλοντος ανάπτυξης — Xcode και το πρώτο project</h3>
+<p class="chapter-intro mb-4">Για να κάνεις καλή δουλειά, πρέπει πρώτα να ακονίσεις τα εργαλεία σου. Σε αυτό το κεφάλαιο στήνουμε την «κουζίνα»: εγκαθιστούμε το Xcode, βάζουμε τον προσομοιωτή να τρέξει, δημιουργούμε το πρώτο σου iOS project και ύστερα ξεδιπλώνουμε τη δομή του project για να τη δεις καθαρά. Όταν το περιβάλλον είναι έτοιμο, θα δεις για πρώτη φορά τον κώδικά σου να γίνεται ένα κουμπί που πατάς, τη στιγμή αυτή πολλοί τη θυμούνται μια ζωή.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">Α. Απόκτησε ένα Mac</h4>
+<p class="mb-2">Ας πούμε πρώτα το εμπόδιο: η ανάπτυξη iOS γίνεται μόνο σε macOS. Αν δεν έχεις Mac, έχεις τρεις επιλογές: να αγοράσεις ένα (αρκεί ακόμα κι ένα μεταχειρισμένο Mac mini ή MacBook Air), να νοικιάσεις ένα cloud Mac για λίγο καιρό, ή να διαβάσεις πρώτα το όγδοο μέρος, «Πρακτική ανάπτυξη Android» (δουλεύει και με Windows).</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Στοιχείο</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Ελάχιστες απαιτήσεις</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Άνετο επίπεδο (προτεινόμενο)</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Τσιπ</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Apple Silicon (από M1)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">M2 ή νεότερο</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Μνήμη</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">8GB</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">16GB</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Δίσκος</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Κράτα 40GB+ (το ίδιο το Xcode είναι πολύ βαρύ)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">256GB και πάνω</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Λειτουργικό</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Το πιο πρόσφατο macOS</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Κράτα το σε αυτόματη ενημέρωση</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Οδηγός ρυθμίσεων Mac για ανάπτυξη (Αύγουστος 2026)</p>
+<div class="info-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Συμβουλή: μπορείς να μάθεις τη γλώσσα ακόμα και χωρίς Mac</p>
+<p class="mt-1">Το δωρεάν Swift Playgrounds στο iPad διδάσκει τα βασικά της γλώσσας Swift (χωρίς Mac)· μπορείς μάλιστα να το εγκαταστήσεις και σε iPhone. Εξασκήσου καλά στο Playgrounds στα θέματα γλώσσας του Κεφαλαίου 61, και όταν αποκτήσεις Mac θα πετάξεις αμέσως. Το «ακόνισμα δεν αργεί το κόψιμο», ακριβώς γι' αυτό μιλάμε.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">Β. Εγκατάσταση Xcode</h4>
+<p class="mb-2">Το Xcode είναι το επίσημο ολοκληρωμένο περιβάλλον ανάπτυξης της Apple και είναι δωρεάν. Εγκαθίσταται σε τρία βήματα:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Στο Mac άνοιξε το App Store, ψάξε «Xcode» και πάτα Εγκατάσταση, πρόσεξε ότι είναι αρκετά GB, διάλεξε μια ώρα με καλύτερη ταχύτητα internet·</li>
+  <li>Μετά την εγκατάσταση, στην πρώτη εκκίνηση αποδέξου τη συμφωνία χρήσης και άσε τα components να εγκατασταθούν (γίνεται αυτόματα)·</li>
+  <li>Στο μενού Xcode > Settings > Locations βεβαιώσου ότι έχουν επιλεγεί τα Command Line Tools, τα εργαλεία γραμμής εντολών είναι προϋπόθεση για πολλά scripts και εργαλεία τρίτων</li>
+</ol>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Προσοχή: το «παιχνίδι αντιστοίχισης» έκδοσης και λειτουργικού</p>
+<p class="mt-1">Το νέο Xcode συχνά απαιτεί το πιο πρόσφατο macOS, ενώ τα παλιά Mac μπορεί να κολλήσουν σε παλιά έκδοση. Για δημοσίευση στο App Store, η Apple ζητά build με πιο πρόσφατο Xcode (συνήθως δίνει μια περίοδο χάρης). Γι' αυτό μην αργείς πολύ με τις ενημερώσεις: οι προγραμματιστές iOS είναι από τους πιο επιμελείς στο να «τρέχουν τα τελευταία».</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">Γ. Δημιούργησε το πρώτο σου project</h4>
+<p class="mb-2">Άνοιξε Xcode > Create New Project > επίλεξε iOS > template App, και συμπλήρωσε:</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Στοιχείο</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Τι συμπληρώνεις</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Εξήγηση</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Product Name</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">MyFirstApp</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Όνομα εφαρμογής</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Team</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Το Apple ID σου (δωρεάν)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Για την υπογραφή· αρκεί ο ατομικός λογαριασμός</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Organization Identifier</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">com.example</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Σχηματίζει το bundle identifier μαζί με το Product Name</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Interface</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">SwiftUI</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Το framework κεντρικού άξονα του βιβλίου</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Language</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Swift</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Αυτονόητο</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Τα πέντε πράγματα που συμπληρώνεις στη δημιουργία project</p>
+<p class="mb-2">Αφού πατήσεις Create, το Xcode δημιουργεί ένα project που τρέχει αμέσως. Επίλεξε έναν προσομοιωτή πάνω αριστερά (π.χ. iPhone 17) και πάτα ▶ για εκτέλεση, μετά από λίγα δευτερόλεπτα θα εμφανιστεί στην οθόνη του προσομοιωτή ένα παράθυρο που γράφει «Hello, world!». Η πρώτη σου εφαρμογή iOS μόλις γεννήθηκε.</p>
+<h4 class="text-lg font-semibold mt-4 mb-2">Δ. Η δομή του project αναλυμένη: τι κάνει κάθε αρχείο</h4>
+<p class="mb-2">Αριστερά βρίσκεται ο project navigator· ως αρχάριος αρκεί να γνωρίζεις τα εξής:</p>
+<div class="figure">
+<svg style="max-width:100%;height:auto" width="600" height="290" viewBox="0 0 600 290" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+ <rect x="0" y="0" width="600" height="290" fill="var(--surface-6)" rx="8"/>
+ <text x="20" y="28" font-size="13" font-weight="bold" fill="var(--surface-dark-2)">MyFirstApp/ βασικός φάκελος έργου</text>
+ <rect x="30" y="42" width="540" height="225" style="fill:var(--ink-inverse)" stroke="var(--line-2)" rx="6"/>
+ <rect x="45" y="56" width="250" height="196" fill="var(--accent-wash)" rx="5"/>
+ <text x="56" y="78" font-size="11" fill="var(--accent-deep)" font-weight="bold">MyFirstApp/ (φάκελος κώδικα)</text>
+ <text x="66" y="100" font-size="10" fill="var(--ink-2)">├ MyFirstAppApp.swift ← είσοδος προγράμματος</text>
+ <text x="66" y="120" font-size="10" fill="var(--ink-2)">├ ContentView.swift ← κύρια οθόνη</text>
+ <text x="66" y="140" font-size="10" fill="var(--ink-2)">└ Assets.xcassets ← εικονίδια, εικόνες, χρώματα</text>
+ <text x="56" y="166" font-size="10" fill="var(--muted-2)">(όλα τα νέα αρχεία μπαίνουν σε αυτόν τον φάκελο)</text>
+ <text x="56" y="196" font-size="10" fill="var(--accent-deep)" font-weight="bold">Καρτέλα Info / Info.plist</text>
+ <text x="66" y="216" font-size="10" fill="var(--muted-2)">Δήλωση εφαρμογής: όνομα, δι και ώματα, ρυθμίσεις</text>
+ <rect x="310" y="56" width="245" height="196" fill="#f0fdf4" rx="5"/>
+ <text x="321" y="78" font-size="11" fill="#065f46" font-weight="bold">Άλλες σημαντικές θέσεις</text>
+ <text x="331" y="100" font-size="10" fill="var(--ink-2)">📁 Preview Content/ ← υλικό προεπισκόπησης</text>
+ <text x="331" y="122" font-size="10" fill="var(--ink-2)"> Ρυθμίσεις Target (μπλε εικονίδιο έργου)</text>
+ <text x="331" y="142" font-size="10" fill="var(--muted-2)">— εδώ είναι η έκδοση, το ελάχιστο σύστημα και η υπογραφή</text>
+ <text x="331" y="168" font-size="10" fill="var(--ink-2)"> MyFirstAppTests/ ← unit tests</text>
+ <text x="331" y="188" font-size="10" fill="var(--ink-2)">📱 MyFirstAppUITests/ ← τεστ οθόνης</text>
+ <text x="331" y="216" font-size="10" fill="var(--muted)">(το πρότυπο τεστ έχει δημιουργηθεί, χρήση στο κεφάλαιο 67)</text>
+ </svg>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Εικόνα 2: Η δομή project του Xcode που πρέπει οπωσδήποτε να ξέρεις</p>
+</div>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>MyFirstAppApp.swift: Το σημείο εκκίνησης του προγράμματος· στο SwiftUI είναι λίγες μόνο γραμμές, «ξεκίνα και δείξε την κύρια οθόνη»·</li>
+  <li>ContentView.swift: Η κύρια προβολή· ό, τι βλέπεις τώρα βρίσκεται εδώ·</li>
+  <li>Assets.xcassets: Η αποθήκη πόρων, εδώ μπαίνουν εικονίδια, εικόνες και χρώματα·</li>
+  <li>Ρυθμίσεις Target: πάτα στο μπλε εικονίδιο του project αριστερά για να μπεις· μέσα είναι ο αριθμός έκδοσης, η ελάχιστη έκδοση iOS και η υπογραφή. Εδώ ρυθμίζεται και το εμφανιζόμενο όνομα και το εικονίδιο της εφαρμογής</li>
+</ul>
+<p class="mb-2">Ε. Τεχνικές ταχύτητας στο Xcode: τα πέντε «πρόσθετα» συντομεύσεων για αρχάριους</p>
+<p class="mb-2">Όταν τα εξασκηθείς, θα φαίνεσαι «πολύ επαγγελματίας»:</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Ενέργεια</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Συντόμευση</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Χρησιμότητα</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Εκτέλεση</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">⌘R</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Build και εκτέλεση</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Άνοιγμα/εναλλαγή προεπισκόπησης στο canvas</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">⌥⌘↩</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Ο διακόπτης του «ό, τι βλέπεις το παίρνεις»</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Μορφοποίηση εσοχών</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">⌃I</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Τακτοποιεί αυτόματα τις εσοχές του επιλεγμένου κώδικα</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Γρήγορο άνοιγμα αρχείου</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">⇧⌘O</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Γράφεις το όνομα του αρχείου και ανοίγει αμέσως (το πιο συχνό!)</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Σχολιασμός/αίρεση σχολίου</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">⌘/</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Ενεργοποιεί/απενεργοποιεί κώδικα όποτε θες κατά το debugging</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Οι πιο συχνές συντομεύσεις του Xcode (το πεντασύνολο για αρχάριους)</p>
+<p class="mb-2">Δύο ακόμα κρυφά δώρα: πολλαπλοί προσομοιωτές (τρέχεις ταυτόχρονα iPhone και iPad για να συγκρίνεις στοιχήσεις) και η βιβλιοθήκη snippets (σύρε τις γραμμές κώδικα που χρησιμοποιείς συχνά στο Snippets panel δεξιά, και την επόμενη φορά τις εισάγεις με ένα πάτημα), άρχισε να χρησιμοποιείς τα εργαλεία ταχύτητας, και το «χέρι» θα έρθει από μόνο του.</p>
+<p class="mb-2">ΣΤ. Δοκιμή σε πραγματική συσκευή: βάλε την εφαρμογή στο iPhone σου</p>
+<p class="mb-2">Ο προσομοιωτής είναι καλός, αλλά ο προορισμός είναι η πραγματική συσκευή. Με δωρεάν Apple ID μπορείς να κάνεις δοκιμές σε πραγματική συσκευή:</p>
+<ol class="list-decimal pl-6 mb-3 space-y-1">
+  <li>Σύνδεσε το iPhone με καλώδιο δεδομένων (ή κάνε ασύρματο debugging στο ίδιο Wi-Fi)·</li>
+  <li>Στη λίστα συσκευών στο πάνω μέρος του Xcode επίλεξε το κινητό σου· την πρώτη φορά θα σου ζητήσει σύνδεση Apple ID και θα ρυθμίσει αυτόματα την υπογραφή·</li>
+  <li>Στο iPhone: [Ρυθμίσεις] > [Γενικά] > [Διαχείριση VPN & Συσκευών] και εμπιστεύσου το πιστοποιητικό προγραμματιστή σου·</li>
+  <li>Πάτα ▶ και η εφαρμογή εγκαθίσταται στη πραγματική συσκευή</li>
+</ol>
+<div class="warning-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Προσοχή: ο «περιορισμός των επτά ημερών» του δωρεάν λογαριασμού</p>
+<p class="mt-1">Οι εφαρμογές που υπογράφονται με δωρεάν Apple ID λήγουν μετά από 7 ημέρες (μια επανεκτέλεση τις ανανεώνει). Είναι ο μηχανισμός της Apple κατά της κατάχρησης, και για τη φάση της μάθησης αρκεί πλήρως· ο επί πληρωμή λογαριασμός προγραμματιστή (99 δολάρια/έτος) δεν έχει αυτόν τον περιορισμό, θα το πούμε αναλυτικά στο Κεφάλαιο 67.</p>
+</div>
+<h4 class="text-lg font-semibold mt-4 mb-2">Ζ. Πρώτες δοκιμές + πρώτες βοήθειες για συχνά σφάλματα</h4>
+<p class="mb-2">Άνοιξε το ContentView.swift, άλλαξε το κείμενο μέσα στο Text("Hello, world!") με το όνομά σου και πάτα ⌘R για επανεκτέλεση, σε λίγα δευτερόλεπτα το όνομά σου εμφανίζεται στον προσομοιωτή. Συγχαρητήρια, ολοκλήρωσες τον πρώτο σου πλήρη κύκλο «αλλαγή κώδικα > build > εγκατάσταση > εκτέλεση».</p>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border border-gray-300 text-sm mb-3"><thead><tr class="bg-light dark:bg-gray-700"><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Σύμπτωμα σφάλματος</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Συχνή αιτία</th><th class="border border-gray-300 dark:border-gray-600 px-3 py-2 text-left">Αντίδοτο</th></tr></thead><tbody><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Σφάλμα υπογραφής (Signing)</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Δεν έχει επιλεγεί Team ή το πιστοποιητικό έχει λήξει</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Στα Target > Signing τσέκαρε τον λογαριασμό σου· με δωρεάν λογαριασμό, τρέξε ξανά μία φορά</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Ο προσομοιωτής δείχνει μαύρη οθόνη / δεν ανοίγει</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Κατεστραμμένο image</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Μενού Device > Erase All Content· ή διέγραψε τον προσομοιωτή και πρόσθεσέ τον ξανά</td></tr><tr><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Το Xcode κατεβαίνει αργά / δεν εγκαθίσταται</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Διακυμάνσεις δικτύου στο App Store</td><td class="border border-gray-300 dark:border-gray-600 px-3 py-2">Δοκίμασε άλλη ώρα· ή κατέβασε το offline πακέτο .xip από την ιστοσελίδα προγραμματιστών της Apple</td></tr></tbody></table>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Πίνακας πρώτων βοηθειών για σφάλματα περιβάλλοντος (για αρχάριους)</p>
+<div class="practice-box rounded-lg p-4 mt-4">
+<p class="font-semibold">Ας το δοκιμάσουμε: ολοκλήρωσε τη λίστα του «τελετουργικού ανάπτυξης»</p>
+<p class="mt-1">① Εγκατάστησε το Xcode και βεβαιώσου ότι ο προσομοιωτής τρέχει· ② τρέξε την εφαρμογή σου σε πραγματική συσκευή και κράτα ένα screenshot για ανάμνηση· ③ άλλαξε το κείμενο Hello με το όνομά σου· ④ στις ρυθμίσεις Target άλλαξε το εμφανιζόμενο όνομα της εφαρμογής σε «Η πρώτη μου εφαρμογή». Αφού κάνεις αυτά τα τέσσερα βήματα, γίνεσαι άνθρωπος με έργα.</p>
+</div>
+<div class="chapter-summary">
+<p class="font-semibold mb-1">Σύνοψη κεφαλαίου</p>
+<ul class="list-disc pl-6 mb-3 space-y-1">
+  <li>Σκληρά εμπόδια: Mac + Xcode· χωρίς Mac, μάθε πρώτα τη γλώσσα στο Swift Playgrounds του iPad</li>
+  <li>Το Xcode εγκαθίσταται από το App Store· οι νέες εκδόσεις θέλουν νέο λειτουργικό, μην καθυστερείς τις ενημερώσεις</li>
+  <li>Τα πέντε στοιχεία για νέο project: όνομα, Team, αναγνωριστικό οργανισμού, SwiftUI, Swift</li>
+  <li>Μνημόνιο του project: όλος ο κώδικας στον φάκελο MyFirstApp/· οι ρυθμίσεις Target διαχειρίζονται έκδοση και υπογραφή</li>
+  <li>Η δοκιμή σε πραγματική συσκευή με δωρεάν Apple ID έχει περιορισμό υπογραφής 7 ημερών· ο επί πληρωμή λογαριασμός δεν τον έχει</li>
+  <li>Η καθημερινότητα ανάπτυξης = αλλαγή κώδικα > ⌘R > δες το αποτέλεσμα, ξανά και ξανά</li>
+</ul>
+</div>
+
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-6 pt-3 border-t border-gray-200 dark:border-gray-700">Βρήκατε λάθος σε αυτό το κεφάλαιο; <a href="../../errata.html" class="text-primary hover:underline">Αναφέρετέ το στη σελίδα διορθώσεων</a> — παλιός δρόμος, λανθασμένο γεγονός, ασαφής πρόταση: όλα ευπρόσδεκτα. Μπορείτε επίσης να γράψετε στην ομάδα QQ 1074995524.</p>
+            
+                </div>
+<nav id="chapter-nav" class="flex flex-wrap justify-between gap-4 mt-10 mb-6"><a id="prev-link" href="di-wu-shi-jiu-zhang.html" class="text-primary hover:underline">← Κεφάλαιο 59: Γνώρισε το iOS — το οικοσύστημα της Apple και το οικοσύστημα ανάπτυξης</a><span></span><a id="next-link" href="di-liu-shi-yi-zhang.html" class="text-primary hover:underline">Κεφάλαιο 61: Swift σε γρήγορους ρυθμούς — η πρώτη γλώσσα για ανάπτυξη στην Apple →</a></nav>
+ </div></main></div><!-- Γρήγορα εργαλεία: ομάδα πλωτών κουμπιών --><div id="quick-tools" class="quick-tools no-print" aria-label="Γρήγορα εργαλεία"><button id="quick-glass" class="quick-tool-btn" title="液态玻璃效果 (开/关)" aria-label="切换液态玻璃效果" aria-pressed="true"><span aria-hidden="true">G</span></button><button id="quick-search" class="quick-tool-btn" title="Αναζήτηση (Ctrl+K)" aria-label="Αναζήτηση"><span aria-hidden="true">S</span></button><button id="quick-theme" class="quick-tool-btn" title="Εναλλαγή σκούρου/φωτεινού" aria-label="Εναλλαγή θέματος"><span aria-hidden="true">N</span></button><button id="quick-print" class="quick-tool-btn" title="Εκτύπωση / εξαγωγή σε PDF" aria-label="Εκτύπωση ή εξαγωγή"><span aria-hidden="true">P</span></button><button id="quick-toc" class="quick-tool-btn" title="Περιεχόμενα" aria-label="Άνοιγμα περιεχομένων"><span aria-hidden="true">T</span></button><button id="quick-tts" class="quick-tool-btn" title="Φωνητική ανάγνωση" aria-label="Φωνητική ανάγνωση"><span class="tts-ico" aria-hidden="true">▶</span></button><button id="quick-shortcuts" class="quick-tool-btn" title="Συντομεύσεις πληκτρολογίου (?)" aria-label="Πάνελ συντομεύσεων"><span aria-hidden="true">?</span></button><button id="quick-backup" class="quick-tool-btn" title="Αντίγραφο ασφαλείας / επαναφορά προόδου" aria-label="Αντίγραφο ασφαλείας προόδου"><span aria-hidden="true">B</span></button></div><!-- Πάνελ συντομεύσεων --><div id="shortcuts-overlay" class="search-overlay" role="dialog" aria-label="Συντομεύσεις πληκτρολογίου"><div class="search-panel" style="max-width:480px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Συντομεύσεις πληκτρολογίου</span><button id="shortcuts-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Κλείσιμο">ESC</button></div><div class="p-4 space-y-2 text-sm"><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Αναζήτηση περιεχομένου</span><span class="kbd">Ctrl + K</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Αλλαγή σκούρου/ανοιχτού</span><span class="kbd">T</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Φωνητική ανάγνωση αναπαραγωγή/παύση</span><span class="kbd">R</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Διακοπή ανάγνωσης</span><span class="kbd">ESC</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Άνοιγμα πίνακα συντομεύσεων</span><span class="kbd">?</span></div><div class="flex justify-between items-center py-1.5 border-b border-gray-100 dark:border-gray-700"><span class="text-gray-600 dark:text-gray-400">Μεγαλύτερη / μικρότερη γραμματοσειρά</span><span><span class="kbd">A+</span> <span class="kbd">A-</span></span></div><div class="flex justify-between items-center py-1.5"><span class="text-gray-600 dark:text-gray-400">Εκτύπωση / εξαγωγή PDF</span><span class="kbd">Ctrl + P</span></div></div></div></div><!-- Παράθυρο αντιγράφων ασφαλείας/επαναφοράς --><div id="backup-overlay" class="search-overlay" role="dialog" aria-label="Αντίγραφο ασφαλείας και επαναφορά"><div class="search-panel" style="max-width:520px"><div class="search-input-wrapper"><span class="font-semibold text-gray-700 dark:text-gray-300 flex-1">Αντίγραφο και ανάκτηση προόδου ανάγνωσης</span><button id="backup-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-sm px-2 py-1 rounded border border-gray-200 dark:border-gray-600" aria-label="Κλείσιμο">ESC</button></div><div class="p-5 space-y-4 text-sm"><div class="info-box rounded-lg p-3"><p class="text-xs">Το αντίγραφο ασφαλείας περιλαμβάνει: διαβασμένα κεφάλαια, σελιδοδείκτες, σημείο ανάγνωσης, προτιμήσεις μεγέθους γραμματοσειράς και αποτελέσματα αυτοδιαγνωστικού ελέγχου υγείας. Τα δεδομένα αποθηκεύονται τοπικά στον browser και χάνονται αν αλλάξεις browser ή καθαρίσεις την cache — καλό είναι να κάνεις τακτικά εξαγωγή αντιγράφου ασφαλείας.</p></div><div><button id="backup-export" class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Εξαγωγή αρχείου αντιγράφου
+ </button><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Κατέβασε ένα αρχείο JSON και αποθήκευσέ το σε ασφαλές σημείο</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-import-btn" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Εισαγωγή αντιγράφου για ανάκτηση
+ </button><input type="file" id="backup-import-input" accept=".json" class="hidden"><p class="text-xs text-gray-500 dark:text-gray-400 mt-1 text-center">Διάλεξε ένα προηγουμένως εξαγόμενο αρχείο αντιγράφου ασφαλείας για να επαναφέρεις την πρόοδό σου</p></div><div class="border-t border-gray-200 dark:border-gray-700 pt-4"><button id="backup-reset" class="w-full bg-red-500 text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"> Διαγραφή όλων των δεδομένων ανάγνωσης
+ </button><p class="text-xs text-red-400 mt-1 text-center">Δεν υπάρχει επιστροφή! Κάνε πρώτα εξαγωγή αντιγράφου ασφαλείας</p></div></div></div></div><!-- Ειδοποίηση συνεχόμενων ημερών ανάγνωσης --><div id="streak-toast" class="restore-position-toast" role="alert" style="background:linear-gradient(135deg,var(--accent-book),var(--progress-via));color:var(--ink-inverse);border:none;"><span id="streak-toast-text">Ημέρα X συνεχόμενης ανάγνωσης!</span></div><!-- Γραμμή ελέγχου φωνητικής ανάγνωσης --><div id="tts-controls" class="tts-controls" role="region" aria-label="Έλεγχος φωνητικής ανάγνωσης" aria-live="polite"><span class="tts-chapter-label" id="tts-label" title="Τρέχον κεφάλαιο ανάγνωσης">Δεν ξεκίνησε</span><button class="tts-btn" id="tts-prev" title="Προηγούμενη παράγραφος" aria-label="Προηγούμενη παράγραφος"><span aria-hidden="true">‹</span></button><button class="tts-btn play-btn" id="tts-play" title="Αναπαραγωγή/παύση" aria-label="Αναπαραγωγή ανάγνωσης"><span class="tts-ico" aria-hidden="true">▶</span></button><button class="tts-btn" id="tts-next" title="Επόμενη παράγραφος" aria-label="Επόμενη παράγραφος"><span aria-hidden="true">›</span></button><button class="tts-btn" id="tts-speed-down" title="Πιο αργά" aria-label="Πιο αργά">−</button><span class="tts-speed-badge" id="tts-speed-display">1.0x</span><button class="tts-btn" id="tts-speed-up" title="Πιο γρήγορα" aria-label="Πιο γρήγορα">+</button><button class="tts-btn" id="tts-stop" title="Διακοπή ανάγνωσης" aria-label="Διακοπή ανάγνωσης"><span aria-hidden="true">×</span></button></div><!-- Κουμπί επιστροφής στην κορυφή --><button id="back-to-top" class="opacity-0 invisible" aria-label="Επιστροφή στην κορυφή"><svg class="progress-ring" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg></button><!-- Ειδοποίηση επαναφοράς θέσης ανάγνωσης --><div id="restore-toast" class="restore-position-toast" role="alert"><span id="restore-toast-text">Τελευταίο σημείο ανάγνωσης: ...</span><button class="btn-restore" id="restore-btn">Αναίρεση</button><button class="btn-dismiss" id="dismiss-btn">Αγνόηση</button></div><!-- Σενάριο JS -->
+ 
+ <script>
+ /* Service Worker：离线阅读。只在 http(s) 下注册，file:// 打开时跳过。 */
+ if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+ window.addEventListener('load', function () {
+ navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+ .catch(function (err) { console.warn('SW 注册失败：', err); });
+ });
+ }
+ </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="lg-displace" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise"/><feGaussianBlur in="noise" stdDeviation="2" result="soft"/><feDisplacementMap in="SourceGraphic" in2="soft" scale="9" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><script src="assets/book.js" defer></script>
+</body></html>
